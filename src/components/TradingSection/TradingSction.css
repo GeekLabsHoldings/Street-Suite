@@ -1,0 +1,171 @@
+section.trading{
+    padding: 10% 5%;
+    border-top: 1px solid #5D5D5D;
+    position: relative;
+    margin-top: 10vh;
+    background-image: url("../../assets/tradingBgShadow.png");
+    background-position: center left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.trading-container{
+    max-width: 1400px;
+}
+
+.img-container{
+    padding: 3rem;
+    backdrop-filter: blur(100px);
+    background: linear-gradient(90deg, rgba(83,172,255,0.1) 0%, rgba(35,53,70,0.1) 100%);
+    border: 1px solid #eeeeee23;
+    border-radius: 35.74px;
+    box-shadow: 0px 15px 50px -3px #000;
+}
+
+.trading-content h4{
+    color: var(--Blue300);
+    font-size: 48px;
+    font-weight: 800;
+    line-height : 60px;
+}
+.trading-content h4+p{
+    color: #A4A4A4;
+    font-size: 16px;
+    font-weight: 400;
+    /* margin-bottom: 2rem; */
+}
+.trading-content h5{
+    font-size: 23px;
+    font-weight: 700;
+}
+.trading-content h5+p{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.private-companies-box{
+    padding: 2rem;
+    box-shadow: inset 0px 15px 50px -3px #000000b9;
+    background-image: url("../../assets/privat\ company\ bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.private-companies-box .item{
+    width: 48%;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #313131;
+    border-radius: 15px;
+    gap: 1rem;
+}
+.private-companies-box .item img{
+    width: 50%;
+}
+.private-companies-box .item .price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 18px;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: 1px solid #fff;
+
+}
+.private-companies-box .price.up svg{
+    transform: rotateX(180deg);
+}
+.private-companies-box .price.up svg path{
+    fill: #118F4B;
+}
+.private-companies-box .price.down svg{
+    transform: rotateX(0deg);
+}
+.private-companies-box .price.down svg path{
+    fill: #D94111;
+}
+
+.spaceX{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 1.5rem;
+    position: relative;
+    background: linear-gradient(166deg, rgba(105,180,255,0.02189250700280112) 0%, rgba(32,32,32,0.9183648459383753) 46%);
+    border-radius: 10px;
+    gap: 2rem;
+    overflow: hidden;
+}
+.spaceX img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.spaceX .box{
+    width: 50%;
+    min-height: 6rem;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+.spaceX h6{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1300px) {
+    .private-companies-box .item .price {
+        font-size: 13px;
+    }
+    
+}
+@media only screen and (max-width: 1100px) {
+    .private-companies-box{
+        flex-direction: column;
+    }
+    .private-companies-box .item{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .trading-content h4 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    .trading-content h4+p {
+        color: #A4A4A4;
+        font-size: 13px;
+    }
+    .trading-content h5 {
+        font-size: 20px;
+    }
+    .trading-content h5+p {
+        font-size: 12px;
+    }
+    .spaceX {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .spaceX h6 {
+        font-size: 14px;
+    }
+    section.trading {
+        padding: 20% 5%;
+    }
+    .section-title {
+        left: 10%;
+        padding: 0 1rem;
+        font-size: 41px;
+    }
+
+    section.alerts {
+        padding: 20% 0%;
+    }
+}

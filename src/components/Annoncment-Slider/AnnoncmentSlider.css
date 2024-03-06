@@ -1,0 +1,10 @@
+.AnnoncmentSlider {
+    background-color: var(--Blue300);
+    padding: 0.3rem 0;
+    margin: 1rem 0 2rem;
+    text-align: center;
+}
+.AnnoncmentSlider h6{
+    color: var(--Black200);
+    font-size: 19px;
+}

@@ -1,0 +1,21 @@
+:root {
+  --Blue50: #eef7ff;
+  --Blue75: #b8ddff;
+  --Blue100: #9bcfff;
+  --Blue200: #70BAFF;
+  --Blue300: #53ACFF;
+  --Blue400: #3a78b3;
+  --Blue500: #33699c;
+
+  --Black50: #e6e6e6;
+  --Black75: #969696;
+  --Black100: #6b6b6b;
+  --Black200: #2b2b2b;
+  --Black300: #000000;
+
+  --white: #fff;
+}
+
+body{
+  color: #fff;
+}

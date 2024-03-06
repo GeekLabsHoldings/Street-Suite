@@ -1,0 +1,54 @@
+section.commingSoon {
+    padding: 5%;
+    border-top: 1px solid #5D5D5D;
+    position: relative;
+    background-image: url("../../assets/PlansBgShadow.png");
+    background-position: right top;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.commingSoon-container {
+    max-width: 1400px;
+}
+
+.commingSoon-container > p {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: left;
+    margin-bottom: 4rem;
+    width: 70%;
+}
+
+.expanding-box{
+    padding: 3rem 2rem;
+    background-image: url("../../assets/expandingBg.png");
+    background-position: center;
+    background-size: cover;
+    border-radius: 21px;
+}
+
+.expanding-box .item{
+    padding-left: 1rem;
+    border-left: 2px solid #fff;
+}
+.expanding-box .item h6{
+font-family: Poppins;
+font-size: 28px;
+font-weight: 700;
+line-height: 42px;
+letter-spacing: 0em;
+text-align: left;
+}
+.expanding-box .item p{
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+
+}

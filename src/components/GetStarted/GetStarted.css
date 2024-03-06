@@ -1,0 +1,35 @@
+section.getStarted{
+    padding: 5%;
+}
+
+.getStarted-container{
+    max-width: 1400px;
+}
+
+.getStarted-content h3{
+    font-family: Poppins;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 83px;
+    letter-spacing: 0px;
+    text-align: left;
+} 
+.getStarted-content p{
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #979797;
+}
+.getStarted-content button{
+    padding: 0.5rem 2rem;
+    background: var(--Blue300);
+    border-radius: 5px;
+    margin: 1rem 0;
+    transition: all 0.3S;
+}
+.getStarted-content button:hover{
+    background: var(--Blue400);
+}

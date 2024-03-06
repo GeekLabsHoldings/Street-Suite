@@ -1,0 +1,87 @@
+footer{
+    background: #25252580;
+    padding-top: 5rem;
+    position: relative;
+}
+footer .gradient-line{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    background: linear-gradient(144deg, rgba(153, 153, 153, 1) 0%, rgba(52, 52, 52, 1) 71%, rgba(153, 153, 153, 1) 100%);
+}
+
+footer .footer-container{
+    padding: 3rem;
+    border-top: 1px solid #fff;
+    position: relative;
+}
+
+footer .footer-container h5{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #232323;
+    padding: 1rem 3rem;
+}
+
+footer .footer-container p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+footer .footer-container .line{
+    width: 50%;
+    height: 1px;
+    background: #5D5D5D;
+    margin: 3rem auto;
+}
+
+footer .footer-container .footer-links{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .footer-container .footer-links .links-col h6{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #979797;
+    margin-bottom: 0.8rem;
+}
+
+footer .footer-container .footer-links .links-col a{
+    color: #979797;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+footer .footer-container .footer-links .links-col ul li{
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.copyright{
+    color: #979797;
+}

@@ -1,0 +1,60 @@
+section.trainings{
+    padding: 10% 5%;
+    border-top: 1px solid #5D5D5D;
+    position: relative;
+    margin-top: 10vh;
+}
+
+.trainings-container{
+    max-width: 1400px;
+}
+.blog{
+    margin-bottom: 2rem;
+}
+.blog-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.blog-title svg{
+    margin-right: 44px;
+}
+.blog-title h6{
+    font-size: 23px;
+    font-weight: 500;
+}
+.blog p{
+    margin-left: 80px;
+    font-weight: 200;
+    font-size: 19px;
+}
+
+.trainings-img img{
+    position: absolute;
+    right: 0;
+    top: 12.5%;
+    /* transform: scale(1.25); */
+}
+
+.signUpNow{
+    margin-top: 15%;
+}
+.signUpNow h4{
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.signUpNow h4 > span{
+    padding: 0 0.5rem;
+    background-color: var(--Blue300);
+    border-radius: 5px;
+}
+
+.signUpNow button{
+    padding: 1rem 3rem;
+    background-color: var(--Blue300);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+

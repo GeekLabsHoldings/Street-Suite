@@ -1,0 +1,17 @@
+section.clientsFavFeature{
+    padding: 0;
+    border-top: 1px solid #5D5D5D;
+    position: relative;
+    margin-top: 10vh;
+}
+
+section.clientsFavFeature .section-title{
+    color: #fff;
+    font-size: 63px;
+    left: 12%;
+}
+
+section.clientsFavFeature img{
+        width: 100%;
+        transform: translateY(-300px);
+}

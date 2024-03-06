@@ -1,0 +1,72 @@
+section.FAQ {
+    padding: 5% 5% 10%;
+}
+
+.FAQ-container {
+    max-width: 1400px;
+}
+
+.FAQ-container h4 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+
+.FAQ-container .collapse-item .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 21px;
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px #00000040;
+    cursor: pointer;
+    background: #2F2F2F;
+    position: relative;
+    z-index: 1;
+}
+
+.FAQ-container .collapse-item .collapse-header p {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+}
+
+.FAQ-container .collapse-item .collapse-header svg {
+    width: 23.63px;
+    height: 26.67px;
+    transform: rotateX(180deg);
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.FAQ-container .collapse-item .collapse-header.open svg {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.FAQ-container .collapse-item .collapse-body {
+    width: 100%;
+    background-color: var(--Blue300);
+    transform: translateY(-22px);
+    background: #2F2F2F;
+    border-radius: 0 0 21px 21px;
+    padding: 4rem 3rem 2.5rem 3rem;
+    display: none;
+}
+
+.FAQ-container .collapse-item .collapse-body p {
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}

@@ -1,0 +1,297 @@
+/* alerts section style  */
+section.alerts{
+    padding: 10%;
+    border-top: 1px solid #5D5D5D;
+    position: relative;
+    margin-top: 10vh;
+}
+
+/* title of the section style  */
+.section-title{
+    position: absolute;
+    top: 0;
+    left: 12%;
+    padding: 0 2rem;
+    transform: translateY(-50%);
+    font-size: 63px;
+    line-height: normal;
+    color: var(--Blue300);
+    font-weight: 800;
+    background-color: #202020;
+    text-shadow: 0px 10px 10px #000;
+}
+
+.alerts-container{
+    max-width: 1200px;
+}
+
+
+/* card in alert section style and add some animation ^_^ */
+.alert-card{
+    height: 342px;
+    padding: 4rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(30px);
+    background: linear-gradient(90deg, rgba(83,172,255,0.1) 0%, rgba(35,53,70,0.1) 100%);
+    border-radius: 35.74px;
+    position: relative;
+    border: 1px solid #5252527a;
+    transition: all 0.4s ;
+    box-shadow: 1px 0px 5px 0px var(--Blue300);
+}
+
+/* card in alert section style when hover */
+
+.alert-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 26px -7px #000;
+}
+
+
+.alert-card .content{
+    width: max-content;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ;
+}
+
+.alert-card:hover .content{
+    opacity: 1;
+}
+
+.alert-card .content p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.animat-text{
+    width: 300px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alert-card .animat-text img:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+}
+
+.alert-card:hover .animat-text img:nth-child(1){
+    opacity: 0;
+}
+
+.alert-card .animat-text.realtime img:nth-child(2){
+    position: absolute;
+    left: 111px;
+    width: 217px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.alert-card .animat-text.realtime img:nth-child(3){
+    position: absolute;
+    top: 50%;
+    left: 188px;
+    width: 217px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+
+.alert-card:hover .animat-text.realtime img:nth-child(2){
+    transform: translate(-85%, -135%);
+    opacity: 1;
+}
+
+.alert-card:hover .animat-text.realtime img:nth-child(3){
+    transform: translate(-20%, 35%);
+    opacity: 1;
+}
+
+
+
+
+.alert-card .animat-text.filter img:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 137px;
+    width: 165px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+
+}
+.alert-card .animat-text.filter img:nth-child(3){
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+    left: 162px;
+    width: 165px;
+}
+
+.alert-card:hover .animat-text.filter img:nth-child(2){
+    transform: translate(-120%, -140%);
+    opacity: 1;
+}
+
+.alert-card:hover .animat-text.filter img:nth-child(3){
+    transform: translate(20%, 30%);
+    opacity: 1;
+}
+
+
+
+.alert-card .animat-text.special img:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 180px;
+    width: 190px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+
+}
+.alert-card .animat-text.special img:nth-child(3){
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+    left: 180px;
+    width: 190px;
+}
+
+.alert-card:hover .animat-text.special img:nth-child(2){
+    transform: translate(-130%, -140%);
+    opacity: 1;
+}
+
+.alert-card:hover .animat-text.special img:nth-child(3){
+    transform: translate(0%, 30%);
+    opacity: 1;
+}
+
+
+
+
+.alert-card .animat-text.scanner img:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 110px;
+    width: 218px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+
+}
+.alert-card .animat-text.scanner img:nth-child(3){
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+    left: 190px;
+    width: 222px;
+}
+
+.alert-card:hover .animat-text.scanner img:nth-child(2){
+    transform: translate(-85%, -140%);
+    opacity: 1;
+}
+
+.alert-card:hover .animat-text.scanner img:nth-child(3){
+    transform: translate(-15%, 35%);
+    opacity: 1;
+}
+
+
+/* end of card in alert section style */
+
+
+
+
+
+/* responsive mobile view  */
+
+@media only screen and (max-width: 600px) {
+
+    .alert-card {
+        height: 300px;
+    }
+
+    .animat-text {
+        width: 170px;
+    }
+
+    .alert-card .animat-text.realtime img:nth-child(2) {
+        left: 62px  ;
+        width: 125px;
+    }
+    .alert-card .animat-text.realtime img:nth-child(3) {
+        left: 107px ;
+        width: 125px ;
+    }
+    .alert-card:hover .animat-text.realtime img:nth-child(2) {
+        transform: translate(-100%, -190%) ;
+    }
+    .alert-card:hover .animat-text.realtime img:nth-child(3) {
+        transform: translate(0%, 90%) ;
+    }
+
+    .alert-card .animat-text.filter img:nth-child(2) {
+        left: 72px ;
+        width: 145px ;
+    }
+    .alert-card .animat-text.filter img:nth-child(3) {
+        left: 96px ;
+        width: 149px ;
+    }
+    .alert-card:hover .animat-text.filter img:nth-child(2) {
+        transform: translate(-90%, -140%) ;
+    }
+    .alert-card:hover .animat-text.filter img:nth-child(3) {
+        transform: translate(-10%, 35%) ;
+    }
+
+    .alert-card .animat-text.special img:nth-child(2) {
+        left: 62px  ;
+        width: 125px;
+    }
+    .alert-card .animat-text.special img:nth-child(3) {
+        left: 107px ;
+        width: 125px ;
+    }
+    .alert-card:hover .animat-text.special img:nth-child(2) {
+        transform: translate(-100%, -190%) ;
+    }
+    .alert-card:hover .animat-text.special img:nth-child(3) {
+        transform: translate(0%, 90%) ;
+    }
+
+    .alert-card .animat-text.scanner img:nth-child(2) {
+        left: 62px  ;
+        width: 125px;
+    }
+    .alert-card .animat-text.scanner img:nth-child(3) {
+        left: 107px ;
+        width: 125px ;
+    }
+    .alert-card:hover .animat-text.scanner img:nth-child(2) {
+        transform: translate(-100%, -190%) ;
+    }
+    .alert-card:hover .animat-text.scanner img:nth-child(3) {
+        transform: translate(0%, 90%) ;
+    }
+}
+
