@@ -1,0 +1,86 @@
+.quezzws-wrapper section.hero{
+    background-image: unset;
+}
+.quezzws-wrapper{
+    background: linear-gradient(0deg, rgba(83, 172, 255, 0.3) 0%, rgba(32, 32, 32, 0.5) 100%);
+    padding: 0 0 5% 0;
+}
+.search-input{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 39px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: #ffffff38;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 0 2rem;
+        outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.input-box svg{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.search-input button{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0em;
+    height: 39px;
+    width: 100px;
+    background: var(--Blue300);
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.check-Filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.check-Filter label{
+    padding: 0.3rem 1rem;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s;
+}
+.check-Filter input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+}
+.check-Filter label:has(> input[type="radio"]:checked) {
+    border: 1px solid var(--Blue300);
+    color: #fff;
+    background-color: var(--Blue300);
+}

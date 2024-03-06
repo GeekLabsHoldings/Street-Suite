@@ -3,6 +3,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: transparent;
+    padding: 1.5rem;
 }
 nav .logo{
     width: 100px;
@@ -23,8 +24,11 @@ nav ul li a{
   transition: all 0.3s;
 
 }
-nav ul li a:hover{
+nav ul li a:hover , nav .navLinks li a.active:hover{
     background-color: var(--Blue300);
+}
+nav .navLinks li a.active{
+    background-color: #53acff9c;
 }
 
 nav .AuthButtons{
