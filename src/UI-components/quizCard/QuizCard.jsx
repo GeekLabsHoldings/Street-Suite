@@ -3,6 +3,7 @@ import "./QuizCard.css"
 
 import quizCardImg from "../../assets/quiz-card-img.png"
 import hotStripeImg from "../../assets/hot strip.png"
+import { Link } from 'react-router-dom'
 
 const QuizCard = () => {
   return (
@@ -43,7 +44,7 @@ const QuizCard = () => {
               </p>
             </div>
           </div>
-          <button>Take Quiz</button>
+          <Link to="quiz" >Take Quiz</Link>
         </div>
       </div>
     </div>

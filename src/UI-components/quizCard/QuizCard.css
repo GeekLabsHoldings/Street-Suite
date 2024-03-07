@@ -55,7 +55,7 @@
     gap: 0.5rem;
     color: #8A8E91;
 }
-.card-content button{
+.card-content a{
     letter-spacing: 0em;
     text-align: left;
     padding: 10px 38px 10px 38px;
