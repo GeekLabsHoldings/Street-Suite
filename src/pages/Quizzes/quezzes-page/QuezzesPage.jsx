@@ -1,6 +1,6 @@
 import React from 'react'
 import "./QuezzesPage.css"
-import Hero from '../../../components/Hero/Hero'
+import Hero from '../../../components/home-page-sections/Hero/Hero'
 import { Outlet } from 'react-router-dom'
 
 const QuezzesPage = () => {

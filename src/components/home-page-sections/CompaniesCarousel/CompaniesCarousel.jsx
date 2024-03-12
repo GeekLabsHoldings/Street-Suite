@@ -1,8 +1,8 @@
 import React from 'react'
 import "./CompaniesCarousel.css"
 import Slider from "react-slick";
-import img1 from "../../assets/companyLogo1.png"
-import img2 from "../../assets/companyLogo2.png"
+import img1 from "../../../assets/companyLogo1.png"
+import img2 from "../../../assets/companyLogo2.png"
 
 const CompaniesCarousel = () => {
 

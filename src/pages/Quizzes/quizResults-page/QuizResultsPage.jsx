@@ -4,17 +4,21 @@ import quizImg from "../../../assets/quiz-img.png"
 
 const QuizResultsPage = () => {
   return (
+
+// quiz results like duration , score and current answer
+
     <div className='quiz-wrapper'>
-        <div className="gradient-border">
+      <div className="gradient-border">
         <div className="quiz-view gap-12">
 
           <div className="quiz-questions">
-            <h4>Day Trading, Swing Trading, Position Trading: 
-Which Style Suits You Best?</h4>
+            <h4>Day Trading, Swing Trading, Position Trading:
+              Which Style Suits You Best?</h4>
             <div className="quiz-question-view mb-6">
               <img src={quizImg} alt="" />
             </div>
           </div>
+
           <div className="quiz-score-sheet flex flex-col space-y-6 h-full items-center">
             <div className="gradient-border w-full">
               <div className="card">
@@ -38,15 +42,17 @@ Which Style Suits You Best?</h4>
           </div>
         </div>
       </div>
-      
+
+
+      {/* more quizzes in quiz results page*/}
       <div className="more-quizzes space-y-6">
         <h6>More Quizzes</h6>
-        <QuizCard/>
-        <QuizCard/>
-        <QuizCard/>
-        <QuizCard/>
-        <QuizCard/>
-        <QuizCard/>
+        <QuizCard />
+        <QuizCard />
+        <QuizCard />
+        <QuizCard />
+        <QuizCard />
+        <QuizCard />
       </div>
     </div>
   )

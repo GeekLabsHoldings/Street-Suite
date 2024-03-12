@@ -5,6 +5,7 @@ const QuizzesFiltersPage = () => {
     return (
         <>
 
+            {/* search input to search for quizzes */}
             <div className="search-input">
                 <div className="input-box">
                     <input type="text" placeholder='Search by...' />
@@ -16,6 +17,8 @@ const QuizzesFiltersPage = () => {
                 <button>Search</button>
             </div>
 
+
+            {/* filter to show more specific quizzes */}
             <div className="check-Filter">
                 <label htmlFor="Latest"> Latest
                     <input type="radio" id='Latest' name='check-Filter' />
@@ -40,6 +43,8 @@ const QuizzesFiltersPage = () => {
                 </label>
             </div>
 
+
+            {/* all quizzes */}
             <div className="quezzes-cards space-y-6">
                 <QuizCard />
                 <QuizCard />

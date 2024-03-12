@@ -3,7 +3,7 @@ section.trading{
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
-    background-image: url("../../assets/tradingBgShadow.png");
+    background-image: url("../../../assets/tradingBgShadow.png");
     background-position: center left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -46,7 +46,7 @@ section.trading{
 .private-companies-box{
     padding: 2rem;
     box-shadow: inset 0px 15px 50px -3px #000000b9;
-    background-image: url("../../assets/privat\ company\ bg.png");
+    background-image: url("../../../assets/privat\ company\ bg.png");
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ClientsFavFeature.css"
 
-import clientReviewsImg from "../../assets/clientReviewsImg.png"
+import clientReviewsImg from "../../../assets/clientReviewsImg.png"
 
 const ClientsFavFeature = () => {
   return (

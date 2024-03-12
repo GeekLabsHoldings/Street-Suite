@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Testmonial.css"
-import avatar1 from "../../assets/avatar.png"
-import avatar2 from "../../assets/avatar2.png"
+import avatar1 from "../../../assets/avatar.png"
+import avatar2 from "../../../assets/avatar2.png"
 
 const Testmonial = () => {
     return (

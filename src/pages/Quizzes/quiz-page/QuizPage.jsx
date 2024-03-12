@@ -12,6 +12,7 @@ function QuizPage() {
   let [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  
   function closeModal() {
     setIsOpen(false);
     navigate("/quezzes/quiz-result")
@@ -80,6 +81,7 @@ function QuizPage() {
         </div>
       </div>
 
+      {/* more quizzes in quiz page */}
       <div className="more-quizzes space-y-6">
         <h6>More Quizzes</h6>
         <QuizCard />
@@ -92,7 +94,7 @@ function QuizPage() {
 
 
 
-
+        {/* add email modal in quiz page to show resalt of quiz */}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <div className="fixed inset-0 backdrop-blur-sm" aria-hidden="true" />

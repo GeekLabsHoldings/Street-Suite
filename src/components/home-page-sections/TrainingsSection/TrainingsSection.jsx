@@ -1,6 +1,6 @@
 import React from 'react'
 import "./TrainingsSection.css"
-import trainingsImg from "../../assets/tranings-img.png"
+import trainingsImg from "../../../assets/tranings-img.png"
 
 const TrainingsSection = () => {
     return (

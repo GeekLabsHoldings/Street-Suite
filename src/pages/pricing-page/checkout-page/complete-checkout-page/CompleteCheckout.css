@@ -1,0 +1,99 @@
+.CompleteCheckout-wrapper{
+    background: linear-gradient(180deg, rgba(32, 32, 32, 1) 5%, rgba(83, 172, 255, 0.3) 100%);
+}
+
+
+.CompleteCheckout-container .CompleteCheckout-message h4{
+    font-family: Poppins;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: 0px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.CompleteCheckout-container .CompleteCheckout-message h4 + p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card{
+    border-radius: 20px;
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card::before{
+    transform: translate(-50%,-50%) rotate(180deg);
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card:hover::before{
+    transform: translate(-50%,-50%) rotate(360deg);
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body{
+    padding: 2rem 2rem 2.5rem;
+    background: linear-gradient(54deg, rgba(38, 58, 75, 1) 0%, rgba(51, 85, 117, 1) 100%);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body h6{
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding: 1rem 1.5rem 2.5rem;
+    border-bottom: 1px solid #fff;
+    width: 80%;
+    margin: auto;
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 1rem;
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem;
+    border-bottom: 1px solid #fff;
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price h5{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: rgba(204, 204, 204, 1);
+}
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p > span{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+}
+
+.CompleteCheckout-container .CompleteCheckout-img img{
+    /* margin-top: 7rem; */
+    transform: translateX(-50px) scale(1.15);
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Plans.css"
+import { Link } from 'react-router-dom'
 
 const Plans = () => {
     return (
@@ -25,7 +26,8 @@ const Plans = () => {
                             <p><span>$0</span> / month</p>
                         </div>
                         <div className="plane-action">
-                            <button>Choose</button>
+                                            <Link  to="/checkout">Choose</Link>
+
                         </div>
                     </div>
                 </div>
@@ -48,7 +50,8 @@ const Plans = () => {
                                 <p><span>$0</span> / month</p>
                             </div>
                             <div className="plane-action">
-                                <button>Choose</button>
+                                                <Link  to="/checkout">Choose</Link>
+
                             </div>
                         </div>
                     </div>
@@ -72,7 +75,8 @@ const Plans = () => {
                             <p><span>$0</span> / month</p>
                         </div>
                         <div className="plane-action">
-                            <button>Choose</button>
+                                            <Link  to="/checkout">Choose</Link>
+
                         </div>
                     </div>
                 </div>

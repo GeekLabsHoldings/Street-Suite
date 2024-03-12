@@ -3,7 +3,7 @@ section.plans{
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
-    background-image: url("../../assets/PlansBgShadow.png");
+    background-image: url("../../../assets/PlansBgShadow.png");
     background-position: right top;
     background-size: contain;
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@ text-align: left;
 color: #fff;
 }
 
-.plane-action button{
+.plane-action a{
     position: relative;
     width: 115px;
     height: 40px;
@@ -150,14 +150,14 @@ color: #fff;
 
 
 
-.plane-action button:hover{
+.plane-action a:hover{
     box-shadow: 1px 1px 2.6px 0px #bbbbbb;
 }
-.recommended-plane .plane-action button{
+.recommended-plane .plane-action a{
     background: var(--Blue300);
     box-shadow:none;
 }
-.recommended-plane .plane-action button:hover{
+.recommended-plane .plane-action a:hover{
     background: var(--Blue300);
     box-shadow: inset 1px 1px 2.6px 0px rgba(187, 187, 187, 0.205);
 }

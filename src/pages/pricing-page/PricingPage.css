@@ -1,0 +1,186 @@
+.pricing-wrapper{
+    background: radial-gradient(circle, rgba(83,172,255,0.6138830532212884) 0%, rgba(37,41,45,1) 80%);
+
+}
+.pricing-wrapper section.hero{
+    background-image: none;
+}
+
+.pricing-container{
+    max-width: 1400px;
+}
+
+.pricing-container .plane-pricing .plane-points li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.pricing-container .plane-pricing .plane-points li::before{
+    content: none;
+}
+.pricing-container .plane-pricing .plane-points li svg{
+    margin-right: 1rem;
+}
+.pricing-container .plane-pricing .plane-points li.available .false{
+    display: none;
+}
+.pricing-container .plane-pricing .plane-points li.not-available .true{
+    display: none;
+}
+.pricing-container .plane-pricing .plane-points li.not-available{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-container .plane-pricing.popular img{
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    z-index: 9;
+}
+.pricing-container .plane-pricing{
+    overflow: unset;
+    transform: translate(0);
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.pricing-container .plane-pricing.popular{
+    background: linear-gradient(153deg, rgba(51,105,156,0.7539390756302521) 0%, rgba(37,41,45,0.6138830532212884) 100%);
+    
+    }
+.pricing-container .plane-pricing::before{
+    content: unset;
+}
+.pricing-container .gradient-border{
+    border-radius: 50px;
+    padding: 1px;
+    background: linear-gradient(100deg, rgba(255,255,255,0.8715861344537815) 0%, rgba(37,41,45,0) 34%);
+}
+.pricing-container .gradient-border.popular{
+background: linear-gradient(90deg, rgba(71, 153, 230) 0%, rgba(37, 41, 45, 0) 100%);
+
+}
+.pricing-container .gradient-border.popular .plane-body{
+background: linear-gradient(153deg, rgba(73,143,209,0.5063200280112045) 0%, rgba(37,41,45,0.03461134453781514) 56%, rgba(71,136,198,0.5287289915966386) 100%);
+
+}
+.pricing-container .plane-pricing .line{
+    background-color: #fff;
+}
+
+.pricing-container .plane-pricing .plane-price p{
+    color: #fff;
+}
+
+.setting-ourselves h5{
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.setting-ourselves p{
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.feature-comparison {
+    padding: 5% 0;
+}
+.feature-comparison  .ourFeature-card {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 1px;
+}
+
+.feature-comparison  .ourFeature-card::before{
+    content: "";
+    background-image: conic-gradient(transparent 180deg, var(--Blue300) 270deg, transparent 360deg);
+    width: 180%;
+    height: 180%;
+    transform: translate(-50%,-50%) rotate(0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transition: all 0.7s;
+}
+.feature-comparison  .ourFeature-card:hover::before{
+    transform: translate(-50%,-50%) rotate(180deg);
+}
+
+.feature-comparison .ourFeature-card .card-content{
+    background: #1e3d5a;
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+    display: block;
+}
+
+.feature-comparison  .ourFeature-card .card-body{
+    background: linear-gradient(153deg, rgb(66 119 171 / 62%) 0%, rgb(44 50 57 / 11%) 40% 60%, rgb(66 119 171 / 48%) 100%);
+    border-radius: 10px;
+    padding: 0 2rem;
+}
+
+.feature-comparison  .ourFeature-card .card-body .card-header{
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-bottom: 1px solid #fff;
+}
+.feature-comparison  .ourFeature-card .card-body .card-header img{
+    width: 110px;
+}
+.feature-comparison  .ourFeature-card .card-body .card-header p{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+}
+
+.feature-comparison  .ourFeature-card .card-body .features-list{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.feature-comparison  .ourFeature-card .card-body .features-list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.feature-comparison  .ourFeature-card .card-body .features-list ul > li {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+}
+
+.feature-comparison  .ourFeature-card .card-body .features-list ul > li > svg{
+    width: 16px;
+    height: 16px;
+}
+
+.feature-comparison .line{
+    height: 20rem;
+    width: 1px;
+    background: #fff;
+}

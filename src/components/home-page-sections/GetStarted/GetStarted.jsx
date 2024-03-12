@@ -1,7 +1,7 @@
 import React from 'react'
 import "./GetStarted.css"
 
-import getStartedImg from "../../assets/getStartedImg.png"
+import getStartedImg from "../../../assets/getStartedImg.png"
 
 const GetStarted = () => {
     return (

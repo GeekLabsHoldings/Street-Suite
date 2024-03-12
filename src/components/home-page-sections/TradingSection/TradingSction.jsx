@@ -1,8 +1,8 @@
 import React from 'react'
 import "./TradingSction.css"
-import boxBg from "../../assets/spaceXbg.png"
-import tradingImg from "../../assets/trading-img.png"
-import tradeCompanyLogo from "../../assets/tradeCompanyLogo.png"
+import boxBg from "../../../assets/spaceXbg.png"
+import tradingImg from "../../../assets/trading-img.png"
+import tradeCompanyLogo from "../../../assets/tradeCompanyLogo.png"
 
 const TradingSction = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./AcrossGlobal.css"
-import AcrossGlobalImg from "../../assets/Across the globe.png"
+import AcrossGlobalImg from "../../../assets/Across the globe.png"
 
 const AcrossGlobal = () => {
   return (

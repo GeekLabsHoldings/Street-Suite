@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./LeaderBoardPage.css"
-import Hero from '../../components/Hero/Hero'
+import Hero from '../../components/home-page-sections/Hero/Hero'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -80,11 +80,14 @@ const LeaderBoardPage = () => {
         <div className="ranking-container w-3/5">
           <div className="ranking-tabs">
             <ul class="tabs-nav grid grid-cols-3 ">
+              {/* taps that show the appropriate content in leaderBoard page */}
               <li><a href="#tab-1" className='Biggest-Winners'>Biggest Winners</a></li>
               <li><a href="#tab-2" className='Biggest-Losers'>Biggest Losers</a></li>
               <li><a href="#tab-3" className='Ranking'>Ranking</a></li>
             </ul>
             <div class="tabs-stage tabs-content">
+
+              {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
               <div id="tab-1" className='tab'>
                 <div className="collapse-item renking-1 w-full mb-6">
                   <div className="collapse-header">
@@ -203,6 +206,8 @@ const LeaderBoardPage = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Biggest losers content that show when user click on Biggest losers tab in leaderBoard page */}
               <div id="tab-2" className='tab'>
 
                 <div className="collapse-item renking-1 w-full mb-6">
@@ -322,6 +327,8 @@ const LeaderBoardPage = () => {
                   </div>
                 </div>
               </div>
+
+              {/* ranking content that show when user click on ranking tab in leaderBoard page */}
               <div id="tab-3" className='tab Ranking-tap'>
                 <div className="collapse-item renking-1 w-full mb-6">
                   <div className="collapse-header">
@@ -691,6 +698,10 @@ const LeaderBoardPage = () => {
 
           </div>
         </div>
+
+
+
+        {/* trader types on the side in leaderboard page */}
         <div className="side-trader w-96">
           <div className="trader-types w-full mb-6">
             <h6>Trader Types</h6>
@@ -725,6 +736,8 @@ const LeaderBoardPage = () => {
               </label>
             </div>
 
+
+
             <div className="leaderBoard-guid">
               <h5>Leader Board</h5>
               <p>The leaderboard shows top traders based on their performance</p>
@@ -742,79 +755,86 @@ const LeaderBoardPage = () => {
               </div>
             </div>
 
-          </div>
-          <div className="featured-stories w-full mb-6 space-y-4">
-            <h5>Featured stories</h5>
 
-            <div className="story">
-              <div className="avatar flex flex-row gap-4 items-center">
-                <img src={avatar1} alt="" />
-                <div className="user-info flex flex-col">
-                  <h6>Alex Horren</h6>
-                  <p>@alexhorennnn</p>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-              <a href="">Read more</a>
-            </div>
-            <div className="story">
-              <div className="avatar flex flex-row gap-4 items-center">
-                <img src={avatar1} alt="" />
-                <div className="user-info flex flex-col">
-                  <h6>Alex Horren</h6>
-                  <p>@alexhorennnn</p>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-              <a href="">Read more</a>
-            </div>
-            <div className="story">
-              <div className="avatar flex flex-row gap-4 items-center">
-                <img src={avatar1} alt="" />
-                <div className="user-info flex flex-col">
-                  <h6>Alex Horren</h6>
-                  <p>@alexhorennnn</p>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-              <a href="">Read more</a>
-            </div>
-            <div className="story">
-              <div className="avatar flex flex-row gap-4 items-center">
-                <img src={avatar1} alt="" />
-                <div className="user-info flex flex-col">
-                  <h6>Alex Horren</h6>
-                  <p>@alexhorennnn</p>
-                </div>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-          <div className="ConnectYourBroker w-full mb-6">
-            <h6>Connect your broker to see yourself on our leaderboard </h6>
 
-            <div className="brokers flex justify-between items-center gap-3 my-6">
-              <div className="gradient-border">
-                <div className="broker-box" onClick={openModal}>
-                  <img src={brokerImg1} alt="" />
-                </div>
-              </div>
-              <div className="gradient-border">
-                <div className="broker-box" onClick={openModal}>
-                  <img src={brokerImg2} alt="" />
-                </div>
-              </div>
-              <div className="gradient-border">
-                <div className="broker-box" onClick={openModal}>
-                  <img src={brokerImg3} alt="" />
-                </div>
-              </div>
-            </div>
-
-            <p>Can’t find your broker? <a href="">Contact Us</a>.</p>
           </div>
-        </div>
+
+              {/* featured-stories section in leaderboard */}
+              <div className="featured-stories w-full mb-6 space-y-4">
+                <h5>Featured stories</h5>
+
+                <div className="story">
+                  <div className="avatar flex flex-row gap-4 items-center">
+                    <img src={avatar1} alt="" />
+                    <div className="user-info flex flex-col">
+                      <h6>Alex Horren</h6>
+                      <p>@alexhorennnn</p>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
+                  <a href="">Read more</a>
+                </div>
+                <div className="story">
+                  <div className="avatar flex flex-row gap-4 items-center">
+                    <img src={avatar1} alt="" />
+                    <div className="user-info flex flex-col">
+                      <h6>Alex Horren</h6>
+                      <p>@alexhorennnn</p>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
+                  <a href="">Read more</a>
+                </div>
+                <div className="story">
+                  <div className="avatar flex flex-row gap-4 items-center">
+                    <img src={avatar1} alt="" />
+                    <div className="user-info flex flex-col">
+                      <h6>Alex Horren</h6>
+                      <p>@alexhorennnn</p>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
+                  <a href="">Read more</a>
+                </div>
+                <div className="story">
+                  <div className="avatar flex flex-row gap-4 items-center">
+                    <img src={avatar1} alt="" />
+                    <div className="user-info flex flex-col">
+                      <h6>Alex Horren</h6>
+                      <p>@alexhorennnn</p>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
+                  <a href="">Read more</a>
+                </div>
+              </div>
+
+              {/* connect your broker section in leaderboard */}
+              <div className="ConnectYourBroker w-full mb-6">
+                <h6>Connect your broker to see yourself on our leaderboard </h6>
+
+                <div className="brokers flex justify-between items-center gap-3 my-6">
+                  <div className="gradient-border">
+                    <div className="broker-box" onClick={openModal}>
+                      <img src={brokerImg1} alt="" />
+                    </div>
+                  </div>
+                  <div className="gradient-border">
+                    <div className="broker-box" onClick={openModal}>
+                      <img src={brokerImg2} alt="" />
+                    </div>
+                  </div>
+                  <div className="gradient-border">
+                    <div className="broker-box" onClick={openModal}>
+                      <img src={brokerImg3} alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <p>Can’t find your broker? <a href="">Contact Us</a>.</p>
+              </div>
+
+          </div>
 
       </div>
 
@@ -822,7 +842,7 @@ const LeaderBoardPage = () => {
 
 
 
-
+      {/*  connect to your broker modal  */}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <div className="fixed inset-0 backdrop-blur-sm" aria-hidden="true" />

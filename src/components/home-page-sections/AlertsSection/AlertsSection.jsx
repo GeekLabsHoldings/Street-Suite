@@ -2,24 +2,24 @@ import React from 'react'
 import "./AlertsSection.css"
 
 // realtime card images that used in animation
-import RealTimeWhite from '../../assets/realtime1.png'
-import RealTimeAnim1 from '../../assets/realtime2.png'
-import RealTimeAnim2 from '../../assets/realtime3.png'
+import RealTimeWhite from '../../../assets/realtime1.png'
+import RealTimeAnim1 from '../../../assets/realtime2.png'
+import RealTimeAnim2 from '../../../assets/realtime3.png'
 
 // filter card images that used in animation
-import filterWhite from '../../assets/filter1.png'
-import filterAnim1 from '../../assets/filter2.png'
-import filterAnim2 from '../../assets/filter3.png'
+import filterWhite from '../../../assets/filter1.png'
+import filterAnim1 from '../../../assets/filter2.png'
+import filterAnim2 from '../../../assets/filter3.png'
 
 // special card images that used in animation
-import specialWhite from '../../assets/special1.png'
-import specialAnim1 from '../../assets/special2.png'
-import specialAnim2 from '../../assets/special3.png'
+import specialWhite from '../../../assets/special1.png'
+import specialAnim1 from '../../../assets/special2.png'
+import specialAnim2 from '../../../assets/special3.png'
 
 // scanner card images that used in animation
-import scannerWhite from '../../assets/scanner1.png'
-import scannerAnim1 from '../../assets/scanner2.png'
-import scannerAnim2 from '../../assets/scanner3.png'
+import scannerWhite from '../../../assets/scanner1.png'
+import scannerAnim1 from '../../../assets/scanner2.png'
+import scannerAnim2 from '../../../assets/scanner3.png'
 
 
 const AlertsSection = () => {
