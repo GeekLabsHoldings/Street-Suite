@@ -1,0 +1,286 @@
+.APIPage-wrapper {
+    background-image: url("../..//assets/electric-bg.png");
+}
+
+.APIPage-wrapper .shadow-bg {
+    background: radial-gradient(circle, rgba(83, 172, 255, 0.8155637254901961) 0%, rgba(34, 36, 39, 0) 75%);
+}
+
+.APIPage-wrapper section.hero {
+    padding: 25vh 5% 5vh;
+    align-items: flex-start;
+    background-image: none;
+}
+
+.APIPage-wrapper section.hero>h1 {
+    font-size: 63px;
+    line-height: 94.5px;
+}
+
+.APIPage-wrapper section.hero>* {
+    text-align: left;
+}
+
+.APIPage-wrapper section.hero>p {
+
+    font-size: 16px;
+    margin: 1rem 0;
+    text-align: left;
+}
+
+
+.APIPage-wrapper .data-points-section h3 {
+    font-family: Poppins;
+    font-size: 63px;
+    font-weight: 700;
+    line-height: 95px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0px 10px 15px #000;
+
+}
+
+.APIPage-wrapper .data-points-section p {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 5rem;
+}
+
+.APIPage-wrapper .data-points-section .data-points .data-point-card {
+    box-shadow: 0px 12.255552291870117px 19.258724212646484px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.APIPage-wrapper .data-points-section .data-points .data-point-card.border-animate::before {
+    background: conic-gradient(transparent 199deg, #ffffffbb 240deg, transparent 360deg);
+    width: 250%;
+    height: 300%;
+    transform: translate(-50%, -50%) rotate(50deg);
+}
+
+.APIPage-wrapper .data-points-section .data-points .data-point-card.border-animate:hover::before {
+    transform: translate(-50%, -50%) rotate(230deg);
+}
+
+.APIPage-wrapper .data-points-section .data-points .data-point-card .card-body {
+    padding: 3rem;
+    background: linear-gradient(80deg, rgb(35, 53, 68) 0%, rgb(38, 64, 88) 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.APIPage-wrapper .data-points-section .data-points .data-point-card .card-body img {
+    width: 50px;
+}
+
+.APIPage-wrapper .data-points-section .data-points .data-point-card .card-body h6 {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+}
+
+.analytics-accessible-section h3 {
+    font-family: Poppins;
+    font-size: 63px;
+    font-weight: 700;
+    line-height: 95px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0px 10px 15px #000;
+
+}
+
+.analytics-accessible-section>p {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 5rem;
+
+}
+
+.analytics-accessible-card {
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.analytics-accessible-card.border-animate::before {
+    background-image: conic-gradient(transparent 0deg, #ffffffbb 80deg, transparent 170deg, #ffffffbb 220deg, transparent 360deg);
+    width: 200%;
+    height: 300%;
+}
+
+.analytics-accessible-card .card-body {
+    padding: 4rem 3rem;
+    background: linear-gradient(0deg, rgb(35, 53, 68) 0%, rgb(91, 144, 194) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+
+.analytics-accessible-card .card-body .analytics-list {
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    border-right: 1px solid #fff;
+
+}
+
+.analytics-accessible-card .card-body .analytics-list li {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.analytics-accessible-card .card-body .analytics-list li::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateX(-50);
+}
+
+.analytics-accessible-card .card-body .price {
+    padding: 2rem;
+}
+
+.analytics-accessible-card .card-body .price span {
+    font-family: Poppins;
+    font-size: 63px;
+    font-weight: 700;
+    line-height: 95px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+.analytics-accessible-card .card-body .price p {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(204, 204, 204, 1);
+
+}
+
+
+.clients-works-with-us h3 {
+    font-family: Poppins;
+    font-size: 63px;
+    font-weight: 700;
+    line-height: 95px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0px 10px 15px #000;
+    margin-bottom: 5rem;
+}
+
+.clients-works-with-us .companiesCarousel {
+    background: rgba(37, 37, 37, 0.7);
+    backdrop-filter: blur(10px);
+
+}
+
+.easy-to-use {
+    padding-bottom: 10%;
+}
+
+.easy-to-use-card {
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+}
+
+.easy-to-use-card .card-body {
+    position: relative;
+    background: linear-gradient(0deg, rgb(25, 38, 49) 0%, rgb(32, 53, 63) 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.easy-to-use-card .card-body .api-code-card {
+    width: 60%;
+}
+
+.easy-to-use-card.border-animate::before, .api-code-card.border-animate::before {
+    content: "";
+    background-image: conic-gradient(transparent 180deg, #ffffffb6 240deg, #fff 280deg, transparent 360deg);
+}
+
+.api-code-card.border-animate:hover::before {
+    transform: translate(-50%, -50%);
+}
+
+.easy-to-use-content h5 {
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-shadow: 0px 10px 15px #000;
+    margin-bottom: 2rem;
+}
+
+.api-code-card {
+    border-radius: 20px;
+    height: 100%;
+}
+
+.api-code-card .card-content {
+    position: relative;
+    border-radius: 20px;
+    background-color: #202020;
+    padding: 1rem;
+}
+
+.api-code-card .card-content p {
+    color: var(--Blue300);
+}
+
+.easy-to-use-content button {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.easy-to-use-content button:hover {
+    background: var(--Blue300);
+    border: 1px solid var(--Blue300);
+}

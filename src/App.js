@@ -16,6 +16,8 @@ import QuizzesFiltersPage from './pages/Quizzes/quizzesFilters-page/QuizzesFilte
 import QuizResultsPage from './pages/Quizzes/quizResults-page/QuizResultsPage';
 import CheckOutPage from './pages/pricing-page/checkout-page/CheckOutPage';
 import CompleteCheckout from './pages/pricing-page/checkout-page/complete-checkout-page/CompleteCheckout';
+import APIPage from './pages/API-page/APIPage';
+import AboutUsPage from './pages/AboutUs-page/AboutUsPage';
 
 function App() {
   return (
@@ -35,12 +37,16 @@ function App() {
                 <Route path="quiz" element={<QuizPage/>}/>
                 <Route path="quiz-result" element={<QuizResultsPage/>}/>
               </Route>
+
               <Route path='leaderboard'  element={<LeaderBoardPage />} />
               <Route path='faq'  element={<FaqPage />} />
               <Route path='pricing'  element={<PricingPage />} />
               <Route path='checkout' element={<CheckOutPage />} />
               <Route path='complete-checkout' element={<CompleteCheckout />} />
               <Route path='features'  element={<FeaturesPage />} />
+              <Route path='api'  element={<APIPage />} />
+              <Route path='about-us'  element={<AboutUsPage />} />
+
             </Route>
           </Routes>
 

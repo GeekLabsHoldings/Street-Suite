@@ -1,5 +1,5 @@
 footer{
-    background: #25252580;
+    background: #232323;
     padding-top: 5rem;
     position: relative;
 }
@@ -75,6 +75,11 @@ footer .footer-container .footer-links .links-col a{
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
+    transition: all 0.3s;
+}
+
+footer .footer-container .footer-links .links-col a:hover{
+    color: var(--Blue300);
 }
 
 footer .footer-container .footer-links .links-col ul li{
