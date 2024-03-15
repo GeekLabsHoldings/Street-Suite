@@ -18,6 +18,8 @@ import CheckOutPage from './pages/pricing-page/checkout-page/CheckOutPage';
 import CompleteCheckout from './pages/pricing-page/checkout-page/complete-checkout-page/CompleteCheckout';
 import APIPage from './pages/API-page/APIPage';
 import AboutUsPage from './pages/AboutUs-page/AboutUsPage';
+import SignupPage from './pages/signup/SignupPage';
+import ContactPage from './pages/ContactPage/ContactPage';
 
 function App() {
   return (
@@ -46,6 +48,10 @@ function App() {
               <Route path='features'  element={<FeaturesPage />} />
               <Route path='api'  element={<APIPage />} />
               <Route path='about-us'  element={<AboutUsPage />} />
+              <Route path='signup'  element={< SignupPage/>} />
+              <Route path='contactus'  element={<ContactPage />} />
+
+
 
             </Route>
           </Routes>

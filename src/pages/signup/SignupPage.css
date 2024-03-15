@@ -1,0 +1,77 @@
+
+
+.desc{
+    display: flex;
+    align-items: center;
+}
+.logoDiv{
+    margin-left:-2rem;
+}
+.content h3{
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  font-style: normal;
+}
+.content h3{
+    padding: 2rem 0;
+}
+
+.content p{
+    line-height: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.content h3{
+    line-height: 4rem;
+}
+.content span{
+    font-size: 40px;
+}
+.testCenter{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.inForm h3{
+    font-size: 33px;
+}
+
+.inForm p{
+    font-size: 19px;
+}
+.btnColor{
+    background-color: #53ACFF;
+    padding: 0.6rem 2rem;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    margin: 0.4rem 0;
+    transition: 0.5s;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    padding-top:4rem
+}
+.btnColor:hover{
+    background: rgb(13,1,1);
+    background: linear-gradient(4deg, rgba(13,1,1,0.5) 33%, rgba(83,172,255,0.3) 100%);
+}
+.formBGSignup{
+    background: rgba(35,53,70,1);
+    background: linear-gradient(265deg, rgb(23, 37, 49) 20%, rgb(48, 73, 97) 100%);
+}

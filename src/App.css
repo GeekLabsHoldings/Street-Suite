@@ -19,3 +19,72 @@
 body{
   color: #fff;
 }
+*{
+  padding: 0 ;
+  margin: 0 ;
+  box-sizing: border-box ;
+  color:#FFFFFF ;
+  font-family: "Poppins", sans-serif;
+
+}
+.Signuplayout{
+  background: rgb(32,32,32);
+  background: linear-gradient(190deg, rgba(32,32,32,1) 40%, rgba(47, 83, 117,1) 100%);
+  min-height: 100vh;
+}
+.Msglayout{
+  background: rgb(32,32,32);
+  background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
+  min-height: 100vh;
+}
+.highlight{
+  background-color: #53ACFF;
+  border-radius: 0.3rem;
+}
+.forBorder{
+  position:relative;
+  overflow: hidden;
+  padding: 2px;
+  border-radius: 0.9rem;
+  box-shadow: 0px 4px 100px 4px #00000093;
+}
+
+.forBorder::before{
+  content: "";
+  background-image: conic-gradient(transparent 0deg ,#53ACFF 120deg,transparent 220deg );
+  width: 250%;
+  height: 250%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(320deg);
+  box-sizing: border-box;
+  position: absolute;
+  transition:all 0.5s
+}
+.forBorder:hover::before{
+  transform:translate(-50%,-50%) rotate(0deg);
+}
+.labelfont{
+  font-size: 16px !important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#FFFFFF !important ;
+}
+.inForm{
+  display: flex;
+  justify-content: center;
+  margin:auto;
+}
+.formPart{
+  border-radius: 0.9rem;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+
+
