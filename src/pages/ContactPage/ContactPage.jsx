@@ -9,7 +9,7 @@ return(
     <div className='Msglayout'>
         <div className='forBG row contactBg'>
 
-        <div className="col-lg-6" >
+        <div className="col-lg-6 col-sm-12 px-5" >
             <div className='col-lg-8 m-auto'>
                 <div className='descPart' >
                 <h5 className='highlight d-inline-block'>Say Hi To Street Suite</h5>
@@ -17,8 +17,8 @@ return(
                 <p>Want to get in touch? We’re all ears, Let us <br /> know how we can help!</p>
                 
                 <div className="btns col-lg-5">
-                <Button className='forbtn'>Yes, Lets Chat!</Button>
-                <Button className='forbtn '>I Prefer to leave a message</Button>
+                <Button className='forbtn py-2 sm:w-fit md:w-full'>Yes, Lets Chat!</Button>
+                <Button className='forbtn py-2 sm:w-fit md:w-full'>I Prefer to leave a message</Button>
                 </div>
                 
 
@@ -51,7 +51,7 @@ return(
             </div>
 
 
-            <div className="col-lg-6">
+            <div className="col-lg-6 sm:hidden">
                 <div className="col-lg-8 forBorder m-auto">
                     <div className="formPart formBGMsg">
                         <div className='inForm'>

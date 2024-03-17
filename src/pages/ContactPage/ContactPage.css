@@ -10,8 +10,10 @@
 }
 .forbtn{
     border-radius: 0.2rem;
-    padding: 0.6rem 0;
     background-color: #53ACFF;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.05rem;
 }
 .forbtn:hover{
     background: rgb(13,1,1);
@@ -50,11 +52,7 @@
     font-weight: 400;
     margin-bottom: 1.8rem;
 }
-.forbtn{
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.05rem;
-}
+
 .descPart h3{
     font-size: 2.06rem;
     line-height: 3.09rem;
