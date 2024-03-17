@@ -7,7 +7,7 @@ const ContactPage = ()=>{
     
 return(
     <div className='Msglayout'>
-        <div className='forBG row'>
+        <div className='forBG row contactBg'>
 
         <div className="col-lg-6" >
             <div className='col-lg-8 m-auto'>
@@ -21,6 +21,7 @@ return(
                 <Button className='forbtn '>I Prefer to leave a message</Button>
                 </div>
                 
+
                 <h3>Can’t Talk Right now?</h3>
                 <div style={{display:"flex",justifyContent:'space-between'}}>
                     <div>
@@ -48,6 +49,7 @@ return(
                 </div>
             </div>
             </div>
+
 
             <div className="col-lg-6">
                 <div className="col-lg-8 forBorder m-auto">

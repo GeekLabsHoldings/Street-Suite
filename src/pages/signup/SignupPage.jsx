@@ -17,8 +17,8 @@ const SignupPage = ()=>{
         </div>
 
         <div className=' col-lg-6'>
-          <div className='col-md-11 testCenter '>
-          <div className='row m-auto col-md-9 forBorder'>
+          <div className='row col-md-11'>
+          <div className=' m-auto col-md-9 forBorder'>
          <div className='formPart formBGSignup'>
             <div className='inForm'>
                 <div className='col-md-10 formcontent'>
@@ -30,6 +30,7 @@ const SignupPage = ()=>{
     
         </div>
         </div>
+
      
       </div>
 

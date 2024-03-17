@@ -20,6 +20,7 @@ import APIPage from './pages/API-page/APIPage';
 import AboutUsPage from './pages/AboutUs-page/AboutUsPage';
 import SignupPage from './pages/signup/SignupPage';
 import ContactPage from './pages/ContactPage/ContactPage';
+import ChangeLogs from './pages/ChangeLog-page/changeLog';
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
               <Route path='about-us'  element={<AboutUsPage />} />
               <Route path='signup'  element={< SignupPage/>} />
               <Route path='contactus'  element={<ContactPage />} />
+              <Route path='change-logs'  element={<ChangeLogs />} />
+
+              
 
 
 

@@ -1,10 +1,12 @@
 .forBG{
-    background-image: url("../../assets/background.svg");
     background-position:center ;
     background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+.contactBg{
+    background-image: url("../../assets/background.svg");
 }
 .forbtn{
     border-radius: 0.2rem;
