@@ -5,7 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
-const grey = {
+ const grey = {
     50: '#F3F6F9',
     100: '#E5EAF2',
     200: '#DAE2ED',
@@ -17,7 +17,7 @@ const grey = {
     800: '#303740',
     900: '#1C2025',
   };
-  const TextareaAutosize = styled(BaseTextareaAutosize)(
+ export const TextareaAutosize= styled(BaseTextareaAutosize)(
     ({ theme }) => `
     box-sizing: border-box;
     width: 100%;
@@ -46,7 +46,7 @@ const grey = {
     }
   `,
   );
-  const blue = {
+   const blue = {
     100: '#DAECFF',
     200: '#b6daff',
     400: '#53ACFF',
@@ -60,59 +60,59 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
         <p>{purpose}</p>
 
-<FormControl className="gap-4">
+      <FormControl className="gap-4">
 
-<div>
-<FormLabel required className='mb-1 labelfont'
-sx={{
-"& .MuiFormLabel-asterisk":{
-color:'white'
-}
-}}>{label1}</FormLabel>
-<Input
-name={label1}
-type="text"
-placeholder= {`Enter your ${label1}`}
-/>
-</div>
+      <div>
+      <FormLabel required className='mb-1 labelfont'
+      sx={{
+      "& .MuiFormLabel-asterisk":{
+      color:'white'
+      }
+      }}>{label1}</FormLabel>
+      <Input
+      name={label1}
+      type="text"
+      placeholder= {`Enter your ${label1}`}
+      />
+      </div>
 
-<div>
-<FormLabel required className='mb-1 labelfont' sx={{
-"& .MuiFormLabel-asterisk":{
-color:'white'
-}
-}}>{label2}</FormLabel>
-<Input
-name={label2}
-type="email"
-placeholder={`Enter your ${label2}`}
-/>
-</div>
+      <div>
+      <FormLabel required className='mb-1 labelfont' sx={{
+      "& .MuiFormLabel-asterisk":{
+      color:'white'
+      }
+      }}>{label2}</FormLabel>
+      <Input
+      name={label2}
+      type="email"
+      placeholder={`Enter your ${label2}`}
+      />
+      </div>
 
-<div>
-    {textArea?<><FormLabel required className='mb-1 labelfont'sx={{
-"& .MuiFormLabel-asterisk":{
-color:'white'
-}
-}}>{label3}</FormLabel><TextareaAutosize aria-label="empty textarea" placeholder="......" /></>:<>
-<FormLabel required className='mb-1 labelfont'sx={{
-"& .MuiFormLabel-asterisk":{
-color:'white'
-}
-}}>{label3}</FormLabel>
-<Input
-name={label3}
-type="text"
-placeholder={`Enter your ${label3}`}
-/>
-</>}
-</div>
+      <div>
+          {textArea?<><FormLabel required className='mb-1 labelfont'sx={{
+      "& .MuiFormLabel-asterisk":{
+      color:'white'
+      }
+      }}>{label3}</FormLabel><TextareaAutosize aria-label="empty textarea" placeholder="......" /></>:<>
+      <FormLabel required className='mb-1 labelfont'sx={{
+      "& .MuiFormLabel-asterisk":{
+      color:'white'
+      }
+      }}>{label3}</FormLabel>
+      <Input
+      name={label3}
+      type="text"
+      placeholder={`Enter your ${label3}`}
+      />
+      </>}
+      </div>
 
-{needCheckbox ? <><FormControlLabel control={<Checkbox />} className='labelfont' label="Remember me" />
-<FormControlLabel required control={<Checkbox />} className='labelfont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
+      {needCheckbox ? <><FormControlLabel control={<Checkbox />} className='labelfont' label="Remember me" />
+      <FormControlLabel required control={<Checkbox />} className='labelfont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
 
 
-</FormControl>
+      </FormControl>
 
 
 <div className='btnContainer'> 
