@@ -14,17 +14,12 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^3.0.0-beta.6",
     "apexcharts": "^3.47.0",
-<<<<<<< HEAD
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
-=======
     "dayjs": "^1.11.10",
-    "jquery": "^3.7.1",
-    "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
->>>>>>> 1e775afbe8085f9dab5f0e934d1df7b1e2aa650e
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.2",
     "react-scripts": "5.0.1",
