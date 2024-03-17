@@ -1,46 +1,99 @@
-section.navbar{
+section.navbar {
     box-shadow: 0px 21px 27.700000762939453px 0px rgba(0, 0, 0, 0.59);
 }
+
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: transparent;
     padding: 1.5rem;
-
+    width: 100%;
 }
-nav .logo{
+
+nav .bars {
+    height: 21px;
+    padding: 2px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .bars .bar {
+    width: 27px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s;
+}
+
+nav .bars .bar::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    transition: all 0.3s;
+}
+
+nav .bars .bar::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    transition: all 0.3s;
+}
+
+nav .bars.open .bar {
+    background-color: transparent;
+}
+
+nav .bars.open .bar::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+nav .bars.open .bar::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+nav .logo {
     width: 100px;
 }
-nav ul{
+
+nav ul {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 2rem;
 }
-nav ul li a{
+
+nav ul li a {
     display: block;
     text-decoration: none;
     color: #fff;
     font-size: 16px;
     padding: 0.3rem 1rem 0.4rem;
     border-radius: 4px;
-  transition: all 0.3s;
+    transition: all 0.3s;
 
 }
-nav ul li a:hover , nav .navLinks li a.active:hover{
+
+nav ul li a:hover, nav .navLinks li a.active:hover {
     background-color: var(--Blue300);
 }
-nav .navLinks li a.active{
+
+nav .navLinks li a.active {
     background-color: #53acff9c;
 }
 
-nav .AuthButtons{
-    display: flex;
-    gap: 0.4rem;
-}
-
-nav .AuthButtons button.signUp{
+nav .AuthButtons button.signUp {
     outline: none;
     color: #fff;
     background: transparent;
@@ -51,7 +104,8 @@ nav .AuthButtons button.signUp{
     border-radius: 4px;
     font-size: 12px;
 }
-nav .AuthButtons button.logIn{
+
+nav .AuthButtons button.logIn {
     outline: none;
     color: #fff;
     background: transparent;
@@ -61,4 +115,17 @@ nav .AuthButtons button.logIn{
     border-radius: 4px;
     font-size: 12px;
 
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        padding: 0.75rem;
+    }
+    nav .logo img{
+        width: 85px;
+    }
 }

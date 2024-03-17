@@ -53,20 +53,21 @@ section.hero button:hover{
 @media only screen and (max-width: 600px) {
     section.hero {
         width: 100%;
-        padding: 6vh 1rem;
+        padding: 10vh 3rem;
         gap: 0.6rem;
+        align-items: start;
     }
     section.hero h1 {
-        font-size: 27px;
+        font-size: 24px;
         font-weight: 800;
-        text-align: center;
+        text-align: left;
         line-height: 35px;
     }
     section.hero p {
-        font-size: 12px;
+        display: none;
     }
     section.hero button {
-        padding: 0.3rem 1.5rem 0.4rem;
+        padding: 0.4rem 1.5rem 0.4rem;
         font-size: 12px;
     }
 }

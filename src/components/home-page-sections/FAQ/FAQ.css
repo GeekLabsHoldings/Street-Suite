@@ -70,3 +70,40 @@ section.FAQ {
     text-align: left;
 
 }
+
+@media only screen and (max-width: 600px) {
+
+    .FAQ-container h4 {
+        font-family: Poppins;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 1.5rem;
+    }
+
+    .FAQ-container .collapse-item .collapse-header {
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .FAQ-container .collapse-item .collapse-header p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+    }
+
+    .FAQ-container .collapse-item .collapse-header svg {
+        width: 11.63px;
+        height: 13.67px;
+    }
+
+    .FAQ-container .collapse-item .collapse-body {
+        padding: 2.5rem 1.5rem 1.5rem 2rem;
+    }
+
+    .FAQ-container .collapse-item .collapse-body p {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+}

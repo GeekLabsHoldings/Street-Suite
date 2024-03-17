@@ -1,5 +1,5 @@
-section.plans{
-    padding: 10% 5% ;
+section.plans {
+    padding: 10% 5%;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
@@ -9,17 +9,18 @@ section.plans{
     background-repeat: no-repeat;
 }
 
-section.plans .section-title{
+section.plans .section-title {
     color: #fff;
     font-size: 48px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.plans-container{
+.plans-container {
     max-width: 1400px;
 }
-.plane{
+
+.plane {
     box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px #00000040;
     border-radius: 50px;
     padding: 1px;
@@ -29,30 +30,34 @@ section.plans .section-title{
     transition: all 0.7s;
 
 }
-.plane::before{
+
+.plane::before {
     content: "";
     background-image: conic-gradient(transparent 180deg, #c2c2c2 270deg, transparent 360deg);
     width: 180%;
     height: 180%;
-    transform: translate(-50%,-50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 0;
     transition: all 0.7s;
 }
-.plane:hover{
+
+.plane:hover {
     transform: rotateY(10deg);
 }
-.plane.recommended .plane-body{
+
+.plane.recommended .plane-body {
     background: linear-gradient(150.99deg, rgba(83, 172, 255, 0.26) 19.75%, rgba(50, 103, 153, 0) 109.13%);
 
 }
-.plane.recommended::before{
+
+.plane.recommended::before {
     background-image: conic-gradient(transparent 180deg, var(--Blue300) 270deg, transparent 360deg);
 }
 
-.plane.recommended::after{
+.plane.recommended::after {
     content: "";
     position: absolute;
     width: calc(100% - 2px);
@@ -64,37 +69,42 @@ section.plans .section-title{
     z-index: 1;
 }
 
-.plane:hover::before{
-    transform: translate(-50%,-50%) rotate(180deg);
-}
-.plane.recommended:hover::before{
-    transform: translate(-50%,-50%) rotate(-180deg);
+.plane:hover::before {
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
-.plane-body{
+.plane.recommended:hover::before {
+    transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.plane-body {
     height: 100%;
     background: #252525;
     border-radius: 50px;
     position: relative;
     z-index: 2;
 }
-.plane-title{
+
+.plane-title {
     font-size: 23px;
     font-weight: 700;
     line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
 }
-.plane .line{
+
+.plane .line {
     width: 65%;
     height: 1px;
     background-color: #414040;
     margin: 2.5rem 0;
 }
-.plane.recommended .line{
+
+.plane.recommended .line {
     background-color: #ffffff4f;
 }
-.plane .plane-points li{
+
+.plane .plane-points li {
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -102,7 +112,8 @@ section.plans .section-title{
     text-align: left;
     position: relative;
 }
-.plane .plane-points li::before{
+
+.plane .plane-points li::before {
     content: "";
     width: 5px;
     height: 5px;
@@ -113,27 +124,29 @@ section.plans .section-title{
     transform: translateY(-50%);
     border-radius: 50%;
 }
-.plane-price p{
-font-family: Poppins;
-font-size: 23px;
-font-weight: 400;
-line-height: 35px;
-letter-spacing: 0em;
-text-align: left;
-color: #5D5D5D;
-margin-bottom: 2rem;
-}
-.plane-price p>span{
-font-family: Poppins;
-font-size: 63px;
-font-weight: 700;
-line-height: 65px;
-letter-spacing: 0px;
-text-align: left;
-color: #fff;
+
+.plane-price p {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #5D5D5D;
+    margin-bottom: 2rem;
 }
 
-.plane-action a{
+.plane-price p>span {
+    font-family: Poppins;
+    font-size: 63px;
+    font-weight: 700;
+    line-height: 65px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #fff;
+}
+
+.plane-action a {
     position: relative;
     width: 115px;
     height: 40px;
@@ -150,18 +163,21 @@ color: #fff;
 
 
 
-.plane-action a:hover{
+.plane-action a:hover {
     box-shadow: 1px 1px 2.6px 0px #bbbbbb;
 }
-.recommended-plane .plane-action a{
+
+.recommended-plane .plane-action a {
     background: var(--Blue300);
-    box-shadow:none;
+    box-shadow: none;
 }
-.recommended-plane .plane-action a:hover{
+
+.recommended-plane .plane-action a:hover {
     background: var(--Blue300);
     box-shadow: inset 1px 1px 2.6px 0px rgba(187, 187, 187, 0.205);
 }
-.recommended-plane h6{
+
+.recommended-plane h6 {
     text-align: center;
     font-family: Poppins;
     font-size: 19px;
@@ -169,4 +185,65 @@ color: #fff;
     line-height: 29px;
     letter-spacing: 0em;
     margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    section.plans {
+        padding: 20% 1rem;
+    }
+    section.plans .section-title {
+        font-size: 24px;
+        width: max-content;
+    }
+
+    section.plans .plans-container{
+        width: calc(100% + 2rem);
+        margin: auto;
+    }
+    section.plans .plans-container .plane {
+        min-width: 250px;
+    }
+
+    .plane .line {
+        margin: 1.5rem 0;
+    }
+
+    .plane .plane-points li {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    .plane-price p {
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .plane-price p>span {
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+
+    .plane-price p {
+        margin-bottom: 1rem;
+    }
+
+    .plane .plane-action a {
+        font-family: Poppins;
+        font-size: 7px;
+        font-weight: 600;
+        line-height: 8px;
+        letter-spacing: 0em;
+        width: 80px;
+        height: 30px;
+    }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./TradingSction.css"
+import "./TradingSection.css"
 import boxBg from "../../../assets/spaceXbg.png"
 import tradingImg from "../../../assets/trading-img.png"
 import tradeCompanyLogo from "../../../assets/tradeCompanyLogo.png"
@@ -13,10 +13,10 @@ const TradingSction = () => {
             {/* title of the section */}
             <h3 className='section-title'>Trading</h3>
 
-            <div className="lg:container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 gap-y-6 trading-container columns-8">
+            <div className="lg:container mx-auto px-0 md:px-4 grid grid-cols-1 md:grid-cols-2 gap-12 gap-y-6 trading-container columns-8">
 
                 {/* image of trading section */}
-                <div className="img-container">
+                <div className="img-container hidden md:block">
                     <img src={tradingImg} alt="" />
                 </div>
                 {/* end image of trading section */}
@@ -36,7 +36,7 @@ const TradingSction = () => {
                     <h5>Private Companies on ST Suite</h5>
 
                     {/* price of private companies */}
-                    <div className="private-companies-box gap-4">
+                    <div className="private-companies-box grid md:grid-cols-2 gap-2">
 
                         {/* first company */}
                         <div className="item">
