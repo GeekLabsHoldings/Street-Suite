@@ -56,21 +56,6 @@ function App() {
               <Route path='change-logs'  element={<ChangeLogs />} />
               <Route path='top-brokers'  element={<TopBroker/>} />
 
-
-              
-
-            <Route path='leaderboard' element={<LeaderBoardPage />} />
-            <Route path='faq' element={<FaqPage />} />
-            <Route path='pricing' element={<PricingPage />} />
-            <Route path='checkout' element={<CheckOutPage />} />
-            <Route path='complete-checkout' element={<CompleteCheckout />} />
-            <Route path='features' element={<FeaturesPage />} />
-            <Route path='api' element={<APIPage />} />
-            <Route path='about-us' element={<AboutUsPage />} />
-            <Route path='signup' element={< SignupPage />} />
-            <Route path='contactus' element={<ContactPage />} />
-            <Route path='change-logs' element={<ChangeLogs />} />
-
           </Route>
 
 
