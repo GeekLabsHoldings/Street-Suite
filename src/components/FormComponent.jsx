@@ -54,9 +54,10 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
     600: '#0072E5',
     900: '#003A75',
   };
+
 const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTxt}) =>{
     return(
-        <div>
+        <div className='formHead'>
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
         <p>{purpose}</p>
 
@@ -108,7 +109,7 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
       </>}
       </div>
 
-      {needCheckbox ? <><FormControlLabel control={<Checkbox />} className='labelfont' label="Remember me" />
+      {needCheckbox ? <><FormControlLabel control={<Checkbox />} className='labelfont checkboxFont' label="Remember me" />
       <FormControlLabel required control={<Checkbox />} className='labelfont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
 
 

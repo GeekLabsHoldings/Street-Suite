@@ -35,12 +35,12 @@ return(
                 </div>
                 <h4>Reach Us On</h4>
                 
-                <div className='containContactWays'>
-                <div className='contactWays'>
+                <div className='containContactWays '>
+                <div className='contactWays lg:gap-9 sm:gap-3'>
                 <img src={MailIcon}/>
                 <span>stsuite@gmail.com</span>
                 </div>
-                <div className='contactWays'>
+                <div className='contactWays lg:gap-9 sm:gap-3'>
                 <img src={PhoneIcon}/>
                 <span>+02  015698564</span>
                 </div>

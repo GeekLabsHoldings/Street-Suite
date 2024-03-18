@@ -1,3 +1,5 @@
+
+
 .desc{
     display: flex;
     align-items: center;
@@ -8,11 +10,10 @@
 .content h3{
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3rem;
   font-style: normal;
-}
-.content h3{
-    padding: 2rem 0;
+  line-height: 4rem;
+  padding: 2rem 0;
 }
 
 .content p{
@@ -21,9 +22,7 @@
     font-weight: 400;
     font-style: normal;
 }
-.content h3{
-    line-height: 4rem;
-}
+
 .content span{
     font-size: 40px;
 }
@@ -69,4 +68,36 @@
 .formBGSignup{
     background: rgba(35,53,70,1);
     background: linear-gradient(265deg, rgb(23, 37, 49) 20%, rgb(48, 73, 97) 100%);
+}
+.changeFonts{
+    font-size: 24px;
+    line-height: 36px;
+}
+@media only screen and (max-width: 640px) {
+    .content h3,.content span{
+       font-size: 24px;
+       line-height: 36px;
+     }
+     .content p{
+        font-size: 12px;
+        line-height: 18px;
+     }
+     .imgDiv{
+        width: 135px;
+        height: 60px;
+     }
+     .formHead h3 , .formHead span{
+        font-size: 20px;
+        line-height: 30px;
+
+     }
+     .formHead p ,.formHead .labelfont{
+        font-size: 14px !important;
+        line-height: 21px;
+     }
+     .checkboxFont{
+        font-size: 12px;
+        line-height: 18px;
+     }
+
 }

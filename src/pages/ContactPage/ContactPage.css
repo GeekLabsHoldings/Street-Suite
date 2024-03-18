@@ -1,3 +1,5 @@
+
+
 .forBG{
     background-position:center ;
     background-repeat: no-repeat;
@@ -28,7 +30,7 @@
 .contactWays{
     display: flex;
     align-items: center;
-    gap: 2rem;
+
 }
 .containContactWays{
     display: flex;
