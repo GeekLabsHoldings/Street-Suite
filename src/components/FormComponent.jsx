@@ -5,6 +5,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
+import * as React from 'react';
+
+
  const grey = {
     50: '#F3F6F9',
     100: '#E5EAF2',
@@ -55,7 +58,10 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
     900: '#003A75',
   };
 
+  
+
 const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTxt}) =>{
+
     return(
         <div className='formHead'>
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
@@ -95,23 +101,32 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
       "& .MuiFormLabel-asterisk":{
       color:'white'
       }
-      }}>{label3}</FormLabel><TextareaAutosize aria-label="empty textarea" placeholder="......" /></>:<>
+      }}>{label3}</FormLabel><TextareaAutosize 
+
+      aria-label="empty textarea" placeholder="......" /></>:<>
       <FormLabel required className='mb-1 labelfont'sx={{
       "& .MuiFormLabel-asterisk":{
       color:'white'
       }
       }}>{label3}</FormLabel>
+
       <Input
       name={label3}
-      type="text"
       placeholder={`Enter your ${label3}`}
-      />
+      type="text"
+          />
+
+      
+    
       </>}
       </div>
+      <div>
 
-      {needCheckbox ? <><FormControlLabel control={<Checkbox />} className='labelfont checkboxFont' label="Remember me" />
-      <FormControlLabel required control={<Checkbox />} className='labelfont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
+      </div>
 
+      {needCheckbox ? <>
+      <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
+      <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
 
       </FormControl>
 

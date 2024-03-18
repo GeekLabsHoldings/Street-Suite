@@ -21,6 +21,8 @@ import AboutUsPage from './pages/AboutUs-page/AboutUsPage';
 import SignupPage from './pages/signup/SignupPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import ChangeLogs from './pages/ChangeLog-page/changeLog';
+import TopBroker from './pages/TopBrokerPage/TopBroker';
+
 
 function App() {
   return (
@@ -52,6 +54,8 @@ function App() {
               <Route path='signup'  element={< SignupPage/>} />
               <Route path='contactus'  element={<ContactPage />} />
               <Route path='change-logs'  element={<ChangeLogs />} />
+              <Route path='top-brokers'  element={<TopBroker/>} />
+
 
               
 

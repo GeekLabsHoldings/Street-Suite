@@ -50,10 +50,9 @@ return(
             </div>
             </div>
 
-
             <div className="col-lg-6 sm:hidden">
                 <div className="col-lg-8 forBorder m-auto">
-                    <div className="formPart formBGMsg">
+                    <div className="formPart formBGMsg lg:pt-24 lg:pb-14 sm:py-14 sm:px-4">
                         <div className='inForm'>
                         <div className='col-lg-9 m-auto'>
                             <FormComponent purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true}/>

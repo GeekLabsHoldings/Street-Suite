@@ -8,7 +8,7 @@ const SignupPage = ()=>{
         <div className='desc col-lg-6 col-sm-12 '>
           <div className="col-md-7 col-sm-12 sm:py-5 m-auto" >
            <div className="content ">
-           <div className='imgDiv lg:-ml-7 sm:ml-0'>
+           <div className='imgDiv lg:w-52 sm:w-32 lg:-ml-7 sm:ml-0'>
             <img className="w-full" src={LogoIcon} />
             </div>
           <h3>Hello! <br />
@@ -20,9 +20,9 @@ const SignupPage = ()=>{
         </div>
 
         <div className=' col-lg-6 col-sm-12'>
-          <div className='row col-md-11'>
-          <div className=' m-auto col-md-9 forBorder'>
-         <div className='formPart formBGSignup lg:pt-7 lg:pb-5 sm:py-2 sm:px-4 '>
+          <div className='row col-md-11 sm:mb-7 '>
+          <div className='m-auto col-md-9 forBorder'>
+         <div className='formPart formBGSignup lg:pt-24 lg:pb-14 sm:py-14 sm:px-4 '>
             <div className='inForm'>
                 <div className='col-md-10 formcontent'>
                   <FormComponent purpose='Create a new account' label1='Full Name' label2='Email' label3='Password' needCheckbox={true} btnTxt='Sign Up' textArea={false}/>
