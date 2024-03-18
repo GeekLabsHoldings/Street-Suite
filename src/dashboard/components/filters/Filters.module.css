@@ -1,0 +1,631 @@
+.filters {
+  position: relative;
+  animation: slidRight 1s ease;
+  animation-iteration-count: 1;
+}
+
+.filtersContainer {
+  padding: 2rem;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #181818;
+  max-height: 100vh;
+  overflow: auto;
+
+}
+
+.toggleFilters {
+  position: absolute;
+  left: -40px;
+  top: 25%;
+  background-color: #53ACFF;
+  width: 40px;
+  height: 40px;
+  padding: 0.4rem;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  outline: 0;
+  z-index: 1000;
+  display: none;
+  animation: slidRight 1s ease;
+  animation-iteration-count: 1;
+}
+
+.filters h4 {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.filtersApplaied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clearAll {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.3rem;
+}
+
+.clearAll p {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #979797;
+}
+
+.clearAll button {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.filtersApplaiedContainer {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #202020;
+  border-radius: 7px;
+  height: auto;
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 1rem;
+  min-height: 69.56px;
+}
+
+.filtersApplaiedContainer li {
+  position: relative;
+  font-family: Poppins;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #202020;
+  background: #53ACFF;
+  padding: 1px 20px 1px 5px;
+  border-radius: 4.42px;
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0.4rem 0.2rem 0;
+  height: 22px;
+}
+
+.filtersApplaiedContainer span {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+
+.filtersStock {
+  background: #202020;
+  border-radius: 7px;
+  padding: 1rem;
+}
+
+.filtersStock h5 {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #fff;
+}
+
+.filtersStockContainer {
+  padding: 0.5rem;
+}
+
+.searchInput {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.searchInput input {
+  width: 100%;
+  background-color: #313131;
+  border: 1px solid #313131;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  padding: 5px 15px;
+  outline: none;
+}
+
+.searchInput input::placeholder {
+  color: #737373;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+input:focus {
+  border: 1px solid #53ACFF;
+}
+
+.searchInput img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 15px;
+}
+
+.industryFilter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+}
+
+.selectLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  z-index: 9;
+  background: #202020;
+  cursor: pointer;
+}
+
+.selectLabel img {
+  width: 10px;
+  transform: rotateZ(-90deg);
+  transition: all 0.3s;
+}
+
+.industryFilter.open .selectLabel img {
+  transform: rotateZ(0deg);
+}
+
+.selectLabel h6 {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #fff;
+}
+
+
+
+.industryFilter .selectItems {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.1rem;
+  flex-wrap: wrap;
+  transform: translateY(-150%);
+  height: 0;
+  transition: all 0.3s;
+}
+
+.industryFilter.open .selectItems {
+  height: auto;
+  transform: translateY(0%);
+}
+
+.industryFilter .selectItems li {
+  padding: 0.1rem 0.3rem;
+  border-left: 0.76px solid #FFFFFF;
+  width: 50%;
+}
+
+.industryFilter .selectItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.1rem 0.4rem;
+  width: max-content;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.industryFilter .selectItem:hover {
+  background-color: #53ACFF;
+  color: #202020;
+  border-radius: 5px;
+}
+
+.industryFilter .selectItem img {
+  width: 14px;
+  margin-right: 0.4rem;
+}
+
+.industryFilter .selectItem p {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #fff;
+}
+
+.checkBoxFilters {
+  display: flex;
+  justify-content: space-between;
+  gap: 0rem;
+}
+
+
+.MarketCapFilter {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.MarketCapFilter.open .selectLabel img {
+  transform: rotateZ(0deg);
+}
+
+.MarketCapFilter .checkItems {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0 1.1rem;
+  flex-wrap: wrap;
+  transform: translateY(-150%);
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.MarketCapFilter.open .checkItems {
+  height: auto;
+  transform: translateY(0%);
+}
+
+
+.checkItems {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.checkItems input:checked,
+.checkItems input:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkItems input:checked+label,
+.checkItems input:not(:checked)+label {
+  position: relative;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-left: 2rem;
+  color: #fff;
+}
+
+.checkItems input:checked+label:before,
+.checkItems input:not(:checked)+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #313131;
+  border-radius: 100%;
+  background: #313131;
+}
+
+.checkItems input:checked+label:after,
+.checkItems input:not(:checked)+label:after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #53ACFF;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 100%;
+  transition: all 0.2s ease;
+}
+
+.checkItems input:not(:checked)+label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  background-color: #202020;
+}
+
+.checkItems input:checked+label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+
+.riskLevelFilter {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.riskLevelFilter.open .selectLabel img {
+  transform: rotateZ(0deg);
+}
+
+.riskLevelFilter .checkItems {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0 1.1rem;
+  flex-wrap: wrap;
+  transform: translateY(-150%);
+  overflow: hidden;
+  height: 0;
+  transition: all 0.3s;
+}
+
+.riskLevelFilter.open .checkItems {
+  height: auto;
+  transform: translateY(0%);
+
+}
+
+
+
+.scrollSelect h6 {
+  text-align: center;
+}
+
+.scrollSelect {
+  display: flex;
+  justify-content: start;
+  gap: 7rem;
+}
+
+.scrollSelect .selectLabel {
+  justify-content: center;
+}
+
+.strategyFilter,
+.AssetFilter {
+  width: auto;
+}
+
+.selectContainer {
+  position: relative;
+  max-height: 82px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: auto;
+}
+
+.selectContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 0px 13px 4px #00000061;
+
+}
+
+.selectContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 0px 13px 4px #00000061;
+
+}
+
+.selectContainer::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 0px;
+  background-color: transparent;
+  width: 0;
+  visibility: hidden;
+}
+
+.selectContainer::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+
+.selectContainer::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  width: 0;
+  -webkit-box-shadow: none;
+  background-color: #424242;
+}
+
+.selectContainer .selectItem {
+  position: relative;
+  transition: all 0.3s;
+}
+
+.selectContainer .selectItem input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.selectContainer .selectItem label {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  height: 25px;
+}
+
+.selectContainer .selectItem input:checked+label {
+  background-color: #53ACFF;
+  color: #fff;
+}
+
+.applyBtn {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #fff;
+  padding: 0.7rem 0;
+  width: 160px;
+  background-color: #53ACFF !important;
+  border-radius: 6px;
+  margin: 1.5rem 0 0;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.applyBtn:hover {
+  background-color: #53acffb0 !important;
+}
+
+
+@media only screen and (max-width: 850px) {
+
+  .filters {
+    transform: translateX(100%);
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    box-shadow: none;
+    animation: none;
+    transition: all 0.3s;
+    height: 100vh;
+    width: 0;
+  }
+
+  .filters.open::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 100vh;
+    right: 100%;
+    top: 0;
+    background: transparent;
+    z-index: 999;
+  }
+
+  .filters.open {
+    transform: translateX(0);
+    width: auto;
+    left: 60px;
+    box-shadow: 2px 22px 46.1px 30px #0f0f0f;
+  }
+
+  .filtersContainer {
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 0.5rem;
+    border-radius: 0;
+  }
+
+
+  .toggleFilters {
+    display: block;
+  }
+
+  .filters .filtersStock {
+    padding: 0.5rem;
+  }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+
+
+  .filtersContainer {
+    display: none;
+  }
+
+  .filters.open .filtersContainer {
+    display: flex;
+  }
+
+  .scrollSelect {
+    gap: 2rem;
+  }
+
+  .industryFilter .selectItems {
+    padding: 0;
+  }
+
+  .applyBtn {
+    margin: 1rem 0 0.5rem;
+    font-size: 14px;
+    line-height: 20px;
+    width: 120px;
+  }
+
+
+}
+
+
+@keyframes slidRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

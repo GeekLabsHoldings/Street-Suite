@@ -33,6 +33,9 @@ section.getStarted{
 .getStarted-content button:hover{
     background: var(--Blue400);
 }
+.getStarted-img img{
+    width: 100%;
+}
 
 
 @media only screen and (max-width: 600px) {

@@ -25,6 +25,18 @@ body{
   font-family: "Poppins", sans-serif;
 
 }
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+p,h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
 .Signuplayout{
   background: rgb(32,32,32);
   background: linear-gradient(190deg, rgba(32,32,32,1) 40%, rgba(47, 83, 117,1) 100%);
@@ -85,4 +97,49 @@ body{
   position: relative;
 }
 
+.alertsPage-wrapper{
+  display: flex;
+  overflow: hidden;
+}
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.dashboard-wrapper{
+  width: calc(100% - 100px);
+  height: 100vh;
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  gap: 1rem;
+  margin-left: auto;
+  overflow: hidden;
+}
+.search-table-section{
+  width: 70%;
+  padding: 1rem;
+}
+.filters-section{
+  width: 30%;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 850px) {
+  .dashboard-wrapper{
+    display: unset;
+    width: calc(100% - 60px);
+    padding: 0.5rem 0;
+  }
+
+  .search-table-section{
+    width: 100%;
+    padding: 1rem;
+  }
+  .filters-section{
+    width: 0%;
+  }
+  
+}
