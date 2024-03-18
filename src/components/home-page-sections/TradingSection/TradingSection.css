@@ -127,28 +127,64 @@ section.trading{
     
 }
 @media only screen and (max-width: 1100px) {
-    .private-companies-box{
-        flex-direction: column;
+    .private-companies-box {
+        padding: 2rem 1.5rem;
+        border-radius: 5px;
     }
-    .private-companies-box .item{
-        width: 100%;
+    .private-companies-box .item {
+        width: 48%;
+        padding: 0.7rem;
+        gap: 0.5rem;
+        border-radius: 5px;
+    }
+    .private-companies-box .item .price {
+        gap: 0.2rem;
+        font-size: 10px;
+        padding: 0rem 0.3rem 0rem 0.5rem;
+    }
+    .private-companies-box .item .price svg{
+        width: 7px;
+    }
+    .spaceX .box {
+        min-height: 4rem;
     }
 }
 @media only screen and (max-width: 600px) {
     .trading-content h4 {
-        font-size: 35px;
-        line-height: 50px;
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 2.5rem;
     }
     .trading-content h4+p {
-        color: #A4A4A4;
-        font-size: 13px;
+        display: none;
     }
     .trading-content h5 {
-        font-size: 20px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 0.7rem;
     }
     .trading-content h5+p {
+        font-family: Poppins;
         font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 1.5rem;
     }
+
+    .private-companies-box .item img{
+        width: 60px;
+    }
+
     .spaceX {
         padding: 1rem;
         gap: 1rem;
@@ -162,7 +198,7 @@ section.trading{
     .section-title {
         left: 10%;
         padding: 0 1rem;
-        font-size: 41px;
+        font-size: 32px;
     }
 
     section.alerts {

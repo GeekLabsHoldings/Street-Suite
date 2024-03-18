@@ -1,5 +1,5 @@
 /* alerts section style  */
-section.alerts{
+section.alerts {
     padding: 10%;
     border-top: 1px solid #5D5D5D;
     position: relative;
@@ -7,7 +7,7 @@ section.alerts{
 }
 
 /* title of the section style  */
-.section-title{
+.section-title {
     position: absolute;
     top: 0;
     left: 12%;
@@ -21,53 +21,53 @@ section.alerts{
     text-shadow: 0px 10px 10px #000;
 }
 
-.alerts-container{
+.alerts-container {
     max-width: 1200px;
 }
 
 
 /* card in alert section style and add some animation ^_^ */
-.alert-card{
+.alert-card {
     height: 342px;
     padding: 4rem;
     transition: all 0.3s;
     backdrop-filter: blur(30px);
-    background: linear-gradient(90deg, rgba(83,172,255,0.1) 0%, rgba(35,53,70,0.1) 100%);
+    background: linear-gradient(90deg, rgba(83, 172, 255, 0.1) 0%, rgba(35, 53, 70, 0.1) 100%);
     border-radius: 35.74px;
     position: relative;
     border: 1px solid #5252527a;
-    transition: all 0.4s ;
+    transition: all 0.4s;
     box-shadow: 1px 0px 5px 0px var(--Blue300);
 }
 
 /* card in alert section style when hover */
 
-.alert-card:hover{
+.alert-card:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 26px -7px #000;
 }
 
 
-.alert-card .content{
+.alert-card .content {
     width: max-content;
     opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.5s ;
+    transition: all 0.5s;
 }
 
-.alert-card:hover .content{
+.alert-card:hover .content {
     opacity: 1;
 }
 
-.alert-card .content p{
+.alert-card .content p {
     font-size: 16px;
     text-align: center;
 }
 
-.animat-text{
+.animat-text {
     width: 300px;
     position: relative;
     top: 50%;
@@ -75,7 +75,7 @@ section.alerts{
     transform: translate(-50%, -50%);
 }
 
-.alert-card .animat-text img:nth-child(1){
+.alert-card .animat-text img:nth-child(1) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -83,11 +83,11 @@ section.alerts{
     transition: all 0.3s;
 }
 
-.alert-card:hover .animat-text img:nth-child(1){
+.alert-card:hover .animat-text img:nth-child(1) {
     opacity: 0;
 }
 
-.alert-card .animat-text.realtime img:nth-child(2){
+.alert-card .animat-text.realtime img:nth-child(2) {
     position: absolute;
     left: 111px;
     width: 217px;
@@ -96,7 +96,7 @@ section.alerts{
     transition: all 0.3s;
 }
 
-.alert-card .animat-text.realtime img:nth-child(3){
+.alert-card .animat-text.realtime img:nth-child(3) {
     position: absolute;
     top: 50%;
     left: 188px;
@@ -107,12 +107,12 @@ section.alerts{
 }
 
 
-.alert-card:hover .animat-text.realtime img:nth-child(2){
+.alert-card:hover .animat-text.realtime img:nth-child(2) {
     transform: translate(-85%, -135%);
     opacity: 1;
 }
 
-.alert-card:hover .animat-text.realtime img:nth-child(3){
+.alert-card:hover .animat-text.realtime img:nth-child(3) {
     transform: translate(-20%, 35%);
     opacity: 1;
 }
@@ -120,7 +120,7 @@ section.alerts{
 
 
 
-.alert-card .animat-text.filter img:nth-child(2){
+.alert-card .animat-text.filter img:nth-child(2) {
     position: absolute;
     top: 50%;
     left: 137px;
@@ -130,7 +130,8 @@ section.alerts{
     transition: all 0.3s;
 
 }
-.alert-card .animat-text.filter img:nth-child(3){
+
+.alert-card .animat-text.filter img:nth-child(3) {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -140,19 +141,19 @@ section.alerts{
     width: 165px;
 }
 
-.alert-card:hover .animat-text.filter img:nth-child(2){
+.alert-card:hover .animat-text.filter img:nth-child(2) {
     transform: translate(-120%, -140%);
     opacity: 1;
 }
 
-.alert-card:hover .animat-text.filter img:nth-child(3){
+.alert-card:hover .animat-text.filter img:nth-child(3) {
     transform: translate(20%, 30%);
     opacity: 1;
 }
 
 
 
-.alert-card .animat-text.special img:nth-child(2){
+.alert-card .animat-text.special img:nth-child(2) {
     position: absolute;
     top: 50%;
     left: 180px;
@@ -162,7 +163,8 @@ section.alerts{
     transition: all 0.3s;
 
 }
-.alert-card .animat-text.special img:nth-child(3){
+
+.alert-card .animat-text.special img:nth-child(3) {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -172,12 +174,12 @@ section.alerts{
     width: 190px;
 }
 
-.alert-card:hover .animat-text.special img:nth-child(2){
+.alert-card:hover .animat-text.special img:nth-child(2) {
     transform: translate(-130%, -140%);
     opacity: 1;
 }
 
-.alert-card:hover .animat-text.special img:nth-child(3){
+.alert-card:hover .animat-text.special img:nth-child(3) {
     transform: translate(0%, 30%);
     opacity: 1;
 }
@@ -185,7 +187,7 @@ section.alerts{
 
 
 
-.alert-card .animat-text.scanner img:nth-child(2){
+.alert-card .animat-text.scanner img:nth-child(2) {
     position: absolute;
     top: 50%;
     left: 110px;
@@ -195,7 +197,8 @@ section.alerts{
     transition: all 0.3s;
 
 }
-.alert-card .animat-text.scanner img:nth-child(3){
+
+.alert-card .animat-text.scanner img:nth-child(3) {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -205,12 +208,12 @@ section.alerts{
     width: 222px;
 }
 
-.alert-card:hover .animat-text.scanner img:nth-child(2){
+.alert-card:hover .animat-text.scanner img:nth-child(2) {
     transform: translate(-85%, -140%);
     opacity: 1;
 }
 
-.alert-card:hover .animat-text.scanner img:nth-child(3){
+.alert-card:hover .animat-text.scanner img:nth-child(3) {
     transform: translate(-15%, 35%);
     opacity: 1;
 }
@@ -227,71 +230,98 @@ section.alerts{
 @media only screen and (max-width: 600px) {
 
     .alert-card {
-        height: 300px;
+        height: 180px;
+    }
+
+    .alert-card .content p {
+        font-size: 11px;
     }
 
     .animat-text {
         width: 170px;
     }
 
+    .alert-card .animat-text.realtime img:nth-child(1) {
+        width: 130px;
+    }
     .alert-card .animat-text.realtime img:nth-child(2) {
-        left: 62px  ;
-        width: 125px;
-    }
-    .alert-card .animat-text.realtime img:nth-child(3) {
-        left: 107px ;
-        width: 125px ;
-    }
-    .alert-card:hover .animat-text.realtime img:nth-child(2) {
-        transform: translate(-100%, -190%) ;
-    }
-    .alert-card:hover .animat-text.realtime img:nth-child(3) {
-        transform: translate(0%, 90%) ;
+        left: 68px;
+        width: 97px;
     }
 
+    .alert-card .animat-text.realtime img:nth-child(3) {
+        left: 102px;
+        width: 97px;
+    }
+
+    .alert-card:hover .animat-text.realtime img:nth-child(2) {
+        transform: translate(-125%, -125%);
+    }
+
+    .alert-card:hover .animat-text.realtime img:nth-child(3) {
+        transform: translate(25%, 40%);
+    }
+
+    .alert-card .animat-text.filter img:nth-child(1) {
+        width: 95px;
+    }
     .alert-card .animat-text.filter img:nth-child(2) {
-        left: 72px ;
-        width: 145px ;
+        left: 77px;
+        width: 85px;
     }
+
     .alert-card .animat-text.filter img:nth-child(3) {
-        left: 96px ;
-        width: 149px ;
+        left: 80px;
+        width: 85px;
     }
+
     .alert-card:hover .animat-text.filter img:nth-child(2) {
-        transform: translate(-90%, -140%) ;
+        transform: translate(-140%, -110%);
     }
+
     .alert-card:hover .animat-text.filter img:nth-child(3) {
-        transform: translate(-10%, 35%) ;
+        transform: translate(50%, 10%);
+    }
+
+    .alert-card .animat-text.special img:nth-child(1) {
+        width: 115px;
     }
 
     .alert-card .animat-text.special img:nth-child(2) {
-        left: 62px  ;
-        width: 125px;
-    }
-    .alert-card .animat-text.special img:nth-child(3) {
-        left: 107px ;
-        width: 125px ;
-    }
-    .alert-card:hover .animat-text.special img:nth-child(2) {
-        transform: translate(-100%, -190%) ;
-    }
-    .alert-card:hover .animat-text.special img:nth-child(3) {
-        transform: translate(0%, 90%) ;
+        left: 73px;
+        width: 95px;
     }
 
+    .alert-card .animat-text.special img:nth-child(3) {
+        left: 99px;
+        width: 90px;
+    }
+
+    .alert-card:hover .animat-text.special img:nth-child(2) {
+        transform: translate(-130%, -130%);
+    }
+
+    .alert-card:hover .animat-text.special img:nth-child(3) {
+        transform: translate(30%, 30%);
+    }
+    .alert-card .animat-text.scanner img:nth-child(1) {
+        width: 135px;
+    }
     .alert-card .animat-text.scanner img:nth-child(2) {
-        left: 62px  ;
-        width: 125px;
+        left: 66px;
+        width: 100px;
     }
+
     .alert-card .animat-text.scanner img:nth-child(3) {
-        left: 107px ;
-        width: 125px ;
+        left: 103px;
+        width: 97px;
     }
+
     .alert-card:hover .animat-text.scanner img:nth-child(2) {
-        transform: translate(-100%, -190%) ;
+        transform: translate(-115%, -140%);
     }
+
     .alert-card:hover .animat-text.scanner img:nth-child(3) {
-        transform: translate(0%, 90%) ;
+        transform: translate(20%, 40%);
     }
 }
-

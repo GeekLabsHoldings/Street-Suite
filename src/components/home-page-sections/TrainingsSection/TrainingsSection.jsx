@@ -11,10 +11,10 @@ const TrainingsSection = () => {
             <h3 className='section-title'>TRAINING</h3>
 
 
-            <div className='lg:container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-6 trainings-container columns-8'>
+            <div className='lg:container mx-auto px-4  trainings-container flex flex-col'>
 
                 {/* content of trainings */}
-                <div className="trainings-content">
+                <div className="trainings-content md:w-1/2 order-2 md:order-">
                     <div className="blog">
                         <div className="blog-title">
                             <svg width="36" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,15 +56,19 @@ const TrainingsSection = () => {
                 {/* end content of trainings */}
 
                 {/* img of trainings section */}
-                <div className="trainings-img">
+                <div className="trainings-img order-1 md:order-2 mb-10 md:m-0">
                     <img src={trainingsImg} alt="" />
                 </div>
                 {/* end img of trainings section */}
 
                 {/* Seeing is believing, access All Street Suite Pro Features part */}
-                <div className="signUpNow col-span-2">
-                    <h4>Seeing is believing, access All <span>Street Suite Pro</span> <br /> Features for Free, no commitments</h4>
-                    <button>Sign Up Now</button>
+                <div className="signUpNow border-animate w-full order-3">
+                    <div className="signUpNow-body">
+                        <div className="signUpNow-content">
+                            <h4>Seeing is believing, access All <span>Street Suite Pro</span> <br /> Features for Free, no commitments</h4>
+                            <button>Sign Up Now</button>
+                        </div>
+                    </div>
                 </div>
                 {/* end of Seeing is believing, access All Street Suite Pro Features part */}
             </div>

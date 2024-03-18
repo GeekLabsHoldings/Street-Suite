@@ -1,17 +1,40 @@
-section.clientsFavFeature{
+section.clientsFavFeature {
     padding: 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
 }
 
-section.clientsFavFeature .section-title{
+section.clientsFavFeature .section-title {
     color: #fff;
     font-size: 63px;
     left: 12%;
 }
 
-section.clientsFavFeature img{
+section.clientsFavFeature img {
+    width: 100%;
+    transform: translateY(-300px);
+}
+
+
+@media only screen and (max-width: 600px) {
+    section.clientsFavFeature {
+        padding: 10% 0;
+    }
+    section.clientsFavFeature .section-title {
+        font-size: 24px;
+    }
+    section.clientsFavFeature img {
         width: 100%;
-        transform: translateY(-300px);
+        transform: translateY(0px);
+    }
+    section.clientsFavFeature .section-title {
+        font-size: 24px;
+    }
+    .commingSoon-container > p {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 2rem 0;
+        width: 100%;
+    }
 }

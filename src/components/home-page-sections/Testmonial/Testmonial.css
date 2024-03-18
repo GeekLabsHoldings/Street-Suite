@@ -1,62 +1,138 @@
-section.testmonial{
+section.testmonial {
     padding: 4rem 5% 10%;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
 }
 
-section.testmonial .section-title{
+section.testmonial .section-title {
     color: #fff;
     font-size: 48px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.section-title+p{
+.section-title+p {
     color: #979797;
     font-size: 23px;
     margin-bottom: 7%;
 }
 
-.section-title+p > span{
+.section-title+p>span {
     color: #fff;
     font-weight: 700;
 }
 
-.testmonial-container{
+.testmonial-container {
     max-width: 1400px;
 }
 
-section.testmonial .card .opinion p{
+section.testmonial .card .opinion p {
     font-size: 19px;
 }
-section.testmonial .card .opinion a{
+
+section.testmonial .card .opinion a {
     font-size: 16px;
     color: var(--Blue300);
     font-weight: 600;
 }
 
-section.testmonial .card .date{
+section.testmonial .card .date {
     color: #5D5D5D;
     font-size: 16px;
 }
 
-section.testmonial .testmonial-container .card{
+section.testmonial .testmonial-container .card {
     border-radius: 55px;
     box-shadow: 0px 20px 30px -13px #00000088;
-    background: linear-gradient(135deg, rgb(233, 233, 233) 0%, rgba(40,54,68,1) 44%, rgba(32,32,32,0.8183648459383753) 100%);    
+    background: linear-gradient(135deg, rgb(233, 233, 233) 0%, rgba(40, 54, 68, 1) 44%, rgba(32, 32, 32, 0.8183648459383753) 100%);
     transition: all 0.3s;
 }
-section.testmonial .testmonial-container .card .card-body{
+
+section.testmonial .testmonial-container .card .card-body {
     background-color: #202020;
     transform: translate(1px, 1px);
     border-radius: 55px;
 }
 
-section.testmonial .testmonial-container .card:hover{
+section.testmonial .testmonial-container .card:hover {
     transform: translateY(-5px);
     border-radius: 55px;
-    box-shadow: 4px 5px 12px -1px rgba(83,172,255,0.9);
+    box-shadow: 4px 5px 12px -1px rgba(83, 172, 255, 0.9);
     background: #202020;
     /* background: linear-gradient(128deg, rgba(83,172,255,0.5) 0%, rgba(40,54,68,1) 70%, rgba(32,32,32,0.8183648459383753) 100%); */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    section.testmonial {
+        padding: 2rem 5% 10%;
+    }
+
+    section.testmonial .section-title {
+        color: #fff;
+        font-size: 16px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+    }
+
+    .section-title+p {
+        font-size: 12px;
+        margin-bottom: 4rem;
+    }
+
+    .avatar img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .avatar .user-info h6 {
+        font-size: 12px;
+    }
+
+    .avatar .user-info p {
+        font-size: 10px;
+    }
+
+    section.testmonial .testmonial-container{
+        display: flex;
+        margin-bottom: 10%;
+    }
+
+    section.testmonial .testmonial-container .card{
+        border-radius: 30px;
+        min-width: 300px;
+    }
+    section.testmonial .testmonial-container .card .card-body{
+        padding: 1rem 2rem;
+        border-radius: 30px;
+
+    }
+    section.testmonial .card .opinion p {
+        font-family: Poppins;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 0.5rem;
+
+    }
+
+    section.testmonial .card .opinion a {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+
+    section.testmonial .card .date {
+        color: #5D5D5D;
+        font-size: 10px;
+    }
 }

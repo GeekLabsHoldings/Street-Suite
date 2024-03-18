@@ -52,3 +52,27 @@ letter-spacing: 0em;
 text-align: left;
 
 }
+
+
+@media only screen and (max-width: 600px) {
+    .commingSoon-container > p {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 1.5rem 0;
+        width: 100%;
+    }
+    .expanding-box .item h6 {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+    .expanding-box .item p {
+        font-family: Poppins;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .expanding-box {
+        padding: 2rem 1.5rem;
+    }
+}

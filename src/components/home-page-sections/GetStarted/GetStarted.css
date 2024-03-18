@@ -33,3 +33,25 @@ section.getStarted{
 .getStarted-content button:hover{
     background: var(--Blue400);
 }
+
+
+@media only screen and (max-width: 600px) {
+
+.getStarted-content h3 {
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+}
+.getStarted-content p {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.getStarted-content button{
+    font-size: 12px;
+    margin: 0.5rem 0;
+}
+
+}
