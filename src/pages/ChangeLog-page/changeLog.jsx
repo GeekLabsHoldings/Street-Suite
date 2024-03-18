@@ -34,9 +34,9 @@ import { TextareaAutosize } from '../../components/FormComponent';
 const ChangeLogs = () =>{
     return(
         <div className="Msglayout">
-            <div className='row forBG changeLogLayout'>
+            <div className='row forBG changeLogLayout sm:px-7 sm:py-10'>
             <div className="col-lg-6 col-sm-12">
-                    <div className="col-lg-8 m-auto">
+                    <div className="caption col-lg-8 m-auto">
                         <div className='col-lg-8 col-sm-8'>
                         <h5 className="highlight d-inline-block">Street Suite Updates</h5>
                     <h1>We’ve Made Some Changes</h1>
@@ -67,7 +67,7 @@ const ChangeLogs = () =>{
 
                             </div>
 
-                    <div className='col-lg-9 col-md-9 d-flex flex-col gap-4'>
+                    <div className='col-lg-9 col-md-9 d-flex flex-col gap-4 msgPrt'>
                         <div className='pt-5'>
                         <h3>Have A Feature In Mind?</h3>
                         <FormLabel className='mb-1 labelfont'>Send us a message</FormLabel>

@@ -25,6 +25,9 @@ import AlertsPage from './dashboard/pages/alerts page/alertsPage';
 import TrainingPage from './dashboard/pages/training page/TrainingPage';
 import TradingFlowPage from './dashboard/pages/tradingFlow page/TradingFlowPage';
 
+import TopBroker from './pages/TopBrokerPage/TopBroker';
+
+
 function App() {
   return (
     <div className="App">
@@ -32,13 +35,29 @@ function App() {
         <Routes>
           <Route path="/" element={<WebsiteLayout />} >
 
-            <Route index element={<HomePage />} />
-            {/* quizzes page route  */}
-            <Route path='quezzes' element={<QuezzesPage />} >
-              <Route index element={<QuizzesFiltersPage />} />
-              <Route path="quiz" element={<QuizPage />} />
-              <Route path="quiz-result" element={<QuizResultsPage />} />
-            </Route>
+              <Route index  element={<HomePage />} />
+              {/* quizzes page route  */}
+              <Route path='quezzes'  element={<QuezzesPage />} >
+                <Route index element={<QuizzesFiltersPage/>}/>
+                <Route path="quiz" element={<QuizPage/>}/>
+                <Route path="quiz-result" element={<QuizResultsPage/>}/>
+              </Route>
+
+              <Route path='leaderboard'  element={<LeaderBoardPage />} />
+              <Route path='faq'  element={<FaqPage />} />
+              <Route path='pricing'  element={<PricingPage />} />
+              <Route path='checkout' element={<CheckOutPage />} />
+              <Route path='complete-checkout' element={<CompleteCheckout />} />
+              <Route path='features'  element={<FeaturesPage />} />
+              <Route path='api'  element={<APIPage />} />
+              <Route path='about-us'  element={<AboutUsPage />} />
+              <Route path='signup'  element={< SignupPage/>} />
+              <Route path='contactus'  element={<ContactPage />} />
+              <Route path='change-logs'  element={<ChangeLogs />} />
+              <Route path='top-brokers'  element={<TopBroker/>} />
+
+
+              
 
             <Route path='leaderboard' element={<LeaderBoardPage />} />
             <Route path='faq' element={<FaqPage />} />
@@ -56,6 +75,7 @@ function App() {
 
 
           <Route path='/dashboard' element={<DashboardLayout />}>
+
             <Route index element={<AlertsPage />} />
             <Route path="alerts" element={<AlertsPage />} />
             <Route path="training" element={<TrainingPage />} />
