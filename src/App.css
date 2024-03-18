@@ -26,7 +26,6 @@ body{
 
 }
 .Signuplayout{
-  background: rgb(32,32,32);
   background: linear-gradient(190deg, rgba(32,32,32,1) 40%, rgba(47, 83, 117,1) 100%);
   min-height: 100vh;
   align-items: center;
@@ -54,7 +53,7 @@ body{
   height: 250%;
   top:50%;
   left:50%;
-  transform:translate(-50%,-50%) rotate(320deg);
+  transform:translate(-50%,-50%) rotate(360deg);
   box-sizing: border-box;
   position: absolute;
   transition:all 0.5s
