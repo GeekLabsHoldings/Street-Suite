@@ -1,3 +1,4 @@
+import OneBroker from '../../components/Onebroker/Onebroker';
 import './topBroker.css';
 const TopBroker = ()=>{
 return(
@@ -42,9 +43,13 @@ return(
             <div className='col-md-6'>
                     <div className='col-lg-8 forBorder m-auto'>
                         <div className='formPart brokerBG'>
-                            <div className='col-lg-9 m-auto text-center'>
+                            <div className='col-lg-7 m-auto text-center'>
                                     <h4>Best brokers for 2024</h4>
+                                    <div className='OneBrokerBG'>
+                                    <OneBroker num={1} word='Interactive Brokers'/>
+                                    </div>
                             </div>
+                     
 
                         </div>
 
