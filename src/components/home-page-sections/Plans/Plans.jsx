@@ -61,10 +61,10 @@ const Plans = () => {
 
                 {/* third plane */}
                 <div className="plane">
-                    <div className="plane-body flex flex-col justify-center items-center px-8 py-12">
+                    <div className="plane-body flex flex-col justify-center items-center p-6 md:px-8 md:py-12">
                         <h5 className="plane-title">Starter Plane</h5>
                         <div className="line"></div>
-                        <ul className="plane-points space-y-5 px-4">
+                        <ul className="plane-points space-y-5 pl-5 pr-1 md:px-4">
                             <li>Lorem ipsum dolor sit amet.</li>
                             <li>Lorem ipsum dolor sit amet consectetur.</li>
                             <li>Lorem ipsum dolor sit amet.</li>

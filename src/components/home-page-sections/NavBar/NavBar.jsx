@@ -36,7 +36,7 @@ const NavBar = () => {
         </div>
         {/*  end of navbar auth bttons */}
 
-        <div className={`bars ${isNavOpen ? "open" : ""}`} onClick={()=>{setIsNavOpen(!isNavOpen)}}>
+        <div className={` bars flex md:hidden ${isNavOpen ? "open" : ""}`} onClick={()=>{setIsNavOpen(!isNavOpen)}}>
           <div className='bar'></div>
         </div>
       </nav>

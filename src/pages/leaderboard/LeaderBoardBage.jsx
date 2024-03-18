@@ -79,7 +79,7 @@ const LeaderBoardPage = () => {
 
         <div className="ranking-container w-3/5">
           <div className="ranking-tabs">
-            <ul class="tabs-nav grid grid-cols-3 ">
+            <ul class="tabs-nav grid grid-cols-3 p-0 m-0 list-unstyled">
               {/* taps that show the appropriate content in leaderBoard page */}
               <li><a href="#tab-1" className='Biggest-Winners'>Biggest Winners</a></li>
               <li><a href="#tab-2" className='Biggest-Losers'>Biggest Losers</a></li>

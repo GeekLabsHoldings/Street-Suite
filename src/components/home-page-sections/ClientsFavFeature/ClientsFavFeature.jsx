@@ -9,8 +9,8 @@ const ClientsFavFeature = () => {
     <section className='clientsFavFeature'>
       <h3 className='section-title'>Testimonials</h3>
 
-      <img src={clientReviewsImg} alt="" className='hidden md:d-block' />
-      <img src={clientReviewsMobileImg} alt="" className='d-block md:hidden' />
+      <img src={clientReviewsImg} alt="" className='hidden md:block' />
+      <img src={clientReviewsMobileImg} alt="" className='block md:hidden' />
     </section>
   )
 }

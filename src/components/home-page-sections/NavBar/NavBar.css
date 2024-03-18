@@ -6,7 +6,7 @@ nav {
     display: flex;
     align-items: center;
     background-color: transparent;
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
 }
 
@@ -14,7 +14,6 @@ nav .bars {
     height: 21px;
     padding: 2px 0;
     cursor: pointer;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
