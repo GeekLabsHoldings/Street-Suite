@@ -1,0 +1,136 @@
+.trading_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account_chart {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.account_number {
+    width: 30%;
+    padding: 3rem 2rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+}
+
+.account_number ul:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 2rem;
+    border-bottom: 0.5px solid #fff;
+}
+
+.account_number ul:first-child li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.account_number ul:first-child li:first-child {
+    align-items: flex-start;
+}
+
+.account_number ul:first-child li:first-child span {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+
+.account_number ul:first-child li:last-child span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #7E7E7E;
+}
+
+.account_number ul:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0 0;
+    gap: 1.5rem;
+}
+
+.account_number ul:last-child li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+
+}
+
+.account_number ul:last-child li span:first-child {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+
+.account_number ul:last-child li span:last-child {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 200;
+    text-wrap: nowrap;
+}
+
+.account_chart .chart{
+    /* position: relative; */
+    width: 70%;
+    padding: 1.5rem 1.5rem 0.5rem 0.5rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chart_container{
+    width: 100%;
+}
+
+.account_chart .chart .total_price p{
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0.5rem 2rem;
+}
+.account_chart .chart .total_price_direction{
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #1E1E1E;
+    box-shadow: 0px 6px 10px 0px #000000a2;
+    border-radius: 7px;
+}
+.account_chart .chart .total_price_direction span:first-child{
+    color: #fff;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 13px;
+}
+.account_chart .chart .total_price_direction span:last-child{
+    color: #118F4B;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.account_chart .chart .total_price_direction svg{
+    width: 7px;
+    transform: rotateX(180deg);
+}
+.account_chart .chart .total_price_direction svg path{
+    fill: #118F4B;
+}

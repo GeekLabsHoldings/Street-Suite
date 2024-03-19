@@ -150,7 +150,25 @@ input:focus {
   color: #fff;
 }
 
+.SearchBar .searchBtn{
+  height: 40px;
+  padding: 5px 2rem;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #53ACFF;
+  color: #fff;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
 
+}
+.SearchBar .searchBtn:hover{
+  box-shadow: inset 0px 0px 20px 0px #313131;
+}
 
 
 @media only screen and (max-width: 800px) {
