@@ -1,0 +1,28 @@
+.cardBG{
+ background: linear-gradient(180deg, #1f1e1e 20%, #181818CC 80%);
+ border-radius: 1.5rem;
+}
+.everyPart h5{
+    font-weight: 700;
+    font-size:23px ;
+    line-height: 34.5px;
+    padding-bottom: 1.2rem;
+}
+.everyPart p{
+    font-weight: 400;
+    font-size: 16px ;
+    line-height: 32px;
+}
+
+.topBrokerBtns{
+    border-radius: 0.2rem;
+}
+.compareBtn{
+    background-color: transparent;
+    border: 1px solid white;
+}
+.pickContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

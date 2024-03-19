@@ -1,6 +1,20 @@
 import OneBroker from '../../components/Onebroker/Onebroker';
+import PickCard from '../../components/PickCard/PickCard';
+import {brokersData,blackBrokerData} from './brokersData';
 import './topBroker.css';
 const TopBroker = ()=>{
+    const renderBrokers = 
+        brokersData.map((broker)=>(
+        <div className='OneBrokerBG brokerDiv my-3'>
+            <OneBroker num={broker.num} word={broker.word}/>
+        </div>
+    ))
+    const renderBlackBrokers = 
+    blackBrokerData.map((broker)=>(
+    <div className='brokerDiv blackBG my-3'>
+        <OneBroker num={broker.num} word={broker.word}/>
+    </div>
+))
 return(
     <div className="Msglayout">
             <div className="brokersHeader col-md-6 m-auto ">
@@ -20,18 +34,18 @@ return(
                     <div>
                     <h4 className='pb-4'>How to  make pick the best platform for you?</h4>
                 <div className="textSection ">
-                    <ul>
+                    <ul className='topBrokerList anyList spacedList'>
                         <li>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
                         </li>
                         <li>
-                        <p>magna aliquaconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna  </p>
+                        <span>magna aliquaconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna  </span>
                         </li>
                         <li>
-                        <p>aliquaconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaconsectetur </p>
+                        <span>aliquaconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaconsectetur </span>
                         </li>
                         <li>
-                        <p>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        <span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
                         </li>
                     </ul>
                 </div>
@@ -41,12 +55,13 @@ return(
                 
             </div>
             <div className='col-md-6'>
-                    <div className='col-lg-8 forBorder m-auto'>
-                        <div className='formPart brokerBG'>
-                            <div className='col-lg-7 m-auto text-center'>
-                                    <h4>Best brokers for 2024</h4>
-                                    <div className='OneBrokerBG'>
-                                    <OneBroker num={1} word='Interactive Brokers'/>
+                    <div className='col-lg-6 forBorder m-auto'>
+                        <div className='formPart brokerBG py-3'>
+                            <div className='col-lg-8 m-auto text-center'>
+                                    <h4 className='py-8'>Best brokers for 2024</h4>
+                                    <div >
+                                    {renderBrokers}
+                                    {renderBlackBrokers}
                                     </div>
                             </div>
                      
@@ -55,6 +70,13 @@ return(
 
                     </div>
 
+                </div>
+            </div>
+
+            <div className=' col-md-10 m-auto'>
+                <div className='col-md-10 m-auto my-5'>
+                <h4 className='pb-5' >More about our picks:</h4>
+                <PickCard/>
                 </div>
             </div>
  
