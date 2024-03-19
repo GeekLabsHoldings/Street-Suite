@@ -1,7 +1,8 @@
 import './HeaderCard.css';
 import StarsImg from '../../assets/starts.svg';
 import PopularImg from '../../assets/popular-badge.png'
-const HeaderCard = ({imgUrl})=>{
+const HeaderCard = ({ imgUrl }) => {
+    
     return(
 //     <div className="row px-2 py-3 holder sm:justify-end">
 //         <div className="col-md-4 sm:w-fit">

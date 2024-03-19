@@ -7,7 +7,6 @@ import { styled } from '@mui/system';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import * as React from 'react';
 
-
  const grey = {
     50: '#F3F6F9',
     100: '#E5EAF2',

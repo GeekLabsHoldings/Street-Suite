@@ -24,7 +24,7 @@ const TopBroker = ()=>{
 ))
 return(
     <div className="Msglayout forPadding">
-            <div className="brokersHeader col-md-6 col-sm-12 m-auto ">
+            <div className="brokersHeader col-md-7 text-center col-sm-12 m-auto ">
             <h1>Best Online Brokers And Trading Platforms For <span className="highlight">Street Suite</span></h1>
             </div>
             <div className=' col-sm-12 sm:visible md:hidden'>
@@ -38,7 +38,8 @@ return(
                             </div>
                         </div>
                     </div>
-                </div>
+        </div>
+        
             <div className='row'>
             <div className='col-md-6'>
                 <div className='col-md-10 m-auto rightPrt sm:pt-10'>
@@ -73,8 +74,8 @@ return(
                 </div>
                 
             </div>
-            <div className='visible col-md-6 sm:hidden'>
-                    <div className='col-lg-6 forBorder m-auto'>
+            <div className='md:visible col-md-6 sm:hidden'>
+                    <div className='col-lg-8 forBorder m-auto'>
                         <div className='formPart brokerBG py-3'>
                             <div className='col-lg-8 m-auto text-center'>
                                     <h4 className='py-8'>Best brokers for 2024</h4>

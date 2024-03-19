@@ -9,6 +9,7 @@ const OneBroker = ({num,word})=>{
             </div>
         </div>
     )
+    
 
 }
 export default OneBroker
