@@ -21,7 +21,7 @@ position: relative;
 .popularBadge{
     position: absolute;
     top: -6px;
-    right: 6px;
+    right: -6px;
 }
 
 @media only screen and (max-width: 676px){

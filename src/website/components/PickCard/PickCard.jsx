@@ -10,15 +10,14 @@ const PickCard = ({imgUrl})=>{
             <div className='headerBG '>
             <HeaderCard imgUrl={imgUrl}/>
             </div>
-
-                <div className="col-md-11 m-auto py-5 pickContainer sm:px-3">
+                <div className="col-md-11 m-auto md:py-5 sm:pt-4 pickContainer sm:px-3">
                     <div className='row '>
                         <div className="col-md-6 " >
                         <div className='everyPart'>
                             <h5>Overview</h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                         </div>
-                         </div>
+                            </div>
                         <div className="col-md-6 flex justify-center sm:justify-start " >
                             <div className='everyPart'>
                             <h5>Pros:</h5>
@@ -34,9 +33,8 @@ const PickCard = ({imgUrl})=>{
                             </li>
                         </ul>
                             </div>
-              
-                         </div>
-                   
+                            </div>
+
                     </div>
                     <div className='row justify-between'>
                     <div className="col-md-6 ">
@@ -45,8 +43,7 @@ const PickCard = ({imgUrl})=>{
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                         </div>
                         </div>
-                         
-                         <div className="col-md-6 flex justify-center sm:justify-start">
+                            <div className="col-md-6 flex justify-center sm:justify-start">
                             <div className='everyPart'>
                             <h5>Cons</h5>
                         <ul className='topBrokerList anyList'>
@@ -67,15 +64,12 @@ const PickCard = ({imgUrl})=>{
                 </div>
                         
                             </div>
-            
-                         </div>
-                         <div className='sm:visible md:hidden flex gap-3 pt-10 sm:justify-end'>
+                            </div>
+                            <div className='sm:visible md:hidden flex gap-3 pt-10 sm:justify-end'>
                     <Button className='topBrokerBtns compareBtn forbtn py-2 px-4 w-fit'>Compare</Button>
                     <Button className='topBrokerBtns forbtn py-2 w-fit'>Create Account</Button>
                 </div>
-             
                     </div>
-             
                 </div>
 
         </div>
