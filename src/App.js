@@ -26,6 +26,8 @@ import TrainingPage from './dashboard/pages/training page/TrainingPage';
 import TradingFlowPage from './dashboard/pages/tradingFlow page/TradingFlowPage';
 
 import TopBroker from './website/pages/TopBrokerPage/TopBroker';
+import YourPortfolioPage from './dashboard/pages/tradingFlow page/YourPotfolioPage/YourPortfolioPage';
+import PrivateEquityPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/PrivateEquityPage';
 
 
 function App() {
@@ -64,12 +66,14 @@ function App() {
             <Route index element={<AlertsPage />} />
             <Route path="alerts" element={<AlertsPage />} />
             <Route path="training" element={<TrainingPage />} />
-            <Route path="trading" element={<TradingFlowPage />} />
+            <Route path="trading" element={<TradingFlowPage />} >
+              <Route index element={<YourPortfolioPage/>} />
+              <Route path='private-equity' element={<PrivateEquityPage />} />
+            </Route>
 
           </Route>
         </Routes>
 
-        <Footer />
       </BrowserRouter>
     </div>
   );

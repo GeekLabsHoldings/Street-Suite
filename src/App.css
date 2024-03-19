@@ -131,7 +131,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .dashboard-wrapper{
   width: calc(100% - 100px);
-  height: 100vh;
   display: flex;
   padding: 1rem 0 1rem 1rem;
   gap: 1rem;
@@ -151,7 +150,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 850px) {
   .dashboard-wrapper{
-    display: unset;
     width: calc(100% - 60px);
     padding: 0.5rem 0;
   }
