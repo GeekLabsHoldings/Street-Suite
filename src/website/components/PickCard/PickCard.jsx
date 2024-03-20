@@ -36,7 +36,7 @@ const PickCard = ({imgUrl})=>{
                             </div>
 
                     </div>
-                    <div className='row justify-between'>
+                    <div className='row justify-between md:py-4 sm:pb-5 pt-2'>
                     <div className="col-md-6 ">
                         <div className='everyPart'>
                         <h5>Why we Like it?</h5>
