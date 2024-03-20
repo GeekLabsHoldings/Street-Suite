@@ -23,6 +23,13 @@ position: relative;
     top: -6px;
     right: -6px;
 }
+.imgDivHeader{
+    width: 80px;
+    height: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media only screen and (max-width: 676px){
     .textToImg h4{
@@ -35,15 +42,12 @@ position: relative;
         line-height: 15px;
     }
     .imgDivHeader{
-        width: 33px;
+        width: 33px ;
         height: 31px;
     }
     .starsImg{
         width: 57px;
         height: 9.67px;
-    }
-    .textToImg{
-        padding-right: 0.5rem;
     }
     .holder{
         padding: 0.4rem 0rem;

@@ -3,10 +3,11 @@ import './pickCard.css'
 import HeaderCard from '../HeaderForCard/HeaderCard';
 
 
-
 const PickCard = ({imgUrl})=>{
     return(
-        <div className='cardBG'>
+        <div className='smforBorder'>
+
+            <div className='formPart cardBG'>
             <div className='headerBG '>
             <HeaderCard imgUrl={imgUrl}/>
             </div>
@@ -36,7 +37,7 @@ const PickCard = ({imgUrl})=>{
                             </div>
 
                     </div>
-                    <div className='row justify-between'>
+                    <div className='row justify-between md:py-4 sm:pb-5 pt-2'>
                     <div className="col-md-6 ">
                         <div className='everyPart'>
                         <h5>Why we Like it?</h5>
@@ -71,6 +72,9 @@ const PickCard = ({imgUrl})=>{
                 </div>
                     </div>
                 </div>
+            </div>
+
+         
 
         </div>
 

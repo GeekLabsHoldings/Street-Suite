@@ -33,6 +33,7 @@ import DepositFundsPage from './dashboard/pages/tradingFlow page/Transfer_PayPag
 import WithdrawFundsPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/WithdrawFundsPage/WithdrawFundsPage';
 import TransactionsHistoryPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/TransactionsHistoryPage/TransactionsHistoryPage';
 import SuccessfulTransactionPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/SuccessfulTransactionPage/SuccessfulTransactionPage';
+import CareersPage from './website/pages/Careers-page/Careers';
 
 
 function App() {
@@ -62,6 +63,8 @@ function App() {
               <Route path='contactus'  element={<ContactPage />} />
               <Route path='change-logs'  element={<ChangeLogs />} />
               <Route path='top-brokers'  element={<TopBroker/>} />
+              <Route path='careers'  element={<CareersPage/>} />
+
 
           </Route>
 
