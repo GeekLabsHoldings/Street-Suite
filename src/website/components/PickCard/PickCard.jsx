@@ -6,7 +6,9 @@ import HeaderCard from '../HeaderForCard/HeaderCard';
 
 const PickCard = ({imgUrl})=>{
     return(
-        <div className='cardBG'>
+        <div className='smforBorder'>
+
+            <div className='formPart cardBG'>
             <div className='headerBG '>
             <HeaderCard imgUrl={imgUrl}/>
             </div>
@@ -71,6 +73,9 @@ const PickCard = ({imgUrl})=>{
                 </div>
                     </div>
                 </div>
+            </div>
+
+         
 
         </div>
 

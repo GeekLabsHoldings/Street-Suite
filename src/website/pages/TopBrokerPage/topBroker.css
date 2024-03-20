@@ -63,18 +63,18 @@
 
 .smforBorder::before{
     content: "";
-    background-image: conic-gradient(transparent 80deg ,#c5b9b9 180deg,transparent 280deg );
+    background-image: conic-gradient(transparent 250deg ,#c5b9b944 300deg,transparent 360deg );
     width: 250%;
     height: 250%;
-    top:-80%;
-    left:-80%;
-    transform:translate(-50%,-50%) rotate(360deg);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(0deg);
     box-sizing: border-box;
     position: absolute;
     transition:all 0.5s
   }
-  .forBorder:hover::before{
-    transform:translate(-50%,-50%) rotate(0deg);
+.smforBorder:hover::before {
+    transform:translate(-50%,-50%) rotate(360deg);
   }
 
 @media only screen and (max-width: 676px){
