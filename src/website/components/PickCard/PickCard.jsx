@@ -1,14 +1,17 @@
 import { Button } from 'react-bootstrap';
 import './pickCard.css'
 import HeaderCard from '../HeaderForCard/HeaderCard';
-import FirstImg from '../../assets/firstImgBroker.svg';
-const PickCard = ()=>{
+
+
+
+const PickCard = ({imgUrl})=>{
     return(
         <div className='cardBG'>
-        <div className="cardHeader">
-            <HeaderCard imgUrl={FirstImg}/>
-        </div>
-                <div className="col-md-11 m-auto py-5 pickContainer">
+            <div className='headerBG '>
+            <HeaderCard imgUrl={imgUrl}/>
+            </div>
+
+                <div className="col-md-11 m-auto py-5 pickContainer sm:px-3">
                     <div className='row '>
                         <div className="col-md-6 " >
                         <div className='everyPart'>
@@ -16,20 +19,17 @@ const PickCard = ()=>{
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                         </div>
                          </div>
-
-
-
-                        <div className="col-md-6 flex justify-center " >
+                        <div className="col-md-6 flex justify-center sm:justify-start " >
                             <div className='everyPart'>
                             <h5>Pros:</h5>
                         <ul className='topBrokerList anyList'>
-                            <li>
+                            <li key={1}>
                                 Lorem ipsum dolor sit amet, consectetur
                             </li>
-                            <li>
+                            <li key={2}>
                             sed do eiusmod tempor incididunt ut labore et 
                             </li>
-                            <li>
+                            <li key={3}>
                             dolore magna aliqua. Ut enim ad minim 
                             </li>
                         </ul>
@@ -46,21 +46,22 @@ const PickCard = ()=>{
                         </div>
                         </div>
                          
-                         <div className="col-md-6 flex justify-center ">
+                         <div className="col-md-6 flex justify-center sm:justify-start">
                             <div className='everyPart'>
                             <h5>Cons</h5>
                         <ul className='topBrokerList anyList'>
-                            <li>
+                            <li key={1}>
                                 Lorem ipsum dolor sit amet, consectetur
                             </li>
-                            <li>
+                            <li key={2}>
                             sed do eiusmod tempor incididunt ut labore et 
                             </li>
-                            <li>
+                            <li key={3}>
                             dolore magna aliqua. Ut enim ad minim 
                             </li>
                         </ul>
-                        <div className='flex gap-3 pt-10 justify-end'>
+
+                        <div className='md:visible sm:hidden flex gap-3 pt-10 justify-end'>
                     <Button className='topBrokerBtns compareBtn forbtn py-2 px-4 w-fit'>Compare</Button>
                     <Button className='topBrokerBtns forbtn py-2 w-fit'>Create Account</Button>
                 </div>
@@ -68,7 +69,10 @@ const PickCard = ()=>{
                             </div>
             
                          </div>
-     
+                         <div className='sm:visible md:hidden flex gap-3 pt-10 sm:justify-end'>
+                    <Button className='topBrokerBtns compareBtn forbtn py-2 px-4 w-fit'>Compare</Button>
+                    <Button className='topBrokerBtns forbtn py-2 w-fit'>Create Account</Button>
+                </div>
              
                     </div>
              

@@ -1,8 +1,15 @@
 import OneBroker from '../../components/Onebroker/Onebroker';
 import PickCard from '../../components/PickCard/PickCard';
-import {brokersData,blackBrokerData} from './brokersData';
+import {brokersData,blackBrokerData, ImagesData} from './brokersData';
+
 import './topBroker.css';
 const TopBroker = ()=>{
+    const renderImages = ImagesData.map((img)=>(
+        <div>
+            <PickCard imgUrl={img}/>
+        </div>
+
+    ))
     const renderBrokers = 
         brokersData.map((broker)=>(
         <div className='OneBrokerBG brokerDiv my-3'>
@@ -16,13 +23,25 @@ const TopBroker = ()=>{
     </div>
 ))
 return(
-    <div className="Msglayout">
-            <div className="brokersHeader col-md-6 m-auto ">
+    <div className="Msglayout forPadding">
+            <div className="brokersHeader col-md-6 col-sm-12 m-auto ">
             <h1>Best Online Brokers And Trading Platforms For <span className="highlight">Street Suite</span></h1>
             </div>
+            <div className=' col-sm-12 sm:visible md:hidden'>
+                    <div className='col-lg-6 smforBorder m-auto'>
+                        <div className='formPart smbrokerBG py-3'>
+                            <div className='col-sm-6 sm:px-12 text-center topBrokerSM'>
+                                    <h4 className='sm:pt-5'>Best brokers for 2024</h4>
+                                    <div  >
+                                    {renderBrokers}
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <div className='row'>
             <div className='col-md-6'>
-                <div className='col-md-10 m-auto rightPrt'>
+                <div className='col-md-10 m-auto rightPrt sm:pt-10'>
                     <div>
                     <h4 className='pb-4'>What are our Top choice’s criteria?</h4>
                 <div className="textSection ">
@@ -35,16 +54,16 @@ return(
                     <h4 className='pb-4'>How to  make pick the best platform for you?</h4>
                 <div className="textSection ">
                     <ul className='topBrokerList anyList spacedList'>
-                        <li>
+                        <li key={1}>
                         <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </span>
                         </li>
-                        <li>
+                        <li key={2}>
                         <span>magna aliquaconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna  </span>
                         </li>
-                        <li>
+                        <li key={3}>
                         <span>aliquaconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaconsectetur </span>
                         </li>
-                        <li>
+                        <li key={4}>
                         <span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
                         </li>
                     </ul>
@@ -54,7 +73,7 @@ return(
                 </div>
                 
             </div>
-            <div className='col-md-6'>
+            <div className='visible col-md-6 sm:hidden'>
                     <div className='col-lg-6 forBorder m-auto'>
                         <div className='formPart brokerBG py-3'>
                             <div className='col-lg-8 m-auto text-center'>
@@ -64,19 +83,18 @@ return(
                                     {renderBlackBrokers}
                                     </div>
                             </div>
-                     
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
             <div className=' col-md-10 m-auto'>
-                <div className='col-md-10 m-auto my-5'>
-                <h4 className='pb-5' >More about our picks:</h4>
-                <PickCard/>
+                <div className='col-md-10 mx-auto my-5 ourPicks'>
+                <h4 className='md:pb-5 sm:pb-8' >More about our picks:</h4>
+                <div className='flex flex-col gap-3'>
+                {renderImages}
+                </div>
+             
                 </div>
             </div>
  

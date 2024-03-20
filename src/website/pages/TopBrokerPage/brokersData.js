@@ -1,3 +1,9 @@
+import FirstImg from '../../assets/firstImgBroker.svg';
+import SecondImg from '../../assets/secondImgBroker.svg';
+import ThirdImg from '../../assets/thirdImgBroker.svg';
+import ForthImg from '../../assets/forthImgBroker.svg';
+import FifthImg from '../../assets/fifthImgBroker.svg';
+
  export const brokersData =[
     {
         num:1,
@@ -38,3 +44,8 @@
     }
     
 ]
+
+ export const ImagesData =[
+    FirstImg , SecondImg , ThirdImg , ForthImg , FifthImg
+
+ ]

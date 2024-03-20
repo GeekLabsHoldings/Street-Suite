@@ -23,7 +23,7 @@
     gap: 1.3rem;
 }
 .brokerBG{
-    background: linear-gradient(190deg, #172f46 15%, #3f84c4 100%);
+    background: linear-gradient(180deg, rgba(34,72,107,0.8) 5%,  rgba(59, 126, 189, 0.8) 100%);
 }
 .blackBG{
     background-color: #202020;
@@ -53,4 +53,64 @@
 }
 .spacedList{
     gap:1.5rem;
+}
+.forPadding{
+    padding: 2rem 0 !important;
+}
+.smbrokerBG{
+    background: linear-gradient(150deg, rgb(21, 43, 65) 5%,  rgb(37, 72, 104) 100%);
+}
+
+.smforBorder::before{
+    content: "";
+    background-image: conic-gradient(transparent 80deg ,#c5b9b9 180deg,transparent 280deg );
+    width: 250%;
+    height: 250%;
+    top:-80%;
+    left:-80%;
+    transform:translate(-50%,-50%) rotate(360deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
+  }
+  .forBorder:hover::before{
+    transform:translate(-50%,-50%) rotate(0deg);
+  }
+
+@media only screen and (max-width: 676px){
+    .brokersHeader h1 , .brokersHeader span{
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .forPadding {
+        padding: 2rem !important;
+    }
+    .topBrokerSM h4{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .oneBrokerFonts h5{
+            font-size: 10px !important;
+            line-height:15px !important;
+    }
+    .brokersHeader{
+        margin-bottom: 3rem !important;
+    }
+    .rightPrt h4{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .textSection p ,.topBrokerList span{
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .spacedList{
+        gap: 0.8rem;
+        list-style: none;
+    }
+    .ourPicks{
+        font-size: 16px;
+        line-height: 24px;
+    }
 }

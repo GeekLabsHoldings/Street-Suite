@@ -1,5 +1,5 @@
 .cardBG{
- background: linear-gradient(180deg, #1f1e1e 20%, #181818CC 80%);
+ background-color: #181818CC;
  border-radius: 1.5rem;
 }
 .everyPart h5{
@@ -25,4 +25,34 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+.headerBG{
+    background-color: #202020;
+    border-start-start-radius:1.5rem ;
+    border-start-end-radius: 1.5rem;
+    
+}
+@media only screen and (max-width: 676px){
+    .everyPart h5{
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 700;
+    }
+    .everyPart p ,.topBrokerList li{
+        font-size: 10px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    .anyList{
+        gap: 0rem !important;
+    }
+    .everyPart h5{
+        padding-top: 1rem;
+    }
+    .topBrokerList{
+        padding-left: 0.4rem !important;
+
+    }
+
+
 }

@@ -1,10 +1,10 @@
 const OneBroker = ({num,word})=>{
     return(
-        <div className=" flex py-2">
-            <div className="col-md-4">
+        <div className=" row py-2 sm:ps-8 oneBrokerFonts">
+            <div className="col-md-4 sm:w-fit ">
             <h5>{num}</h5>
             </div>
-            <div className=" col-md-8 text-left">
+            <div className="col-md-8 text-left sm:w-fit">
             <h5 >{word}</h5>
             </div>
         </div>
