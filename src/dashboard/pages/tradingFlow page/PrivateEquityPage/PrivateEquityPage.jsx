@@ -89,7 +89,7 @@ const PrivateEquityPage = () => {
                         </div>
                     </div>
                     <div className='w-[70%]'>
-
+                            
                     </div>
                 </div>
             </div>
