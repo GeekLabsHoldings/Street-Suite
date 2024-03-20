@@ -1,0 +1,517 @@
+
+.account_chart {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.account_number {
+    width: 30%;
+    padding: 3rem 2rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+}
+
+.account_number ul:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 2rem;
+    border-bottom: 0.5px solid #fff;
+}
+
+.account_number ul:first-child li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.account_number ul:first-child li:first-child {
+    align-items: flex-start;
+}
+
+.account_number ul:first-child li:first-child span {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+
+.account_number ul:first-child li:last-child span {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #7E7E7E;
+}
+
+.account_number ul:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0 0;
+    gap: 1.5rem;
+}
+
+.account_number ul:last-child li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+
+}
+
+.account_number ul:last-child li span:first-child {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+
+.account_number ul:last-child li span:last-child {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 200;
+    text-wrap: nowrap;
+}
+
+.account_chart .chart {
+    /* position: relative; */
+    width: 70%;
+    padding: 1.5rem 1.5rem 0.5rem 0.5rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chart_container {
+    width: 100%;
+}
+
+.account_chart .chart .total_price p {
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0.5rem 2rem;
+}
+
+.account_chart .chart .total_price_direction {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #1E1E1E;
+    box-shadow: 0px 6px 10px 0px #000000a2;
+    border-radius: 7px;
+}
+
+.account_chart .chart .total_price_direction span:first-child {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 13px;
+}
+
+.account_chart .chart .total_price_direction span:last-child {
+    color: #118F4B;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.account_chart .chart .total_price_direction svg {
+    width: 7px;
+    transform: rotateX(180deg);
+}
+
+.account_chart .chart .total_price_direction svg path {
+    fill: #118F4B;
+}
+
+.shares_equities {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.shares_equities .myShares {
+    width: 70%;
+}
+
+.shares_equities .myShares .mySharesCard {
+    padding: 3rem 1rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+    display: flex;
+    gap: 1.5rem;
+    height: calc(100% - 54px);
+}
+
+.my_positions {
+    width: 25%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-right: 1px solid #fff;
+
+}
+
+.my_positions p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.my_positions ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+    padding: 1.5rem 2rem;
+}
+
+.my_positions ul li a {
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.my_positions ul li a:hover {
+    color: var(--Blue300);
+}
+
+.company_info_chart {
+    width: 75%;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.company_info {
+    width: 45%;
+}
+
+.company_info h6 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+    background-color: var(--Blue300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company_info .companyName span {
+    font-size: 12px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #1E1E1E;
+    box-shadow: 0px 3px 15px -3px #000;
+}
+
+.company_info span svg {
+    width: 9px;
+}
+
+.company_info span svg path {
+    fill: #D94111;
+}
+
+.company_info ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company_info ul li span:first-child {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.company_info ul li span:last-child {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.company_chart {
+    width: 100%;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    border: 1px solid #ffffff38;
+    border-radius: 5px;
+}
+
+.number_of_sales {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.number_of_sales span {
+    font-size: 15.95px;
+    font-weight: 500;
+    background: var(--Blue300);
+    border-radius: 5px;
+    padding: 0 0.2rem;
+}
+
+.number_of_sales p {
+    font-size: 9.84px;
+    left: 10px;
+}
+
+.shares_equities .equities {
+    width: 30%;
+    padding: 2rem 5rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+    position: relative;
+}
+
+.shares_equities .equities .padge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 110px;
+}
+
+.shares_equities .equities h6 {
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 28.5px;
+    text-align: center;
+
+}
+
+.recommended_equities {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #fff;
+}
+
+.equity_item {
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(49, 49, 49, 1);
+    border-radius: 5px;
+    box-shadow: 0px 3.3127145767211914px 16.480754852294922px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
+}
+.equity_item:hover {
+    background-color: var(--Blue300);
+}
+.equity_item span {
+    font-family: Poppins;
+    font-size: 17.92px;
+    font-weight: 400;
+    line-height: 21.5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0 0.3rem 1rem;
+    border-left: 1px solid;
+}
+
+.equity_item span svg {
+    width: 10px;
+}
+
+.equity_item.Up span svg {
+    transform: rotateX(180deg);
+}
+
+.equity_item.Up span svg path {
+    fill: rgba(17, 143, 75, 1);
+}
+
+.equity_item.Down span svg path {
+    fill: rgba(217, 65, 17, 1);
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+
+
+
+    .account_chart {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .account_number {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .account_chart .chart {
+        width: 100%;
+        padding: 1rem 1rem 0rem 0rem;
+    }
+
+    .account_number ul:first-child {
+        padding: 0 0 1rem;
+        border-bottom: 0.5px solid #fff;
+    }
+
+    .account_number ul:last-child {
+        padding: 1rem 0 0;
+        gap: 1rem;
+    }
+
+    .account_number ul:first-child li:first-child span {
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 19.5px;
+        text-align: left;
+    }
+
+    .account_number ul:first-child li:last-child span {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15.4px;
+        text-align: center;
+    }
+
+    .account_number ul:last-child li span:first-child {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: left;
+    }
+
+    .account_number ul:last-child li span:last-child {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+
+    }
+
+    .account_chart .chart .total_price p {
+        font-size: 19.83px;
+        font-weight: 600;
+        line-height: 20.97px;
+        margin: 0 0 0 1rem;
+    }
+
+    .account_chart .chart .total_price_direction {
+        padding: 0.3rem;
+        gap: 0.2rem;
+    }
+
+    .shares_equities {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .shares_equities .myShares {
+        width: 100%;
+    }
+
+    .shares_equities .myShares .mySharesCard {
+        padding: 1.5rem 1rem;
+        box-shadow: inset 0px 0px 20px 0px #00000069;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: auto;
+    }
+
+    .my_positions {
+        width: 100%;
+        padding: 1.5rem 0.7rem ;
+        gap: 0.7rem;
+        border-right: 0px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .my_positions p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .my_positions ul {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .my_positions ul li {
+        width: 33.333333%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 0.5rem;
+    }
+
+    .my_positions ul li a {
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 19.5px;
+        text-align: center;
+    }
+
+    .company_info_chart {
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 0rem;
+    }
+
+    .company_info {
+        width: 100%;
+    }
+
+    .company_chart {
+        padding: 0rem 1rem 0rem 0rem;
+    }
+
+    .shares_equities .equities {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .shares_equities .equities h6 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .shares_equities .equities .padge {
+        width: 90px;
+    }
+}

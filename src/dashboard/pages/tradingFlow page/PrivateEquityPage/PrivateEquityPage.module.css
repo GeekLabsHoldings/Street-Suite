@@ -1,0 +1,172 @@
+.equities {
+    padding: 2rem 5rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+    position: relative;
+}
+
+.equities .padge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 110px;
+}
+
+.equities h6 {
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 28.5px;
+    text-align: center;
+
+}
+
+.recommended_equities {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #fff;
+}
+
+.equity_item {
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(49, 49, 49, 1);
+    border-radius: 5px;
+    box-shadow: 0px 3.3127145767211914px 16.480754852294922px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
+}
+
+.equity_item:hover {
+    background-color: var(--Blue300);
+}
+
+.equity_item span {
+    font-family: Poppins;
+    font-size: 17.92px;
+    font-weight: 400;
+    line-height: 21.5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0 0.3rem 1rem;
+    border-left: 1px solid;
+}
+
+.equity_item span svg {
+    width: 10px;
+}
+
+.equity_item.Up span svg {
+    transform: rotateX(180deg);
+}
+
+.equity_item.Up span svg path {
+    fill: rgba(17, 143, 75, 1);
+}
+
+.equity_item.Down span svg path {
+    fill: rgba(217, 65, 17, 1);
+}
+
+
+.want_share {
+    padding: 2rem 3rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+}
+
+.company_details_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 1.5rem 0;
+    border-bottom: 1px solid #fff;
+}
+
+.company_details_body ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company_details_body ul li span:first-child {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.company_details_body ul li span:last-child {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+
+}
+
+.company_details_body ul li span a{
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+color: var(--Blue300);
+
+}
+
+.want_share .total_price_direction {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #1E1E1E;
+    box-shadow: 0px 6px 10px 0px #000000a2;
+    border-radius: 7px;
+}
+
+.want_share .total_price_direction {
+    font-family: Poppins;
+    font-size: 21.64px;
+    font-weight: 400;
+    line-height: 25.96px;
+    text-align: left;
+    
+}
+
+
+
+.want_share .total_price_direction svg {
+    width: 10px;
+    transform: rotateX(180deg);
+}
+
+.want_share .total_price_direction svg path {
+    fill: #118F4B;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .shares_equities .equities {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .shares_equities .equities h6 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .shares_equities .equities .padge {
+        width: 90px;
+    }
+
+}

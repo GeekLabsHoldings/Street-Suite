@@ -1,5 +1,5 @@
 .sideMenu {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 99;
@@ -51,25 +51,22 @@
   transition: all 0.6s;
 }
 
-.menu::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: none;
-	border-radius: 10px;
-	background-color: transparent;
-  
+.menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 10px;
+  background-color: transparent;
+
 }
 
-.menu::-webkit-scrollbar
-{
-	width: 4px;
-	background-color: transparent;
+.menu::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
 }
 
-.menu::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: none;
-	background-color: #424242;
+.menu::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: none;
+  background-color: #424242;
 }
 
 .menu li {
@@ -86,7 +83,7 @@
   transition: all 0.6s;
 }
 
-.menu svg path{
+.menu svg path {
   fill: #fff;
 }
 
@@ -105,35 +102,42 @@
 
 
 
-.menu li a:hover p{
+.menu li a:hover p {
   color: #53ACFF;
 }
-.menu li a:hover svg{
+
+.menu li a:hover svg {
   fill: #53ACFF;
 }
-.menu li a:hover svg path{
+
+.menu li a:hover svg path {
   fill: #53ACFF;
 }
 
 .menu li.comingSoon a {
   cursor: not-allowed;
 }
-.menu li.comingSoon a p{
+
+.menu li.comingSoon a p {
   color: #FFFFFF4D;
 }
+
 .menu li.comingSoon svg {
   fill: #FFFFFF4D;
 }
-.menu li.comingSoon a:hover svg{
-  fill: #FFFFFF4D;
-}
-.menu li.comingSoon a:hover svg path{
+
+.menu li.comingSoon a:hover svg {
   fill: #FFFFFF4D;
 }
 
-.menu li.comingSoon svg path{
+.menu li.comingSoon a:hover svg path {
   fill: #FFFFFF4D;
 }
+
+.menu li.comingSoon svg path {
+  fill: #FFFFFF4D;
+}
+
 .menu li a p {
   position: unset;
   left: unset;
@@ -214,14 +218,16 @@
 .onClose .logo {
   padding: 2rem 1rem 1rem;
 }
-.onClose .logo img{
+
+.onClose .logo img {
   width: 100%;
 }
+
 .onClose .menu {
   list-style: none;
   padding: 0 1rem;
   margin: auto;
-  
+
 }
 
 .onClose .menu li {
@@ -269,14 +275,31 @@
 
 
 @keyframes animateOnOpen {
-  0%   {width: 220px;}
-  50%  {width: 215px;}
-  100% {width: 220px;}
+  0% {
+    width: 220px;
+  }
+
+  50% {
+    width: 215px;
+  }
+
+  100% {
+    width: 220px;
+  }
 }
+
 @keyframes animateOnClose {
-  0%   {width: 100px;}
-  50%  {width: 95px;}
-  100% {width: 100px;}
+  0% {
+    width: 100px;
+  }
+
+  50% {
+    width: 95px;
+  }
+
+  100% {
+    width: 100px;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -284,26 +307,40 @@
   .logo {
     height: 80px;
   }
+
   .sideMenu.onClose {
     width: 60px;
   }
 
-  .menu{
+  .sideMenu.onClose .logo img {
+    width: 45px;
+  }
+
+  .menu {
     padding: 0 0rem;
   }
+
   .onClose .menu li a img {
     width: 20px;
     margin-right: 0rem;
   }
+
   .onClose .userInfoContent img {
     width: 35px;
     height: 35px;
   }
 
   @keyframes animateOnClose {
-    0%   {width: 60px;}
-    50%  {width: 55px;}
-    100% {width: 60px;}
+    0% {
+      width: 60px;
+    }
+
+    50% {
+      width: 55px;
+    }
+
+    100% {
+      width: 60px;
+    }
   }
 }
-
