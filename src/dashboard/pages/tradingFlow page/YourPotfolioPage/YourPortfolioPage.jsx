@@ -158,7 +158,7 @@ const YourPortfolioPage = () => {
 
             <SearchBar>
                 <div className="flex gap-3 md:gap-8 flex-col-reverse md:flex-row w-full">
-                    <h5 className='text-nowrap text-xl md:text-3xl '>Your Portfolio</h5>
+                    <h5 className={styles.supTitle + ' text-nowrap text-xl md:text-3xl'}>Your Portfolio</h5>
 
                     <div className="w-full flex items-center justify-center gap-4">
                         <div className={SearchBarStyles.searchInput + " w-full"}>

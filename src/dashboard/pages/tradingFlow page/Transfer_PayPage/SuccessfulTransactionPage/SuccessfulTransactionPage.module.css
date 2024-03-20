@@ -1,0 +1,90 @@
+.SuccessfulTransactionPage{
+    padding: 3rem;
+    box-shadow: inset 0px 0px 20px 0px #00000069;
+    border-radius: 5px;
+}
+
+
+
+.SuccessfulTransactionPage h4{
+font-family: Poppins;
+font-size: 40px;
+font-weight: 700;
+line-height: 60px;
+text-align: left;
+margin-bottom: 1rem;
+
+}
+
+.SuccessfulTransactionPage p{
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+
+}
+
+.SuccessfulTransactionPage p:first-child{
+    margin-bottom: 2rem;
+}
+
+.SuccessfulTransactionPage h6{
+font-family: Poppins;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+text-align: left;
+margin-top: 3rem;
+}
+
+.SuccessfulTransactionPage h6>a{
+    color: var(--Blue300);
+}
+.SuccessfulTransactionPage ul li{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: rgba(204, 204, 204, 1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0.5rem 0;
+}
+.SuccessfulTransactionPage ul li:last-child{
+    margin-bottom: 0;
+}
+.SuccessfulTransactionPage ul li span{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: rgba(204, 204, 204, 1);
+}
+.SuccessfulTransactionPage ul li:first-child{
+font-family: Poppins;
+font-size: 19px;
+font-weight: 700;
+line-height: 20.5px;
+text-align: left;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.go_home_btn{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.8px;
+    text-align: center;
+    width: 140px;
+    padding: 8px;
+    background-color: var(--Blue300);
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin: 1rem 0 0 auto;
+}

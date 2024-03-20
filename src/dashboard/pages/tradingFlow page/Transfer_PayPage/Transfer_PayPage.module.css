@@ -1,0 +1,51 @@
+.supTitle {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: left;
+}
+
+.ProgressBar {
+    position: relative;
+}
+
+.ProgressBar span {
+    position: absolute;
+    top: 16px;
+    font-family: Poppins;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 11.5px;
+    text-align: left;
+    padding: 4px 6px;
+    background-color: var(--Blue300);
+    border-radius: 5px;
+    transform: translateX(50%);
+}
+
+.ProgressBar span::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 0px;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid var(--Blue300);
+}
+.transfer_pay_side_nav{
+    padding: 0.5rem 1rem;
+
+}
+.transfer_pay_side_nav li a {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 34.5px;
+    text-align: left;
+    transition: all 0.3s;
+}

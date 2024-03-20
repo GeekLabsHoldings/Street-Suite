@@ -13,7 +13,7 @@ function AlertsPage() {
       <div className="search-table-section">
         <SearchBar >
             <h2>Alerts</h2>
-            <div className={SearchBarStyles.notification_searchInput}>
+            <div className={SearchBarStyles.notification_searchInput + " d-flex"}>
               <div className={SearchBarStyles.searchInput}>
                 <input
                   type="search"

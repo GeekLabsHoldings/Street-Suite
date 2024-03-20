@@ -28,6 +28,11 @@ import TradingFlowPage from './dashboard/pages/tradingFlow page/TradingFlowPage'
 import TopBroker from './website/pages/TopBrokerPage/TopBroker';
 import YourPortfolioPage from './dashboard/pages/tradingFlow page/YourPotfolioPage/YourPortfolioPage';
 import PrivateEquityPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/PrivateEquityPage';
+import Transfer_PayPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/Transfer_PayPage';
+import DepositFundsPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/DepositFundsPage/DepositFundsPage';
+import WithdrawFundsPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/WithdrawFundsPage/WithdrawFundsPage';
+import TransactionsHistoryPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/TransactionsHistoryPage/TransactionsHistoryPage';
+import SuccessfulTransactionPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/SuccessfulTransactionPage/SuccessfulTransactionPage';
 
 
 function App() {
@@ -69,8 +74,15 @@ function App() {
             <Route path="trading" element={<TradingFlowPage />} >
               <Route index element={<YourPortfolioPage/>} />
               <Route path='private-equity' element={<PrivateEquityPage />} />
-            </Route>
+              <Route path='transfer&pay' element={<Transfer_PayPage />} >
+                <Route index element={<DepositFundsPage />}/>
+                <Route path='deposit-funds' element={<DepositFundsPage />}/>
+                <Route path="withdraw-funds" element={<WithdrawFundsPage />}/>
+                <Route path="transactions-history" element={<TransactionsHistoryPage />}/>
+                <Route path="seccssful-transaction" element={<SuccessfulTransactionPage />}/>
 
+              </Route> 
+            </Route>
           </Route>
         </Routes>
 

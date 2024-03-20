@@ -1,4 +1,12 @@
-
+.supTitle {
+    padding: 0.5rem 1rem;
+    width: max-content;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: left;
+}
 .account_chart {
     width: 100%;
     display: flex;

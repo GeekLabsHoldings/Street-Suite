@@ -24,7 +24,7 @@ const TradingFlowPage = () => {
                 <NavLink to="private-equities" className={SearchBarStyles.active}>Private Equities</NavLink>
               </li>
               <li>
-                <NavLink to="Transfer&Pay">Transfer & Pay</NavLink>
+                <NavLink to="transfer&pay">Transfer & Pay</NavLink>
               </li>
               <li>
                 <NavLink to="privacy&security">Privacy & Security</NavLink>

@@ -1,3 +1,14 @@
+.supTitle {
+    padding: 0.5rem 1rem;
+    width: max-content;
+    border-radius: 10px;
+    background-color: var(--Blue300);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: left;
+}
+
 .equities {
     padding: 2rem 5rem;
     box-shadow: inset 0px 0px 20px 0px #00000069;
@@ -112,15 +123,16 @@
 
 }
 
-.company_details_body ul li span a{
-font-family: Poppins;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: var(--Blue300);
+.company_details_body ul li span a {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: var(--Blue300);
 
 }
+
 
 .want_share .total_price_direction {
     padding: 0.5rem;
@@ -139,10 +151,8 @@ color: var(--Blue300);
     font-weight: 400;
     line-height: 25.96px;
     text-align: left;
-    
+
 }
-
-
 
 .want_share .total_price_direction svg {
     width: 10px;
@@ -153,20 +163,237 @@ color: var(--Blue300);
     fill: #118F4B;
 }
 
+.want_share_chart_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.want_share_chart_header h5 {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 34.5px;
+    text-align: left;
+}
+
+
+.number_of_sales {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.number_of_sales span {
+    font-size: 15.95px;
+    font-weight: 500;
+    background: var(--Blue300);
+    border-radius: 5px;
+    padding: 0 0.2rem;
+}
+
+.number_of_sales p {
+    font-size: 9.84px;
+    left: 10px;
+}
+
+.want_share_chart_body {
+    width: 100%;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    border: 1px solid #ffffff38;
+    border-radius: 5px;
+}
+
+.want_share_chart_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.want_share_chart_footer .input_group label {
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.38px;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.want_share_chart_footer .input_group input {
+    width: 100%;
+    height: 30px;
+    padding: 7px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #1E1E1E;
+}
+
+.want_share_chart_footer .input_group span {
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+    text-align: left;
+    color: #ffffff96;
+}
+
+.want_share_chart_footer .actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.want_share_chart_footer .actions button {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.4px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    width: 90px;
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.want_share_chart_footer .actions button:first-child {
+    background-color: var(--Blue300);
+    border: 1px solid var(--Blue300);
+}
+
+.want_share_chart_footer .actions button:last-child {
+    background: rgba(204, 204, 204, 0.22);
+    border: 1px solid rgba(204, 204, 204, 0.22);
+}
+
+
+
+
+
 @media only screen and (max-width: 1000px) {
 
-    .shares_equities .equities {
+ .supTitle {
+    padding: 0.3rem 0.7rem;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    }
+
+    .want_share {
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .want_share .total_price_direction {
+        font-size: 18.3px;
+    }
+
+    .company_details {
+        padding: 1.5rem 1rem;
+        box-shadow: inset 0px 0px 20px 0px #00000069;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .want_share_chart {
+        padding: 1.5rem 1rem;
+        box-shadow: inset 0px 0px 20px 0px #00000069;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .company_details_body ul li span:first-child {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .company_details_body ul li span:last-child {
+        font-size: 12px;
+    }
+
+    .company_details_body ul li span a {
+        font-size: 12px;
+        line-height: 18px;
+
+    }
+
+    .want_share_chart_header h5 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    .want_share_chart_body {
+        width: 100%;
+        padding: 0rem 1rem 0rem 0rem;
+    }
+
+    .number_of_sales {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .number_of_sales span {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 19.6px;
+        text-align: left;
+    }
+
+    .number_of_sales p {
+        font-size: 7.39px;
+        font-weight: 700;
+        line-height: 8.87px;
+    }
+
+    .want_share_chart_footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .want_share_chart_footer .input_group input {
+        width: 100%;
+        height: 20px;
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    .want_share_chart_footer .input_group label {
+        margin-bottom: 0.5rem;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.38px;
+    }
+
+    .want_share_chart_footer .actions {
+        width: 100%;
+    }
+
+    .want_share_chart_footer .actions button {
+        width: 100%;
+    }
+
+
+    .equities {
         width: 100%;
         padding: 2rem 1.5rem;
     }
 
-    .shares_equities .equities h6 {
+    .equities h6 {
         font-size: 16px;
         line-height: 16px;
     }
 
-    .shares_equities .equities .padge {
+    .equities .padge {
         width: 90px;
     }
+
+
 
 }
