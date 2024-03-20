@@ -28,6 +28,7 @@ import TradingFlowPage from './dashboard/pages/tradingFlow page/TradingFlowPage'
 import TopBroker from './website/pages/TopBrokerPage/TopBroker';
 import YourPortfolioPage from './dashboard/pages/tradingFlow page/YourPotfolioPage/YourPortfolioPage';
 import PrivateEquityPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/PrivateEquityPage';
+import CareersPage from './website/pages/Careers-page/Careers';
 
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
               <Route path='contactus'  element={<ContactPage />} />
               <Route path='change-logs'  element={<ChangeLogs />} />
               <Route path='top-brokers'  element={<TopBroker/>} />
+              <Route path='careers'  element={<CareersPage/>} />
+
 
           </Route>
 

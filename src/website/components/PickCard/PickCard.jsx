@@ -3,7 +3,6 @@ import './pickCard.css'
 import HeaderCard from '../HeaderForCard/HeaderCard';
 
 
-
 const PickCard = ({imgUrl})=>{
     return(
         <div className='smforBorder'>
