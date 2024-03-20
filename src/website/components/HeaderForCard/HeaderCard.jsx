@@ -9,8 +9,11 @@ const HeaderCard = ({ imgUrl }) => {
                 <div className=" w-1/3 sm:imgDivHeader">
                         <img className='w-full' src={imgUrl} />
                 </div>
-                <div className=" w-2/3 textToImg elementBorder pe-2">
-                        <h4>  Interactive Brokers</h4>
+                <div className=" w-2/3 textToImg pe-2.5">
+                    <div className='elementBorder lg:py-3 sm:py-0 sm:pe-16'>
+                    <h4>Interactive Brokers</h4>
+                    </div>
+                        
                     </div>
 
             </div>
