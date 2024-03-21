@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import styles from "./SideMenu.module.css";
 import logoo from "../../assets/street suite logo-04.png";
-// import alertsIcon from "../../assets/sidemenu/alerts.svg";
-// import automationIcon from "../../assets/sidemenu/automation.svg";
-// import portfolioIcon from "../../assets/sidemenu/portfolio.svg";
-// import tradingIcon from "../../assets/sidemenu/trading.svg";
-// import trainingIcon from "../../assets/sidemenu/training.svg";
 import userImg from "../../assets/sidemenu/user.png";
+import notifIcon from "../../assets/notif.svg";
 import { Link } from "react-router-dom";
 
+
+// array of menu items in side menu nav at dashboard
 const menuItems = [
   {
     icon: <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,22 +42,34 @@ const menuItems = [
 
 function SideMenu() {
 
-  const [isOpen, setisOpen] = useState(false);
+  // open side nav state
+  const [isOpen, setIsOpen] = useState(false);
+
+  // function that open side nav on hover
   const OpenSideMenu = () => {
-    setisOpen(true)
+    setIsOpen(true)
   }
+
+  // function that close side nav on blur
   const closeSideMenu = () => {
-    setisOpen(false)
+    setIsOpen(false)
   }
 
   return (
+
+    // side nav container
     <div className={isOpen ? styles.sideMenu : styles.sideMenu + " " + styles.onClose} onMouseEnter={OpenSideMenu} onMouseLeave={closeSideMenu}>
       <div className={styles.sideMenuContent}>
+
+        {/* logo in side  nav */}
         <div className={styles.logo}>
           <img src={logoo} alt="" />
         </div>
 
+        {/* list of links in side nav */}
         <ul className={styles.menu}>
+
+          {/* Menu Item */}
           {menuItems.map((ele, idx) => (
             <li key={idx} className={ele.status === "comming soon" ? styles.comingSoon : ""}>
               <Link to={ele.path} disabled >
@@ -71,7 +81,16 @@ function SideMenu() {
         </ul>
       </div>
 
-      <div className={styles.userInfo}>
+      {/* user info and avatar and notification button in side nav */}
+      <div className={styles.userInfo + " flex flex-col items-center gap-3"}>
+
+        {/* notification button that abear in mobile screen */}
+        <button className={styles.notificationBtn + " block lg:hidden"} type="button">
+          <img src={notifIcon} alt="" />
+          <span>6</span>
+        </button>
+
+        {/* user info and avatar  */}
         <div className={styles.userInfoContent}>
           <img src={userImg} alt="" />
           <div>
@@ -79,6 +98,8 @@ function SideMenu() {
             <p>frontend developer</p>
           </div>
         </div>
+
+        {/* copy right .. */}
         <p>Street suit .22</p>
       </div>
     </div>

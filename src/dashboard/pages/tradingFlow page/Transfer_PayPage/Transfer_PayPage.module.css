@@ -18,17 +18,17 @@
     font-size: 11px !important;
     font-weight: 700 !important;
     line-height: 11.5px;
-    text-align: left;
     padding: 4px 6px;
     background-color: var(--Blue300);
     border-radius: 5px;
+    text-wrap: nowrap;
     transform: translateX(50%);
 }
 
 .ProgressBar span::before {
     content: "";
     position: absolute;
-    bottom: 100%;
+    bottom: calc(100% - 1px);
     left: 50%;
     transform: translateX(-50%);
     width: 0px;
@@ -37,10 +37,12 @@
     border-left: 5px solid transparent;
     border-bottom: 5px solid var(--Blue300);
 }
-.transfer_pay_side_nav{
+
+.transfer_pay_side_nav {
     padding: 0.5rem 1rem;
 
 }
+
 .transfer_pay_side_nav li a {
     font-family: Poppins;
     font-size: 23px;
@@ -48,4 +50,42 @@
     line-height: 34.5px;
     text-align: left;
     transition: all 0.3s;
+}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .supTitle {
+        padding: 0.5rem 0rem;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    .supTitle svg{
+        margin-left: 1rem;
+        width: 10px;
+    }
+
+    .transfer_pay_side_nav {
+        padding: 0.5rem 0rem;
+    }
+
+    .ProgressBar span {
+        font-size: 9px !important;
+    }
+
+    .ProgressBar {
+        margin-bottom: 3rem;
+    }
+
+    .transfer_pay_side_nav li a {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+        text-align: left;
+    }
 }

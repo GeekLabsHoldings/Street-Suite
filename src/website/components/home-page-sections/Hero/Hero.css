@@ -1,7 +1,7 @@
-section.hero{
+section.hero {
     width: 100%;
     padding: 25vh 1rem 5vh;
-    display: flex ;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -9,21 +9,26 @@ section.hero{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    
 }
-section.hero h1{
+
+section.hero h1 {
     font-size: 48px;
     font-weight: 800;
     text-align: center;
     line-height: 63px;
 }
-section.hero h1>span{
+
+section.hero img {
+    width: 100%;
+}
+
+section.hero h1>span {
     background-color: var(--Blue300);
     border-radius: 5px;
     padding: 0.2rem 1rem;
 }
 
-section.hero p{
+section.hero p {
     font-size: 16px;
     margin: 1rem 1.5rem;
     text-align: center;
@@ -31,7 +36,7 @@ section.hero p{
     margin: auto;
 }
 
-section.hero button{
+section.hero button {
     outline: none;
     color: #fff;
     border: none;
@@ -44,7 +49,7 @@ section.hero button{
     transition: all 0.3s;
 }
 
-section.hero button:hover{
+section.hero button:hover {
     color: #fff;
     background-color: transparent;
     border: 1px solid #fff;
@@ -57,15 +62,18 @@ section.hero button:hover{
         gap: 0.6rem;
         align-items: start;
     }
+
     section.hero h1 {
         font-size: 24px;
         font-weight: 800;
         text-align: left;
         line-height: 35px;
     }
+
     section.hero p {
         display: none;
     }
+
     section.hero button {
         padding: 0.4rem 1.5rem 0.4rem;
         font-size: 12px;
