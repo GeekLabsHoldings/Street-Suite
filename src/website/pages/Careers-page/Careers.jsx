@@ -114,18 +114,19 @@ const CareersPage = ()=>{
 
             <div className='w-3/5 flex m-auto joinTeamBG p-3 relative'>
 
-                <div className='w-1/2 gap-3 py-0 '>
-                    <div className='forFonts flex flex-col gap-3 pb-3 '>
-                    <h3>Join Our Team Now!</h3>
+
+                    <div className='w-1/2 flex flex-col justify-between '>
+                        <div className='forFonts pb-12 gap-3'>
+                        <h3>Join Our Team Now!</h3>
                 <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
                 <Button className='forbtn py-2 px-4 w-fit'>Open Vacancies</Button>
-
-                <div className='borderTop movingCards w-3/5 mt-10'>
+                        </div>
+                
+                <div className='borderTop movingCards w-3/5 mt-10 '>
                     <h5> Back End Developer</h5>
-                    
                 </div>
                     </div>
-                </div>
+
                 <div className=" w-2/5 flex flex-col align-items-center justify-end moveMiddle">
                 <div className='borderTopForMid emptyDivBorder movingCards w-4/5 mt-10 flex flex-col gap-2 align-items-center'>
                     <div className='middleCard px-5 py-3 '>
@@ -136,8 +137,8 @@ const CareersPage = ()=>{
                 </div>
                 </div>
 
-                <div className="w-1/2 flex flex-col align-items-end justify-between pt-2 ">
-                    <div style={{width:'300px', height:'100px'}}>
+                <div className="w-1/2 flex flex-col align-items-end pe-16 justify-between pt-2 ">
+                    <div style={{width:'300px', height:'100px',paddingTop:'2rem'}}>
                     <img src={Logo} className='w-full'  />
                     </div>
                     <div className='borderTop movingCards w-3/5 mt-14'>
