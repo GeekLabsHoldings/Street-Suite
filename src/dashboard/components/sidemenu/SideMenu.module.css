@@ -273,6 +273,36 @@
 }
 
 
+.notificationBtn {
+  width: 30px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  animation: Ring 10s ease-in 5s infinite ;
+}
+
+.notificationBtn span {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #118F4B;
+  color: #fff;
+  font-family: Nunito Sans;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 @keyframes animateOnOpen {
   0% {

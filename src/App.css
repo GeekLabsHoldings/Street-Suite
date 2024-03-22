@@ -105,7 +105,7 @@ p,h1,h2,h3,h4,h5,h6{
   overflow: hidden;
 }
 
-.transfer_pay_side_nav li .active {
+.transfer_pay_side_nav li a.active {
   padding: 0.5rem 0.8rem;
   background-color: var(--Blue300);
   border-radius: 5px;
@@ -159,7 +159,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
   .dashboard-wrapper{
     width: calc(100% - 60px);
     padding: 0.5rem 0;
@@ -172,5 +172,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   .filters-section{
     width: 0%;
   }
+  .transfer_pay_side_nav li{
+    margin: 0
+  }
+  .transfer_pay_side_nav li a {
+    display: none;
+  }
+  .transfer_pay_side_nav li a.active {
+    display: unset;
+    padding: 0.3rem 0.8rem;
+  }
   
 }
+

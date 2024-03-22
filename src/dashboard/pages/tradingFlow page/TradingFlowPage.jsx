@@ -12,8 +12,12 @@ const TradingFlowPage = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
 
+
+
+
   return (
     <div className='w-full p-3 md:p-8 max-w-[1600px] mx-auto' >
+
 
       <SearchBar  >
         <h2>Trading</h2>
@@ -21,7 +25,7 @@ const TradingFlowPage = () => {
           <div className={SearchBarStyles.navBar} >
             <ul>
               <li>
-                <NavLink to="private-equities" className={SearchBarStyles.active}>Private Equities</NavLink>
+                <NavLink to="private-equities">Private Equities</NavLink>
               </li>
               <li>
                 <NavLink to="transfer&pay">Transfer & Pay</NavLink>
@@ -47,6 +51,7 @@ const TradingFlowPage = () => {
 
       <div className={styles.trading_wrapper}>
 
+          {/* all children pages will appear here */}
           <Outlet />
 
       </div>

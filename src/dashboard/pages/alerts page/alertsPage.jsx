@@ -11,7 +11,10 @@ function AlertsPage() {
   return (
     <div className="alertsPage-wrapper">
       <div className="search-table-section">
+
+        {/* search bar component from components folder at dashboard */}
         <SearchBar >
+          
             <h2>Alerts</h2>
             <div className={SearchBarStyles.notification_searchInput + " d-flex"}>
               <div className={SearchBarStyles.searchInput}>
@@ -29,9 +32,12 @@ function AlertsPage() {
               </button>
             </div>
         </SearchBar>
+
+        {/* dataTable component from components folder at dashboard */}
         <DataTable />
       </div>
       <div className="filters-section">
+        {/* filters component from components folder at dashboard */}
         <Filters />
       </div>
     </div>

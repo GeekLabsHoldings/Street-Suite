@@ -20,12 +20,17 @@ const NavBar = () => {
         {/*end of navbar logo */}
 
         {/* navbar links */}
+        <ul className='navLinks first hidden md:flex gap-2 lg:gap-10'>
+          <li><NavLink to="quezzes">Quizzes</NavLink></li>
+          <li><NavLink to="Leaderboard">Leaderboard</NavLink></li>
+        </ul>
+        {/* end of navbar links */}
+
+        {/* navbar links */}
         <ul className='navLinks hidden md:flex gap-2 lg:gap-10'>
           <li><NavLink to="features">Features</NavLink></li>
           <li><NavLink to="pricing">Pricing</NavLink></li>
           <li><NavLink to="faq">FAQ</NavLink></li>
-          <li><NavLink to="quezzes">Quizzes</NavLink></li>
-          <li><NavLink to="Leaderboard">Leaderboard</NavLink></li>
         </ul>
         {/* end of navbar links */}
 
@@ -36,7 +41,7 @@ const NavBar = () => {
         </div>
         {/*  end of navbar auth bttons */}
 
-        <div className={` bars flex md:hidden ${isNavOpen ? "open" : ""}`} onClick={()=>{setIsNavOpen(!isNavOpen)}}>
+        <div className={` bars flex md:hidden ${isNavOpen ? "open" : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
           <div className='bar'></div>
         </div>
       </nav>

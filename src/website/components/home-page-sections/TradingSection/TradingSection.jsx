@@ -17,7 +17,7 @@ const TradingSction = () => {
 
                 {/* image of trading section */}
                 <div className="img-container hidden md:block">
-                    <img src={tradingImg} alt="" />
+                    <img src={tradingImg} alt="" className='w-full'/>
                 </div>
                 {/* end image of trading section */}
 

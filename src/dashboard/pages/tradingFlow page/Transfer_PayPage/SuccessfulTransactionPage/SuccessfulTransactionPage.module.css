@@ -1,47 +1,48 @@
-.SuccessfulTransactionPage{
+.SuccessfulTransactionPage {
     padding: 3rem;
-    box-shadow: inset 0px 0px 20px 0px #00000069;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
 }
 
 
 
-.SuccessfulTransactionPage h4{
-font-family: Poppins;
-font-size: 40px;
-font-weight: 700;
-line-height: 60px;
-text-align: left;
-margin-bottom: 1rem;
+.SuccessfulTransactionPage h4 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+    margin-bottom: 1rem;
 
 }
 
-.SuccessfulTransactionPage p{
-font-family: Poppins;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
+.SuccessfulTransactionPage p {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
 
 }
 
-.SuccessfulTransactionPage p:first-child{
+.SuccessfulTransactionPage p:first-child {
     margin-bottom: 2rem;
 }
 
-.SuccessfulTransactionPage h6{
-font-family: Poppins;
-font-size: 16px;
-font-weight: 700;
-line-height: 24px;
-text-align: left;
-margin-top: 3rem;
+.SuccessfulTransactionPage h6 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 3rem;
 }
 
-.SuccessfulTransactionPage h6>a{
+.SuccessfulTransactionPage h6>a {
     color: var(--Blue300);
 }
-.SuccessfulTransactionPage ul li{
+
+.SuccessfulTransactionPage ul li {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
@@ -53,10 +54,12 @@ margin-top: 3rem;
     gap: 1.5rem;
     margin: 0.5rem 0;
 }
-.SuccessfulTransactionPage ul li:last-child{
+
+.SuccessfulTransactionPage ul li:last-child {
     margin-bottom: 0;
 }
-.SuccessfulTransactionPage ul li span{
+
+.SuccessfulTransactionPage ul li span {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
@@ -64,17 +67,18 @@ margin-top: 3rem;
     text-align: left;
     color: rgba(204, 204, 204, 1);
 }
-.SuccessfulTransactionPage ul li:first-child{
-font-family: Poppins;
-font-size: 19px;
-font-weight: 700;
-line-height: 20.5px;
-text-align: left;
+
+.SuccessfulTransactionPage ul li:first-child {
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 20.5px;
+    text-align: left;
     color: #fff;
     margin-bottom: 1rem;
 }
 
-.go_home_btn{
+.go_home_btn {
     display: block;
     font-size: 14px;
     font-weight: 600;
@@ -87,4 +91,62 @@ text-align: left;
     outline: none;
     border: none;
     margin: 1rem 0 0 auto;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .SuccessfulTransactionPage {
+        padding: 2rem 1rem;
+    }
+
+    .SuccessfulTransactionPage h4 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+    }
+
+    .SuccessfulTransactionPage p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+    }
+
+    .SuccessfulTransactionPage p:first-child {
+        margin-bottom: 1rem;
+    }
+
+    .SuccessfulTransactionPage h6 {
+        margin-top: 2rem;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: left;
+    }
+    .SuccessfulTransactionPage ul li , .SuccessfulTransactionPage ul li span{
+        margin: 0.2rem 0;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        gap: 1rem;
+    }
+    .SuccessfulTransactionPage ul li:first-child {
+        margin-bottom: 0.5rem;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+    .SuccessfulTransactionPage ul li span>img{
+        width: 15px;
+    }
+
+    .go_home_btn {
+        font-size: 12px;
+        margin: 1rem auto;
+    }
+
 }
