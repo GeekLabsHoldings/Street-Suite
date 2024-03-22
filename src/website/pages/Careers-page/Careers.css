@@ -1,5 +1,34 @@
 .githubBG{
-background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%);
+  background: linear-gradient(297deg, rgb(33, 49, 65 ) 67% ,#233647 100%);
+}
+/* .careerLayout{
+    background-color:rgba(28, 28, 28,0.2) ;
+    min-height: 100vh;
+} */
+.bgImg{
+    background-image: url('../../assets/BG\ gradient.png');
+    min-height: 100vh;
+    background-position:center;
+    background-size:cover ;
+    background-repeat: no-repeat;
+}
+.careerForBorder{
+    box-shadow: -10px 5px 100px 0 #00000093 !important;
+}
+.visibleInSmBorder{
+    border-radius: 0.3rem;
+}
+.positionsBorder::before{
+    content: "";
+    background-image: conic-gradient(transparent 90deg ,#53acff 180deg,transparent 270deg );
+    width: 250%;
+    height: 250%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(180deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
 }
 
 .emptyDivBorder::before{
@@ -14,38 +43,27 @@ background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%
     position: absolute;
     transition:all 0.5s
   }
-.borderTopForMid:hover::before {
-    transform:translate(-50%,-50%) rotate(140deg);
-  }
-  .borderTopForMid::before{
-    content: "";
-    background-image: conic-gradient(transparent 200deg ,#53acff 340deg,transparent 360deg );
-    width: 250%;
-    height: 250%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) rotate(0deg);
-    box-sizing: border-box;
-    position: absolute;
-    transition:all 0.5s
+  .emptyDivBorder:hover::before ,.positionsBorder:hover::before ,.positionsBorderW:hover::before {
+    transform:translate(-50%,-50%) rotate(360deg);
   }
 
   .joinTeamBG{
+    border: 1px solid transparent;
+    border-radius: 1.6rem;
+  }
+  .forShadow{
+            box-shadow:
+            15px -10px 10px -20px rgba(0,0,0,0.45) inset,
+            32px 39px 20px -22px rgba(0,0,0,0.45) inset,
+            -30px 20px 20px -21px rgba(0,0,0,0.45) inset,
+            -20px -30px 20px -22px rgba(0,0,0,0.45) inset;
+            border-radius: 1.6rem;
+            overflow: hidden;
+            background-color: #202020;
+  }
+.movingCardsBG{
     background-color: #202020;
-
-  }
-  .borderTop{
-    border-top: 1px solid #FFFFFF;
-    border-right:1px solid #FFFFFF;
-    border-left:1px solid #FFFFFF;
-    padding: 0.8rem;
-    text-align: center;
-    border-top-left-radius:0.4rem ;
-    border-top-right-radius:0.4rem ;
-
-  }
-
-
+}
 .headerRight h3{
     font-size: 48px;
     line-height: 72px;
@@ -60,6 +78,7 @@ background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%
     font-size: 16px ;
     line-height: 24px;
     font-weight: 400;
+
 }
 
 .everySection h5 , .movingCards h5{
@@ -69,7 +88,6 @@ background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%
 }
 .forAfterEffect h3{
     position: relative;
-
 }
 .forAfterEffect h3::after{
     content: "";
@@ -79,7 +97,6 @@ background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%
     height: 2px;
     top:25%;
     left:47%;
-
 }
 .forFonts h3{
     font-size: 48px;
@@ -93,8 +110,8 @@ background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%
 }
 .goUp{
     position: absolute;
-    top: 0%;
-    left: 37%;
+    top: -15%;
+    left: 38%;
 }
 .flexibleBG {
     background-color: #252525d2;
@@ -109,11 +126,146 @@ background: linear-gradient(297deg, rgba(10,34,59,1) 67%, rgba(38,92,125,1) 100%
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
+    border-radius: 0.9rem 0.9rem 0 0;
 }
 .moveMiddle{
     position: absolute;
-    top: 0%;
+    bottom: -1px;
     left: 30%;
     height: 100%;
+}
+.careerBtn{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+.moveLast{
+    position: absolute;
+    bottom: -0.3%;
+    right: 5%;
+    transform: translateY(2rem);
+}
+.moveFirst{
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    transform: translateY(2rem);
+}
+.movingBorder{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 0.9rem;
+
+}
+.visibleInSm h4{
+    font-size: 14px;
+    line-height:18px ;
+    font-weight:600 ;
+}
+.visibleInSm{
+    display: flex;
+    background: linear-gradient(309deg,#233647 67% , rgb(33, 49, 65 ) 100%);
+
+}
+.smImgSize{
+    width:300px; 
+    height:100px;
+    padding-top:2rem;
+}
+.positionsBorderW{
+    border-radius: 0.9rem 0.9rem 0 0;
+    padding: 2px 2px 0;
+    position:relative;
+    overflow: hidden;
+}
+.positionsBorderW::before{
+        content: "";
+        background-image: conic-gradient(transparent 90deg ,#53acff 180deg,transparent 270deg );
+        width: 250%;
+        height: 250%;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%) rotate(180deg);
+        box-sizing: border-box;
+        position: absolute;
+        transition:all 0.5s
+}
+.whiteBorder::before{
+    content: "";
+    background-image: conic-gradient(transparent 60deg ,#f5f0f0 180deg,transparent 2700deg );
+    width: 250%;
+    height: 250%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(180deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
+}
+
+
+@media only screen and (max-width: 676px){
+.headerRight h3{
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
+.headerRight p{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+.careerBtn{
+    font-size: 10.24px;
+    line-height: 15.36px;
+    font-weight: 700;
+}
+.forFonts h3{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+}
+.forFonts p{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+.vectorSize{
+    width: 25px;
+}
+.everySection h5{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+}
+.everySection p{
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 400;
+}
+.cardsFont h5{
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 700;
+}
+.forFontsh3{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+.goUp{
+    top: 90%;
+    left: 30%;
+}
+.paragraphFont p{
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 400;
+}
+.smImgSize{
+    width: 111px;
+    height: 50px;
+}
 }
