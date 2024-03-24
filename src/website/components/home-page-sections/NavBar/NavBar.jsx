@@ -21,7 +21,7 @@ const NavBar = () => {
 
         {/* navbar links */}
         <ul className='navLinks first hidden md:flex gap-2 lg:gap-10'>
-          <li><NavLink to="quezzes">Quizzes</NavLink></li>
+          <li><NavLink to="quizzes">Quizzes</NavLink></li>
           <li><NavLink to="Leaderboard">Leaderboard</NavLink></li>
         </ul>
         {/* end of navbar links */}

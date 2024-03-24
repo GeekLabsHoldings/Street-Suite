@@ -2,9 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 // import all sections as components from components folder
-import Footer from './website/components/home-page-sections/Footer/Footer';
 import HomePage from './website/pages/home-page/HomePage';
-import QuezzesPage from './website/pages/Quizzes/quezzes-page/QuezzesPage';
+import QuizzesPage from './website/pages/Quizzes/quizzes-page/QuizzesPage';
 import LeaderBoardPage from './website/pages/leaderboard/LeaderBoardBage';
 import FaqPage from './website/pages/FAQ-page/FaqPage';
 import PricingPage from './website/pages/pricing-page/PricingPage';
@@ -45,7 +44,7 @@ function App() {
 
               <Route index  element={<HomePage />} />
               {/* quizzes page route  */}
-              <Route path='quezzes'  element={<QuezzesPage />} >
+              <Route path='quizzes'  element={<QuizzesPage />} >
                 <Route index element={<QuizzesFiltersPage/>}/>
                 <Route path="quiz" element={<QuizPage/>}/>
                 <Route path="quiz-result" element={<QuizResultsPage/>}/>

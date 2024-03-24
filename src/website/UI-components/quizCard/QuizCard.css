@@ -1,65 +1,158 @@
-.gradient-border{
-    padding: 1px;
-    background: linear-gradient(152deg, rgba(255,255,255,1) 0%, rgba(32,32,32,0) 39%);
+
+.quiz-card {
+    height: 365px;
+    position: relative;
     border-radius: 15px;
+    border: 1px solid transparent;
+    box-shadow: inset 0px 0px 25px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+.quiz-card:hover{
+    border: 1px solid #ffffff56;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.quiz-card .card-img{
+    border-radius: 15px 15px 0 0;
+}
+.quiz-card .card-body {
+    padding: 1.5rem 1rem;
+    background-color: rgba(32, 32, 32, 1);
+    border-radius: 0 0 15px 15px;
+    transition: all 0.2s;
 }
 
-.quiz-card{
-    display: flex;
-    gap: 2rem;
-    justify-content: space-between;
-    background-color:#242a30f3 ;
-    border-radius: 15px;
-    padding: 2rem;
-    position: relative;
+.quiz-card:hover .card-body{
+    background: linear-gradient(180deg, #53ACFF 0%, #326799 100%);
 }
-.hot-stripe-img{
-    position: absolute;
-    top: -11px;
-    right: -19px;
-}
-.card-img{
-    width: 25%;
-}
-.card-img img{
+.quiz-card .card-body h4 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 1.5rem;
     width: 100%;
 }
-.card-content{
+
+.quiz-card .quiz-details span {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: -webkit-fill-available;
+    gap: 0.5rem;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28.5px;
+    text-align: left;
+
 }
-.card-details{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.quiz-card .quiz-details svg{
+    width: 25px;
+}
+.quiz-card .quiz-details svg path {
+    fill: rgba(83, 172, 255, 1);
+    transition: all 0.2s;
+}
+.quiz-card:hover .quiz-details svg path{
+    fill: #fff;
 }
 
-.card-details h3{
-    font-family: Poppins;
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 35px;
-    letter-spacing: 0em;
-    text-align: left;
+.hot-padge ,.hot-padge-dark {
+    position: absolute;
+    top: -11px;
+    right: -20px;
+    width: 120px;
 }
-.card-details .details{
+.quiz-card .hot-padge-dark{
+    display: none;
+}
+.horizontal-card{
     display: flex;
-    justify-content: space-between;
+    box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
-.card-details .details p{
-    display: flex;
-    gap: 0.5rem;
-    color: #8A8E91;
+.horizontal-card .hot-padge{
+    display: none;
 }
-.card-content a{
-    letter-spacing: 0em;
-    text-align: left;
-    padding: 10px 38px 10px 38px;
-    background: var(--Blue300);
+.horizontal-card .hot-padge-dark{
+    display: block;
+}
+.horizontal-card .card-img{
+    height: 100%;
+    width: 50%;
+    border-radius: 15px 0 0 15px;
+}
+.horizontal-card .card-body h4{
+font-family: Poppins;
+font-size: 33px;
+font-weight: 700;
+line-height: 49.5px;
+text-align: left;
+margin-bottom: 0;
+
+}
+.horizontal-card .card-body{
+    border-radius: 0 15px 15px 0;
+    background: linear-gradient(180deg, #53ACFF 0%, #326799 100%);
+}
+.horizontal-card .card-body .highlights span{
+    padding: 0.5rem 1rem;
     font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    background: rgba(65, 64, 64, 0.5);
+    display: block;
+    width: max-content;
     border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+.horizontal-card .quiz-details svg path{
+    fill: #fff;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    .quiz-card {
+        height: 271px;
+    }
+    .quiz-card .hot-padge, .hot-padge-dark {
+        position: absolute;
+        top: -8px;
+        right: -15px;
+        width: 90px;
+    }    
+    .quiz-card .card-body h4 {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 15px;
+    }
+    .quiz-card .quiz-details span {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+        gap: 0.2rem;
+    }
+
+    .quiz-card .quiz-details svg {
+        width: 12px;
+    }
+    .quiz-card.horizontal-card {
+        margin: 0 !important;
+        height: 230px;
+    }
+    .horizontal-card .card-body{
+        padding: 1.5rem 0.5rem;
+    }
+    .horizontal-card .card-body .highlights span {
+        padding: 0.3rem 0.4rem;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 10px;
+    }
+
+    .quiz-card.horizontal-card .card-body h4 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28.5px;
+    }
 }
