@@ -115,22 +115,22 @@ const QuizzesFiltersPage = () => {
 
                 <div className="slider-container">
                     <Slider {...settings}>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
                     </Slider>
@@ -149,26 +149,26 @@ const QuizzesFiltersPage = () => {
 
 
                 <div className="slider-container">
-                <div style={{ width: 400 }} className='d-inline d-lg-inline-block'>
+                <div style={{ width: 400 }} className='d-inline d-lg-none'>
                             <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
                         </div>
                     <Slider {...settings}>
                         <div style={{ width: 600 }} className='d-none d-lg-inline-block'>
                             <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
                     </Slider>
@@ -186,22 +186,22 @@ const QuizzesFiltersPage = () => {
 
                 <div className="slider-container">
                     <Slider {...settings}>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: 320 }}>
                             <QuizCard />
                         </div>
                     </Slider>
