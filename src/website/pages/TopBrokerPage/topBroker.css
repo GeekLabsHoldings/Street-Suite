@@ -61,22 +61,7 @@
     background: linear-gradient(150deg, rgb(21, 43, 65) 5%,  rgb(37, 72, 104) 100%);
 }
 
-.smforBorder::before{
-    content: "";
-    background-image: conic-gradient(transparent 250deg ,#c5b9b944 300deg,transparent 360deg );
-    width: 250%;
-    height: 250%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) rotate(0deg);
-    box-sizing: border-box;
-    position: absolute;
-    transition:all 0.5s
-  }
-  
-.smforBorder:hover::before,.whiteBorder:hover::before {
-    transform:translate(-50%,-50%) rotate(360deg);
-  }
+
 
 @media only screen and (max-width: 676px){
     .brokersHeader h1 , .brokersHeader span{

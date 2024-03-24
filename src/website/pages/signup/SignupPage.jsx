@@ -7,6 +7,7 @@ const SignupPage = ()=>{
         <div className='Signuplayout row sm:px-10'>
         <div className='desc col-lg-6 col-sm-12 '>
           <div className="col-md-7 col-sm-12 sm:py-5 m-auto" >
+            {/* our logo and small intro */}
            <div className="content ">
            <div className='imgDiv lg:w-52 sm:w-32 lg:-ml-7 sm:ml-0'>
             <img className="w-full" src={LogoIcon} />
@@ -25,6 +26,7 @@ const SignupPage = ()=>{
          <div className='formPart formBGSignup lg:pt-24 lg:pb-14 sm:py-14 sm:px-4 '>
             <div className='inForm'>
                 <div className='col-md-10 formcontent'>
+                  {/* common form for signup and contact us */}
                   <FormComponent purpose='Create a new account' label1='Full Name' label2='Email' label3='Password' needCheckbox={true} btnTxt='Sign Up' textArea={false}/>
                 </div>
             </div>

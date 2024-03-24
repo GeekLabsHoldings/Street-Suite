@@ -1,21 +1,26 @@
 import OneBroker from '../../components/Onebroker/Onebroker';
 import PickCard from '../../components/PickCard/PickCard';
+// our data here
 import {brokersData,blackBrokerData, ImagesData} from './brokersData';
-
 import './topBroker.css';
+
+
 const TopBroker = ()=>{
+    // render reusable pick cards
     const renderImages = ImagesData.map((img)=>(
         <div>
             <PickCard imgUrl={img}/>
         </div>
 
     ))
+    // render our first 3 best brokers
     const renderBrokers = 
         brokersData.map((broker)=>(
         <div className='OneBrokerBG brokerDiv my-3'>
             <OneBroker num={broker.num} word={broker.word}/>
         </div>
     ))
+    // render the rest of best brokers
     const renderBlackBrokers = 
     blackBrokerData.map((broker)=>(
     <div className='brokerDiv blackBG my-3'>
@@ -27,6 +32,7 @@ return(
             <div className="brokersHeader col-md-7 text-center col-sm-12 m-auto ">
             <h1>Best Online Brokers And Trading Platforms For <span className="highlight">Street Suite</span></h1>
             </div>
+            {/* best brokers card */}
             <div className=' col-sm-12 sm:visible md:hidden'>
                     <div className='col-lg-6 smforBorder m-auto'>
                         <div className='formPart smbrokerBG py-3'>
@@ -41,6 +47,7 @@ return(
         </div>
         
             <div className='row'>
+                {/* description of our work */}
             <div className='col-md-6'>
                 <div className='col-md-10 m-auto rightPrt sm:pt-10'>
                     <div>
@@ -74,6 +81,7 @@ return(
                 </div>
                 
             </div>
+            {/* display our brokers */}
             <div className='md:visible col-md-6 sm:hidden'>
                     <div className='col-lg-8 forBorder m-auto'>
                         <div className='formPart brokerBG py-3'>
@@ -88,7 +96,7 @@ return(
                     </div>
                 </div>
             </div>
-
+           {/* display our picks */}
             <div className=' col-md-10 m-auto'>
                 <div className='col-md-10 mx-auto my-5 ourPicks'>
                 <h4 className='md:pb-5 sm:pb-8' >More about our picks:</h4>

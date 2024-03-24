@@ -9,6 +9,7 @@ const PickCard = ({imgUrl})=>{
 
             <div className='formPart cardBG'>
             <div className='headerBG '>
+                {/* reusable component for different logos */}
             <HeaderCard imgUrl={imgUrl}/>
             </div>
                 <div className="col-md-11 m-auto md:py-5 sm:pt-4 pickContainer sm:px-3">
@@ -19,6 +20,7 @@ const PickCard = ({imgUrl})=>{
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                         </div>
                             </div>
+                            {/* props of our pick */}
                         <div className="col-md-6 flex justify-center sm:justify-start " >
                             <div className='everyPart'>
                             <h5>Pros:</h5>
@@ -45,6 +47,7 @@ const PickCard = ({imgUrl})=>{
                         </div>
                         </div>
                             <div className="col-md-6 flex justify-center sm:justify-start">
+                                {/* cons of our picks */}
                             <div className='everyPart'>
                             <h5>Cons</h5>
                         <ul className='topBrokerList anyList'>
