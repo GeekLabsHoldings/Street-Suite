@@ -3,38 +3,11 @@ import FormLabel from '@mui/joy/FormLabel';
 import './changeLog.css';
 import { TextareaAutosize } from '../../components/FormComponent';
 
-//     ({ theme }) => `
-//     box-sizing: border-box;
-//     width: 100%;
-//     font-family: "Poppins", sans-serif;
-//     font-size: 0.875rem;
-//     font-weight: 400;
-//     line-height: 1.5;
-//     padding: 8px 12px;
-//     border-radius: 8px;
-//     min-height:10%;
-//     color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-//     background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-//     border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-//     box-shadow: 0px 2px 2px ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
-  
-//     &:hover {
-//       border-color: ${blue[400]};
-//     }
-  
-//     &:focus {
-//       border-color: ${blue[400]};
-//       box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[600] : blue[200]};
-//     }
-//     &:focus-visible {
-//       outline: 0;
-//     }
-//   `,
-//   );
 const ChangeLogs = () =>{
     return(
         <div className="Msglayout">
             <div className='row forBG changeLogLayout sm:px-7 sm:py-10'>
+                {/* description of new changes and why we do it */}
             <div className="col-lg-6 col-sm-12">
                     <div className="caption col-lg-8 m-auto">
                         <div className='col-lg-8 col-sm-8'>
@@ -67,6 +40,8 @@ const ChangeLogs = () =>{
 
                             </div>
 
+                            {/* give a chance to suggest new feature */}
+
                     <div className='col-lg-9 col-md-9 d-flex flex-col gap-4 msgPrt'>
                         <div className='pt-5'>
                         <h3>Have A Feature In Mind?</h3>
@@ -83,6 +58,7 @@ const ChangeLogs = () =>{
                     </div>
                     </div>
             </div>
+            {/* our changes with their date */}
             <div className='col-lg-6 col-sm-12'>
                         <div className='col-lg-9 changeLogBorder sm:hidden md:visible m-auto'>
                             <div className='logcardBG cardContainer'>
