@@ -63,79 +63,86 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
 
     return(
         <div className='formHead'>
+          <div className='flex flex-col md:gap-10'>
+          <div >
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
         <p>{purpose}</p>
-
-      <FormControl className="gap-4">
-
-      <div>
-      <FormLabel required className='mb-1 labelfont'
-      sx={{
-      "& .MuiFormLabel-asterisk":{
-      color:'white'
-      }
-      }}>{label1}</FormLabel>
-      <Input
-      name={label1}
-      type="text"
-      placeholder= {`Enter your ${label1}`}
-      />
-      </div>
-
-      <div>
-      <FormLabel required className='mb-1 labelfont' sx={{
-      "& .MuiFormLabel-asterisk":{
-      color:'white'
-      }
-      }}>{label2}</FormLabel>
-      <Input
-      name={label2}
-      type="email"
-      placeholder={`Enter your ${label2}`}
-      />
-      </div>
-
-      <div>
-          {textArea?<><FormLabel required className='mb-1 labelfont'sx={{
-      "& .MuiFormLabel-asterisk":{
-      color:'white'
-      }
-      }}>{label3}</FormLabel><TextareaAutosize 
-
-      aria-label="empty textarea" placeholder="......" /></>:<>
-      <FormLabel required className='mb-1 labelfont'sx={{
-      "& .MuiFormLabel-asterisk":{
-      color:'white'
-      }
-      }}>{label3}</FormLabel>
-
-      <Input
-      name={label3}
-      placeholder={`Enter your ${label3}`}
-      type="text"
-          />
-
-      
-    
-      </>}
-      </div>
-      <div>
-
-      </div>
-
-      {needCheckbox ? <>
-      <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
-      <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
-
-      </FormControl>
-
-
-<div className='btnContainer'> 
-<button type="button" className='btnColor'>{btnTxt}</button>
-</div>
         </div>
-    )
+<div>
+      
+    <FormControl className="gap-4">
 
-}
+    <div>
+    <FormLabel required className='mb-1 labelfont'
+    sx={{
+    "& .MuiFormLabel-asterisk":{
+    color:'white'
+    }
+    }}>{label1}</FormLabel>
+    <Input
+    name={label1}
+    type="text"
+    placeholder= {`Enter your ${label1}`}
+    />
+    </div>
 
-export default FormComponent
+    <div>
+    <FormLabel required className='mb-1 labelfont' sx={{
+    "& .MuiFormLabel-asterisk":{
+    color:'white'
+    }
+    }}>{label2}</FormLabel>
+    <Input
+    name={label2}
+    type="email"
+    placeholder={`Enter your ${label2}`}
+    />
+    </div>
+
+    <div>
+        {textArea?<><FormLabel required className='mb-1 labelfont'sx={{
+    "& .MuiFormLabel-asterisk":{
+    color:'white'
+    }
+    }}>{label3}</FormLabel><TextareaAutosize 
+
+    aria-label="empty textarea" placeholder="......" /></>:<>
+    <FormLabel required className='mb-1 labelfont'sx={{
+    "& .MuiFormLabel-asterisk":{
+    color:'white'
+    }
+    }}>{label3}</FormLabel>
+
+    <Input
+    name={label3}
+    placeholder={`Enter your ${label3}`}
+    type="text"
+        />
+
+
+
+    </>}
+    </div>
+    <div>
+
+    </div>
+
+    {needCheckbox ? <>
+    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
+    <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
+
+    </FormControl>
+
+    </div>
+          </div>
+
+
+    <div className='btnContainer'> 
+    <button type="button" className='btnColor'>{btnTxt}</button>
+    </div>
+            </div>
+        )
+
+    }
+
+    export default FormComponent
