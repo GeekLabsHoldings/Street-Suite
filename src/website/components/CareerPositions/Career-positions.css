@@ -1,0 +1,21 @@
+.whiteBorder::before{
+    content: "";
+    background-image: conic-gradient(transparent 60deg ,#f5f0f0 180deg,transparent 2700deg );
+    width: 250%;
+    height: 250%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(180deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
+}
+.movingCardsBG{
+    background-color: #202020;
+}
+.movingCards p{
+    font-size: 16px ;
+    line-height: 24px;
+    font-weight: 400;
+
+}

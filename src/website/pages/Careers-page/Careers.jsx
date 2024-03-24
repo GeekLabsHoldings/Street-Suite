@@ -6,6 +6,9 @@ import TeamWork from '../../assets/team-working-together.png';
 import Logo from '../../assets/street suite logo-04 1.svg';
 import Icon from '../../assets/visibleInSmIcon.svg';
 import './Careers.css';
+import FlexibleCard from '../../components/FlexibleCard/FlexibleCard';
+import HowWork from '../../components/How-work/How-work';
+import CareerPositions from '../../components/CareerPositions/Career-positions';
 
 const CareersPage = ()=>{
     return(
@@ -20,7 +23,7 @@ const CareersPage = ()=>{
     </div>
     
 </div>
-
+{/* this needs for Image and link to our github for large screens*/}
 <div className="md:w-5/12 sm:hidden forBorder careerForBorder">
     <div className="formPart githubBG text-center flex flex-col w-1/4 gap-8 py-3">
         <div className=' mt-2'>
@@ -32,6 +35,7 @@ const CareersPage = ()=>{
     </div>
 
 </div>
+{/* this needs for Image and link to our github for small screens */}
 <div className='md:hidden sm:visible w-3/4 mx-auto forBorder flex justify-start visibleInSmBorder '>
     <div className='formPart text-center px-3 py-3 justify-between visibleInSm visibleInSmBorder'>
         <div className='flex align-items-center'>
@@ -56,36 +60,11 @@ const CareersPage = ()=>{
 <div className="flex px-0">
 <div className='md:w-1/2 sm:w-full flex justify-center flex-col gap-8'>
 
-<div className='flex w-full md:gap-10 sm:gap-4'>
-    <div className='vectorSize '>
-    <img className='w-full' src={Vector1} />
-    </div>
+{/* explain how we work section */}
+<HowWork Icon={Vector1} Header='In-Depth Strategies Explained In Detail'/>
+<HowWork Icon={Vector2} Header='Gamified Experience with live charts'/>
+<HowWork Icon={Vector3}  Header='Over 14 Modules Covering multiple categories'/>
 
-    <div className='everySection md:w-full sm:w-11/12 '>
-        <h5 className='md:pb-3 sm:pb-1'>In-Depth Strategies Explained In Detail</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-</div>
-<div className='flex w-full md:gap-10 sm:gap-4'>
-    <div  className='vectorSize'>
-    <img className='w-full'src={Vector2} />
-    </div>
-
-    <div className='everySection md:w-full sm:w-11/12'>
-        <h5 className='md:pb-3 sm:pb-1'>Gamified Experience with live charts</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-</div>
-<div className='flex w-full md:gap-10 sm:gap-4'>
-    <div  className='vectorSize'>
-    <img className='w-full'src={Vector3} />
-    </div>
-
-    <div className='everySection md:w-full sm:w-11/12'>
-        <h5 className='md:pb-3 sm:pb-1'>Over 14 Modules Covering multiple categories</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-</div>
 </div>
 <div className="md:visible sm:hidden w-1/2 flex justify-end">
         <img src={TeamWork} />
@@ -102,31 +81,13 @@ const CareersPage = ()=>{
 </div>
 
 <div className='md:w-4/6 sm:w-full mx-auto flex md:justify-between sm:justify-around relative'>
+    {/* card related to working flexible hours (one of them its place above the rest) */}
 
-<div className="smforBorder md:w-1/4 sm:w-5/12 my-4">
-        <div className='flexibleBG movingBorder pt-3 pb-4 '>
-            <div className='everySection cardsFont text-center md:mx-10 sm:mx-5 sm:px-2'>
-            <h5>Flexible Working Hours Lol</h5>
-            </div>
-        </div>
-    </div>
+    <FlexibleCard classname='my-4'/>
     
-    <div className="smforBorder md:w-1/4 sm:w-5/12 goUp ">
-        <div className='flexibleBG movingBorder pt-3 pb-4 '>
-            <div className='everySection text-center cardsFont md:mx-10 sm:mx-5 sm:px-2 '>
-            <h5>Flexible Working Hours Lol</h5>
-            </div>
-        </div>
-    </div>
+    <FlexibleCard classname='goUp'/>
 
-    <div className=" smforBorder md:w-1/4 sm:w-5/12 my-4 ">
-        <div className='flexibleBG movingBorder pt-3 pb-4  '>
-            <div className='everySection cardsFont text-center md:mx-10 sm:mx-5 sm:px-2'>
-            <h5>Flexible Working Hours Lol</h5>
-            </div>
-        </div>
-    </div>
-    
+    <FlexibleCard classname='my-4'/>
 </div>
 </div>
 
@@ -141,13 +102,8 @@ const CareersPage = ()=>{
             <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
             <Button className='forbtn py-2 px-4 w-fit'>Open Vacancies</Button>
         </div>
-    
-    <div className='md:visible sm:hidden whiteBorder w-1/4 mt-10 moveFirst '>
-        <div className='movingBorder pt-4 pb-12 movingCardsBG movingCards text-center'>
-        <h5> Back End Developer</h5>
-        </div>
-       
-    </div>
+{/* card for datails about available positions */}
+    <CareerPositions whichMove='moveFirst' positionName='Back End Developer'/>
         </div>
 
     <div className="md:visible sm:hidden w-2/5 flex flex-col align-items-center justify-end moveMiddle">
@@ -165,11 +121,7 @@ const CareersPage = ()=>{
         <img src={Logo} className='w-full'  />
         </div>
 
-        <div className='md:visible sm:hidden whiteBorder w-1/4 mt-10 moveLast '>
-            <div className='movingBorder pt-4 pb-12 movingCardsBG movingCards text-center'>
-            <h5>UX/UI Designer</h5>
-            </div>
-    </div>
+    <CareerPositions whichMove='moveLast' positionName='UX/UI Designer'/>
 
     </div>
      </div>

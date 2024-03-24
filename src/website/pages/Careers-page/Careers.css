@@ -1,10 +1,7 @@
 .githubBG{
   background: linear-gradient(297deg, rgb(33, 49, 65 ) 67% ,#233647 100%);
 }
-/* .careerLayout{
-    background-color:rgba(28, 28, 28,0.2) ;
-    min-height: 100vh;
-} */
+
 .bgImg{
     background-image: url('../../assets/BG\ gradient.png');
     min-height: 100vh;
@@ -61,9 +58,7 @@
             overflow: hidden;
             background-color: #202020;
   }
-.movingCardsBG{
-    background-color: #202020;
-}
+
 .headerRight h3{
     font-size: 48px;
     line-height: 72px;
@@ -74,12 +69,7 @@
     line-height: 28.5px;
     font-weight: 400;
 }
-.movingCards p{
-    font-size: 16px ;
-    line-height: 24px;
-    font-weight: 400;
 
-}
 
 .everySection h5 , .movingCards h5{
     font-size: 23px;
@@ -108,11 +98,7 @@
     line-height: 34.5px;
     font-weight: 400;
 }
-.goUp{
-    position: absolute;
-    top: -15%;
-    left: 38%;
-}
+
 .flexibleBG {
     background-color: #252525d2;
 }
@@ -192,18 +178,7 @@
         position: absolute;
         transition:all 0.5s
 }
-.whiteBorder::before{
-    content: "";
-    background-image: conic-gradient(transparent 60deg ,#f5f0f0 180deg,transparent 2700deg );
-    width: 250%;
-    height: 250%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) rotate(180deg);
-    box-sizing: border-box;
-    position: absolute;
-    transition:all 0.5s
-}
+
 
 
 @media only screen and (max-width: 676px){
@@ -250,14 +225,10 @@
     line-height: 15px;
     font-weight: 700;
 }
-.forFontsh3{
+.forFonts h3{
     font-size: 16px;
     line-height: 24px;
     font-weight: 700;
-}
-.goUp{
-    top: 90%;
-    left: 30%;
 }
 .paragraphFont p{
     font-size: 10px;
