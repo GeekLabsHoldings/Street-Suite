@@ -1,0 +1,23 @@
+.winnerBG{
+    background-color: rgb(34, 38, 42);
+    border-radius: 0.4rem;
+}
+.putTop3{
+    width: 60px;
+    height: 55px;
+    position: absolute;
+    top: -7%;
+    right: -3%;
+}
+.winnerBG h5{
+    font-size: 13px;
+    line-height: 19.5px;
+    font-weight: 700;
+
+}
+.winnerBG p{
+    font-size: 11px;
+    line-height: 16.5px;
+    font-weight: 400;
+
+}

@@ -14,12 +14,7 @@ font-weight: 700;
     font-weight: 400;
 }
 
-.time span{
-    color: #53ACFF;
-    font-size: 13px;
-    line-height: 16.38px;
-    font-weight: 400;
-}
+
 .bluecolor{
     font-size: 16px;
     line-height: 23.07px;
@@ -33,9 +28,7 @@ font-weight: 700;
 .rightBorder{
     border-right: 1px solid #979797;
 }
-.grayOne{
-    color:#979797 !important  ;
-}
+
 .verticalSeparator{
     border-right: 1px solid #979797;
     
@@ -59,7 +52,7 @@ font-weight: 700;
 }
 .topRight{
     position: absolute;
-    top: 5%;
+    top: 8%;
     right: 1.5%;
 }
 .leftBG h5{
@@ -90,4 +83,42 @@ font-weight: 700;
 }
 .divBg{
     background-color: #202020;
+    border: 1px solid #979797 ;
+    border-radius: 0.5rem;
+}
+
+.forGradBG{
+    background: linear-gradient(297deg, rgba(31,43,55,1) 0%, rgba(50,86,119,1) 75%);
+}
+.winnerFont h5{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+.blueContainer{
+    background-color:  #53ACFF;
+}
+.blueContainer h3{
+    font-size: 27.35px;
+    line-height: 41.02px;
+    font-weight: 700;
+}
+.likeComments p{
+    font-weight: 400;
+    font-size: 13.08px;
+    line-height: 19.62px;
+    color: #53ACFF;
+
+}
+.likeComments h6{
+    font-weight: 400;
+    font-size:19.02px ;
+    line-height: 28.53px;
+
+
+}
+.lastInRight h3{
+    font-size: 23px;
+    font-weight:700 ;
+    line-height: 34.5px;
 }

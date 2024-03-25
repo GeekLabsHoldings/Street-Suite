@@ -66,9 +66,9 @@ export default function BasicTabs() {
 
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
-        blog content
-      </CustomTabPanel>
+      {/* <CustomTabPanel value={value} index={0}>
+        
+      </CustomTabPanel> */}
 
     </Box>
   );

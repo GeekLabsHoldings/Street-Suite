@@ -4,14 +4,21 @@ import Paper from '@mui/material/Paper';
 import Follow from '../../assets/followers.svg';
 import TheCup from '../../assets/the-cup.svg';
 import Like from '../../assets/like.svg';
-import Divider from '@mui/material/Divider';
+import FirstAvatar from '../../assets/avatar1 with flag.svg';
+import SecondAvatar from '../../assets/avatar2 with flag.svg';
+import ThirdAvatar from '../../assets/avatar3 with flag.svg';
+import Top3 from '../../assets/1 top3.png';
+
+
 import HotStrip from '../../assets/hot strip gray.png' ;
 import './OneBlog.css';
+import OneWinner from '../OneWinnerOrLoser/OneWinnerOrLoser';
+import TimeForRead from '../TimeForRead/TimeForRead';
 
 const OneBlog =()=>{
     return (
    <div className='flex '>
-         <div className=" verticalSeparator px-4 md:w-3/5">
+         <div className=" verticalSeparator my-4 px-4 md:w-3/5">
 
             <div className="flex py-4 bottomBorder">
             <div className='md:w-1/2 pt-3  '>
@@ -21,13 +28,7 @@ const OneBlog =()=>{
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
            
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+       <TimeForRead/>
             </div>
            
             </div>
@@ -107,14 +108,7 @@ const OneBlog =()=>{
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
                 
-            
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+ <TimeForRead/>
             </div>
            
             </div>
@@ -158,13 +152,7 @@ const OneBlog =()=>{
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
            
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+   <TimeForRead/>
             </div>
             <div className='oneBlogCont flex flex-col gap-4 py-8 '>
                 <div className=' flex flex-col align-items-center gap-4'>
@@ -172,13 +160,7 @@ const OneBlog =()=>{
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
            
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+    <TimeForRead/>
             </div>
            </div>
            <div className="w-1/2">
@@ -207,15 +189,15 @@ const OneBlog =()=>{
 
             </div>
         <div className='py-8 bottomBorder'>
-        <div className='flex divBg'>
-                        <div className='w-1/4'>
-                        <Box
+        <div className='flex divBg md:w-11/12'>
+                        <div className='w-1/3 ps-3'>
+                            <Box
                         sx={{
                             display: 'flex',
                             flexWrap: 'wrap',
                             '& > :not(style)': {
                             m: 1,
-                            width: '90%',
+                            width: '85%',
                             height: 200,
                             boxShadow:'0px 0px 10px 0px rgba(0,0,0,1) inset',
                             backgroundImage:'linear-gradient(302deg, rgba(49,60,69,1) 30%, rgba(46,69,90,1) 100%);',
@@ -224,26 +206,18 @@ const OneBlog =()=>{
                         }}
             >
             <Paper />
-
             </Box>
-
                         </div>
-                        <div className='w-3/4 flex flex-col gap-4 '>
+
+                        <div className='w-3/4 flex flex-col justify-center gap-4 '>
                             <div className='w-3/4 blackBGFonts mx-auto flex flex-col gap-4'>
                         <div>
                         <h2>Here’s The Worlds Best Kept Secret</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                         </div>
                                     
-                    <div className='time w-4/5 flex justify-between align-items-center '>
-                        <span>25 mins ago</span>
-                        <div className='flex align-items-center gap-2'>
-                            <img src={Clock} />
-                        <span className='grayOne'>6 min read</span>
-                        </div>
-                    </div>
+              <TimeForRead/>
                             </div>
-
                         </div>
 
                     </div>
@@ -251,20 +225,14 @@ const OneBlog =()=>{
         </div>
 
         <div className="flex py-4 bottomBorder">
-            <div className='w-1/2 py-2'>
-            <div className='w-3/4 oneBlogCont flex flex-col gap-4 py-8 rightBorder'>
+            <div className='w-1/2 py-2 '>
+            <div className='w-11/12 oneBlogCont flex flex-col gap-4 py-8 pe-3 rightBorder'>
                 <div className=' flex flex-col gap-4'>
                 <h3>Lorem ipsum dol</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
            
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+        <TimeForRead/>
             </div>
             </div>
             <div className="w-1/2 pt-3">
@@ -292,7 +260,7 @@ const OneBlog =()=>{
             </div>
         </div>
 
-        <div className="flex py-4 bottomBorder">
+        <div className="flex py-4 ">
             <div className='md:w-1/2 pt-3  '>
             <div className='oneBlogCont flex flex-col gap-3'>
                 <div className=' flex flex-col align-items-center gap-3'>
@@ -300,13 +268,7 @@ const OneBlog =()=>{
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
            
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+  <TimeForRead/>
             </div>
            
             </div>
@@ -320,8 +282,8 @@ const OneBlog =()=>{
           m: 1,
           width: '100%',
           height: 220,
-          boxShadow:'0px 0px 10px 0px rgba(0,0,0,1) inset',
-          backgroundImage:'linear-gradient(0deg, rgba(44,67,89,1) 3%, rgba(42,64,85,1) 100%);',
+          boxShadow:'0px 0px 10px 0px rgba(0,0,0,0.2)inset',
+          backgroundImage:'linear-gradient(0deg,  rgba(44,67,89,1) 64%, rgba(43,74,101,1) 100%);',
           borderRadius:'1.2rem'
         },
       }}
@@ -340,8 +302,10 @@ const OneBlog =()=>{
 
 
         <div className='md:w-2/5 mx-auto flex flex-col align-items-center '>
-        <div className="w-4/5 py-4" >
-                <Box
+
+        <div className="w-9/12 flex pe-3 py-4 bottomBorder " >
+            <div className=' w-11/12'>
+            <Box
                 sx={{
                     display: 'flex',
                     flexWrap: 'wrap',
@@ -358,24 +322,134 @@ const OneBlog =()=>{
       <Paper />
 
     </Box>
-    <div className='gap-3 px-2 flex flex-col bottomBorder pb-8'>
+    <div className='gap-3 px-2 flex flex-col pb-8'>
            
             <div className=' flex flex-col align-items-center oneBlogCont'>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
             </div>
 
-            <div className='time w-4/5 flex justify-between align-items-center '>
-                <span>25 mins ago</span>
-                <div className='flex align-items-center gap-2'>
-                    <img src={Clock} />
-                <span className='grayOne'>6 min read</span>
-                </div>
-            </div>
+            <TimeForRead/>
       
             </div>
 
+            </div>
                 </div>
+
+                <div className="w-9/12 flex justify-end pe-3 py-5 bottomBorder  ">
+                    <div className='w-11/12 forGradBG winnerAndLoserBorder'>
+                    <div className='formPart flex flex-col align-items-center forGradBG'>
+                 <div className='w-5/6 flex justify-center bottomBorder pt-10 pb-8'>
+                    <div className='w-4/5 text-center flex flex-col gap-3 winnerFont'>
+                    <h5>Biggest Winners</h5>
+                    <OneWinner imgUrl={FirstAvatar} num={1} winner={true}/>
+                    <OneWinner imgUrl={SecondAvatar} num={2} winner={true}/>
+                    <OneWinner imgUrl={ThirdAvatar} num={3} winner={true}/>
+
+                    </div>
+                    </div>
+                    <div className='w-5/6 flex justify-center pt-10 pb-8'>
+                    <div className='w-4/5 text-center flex flex-col gap-3 winnerFont'>
+                    <h5>Biggest Losers</h5>
+                    <OneWinner imgUrl={FirstAvatar} num={1} winner={false}/>
+                    <OneWinner imgUrl={SecondAvatar} num={2} winner={false}/>
+                    <OneWinner imgUrl={ThirdAvatar} num={3} winner={false}/>
+                    </div>
+                    </div>
+                 </div>
+                    </div>
+
+                </div>
+
+            <div className='w-9/12'>
+                <div className='flex justify-end py-4'>
+                <div className='w-11/12' >
+                <Box
+                sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    '& > :not(style)': {
+                    m: 1,
+                    width: '100%',
+                    height: 207,
+                    boxShadow:'0px 0px 10px 0px rgba(0,0,0,1) inset',
+                    backgroundColor:'rgb(58,105,149)',
+                    borderRadius:'1.2rem'
+                    },
+                }}
+    >
+      <Paper />
+
+    </Box>
+  
+                </div>
+                </div>
+                <div className="blueContainer w-full py-3 px-4 text-center">
+                <h3>In Case You Missed It</h3>
+                </div>
+                <div className="flex justify-between likeComments pt-6 pb-8 bottomBorder">
+                    <div className='w-1/3 '>
+                        <p>25 MINS AGO</p>
+                    </div>
+                    <div className='w-2/3 '>
+                        <h6>China Kicks U.S Butt In The Latest Whatever</h6>
+                    </div>
+                </div>
+                <div className="flex justify-between likeComments pt-6 pb-8 bottomBorder">
+                    <div className='w-1/3 '>
+                        <p>25 MINS AGO</p>
+                    </div>
+                    <div className='w-2/3 '>
+                        <h6>China Kicks U.S Butt In The Latest Whatever</h6>
+                    </div>
+                </div>
+                <div className="flex justify-between likeComments pt-6 pb-8 bottomBorder">
+                    <div className='w-1/3 '>
+                        <p>25 MINS AGO</p>
+                    </div>
+                    <div className='w-2/3'>
+                        <h6>China Kicks U.S Butt In The Latest Whatever</h6>
+                    </div>
+                </div>
+                <div className="flex align-items-center bottomBorder py-4">
+                <div className='w-1/2'>
+                <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 1,
+          width: '100%',
+          height: 150,
+          boxShadow:'0px 0px 10px 0px rgba(0,0,0,0.2)',
+          backgroundImage:'linear-gradient(0deg,  rgba(44,67,89,1) 64%, rgba(43,74,101,1) 100%);',
+          borderRadius:'1.2rem'
+        },
+      }}
+    >
+      <Paper />
+
+    </Box>
+                </div>
+                <div className='w-1/2 likeComments flex flex-col gap-3 '>
+                    <div>
+                    <h6>China Kicks U.S Butt In The Latest Whatever</h6>
+                    </div>
+                    <div>
+                    <p>25 MINS AGO</p>
+                    </div>
+                </div>
+                </div>
+                <div className='py-8'>
+                   <div className='w-11/12 mx-auto flex flex-col gap-3 '>
+                   <div className='lastInRight'>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                    </div>
+                    <TimeForRead/>
+                   </div>
+                </div>
+            </div>
+           
 
         </div>
    </div>

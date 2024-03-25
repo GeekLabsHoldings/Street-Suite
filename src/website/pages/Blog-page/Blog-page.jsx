@@ -14,7 +14,7 @@ const BlogPage = ()=>{
                 </div>
             </div>
             <div className='md:w-10/12 mx-auto'>
-                <BasicTabs content='test'/>
+                <BasicTabs/>
                 <OneBlog/>
 
             </div>
