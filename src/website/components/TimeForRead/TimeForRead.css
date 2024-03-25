@@ -7,3 +7,12 @@
 .grayOne{
     color:#979797 !important  ;
 }
+
+@media only screen and (max-width: 676px){
+    .time span ,.grayOne{
+        font-size: 10px;
+        line-height: 12.6px;
+        font-weight: 400;
+    }
+
+}

@@ -12,3 +12,18 @@
     padding: 0.5rem 0;
     display: flex !important;
 }
+@media only screen and (max-width: 676px){
+    .MyTabClass{
+        text-transform: none !important;
+        font-size: 10px !important;
+        font-weight: 400 !important;
+        line-height:15px !important;
+        width: 11%;
+    }
+    .tabsStyle{
+        border-top: 1px solid #EEEEEE;
+        border-bottom:1px solid #EEEEEE ;
+        padding: 0;
+        display: flex !important;
+    }
+}

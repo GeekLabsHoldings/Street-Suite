@@ -5,7 +5,7 @@ import './Blog-page.css';
 const BlogPage = ()=>{
     return(
         <div className='pageBG'>
-            <div className='md:w-1/3 mx-auto flex flex-col gap-8 py-10'>
+            <div className='md:w-1/3 sm:w-2/3  mx-auto flex flex-col md:gap-8 sm:gap-3 md:py-10 sm:py-5'>
                 <div className='flex justify-center ourName'>
                 <h1 className='highlight w-fit'>Street Suite</h1>
                 </div>
@@ -13,7 +13,7 @@ const BlogPage = ()=>{
                 <p>Dive into our interactive quizzes designed to unravel your trading persona and unveil insights into your trading prowess.</p>
                 </div>
             </div>
-            <div className='md:w-10/12 mx-auto'>
+            <div className='md:w-10/12 sm:w-11/12  mx-auto'>
                 <BasicTabs/>
                 <OneBlog/>
 

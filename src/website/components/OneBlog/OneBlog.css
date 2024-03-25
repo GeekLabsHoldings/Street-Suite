@@ -1,8 +1,6 @@
 .pageBG{
     background: linear-gradient(0deg, rgba(36,48,58,1) 36%, rgba(32,38,44,1) 49%, rgba(27,28,29,1) 77%);
-
 }
-
 .oneBlogCont h3{
 font-size: 23px;
 line-height: 34.5px;
@@ -13,8 +11,6 @@ font-weight: 700;
     line-height: 24px;
     font-weight: 400;
 }
-
-
 .bluecolor{
     font-size: 16px;
     line-height: 23.07px;
@@ -45,10 +41,11 @@ font-weight: 700;
 .babyblueDiv{
     border-radius: 0.8rem;
     background-image: linear-gradient(0deg ,rgb(51,106,158) ,57%,rgb(73, 141, 204) 100%);
+
 }
 .leftBG{
     border-radius:0 0.8rem 0.8rem 0;
-    background: linear-gradient(0deg, rgb(73, 153, 227) 84%, rgba(255,255,255,0.2) 100%);
+    background-image: linear-gradient(0deg ,rgb(79,165,244) ,57%,rgb(68, 141, 208) 100%);
 }
 .topRight{
     position: absolute;
@@ -103,22 +100,95 @@ font-weight: 700;
     line-height: 41.02px;
     font-weight: 700;
 }
-.likeComments p{
-    font-weight: 400;
-    font-size: 13.08px;
-    line-height: 19.62px;
-    color: #53ACFF;
 
-}
-.likeComments h6{
-    font-weight: 400;
-    font-size:19.02px ;
-    line-height: 28.53px;
-
-
-}
 .lastInRight h3{
     font-size: 23px;
     font-weight:700 ;
     line-height: 34.5px;
+}
+.smImgSize{
+    width: 12.61px;
+    height: 12.93px;
+}
+.RbottomBorder{
+    border-bottom:1px solid #979797 ;
+
+}
+.textDiv h6{
+    font-size: 16px;
+    line-height: 23.07px;
+    font-weight: 700;
+
+}
+.textDiv p{
+    font-size: 16px;
+    line-height: 23.07px;
+    font-weight: 400;
+}
+
+@media only screen and (max-width:676px) {
+    .oneBlogCont h3 ,.leftBG h5{
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 700;
+    }
+    .oneBlogCont p ,.coloredTxt h6 ,.txtspan span{
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 400;
+    }
+    .secDivOnLeft h2{
+        font-size:14px ;
+        line-height: 21px;
+        font-weight: 700;
+    }
+    .leftBG{
+        border-radius: 0.8rem;
+        background-image: linear-gradient(0deg ,rgb(68, 141, 208) 57%, rgb(79,165,244) 100%);
+    }
+    .topRight{
+        width: 72.5px;
+        height: 72px;
+        position: absolute;
+        top: 14%;
+        right: -4%;
+    }
+    .bluecolor{
+        font-size: 12px;
+        line-height: 23.07px;
+        font-weight: 400;
+        color: #53ACFF;
+    }
+    .textDiv p, .textDiv h6{
+        font-size: 12px;
+        line-height: 23.07px;
+        font-weight: 400;
+    }
+    .blackBGFonts h2{
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+    .blackBGFonts p{
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 400;
+    
+    }
+    
+.verticalSeparator{
+    border-right: none
+}
+.blueContainer h3{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.RbottomBorder{
+    border-bottom: none;
+}
+
+
+    
 }

@@ -54,7 +54,7 @@ export default function BasicTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" textColor="white" indicatorColor="white" 
         className='tabsStyle'
         >
-        <Tab className='MyTabClass bg-slate-400' label="Private Equity" {...a11yProps(0)} />
+        <Tab className='MyTabClass' label="Private Equity" {...a11yProps(0)} />
         <Tab className='MyTabClass' label="Market" {...a11yProps(1)} />
         <Tab className='MyTabClass' label="Options" {...a11yProps(2)} />
         <Tab className='MyTabClass' label="Large Caps" {...a11yProps(3)} />
