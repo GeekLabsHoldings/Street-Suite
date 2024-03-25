@@ -1,0 +1,203 @@
+.quizzes-wrapper section.hero {
+    background-image: unset;
+}
+
+.quizzes-wrapper {
+    background: linear-gradient(0deg, rgba(83, 172, 255, 0.3) 0%, rgba(32, 32, 32, 0.5) 100%);
+    padding: 0 0 5% 0;
+}
+
+.quizzes-wrapper .quizzes-filters {
+    margin-top: 5%;
+}
+
+.quizzes-wrapper .search-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.quizzes-wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 39px;
+}
+
+.quizzes-wrapper .input-box input {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: #ffffff38;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 0 2rem;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.quizzes-wrapper .input-box svg {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.quizzes-wrapper .search-input button {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0em;
+    height: 39px;
+    width: 100px;
+    background: var(--Blue300);
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.quizzes-wrapper .check-Filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.quizzes-wrapper .check-Filter label {
+    padding: 0.5rem 1rem;
+    box-shadow: inset 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.quizzes-wrapper .check-Filter input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.quizzes-wrapper .check-Filter label:has(> input[type="radio"]:checked) {
+    background-color: var(--Blue300);
+}
+
+
+
+
+/* ================== quizzes slider ================= */
+.quizzes-cards {
+    padding: 3% 0;
+}
+
+
+.quizzes-cards h6 {
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 72px;
+    text-align: left;
+}
+
+.quizzes-cards .title a {
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    background: rgba(65, 64, 64, 1);
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28.5px;
+    text-align: left;
+}
+
+.quizzes-cards .title a>svg {
+    transform: rotateZ(90deg);
+    margin-left: 0.7rem;
+}
+
+.slick-next:before {
+    content: unset;
+}
+
+.slick-prev:before {
+    content: unset;
+}
+
+.slick-next {
+    transform: translate(-50px, -50%);
+    z-index: 9;
+}
+
+.slick-prev {
+
+    transform: translate(50px, -50%) rotateY(180deg);
+    z-index: 9;
+
+}
+
+.slick-list {
+    padding: 0 !important;
+}
+
+.slick-disabled svg path {
+    fill-opacity: 0;
+}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .slick-next {
+        transform: translate(-30px, -50%);
+    }
+
+    .slick-prev {
+
+        transform: translate(30px, -50%) rotateY(180deg);
+    }
+
+    .quizzes-wrapper .check-Filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .quizzes-wrapper .check-Filter label {
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+        text-align: left;
+
+    }
+
+    .quizzes-cards h6 {
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 30.5px;
+    }
+
+    .quizzes-cards .title a {
+        padding: 0.2rem 0.7rem;
+        font-family: Poppins;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+        text-align: left;
+    }
+}
