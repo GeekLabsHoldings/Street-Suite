@@ -1,0 +1,43 @@
+.ourName h1{
+    font-size: 63px;
+    line-height: 94.5px;
+    font-weight: 700;
+
+}
+.descParagraph p{
+    font-size: 14px;
+    line-height: 23.07px;
+    font-weight: 400;
+
+}
+.winnerAndLoserBorder::before{
+    content: "";
+    background-image: conic-gradient(transparent 0deg ,#53acff 120deg,transparent 220deg );
+    width: 250%;
+    height: 250%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(270deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
+  }
+  .winnerAndLoserBorder:hover::before{
+    transform:translate(-50%,-50%) rotate(0deg);
+  }
+
+  @media only screen and (max-width: 676px){
+    .ourName h1{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 700;
+
+    }
+    .descParagraph p{
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 400;
+    
+    }
+    
+  }

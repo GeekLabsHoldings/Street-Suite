@@ -38,6 +38,7 @@ import MyCourses from './dashboard/pages/training page/MyCourses/MyCourses';
 import SingleTraning from './dashboard/pages/training page/SingleTraning/SingleTraning';
 import AssessmentPage from './dashboard/pages/training page/SingleTraning/AssessmentPage/AssessmentPage';
 import LessonsPage from './dashboard/pages/training page/SingleTraning/LessonsPage/LessonsPage';
+import BlogPage from './website/pages/Blog-page/Blog-page';
 
 
 function App() {
@@ -68,6 +69,8 @@ function App() {
               <Route path='change-logs'  element={<ChangeLogs />} />
               <Route path='top-brokers'  element={<TopBroker/>} />
               <Route path='careers'  element={<CareersPage/>} />
+              <Route path='blogs'  element={<BlogPage/>} />
+
 
 
           </Route>
