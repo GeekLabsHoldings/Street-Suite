@@ -34,6 +34,7 @@ import WithdrawFundsPage from './dashboard/pages/tradingFlow page/Transfer_PayPa
 import TransactionsHistoryPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/TransactionsHistoryPage/TransactionsHistoryPage';
 import SuccessfulTransactionPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/SuccessfulTransactionPage/SuccessfulTransactionPage';
 import CareersPage from './website/pages/Careers-page/Careers';
+import BlogPage from './website/pages/Blog-page/Blog-page';
 
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
               <Route path='change-logs'  element={<ChangeLogs />} />
               <Route path='top-brokers'  element={<TopBroker/>} />
               <Route path='careers'  element={<CareersPage/>} />
+              <Route path='blogs'  element={<BlogPage/>} />
+
 
 
           </Route>
