@@ -1,0 +1,9 @@
+.training_navBar{
+    width: 100%;
+}
+.training_navBar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+}

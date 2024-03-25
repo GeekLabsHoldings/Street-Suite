@@ -292,6 +292,25 @@
     width: 120px;
 }
 
+.quiz-question-view {
+    min-height: 20rem;
+    background: linear-gradient(118.78deg, rgba(83, 172, 255, 0.27) 0%, rgba(217, 217, 217, 0) 159.37%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.quiz-question-view h5 {
+    font-family: Poppins;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 49.5px;
+
+    text-align: center;
+}
 
 
 
@@ -309,14 +328,17 @@
         border-radius: 9px;
         padding: 1.5rem;
     }
+
     .quiz-score-sheet {
         align-items: end;
     }
+
     .quiz-score-sheet .quiz-score-sheet-card p {
         font-size: 10px;
         font-weight: 400;
         line-height: 10px;
     }
+
     .quiz-score-sheet .quiz-score-sheet-card span {
         width: 100%;
         padding: 0.3rem 1rem;
@@ -326,6 +348,7 @@
         line-height: 16.5px;
         border-radius: 2px;
     }
+
     .quiz-score-sheet button {
         font-size: 7.95px;
         font-weight: 700;
@@ -347,18 +370,21 @@
         font-weight: 700;
         line-height: 30px;
     }
+
     .add-email-modal p {
         font-family: Poppins;
         font-size: 14px;
         font-weight: 700;
         line-height: 20px;
     }
+
     .add-email-modal input {
         font-size: 12px;
         font-weight: 400;
         line-height: 16px;
         margin: 0.5rem 0 0.5rem;
     }
+
     .add-email-modal span {
         font-family: Poppins;
         font-size: 9px;
@@ -367,6 +393,7 @@
         color: rgba(151, 151, 151, 1);
         width: 100%;
     }
+
     .add-email-modal button {
         padding: 7px 26px;
         font-size: 12px;
@@ -374,6 +401,7 @@
         color: #fff;
         margin-top: 0.5rem;
     }
+
     .add-email-modal .line {
         width: 80%;
         margin: 1rem auto;
@@ -390,38 +418,47 @@
         text-align: center;
         border-radius: 3px;
     }
+
     .quiz-score-sheet-results p {
         font-size: 9.57px;
         font-weight: 700;
         line-height: 14.36px;
     }
+
     .quiz-score-sheet-results span {
         font-size: 13.67px;
         font-weight: 700;
         line-height: 15.51px;
     }
+
     .quiz-score-sheet-results .line {
         width: 2px;
     }
-    .get-better-card{
+
+    .get-better-card {
         padding: 1.5rem 1rem;
     }
+
     .get-better-card h5 {
         font-size: 15.12px;
         font-weight: 700;
         line-height: 22.68px;
     }
+
     .get-better-card .quiz-card .hot-padge-dark {
         width: 80px;
         top: -8px;
         right: -16px;
     }
-    .get-better-card .quiz-card.horizontal-card{
+
+    .get-better-card .quiz-card.horizontal-card {
         height: 180px;
     }
-    .get-better-card .quiz-card.horizontal-card .card-body{
+
+    .get-better-card .quiz-card.horizontal-card .card-body {
         padding: 1rem 0.5rem;
     }
+
     .get-better-card .quiz-card.horizontal-card .card-body .highlights span {
         margin-bottom: 0.3rem;
     }

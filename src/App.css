@@ -115,6 +115,40 @@ p,h1,h2,h3,h4,h5,h6{
 .slick-slider .slick-list, .slick-slider .slick-track{
   padding: 1rem 0;
 }
+
+.dashboard-wrapper .trading-wrapper a.active{
+  color: #fff;
+  padding: 0.5rem 1rem;
+  background-color: var(--Blue300);
+  border-radius: 6px;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+}
+
+
+.training_lison_collapse.current .training_lison_collapse_header{
+  background-color: var(--Blue300);
+}
+.training_lison_collapse.open .training_lison_collapse_header svg{
+  transform: rotateX(0deg);
+}
+
+.training_lison_collapse.completed .training_lison_collapse_header h6 ,.training_lison_collapse.completed .training_lison_collapse_header svg path{
+  color: rgba(126, 126, 126, 1) ;
+  fill: rgba(126, 126, 126, 1) ;
+}
+
+/* .training_lison_collapse.open .training_lison_collapse_header h6 ,.training_lison_collapse.open .training_lison_collapse_header svg path{
+  color: #fff ;
+  fill: #fff ;
+} */
+
+.training_lison_collapse.current .training_lison_collapse_header h6 ,.training_lison_collapse.current .training_lison_collapse_header svg path{
+  color: #fff ;
+  fill: #fff ;
+}
+
 @media only screen and (max-width:767px) {
   .formHead h3 , .formHead span{
     font-size: 20px;
