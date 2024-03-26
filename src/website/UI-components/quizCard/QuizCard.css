@@ -113,7 +113,7 @@ margin-bottom: 0;
 
 @media only screen and (max-width: 1000px) {
     .quiz-card {
-        height: 271px;
+        height: 257px;
     }
     .quiz-card .hot-padge, .hot-padge-dark {
         position: absolute;

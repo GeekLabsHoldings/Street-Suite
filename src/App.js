@@ -33,6 +33,11 @@ import WithdrawFundsPage from './dashboard/pages/tradingFlow page/Transfer_PayPa
 import TransactionsHistoryPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/TransactionsHistoryPage/TransactionsHistoryPage';
 import SuccessfulTransactionPage from './dashboard/pages/tradingFlow page/Transfer_PayPage/SuccessfulTransactionPage/SuccessfulTransactionPage';
 import CareersPage from './website/pages/Careers-page/Careers';
+import SuiteAcademy from './dashboard/pages/training page/SuiteAcademy/SuiteAcademy';
+import MyCourses from './dashboard/pages/training page/MyCourses/MyCourses';
+import SingleTraning from './dashboard/pages/training page/SingleTraning/SingleTraning';
+import AssessmentPage from './dashboard/pages/training page/SingleTraning/AssessmentPage/AssessmentPage';
+import LessonsPage from './dashboard/pages/training page/SingleTraning/LessonsPage/LessonsPage';
 import BlogPage from './website/pages/Blog-page/Blog-page';
 import SpecificArticle from './website/pages/SpecificArticle/SpecificBlog';
 
@@ -78,7 +83,15 @@ function App() {
 
             <Route index element={<AlertsPage />} />
             <Route path="alerts" element={<AlertsPage />} />
-            <Route path="training" element={<TrainingPage />} />
+            <Route path="training" element={<TrainingPage />} >
+              <Route index element={<SuiteAcademy />} />
+              <Route path='suite-academy' element={<SuiteAcademy />} />
+              <Route path='single-training' element={<SingleTraning />} >
+                <Route index element={<LessonsPage />} />
+                <Route path='assessment' element={<AssessmentPage />} />
+              </Route>
+              <Route path='my-courses' element={<MyCourses />} />
+            </Route>
             <Route path="trading" element={<TradingFlowPage />} >
               <Route index element={<YourPortfolioPage/>} />
               <Route path='private-equity' element={<PrivateEquityPage />} />

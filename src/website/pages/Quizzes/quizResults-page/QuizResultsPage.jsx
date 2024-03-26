@@ -70,7 +70,7 @@ const QuizResultsPage = () => {
       </div>
 
       <div className="quiz-view p-20 mb-16">
-      <div className="quiz-score-sheet flex lg:hiden h-full gap-1 lg:gap-4 mb-[20px] lg:mb-10">
+      <div className="quiz-score-sheet flex lg:hidden h-full gap-1 lg:gap-4 mb-[20px] lg:mb-10">
           <div className="w-1/4">
             <div className="quiz-score-sheet-card">
               <p>Questions</p>
@@ -121,28 +121,50 @@ const QuizResultsPage = () => {
           </svg></Link>
         </div>
 
-        <div className="slider-container">
-          <Slider {...settings}>
-            <div style={{ width: 220 }}>
-              <QuizCard />
-            </div>
-            <div style={{ width: 220 }}>
-              <QuizCard />
-            </div>
-            <div style={{ width: 220 }}>
-              <QuizCard />
-            </div>
-            <div style={{ width: 220 }}>
-              <QuizCard />
-            </div>
-            <div style={{ width: 220 }}>
-              <QuizCard />
-            </div>
-            <div style={{ width: 220 }}>
-              <QuizCard />
-            </div>
-          </Slider>
-        </div>
+        <div className="slider-container  d-block d-lg-none ">
+                    <Slider {...settings}>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                    </Slider>
+                </div>
+                <div className="slider-container  d-none d-lg-block ">
+                    <Slider {...settings}>
+                        <div style={{ width: 320 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 320 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 320 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 320 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 320 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 320 }}>
+                            <QuizCard />
+                        </div>
+                    </Slider>
+                </div>
       </div>
 
     </div>

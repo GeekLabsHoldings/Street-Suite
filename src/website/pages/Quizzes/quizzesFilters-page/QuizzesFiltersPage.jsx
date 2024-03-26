@@ -40,69 +40,69 @@ const QuizzesFiltersPage = () => {
         prevArrow: <CustomArrow />,
         responsive: [
             {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-        variableWidth: false,
-                infinite: true,
-                dots: true
-              }
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    variableWidth: false,
+                    infinite: true,
+                    dots: true
+                }
             },
             {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 1,
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
 
-              }
+                }
             }
-          ]
+        ]
     };
 
     return (
         <>
-            
+
             <div className="quizzes-filter">
-                
-            {/* search input to search for quizzes */}
-            <div className="search-input">
-                <div className="input-box">
-                    <input type="text" placeholder='Search by...' />
-                    <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.187 17.1826C15.8253 15.5195 17.5212 10.9988 15.975 7.08547C14.4288 3.1721 10.2259 1.34793 6.58765 3.01107C2.94939 4.67422 1.25346 9.19488 2.79968 13.1082C4.34591 17.0216 8.54876 18.8458 12.187 17.1826Z" stroke="white" stroke-width="2.3301" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M14.4492 15.541L20.0007 21.5131" stroke="white" stroke-width="2.3301" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+
+                {/* search input to search for quizzes */}
+                <div className="search-input">
+                    <div className="input-box">
+                        <input type="text" placeholder='Search by...' />
+                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.187 17.1826C15.8253 15.5195 17.5212 10.9988 15.975 7.08547C14.4288 3.1721 10.2259 1.34793 6.58765 3.01107C2.94939 4.67422 1.25346 9.19488 2.79968 13.1082C4.34591 17.0216 8.54876 18.8458 12.187 17.1826Z" stroke="white" stroke-width="2.3301" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.4492 15.541L20.0007 21.5131" stroke="white" stroke-width="2.3301" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <button>Search</button>
                 </div>
-                <button>Search</button>
-            </div>
 
 
-            {/* filter to show more specific quizzes */}
-            <div className="check-Filter">
-                <label htmlFor="Latest"> Latest
-                    <input type="radio" id='Latest' name='check-Filter' />
-                </label>
-                <label htmlFor="Trading-Styles"> Trading Styles
-                    <input type="radio" id='Trading-Styles' name='check-Filter' />
-                </label>
-                <label htmlFor="Risk-Management"> Risk Management
-                    <input type="radio" id='Risk-Management' name='check-Filter' />
-                </label>
-                <label htmlFor="Market-Analysis"> Market Analysis
-                    <input type="radio" id='Market-Analysis' name='check-Filter' />
-                </label>
-                <label htmlFor="Trading-Psychology"> Trading Psychology
-                    <input type="radio" id='Trading-Psychology' name='check-Filter' />
-                </label>
-                <label htmlFor="Trading-Strategies"> Trading-Strategies
-                    <input type="radio" id='Trading-Strategies' name='check-Filter' />
-                </label>
-                <label htmlFor="Market-Instruments"> Market-Instruments
-                    <input type="radio" id='Market-Instruments' name='check-Filter' />
-                </label>
-            </div>
+                {/* filter to show more specific quizzes */}
+                <div className="check-Filter">
+                    <label htmlFor="Latest"> Latest
+                        <input type="radio" id='Latest' name='check-Filter' />
+                    </label>
+                    <label htmlFor="Trading-Styles"> Trading Styles
+                        <input type="radio" id='Trading-Styles' name='check-Filter' />
+                    </label>
+                    <label htmlFor="Risk-Management"> Risk Management
+                        <input type="radio" id='Risk-Management' name='check-Filter' />
+                    </label>
+                    <label htmlFor="Market-Analysis"> Market Analysis
+                        <input type="radio" id='Market-Analysis' name='check-Filter' />
+                    </label>
+                    <label htmlFor="Trading-Psychology"> Trading Psychology
+                        <input type="radio" id='Trading-Psychology' name='check-Filter' />
+                    </label>
+                    <label htmlFor="Trading-Strategies"> Trading-Strategies
+                        <input type="radio" id='Trading-Strategies' name='check-Filter' />
+                    </label>
+                    <label htmlFor="Market-Instruments"> Market-Instruments
+                        <input type="radio" id='Market-Instruments' name='check-Filter' />
+                    </label>
+                </div>
             </div>
 
 
@@ -113,7 +113,29 @@ const QuizzesFiltersPage = () => {
                     <h6>Latest</h6>
                 </div>
 
-                <div className="slider-container">
+                <div className="slider-container d-block d-lg-none ">
+                    <Slider {...settings}>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                    </Slider>
+                </div>
+                <div className="slider-container d-none d-lg-block ">
                     <Slider {...settings}>
                         <div style={{ width: 320 }}>
                             <QuizCard />
@@ -140,7 +162,7 @@ const QuizzesFiltersPage = () => {
             {/* all quizzes */}
             <div className="quizzes-cards space-y-6">
 
-            <div className='title flex items-center justify-between'>
+                <div className='title flex items-center justify-between'>
                     <h6>Market Analysis</h6>
                     <Link>See More <svg width="10" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.5009 22.7027L28.5017 22.7027C28.775 22.7018 29.043 22.6256 29.2767 22.4823C29.5104 22.3389 29.701 22.1339 29.828 21.8892C29.955 21.6445 30.0135 21.3694 29.9974 21.0936C29.9812 20.8177 29.8909 20.5516 29.7362 20.3238L16.2358 0.612931C15.6763 -0.20431 14.3293 -0.20431 13.7683 0.612931L0.267868 20.3238C0.111601 20.5511 0.0199624 20.8174 0.00290847 21.0937C-0.0141455 21.37 0.0440377 21.6457 0.171136 21.8909C0.298235 22.1362 0.489388 22.3415 0.723827 22.4846C0.958267 22.6277 1.22703 22.7031 1.5009 22.7027Z" fill="white" />
@@ -148,12 +170,9 @@ const QuizzesFiltersPage = () => {
                 </div>
 
 
-                <div className="slider-container">
-                <div style={{ width: 400 }} className='d-inline d-lg-none'>
-                            <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
-                        </div>
+                <div className="slider-container d-none d-lg-block">
                     <Slider {...settings}>
-                        <div style={{ width: 600 }} className='d-none d-lg-inline-block'>
+                        <div style={{ width: 600 }}>
                             <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
                         </div>
                         <div style={{ width: 320 }}>
@@ -173,6 +192,28 @@ const QuizzesFiltersPage = () => {
                         </div>
                     </Slider>
                 </div>
+                <div className="slider-container d-inline d-lg-none">
+                    <div style={{ width: 400 }}>
+                        <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
+                    </div>
+                    <Slider {...settings}>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                    </Slider>
+                </div>
             </div>
 
             <div className="quizzes-cards space-y-6">
@@ -184,7 +225,29 @@ const QuizzesFiltersPage = () => {
                     </svg></Link>
                 </div>
 
-                <div className="slider-container">
+                <div className="slider-container  d-block d-lg-none ">
+                    <Slider {...settings}>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                        <div style={{ width: 220 }}>
+                            <QuizCard />
+                        </div>
+                    </Slider>
+                </div>
+                <div className="slider-container  d-none d-lg-block ">
                     <Slider {...settings}>
                         <div style={{ width: 320 }}>
                             <QuizCard />
