@@ -1319,7 +1319,9 @@ const options = {
             }
         }
     },
-
+    legend: {
+      show: false,
+    },
     stroke: {
         width: [4, 1]
       },

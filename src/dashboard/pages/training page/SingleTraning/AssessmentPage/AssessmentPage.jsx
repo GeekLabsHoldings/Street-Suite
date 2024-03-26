@@ -53,7 +53,8 @@ const AssessmentPage = () => {
                 <div className='quistion-answers flex flex-col lg:flex-row items-stretch gap-[15px] lg:gap-[40px]'>
 
                     {/* assessment chart */}
-                    <div className={styles.assessment_view_question + " w-full lg:w-4/5 h-64 lg:h-auto"}>
+                    <div className={styles.assessment_view_question + " w-full lg:w-4/5 h-64 lg:h-auto relative"}>
+                        {/* <div className={styles.ChartOverlay}></div> */}
 
                         {/* import assessment chart component  */}
                         <AssessmentChart />

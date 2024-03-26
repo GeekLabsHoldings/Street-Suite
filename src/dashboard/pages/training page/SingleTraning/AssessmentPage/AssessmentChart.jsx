@@ -25,6 +25,7 @@ function AssessmentChart() {
         "style": "0",
         "locale": "en",
         "enable_publishing": false,
+        "hide_top_toolbar": true,
         "backgroundColor": "rgba(0, 0, 0, 0)",
         "allow_symbol_change": true,
         "calendar": false,
