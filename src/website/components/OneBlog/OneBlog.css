@@ -1,6 +1,12 @@
 .pageBG{
     background: linear-gradient(0deg, rgba(36,48,58,1) 36%, rgba(32,38,44,1) 49%, rgba(27,28,29,1) 77%);
 }
+.blogsDivForImg{
+    width: 100%;
+    background-color:#3B3B3B ;
+    border-radius: 1.2rem;
+    box-shadow:0px 0px 5px 0px rgba(0,0,0,1) inset;
+}
 .oneBlogCont h3{
 font-size: 23px;
 line-height: 34.5px;
@@ -188,7 +194,10 @@ font-weight: 700;
 .RbottomBorder{
     border-bottom: none;
 }
-
-
-    
+.blogsDivForImg{
+    width: 100%;
+    background-color:#3B3B3B ;
+    border-radius: 0.5rem;
+    box-shadow:0px 0px 3px 0px rgba(0,0,0,1) inset;
+}
 }

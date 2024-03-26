@@ -1,9 +1,16 @@
 import './OldArticle.css';
+import { useNavigate } from "react-router-dom";
+
 
 const OldArticle = ({classname})=>{
+    const navigate = useNavigate();
+    const onClickHandler = ()=>{
+        navigate("./specific-blog");
+    }
+
     return(
 
-        <div className={`flex justify-between likeComments pb-8 bottomBorder ${classname}`}>
+        <div className={`flex justify-between likeComments pb-8 bottomBorder cursor-pointer ${classname}`} onClick={onClickHandler}>
         <div className='w-1/3 '>
             <p>25 MINS AGO</p>
         </div>
