@@ -1,3 +1,4 @@
+import BlogForm from '../../components/BlogForm/BlogForm';
 import './SpecificBlog.css';
 
 const SpecificBlog = ()=>{
@@ -5,15 +6,18 @@ const SpecificBlog = ()=>{
         <div className='pageBG'>
             <div className='w-3/4 mx-auto py-5'>
            <div className='md:pb-10'>
+            {/* blog title */}
                 <div className='largeHeader'>
             <h1>Lorem Ipsum Dol</h1>
             </div>
+            {/* big image about it */}
             <div className='divForImgLg md:h-96 sm:h-40 md:my-5 sm:mt-2 sm:mb-5'></div>
             </div>
-           
+           {/* blog title */}
            <div className='headerFotTxtSec'>
            <h3>Lorem ipsum dol</h3>
            </div>
+           {/* blog description */}
            <div className="md:flex">
            <div className="md:w-2/3">
            <div className='txtSection w-11/12'>
@@ -29,53 +33,10 @@ const SpecificBlog = ()=>{
                 <div className='md:visible sm:hidden bottomBorder py-4'>
                 <div className='divForImgSm h-48 '></div>
                 </div>
-
-                <div className="flex md:gap-4 sm:gap-2 md:py-5 sm:py-3 bottomBorder">
-                <div className='md:w-1/2 sm:w-2/5'>
-                <div className='divForImgSm md:h-28 sm:h-20'></div>
-                </div>
-
-                <div className="md:w-1/2 sm:w-3/5 ">
-                <div className="similarBlogs flex flex-col md:gap-3 sm:gap-2">
-                <h5>China Kicks U.S Butt In The Latest Whatever</h5>
-                <div className="bluecolor">
-                    <h6>25 MINS AGO</h6>
-                </div>
-                </div>
-                </div>
-                
-                </div>
-                <div className="flex md:gap-4 sm:gap-2 md:py-5 sm:py-3 bottomBorder">
-                <div className='md:w-1/2 sm:w-2/5'>
-                <div className='divForImgSm md:h-28 sm:h-20'></div>
-                </div>
-
-                <div className="md:w-1/2 sm:w-3/5 ">
-                <div className="similarBlogs flex flex-col md:gap-3 sm:gap-2">
-                <h5>China Kicks U.S Butt In The Latest Whatever</h5>
-                <div className="bluecolor">
-                    <h6>25 MINS AGO</h6>
-                </div>
-                </div>
-                </div>
-                </div>
-                <div className="flex md:gap-4 sm:gap-2 md:py-5 sm:py-3 lastExample">
-                <div className='md:w-1/2 sm:w-2/5'>
-                <div className='divForImgSm md:h-28 sm:h-20'></div>
-                </div>
-
-                <div className="md:w-1/2 sm:w-3/5 ">
-                <div className="similarBlogs flex flex-col md:gap-3 sm:gap-2">
-                <h5>China Kicks U.S Butt In The Latest Whatever</h5>
-                <div className="bluecolor">
-                    <h6>25 MINS AGO</h6>
-                </div>
-                </div>
-                </div>
-                </div>
-                
-
-
+{/* similar blogs to read */}
+               <BlogForm/>
+               <BlogForm/>
+               <BlogForm classname='lastExample'/>
             </div>
            </div>
         </div>

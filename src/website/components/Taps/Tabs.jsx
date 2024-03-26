@@ -40,20 +40,19 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
 
+  const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
    
-
-
   return (
     <Box sx={{ width: '100%'}}>
       <Box >
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" textColor="white" indicatorColor="white" 
         className='tabsStyle'
         >
+          {/* tabs for all filters */}
         <Tab className='MyTabClass' label="Private Equity" {...a11yProps(0)} />
         <Tab className='MyTabClass' label="Market" {...a11yProps(1)} />
         <Tab className='MyTabClass' label="Options" {...a11yProps(2)} />
@@ -66,6 +65,7 @@ export default function BasicTabs() {
 
         </Tabs>
       </Box>
+      {/* you can put the filter result for every tap here by its index */}
       {/* <CustomTabPanel value={value} index={0}>
         
       </CustomTabPanel> */}
