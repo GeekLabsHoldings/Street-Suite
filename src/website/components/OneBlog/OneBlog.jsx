@@ -82,15 +82,21 @@ const OneBlog =()=>{
                         </div>
                         <div className='flex flex-col gap-1'>
                         <div className='flex gap-3 txtspan'>
-                            <div style={{width:'12.61px',height:'12.93px'}}> <img className='w-full flex' src={Follow} /></div>
+                            <div className='imgSizeInSm'>
+                                <img className='flex w-full' src={Follow} />
+                            </div>
                             <span>2.1k </span>
                         </div>
                         <div className='flex gap-3 txtspan'>
-                           <div style={{width:'12.61px',height:'12.93px'}}> <img className='w-full flex' src={TheCup} /></div>
+                           <div className='imgSizeInSm'> 
+                            <img className='w-full flex' src={TheCup} />
+                            </div>
                             <span>1025</span>
                         </div>
                         <div  className='flex gap-3 txtspan'>
-                        <div style={{width:'12.61px',height:'12.93px'}}> <img className='w-full flex ' src={Like} /></div>
+                        <div className='imgSizeInSm'> 
+                            <img className='w-full flex ' src={Like} />
+                            </div>
                             <span>300 </span>
                         </div>
                         </div>

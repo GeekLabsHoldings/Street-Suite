@@ -131,6 +131,10 @@ font-weight: 700;
     line-height: 23.07px;
     font-weight: 400;
 }
+/* .imgSizeInSm{
+    width:19px;
+    height:19px;
+} */
 
 @media only screen and (max-width:676px) {
     .oneBlogCont h3 ,.leftBG h5{
@@ -199,5 +203,9 @@ font-weight: 700;
     background-color:#3B3B3B ;
     border-radius: 0.5rem;
     box-shadow:0px 0px 3px 0px rgba(0,0,0,1) inset;
+}
+.imgSizeInSm{
+    width:12.61px;
+    height:12.93px;
 }
 }
