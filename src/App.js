@@ -39,6 +39,7 @@ import SingleTraning from './dashboard/pages/training page/SingleTraning/SingleT
 import AssessmentPage from './dashboard/pages/training page/SingleTraning/AssessmentPage/AssessmentPage';
 import LessonsPage from './dashboard/pages/training page/SingleTraning/LessonsPage/LessonsPage';
 import BlogPage from './website/pages/Blog-page/Blog-page';
+import SpecificArticle from './website/pages/SpecificArticle/SpecificBlog';
 
 
 function App() {
@@ -56,7 +57,7 @@ function App() {
                 <Route path="quiz-result" element={<QuizResultsPage/>}/>
               </Route>
 
-              <Route path='leaderboard'  element={<LeaderBoardPage />} />
+              <Route path='leaderboard' element={<LeaderBoardPage />} />
               <Route path='faq'  element={<FaqPage />} />
               <Route path='pricing'  element={<PricingPage />} />
               <Route path='checkout' element={<CheckOutPage />} />
@@ -70,6 +71,8 @@ function App() {
               <Route path='top-brokers'  element={<TopBroker/>} />
               <Route path='careers'  element={<CareersPage/>} />
               <Route path='blogs'  element={<BlogPage/>} />
+              <Route path='blogs/specific-blog'  element={<SpecificArticle/>} />
+
 
 
 
