@@ -1,18 +1,24 @@
-import React from 'react'
-import $ from 'jquery';
+import React, { useState } from 'react'
+import Draggable from "react-draggable";
 
 import styles from '../SingleTraning.module.css';
 
-import assessmentImg from "../../../../assets/assessment img.png"
+import AssessmentChart from './AssessmentChart';
 
+
+
+// assessment page
 const AssessmentPage = () => {
 
 
     return (
 
-        <div className={styles.assessment_wrapper + " w-full space-y-8"}>
+        <div className={styles.assessment_wrapper + " w-full space-y-3 lg:space-y-8"}>
+            {/* title of the page */}
             <h4>Assessment</h4>
             <p>Welcome to the post-course assessment on the Bull Flag Pattern! Congratulations on completing the course and gaining valuable insights into this powerful technical analysis pattern. Now, it's time to put your knowledge to the test and demonstrate your proficiency in identifying bull flag patterns in live stock charts</p>
+            
+            {/* Instructions of assessment page */}
             <div className=" training_lison_collapse">
                 <div className={styles.training_lison_collapse_header + " training_lison_collapse_header"}>
                     <h6>Instructions</h6>
@@ -33,54 +39,134 @@ const AssessmentPage = () => {
                 </div>
             </div>
 
-
+            {/* assessment view part */}
             <div className={styles.assessment_view}>
+
+                {/* title of assessment */}
                 <div className={styles.assessment_view_title}>
                     <h6>Drag and drop the flags over 4  bull flag patterns in the live chart.</h6>
+
+                    {/* numbers of correct answer */}
                     <span>0/4</span>
                 </div>
 
-                <div className='flex items-stretch gap-[40px]'>
-                    <div className={styles.assessment_view_question + " w-4/5"}>
-                        <img src={assessmentImg} alt="" className='w-full'/>
+                <div className='quistion-answers flex flex-col lg:flex-row items-stretch gap-[15px] lg:gap-[40px]'>
+
+                    {/* assessment chart */}
+                    <div className={styles.assessment_view_question + " w-full lg:w-4/5 h-64 lg:h-auto"}>
+
+                        {/* import assessment chart component  */}
+                        <AssessmentChart />
                     </div>
-                    <div className={styles.assessment_view_answers + " w-1/5 flex flex-col space-y-3"}>
-                    <div className={styles.border_animate + " w-full h-1/4"}>
-                        <div className={styles.answer}>
-                            <svg width="57" height="63" viewBox="0 0 57 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 62L33.0831 11.9073M33.0831 11.9073L40.069 1H56L51.8276 11.9073H33.0831Z" stroke="white" />
-                            </svg>
+
+                    {/* assessment answers */}
+                    <div className={styles.assessment_view_answers + " w-full lg:w-1/5 flex space-x-1 lg:space-x-0 lg:space-y-3"}>
+
+                        {/* first answer */}
+                        <div className={styles.answer + " w-1/4 lg:w-full h-auto lg:h-1/4"}>
+
+                            {/* draggable component that make answer shape draggable imported from react-draggable */}
+                            <Draggable 
+                                handle="svg"
+                                defaultPosition={{ x: 0, y: 0 }}
+                                position={null}
+                                grid={[1, 1]}
+                                scale={1}
+                                bounds="parent"
+                                // onStart={handleStart1}
+                                // onDrag={handleDrag1}
+                                // onStop={handleStop1}
+                            >
+                                <svg width="57" height="63" viewBox="0 0 57 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 62L33.0831 11.9073M33.0831 11.9073L40.069 1H56L51.8276 11.9073H33.0831Z" stroke="white" />
+                                </svg>
+                            </Draggable>
                         </div>
-                    </div>
-                    <div className={styles.border_animate + " w-full h-1/4"}>
-                        <div className={styles.answer}>
-                            <svg width="57" height="63" viewBox="0 0 57 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 62L33.0831 11.9073M33.0831 11.9073L40.069 1H56L51.8276 11.9073H33.0831Z" stroke="white" />
-                            </svg>
+
+                        {/* second answer */}
+                        <div className={styles.answer + " w-1/4 lg:w-full h-auto lg:h-1/4"}>
+
+                            {/* draggable component that make answer shape draggable imported from react-draggable */}
+                            <Draggable
+                                handle="svg"
+                                defaultPosition={{ x: 0, y: 0 }}
+                                position={null}
+                                grid={[1, 1]}
+                                scale={1}
+                                // onStart={handleStart2}
+                                // onDrag={handleDrag2}
+                                // onStop={handleStop2}
+                            >
+                                <svg width="43" height="68" viewBox="0 0 43 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 67L18.9811 16.5M18.9811 16.5L24.5 1H41.5L38.5 16.5H18.9811Z" stroke="white" />
+                                </svg>
+                            </Draggable>
                         </div>
-                    </div>
-                    <div className={styles.border_animate + " w-full h-1/4"}>
-                        <div className={styles.answer}>
-                            <svg width="57" height="63" viewBox="0 0 57 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 62L33.0831 11.9073M33.0831 11.9073L40.069 1H56L51.8276 11.9073H33.0831Z" stroke="white" />
-                            </svg>
+
+                        {/* third answer */}
+                        <div className={styles.answer + " w-1/4 lg:w-full h-auto lg:h-1/4"}>
+
+                            {/* draggable component that make answer shape draggable imported from react-draggable */}
+                            <Draggable
+                                handle="svg"
+                                defaultPosition={{ x: 0, y: 0 }}
+                                position={null}
+                                grid={[1, 1]}
+                                scale={1}
+                                // onStart={handleStart3}
+                                // onDrag={handleDrag3}
+                                // onStop={handleStop3}
+                            >
+                                <svg width="107" height="81" viewBox="0 0 107 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 80L54.2595 25M54.2595 25L77.5 1H106L94.5 25H54.2595Z" stroke="white" />
+                                </svg>
+                            </Draggable>
                         </div>
-                    </div>
-                    <div className={styles.border_animate + " w-full h-1/4"}>
-                        <div className={styles.answer}>
-                            <svg width="57" height="63" viewBox="0 0 57 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 62L33.0831 11.9073M33.0831 11.9073L40.069 1H56L51.8276 11.9073H33.0831Z" stroke="white" />
-                            </svg>
+
+                        {/* fourth */}
+                        <div className={styles.answer + " w-1/4 lg:w-full h-auto lg:h-1/4"}>
+
+                            {/* draggable component that make answer shape draggable imported from react-draggable */}
+                            <Draggable
+                                handle="svg"
+                                defaultPosition={{ x: 0, y: 0 }}
+                                position={null}
+                                grid={[1, 1]}
+                                scale={1}
+                                // onStart={handleStart4}
+                                // onDrag={handleDrag4}
+                                // onStop={handleStop4}
+                            >
+                                <svg width="77" height="68" viewBox="0 0 77 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 67.5L43.6316 13.5M43.6316 13.5L53.5 1L75.5 13.5L66.5 25L43.6316 13.5Z" stroke="white" />
+                                </svg>
+                            </Draggable>
                         </div>
+
+
                     </div>
                 </div>
-                </div>
+            </div>
+
+            {/* assessment score that will appear when user complete the assessment */}
+            <div className={styles.assesment_score + " d-none"}>
+                {/* title */}
+                <h5>Assessment Score</h5>
+
+                {/* score of assessment */}
+                <span>88%</span>
             </div>
 
 
             <div className={styles.previous_assessment_btn}>
+                {/* previous button that return user to lessons */}
                 <button className={styles.previous_btn}>Previous</button>
-                <button className={styles.assessment_btn} disabled>Assessment</button>
+
+                {/* complete button that complete assessment and show assessment score */}
+                <button className={styles.assessment_btn} disabled>Mark As Complete</button>
+
+                {/* return button that make user restart anouther assessmenr */}
+                <button className={styles.assessment_btn + " d-none"}>Retry</button>
             </div>
         </div>
 

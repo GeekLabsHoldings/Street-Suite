@@ -225,6 +225,7 @@ input:focus {
 }
 
 
+
 @media only screen and (max-width: 1000px) {
   .SearchBar {
     gap: 0.5rem;
@@ -233,13 +234,15 @@ input:focus {
   }
 
   .SearchBar h2 {
+    width: 80%;
     font-size: 24px;
     padding-left: 1rem;
   }
 
 
   .notification_searchInput {
-    width: 100%;
+    width: auto;
+    display: block;
   }
 
   .searchInput input {
@@ -260,6 +263,9 @@ input:focus {
   .searchInput input::placeholder {
     font-size: 10px;
     line-height: 14px;
+  }
+  .navBar{
+    display: none;
   }
   
 }

@@ -38,9 +38,15 @@ const SingleTraning = () => {
 
     return (
         <div>
+
+            {/* nav bar in single training page */}
             <SearchBar >
-                <h2>Trading</h2>
+
+                {/* title of page */}
+                <h2>Training</h2>
                 <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
+
+                    {/* nav bar  */}
                     <div className={styles.training_navBar} >
                         <ul>
                             <li>
@@ -51,7 +57,8 @@ const SingleTraning = () => {
                             </li>
                         </ul>
                     </div>
-
+                    
+                    {/* search input */}
                     <div className={SearchBarStyles.searchInput + " w-full hidden lg:block"}>
                         <input
                             type="search"
@@ -61,12 +68,15 @@ const SingleTraning = () => {
                         />
                         <img src={searchIcon} alt="searchIcon" />
                     </div>
-
-                    <button className={SearchBarStyles.notificationBtn} type="button">
+                    
+                    {/* notification button in nav bar */}
+                    <button className={SearchBarStyles.notificationBtn + " flex lg:hidden"} type="button">
                         <img src={notifIcon} alt="" />
                         <span>6</span>
                     </button>
                 </div>
+
+                {/* bars in mobile screen */}
                 <div className={` ${SearchBarStyles.bars} flex md:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
                     <div className={SearchBarStyles.bar}></div>
                 </div>
@@ -76,6 +86,7 @@ const SingleTraning = () => {
 
                 <div className="flex flex-col w-full lg:w-4/5 items-center mb-12 lg:mt-8 lg:gap-[30px]">
 
+                    {/* title top of progress bar */}
                     <div className={styles.training_title}>
                         <h5>Understanding the Bull Flag pattern</h5>
 
@@ -84,6 +95,7 @@ const SingleTraning = () => {
                             <p>70% Likelihood of <br /> follow through</p>
                         </div>
                     </div>
+
 
                     {/* progress bar in Transfer & Pay page */}
                     <ProgressBar
@@ -99,12 +111,18 @@ const SingleTraning = () => {
                         className={styles.ProgressBar + ' w-full lg:mb-[50px]'}
                     />
 
+                    {/* sub pages like lesson page and assessment page will appear here */}
                     <Outlet />
 
                 </div>
-                <div className={styles.table_of_content + " w-1/5"}>
-                    <h6>Table of Content</h6>
 
+                {/* table of content section */}
+                <div className={styles.table_of_content + " w-1/5 hidden lg:block"}>
+
+                    {/* title table of content section */}
+                    <h6>Table of Content</h6>
+                    
+                    {/* list of content section */}
                     <ul>
                         <li className={styles.completed}>Intro</li>
                         <li className={styles.completed}>What is a bull Flag</li>

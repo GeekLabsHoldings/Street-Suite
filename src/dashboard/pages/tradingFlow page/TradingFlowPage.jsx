@@ -36,7 +36,7 @@ const TradingFlowPage = () => {
             </ul>
             <NavLink to="trading-history" className={SearchBarStyles.tradingHistory}>Trading History</NavLink>
           </div>
-          <button className={SearchBarStyles.notificationBtn + " hidden md:flex"} type="button">
+          <button className={SearchBarStyles.notificationBtn + " flex md:hidden"} type="button">
             <img src={notifIcon} alt="" />
             <span>6</span>
           </button>
