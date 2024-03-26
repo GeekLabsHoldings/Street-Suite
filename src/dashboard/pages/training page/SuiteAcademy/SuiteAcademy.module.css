@@ -218,3 +218,34 @@ input:focus {
     align-items: center;
     gap: 0.5rem;
 }
+
+
+@media only screen and (max-width:1024px) {
+
+    .supTitle{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    .st_suite_wiki {
+        display: none;
+    }
+    .training_card {
+        padding: 1rem 1rem 1rem 0.5rem;
+    }
+    .training_card h4 {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        text-align: left;
+    }
+    .training_card ul li {
+        font-size: 10.45px;
+        font-weight: 500;
+        line-height: 15.68px;
+        text-align: left;
+    }
+    .training_navBar ul {
+        display: none;
+    }
+}

@@ -84,11 +84,7 @@ function SideMenu() {
       {/* user info and avatar and notification button in side nav */}
       <div className={styles.userInfo + " flex flex-col items-center gap-3"}>
 
-        {/* notification button that abear in mobile screen */}
-        <button className={styles.notificationBtn + " block lg:hidden"} type="button">
-          <img src={notifIcon} alt="" />
-          <span>6</span>
-        </button>
+
 
         {/* user info and avatar  */}
         <div className={styles.userInfoContent}>

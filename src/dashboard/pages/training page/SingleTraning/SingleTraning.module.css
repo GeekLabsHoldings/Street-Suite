@@ -289,13 +289,14 @@ input:focus {
     background-color: rgba(126, 126, 126, 1);
 }
 
-.previous_assessment_btn{
+.previous_assessment_btn {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.previous_btn{
+
+.previous_btn {
     display: block;
     border: 1px solid #fff;
     outline: none;
@@ -309,11 +310,13 @@ input:focus {
     line-height: 16.8px;
     margin: 0.5rem 0;
 }
-.assessment_btn{
+
+.assessment_btn {
     display: block;
     border: none;
     outline: none;
     background-color: var(--Blue300);
+    border: 1px solid var(--Blue300);
     border-radius: 5px;
     text-align: center;
     padding: 0.6rem 2rem;
@@ -323,23 +326,27 @@ input:focus {
     line-height: 16.8px;
     margin: 0.5rem 0 0 auto;
 }
-.assessment_btn:disabled{
+
+.assessment_btn:disabled {
     background-color: rgba(126, 126, 126, 1);
-}
-.assessment_wrapper > h4{
-font-family: Poppins;
-font-size: 33px;
-font-weight: 700;
-line-height: 49.5px;
-text-align: left;
+    border: 1px solid rgba(126, 126, 126, 1);
 }
 
-.assessment_wrapper > p{
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-margin: 2rem 0;
+.assessment_wrapper>h4 {
+    font-family: Poppins;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 49.5px;
+    text-align: left;
 }
+
+.assessment_wrapper>p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 2rem 0;
+}
+
 .assessment_wrapper .training_lison_collapse_body p {
     margin-bottom: 0rem;
 }
@@ -348,73 +355,90 @@ margin: 2rem 0;
     display: block;
 }
 
-.assessment_view{
+.assessment_view {
     padding: 3rem 2rem;
     border-radius: 15px;
     background: rgba(23, 23, 23, 1);
 }
 
-.assessment_view .assessment_view_title{
+.assessment_view .assessment_view_title {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
 }
 
-.assessment_view .assessment_view_title h6{
+.assessment_view .assessment_view_title h6 {
     font-family: Poppins;
     font-size: 23px;
     font-weight: 400;
     line-height: 34.5px;
 }
-.assessment_view .assessment_view_title span{
-font-family: Poppins;
-font-size: 23px;
-font-weight: 400;
-line-height: 34.5px;
-text-align: left;
-color: rgba(164, 164, 164, 1);
-}
 
-.border_animate {
-    position: relative;
-    padding: 1px;
-    border-radius: 8px;
-    overflow: hidden;
-    z-index: 0;
+.assessment_view .assessment_view_title span {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 34.5px;
+    text-align: left;
+    color: rgba(164, 164, 164, 1);
 }
-
-.border_animate::before {
-    content: "";
-    background-image: conic-gradient(#ffffff4b 0deg, #ffffff4b 260deg, #fff 300deg, #ffffff4b 360deg);
-    width: 150%;
-    height: 150%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    border-radius: 8px;
-    transition: all 0.7s;
+.assessment_view_answers{
+    flex-direction: column;
 }
-
-.assessment_view_answers .answer{
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
+.assessment_view_answers .answer {
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
     position: relative;
     background: rgba(23, 23, 23, 1);
+    border: 1px solid #ffffff4b;
 }
 
-@media only screen and (max-width: 1000px) {
+.assessment_view_answers .answer svg {
+    cursor: move;
+}
 
-    .transfer_pay_side_nav {
-        padding: 0.5rem 0rem;
+.tradingview_widget_container iframe:not(:first-child) {
+    display: none !important;
+}
+
+.assesment_score {
+    background: linear-gradient(270deg, #53ACFF 0%, rgba(83, 172, 255, 0.272676) 43.12%, rgba(83, 172, 255, 0.207852) 62.57%, rgba(83, 172, 255, 0) 102.41%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+}
+
+.assesment_score h5 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+
+}
+
+.assesment_score span {
+    font-family: Poppins;
+    font-size: 63px;
+    font-weight: 700;
+    line-height: 94.5px;
+    text-align: left;
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .training_navBar ul {
+        display: none;
     }
+
 
     .ProgressBar span {
         font-size: 9px !important;
@@ -422,6 +446,141 @@ color: rgba(164, 164, 164, 1);
 
     .ProgressBar {
         margin-bottom: 3rem;
+    }
+
+    .training_title {
+        gap: 0.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .training_title h5 {
+        width: 60%;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+    }
+
+    .Bullish {
+        padding: 0.4rem;
+        width: 40%;
+        gap: 0.3rem;
+    }
+
+    .Bullish span {
+        padding: 0.3rem;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14.22px;
+    }
+
+    .Bullish p {
+        width: 50%;
+        font-size: 6.86px;
+        font-weight: 500;
+        line-height: 10.3px;
+        text-align: left;
+    }
+
+    .intro_step {
+        padding: 1.5rem 0.8rem;
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .intro_step img {
+        width: 100%;
+    }
+
+    .intro_step p {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    .training_lison_collapse_header {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .training_lison_collapse_header h6 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+    }
+
+    .training_lison_collapse_header svg {
+        width: 10px;
+    }
+
+    .training_lison_collapse_body {
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .training_lison_collapse_body img{
+        width: 100%;
+    }
+
+    .training_lison_collapse_body p {
+        margin-bottom: 1rem;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    .makeCompleteBtn {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.4px;
+        padding: 0.6rem;
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .assessment_wrapper>h4 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+    }
+    .assessment_wrapper>p {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+        text-align: justified;
+    }
+    .assessment_view {
+        padding: 1.5rem 1rem;
+    }
+    .assessment_view .assessment_view_title h6 {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+    }
+    .assessment_view .assessment_view_title span {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+    }
+    .assessment_view_answers{
+        flex-direction: row;
+    }
+    .assessment_view_answers .answer {
+        padding: 0.5rem;
+    }
+    .assessment_view_answers .answer svg{
+        width: 100%;
+    }
+    .assessment_btn {
+        padding: 0.6rem 1rem;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.4px;
+    }
+    .SingleTraning_previous_btn__bLVoy {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.4px;
     }
 
 }
