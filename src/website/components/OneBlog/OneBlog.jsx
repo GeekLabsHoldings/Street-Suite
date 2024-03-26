@@ -1,5 +1,3 @@
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Follow from '../../assets/followers.svg';
 import TheCup from '../../assets/the-cup.svg';
 import Like from '../../assets/like.svg';
@@ -7,23 +5,30 @@ import FirstAvatar from '../../assets/avatar1 with flag.svg';
 import SecondAvatar from '../../assets/avatar2 with flag.svg';
 import ThirdAvatar from '../../assets/avatar3 with flag.svg';
 import HotStrip from '../../assets/hot strip gray.png' ;
-import './OneBlog.css';
 import OneWinner from '../OneWinnerOrLoser/OneWinnerOrLoser';
 import TimeForRead from '../TimeForRead/TimeForRead';
 import OldArticle from '../OldArticle/OldArticle';
 import { useNavigate } from "react-router-dom";
+import './OneBlog.css';
 
   
 
 const OneBlog =()=>{
+    // to enable navigation
     const navigate = useNavigate();
 
+// to navigate to leader board page
     const leaderboardNavigator = ()=>{
         window.location.replace("http://localhost:3000/leaderboard");
 
     }
- 
 
+    // to navigate to training page
+    const trainingNavigator = ()=>{
+        window.location.replace("http://localhost:3000/dashboard/training");
+    }
+ 
+// to navigate to specific blog page
      const onClickHandler = ()=>{
         navigate("./specific-blog");
     }
@@ -31,7 +36,7 @@ const OneBlog =()=>{
     return (
    <div className='md:flex sm:my-2'>
          <div className="md:w-3/5 verticalSeparator md:my-4 md:px-4 sm:px-1 ">
-
+{/* one blog */}
             <div className="flex md:gap-4 md:py-4 sm:py-3 cursor-pointer bottomBorder sm:gap-2" onClick={onClickHandler}>
                 <div className="sm:w-7/12 md:w-1/2 ">
                     <div className="oneBlogCont md:py-4 sm:gap-3 md:gap-5 flex flex-col">
@@ -48,7 +53,7 @@ const OneBlog =()=>{
                 </div>
             </div>
 
-
+{/* one blog */}
             <div className="sm:visible md:hidden flex py-3 cursor-pointer bottomBorder" onClick={onClickHandler} >
                      <div className="flex gap-4 py-2 ">
                 <div className='w-5/12 '>
@@ -66,8 +71,8 @@ const OneBlog =()=>{
                 
                 </div>
             </div>
-
-            <div className='flex justify-around secDivOnLeft py-8 relative bottomBorder'>
+{/* blog about our training */}
+            <div className='flex justify-around secDivOnLeft py-8 relative bottomBorder cursor-pointer' onClick={trainingNavigator}>
                 <div className='sm:w-4/12 md:w-1/4 flex align-items-center'>
                 <h2>Get Better with ST Suite Trainings</h2>
                 </div>
@@ -110,6 +115,7 @@ const OneBlog =()=>{
                 </div>
             </div>
 
+{/* blog about our private equity */}
             <div className="flex md:gap-4 md:py-4 sm:py-3 cursor-pointer bottomBorder sm:gap-2" onClick={onClickHandler}>
                     <div className="w-1/2 ">
                         <div className="oneBlogCont md:py-4 sm:gap-4 md:gap-5 flex flex-col">
@@ -129,14 +135,13 @@ const OneBlog =()=>{
                     </div>
             </div>
 
-
-
             <div className='flex md:gap-3 md:py-4 sm:py-2 textDiv bottomBorder'>
                 <h6>Private Equity: </h6>
                 <p>New Companies List On <span className='highlight'>Street Suite</span></p>
 
             </div>
 
+{/* 2 different blogs about same thing and common image */}
             <div className="flex bottomBorder md:gap-5 sm:gap-3">
            <div className="w-1/2">
            <div className='oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 bottomBorder cursor-pointer' onClick={onClickHandler}>
@@ -169,6 +174,7 @@ const OneBlog =()=>{
 
             </div>
 
+{/* ad section */}
             <div className='md:hidden sm:visible flex py-4'>
             <div className=' w-full' >
             <div className='divForImgLg h-44'></div>
@@ -176,17 +182,18 @@ const OneBlog =()=>{
                 </div>
 
             </div>
-
+{/* alert about random old blogs */}
             <div className="sm:visible md:hidden blueContainer w-full py-3 px-4 text-center">
                 <h3>In Case You Missed It</h3>
                 </div>
-
+{/* sample of old blogs */}
                 <div className='md:hidden sm:visible'>
               <OldArticle classname='pt-6'/>
               <OldArticle classname='pt-6'/>
                 <OldArticle classname='pt-6'/>
                 </div>
 
+{/* feature */}
 
         <div className='md:py-8 sm:py-6 bottomBorder'>
         <div className='flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer' onClick={onClickHandler}>
@@ -211,7 +218,7 @@ const OneBlog =()=>{
                     </div>
                 
         </div>
-
+{/* one blog */}
         <div className="flex md:py-4 sm:py-2 md:gap-4 sm:gap-4 RbottomBorder cursor-pointer" onClick={onClickHandler}>
             <div className='md:w-2/5 sm:w-1/2 md:py-2 '>
             <div className='md:w-11/12 oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 pe-3 rightBorder'>
@@ -236,7 +243,7 @@ const OneBlog =()=>{
             </div>
 
         </div>
-
+{/* one blog */}
         <div className="sm:hidden md:visible flex py-4 cursor-pointer " onClick={onClickHandler}>
             <div className='w-1/2 pt-3'>
             <div className='oneBlogCont flex flex-col gap-4'>
@@ -263,7 +270,7 @@ const OneBlog =()=>{
 
 
         <div className='md:w-2/5 sm:w-full mx-auto flex flex-col align-items-center '>
-
+{/* one blog appear in large screen and appear in another form and position in small screens */}
         <div className="md:visible sm:hidden w-9/12 flex md:pe-3 py-4 bottomBorder cursor-pointer" onClick={onClickHandler} >
             <div className='w-11/12'>
 
@@ -285,6 +292,7 @@ const OneBlog =()=>{
             </div>
                 </div>
 
+{/* about our leader board */}
                 <div className="md:visible sm:hidden w-9/12 flex justify-end pe-3 py-5 bottomBorder cursor-pointer" onClick={leaderboardNavigator}>
                     <div className=' w-11/12 forGradBG winnerAndLoserBorder'>
                     <div className='formPart flex flex-col align-items-center forGradBG'>
@@ -311,17 +319,17 @@ const OneBlog =()=>{
                 </div>
 
             <div className='md:w-9/12 sm:w-full'>
-
+{/* ad section appear in large screens and appear in different form and position in small screen */}
                 <div className='md:visible sm:hidden flex justify-end py-7 '>
                     <div className="w-11/12">
                     <div className='divForImgSm h-52'></div>
                     </div>
                 </div>
-
+{/* alert appear in large screens and appear in different form and position in small screen */}
                 <div className="md:visible sm:hidden blueContainer w-full py-3 px-4 text-center">
                 <h3>In Case You Missed It</h3>
                 </div>
-                
+{/* old blogs appear in large screens and appear in different form and position in small screen */}
                 <div className='md:visible sm:hidden'>
          
                 <OldArticle classname='pt-7 '/>
@@ -333,7 +341,7 @@ const OneBlog =()=>{
                 </div>
 
                
-
+{/* one blog */}
             <div className="md:visible sm:hidden flex bottomBorder py-8 cursor-pointer" onClick={onClickHandler}>
                 <div className='w-1/3 '>
                     <div className="w-11/12">
@@ -342,7 +350,7 @@ const OneBlog =()=>{
                 </div>
 
                 <div className='w-2/3 likeComments flex flex-col gap-3 '>
-                    <div className='w-8/12'>
+                    <div className='w-8/12 flex flex-col gap-3'>
                     <div>
                     <h6>China Kicks U.S Butt In The Latest Whatever</h6>
                     </div>
@@ -354,7 +362,7 @@ const OneBlog =()=>{
                 </div>
 
                 </div>
-
+{/* one blog */}
                 <div className='md:visible sm:hidden py-8'>
                    <div className='w-11/12 mx-auto flex flex-col gap-3 cursor-pointer' onClick={onClickHandler}>
                    <div className='lastInRight'>

@@ -1,0 +1,13 @@
+.similarBlogs h5{
+    font-size: 19.02px;
+    line-height: 28.53px;
+    font-weight: 400;
+}
+
+@media only screen and (max-width:676px) {
+    .similarBlogs h5{
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+    }
+}

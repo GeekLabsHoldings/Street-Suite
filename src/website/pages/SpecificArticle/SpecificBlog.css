@@ -33,11 +33,7 @@
     line-height: 19.62px;
     font-weight: 400;
 }
-.similarBlogs h5{
-    font-size: 19.02px;
-    line-height: 28.53px;
-    font-weight: 400;
-}
+
 .lastExample{
     border-bottom: 0 ;
 }
@@ -62,11 +58,7 @@
         font-weight: 400;
         padding: 0.6rem 0;
     }
-    .similarBlogs h5{
-        font-size: 14px;
-        line-height: 21px;
-        font-weight: 400;
-    }
+
     .bluecolor h6{
         font-size: 10px;
         line-height: 15px;
