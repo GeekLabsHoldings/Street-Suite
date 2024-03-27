@@ -40,6 +40,7 @@ import AssessmentPage from './dashboard/pages/training page/SingleTraning/Assess
 import LessonsPage from './dashboard/pages/training page/SingleTraning/LessonsPage/LessonsPage';
 import BlogPage from './website/pages/Blog-page/Blog-page';
 import SpecificArticle from './website/pages/SpecificArticle/SpecificBlog';
+import SettingPage from './dashboard/pages/SettingPage/SettingPage';
 
 
 function App() {
@@ -49,29 +50,29 @@ function App() {
         <Routes>
           <Route path="/" element={<WebsiteLayout />} >
 
-              <Route index  element={<HomePage />} />
-              {/* quizzes page route  */}
-              <Route path='quizzes'  element={<QuizzesPage />} >
-                <Route index element={<QuizzesFiltersPage/>}/>
-                <Route path="quiz" element={<QuizPage/>}/>
-                <Route path="quiz-result" element={<QuizResultsPage/>}/>
-              </Route>
+            <Route index element={<HomePage />} />
+            {/* quizzes page route  */}
+            <Route path='quizzes' element={<QuizzesPage />} >
+              <Route index element={<QuizzesFiltersPage />} />
+              <Route path="quiz" element={<QuizPage />} />
+              <Route path="quiz-result" element={<QuizResultsPage />} />
+            </Route>
 
-              <Route path='leaderboard' element={<LeaderBoardPage />} />
-              <Route path='faq'  element={<FaqPage />} />
-              <Route path='pricing'  element={<PricingPage />} />
-              <Route path='checkout' element={<CheckOutPage />} />
-              <Route path='complete-checkout' element={<CompleteCheckout />} />
-              <Route path='features'  element={<FeaturesPage />} />
-              <Route path='api'  element={<APIPage />} />
-              <Route path='about-us'  element={<AboutUsPage />} />
-              <Route path='signup'  element={< SignupPage/>} />
-              <Route path='contactus'  element={<ContactPage />} />
-              <Route path='change-logs'  element={<ChangeLogs />} />
-              <Route path='top-brokers'  element={<TopBroker/>} />
-              <Route path='careers'  element={<CareersPage/>} />
-              <Route path='blogs'  element={<BlogPage/>} />
-              <Route path='blogs/specific-blog'  element={<SpecificArticle/>} />
+            <Route path='leaderboard' element={<LeaderBoardPage />} />
+            <Route path='faq' element={<FaqPage />} />
+            <Route path='pricing' element={<PricingPage />} />
+            <Route path='checkout' element={<CheckOutPage />} />
+            <Route path='complete-checkout' element={<CompleteCheckout />} />
+            <Route path='features' element={<FeaturesPage />} />
+            <Route path='api' element={<APIPage />} />
+            <Route path='about-us' element={<AboutUsPage />} />
+            <Route path='signup' element={< SignupPage />} />
+            <Route path='contactus' element={<ContactPage />} />
+            <Route path='change-logs' element={<ChangeLogs />} />
+            <Route path='top-brokers' element={<TopBroker />} />
+            <Route path='careers' element={<CareersPage />} />
+            <Route path='blogs' element={<BlogPage />} />
+            <Route path='blogs/specific-blog' element={<SpecificArticle />} />
 
 
 
@@ -80,6 +81,7 @@ function App() {
 
 
           <Route path='/dashboard' element={<DashboardLayout />}>
+
 
             <Route index element={<AlertsPage />} />
             <Route path="alerts" element={<AlertsPage />} />
@@ -93,17 +95,23 @@ function App() {
               <Route path='my-courses' element={<MyCourses />} />
             </Route>
             <Route path="trading" element={<TradingFlowPage />} >
-              <Route index element={<YourPortfolioPage/>} />
+              <Route index element={<YourPortfolioPage />} />
               <Route path='private-equity' element={<PrivateEquityPage />} />
               <Route path='transfer&pay' element={<Transfer_PayPage />} >
-                <Route index element={<DepositFundsPage />}/>
-                <Route path='deposit-funds' element={<DepositFundsPage />}/>
-                <Route path="withdraw-funds" element={<WithdrawFundsPage />}/>
-                <Route path="transactions-history" element={<TransactionsHistoryPage />}/>
-                <Route path="seccssful-transaction" element={<SuccessfulTransactionPage />}/>
+                <Route index element={<DepositFundsPage />} />
+                <Route path='deposit-funds' element={<DepositFundsPage />} />
+                <Route path="withdraw-funds" element={<WithdrawFundsPage />} />
+                <Route path="transactions-history" element={<TransactionsHistoryPage />} />
+                <Route path="seccssful-transaction" element={<SuccessfulTransactionPage />} />
 
-              </Route> 
+
+
+              </Route>
             </Route>
+
+            
+            <Route path="setting" element={<SettingPage />} />
+
           </Route>
         </Routes>
 
