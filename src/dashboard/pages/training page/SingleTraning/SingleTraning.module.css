@@ -313,6 +313,7 @@ input:focus {
 
 .assessment_btn {
     display: block;
+    width: fit-content;
     border: none;
     outline: none;
     background-color: var(--Blue300);
@@ -430,7 +431,16 @@ input:focus {
     font-weight: 700;
     line-height: 94.5px;
     text-align: left;
+}
 
+.ChartOverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 4;
 }
 
 @media only screen and (max-width: 1024px) {
