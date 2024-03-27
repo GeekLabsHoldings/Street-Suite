@@ -9,6 +9,7 @@
 .checkout-container {
     max-width: 1400px;
 }
+
 .checkout-container .chosen-plan .recommended-plane {
     position: relative;
 }
@@ -19,29 +20,33 @@
     right: -4px;
     z-index: 9;
 }
-.border-animate{
+
+.border-animate {
     position: relative;
     padding: 1px;
     overflow: hidden;
     z-index: 0;
 }
-.border-animate::before{
+
+.border-animate::before {
     content: "";
-    background-image: conic-gradient(transparent 180deg, var(--Blue300) 240deg , var(--Blue300) 280deg, transparent 360deg);
+    background-image: conic-gradient(transparent 180deg, var(--Blue300) 240deg, var(--Blue300) 280deg, transparent 360deg);
     width: 250%;
     height: 250%;
-    transform: translate(-50%,-50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 0;
     transition: all 0.7s;
 }
-.border-animate:hover::before{
-    transform: translate(-50%,-50%) rotate(180deg);
+
+.border-animate:hover::before {
+    transform: translate(-50%, -50%) rotate(180deg);
 }
+
 .checkout-container .plane-body {
-    background: linear-gradient(54deg, rgba(38,58,75,1) 0%, rgba(51,85,117,1) 100%);
+    background: linear-gradient(54deg, rgba(38, 58, 75, 1) 0%, rgba(51, 85, 117, 1) 100%);
     padding: 3rem;
 }
 
@@ -115,13 +120,13 @@
     color: #fff;
 }
 
-.checkout-container .plane-pricing .plane-action a:hover{
+.checkout-container .plane-pricing .plane-action a:hover {
     background: var(--Blue300);
     border: 1px solid var(--Blue300);
 }
 
 
-.checkout-container .payment-details h6{
+.checkout-container .payment-details h6 {
     font-family: Poppins;
     font-size: 33px;
     font-weight: 700;
@@ -131,13 +136,13 @@
     margin-bottom: 1.5rem;
 }
 
-.checkout-container .payment-details .form-input{
+.checkout-container .payment-details .form-input {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.checkout-container .payment-details .form-input label{
+.checkout-container .payment-details .form-input label {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
@@ -146,7 +151,7 @@
     text-align: left;
 }
 
-.checkout-container .payment-details .form-input input{
+.checkout-container .payment-details .form-input input {
     font-family: Poppins;
     font-size: 15px;
     font-weight: 400;
@@ -160,11 +165,13 @@
     border-radius: 7px;
     width: 90%;
 }
-.checkout-container .payment-details .form-input input::placeholder{
+
+.checkout-container .payment-details .form-input input::placeholder {
     color: rgba(151, 151, 151, 1);
 
 }
-.checkout-container .payment-details .card-details{
+
+.checkout-container .payment-details .card-details {
     position: relative;
     padding: 2px;
     overflow: hidden;
@@ -174,31 +181,35 @@
     box-shadow: 0px 17.466970443725586px 27.448097229003906px 0px rgba(0, 0, 0, 0.25);
 
 }
-.checkout-container .payment-details .card-details::before{
+
+.checkout-container .payment-details .card-details::before {
     content: "";
-    background-image: conic-gradient(transparent 180deg, var(--Blue300) 240deg , var(--Blue300) 280deg, transparent 360deg);
-    width: 180%;
-    height: 180%;
-    transform: translate(-50%,-50%) rotate(270deg);
+    background-image: conic-gradient(transparent 180deg, var(--Blue300) 240deg, var(--Blue300) 280deg, transparent 360deg);
+    width: 250%;
+    height: 250%;
+    transform: translate(-50%, -50%) rotate(270deg);
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: -1;
     transition: all 0.7s;
 }
-.checkout-container .payment-details .card-details:hover::before{
-    transform: translate(-50%,-50%) rotate(360deg);
+
+.checkout-container .payment-details .card-details:hover::before {
+    transform: translate(-50%, -50%) rotate(360deg);
 }
 
-.checkout-container .payment-details .card-details .card-body{
-    background: linear-gradient(54deg, rgba(38,58,75,1) 0%, rgba(60,105,147,1) 100%);
+.checkout-container .payment-details .card-details .card-body {
+    background: linear-gradient(54deg, rgba(38, 58, 75, 1) 0%, rgba(60, 105, 147, 1) 100%);
     padding: 3rem 2rem;
     border-radius: 20px;
 }
-.checkout-container .payment-details .card-details .form-input input{
+
+.checkout-container .payment-details .card-details .form-input input {
     width: 100%;
 }
-.checkout-container .payment-details button{
+
+.checkout-container .payment-details button {
     display: block;
     margin-left: auto;
     font-family: Poppins;
@@ -212,4 +223,40 @@
     width: 150px;
     height: 40px;
     border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .checkout-container .plane-body {
+        background: linear-gradient(54deg, rgba(38, 58, 75, 1) 0%, rgba(51, 85, 117, 1) 100%);
+        padding: 2rem 1rem;
+    }
+
+    .checkout-container .plane {
+        border-radius: 11px;
+    }
+
+    .checkout-container .chosen-plan .recommended-plane {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .checkout-container .payment-details .form-input input {
+        font-size: 14px;
+        padding: 7px 1rem;
+        width: 100%;
+    }
+
+    .checkout-container .payment-details .card-details .card-body {
+        padding: 2rem 1rem;
+    }
+
+    .checkout-container .payment-details h6 {
+        margin: 3rem 0 1.5rem;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
 }

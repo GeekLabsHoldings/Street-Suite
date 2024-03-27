@@ -1,9 +1,9 @@
-.CompleteCheckout-wrapper{
+.CompleteCheckout-wrapper {
     background: linear-gradient(180deg, rgba(32, 32, 32, 1) 5%, rgba(83, 172, 255, 0.3) 100%);
 }
 
 
-.CompleteCheckout-container .CompleteCheckout-message h4{
+.CompleteCheckout-container .CompleteCheckout-message h4 {
     font-family: Poppins;
     font-size: 64px;
     font-weight: 700;
@@ -13,45 +13,46 @@
     text-align: left;
 }
 
-.CompleteCheckout-container .CompleteCheckout-message h4 + p{
+.CompleteCheckout-container .CompleteCheckout-message h4+p {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card{
-    border-radius: 20px;
-    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
 
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card {
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+    width: 80%;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card::before{
-    transform: translate(-50%,-50%) rotate(180deg);
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card::before {
+    transform: translate(-50%, -50%) rotate(0deg);
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card:hover::before{
-    transform: translate(-50%,-50%) rotate(360deg);
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card:hover::before {
+    transform: translate(-50%, -50%) rotate(180deg);
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body {
     padding: 2rem 2rem 2.5rem;
     background: linear-gradient(54deg, rgba(38, 58, 75, 1) 0%, rgba(51, 85, 117, 1) 100%);
     backdrop-filter: blur(5px);
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body h6{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body h6 {
     font-family: Poppins;
-    font-size: 40px;
+    font-size: 25.95px;
     font-weight: 700;
-    line-height: 40px;
-    letter-spacing: 0em;
+    line-height: 38.92px;
     text-align: center;
-    padding: 1rem 1.5rem 2.5rem;
-    border-bottom: 1px solid #fff;
-    width: 80%;
-    margin: auto;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body p{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body p {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
@@ -60,14 +61,15 @@
     text-align: center;
     margin-top: 1rem;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5rem;
-    border-bottom: 1px solid #fff;
+    padding: 2.5rem 0;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price h5{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price h5 {
     font-family: Poppins;
     font-size: 23px;
     font-weight: 700;
@@ -75,7 +77,8 @@
     letter-spacing: 0em;
     text-align: left;
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p {
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
@@ -83,7 +86,8 @@
     letter-spacing: 0em;
     color: rgba(204, 204, 204, 1);
 }
-.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p > span{
+
+.CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p>span {
     font-family: Poppins;
     font-size: 23px;
     font-weight: 700;
@@ -93,7 +97,141 @@
     color: #fff;
 }
 
-.CompleteCheckout-container .CompleteCheckout-img img{
-    /* margin-top: 7rem; */
-    transform: translateX(-50px) scale(1.15);
+
+.CompleteCheckout-wrapper .receipt-card .plane-points li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.CompleteCheckout-wrapper .receipt-card .plane-points li::before {
+    content: none;
+}
+
+.CompleteCheckout-wrapper .receipt-card .plane-points li svg {
+    margin-right: 1rem;
+}
+
+.CompleteCheckout-wrapper .receipt-card .plane-points li.available .false {
+    display: none;
+}
+
+.CompleteCheckout-wrapper .receipt-card .plane-points li.not-available .true {
+    display: none;
+}
+
+.CompleteCheckout-wrapper .receipt-card .plane-points li.not-available {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.CompleteCheckout-wrapper .receipt-card button {
+    border: none;
+    outline: none;
+    background: var(--Blue300);
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    font-size: 19.46px;
+    font-weight: 600;
+    line-height: 23.35px;
+}
+
+.border-animate {
+    position: relative;
+    padding: 1px 1px 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .CompleteCheckout-container .CompleteCheckout-message h4 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 26px;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message h4+p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body h6 {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price h5 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-img {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-img img {
+        transform: translateX(-70px) scale(0.7);
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body {
+        padding: 3rem 1rem 1rem;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card {
+        width: 100%;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price {
+        padding: 1.5rem 0rem;
+    }
+
+    .CompleteCheckout-wrapper .receipt-card .plane-points li {
+        font-size: 10px;
+        line-height: 12.6px;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p>span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .CompleteCheckout-wrapper .receipt-card button {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.4px;
+        text-align: left;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body p {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
 }

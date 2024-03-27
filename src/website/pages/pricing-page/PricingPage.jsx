@@ -16,14 +16,14 @@ const PricingPage = () => {
         <p>At street Suite it’s all about transparent pricing - no hidden fees, just straight forward honest rates</p>
       </Hero>
 
-      <div className='lg:container mx-auto px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6 pricing-container columns-8 flex items-start justify-around py-20'>
+      <div className='lg:container mx-auto px-4 gap-[16px] lg:gap-6 pricing-container columns-8 flex items-start justify-around py-0 lg:py-20'>
         {/* first plane */}
         <div className="gradient-border">
           <div className="plane plane-pricing recommended">
-            <div className="plane-body flex flex-col justify-center items-center px-8 py-12">
+            <div className="plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-12">
               <h5 className="plane-title">Starter Plan</h5>
               <div className="line"></div>
-              <ul className="plane-points space-y-5 px-4">
+              <ul className="plane-points space-y-5 px-[5px] lg:px-4">
                 <li className='available '>
                   <svg className='true' width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.74156 0.270361C10.0861 0.630843 10.0861 1.21531 9.74156 1.57576L3.85919 7.72963C3.5146 8.09012 2.95601 8.09012 2.61138 7.72963L0.258433 5.26808C-0.0861444 4.90759 -0.0861444 4.32322 0.258433 3.96272C0.603011 3.60223 1.16169 3.60223 1.50627 3.96272L3.2353 5.77147L8.49379 0.270361C8.83838 -0.0901204 9.39697 -0.0901204 9.74156 0.270361Z" fill="#53ACFF" />
@@ -100,9 +100,9 @@ const PricingPage = () => {
         {/* second and recommended plane */}
         <div className="gradient-border popular">
           <div className="recommended-plane">
-            <div className="plane plane-pricing  popular">
+            <div className="plane plane-pricing popular">
               <img src={popularBadge} alt="" />
-              <div className="plane-body flex flex-col justify-center items-center px-8 py-12">
+              <div className="plane-body flex flex-col justify-center items-center  px-[16px] py-[32px] lg:px-8 lg:py-12">
                 <h5 className="plane-title">premium Plan</h5>
                 <div className="line"></div>
                 <ul className="plane-points space-y-5 px-4">
@@ -214,7 +214,7 @@ const PricingPage = () => {
         {/* third plane */}
         <div className="gradient-border">
           <div className="plane plane-pricing recommended">
-            <div className="plane-body flex flex-col justify-center items-center px-8 py-12">
+            <div className="plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-12">
               <h5 className="plane-title">deluxe Plan</h5>
               <div className="line"></div>
               <ul className="plane-points space-y-5 px-4">
@@ -360,7 +360,7 @@ const PricingPage = () => {
         <h5>Setting Ourselves Apart</h5>
         <p>The Unique Attributes that Distinguish Us in the Market</p>
 
-        <div className="feature-comparison flex gap-12 items-center justify-between">
+        <div className="feature-comparison flex gap-[16px] lg:gap-12 items-center justify-between">
 
           {/* our company features */}
 
