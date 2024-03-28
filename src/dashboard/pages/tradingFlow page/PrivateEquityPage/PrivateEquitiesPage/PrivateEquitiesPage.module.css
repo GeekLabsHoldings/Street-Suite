@@ -167,6 +167,11 @@
         font-weight: 400;
         line-height: 15px;
     }
-
+    .collapse .collapse_body > a {
+        height: 26px;
+        width: max-content;
+        padding: 5px 1rem;
+        font-size: 10px;
+    }
 
 }
