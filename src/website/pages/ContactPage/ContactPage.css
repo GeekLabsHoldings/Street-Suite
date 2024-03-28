@@ -12,7 +12,8 @@
 }
 .forbtn{
     border-radius: 0.2rem;
-    background-color: #53ACFF;
+    background-color: #53ACFF !important;
+    color: #ffff !important;
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1.05rem;
