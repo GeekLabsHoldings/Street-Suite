@@ -139,15 +139,24 @@ line-height: 24px;
   fill: rgba(126, 126, 126, 1) ;
 }
 
-/* .training_lison_collapse.open .training_lison_collapse_header h6 ,.training_lison_collapse.open .training_lison_collapse_header svg path{
-  color: #fff ;
-  fill: #fff ;
-} */
-
 .training_lison_collapse.current .training_lison_collapse_header h6 ,.training_lison_collapse.current .training_lison_collapse_header svg path{
   color: #fff ;
   fill: #fff ;
 }
+
+
+.MyCourses-wrapper .tabs-nav li a{
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 28.5px;
+  color: rgba(93, 93, 93, 1);
+  padding: 0.4rem 1.5rem;
+}
+.MyCourses-wrapper .tabs-nav li.selected a{
+  
+}
+
 
 @media only screen and (max-width:767px) {
   .formHead h3 , .formHead span{
