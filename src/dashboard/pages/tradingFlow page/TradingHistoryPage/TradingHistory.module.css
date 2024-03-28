@@ -1,0 +1,161 @@
+.trading_history_table .table_head {
+    background: rgba(32, 32, 32, 1);
+    box-shadow: 0px 0px 13.7px 3px rgba(0, 0, 0, 0.25);
+}
+
+.trading_history_table .table_head li {
+    display: block;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19.5px;
+}
+
+.trading_history_table .table_body {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(32, 32, 32, 1) 100%);
+    position: relative;
+}
+
+.trading_history_table .table_body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+.trading_history_table .table_body ul li {
+    padding: 1rem 0.5rem;
+    background: rgba(32, 32, 32, 1);
+    display: block;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+
+}
+
+.trading_history_filter {
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 2rem 1.5rem;
+}
+
+.trading_history_filter h6 {
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 28.5px;
+    text-align: center;
+    width: 100%;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid #fff;
+    margin: 0 0 1rem;
+
+}
+
+.trading_history_filter .drop_down_menu{
+    margin-bottom: 1.5rem;
+}
+.trading_history_filter .drop_down_menu p{
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+    text-align: left;
+    margin-bottom: 0.6rem;
+}
+.trading_history_filter > button {
+    height: 32px;
+    padding: 5px 2rem;
+font-size: 12px;
+font-weight: 600;
+line-height: 14.4px;
+    border-radius: 5px;
+    background-color: #53ACFF;
+    color: #fff;
+    outline: none;
+    border: 1px solid #53ACFF;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    margin: 1rem auto;
+    display: block;
+    transition: all 0.3s;
+}
+
+.trading_history_filter > button:last-child {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+
+@media only screen and (max-width: 1042px) {
+
+.trading_history_table{
+    display: flex;
+    flex-direction: row;
+}
+
+.trading_history_table .table_head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35%;
+    position: relative;
+    z-index: 2;
+}
+
+.trading_history_table .table_head li{
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 15px;
+    position: relative;
+}
+
+.trading_history_table .table_head li::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 0.5px;
+    background-color: #ffffff70;
+}
+.trading_history_table .table_head li:last-child:after{
+    content: unset;
+}
+
+.trading_history_table .table_body{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    max-width: 65%;
+}
+
+.trading_history_table .table_body ul{
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+}
+.trading_history_table .table_body ul li{
+font-size: 10px;
+font-weight: 300;
+line-height: 15px;
+text-align: left;
+
+}
+
+.trading_history_filter > button {
+    width: 100%;
+}
+
+}

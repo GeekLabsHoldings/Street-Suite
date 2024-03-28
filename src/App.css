@@ -126,6 +126,10 @@ font-weight: 700;
 line-height: 24px;
 }
 
+.equity_collapse .collapse_header.open{
+  background-color: var(--Blue300);
+}
+
 
 .training_lison_collapse.current .training_lison_collapse_header{
   background-color: var(--Blue300);
@@ -152,9 +156,48 @@ line-height: 24px;
   line-height: 28.5px;
   color: rgba(93, 93, 93, 1);
   padding: 0.4rem 1.5rem;
+  width: fit-content;
+  border-radius: 6px;
+  transition: all 0.3s;
 }
 .MyCourses-wrapper .tabs-nav li.selected a{
-  
+  background-color: var(--Blue300);
+  color: #fff;
+}
+.dashboard-wrapper ul li a.active{
+  background-color: var(--Blue300);
+
+}
+.dashboard-wrapper ul li a.active:hover{
+  color: #fff;
+}
+
+.private_equities_table .customSelectMenu button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  box-shadow: none;
+}
+.private_equities_table .customSelectMenu ul{
+  overflow-x: hidden;
+}
+.private_equities_table .customSelectMenu ul li {
+  display: block;
+  text-align: center;
+  padding: 0.4rem 0.5rem;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
 }
 
 

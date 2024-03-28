@@ -41,6 +41,9 @@ import LessonsPage from './dashboard/pages/training page/SingleTraning/LessonsPa
 import BlogPage from './website/pages/Blog-page/Blog-page';
 import SpecificArticle from './website/pages/SpecificArticle/SpecificBlog';
 import SettingPage from './dashboard/pages/SettingPage/SettingPage';
+import TradingHistory from './dashboard/pages/tradingFlow page/TradingHistoryPage/TradingHistory';
+import SinglePrivateEquityPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/SinglePrivateEquityPage/SinglePrivateEquityPage';
+import PrivateEquitiesPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/PrivateEquitiesPage/PrivateEquitiesPage';
 
 
 function App() {
@@ -96,16 +99,17 @@ function App() {
             </Route>
             <Route path="trading" element={<TradingFlowPage />} >
               <Route index element={<YourPortfolioPage />} />
-              <Route path='private-equity' element={<PrivateEquityPage />} />
+              <Route path='trading-history' element={<TradingHistory />} />
+              <Route path='private-equity' element={<PrivateEquityPage />} >
+                <Route index element={<PrivateEquitiesPage />} />
+                <Route path='single-equity' element={<SinglePrivateEquityPage />} />
+              </Route>
               <Route path='transfer&pay' element={<Transfer_PayPage />} >
                 <Route index element={<DepositFundsPage />} />
                 <Route path='deposit-funds' element={<DepositFundsPage />} />
                 <Route path="withdraw-funds" element={<WithdrawFundsPage />} />
                 <Route path="transactions-history" element={<TransactionsHistoryPage />} />
                 <Route path="seccssful-transaction" element={<SuccessfulTransactionPage />} />
-
-
-
               </Route>
             </Route>
 
