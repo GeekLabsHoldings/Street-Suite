@@ -41,6 +41,7 @@ import LessonsPage from './dashboard/pages/training page/SingleTraning/LessonsPa
 import BlogPage from './website/pages/Blog-page/Blog-page';
 import SpecificArticle from './website/pages/SpecificArticle/SpecificBlog';
 import SettingPage from './dashboard/pages/SettingPage/SettingPage';
+import PositionsPage from './website/pages/Positions-page/PositionsPage';
 
 
 function App() {
@@ -71,6 +72,8 @@ function App() {
             <Route path='change-logs' element={<ChangeLogs />} />
             <Route path='top-brokers' element={<TopBroker />} />
             <Route path='careers' element={<CareersPage />} />
+            <Route path='careers/positions' element={<PositionsPage />} />
+
             <Route path='blogs' element={<BlogPage />} />
             <Route path='blogs/specific-blog' element={<SpecificArticle />} />
 

@@ -1,0 +1,41 @@
+.positionsList{
+    list-style-type: disc;
+    padding-left: 1.5rem;
+
+}
+.positionsList li{
+    font-size: 19px;
+    line-height: 28.5px;
+    font-weight: 400;
+}
+.headOfRightDiv{
+    color: #53ACFF;
+    font-size:40px ;
+    font-weight:600 ;
+    line-height: 60px;
+}
+.txtAlone{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight:400 ;
+
+}
+.headAndUl h3{
+    font-size: 23px;
+    line-height: 34.5px;
+    font-weight: 700;
+}
+.headAndUl{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.everyPosition{
+    background-color: #202020;
+}
+.positionRightPart h3{
+    font-size: 33px;
+    line-height: 49.5px;
+    font-family: 700;
+
+}

@@ -27,7 +27,7 @@ const SignupPage = ()=>{
             <div className='inForm'>
                 <div className='col-md-10 formcontent'>
                   {/* common form for signup and contact us */}
-                  <FormComponent purpose='Create a new account' label1='Full Name' label2='Email' label3='Password' needCheckbox={true} btnTxt='Sign Up' textArea={false}/>
+                  <FormComponent needFirstPrt={true} purpose='Create a new account' label1='Full Name' label2='Email' label3='Password' needCheckbox={true} btnTxt='Sign Up' textArea={false}/>
                 </div>
             </div>
         </div>

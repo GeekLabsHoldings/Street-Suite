@@ -59,15 +59,15 @@ import * as React from 'react';
 
   
 
-const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTxt}) =>{
+const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTxt,needFirstPrt}) =>{
 
     return(
         <div className='formHead'>
           <div className='flex flex-col md:gap-10'>
-          <div >
+         {needFirstPrt? <div >
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
         <p>{purpose}</p>
-        </div>
+        </div> :null}
 <div>
       
     <FormControl className="gap-4">

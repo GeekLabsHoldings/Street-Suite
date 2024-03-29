@@ -59,7 +59,7 @@ return(
                         <div className='inForm'>
                         <div className='col-lg-9 m-auto'>
                             {/* form for signup and contact us */}
-                            <FormComponent purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true}/>
+                            <FormComponent needFirstPrt={true} purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true}/>
                         </div>
                     </div>
                 </div>

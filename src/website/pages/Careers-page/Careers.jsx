@@ -5,12 +5,18 @@ import Vector3 from '../../assets/vector3.svg';
 import TeamWork from '../../assets/team-working-together.png';
 import Logo from '../../assets/street suite logo-04 1.svg';
 import Icon from '../../assets/visibleInSmIcon.svg';
-import './Careers.css';
 import FlexibleCard from '../../components/FlexibleCard/FlexibleCard';
 import HowWork from '../../components/How-work/How-work';
 import CareerPositions from '../../components/CareerPositions/Career-positions';
+import { useNavigate } from "react-router-dom";
+import './Careers.css';
 
 const CareersPage = ()=>{
+    const navigate = useNavigate();
+    const onClickHandler = ()=>{
+        navigate("./positions");
+        
+    }
     return(
     <div className="bgImg md:py-4 md:mb-5 ">
         <div className="md:flex md:w-2/3 mx-auto my-20  ">
@@ -111,7 +117,7 @@ const CareersPage = ()=>{
         <div className='middleCard flex flex-col align-items-center md:w-4/5 px-4 py-10 '>
         <h5> Back End Developer</h5>
         <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
-        <Button className='forbtn py-2 px-4 w-fit'>Apply</Button>
+        <Button className='forbtn py-2 px-4 w-fit' onClick={onClickHandler}>Apply</Button>
         </div>
     </div>
     </div>
