@@ -25,18 +25,14 @@ const TradingFlowPage = () => {
           <div className={SearchBarStyles.navBar} >
             <ul>
               <li>
-                <NavLink to="private-equities">Private Equities</NavLink>
+                <NavLink to="private-equity">Private Equities</NavLink>
               </li>
               <li>
                 <NavLink to="transfer&pay">Transfer & Pay</NavLink>
               </li>
-              <li>
-                <NavLink to="privacy&security">Privacy & Security</NavLink>
-              </li>
             </ul>
-            <NavLink to="trading-history" className={SearchBarStyles.tradingHistory}>Trading History</NavLink>
           </div>
-          <button className={SearchBarStyles.notificationBtn + " flex md:hidden"} type="button">
+          <button className={SearchBarStyles.notificationBtn} type="button">
             <img src={notifIcon} alt="" />
             <span>6</span>
           </button>

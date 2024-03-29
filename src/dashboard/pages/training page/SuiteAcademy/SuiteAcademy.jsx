@@ -65,7 +65,7 @@ const SuiteAcademy = () => {
 
 
 
-                <div className={styles.trainings_most_liked + " flex flex-col lg:flex-row gap-[50px]"}>
+                <div className={styles.trainings_most_liked + " flex flex-col lg:flex-row gap-[50px] pt-[20px]"}>
                     <div className={styles.trainings + " w-full lg:w-2/3 space-y-4"}>
 
 

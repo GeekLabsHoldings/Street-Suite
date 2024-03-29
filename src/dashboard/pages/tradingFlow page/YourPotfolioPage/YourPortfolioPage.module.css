@@ -7,6 +7,23 @@
     line-height: 42px;
     text-align: left;
 }
+.tradingHistory{
+    
+    height: 40px;
+    padding: 5px 2rem;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #53ACFF;
+    color: #fff;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    transition: all 0.3s;
+}
 .account_chart {
     width: 100%;
     display: flex;
@@ -187,7 +204,8 @@
     gap: 0.7rem;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1rem;
+    width: 70%;
 }
 
 .my_positions ul li a {

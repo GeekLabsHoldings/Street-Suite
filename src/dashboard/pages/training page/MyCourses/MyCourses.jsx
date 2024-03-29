@@ -5,9 +5,12 @@ import searchIcon from "../../../assets/search.svg";
 import styles from "./MyCourses.module.css";
 
 import notifIcon from "../../../assets/notif.svg";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
+import advancedBadge from "../../../assets/advanced padge.png"
 
 import $ from 'jquery';
+import ProgressBar from '@ramonak/react-progress-bar';
 
 
 const MyCourses = () => {
@@ -22,26 +25,26 @@ const MyCourses = () => {
         $('.myCourses-tabs .tab').hide();
         $('.myCourses-tabs .tab:first-child').show();
         $('.myCourses-tabs .tabs-nav li:first').addClass('selected');
-    
+
         // Change tab class and display content
         $('.myCourses-tabs .tabs-nav a').on('click', function (event) {
-          event.preventDefault();
-    
-          $('.myCourses-tabs .tabs-nav li').removeClass('selected');
-          $('.myCourses-tabs .tabs-nav li').addClass('not-selected');
-          $(this).parent().removeClass('not-selected');
-          $(this).parent().addClass('selected');
-          $('.myCourses-tabs .tab').hide();
-          $($(this).attr('href')).show();
-    
+            event.preventDefault();
+
+            $('.myCourses-tabs .tabs-nav li').removeClass('selected');
+            $('.myCourses-tabs .tabs-nav li').addClass('not-selected');
+            $(this).parent().removeClass('not-selected');
+            $(this).parent().addClass('selected');
+            $('.myCourses-tabs .tab').hide();
+            $($(this).attr('href')).show();
+
         });
-    
-      }, [])
-    
+
+    }, [])
+
 
     return (
-        <div className='MyCourses-wrapper flex gap-8'>
-            <div className='w-4/5'>
+        <div className='MyCourses-wrapper flex flex-col lg:flex-row lg:gap-8'>
+            <div className='w-full lg:w-4/5'>
                 <SearchBar >
                     <h2>Trading</h2>
                     <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
@@ -86,26 +89,406 @@ const MyCourses = () => {
                     </div>
                 </SearchBar>
 
-                <div className={styles.trainings_most_liked + " flex flex-col lg:flex-row gap-[50px]"}>
+                <div className=" flex flex-col lg:flex-row gap-[50px] pt-[20px]">
                     <div className={styles.trainings_courses + " myCourses-tabs w-full lg:w-2/3"}>
 
-                        <ul class="tabs-nav grid grid-cols-3 p-0 m-0 list-unstyled">
+                        <ul class="tabs-nav flex items-center gap-[40px] p-0 mt-0 mb-6 list-unstyled">
 
                             {/* taps that show the appropriate content in leaderBoard page */}
-                            <li><a href="#inProgress">In Progress</a></li>
+                            <li className='pr-[40px]'><a href="#inProgress">In Progress</a></li>
                             <li><a href="#completed">Completed</a></li>
-                            
+
                         </ul>
                         <div class="tabs-stage tabs-content">
 
                             {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
-                            <div id="inProgress" className='tab'>
-                                <h1>inProgress</h1>
+                            <div id="inProgress" className='tab space-x-4'>
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                    <div className={styles.enrolled_date}>
+                                                        <p>12 July</p>
+                                                        <span>Started</span>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span>Module 4 of 6</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                    <div className={styles.enrolled_date}>
+                                                        <p>12 July</p>
+                                                        <span>Started</span>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span>Module 4 of 6</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                    <div className={styles.enrolled_date}>
+                                                        <p>12 July</p>
+                                                        <span>Started</span>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span>Module 4 of 6</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                    <div className={styles.enrolled_date}>
+                                                        <p>12 July</p>
+                                                        <span>Started</span>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span>Module 4 of 6</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                    <div className={styles.enrolled_date}>
+                                                        <p>12 July</p>
+                                                        <span>Started</span>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span>Module 4 of 6</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                    <div className={styles.enrolled_date}>
+                                                        <p>12 July</p>
+                                                        <span>Started</span>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span>Module 4 of 6</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+
 
                             </div>
 
-                            <div id="completed" className='tab'>
-                                <h1>completed</h1>
+                            <div id="completed" className='tab space-x-4'>
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span className={styles.completed}>Completed</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span className={styles.completed}>Completed</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span className={styles.completed}>Completed</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span className={styles.completed}>Completed</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
+                                {/* course card in St suite academy page that redirect to single training page*/}
+                                <Link to="/dashboard/training/single-training">
+                                    <div className={styles.border_animate}>
+                                        <div className={styles.course_card + " flex gap-[16px]"}>
+                                            <div className={styles.course_card_img + " w-1/4"}>
+
+                                            </div>
+                                            <div className={styles.course_card_info + " w-3/4 space-y-4 lg:space-y-5"}>
+                                                <div className='flex items-center justify-between'>
+                                                    <h4>Day Trading, Swing Trading, Position Trading</h4>
+                                                </div>
+                                                <div className='flex items-end justify-between'>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                                    <span className={styles.completed}>Completed</span>
+                                                </div>
+                                                <ProgressBar
+                                                    completed={90}
+                                                    isLabelVisible={false}
+                                                    bgColor="#53ACFF"
+                                                    height="8px"
+                                                    baseBgColor="rgba(20, 20, 20, 1)"
+                                                    labelColor="#fff"
+                                                    transitionDuration="1"
+                                                    animateOnRender
+                                                    maxCompleted={100}
+                                                    className={styles.ProgressBar + ' w-full'}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+
                             </div>
 
                         </div>

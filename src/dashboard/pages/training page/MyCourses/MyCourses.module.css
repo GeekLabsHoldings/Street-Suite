@@ -115,13 +115,14 @@ input:focus {
     margin-bottom: 1rem;
 }
 
-.most_liked_trainings .most_liked_training_card{
+.most_liked_trainings .most_liked_training_card {
     padding: 2rem;
     background: rgba(32, 32, 32, 1);
     box-shadow: 0px 0px 12px 10px rgba(0, 0, 0, 0.25) inset;
     border-radius: 15px;
     margin-bottom: 1rem;
 }
+
 .most_liked_trainings .most_liked_training_card h6 {
     font-family: Poppins;
     font-size: 16px;
@@ -146,4 +147,140 @@ input:focus {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+
+.trainings_courses ul li{
+    width: max-content;
+} 
+
+.trainings_courses ul li:first-child{
+    border-right: 1px solid #fff;
+}
+
+.trainings>a {
+    display: block;
+}
+
+.course_card {
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    background: rgba(32, 32, 32, 1);
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 10px 12px 12.199999809265137px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.course_card .course_card_info h4 {
+    width: 70%;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.32px;
+    text-align: left;
+}
+
+.border_animate {
+    position: relative;
+    padding: 1px;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.border_animate::before {
+    content: "";
+    background-image: conic-gradient(#ffffff4b 0deg, #ffffff4b 260deg, #fff 270deg 300deg, #ffffff4b 360deg);
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    border-radius: 15px;
+    transition: all 0.7s;
+}
+
+.course_card .course_card_info p {
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+    color: rgba(151, 151, 151, 1);
+    width: 70%;
+}
+
+.course_card .course_card_info span {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.32px;
+    text-align: left;
+    text-wrap: nowrap;
+    color: rgba(151, 151, 151, 1);
+}
+
+.course_card .course_card_info .enrolled_date {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--Blue300);
+    text-align: center;
+}
+
+.course_card .course_card_info .enrolled_date p {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-wrap: nowrap;
+    color: #fff;
+}
+
+.course_card .course_card_info .enrolled_date span {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+    text-wrap: nowrap;
+    color: #fff;
+}
+
+.course_card .course_card_info span.completed {
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    background-color: var(--Blue300);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+}
+
+
+@media only screen and (max-width:1024px) {
+
+    .supTitle{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    .st_suite_wiki {
+        display: none;
+    }
+    .course_card {
+        padding: 1rem 1rem 1rem 0.5rem;
+    }
+    .course_card h4 {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        text-align: left;
+    }
+    .course_card ul li {
+        font-size: 10.45px;
+        font-weight: 500;
+        line-height: 15.68px;
+        text-align: left;
+    }
+    .course_navBar ul {
+        display: none;
+    }
 }
