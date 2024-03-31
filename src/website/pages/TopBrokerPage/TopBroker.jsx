@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import OneBroker from '../../components/Onebroker/Onebroker';
 import PickCard from '../../components/PickCard/PickCard';
 // our data here
@@ -6,6 +7,8 @@ import './topBroker.css';
 
 
 const TopBroker = ()=>{
+
+    const [itemsToCompare,setItemsToCompare] = useState([]);
     // render reusable pick cards
     const renderImages = ImagesData.map((img)=>(
         <div>

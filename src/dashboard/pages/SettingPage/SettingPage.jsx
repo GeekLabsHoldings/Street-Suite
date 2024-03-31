@@ -57,11 +57,10 @@ border: 1px solid #979797;
 
 const SettingPage = () =>{
 
-// const [changeClass,setChangeClass] = useState('');
+const [changeClass,setChangeClass] = useState('');
 
 const indicatorHandler = (e)=>{
-    //   setChangeClass(e.currentTarget.id);
-     console.log(e.currentTarget.id);
+      setChangeClass(e.currentTarget.id);
 
 }
 
@@ -83,14 +82,13 @@ return(
                 <h1>Settings</h1>
             </div>
             
-            {/* style={changeClass == 'public-info' ? styles.highlightStyle : null} */}
             <div className='sm:hidden md:visible'>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }} className='linksSection'>
-            <Link href="#public-info">Public info</Link>
-            <Link href="#account-billing" style={styles.highlightStyle}>Account Billing</Link>
-            <Link href="#leaderboard">Leaderboard</Link>
-            <Link href="#notification">Notifications</Link>
-            <Link href="#security">Privacy & Security</Link>
+            <Link href="#public-info" style={changeClass === 'public-info' ? styles.highlightStyle : null}>Public info</Link>
+            <Link href="#account-billing" style={changeClass === 'account-billing' ? styles.highlightStyle : null}>Account Billing</Link>
+            <Link href="#leaderboard" style={changeClass === 'leaderboard' ? styles.highlightStyle : null}>Leaderboard</Link>
+            <Link href="#notification" style={changeClass === 'notification' ? styles.highlightStyle : null}>Notifications</Link>
+            <Link href="#security" style={changeClass === 'security' ? styles.highlightStyle : null}>Privacy & Security</Link>
             </Box>
             </div>
 

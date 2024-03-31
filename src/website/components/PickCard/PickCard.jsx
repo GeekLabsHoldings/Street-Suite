@@ -6,15 +6,14 @@ import HeaderCard from '../HeaderForCard/HeaderCard';
 const PickCard = ({imgUrl})=>{
     return(
         <div className='smforBorder'>
-
             <div className='formPart cardBG'>
             <div className='headerBG '>
                 {/* reusable component for different logos */}
             <HeaderCard imgUrl={imgUrl}/>
             </div>
                 <div className="col-md-11 m-auto md:py-5 sm:pt-4 pickContainer sm:px-3">
-                    <div className='row '>
-                        <div className="col-md-6 " >
+                    <div className='row'>
+                        <div className="col-md-6 ">
                         <div className='everyPart'>
                             <h5>Overview</h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>

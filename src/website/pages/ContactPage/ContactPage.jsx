@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap';
 import './ContactPage.css';
 import FormComponent from '../../components/FormComponent';
 import PhoneIcon from '../../assets/phone.svg';
@@ -16,8 +15,6 @@ return(
                 <h5 className='highlight d-inline-block'>Say Hi To Street Suite</h5>
                 <h1>Contact Us</h1>
                 <p>Want to get in touch? We’re all ears, Let us <br /> know how we can help!</p>
-            
-                
             
                 {/* available time */}
                 <h3>Can’t Talk Right now?</h3>
