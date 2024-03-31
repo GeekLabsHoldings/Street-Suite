@@ -45,6 +45,8 @@ import PositionsPage from './website/pages/Positions-page/PositionsPage';
 import TradingHistory from './dashboard/pages/tradingFlow page/TradingHistoryPage/TradingHistory';
 import SinglePrivateEquityPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/SinglePrivateEquityPage/SinglePrivateEquityPage';
 import PrivateEquitiesPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/PrivateEquitiesPage/PrivateEquitiesPage';
+import MyCoursesPage from './dashboard/pages/training page/MyCourses/MyCoursesPage/MyCoursesPage';
+import SingleCoursePage from './dashboard/pages/training page/MyCourses/SingleCoursePage/SingleCoursePage';
 
 
 function App() {
@@ -98,7 +100,10 @@ function App() {
                 <Route index element={<LessonsPage />} />
                 <Route path='assessment' element={<AssessmentPage />} />
               </Route>
-              <Route path='my-courses' element={<MyCourses />} />
+              <Route path='my-courses' element={<MyCourses />} >
+                <Route index element={<MyCoursesPage />} />
+                <Route path='single-course' element={<SingleCoursePage />} />
+              </Route>
             </Route>
             <Route path="trading" element={<TradingFlowPage />} >
               <Route index element={<YourPortfolioPage />} />
