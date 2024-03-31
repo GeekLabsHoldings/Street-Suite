@@ -21,12 +21,7 @@
 .forbtn:hover{
     background: linear-gradient(4deg, rgba(13,1,1,0.5) 33%, rgba(83,172,255,0.3) 100%);
 }
-.btns{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-bottom: 4rem;
-}
+
 .contactWays{
     display: flex;
     align-items: center;
