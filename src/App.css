@@ -80,6 +80,7 @@ p,h1,h2,h3,h4,h5,h6{
 }
 .labelfont{
   font-size: 16px !important;
+  line-height: 24px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
