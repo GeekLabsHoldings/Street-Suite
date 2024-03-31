@@ -16,12 +16,9 @@ return(
                 <h5 className='highlight d-inline-block'>Say Hi To Street Suite</h5>
                 <h1>Contact Us</h1>
                 <p>Want to get in touch? We’re all ears, Let us <br /> know how we can help!</p>
+            
                 
-                <div className="btns col-lg-5">
-                <Button className='forbtn py-2 sm:w-fit md:w-full'>Yes, Lets Chat!</Button>
-                <Button className='forbtn py-2 sm:w-fit md:w-full'>I Prefer to leave a message</Button>
-                </div>
-                
+            
                 {/* available time */}
                 <h3>Can’t Talk Right now?</h3>
                 <div style={{display:"flex",justifyContent:'space-between'}}>
@@ -59,7 +56,7 @@ return(
                         <div className='inForm'>
                         <div className='col-lg-9 m-auto'>
                             {/* form for signup and contact us */}
-                            <FormComponent purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true}/>
+                            <FormComponent needFirstPrt={true} purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true}/>
                         </div>
                     </div>
                 </div>

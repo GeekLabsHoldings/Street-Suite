@@ -1,0 +1,147 @@
+.positionsList{
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+.positionsList li{
+    font-size: 19px;
+    line-height: 28.5px;
+    font-weight: 400;
+}
+.headOfRightDiv{
+    font-size:40px ;
+    font-weight:600 ;
+    line-height: 60px;
+}
+.txtAlone p,.txtAlone span{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight:400 ;
+}
+.headAndUl h3{
+    font-size: 23px;
+    line-height: 34.5px;
+    font-weight: 700;
+}
+
+.everyPosition{
+    background-color: #202020;
+}
+.positionRightPart h3{
+    font-size: 33px;
+    line-height: 49.5px;
+    font-family: 700;
+
+}
+.headOfPage h1{
+    font-size: 63px;
+    line-height: 94.5px;
+    font-weight: 700;
+}
+.headOfPage p{
+    font-size: 23px;
+    line-height: 34.5px;
+    font-weight: 400;
+}
+.fileBtn{
+    background-color: transparent;
+    border: 1px solid white ;
+    padding: 7px 4rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+.applyBtn{
+    padding: 0.6rem 3rem !important;
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 600;
+    text-transform: none !important;
+
+}
+
+.MuiAccordionSummary-button  span{
+    display: none;
+}
+
+.MuiAccordionSummary-root button {
+    color: #FFFFFF;
+    padding: 1.5rem 8rem ;
+    border-radius: 0.6rem;
+}
+.MuiAccordion-variantPlain{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.bgPositionCard{
+    background-color:#202020 ;
+}
+.MuiAccordionSummary-root button:hover{
+    background-color: transparent !important;
+    color: #FFFFFF !important;
+}
+.grayPositionBorder::before{
+    content: "";
+    background-image: conic-gradient(transparent 0deg ,#ffff 180deg,transparent 280deg );
+    width: 250%;
+    height: 250%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(180deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
+}
+.selectFile label{
+    font-size: 14px;
+    line-height:16.8px ;
+    font-weight:600 ;
+}
+.accordionDetails{
+    padding: 0 3rem;
+}
+@media only screen and (max-width: 676px) {
+    .headOfPage h1,.headOfRightDiv,.positionRightPart h3{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 700;
+
+    }
+    .headOfPage p{
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+    }
+
+    .txtAlone p,.txtAlone span,.positionsList li{
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 400;
+    }
+    .headAndUl h3{
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 700;
+    }
+    .selectFile label,.applyBtn{
+        font-size: 12px;
+        line-height:14.4px ;
+        font-weight:600 ;
+    }
+    .accordionDetails{
+        padding: 0;
+    }
+    .MuiAccordionSummary-root button{
+        padding: 0.8rem 2rem;
+    }
+    .bottomBorderInSm{
+        border-bottom:1px solid #979797 ;
+    }
+    .fileBtn{
+        padding: 7px 3rem;
+    }
+    .applyBtn{
+        padding: 0.2rem 1.5rem !important;
+        text-transform: none !important;
+    }
+
+    
+}

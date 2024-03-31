@@ -150,7 +150,7 @@
     font-weight: 400;
 }
 
-.settingCardBorder{
+.settingCardBorder,.grayPositionBorder{
     position:relative;
     overflow: hidden;
     padding: 2px;
@@ -182,10 +182,10 @@ box-sizing: border-box;
 position: absolute;
 transition:all 0.5s
 }
-.settingCardBorder:hover::before,.premuimBorder:hover::before{
+.settingCardBorder:hover::before,.premuimBorder:hover::before,.grayPositionBorder:hover::before{
 transform:translate(-50%,-50%) rotate(0deg);
 }
-.settingBorderContainer{
+.settingBorderContainer,.grayPositionContainer{
 border-radius: 0.5rem;
 overflow: hidden;
 width: 100%;

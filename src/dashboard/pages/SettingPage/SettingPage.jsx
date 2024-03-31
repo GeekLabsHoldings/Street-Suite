@@ -56,10 +56,12 @@ border: 1px solid #979797;
 );
 
 const SettingPage = () =>{
-const changeClass = '';
+
+// const [changeClass,setChangeClass] = useState('');
+
 const indicatorHandler = (e)=>{
-      changeClass = (e.currentTarget.id);
-     return changeClass;
+    //   setChangeClass(e.currentTarget.id);
+     console.log(e.currentTarget.id);
 
 }
 
@@ -75,21 +77,24 @@ const styles ={
 
 return(
     <div className='w-full md:px-4 sm:px-2'>
+        {/* navbar contains links lead you to every section and indicators specify clicked section */}
         <nav className='flex justify-between p-3'>
             <div className='LeftBorder'>
                 <h1>Settings</h1>
             </div>
-
+            
+            {/* style={changeClass == 'public-info' ? styles.highlightStyle : null} */}
             <div className='sm:hidden md:visible'>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }} className='linksSection'>
-            <Link href="#public-info" >Public info</Link>
-            <Link style={styles.highlightStyle} href="#account-billing">Account Billing</Link>
+            <Link href="#public-info">Public info</Link>
+            <Link href="#account-billing" style={styles.highlightStyle}>Account Billing</Link>
             <Link href="#leaderboard">Leaderboard</Link>
             <Link href="#notification">Notifications</Link>
             <Link href="#security">Privacy & Security</Link>
             </Box>
             </div>
 
+{/* user signed in profile  */}
         <div className='sm:hidden md:visible flex gap-2'>
     <img src={LoginImg} alt="" />
         <div className='loginPerson'>
@@ -107,7 +112,7 @@ return(
         <div className="settingContent md:w-11/12 mx-auto flex flex-col gap-4 ">
             <div className="settingCardBorder">
                 <div className=' md:flex settingBorderContainer largeDiv'>
-
+{/* public information editing section */}
                 <div className="md:w-1/2 flex justify-center" id='public-info' onClick={indicatorHandler}>
                     <div className=' py-4 w-10/12 flex flex-col justify-center'>
                     <div className='rightBorder sm:py-3 '>
@@ -115,7 +120,7 @@ return(
                     <div className='flex flex-col md:gap-8 sm:gap-4 mx-auto '>
             <p>This information will be publicly displayed and visible for all users.</p>
        
-        
+        {/* change username */}
     <div className='md:flex align-items-center '>
         <div className=' labelColor md:w-1/4 '>
         <label htmlFor="username" className='w-full'>Username</label>
@@ -125,7 +130,7 @@ return(
 
         </div>
     </div>
-
+{/* change avatar or remove it */}
     <div className='md:flex align-items-center '>
         <div className=' labelColor md:w-1/4 '>
         <label htmlFor="avatar" className='w-full'>Avatar</label>
@@ -142,6 +147,7 @@ return(
         </div>
     </div>
 
+{/* change about section */}
     <div className='md:flex align-items-center '>
     <div className=' labelColor md:w-1/4 '>
         <label htmlFor="about" className='w-full'>About me</label>
@@ -155,7 +161,7 @@ return(
                     </div>
                     </div>
                 </div>
-
+{/* private details section */}
                 <div className="md:w-1/2 flex justify-center" id='security' onClick={indicatorHandler}>
                     <div className="w-10/12 md:py-4 sm:py-3 leftSectionSetting">
                     <h3 className='pb-2'>Private Details</h3>
@@ -166,6 +172,7 @@ return(
             </div>
         
    <div className='flex md:flex-col gap-2'>
+    {/* change email */}
    <div className='md:flex align-items-center '>
         <div className=' labelColor md:w-1/4 '>
         <label htmlFor="Email" className='w-full'>Email</label>
@@ -175,6 +182,7 @@ return(
             </div>
 
     </div>
+    {/* cahnge password section */}
     <div className='md:flex align-items-center'>
         <div className=' labelColor md:w-1/4 '>
         <label htmlFor="Password " className='w-full'>Password </label>
@@ -185,6 +193,7 @@ return(
     </div>
    </div>
 
+   {/* change first or last name */}
     <div className='md:flex align-items-center'>
         <div className=' labelColor md:w-1/4 '>
         <label htmlFor="first-name" className='w-full'>First name</label>
@@ -204,7 +213,7 @@ return(
 
         </div>
     </div>
-
+   {/* change phone number */}
     <div className='md:flex align-items-center'>
         <div className=' labelColor md:w-1/4 '>
         <label htmlFor="Phone-number" className='w-full'>Phone number</label>
@@ -236,6 +245,7 @@ return(
             </div>
 
             <div className="flex sm:flex-col gap-4">
+                {/* leaderboard section  */}
                 <div className="md:w-1/2 settingCardBorder" id='leaderboard' onClick={indicatorHandler}>
                     <div className=" settingBorderContainer largeDiv">
                        <div className='w-11/12 mx-auto md:flex px-3 py-4'>
@@ -265,6 +275,7 @@ return(
                             <ProperityAndSwitch title='Appear on leaderboard'/>
                             </div>
                             <div>
+                                {/* disconnect broker's account and this section appear in small screens only */}
                            <div className='flex flex-col md:gap-2 sm:gap-4 txtUnderProperities'>
 
                            <div className='sm:visible md:hidden flex gap-2 mt-4'>
@@ -296,6 +307,7 @@ return(
 
                         <div className='settingBorderContainer largeDiv'>
                         <div className="w-11/12 mx-auto px-3 py-4 flex flex-col md:gap-10 sm:gap-2 ">
+                            {/* notifications section */}
                         <div className="md:flex justify-between leftSectionSetting ">
                             <h3>Notifications & Alerts</h3>
                         <ProperityAndSwitch title='Allow Notifications'/>
@@ -336,6 +348,7 @@ return(
 <div className="settingBorderContainer largeDiv">
             <div className="w-10/12 md:flex py-8 mx-auto">
             <div className="md:w-1/3 sm:pb-4">
+                {/* your plan and premuim plan and its cost */}
            <div className=' flex flex-col md:gap-2 sm:gap-4 accountBilling'>
            <h5>Account Billing</h5>
                 <p>My Current Plan:</p>
