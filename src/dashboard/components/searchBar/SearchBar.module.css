@@ -246,7 +246,6 @@ input:focus {
 
   .notification_searchInput {
     width: auto;
-    display: block;
   }
 
   .searchInput input {

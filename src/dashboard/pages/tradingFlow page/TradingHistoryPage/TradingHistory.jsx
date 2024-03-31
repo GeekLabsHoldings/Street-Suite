@@ -5,13 +5,14 @@ import styles from "./TradingHistory.module.css"
 import searchIcon from "../../../assets/search.svg";
 import SearchBar from '../../../components/searchBar/SearchBar';
 import { Link } from 'react-router-dom';
-import CustomSelectMenu from '../../../UI-components/CustomSelectMenu';
+import CustomSelectMenu from '../../../UI-components/CustomSelectMenu/CustomSelectMenu';
 
 
 
 
 const TradingHistory = () => {
 
+    // custom select menu options
     const options = [
         { name: '20 March 2024' },
         { name: '21 March 2024' },
@@ -27,6 +28,8 @@ const TradingHistory = () => {
         <div >
             <SearchBar>
                 <div className="flex gap-3 md:gap-8 flex-col-reverse md:flex-row w-full">
+
+                    {/* sub title of page */}
                     <h5 className={styles.supTitle + ' text-nowrap text-xl md:text-3xl'}>Trading History</h5>
 
                     <div className="w-full flex items-center justify-center gap-4">
@@ -47,7 +50,11 @@ const TradingHistory = () => {
 
 
             <div className={styles.trading_history + " flex items-start flex-col lg:flex-row gap-8 pb-[50px]"}>
+
+                {/* trading history table in trading history page */}
                 <div className={styles.trading_history_table + " w-full lg:w-5/6"}>
+
+                    {/* head of trading history table */}
                     <ul className={styles.table_head + " grid grid-cols-7"}>
                         <li>Equity Name</li>
                         <li>Buying Price</li>
@@ -57,7 +64,11 @@ const TradingHistory = () => {
                         <li>Time Bought</li>
                         <li>Type</li>
                     </ul>
+
+                    {/* body of trading history table  */}
                     <div className={styles.table_body + " flex flex-col gap-[1px]"}>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -67,6 +78,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -76,6 +89,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -85,6 +100,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -94,6 +111,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -103,6 +122,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -112,6 +133,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -121,6 +144,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -130,6 +155,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -139,24 +166,8 @@ const TradingHistory = () => {
                             <li>06:12:03 PM</li>
                             <li>Margin</li>
                         </ul>
-                        <ul className="grid grid-cols-7 gap-[1px]">
-                            <li>Private Equity 1</li>
-                            <li>$ 200</li>
-                            <li>$ 150</li>
-                            <li>$ 150</li>
-                            <li>20 March 2024</li>
-                            <li>06:12:03 PM</li>
-                            <li>Margin</li>
-                        </ul>
-                        <ul className="grid grid-cols-7 gap-[1px]">
-                            <li>Private Equity 1</li>
-                            <li>$ 200</li>
-                            <li>$ 150</li>
-                            <li>$ 150</li>
-                            <li>20 March 2024</li>
-                            <li>06:12:03 PM</li>
-                            <li>Margin</li>
-                        </ul>
+
+                        {/* row of trading history info of private equity  */}
                         <ul className="grid grid-cols-7 gap-[1px]">
                             <li>Private Equity 1</li>
                             <li>$ 200</li>
@@ -169,6 +180,8 @@ const TradingHistory = () => {
 
                     </div>
                 </div>
+
+                {/* filter in trading history page that filters data of table */}
                 <div className={styles.trading_history_filter + " w-full lg:w-1/6 "}>
                     <h6>Filterd By</h6>
 
