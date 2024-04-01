@@ -187,7 +187,7 @@ section.plans .section-title {
     margin-top: 1.5rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
     section.plans {
         padding: 20% 1rem;
     }
@@ -245,5 +245,49 @@ section.plans .section-title {
         letter-spacing: 0em;
         width: 80px;
         height: 30px;
+    }
+
+    .plans-container{
+        overflow-x: auto;
+    }
+}
+
+
+
+@media only screen and (min-width: 2024px) {
+
+    .plans-container {
+        max-width: 1900px;
+    }
+
+    section.plans .section-title {
+        color: #fff;
+        font-size: 80px;
+    }
+
+    .plane-title {
+        font-size: 36px;
+    }
+    
+    .plane .plane-points li {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 29px;
+    }
+
+    .plane .plane-body{
+        padding: 6rem 3rem;
+    }
+
+    .plane-action a {
+        position: relative;
+        width: 150px;
+        height: 50px;
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .recommended-plane h6 {
+        font-size: 26px;
     }
 }

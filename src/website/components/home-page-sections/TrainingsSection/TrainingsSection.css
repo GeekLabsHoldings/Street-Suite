@@ -1,59 +1,67 @@
-section.trainings{
-    padding: 10% 5%;
+section.trainings {
+    padding: 15% 5% 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
 }
 
-.trainings-container{
-    max-width: 1400px;
+.trainings-container {
+    max-width: 1500px;
 }
-.blog{
+
+.blog {
     margin-bottom: 2rem;
 }
-.blog-title{
+
+.blog-title {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
 }
-.blog-title svg{
+
+.blog-title svg {
     margin-right: 44px;
 }
-.blog-title h6{
+
+.blog-title h6 {
     font-size: 23px;
     font-weight: 500;
 }
-.blog p{
+
+.blog p {
     margin-left: 80px;
     font-weight: 200;
     font-size: 19px;
 }
 
-.trainings-img img{
+.trainings-img img {
+    width: 40%;
     position: absolute;
     right: 0;
-    top: 12.5%;
-    /* transform: scale(1.25); */
+    top: 10%;
 }
 
-.signUpNow{
-    margin: 20% 0;
+.signUpNow {
+    margin: 25% 0 10%;
     border-radius: 15px;
-}
-.signUpNow.border-animate{
-    border-radius: 15px;
-}
-.signUpNow.border-animate::before{
-    background-image: conic-gradient(transparent 0deg, var(--Blue300) 78deg ,transparent 107deg, var(--Blue300) 256deg, transparent 290deg);
 }
 
-.signUpNow-body{
+.signUpNow.border-animate {
+    border-radius: 15px;
+}
+
+.signUpNow.border-animate::before {
+    background-image: conic-gradient(transparent 0deg, var(--Blue300) 78deg, transparent 107deg, var(--Blue300) 256deg, transparent 290deg);
+}
+
+.signUpNow-body {
     background-color: #202020;
     position: relative;
     border-radius: 15px;
 }
-.signUpNow-content{
-    padding: 2rem;
+
+.signUpNow-content {
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,61 +71,73 @@ section.trainings{
     background-image: url("../../../assets/electric-bg.png");
     background-size: cover;
 }
-.signUpNow h4{
+
+.signUpNow h4 {
     font-size: 33px;
     font-weight: 700;
+    line-height: 48px;
     margin-bottom: 1rem;
+    text-align: center;
 }
-.signUpNow h4 > span{
+
+.signUpNow h4>span {
     padding: 0 0.5rem;
     background-color: var(--Blue300);
     border-radius: 5px;
 }
 
-.signUpNow button{
+.signUpNow button {
     padding: 1rem 3rem;
     background-color: var(--Blue300);
     font-size: 16px;
     font-weight: 600;
     border-radius: 4px;
+    border: none;
 }
-.trainings-content{
+
+.trainings-content {
     overflow: auto;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1024px) {
     section.trainings {
         padding: 20% 1rem 10%;
-    }    
-    .trainings-content{
+    }
+
+    .trainings-content {
         display: flex;
         overflow-x: scroll;
         gap: 1rem;
         width: calc(100% + 4rem);
         margin: 0 auto 10%;
     }
+
     *::-webkit-scrollbar {
         width: 0px;
-        display:none;
-      }
-    .trainings-content .blog{
+        display: none;
+    }
+
+    .trainings-content .blog {
         display: flex;
         flex-direction: column;
         min-width: 75%;
         gap: 1rem;
     }
-    .trainings-content .blog .blog-title{
+
+    .trainings-content .blog .blog-title {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin-bottom: 0;
     }
-    .trainings-content .blog .blog-title svg{
+
+    .trainings-content .blog .blog-title svg {
         width: 30px;
         height: 30px;
         margin-right: 0;
     }
-    .trainings-content .blog .blog-title h6{
+
+    .trainings-content .blog .blog-title h6 {
         font-family: Poppins;
         font-size: 16px;
         font-weight: 700;
@@ -126,7 +146,8 @@ section.trainings{
         text-align: center;
 
     }
-    .trainings-content .blog p{
+
+    .trainings-content .blog p {
         font-family: Poppins;
         font-size: 12px;
         font-weight: 400;
@@ -142,11 +163,12 @@ section.trainings{
         transform: translateX(10px) scale(1.2);
     }
 
-    .signUpNow{
+    .signUpNow {
         width: calc(100% + 8rem);
         margin-left: -4rem;
     }
-    .signUpNow .signUpNow-body .signUpNow-content h4{
+
+    .signUpNow .signUpNow-body .signUpNow-content h4 {
         font-family: Poppins;
         font-size: 13px;
         font-weight: 700;
@@ -154,8 +176,34 @@ section.trainings{
         letter-spacing: 0em;
         text-align: center;
     }
-    .signUpNow .signUpNow-body .signUpNow-content button{
+
+    .signUpNow .signUpNow-body .signUpNow-content button {
         padding: 0.7rem 2rem;
         font-size: 12px;
+    }
+}
+
+
+
+@media only screen and (min-width: 2024px) {
+    .trainings-container {
+        max-width: 1900px;
+    }
+    .blog-title h6 {
+        font-size: 42px;
+    }
+
+    .blog p {
+        font-size: 28px;
+        margin-left: 95px;
+    }
+
+    .trainings-content .blog .blog-title svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .spaceX h6 {
+        font-size: 28px;
     }
 }

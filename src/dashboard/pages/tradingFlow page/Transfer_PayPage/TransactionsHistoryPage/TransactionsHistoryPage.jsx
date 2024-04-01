@@ -21,11 +21,13 @@ const TransactionsHistoryPage = () => {
       <h4>Date Range (Up to 90 days)</h4>
 
       <div className={styles.date_filter}>
+        
         <p>Date</p>
 
         <div className='w-1/2 grid grid-cols-2 gap-[45px]'>
           <CustomSelectMenu options={options} />  <CustomSelectMenu options={options} />
         </div>
+
       </div>
     </div>
   )

@@ -9,7 +9,8 @@ const Plans = () => {
         <section className='plans'>
             <h3 className='section-title'>Choose your plan</h3>
 
-            <div className='lg:container mx-auto px-0 md:px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 gap-y-6 plans-container md:columns-8 flex items-center md:items-end overflow-x-scroll'>
+            <div className='xl:container mx-auto px-0 md:px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 gap-y-6 plans-container md:columns-8 flex items-center md:items-end justify-around'>
+
                 {/* first plane */}
                 <div className="plane">
                     <div className="plane-body flex flex-col justify-center items-center p-6 md:px-8 md:py-12">

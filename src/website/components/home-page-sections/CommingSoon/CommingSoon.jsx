@@ -16,7 +16,7 @@ const CommingSoon = () => {
             </p>
 
             {/* expanding section  */}
-            <div className="expanding-box grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-6">
+            <div className="expanding-box grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-20 gap-y-6">
 
                 {/* expanding details */}
                 <div className="item">

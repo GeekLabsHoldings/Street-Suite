@@ -1,5 +1,5 @@
 section.trading{
-    padding: 10% 5%;
+    padding: 10% 5% 5%;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
@@ -98,7 +98,7 @@ section.trading{
     position: relative;
     background: linear-gradient(166deg, rgba(105,180,255,0.02189250700280112) 0%, rgba(32,32,32,0.9183648459383753) 46%);
     border-radius: 10px;
-    gap: 2rem;
+    gap: 4rem;
     overflow: hidden;
 }
 .spaceX img{
@@ -109,10 +109,10 @@ section.trading{
     height: 100%;
     z-index: -1;
 }
-.spaceX .box{
-    width: 50%;
+.spaceX .box {
+    width: 35%;
     min-height: 6rem;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--Blue300);
     border-radius: 5px;
 }
 .spaceX h6{
@@ -204,4 +204,34 @@ section.trading{
     section.alerts {
         padding: 20% 0%;
     }
+}
+
+
+
+
+@media only screen and (min-width: 2042px) {
+
+    .trading-container {
+        max-width: 1900px;
+        padding: 0 10%;
+    }
+
+    .trading-content h4 {
+        color: var(--Blue300);
+        font-size: 64px;
+        font-weight: 800;
+        line-height: 80px;
+    }
+
+    .trading-content h4+p {
+        color: #A4A4A4;
+        font-size: 28px;
+    }
+    .trading-content h5 {
+        font-size: 36px;
+    }
+    .trading-content h5+p {
+        font-size: 28px;
+    }
+
 }

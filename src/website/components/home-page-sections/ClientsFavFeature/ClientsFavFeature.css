@@ -17,7 +17,7 @@ section.clientsFavFeature img {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
     section.clientsFavFeature {
         padding: 10% 0;
     }
@@ -37,4 +37,13 @@ section.clientsFavFeature img {
         margin: 2rem 0;
         width: 100%;
     }
+}
+
+
+@media only screen and (min-width: 2024px) {
+
+section.clientsFavFeature .section-title {
+    font-size: 80px;
+}
+
 }

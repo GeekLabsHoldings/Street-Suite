@@ -54,7 +54,7 @@ text-align: left;
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
     .commingSoon-container > p {
         font-size: 11px;
         line-height: 16px;
@@ -75,4 +75,36 @@ text-align: left;
     .expanding-box {
         padding: 2rem 1.5rem;
     }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .commingSoon-container {
+        max-width: 1900px;
+    }
+
+    .commingSoon-container > p {
+        font-family: Poppins;
+        font-size: 32px;
+    }
+
+    .expanding-box {
+        padding: 4rem 2rem
+    }
+
+    .expanding-box .item {
+        padding-left: 2rem;
+    }    
+
+    .expanding-box .item h6 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    .expanding-box .item p{
+        font-family: Poppins;
+        font-size: 22px;
+    }
+
 }
