@@ -1,0 +1,52 @@
+.disclaimerHeader h1{
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: 700;
+}
+.disclaimerHeader p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.disclaimerContent h4{
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 700;
+}
+.disclaimerContent p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.disclaimerBG{
+    /* background: linear-gradient(0deg ,rgba(61,115,160) 32%, rgba(46,80,112,1) 48%, rgba(28,33,39,1) 100%); */
+    /* background: linear-gradient(219deg, rgba(28,33,39,1) 31%, rgba(46,80,112,1) 100%); */
+    /* background: linear-gradient(249deg, rgba(28,33,39,1) 0%, rgba(46,80,112,1) 100%); */
+    /* background: linear-gradient(170deg, rgba(29,36,43,1) 22%, #4d9de8d0 50%, rgba(29,36,43,1) 86%); */
+    /* background: linear-gradient(170deg, rgba(29,36,43,1) 22%, #4d9de8d0 50%, #181818 86%); */
+    /* background: radial-gradient(circle, rgb(59, 100, 138) 0%, rgba(37,56,74,1) 39%, rgba(29,36,43,1) 97%, rgba(39,59,80,0.9808298319327731) 100%); */
+    background-image: url("../../assets/Group\ 773.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 676px){
+    .disclaimerHeader h1{
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .disclaimerHeader p{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .disclaimerContent h4{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .disclaimerContent p{
+        font-size: 12px;
+        line-height: 18px;
+
+    }
+}

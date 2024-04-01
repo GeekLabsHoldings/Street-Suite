@@ -19,13 +19,13 @@ const OneBlog =()=>{
 
 // to navigate to leader board page
     const leaderboardNavigator = ()=>{
-        window.location.replace("http://localhost:3000/leaderboard");
+        navigate('/leaderboard');
 
     }
 
     // to navigate to training page
     const trainingNavigator = ()=>{
-        window.location.replace("http://localhost:3000/dashboard/training");
+        navigate('/dashboard/training')
     }
  
 // to navigate to specific blog page

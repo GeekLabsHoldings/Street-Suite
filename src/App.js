@@ -47,6 +47,8 @@ import SinglePrivateEquityPage from './dashboard/pages/tradingFlow page/PrivateE
 import PrivateEquitiesPage from './dashboard/pages/tradingFlow page/PrivateEquityPage/PrivateEquitiesPage/PrivateEquitiesPage';
 import MyCoursesPage from './dashboard/pages/training page/MyCourses/MyCoursesPage/MyCoursesPage';
 import SingleCoursePage from './dashboard/pages/training page/MyCourses/SingleCoursePage/SingleCoursePage';
+import ComparePage from './website/pages/ComparePage/ComparePage';
+import DisclaimerPage from './website/pages/DisclaimerPage/DisclaimerPage';
 
 
 function App() {
@@ -76,6 +78,11 @@ function App() {
             <Route path='contactus' element={<ContactPage />} />
             <Route path='change-logs' element={<ChangeLogs />} />
             <Route path='top-brokers' element={<TopBroker />} />
+            <Route path='disclaimer' element={<DisclaimerPage />} />
+
+            
+
+
             <Route path='careers' element={<CareersPage />} />
             <Route path='careers/positions' element={<PositionsPage />} />
 

@@ -1,7 +1,6 @@
 import './OldArticle.css';
 import { useNavigate } from "react-router-dom";
 
-
 const OldArticle = ({classname})=>{
     const navigate = useNavigate();
     const onClickHandler = ()=>{
