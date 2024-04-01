@@ -54,23 +54,115 @@
 .spacedList{
     gap:1.5rem;
 }
-.forPadding{
-    padding: 2rem 0 !important;
-}
+
 .smbrokerBG{
     background: linear-gradient(150deg, rgb(21, 43, 65) 5%,  rgb(37, 72, 104) 100%);
 }
 
+/* header css */
 
+.elementBorder{
+    border-right: 1px solid #979797;
+}
+.elementBorder h5{
+    font-size: 19px;
+    line-height: 28.5px;
+    font-weight: 400;
+}
+.textToImg{
+    padding: 0.6rem 0.1rem;
+}
+.textToImg h4{
+    font-size: 21px;
+    line-height: 34.5px;
+}
+.holder{
+position: relative;
+
+}
+.popularBadge{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+.imgDivHeader{
+    width: 80px;
+    height: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selectedItems{
+    background-color: rgba(51,83,115,0.7);
+    padding: 2rem 1.5rem;
+    border-top-left-radius: 1.8rem;
+    border-top-right-radius: 1.8rem;
+
+}
+/* compare table css */
+.compareHeader h1{
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: 700;
+    }
+    .compareTable{
+        background-color: rgba(34,40,45,0.9);
+        border-top-left-radius:1.5rem ;
+        border-top-right-radius:1.5rem ;
+    }
+    .compareTable h5{
+        font-size: 19px;
+        line-height: 28.5px;
+        font-weight: 700;
+    }
+    .compareTable h6{
+        font-size: 19px;
+        line-height: 28.5px;
+        font-weight: 700;
+    }
+    .providerTitle h4 {
+        font-size: 23px;
+        line-height: 34.5px;
+        font-weight: 700;
+    
+    }
+    .visitWebsite span{
+        color: #979797;
+        font-size: 11px;
+        line-height: 16.5px;
+        font-weight: 400;
+    }
+    .rightThickBorder{
+        border-right: 2px solid #979797;
+    }
+    .bottomThickBorder{
+        border-bottom: 2px solid #979797 ;
+    }
+    .providerFeatureName{
+        background-color: rgba(41, 45, 50, 0.9);
+    }
+    .providerFeatureName h4{
+        font-size: 19px;
+        line-height: 28.5px;
+        font-weight: 700;
+    }
+    .providerFeature h6{
+        font-size: 28px;
+        line-height: 42px;
+        font-weight: 400;
+    }
+    .comparePrt{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 
 @media only screen and (max-width: 676px){
     .brokersHeader h1 , .brokersHeader span{
         font-size: 24px;
         line-height: 36px;
     }
-    .forPadding {
-        padding: 2rem !important;
-    }
+
     .topBrokerSM h4{
         font-size: 16px;
         line-height: 24px;
@@ -98,5 +190,26 @@
     .ourPicks{
         font-size: 16px;
         line-height: 24px;
+    }
+    /* header css */
+    .textToImg h4{
+        font-size: 11px;
+        line-height: 16.5px;
+        font-weight: 700;
+    }
+    .elementBorder h5{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .imgDivHeader{
+        width: 33px ;
+        height: 31px;
+    }
+    .starsImg{
+        width: 57px;
+        height: 9.67px;
+    }
+    .holder{
+        padding: 0.4rem 0rem;
     }
 }
