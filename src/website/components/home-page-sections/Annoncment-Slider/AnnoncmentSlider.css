@@ -30,5 +30,6 @@
 @media only screen and (min-width: 2024px) {
 .AnnoncmentSlider h6 {
     font-size: 28px;
+    line-height: 40px;
 }
 }

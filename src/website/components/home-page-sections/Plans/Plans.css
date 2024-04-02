@@ -197,7 +197,7 @@ section.plans .section-title {
     }
 
     section.plans .plans-container{
-        width: calc(100% + 2rem);
+        width: 100%;
         margin: auto;
     }
     section.plans .plans-container .plane {

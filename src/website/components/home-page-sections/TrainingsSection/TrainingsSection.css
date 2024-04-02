@@ -101,14 +101,14 @@ section.trainings {
 
 @media only screen and (max-width: 1024px) {
     section.trainings {
-        padding: 20% 1rem 10%;
+        padding: 20% 0rem 10%;
     }
 
     .trainings-content {
         display: flex;
         overflow-x: scroll;
         gap: 1rem;
-        width: calc(100% + 4rem);
+        width: 100%;
         margin: 0 auto 10%;
     }
 
@@ -160,12 +160,15 @@ section.trainings {
     .trainings-img img {
         position: unset;
         width: 100%;
-        transform: translateX(10px) scale(1.2);
+        transform: translateX(32px);
     }
 
     .signUpNow {
-        width: calc(100% + 8rem);
-        margin-left: -4rem;
+        width: 100%;
+    }
+
+    .signUpNow-body,.signUpNow.border-animate {
+        border-radius: 0;
     }
 
     .signUpNow .signUpNow-body .signUpNow-content h4 {

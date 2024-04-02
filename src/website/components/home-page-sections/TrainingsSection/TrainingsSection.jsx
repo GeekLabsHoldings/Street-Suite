@@ -11,9 +11,9 @@ const TrainingsSection = () => {
             <h3 className='section-title'>TRAINING</h3>
 
 
-            <div className='lg:container mx-auto px-4  trainings-container flex flex-col'>
+            <div className='mx-auto trainings-container flex flex-col'>
 
-               <div className='flex flex-col lg:flex-row items-center'>
+               <div className='flex flex-col lg:flex-row items-center px-4'>
 
                     {/* content of trainings */}
                     <div className="trainings-content lg:w-1/2 ">
@@ -58,7 +58,7 @@ const TrainingsSection = () => {
                     {/* end content of trainings */}
 
                     {/* img of trainings section */}
-                    <div className="trainings-img mb-10 lg:m-0">
+                    <div className="trainings-img ">
                         <img src={trainingsImg} alt="" />
                     </div>
                     {/* end img of trainings section */}

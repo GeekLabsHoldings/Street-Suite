@@ -285,3 +285,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   
 }
 
+
+
+.px-4{
+  padding-right: 1rem !important ;
+  padding-left: 1rem !important ;
+}
