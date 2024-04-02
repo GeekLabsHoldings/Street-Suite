@@ -1,21 +1,7 @@
-.filters {
-  position: relative;
-  animation: slidRight 1s ease;
-  animation-iteration-count: 1;
-}
 
-.filters .overlay{
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #00000073;
-  z-index: 9999;
-  overflow: hidden;
-  transition: all 0.3s;
+.filters_section {
+  width: 30%;
 }
-
 .filtersContainer {
   padding: 2rem;
   border-radius: 8px 0 0 8px;
@@ -25,24 +11,9 @@
   background: #181818;
   max-height: 100vh;
   overflow: auto;
-
 }
-
-.toggleFilters {
-  position: absolute;
-  left: -40px;
-  top: 25%;
-  background-color: #53ACFF;
-  width: 40px;
-  height: 40px;
-  padding: 0.4rem;
-  border-radius: 6px 0 0 6px;
-  border: none;
-  outline: 0;
-  z-index: 1000;
-  display: none;
-  animation: slidRight 1s ease;
-  animation-iteration-count: 1;
+.filters{
+  position: relative;
 }
 
 .filters h4 {
@@ -57,6 +28,7 @@
 }
 
 .filtersApplaied {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -532,12 +504,12 @@ input:focus {
   letter-spacing: 0px;
   text-align: center;
   color: #fff;
-  padding: 0.7rem 0;
+  padding: 0.6rem 0;
   width: 160px;
   background-color: #53ACFF !important;
   border-radius: 6px;
   margin: 1.5rem 0 0;
-  border: none;
+  border: 1px solid #53ACFF;
   outline: 0;
   cursor: pointer;
   transition: all 0.3s;
@@ -547,23 +519,59 @@ input:focus {
   background-color: #53acffb0 !important;
 }
 
+.saveFilterBtn{
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #fff;
+  padding: 0.6rem 0;
+  width: 160px;
+  background-color: transparent;
+  border-radius: 6px;
+  margin: 1.5rem 0 0;
+  border: 1px solid #fff;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-@media only screen and (max-width: 850px) {
+.closeFilter{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 
-  .filters {
-    transform: translateX(100%);
-    position: absolute;
-    z-index: 9999999999999999;
-    top: 0;
-    right: 0;
-    box-shadow: none;
-    animation: none;
-    transition: all 0.3s;
+@media only screen and (max-width: 1024px) {
+
+  .filters_section {
+    position: fixed;
+    width: 100% !important;
     height: 100vh;
-    width: 0;
+    top: 0;
+    left: 0;
+    background: #00000091;
+    z-index: 9999999999999;
+    padding: 1.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
   }
 
-  .filters.open::after {
+  .filtersContainer {
+    border-radius: 15px;
+    padding: 2rem 1rem;
+  }
+
+
+  /* .filters.open::after {
     content: "";
     position: absolute;
     width: 60px;
@@ -572,44 +580,17 @@ input:focus {
     top: 0;
     background: transparent;
     z-index: 999;
-  }
+  } */
 
-  .filters.open {
-    transform: translateX(0);
-    width: auto;
-    left: 60px;
-    box-shadow: 2px 22px 46.1px 30px #0f0f0f;
-  }
-
-  .filtersContainer {
-    height: 100vh;
-    overflow-y: scroll;
-    padding: 0.5rem;
-    border-radius: 0;
-  }
-
-
-  .toggleFilters {
-    display: block;
+  .filters_section.open {
+    visibility: visible;
+    opacity: 1;
   }
 
   .filters .filtersStock {
     padding: 0.5rem;
   }
 
-
-}
-
-@media only screen and (max-width: 500px) {
-
-
-  .filtersContainer {
-    display: none;
-  }
-
-  .filters.open .filtersContainer {
-    display: flex;
-  }
 
   .scrollSelect {
     gap: 2rem;
@@ -619,25 +600,12 @@ input:focus {
     padding: 0;
   }
 
-  .applyBtn {
+  .applyBtn , .saveFilterBtn {
     margin: 1rem 0 0.5rem;
     font-size: 14px;
     line-height: 20px;
     width: 120px;
   }
 
-
 }
 
-
-@keyframes slidRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}

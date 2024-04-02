@@ -29,14 +29,14 @@ const APIPage = () => {
 
 
             <div className="shadow-bg">
-                <div className='lg:container mx-auto px-4 APIPage-container py-20'>
+                <div className='lg:container mx-auto px-4 APIPage-container py:8 lg:py-20'>
 
                     {/* data points section in API page */}
                     <div className="data-points-section py-12">
                         <h3>Data Points We Cover</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo</p>
 
-                        <div className="data-points grid grid-cols-3 gap-8">
+                        <div className="data-points grid grid-cols-2 lg:grid-cols-3 gap-[16px] lg:gap-8">
 
                             {/* data point card */}
                             <div className="data-point-card border-animate">
@@ -124,7 +124,7 @@ const APIPage = () => {
             <div className="easy-to-use">
 
                 <div className="easy-to-use-card border-animate">
-                    <div className="card-body p-6 flex gap-8">
+                    <div className="card-body p-6 flex gap-[15px] lg:gap-8">
 
                         {/* auto typing section */}
                         <div className="api-code-card border-animate">
