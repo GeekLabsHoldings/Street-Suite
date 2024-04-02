@@ -104,9 +104,12 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
     "& .MuiFormLabel-asterisk":{
     color:'white'
     }
-    }}>{label3}</FormLabel><TextareaAutosize 
+    }}>{label3}</FormLabel>
+    <TextareaAutosize 
 
-    aria-label="empty textarea" placeholder="......" /></>:<>
+    aria-label="empty textarea" placeholder="......" /></>:
+    
+    <>
     <FormLabel required className='mb-1 labelfont'sx={{
     "& .MuiFormLabel-asterisk":{
     color:'white'
@@ -118,10 +121,8 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
     placeholder={`Enter your ${label3}`}
     type="text"
         />
-
-
-
-    </>}
+    </>
+    }
     </div>
     <div>
 

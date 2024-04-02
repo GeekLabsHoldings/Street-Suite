@@ -1,0 +1,62 @@
+.signInBG{
+    min-height: 100vh;
+    /* background: linear-gradient(212deg, rgba(24,24,24,1) 40%, rgba(79,138,194,0.98) 100%); */
+    background: linear-gradient(190deg, rgba(32,32,32,1) 40%, rgb(67, 118, 167) 100%);
+}
+.signInLogo{
+    width: 195px;
+    height: 86px;
+}
+.signinContent h2 ,.signinContent span{
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 700;
+}
+.signinContent p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.signinContent{
+    padding-left: 2rem;
+}
+.loginBtn{
+    font-size:16px !important;
+    line-height:19.2px !important;
+    text-transform: none !important;
+    padding: 0.5rem 1.5rem !important;
+}
+.formElements h3{
+    font-size: 33px;
+    line-height: 49.5px;
+    font-weight: 700;
+}
+
+.formBGSignIn{
+    background: linear-gradient(265deg, rgb(23, 37, 49) 20%, rgb(48, 73, 97) 100%);
+}
+
+@media only screen and (max-width: 676px){
+    .signInLogo{
+        width: 135px;
+        height: 60px;
+    }
+    .signinContent h2 ,.signinContent span{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 700;
+    }
+    .formElements h3{
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+    .formBGSignIn{
+        background: linear-gradient(203deg, rgb(44, 71, 95) 20%, rgb(66, 125, 180) 100%);
+    }
+    .formElements p{
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+    }
+}

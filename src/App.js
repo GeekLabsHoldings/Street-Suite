@@ -49,6 +49,8 @@ import MyCoursesPage from './dashboard/pages/training page/MyCourses/MyCoursesPa
 import SingleCoursePage from './dashboard/pages/training page/MyCourses/SingleCoursePage/SingleCoursePage';
 import DisclaimerPage from './website/pages/DisclaimerPage/DisclaimerPage';
 import PrivacyAndSecurity from './website/pages/PrivacyAndSecurity-page/PrivacyAndSecurity';
+import SignIn from './website/pages/SignIn/SignIn';
+
 
 
 function App() {
@@ -84,6 +86,8 @@ function App() {
             <Route path='careers/positions' element={<PositionsPage />} />
             <Route path='blogs' element={<BlogPage />} />
             <Route path='blogs/specific-blog' element={<SpecificArticle />} />
+            <Route path='signin' element={<SignIn />} />
+
           </Route>
 
 

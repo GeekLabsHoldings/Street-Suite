@@ -11,11 +11,11 @@
     background-image: url("../../assets/background.svg");
 }
 .forbtn{
-    border-radius: 0.2rem;
+    border-radius: 0.2rem !important;
     background-color: #53ACFF !important;
     color: #ffff !important;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 600 !important;
     line-height: 1.05rem;
 }
 .forbtn:hover{

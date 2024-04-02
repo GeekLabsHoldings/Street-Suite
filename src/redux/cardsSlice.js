@@ -13,10 +13,9 @@ export const featuresCardSlicer = createSlice({
       state.value.push(cardsData.payload);
     },
     removeItem: (state,cardData)=>{
-      console.log(cardData);
-      console.log(cardData.payload);
-       state.value.filter(JSON.stringify(state.value) !== JSON.stringify(cardData.payload));
-       console.log(cardData);
+
+      // console.log(cardData.payload);
+      state.value.filter((ele)=> ele !== cardData.payload);
     },
     reset: (state) => {
     state.value = []
