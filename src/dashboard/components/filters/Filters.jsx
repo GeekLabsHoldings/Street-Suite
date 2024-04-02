@@ -94,6 +94,7 @@ function Filters() {
     // filters part in right side in alerts page
     <div className={filterMenuIsOpen ? styles.filters + " " + styles.open : styles.filters} >
 
+      {filterMenuIsOpen&& <div className={styles.overlay}></div>}
 
       <button className={styles.toggleFilters} onClick={toggleFilterMenu}>
         <img src={filterIcon} alt="" />
