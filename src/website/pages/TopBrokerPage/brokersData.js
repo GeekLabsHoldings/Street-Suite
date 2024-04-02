@@ -47,5 +47,56 @@ import FifthImg from '../../assets/fifthImgBroker.svg';
 
  export const ImagesData =[
     FirstImg , SecondImg , ThirdImg , ForthImg , FifthImg
-
  ]
+
+export const cardsData = [{
+    img:FirstImg,
+    title:'Interactive Brokers',
+    fees:'$0',
+    accountMin:'$0',
+    overview:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    pros:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim'],
+    whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
+},
+{
+    img:SecondImg,
+    title:'Interactive Brokers',
+    fees:'$0',
+    accountMin:'$0',
+    overview:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    pros:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim'],
+    whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
+},
+{
+    img:ThirdImg,
+    title:'Interactive Brokers',
+    fees:'$0',
+    accountMin:'$0',
+    overview:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    pros:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim'],
+    whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
+},
+{
+    img:ForthImg,
+    title:'Interactive Brokers',
+    fees:'$0',
+    accountMin:'$0',
+    overview:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    pros:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim'],
+    whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
+},
+{
+    img:FifthImg,
+    title:'Interactive Brokers',
+    fees:'$0',
+    accountMin:'$0',
+    overview:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    pros:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim'],
+    whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
+}
+]

@@ -124,7 +124,6 @@ position: relative;
         font-size: 23px;
         line-height: 34.5px;
         font-weight: 700;
-    
     }
     .visitWebsite span{
         color: #979797;
@@ -153,8 +152,24 @@ position: relative;
     }
     .comparePrt{
         position: fixed;
+        z-index: 999;
         bottom: 0;
         width: 100%;
+    }
+    .feesPrt{
+        position: absolute;
+        top: 41%;
+        left: 5%;
+    }
+    .accountPrt{
+        position: absolute;
+        top: 61%;
+        left: 5%;
+    }
+    .promotionsPrt{
+        position: absolute;
+        top: 81%;
+        left: 5%;
     }
 
 @media only screen and (max-width: 676px){
@@ -212,4 +227,61 @@ position: relative;
     .holder{
         padding: 0.4rem 0rem;
     }
+    .compareTable h5{
+        font-size: 15px;
+        line-height: 24px;
+
+    }
+    .compareTable h6{
+        font-size: 15px;
+        line-height: 24px;
+
+    }
+    .providerTitle h4 {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 600;
+    }
+    .visitWebsite span{
+        font-size: 8px;
+        line-height: 14px;
+    }
+    .visitWebsite .forbtn{
+        font-size: 8px;
+        line-height: 10px;
+    }
+    .providerFeature h6{
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: 400;
+    }
+    .feesPrt h4,.accountPrt h4,.promotionsPrt h4{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+     .feesPrt{
+        position: absolute;
+        top: 47%;
+        left: 5%;
+    }
+    .selectedItems{
+        padding: 1rem 1rem;
+    }
+    .selectFont h5{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+    .accountPrt{
+        position: absolute;
+        top: 66%;
+        left: 5%;
+    }
+    .promotionsPrt{
+        position: absolute;
+        top: 85%;
+        left: 5%;
+    }
+
 }

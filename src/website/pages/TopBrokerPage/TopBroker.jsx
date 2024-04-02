@@ -2,12 +2,10 @@ import { Button } from 'react-bootstrap';
 import OneBroker from '../../components/Onebroker/Onebroker';
 import PickCard from '../../components/PickCard/PickCard';
 import { useState } from 'react';
-// import { useNavigate } from "react-router-dom";
-import TestImg from '../../assets/broker-img1.png';
 import { useSelector, useDispatch } from 'react-redux'
-import { add, reset } from '../../../redux/cardsSlice';
+import { reset,removeItem } from '../../../redux/cardsSlice';
 // our data here
-import {brokersData,blackBrokerData,ImagesData} from './brokersData';
+import {brokersData,blackBrokerData,ImagesData,cardsData} from './brokersData';
 
 import './topBroker.css';
 
@@ -15,16 +13,13 @@ import './topBroker.css';
 const TopBroker = ()=>{
     const cards = useSelector((state) => state.featuresCard.value);
     const dispatch = useDispatch();
-  
-    const [itemsToCompare,setItemsToCompare] = useState([]);
     const [isClicked,setIsClicked] = useState(false);
     const [startCompare,setStartCompare] = useState(false);
+    const [closeCompare,setCloseCompare] = useState(false)
 
    // render reusable pick cards
-    const renderCards = ImagesData.map ((img)=>(
-        <div>
-            <PickCard setIsClicked={setIsClicked} setItemsToCompare={setItemsToCompare} itemsToCompare={itemsToCompare} imgUrl={img}/>
-        </div>
+    const renderCardsData = cardsData.map(({img,pros,cons,whyWeLike,title,fees,accountMin,overview})=>(
+        <PickCard setCloseCompare={setCloseCompare} setIsClicked={setIsClicked} imgUrl={img} fees={fees} title={title} whyWeLike={whyWeLike} pros={pros} cons={cons} overview={overview} accountMin={accountMin}/>
     ))
 
     // render our first 3 best brokers
@@ -118,87 +113,108 @@ return(
                 <div className='col-md-10 mx-auto my-5 ourPicks'>
                 <h4 className='md:pb-5 sm:pb-8' >More about our picks:</h4>
                 <div className='flex flex-col gap-3'>
-                {renderCards}
+                {renderCardsData}
                 </div>
                 </div>
             </div>
 
         </div>
 
-        <div className={isClicked ?'visible comparePrt':'hidden'}>
-        <div className={isClicked &&  !startCompare ? 'visible selectedItems' : ' hidden selectedItems'}>
-                <div className='w-10/12 mx-auto flex justify-between'>
+
+        <div className={isClicked && !closeCompare?'visible comparePrt ':'hidden'}>
+        <div className={isClicked &&  !startCompare ? 'visible selectedItems' : ' hidden'}>
+                <div className='w-10/12 mx-auto flex justify-between selectFont'>
                         <h5>Selected ({cards.length})</h5>
                         <div className='flex gap-2'>
-                        <Button className='forbtn py-2 px-5 compareBtn'onClick={()=>{
+                        <Button className='forbtn md:py-2 md:px-5 compareBtn'onClick={()=>{
                             dispatch(reset());
-                            console.log(cards)
                         }}>Reset</Button>
-                        <Button className='forbtn py-2 px-5'onClick={()=>{
+
+                        <Button className='forbtn md:py-2 md:px-5'onClick={()=>{
                             setStartCompare(true);
                         }} >Compare</Button>
                         </div>
                     </div>
                 </div>
 
-            <div className={startCompare ? ' visible' : ' hidden'}>
-            <div className='pt-5 compareTable'>
-                    <div className='flex flex-col gap-4 px-16 bottomThickBorder'>
-                    <div className='flex justify-between'>
-                    <h5>Selected ({itemsToCompare.length})</h5>
+            <div className={startCompare ? ' visible h-3/6' : ' hidden'}>
+            <div className='md:pt-5 sm:pt-4 compareTable'>
+                    <div className='flex flex-col md:gap-4 sm:gap-2 md:px-16 sm:px-10 sm:pb-3 md:pb-0 bottomThickBorder'>
+                    <div className='flex justify-between '>
+                    <h5>Selected ({cards.length})</h5>
                 <div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <svg onClick={()=>{setCloseCompare(true);reset()}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </div>
                     </div>
                     <h6>Selected Providers</h6>
                     </div>
+                    {/* min-w-[24rem] */}
+                    <div className="flex overflow-auto max-w-full">
                     {cards.map((oneCard)=>(
-                        <div className='flex flex-col gap-2'>
-            <div className='w-1/4 px-16 rightThickBorder'>
-                                <div className=" flex justify-around py-3">
-                                <div className="w-1/5">
-                                    <img src={TestImg} />
+                        <div className='flex flex-col gap-2 min-w-1/4 relative'>
+
+                         <div className='md:px-8 sm:px-4 rightThickBorder w-full'>
+                                <div className="flex justify-around py-3">
+                                <div className="w-1/5 flex align-items-center">
+                                    <img className='w-full' src={oneCard.imgUrl} />
                                     </div>
-                                    <div className="w-2/5 providerTitle">
-                                        <h4>Interactive Brokers</h4>
+
+                                    <div className="w-3/5 providerTitle">
+                                        <h4>{oneCard.title}</h4>
                                     </div>
-                                    <div className="w-1/5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <div className="w-1/12 ">
+                                    <svg 
+                                    onClick={()=>{
+                                        dispatch(removeItem(oneCard));
+                                }} 
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                     </svg>
                                     </div>
-                                    
                                 </div>
-                                <div className="w-11/12  flex flex-col gap-2 text-center visitWebsite">
+                                <div className="w-11/12 flex flex-col gap-2 text-center visitWebsite">
                                         <Button className='forbtn w-full'>Learn More</Button>
                                         <span>On Interactive Brokers website</span>
                                     </div>
                                 </div>
-                                <div className='py-3 px-4 providerFeatureName'>
-                                <h4>fees</h4>
-                            </div>
-                            <div className="w-1/4 px-16 text-center rightThickBorder py-2 providerFeature">
-                                <h6>$ 0</h6>
-                            </div>
-                            <div className='py-3 px-4 providerFeatureName'>
-                                <h4>Account Minimum</h4>
-                            </div>
-                            <div className="w-1/4 px-16 text-center rightThickBorder py-2 providerFeature">
-                                <h6>$ 0</h6>
-                            </div>
-                            <div className='py-3 px-4 providerFeatureName'>
-                                <h4>Promotions</h4>
-                            </div>
-                            <div className="w-1/4 px-16 text-center rightThickBorder py-2 providerFeature">
-                                <h6>None</h6>
+                    
+
+                                <div className='md:py-3 px-4 md:h-[60px] sm:h-[40px] providerFeatureName '>
                             </div>
 
+                            <div className=" px-16 text-center rightThickBorder md:py-2 providerFeature">
+                                <h6>{oneCard.fees}</h6>
+                            </div>
+
+                            <div className='md:py-3 px-4 md:h-[60px] sm:h-[40px] providerFeatureName'>
+                            </div>
+
+                            <div className=" px-16 text-center rightThickBorder md:py-2 providerFeature">
+                                <h6>{oneCard.accountMin}</h6>
+                            </div>
+
+                            <div className='md:py-3 px-4 md:h-[60px] sm:h-[40px] providerFeatureName'>
+                            </div>
                             
+                            <div className=" px-16 text-center rightThickBorder md:py-2 providerFeature">
+                                <h6>None</h6>
+                            </div>
                         
                             </div>
                     ))}
+                    <div className=" feesPrt">
+                        <h4>Fees</h4>
+                    </div>
+                    <div className=" accountPrt">
+                        <h4>Account Minimum</h4>
+                    </div>
+                    <div className=" promotionsPrt">
+                        <h4>Promotions</h4>
+                    </div>
+                    </div>
+                   
 
             
                         

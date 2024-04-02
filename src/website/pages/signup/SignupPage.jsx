@@ -19,6 +19,7 @@ const SignupPage = ()=>{
            </div>
           </div>
         </div>
+        
 
         <div className=' col-lg-6 col-sm-12'>
           <div className='row col-md-11 sm:mb-7 '>
