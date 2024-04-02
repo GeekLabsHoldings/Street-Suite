@@ -46,7 +46,7 @@ const AssetSelect = [
 ]
 
 
-function Filters() {
+function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
   // open industry filter state 
   const [industryFilterIsOpen, setIndustryFilterIsOpen] = useState(true);
@@ -63,8 +63,7 @@ function Filters() {
   // current Strategy that checked
   const [currentcheckedStrategy, setcurrentcheckedStrategy] = useState(1);
 
-  // open filter Menu state
-  const [filterMenuIsOpen, setFilterMenuIsOpen] = useState(false);
+
 
 
   // function that toggle industry filter
@@ -82,290 +81,236 @@ function Filters() {
     setRiskLevelFilterIsOpen(!riskLevelFilterIsOpen);
   };
 
-  // function that toggle filter Menu in mobile view
-  const toggleFilterMenu = () => {
-    setFilterMenuIsOpen(!filterMenuIsOpen);
-  }
+
 
 
 
   return (
 
     // filters part in right side in alerts page
-    <div className={filterMenuIsOpen ? styles.filters + " " + styles.open : styles.filters} >
+
+    <div className={openFilterInMobile ? styles.filters_section + " " + styles.open : styles.filters_section}>
+      <div className={styles.filters} >
+
+        <div className={styles.filtersContainer}>
+          <button className={styles.closeFilter + " block lg:hidden"} onClick={toggleFilterMenu}> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+            <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+          </svg>
+          </button>
+          <h4>Filters</h4>
+          <div className={styles.filtersApplaied}>
+            <div className={styles.clearAll}>
+              <p>Filters Applaied</p>
+              <button>Clear All</button>
+            </div>
+
+            {/* container of filters that selected */}
+            <ul className={styles.filtersApplaiedContainer}>
 
 
-      <button className={styles.toggleFilters} onClick={toggleFilterMenu}>
-        <img src={filterIcon} alt="" />
-      </button>
+              {/* filter selected */}
+              <li>
+                Real State
+                <span>
+                  <img src={closeIcon} alt="delete" />
+                </span>
+              </li>
 
-
-      <div className={styles.filtersContainer}>
-        <h4>Filters</h4>
-        <div className={styles.filtersApplaied}>
-          <div className={styles.clearAll}>
-            <p>Filters Applaied</p>
-            <button>Clear All</button>
+            </ul>
           </div>
 
-          {/* container of filters that selected */}
-          <ul className={styles.filtersApplaiedContainer}>
+          {/* filter stock section */}
+          <div className={styles.filtersStock}>
 
-            {/* filter selected */}
-            <li>
-              Real State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
+            <h5>Stock</h5>
+            <div className={styles.filtersStockContainer}>
 
-            {/* filter selected */}
-            <li>
-              Real State State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-            {/* filter selected */}
-            <li>
-              Real State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-            {/* filter selected */}
-            <li>
-              Real State State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-            {/* filter selected */}
-            <li>
-              Real State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-            {/* filter selected */}
-            <li>
-              Real State State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-            {/* filter selected */}
-            <li>
-              Real State State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-            {/* filter selected */}
-            <li>
-              Real State
-              <span>
-                <img src={closeIcon} alt="delete" />
-              </span>
-            </li>
-
-          </ul>
-        </div>
-
-        {/* filter stock section */}
-        <div className={styles.filtersStock}>
-
-          <h5>Stock</h5>
-          <div className={styles.filtersStockContainer}>
-
-            {/* search input in filters */}
-            <div className={styles.searchInput}>
-              <input
-                type="search"
-                name="search"
-                id="search"
-                placeholder="$  TICKER"
-              />
-              <img src={filterSearchIcon} alt="searchIcon" />
-            </div>
-
-            {/* Industry filter */}
-            <div
-              className={
-                industryFilterIsOpen
-                  ? styles.industryFilter + " " + styles.open
-                  : styles.industryFilter
-              }
-            >
-
-              {/* industry filter title  */}
-              <div className={styles.selectLabel} onClick={toggleindustryFilter}>
-                <img src={arrowIcon} alt="" />
-                <h6>Industry</h6>
+              {/* search input in filters */}
+              <div className={styles.searchInput}>
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="$  TICKER"
+                />
+                <img src={filterSearchIcon} alt="searchIcon" />
               </div>
 
-              {/* industry filter body that toggled by click on title  */}
-              <ul className={styles.selectItems}>
-                {industryFilter.map((ele, idx) => (
-                  <li key={idx}>
-                    <div className={styles.selectItem}>
-                      <img src={ele.icon} alt={ele.title} />
-                      <p>{ele.title}</p>
-                    </div>
-                  </li>
-                ))}
-
-              </ul>
-            </div>
-
-            {/* Market Cap filter */}
-            <div className={styles.checkBoxFilters}>
+              {/* Industry filter */}
               <div
                 className={
-                  marketCapFilterIsOpen
-                    ? styles.MarketCapFilter + " " + styles.open
-                    : styles.MarketCapFilter
+                  industryFilterIsOpen
+                    ? styles.industryFilter + " " + styles.open
+                    : styles.industryFilter
                 }
               >
 
-              {/* Market Cap filter title  */}
-                <div
-                  className={styles.selectLabel}
-                  onClick={toggleMarketCapFilter}
-                >
+                {/* industry filter title  */}
+                <div className={styles.selectLabel} onClick={toggleindustryFilter}>
                   <img src={arrowIcon} alt="" />
-                  <h6>Market Cap</h6>
+                  <h6>Industry</h6>
                 </div>
 
-                {/* Market Cap filter body that toggled by click on title  */}
-                <ul className={styles.checkItems}>
-                  <li>
-                    <input
-                      type="radio"
-                      id="Micro"
-                      name="Market-Cap"
-                      value="Micro"
-                    />
-                    <label htmlFor="Micro">Micro</label>
-                  </li>
-                  <li>
-                    <input
-                      type="radio"
-                      id="Small"
-                      name="Market-Cap"
-                      value="Small"
-                    />
-                    <label htmlFor="Small">Small</label>
-                  </li>
-                  <li>
-                    <input
-                      type="radio"
-                      id="Larg"
-                      name="Market-Cap"
-                      value="Larg"
-                    />
-                    <label htmlFor="Larg">Larg</label>
-                  </li>
+                {/* industry filter body that toggled by click on title  */}
+                <ul className={styles.selectItems}>
+                  {industryFilter.map((ele, idx) => (
+                    <li key={idx}>
+                      <div className={styles.selectItem}>
+                        <img src={ele.icon} alt={ele.title} />
+                        <p>{ele.title}</p>
+                      </div>
+                    </li>
+                  ))}
+
                 </ul>
               </div>
 
-
-            {/* Risk Level filter */}
-              <div
-                className={
-                  riskLevelFilterIsOpen
-                    ? styles.riskLevelFilter + " " + styles.open
-                    : styles.riskLevelFilter
-                }
-              >
-
-              {/* Risk Level filter title  */}
+              {/* Market Cap filter */}
+              <div className={styles.checkBoxFilters}>
                 <div
-                  className={styles.selectLabel}
-                  onClick={toggleRiskLevelFilter}
+                  className={
+                    marketCapFilterIsOpen
+                      ? styles.MarketCapFilter + " " + styles.open
+                      : styles.MarketCapFilter
+                  }
                 >
-                  <img src={arrowIcon} alt="" />
-                  <h6>Risk Level</h6>
+
+                  {/* Market Cap filter title  */}
+                  <div
+                    className={styles.selectLabel}
+                    onClick={toggleMarketCapFilter}
+                  >
+                    <img src={arrowIcon} alt="" />
+                    <h6>Market Cap</h6>
+                  </div>
+
+                  {/* Market Cap filter body that toggled by click on title  */}
+                  <ul className={styles.checkItems}>
+                    <li>
+                      <input
+                        type="radio"
+                        id="Micro"
+                        name="Market-Cap"
+                        value="Micro"
+                      />
+                      <label htmlFor="Micro">Micro</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="Small"
+                        name="Market-Cap"
+                        value="Small"
+                      />
+                      <label htmlFor="Small">Small</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="Larg"
+                        name="Market-Cap"
+                        value="Larg"
+                      />
+                      <label htmlFor="Larg">Larg</label>
+                    </li>
+                  </ul>
                 </div>
 
-                {/* Risk Level filter body that toggled by click on title  */}
-                <ul className={styles.checkItems}>
-                  <li>
-                    <input type="radio" id="Low" name="Risk-Level" value="Low" />
-                    <label htmlFor="Low">Low Risk</label>
-                  </li>
-                  <li>
-                    <input type="radio" id="Mid" name="Risk-Level" value="Mid" />
-                    <label htmlFor="Mid">Mid Risk</label>
-                  </li>
-                  <li>
-                    <input
-                      type="radio"
-                      id="High"
-                      name="Risk-Level"
-                      value="High"
-                    />
-                    <label htmlFor="High">High Risk</label>
-                  </li>
-                </ul>
+
+                {/* Risk Level filter */}
+                <div
+                  className={
+                    riskLevelFilterIsOpen
+                      ? styles.riskLevelFilter + " " + styles.open
+                      : styles.riskLevelFilter
+                  }
+                >
+
+                  {/* Risk Level filter title  */}
+                  <div
+                    className={styles.selectLabel}
+                    onClick={toggleRiskLevelFilter}
+                  >
+                    <img src={arrowIcon} alt="" />
+                    <h6>Risk Level</h6>
+                  </div>
+
+                  {/* Risk Level filter body that toggled by click on title  */}
+                  <ul className={styles.checkItems}>
+                    <li>
+                      <input type="radio" id="Low" name="Risk-Level" value="Low" />
+                      <label htmlFor="Low">Low Risk</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="Mid" name="Risk-Level" value="Mid" />
+                      <label htmlFor="Mid">Mid Risk</label>
+                    </li>
+                    <li>
+                      <input
+                        type="radio"
+                        id="High"
+                        name="Risk-Level"
+                        value="High"
+                      />
+                      <label htmlFor="High">High Risk</label>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
 
-            <div className={styles.scrollSelect}>
-            
-              {/* Strategy filter */}
-              <div className={styles.strategyFilter}>
-                <div className={styles.selectLabel}>
-                  <h6>Strategy</h6>
-                </div>
-                <div className={styles.selectContainer}>
+              <div className={styles.scrollSelect}>
 
-                  
-                  {strategySelect.map((ele, idx) => (
-                    <div className={styles.selectItem} key={idx}>
-                      <input type={ele.type} name={ele.name} id={ele.id} checked={idx === currentcheckedStrategy ? "checked" : false} onChange={() => setcurrentcheckedStrategy(idx)} />
-                      <label htmlhtmlFor={ele.id}>{ele.label}</label>
-                    </div>
-                  ))}
+                {/* Strategy filter */}
+                <div className={styles.strategyFilter}>
+                  <div className={styles.selectLabel}>
+                    <h6>Strategy</h6>
+                  </div>
+                  <div className={styles.selectContainer}>
 
 
+                    {strategySelect.map((ele, idx) => (
+                      <div className={styles.selectItem} key={idx}>
+                        <input type={ele.type} name={ele.name} id={ele.id} checked={idx === currentcheckedStrategy ? "checked" : false} onChange={() => setcurrentcheckedStrategy(idx)} />
+                        <label htmlhtmlFor={ele.id}>{ele.label}</label>
+                      </div>
+                    ))}
 
-                </div>
-              </div>
 
-              {/* Asset filter */}
-              <div className={styles.AssetFilter}>
-                <div className={styles.selectLabel}>
-                  <h6>Asset</h6>
+
+                  </div>
                 </div>
 
-                <div className={styles.selectContainer}>
-                  {AssetSelect.map((ele, idx) => (
-                    <div className={styles.selectItem} key={idx}>
-                      <input type={ele.type} name={ele.name} id={ele.id} checked={idx === currentcheckedAsset ? "checked" : false} onChange={() => setcurrentcheckedAsset(idx)} />
-                      <label htmlhtmlFor={ele.id}>{ele.label}</label>
-                    </div>
-                  ))}
+                {/* Asset filter */}
+                <div className={styles.AssetFilter}>
+                  <div className={styles.selectLabel}>
+                    <h6>Asset</h6>
+                  </div>
+
+                  <div className={styles.selectContainer}>
+                    {AssetSelect.map((ele, idx) => (
+                      <div className={styles.selectItem} key={idx}>
+                        <input type={ele.type} name={ele.name} id={ele.id} checked={idx === currentcheckedAsset ? "checked" : false} onChange={() => setcurrentcheckedAsset(idx)} />
+                        <label htmlhtmlFor={ele.id}>{ele.label}</label>
+                      </div>
+                    ))}
 
 
+
+                  </div>
 
                 </div>
-
               </div>
             </div>
           </div>
-        </div>
-        
 
-        {/* button that apply filters */}
-        <button className={styles.applyBtn}>Apply</button>
+
+          {/* button that apply filters */}
+          <div className="space-x-3">
+          <button className={styles.saveFilterBtn}>Save Filter</button>
+          <button className={styles.applyBtn}>Apply</button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -284,3 +284,123 @@
     background: var(--Blue300);
     border: 1px solid var(--Blue300);
 }
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    .APIPage-wrapper section.hero {
+        padding: 15vh 5% 5vh;
+    }
+
+    .APIPage-wrapper section.hero>h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        margin-bottom: 0;
+    }
+
+    .APIPage-wrapper section.hero>p {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .APIPage-wrapper .data-points-section h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .APIPage-wrapper .data-points-section p {
+        margin: 0 auto 3rem;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .APIPage-wrapper .data-points-section .data-points .data-point-card .card-body {
+        padding: 1rem;
+        justify-content: space-around;
+
+    }
+
+    .APIPage-wrapper .data-points-section .data-points .data-point-card .card-body img {
+        width: 30px;
+    }
+
+    .APIPage-wrapper .data-points-section .data-points .data-point-card .card-body h6 {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 15px;
+        text-align: center;
+    }
+
+    .analytics-accessible-section h3 {
+        font-size: 20px;
+        line-height: 23.17px;
+        margin-bottom: 1rem;
+    }
+
+    .analytics-accessible-section>p {
+        margin: 0 auto 3rem;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .analytics-accessible-card .card-body {
+        padding: 2rem 0rem;
+        display: flex;
+    }
+    .analytics-accessible-card .card-body .analytics-list {
+        padding: 0.5rem 0.5rem 0.5rem 2rem;
+        width: 75%;
+    }
+    .analytics-accessible-card .card-body .analytics-list li {
+        margin-bottom: 0.8rem;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 15px;
+        text-align: left;
+    }
+
+    .analytics-accessible-card .card-body .price {
+        padding: 1rem;
+    }
+
+    .analytics-accessible-card .card-body .price span {
+        font-size: 24.62px;
+        line-height: 36.94px;
+    }
+
+    .analytics-accessible-card .card-body .price p {
+        font-size: 8.99px;
+        line-height: 13.48px;
+    }
+
+    .clients-works-with-us h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .easy-to-use-card .card-body {
+        padding: 1rem;
+    }
+
+    .easy-to-use-content h5 {
+        margin-bottom: 1rem;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+    }
+}

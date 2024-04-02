@@ -1,8 +1,7 @@
 .table {
-  max-height: 80vh;
-  max-width: 100%;
-  overflow-y: auto;
-  overflow-x: auto;
+  width: 100%;
+  /* overflow-y: auto;
+  overflow-x: auto; */
   padding: 0 1rem;
   text-wrap: nowrap;
   animation: slidUp 1s ease;
@@ -44,7 +43,7 @@
   background-color: #313131;
   border-radius: 7.69px;
   padding: 0.5rem;
-  min-width: 600px;
+  width: 100%;
   position: relative;
   z-index: 2;
   cursor: pointer;
@@ -93,7 +92,7 @@
 
 .tableItemCollaps {
   transform: translateY(-6px);
-  min-width: 600px;
+  width: 100%;
   background-color: #181818;
   position: relative;
   z-index: 1;
@@ -122,7 +121,7 @@
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1024px) {
   .tableItem li {
     gap: 1rem;
   }
@@ -134,6 +133,27 @@
   .tableItemCollaps {
     padding: 1.5rem;
   }
+
+  .tableItem li {
+    gap: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.tableItem li p {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: left;
+}
+.table img {
+  width: 15px;
+}
+.tableItemCollaps p {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: left;
+}
 }
 
 

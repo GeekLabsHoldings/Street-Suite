@@ -140,7 +140,7 @@ nav .navLinks.first a{
     border-radius: 0;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
 
     nav {
         padding: 0.75rem;
@@ -191,14 +191,12 @@ nav .navLinks.first a{
         background-color: var(--Blue300);
     }
 
-    nav .mobileScreenNav {
-    }
 }
 
 
 
 
-@media only screen and (min-width: 2042px) {
+@media only screen and (min-width: 2024px) {
 
     nav ul li a {
         font-size: 28px;

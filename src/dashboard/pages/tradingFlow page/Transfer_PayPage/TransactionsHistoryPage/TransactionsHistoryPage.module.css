@@ -4,6 +4,27 @@
     border-radius: 5px;
 }
 
+.transaction_history_wrapper .date_filter p {
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+    text-align: left;
+    margin-bottom: 0.5rem;
+
+}
+
+.transaction_history_wrapper .date_filter button {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16.5px;
+    text-align: left;
+    padding: 0.6rem 1rem;
+    border: none;
+    background: rgba(32, 32, 32, 1);
+    border-radius: 4px;
+    box-shadow: 0px -1px 12.100000381469727px 0px rgba(0, 0, 0, 0.44) inset;
+}
 
 .transaction_history_wrapper h4 {
     font-family: Poppins;
@@ -11,4 +32,122 @@
     font-weight: 700;
     line-height: 42px;
     text-align: left;
+    margin-bottom: 3rem;
+}
+
+.transaction_history_wrapper .dash {
+    width: 15px;
+    height: 3px;
+    background-color: #fff;
+}
+
+
+
+.searchInput {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.searchInput input {
+    width: 100%;
+    height: 40px;
+    background-color: #313131;
+    border: 1px solid #313131;
+    border-radius: 5px;
+    color: #ffff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding: 10px 20px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.searchInput input::placeholder {
+    color: #ffff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+input:focus {
+    border: 1px solid #53ACFF;
+}
+
+.searchInput img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.transaction_history_filter_container {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid #fff;
+}
+
+.select_filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction_history_wrapper .transaction_history_filter_container .select_filters button {
+    border: none;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 0.8rem;
+    border-bottom: 1px solid #5D5D5D;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.transaction_history_wrapper .transaction_history_filter_container .select_filters button span {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.38px;
+    text-align: left;
+}
+
+.filtered_data {
+    padding: 3rem;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 5px;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtered_data p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.38px;
+    text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: 1042px) {
+
+    .transaction_history_wrapper {
+        padding: 1rem;
+    }
+
+    .transaction_history_wrapper h4 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+
+    }
+    .filtered_data {
+        padding: 1rem;
+    }
 }

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import logoImg from "../../../assets/Logo.png"
 import "./NavBar.css"
 import { Link, NavLink } from 'react-router-dom'
-import $ from 'jquery'
 
 
 const NavBar = () => {
@@ -23,7 +22,7 @@ const NavBar = () => {
 
     <section className='navbar'>
      {isNavOpen && <div className='overlay'></div>}
-      <nav className='mx-auto px-4 justify-between '>
+      <nav className='mx-auto px-[2rem] justify-between '>
 
         {/* navbar logo */}
         <Link to="/" className="logo">
@@ -40,7 +39,7 @@ const NavBar = () => {
           {/* end of navbar links */}
 
           {/* navbar links */}
-          <ul className='navLinks flex gap-[16px] lg:gap-[30px]'>
+          <ul className='navLinks flex gap-[16px] lg:gap-[4rem]'>
             <li><NavLink to="plog">Blog</NavLink></li>
             <li><NavLink to="pricing">Pricing</NavLink></li>
             <li><NavLink to="about-us">About Us</NavLink></li>
