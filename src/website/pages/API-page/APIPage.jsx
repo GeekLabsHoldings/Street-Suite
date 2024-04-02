@@ -127,13 +127,13 @@ const APIPage = () => {
                     <div className="card-body p-6 flex gap-[15px] lg:gap-8">
 
                         {/* auto typing section */}
-                        <div className="api-code-card border-animate">
+                        <div className="api-code-card border-animate w-2/3 lg:w-1/2">
                             <div className="card-content">
                                 <TypeIt options={{
                                     speed: 30,
                                     waitUntilVisible: true,
                                 }}>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur, blanditiis quis expedita eos minima asperiores, Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur, blanditiis quis expedita eos minima asperiores,consequatur quasi incidunt, dignissimos numquam veniam omnis eum commodi porro nam eius in. Omnis voluptatum ea officiis laudantium provident ab atque rerum totam illo, nulla necessitatibus cum eum, minima possimus! Illo quasi quas optio?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur, blanditiis quis expedita eos minima asperiores,</p>
                                     {/* <code>
                                         [
                                             "statusCode": 200,
@@ -153,9 +153,9 @@ const APIPage = () => {
                         </div>
 
                         {/* json , PHP buttons in easy to use section in API page */}
-                        <div className="easy-to-use-content">
+                        <div className="easy-to-use-content w-1/3 lg:w-1/2">
                             <h5>Easy To Use Documentation</h5>
-                            <div className="flex gap-4">
+                            <div className="flex gap-4 flex-col lg:flex-row">
                                 <button>Json API</button>
                                 <button>PHP API</button>
                             </div>

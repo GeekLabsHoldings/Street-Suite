@@ -226,7 +226,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
 }
 
 .easy-to-use-card .card-body .api-code-card {
@@ -391,6 +390,7 @@
         font-weight: 700;
         line-height: 30px;
         text-align: center;
+        margin-bottom: 2rem;
     }
 
     .easy-to-use-card .card-body {
@@ -402,5 +402,19 @@
         font-size: 14px;
         font-weight: 700;
         line-height: 21px;
+    }
+
+    .easy-to-use-content button {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.4px;
+    }
+
+    .api-code-card .card-content p {
+        font-size: 10px;
+    }
+
+    .easy-to-use-card .card-body {
+        gap: 1rem;
     }
 }
