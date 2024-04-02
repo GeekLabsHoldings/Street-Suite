@@ -1,43 +1,43 @@
-.disclaimerHeader h1{
+.privacyHeader h1{
     font-size: 48px;
     line-height: 72px;
     font-weight: 700;
 }
-.disclaimerHeader p{
+.privacyHeader p{
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
 }
-.disclaimerContent h4{
+.privacyContent h4{
     font-size: 40px;
     line-height: 60px;
     font-weight: 700;
 }
-.disclaimerContent p{
+.privacyContent p{
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
 }
-.disclaimerBG{
+.privacyBG{
 
    background:linear-gradient(175deg, rgba(29,36,43,1) 6%, rgba(63, 112, 158, 0.98) 47%, rgba(46,80,112,1) 65%, rgba(29,36,43,1))
 
 }
 
 @media only screen and (max-width: 676px){
-    .disclaimerHeader h1{
+    .privacyHeader h1{
         font-size: 24px;
         line-height: 36px;
     }
-    .disclaimerHeader p{
+    .privacyHeader p{
         font-size: 10px;
         line-height: 15px;
     }
-    .disclaimerContent h4{
+    .privacyContent h4{
         font-size: 16px;
         line-height: 24px;
     }
-    .disclaimerContent p{
+    .privacyContent p{
         font-size: 12px;
         line-height: 18px;
 
