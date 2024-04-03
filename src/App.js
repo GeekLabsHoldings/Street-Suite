@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import './App.css';
 
 // import all sections as components from components folder
@@ -53,10 +54,13 @@ import SignIn from './website/pages/SignIn/SignIn';
 
 
 
+
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <HelmetProvider>
         <Routes>
           <Route path="/" element={<WebsiteLayout />} >
 
@@ -128,8 +132,10 @@ function App() {
             <Route path="setting" element={<SettingPage />} />
 
           </Route>
-        </Routes>
 
+          
+        </Routes>
+        </HelmetProvider>
       </BrowserRouter>
     </div>
   );
