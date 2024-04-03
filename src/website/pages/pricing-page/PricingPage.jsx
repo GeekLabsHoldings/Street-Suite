@@ -16,7 +16,7 @@ const PricingPage = () => {
         <p>At street Suite it’s all about transparent pricing - no hidden fees, just straight forward honest rates</p>
       </Hero>
 
-      <div className='lg:container mx-auto px-4 gap-[16px] lg:gap-6 pricing-container columns-8 flex items-start justify-around py-0 lg:py-20'>
+      <div className='lg:container mx-auto px-4 gap-[16px] lg:gap-6 pricing-container columns-8 flex items-start justify-around py-[0px] lg:py-20'>
         {/* first plane */}
         <div className="gradient-border">
           <div className="plane plane-pricing recommended">
