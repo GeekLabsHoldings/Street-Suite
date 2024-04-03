@@ -212,7 +212,7 @@
 }
 
 .easy-to-use-card {
-    width: 90%;
+    max-width: 1400px;
     margin: auto;
     border-radius: 20px;
     box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);

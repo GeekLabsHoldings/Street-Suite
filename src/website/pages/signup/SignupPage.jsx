@@ -15,7 +15,7 @@ const SignupPage = () => {
                 />
             </Helmet>
     
-        <div className='Signuplayout row sm:px-10'>
+        <div className='Signuplayout row mx-0 sm:px-10'>
       <div className='desc col-lg-6 col-sm-12 '>
         <div className="col-md-7 col-sm-12 sm:py-5 m-auto" >
           {/* our logo and small intro */}

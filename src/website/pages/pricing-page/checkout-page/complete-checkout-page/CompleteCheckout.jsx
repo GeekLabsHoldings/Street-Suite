@@ -2,6 +2,7 @@ import React from 'react'
 import "./CompleteCheckout.css"
 
 import thankyouImg from "../../../../assets/thankyou-img.png"
+import { Link } from 'react-router-dom'
 
 const CompleteCheckout = () => {
   return (
@@ -16,7 +17,7 @@ const CompleteCheckout = () => {
               <h6>premium Plan</h6>
 
               <div className="receipt-price">
-                <ul className="plane-points space-y-2 lg:px-4">
+                <ul className="plane-points space-y-4 lg:px-4">
                   <li className='available '>
                     <svg className='true' width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.74156 0.270361C10.0861 0.630843 10.0861 1.21531 9.74156 1.57576L3.85919 7.72963C3.5146 8.09012 2.95601 8.09012 2.61138 7.72963L0.258433 5.26808C-0.0861444 4.90759 -0.0861444 4.32322 0.258433 3.96272C0.603011 3.60223 1.16169 3.60223 1.50627 3.96272L3.2353 5.77147L8.49379 0.270361C8.83838 -0.0901204 9.39697 -0.0901204 9.74156 0.270361Z" fill="#53ACFF" />
@@ -50,7 +51,7 @@ const CompleteCheckout = () => {
                 <p><span>$15</span> / month</p>
               </div>
 
-              <button>Dashboard</button>
+              <Link to="/dashboard">Dashboard</Link>
 
               <p>*** Lorem ipsum dolor sit amet, consectetur.</p>
             </div>

@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import SearchBar from '../../../../components/searchBar/SearchBar'
-import SearchBarStyles from "../../../../components/searchBar/SearchBar.module.css";
-import searchIcon from "../../../../assets/search.svg";
+import React, { useEffect } from 'react'
 import styles from "./MyCoursesPage.module.css";
 
-import notifIcon from "../../../../assets/notif.svg";
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import ProgressBar from '@ramonak/react-progress-bar';
 
 
 const MyCoursesPage = () => {
 
-    const [isNavOpen, setIsNavOpen] = useState(false);
 
 
     useEffect(() => {

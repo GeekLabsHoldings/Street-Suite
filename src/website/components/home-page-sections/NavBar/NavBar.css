@@ -106,7 +106,7 @@ nav .navLinks li a.active {
     background-color: #53acff9c;
 }
 
-nav .AuthButtons button.signUp {
+nav .AuthButtons a.signUp {
     outline: none;
     color: #fff;
     background: transparent;
@@ -118,7 +118,7 @@ nav .AuthButtons button.signUp {
     font-size: 12px;
 }
 
-nav .AuthButtons button.logIn {
+nav .AuthButtons a.logIn {
     outline: none;
     color: #fff;
     background: transparent;
@@ -196,7 +196,7 @@ nav .navLinks.first a{
 
 
 
-@media only screen and (min-width: 2024px) {
+@media only screen and (min-width: 2224px) {
 
     nav ul li a {
         font-size: 28px;

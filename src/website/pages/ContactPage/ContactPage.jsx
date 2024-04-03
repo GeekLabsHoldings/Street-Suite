@@ -18,7 +18,7 @@ const ContactPage = () => {
 
 
             <div className='Msglayout'>
-                <div className='forBG row contactBg'>
+                <div className='forBG row contactBg mx-0'>
                     {/* other ways to get in touch */}
 
                     <div className="col-lg-6 col-sm-12 px-5" >

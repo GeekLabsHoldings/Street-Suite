@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,Fragment } from 'react'
 import "./LeaderBoardPage.css"
 import Hero from '../../components/home-page-sections/Hero/Hero'
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import {Link} from 'react-router-dom'
 
 import $ from 'jquery';
 
@@ -810,7 +810,7 @@ const LeaderBoardPage = () => {
                         </div>
                       </div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                      <a href="">Read more</a>
+                      <Link to="/blogs/specific-blog">Read more</Link>
                     </div>
                   </div>
                   <div className='px-2'>
@@ -823,7 +823,7 @@ const LeaderBoardPage = () => {
                         </div>
                       </div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                      <a href="">Read more</a>
+                      <Link to="/blogs/specific-blog">Read more</Link>
                     </div>
                   </div>
                   <div className='px-2'>
@@ -836,7 +836,7 @@ const LeaderBoardPage = () => {
                         </div>
                       </div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                      <a href="">Read more</a>
+                      <Link to="/blogs/specific-blog">Read more</Link>
                     </div>
                   </div>
                   <div className='px-2'>
@@ -849,7 +849,7 @@ const LeaderBoardPage = () => {
                         </div>
                       </div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                      <a href="">Read more</a>
+                      <Link to="/blogs/specific-blog">Read more</Link>
                     </div>
                   </div>
                   <div className='px-2'>
@@ -862,7 +862,7 @@ const LeaderBoardPage = () => {
                         </div>
                       </div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                      <a href="">Read more</a>
+                      <Link to="/blogs/specific-blog">Read more</Link>
                     </div>
                   </div>
                   <div className='px-2'>
@@ -875,7 +875,7 @@ const LeaderBoardPage = () => {
                         </div>
                       </div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                      <a href="">Read more</a>
+                      <Link to="/blogs/specific-blog">Read more</Link>
                     </div>
                   </div>
                 </Slider>
@@ -890,7 +890,7 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                  <a href="">Read more</a>
+                  <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
                 <div className="story">
                   <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
@@ -901,7 +901,7 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                  <a href="">Read more</a>
+                  <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
                 <div className="story">
                   <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
@@ -912,7 +912,7 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                  <a href="">Read more</a>
+                  <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
                 <div className="story">
                   <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
@@ -923,7 +923,7 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisfcg elit, sed do eiusmod tempor incididunt ut laore </p>
-                  <a href="">Read more</a>
+                  <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
               </div>
             </div>
@@ -950,7 +950,7 @@ const LeaderBoardPage = () => {
                 </div>
               </div>
 
-              <p>Can’t find your broker? <a href="">Contact Us</a>.</p>
+              <p>Can’t find your broker? <Link to="/contact-us">Contact Us</Link>. </p>
             </div>
 
           </div>

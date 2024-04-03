@@ -1,6 +1,8 @@
 import React from 'react'
 import "./TrainingsSection.css"
 import trainingsImg from "../../../assets/tranings-img.png"
+import {Link} from 'react-router-dom'
+
 
 const TrainingsSection = () => {
     return (
@@ -69,7 +71,7 @@ const TrainingsSection = () => {
                     <div className="signUpNow-body">
                         <div className="signUpNow-content">
                             <h4>Seeing is believing, access All <span>Street Suite Pro</span> <br /> Features for Free, no commitments</h4>
-                            <button>Sign Up Now</button>
+                            <Link to="/signup">Sign Up Now</Link>
                         </div>
                     </div>
                 </div>

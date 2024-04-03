@@ -24,7 +24,7 @@ const Testmonial = () => {
                         </div>
                         <div className="opinion mb-8">
                             <p className='mb-6'>Great Experience! Trading made easy!</p>
-                            <a href="">8 Recommendations</a>
+                            <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
                             <span>10:30 PM | feb 2nd, 2023</span>
@@ -45,7 +45,7 @@ const Testmonial = () => {
                         </div>
                         <div className="opinion mb-8">
                             <p className='mb-6'>Great Experience! Trading made easy!</p>
-                            <a href="">8 Recommendations</a>
+                            <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
                             <span>10:30 PM | feb 2nd, 2023</span>
@@ -66,7 +66,7 @@ const Testmonial = () => {
                         </div>
                         <div className="opinion mb-8">
                             <p className='mb-6'>Great Experience! Trading made easy!</p>
-                            <a href="">8 Recommendations</a>
+                            <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
                             <span>10:30 PM | feb 2nd, 2023</span>
@@ -87,7 +87,7 @@ const Testmonial = () => {
                         </div>
                         <div className="opinion mb-8">
                             <p className='mb-6'>Great Experience! Trading made easy!</p>
-                            <a href="">8 Recommendations</a>
+                            <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
                             <span>10:30 PM | feb 2nd, 2023</span>

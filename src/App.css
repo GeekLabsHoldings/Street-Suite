@@ -201,6 +201,10 @@ line-height: 24px;
   line-height: 16px;
 }
 
+.notification_window .selected > a {
+  color: #53ACFF;
+  border-bottom: 1px solid #53ACFF ;
+}
 
 @media only screen and (max-width:767px) {
   .formHead h3 , .formHead span{

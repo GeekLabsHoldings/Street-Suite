@@ -33,29 +33,29 @@ const NavBar = () => {
         <div className={`mobileScreenNav ${isNavOpen ? "open" : ""} hidden md:flex justify-around w-[50%] gap-[16px] lg:gap-[0px]`}>
           {/* navbar links */}
           <ul className='navLinks first flex gap-[16px] lg:gap-0'>
-            <li ><NavLink to="quizzes">Quizzes</NavLink></li>
-            <li ><NavLink to="Leaderboard">Leaderboard</NavLink></li>
+            <li ><NavLink to="/quizzes">Quizzes</NavLink></li>
+            <li ><NavLink to="/leaderboard">Leaderboard</NavLink></li>
           </ul>
           {/* end of navbar links */}
 
           {/* navbar links */}
           <ul className='navLinks flex gap-[16px] lg:gap-[4rem]'>
-            <li><NavLink to="plog">Blog</NavLink></li>
-            <li><NavLink to="pricing">Pricing</NavLink></li>
-            <li><NavLink to="about-us">About Us</NavLink></li>
+            <li><NavLink to="/blogs">Blog</NavLink></li>
+            <li><NavLink to="/pricing">Pricing</NavLink></li>
+            <li><NavLink to="/about-us">About Us</NavLink></li>
           </ul>
           {/* end of navbar links */}
         </div>
 
 
         {/* navbar auth bttons */}
-        <div className="AuthButtons hidden md:flex gap-[16px]">
-          <button className='logIn'>Log In</button>
-          <button className='signUp'>Sign Up</button>
+        <div className="AuthButtons hidden lg:flex gap-[16px]">
+          <Link to="/login" className='logIn'>Log In</Link>
+          <Link to="/signup" className='signUp'>Sign Up</Link>
         </div>
         {/*  end of navbar auth bttons */}
 
-        <div className={` bars flex md:hidden ${isNavOpen ? "open" : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
+        <div className={` bars flex lg:hidden ${isNavOpen ? "open" : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
           <div className='bar'></div>
         </div>
       </nav>

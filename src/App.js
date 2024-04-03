@@ -6,9 +6,7 @@ import './App.css';
 import HomePage from './website/pages/home-page/HomePage';
 import QuizzesPage from './website/pages/Quizzes/quizzes-page/QuizzesPage';
 import LeaderBoardPage from './website/pages/leaderboard/LeaderBoardBage';
-import FaqPage from './website/pages/FAQ-page/FaqPage';
 import PricingPage from './website/pages/pricing-page/PricingPage';
-import FeaturesPage from './website/pages/features-page/FeaturesPage';
 import QuizPage from './website/pages/Quizzes/quiz-page/QuizPage';
 import QuizzesFiltersPage from './website/pages/Quizzes/quizzesFilters-page/QuizzesFiltersPage';
 import QuizResultsPage from './website/pages/Quizzes/quizResults-page/QuizResultsPage';
@@ -55,13 +53,15 @@ import SignIn from './website/pages/SignIn/SignIn';
 
 
 
-
 function App() {
+
+
   return (
     <div className="App">
       <BrowserRouter>
       <HelmetProvider>
         <Routes>
+
           <Route path="/" element={<WebsiteLayout />} >
 
             <Route index element={<HomePage />} />
@@ -73,15 +73,12 @@ function App() {
             </Route>
 
             <Route path='leaderboard' element={<LeaderBoardPage />} />
-            <Route path='faq' element={<FaqPage />} />
             <Route path='pricing' element={<PricingPage />} />
             <Route path='checkout' element={<CheckOutPage />} />
             <Route path='complete-checkout' element={<CompleteCheckout />} />
-            <Route path='features' element={<FeaturesPage />} />
             <Route path='api' element={<APIPage />} />
             <Route path='about-us' element={<AboutUsPage />} />
-            <Route path='signup' element={< SignupPage />} />
-            <Route path='contactus' element={<ContactPage />} />
+            <Route path='contact-us' element={<ContactPage />} />
             <Route path='change-logs' element={<ChangeLogs />} />
             <Route path='top-brokers' element={<TopBroker />} />
             <Route path='disclaimer' element={<DisclaimerPage />} />
@@ -90,10 +87,11 @@ function App() {
             <Route path='careers/positions' element={<PositionsPage />} />
             <Route path='blogs' element={<BlogPage />} />
             <Route path='blogs/specific-blog' element={<SpecificArticle />} />
-            <Route path='signin' element={<SignIn />} />
 
           </Route>
-
+          
+          <Route path='/login' element={<SignIn />} />
+          <Route path='/signup' element={< SignupPage />} />
 
           <Route path='/dashboard' element={<DashboardLayout />}>
 
@@ -133,7 +131,6 @@ function App() {
 
           </Route>
 
-          
         </Routes>
         </HelmetProvider>
       </BrowserRouter>

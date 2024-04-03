@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import AcrossGlobal from '../../components/home-page-sections/AcrossGlobal/AcrossGlobal';
 import AlertsSection from '../../components/home-page-sections/AlertsSection/AlertsSection';
 import CompaniesCarousel from '../../components/home-page-sections/CompaniesCarousel/CompaniesCarousel';
@@ -30,7 +31,7 @@ const HomePage = () => {
       <Hero>
         <h1>Trading Opportunities<br /> with <span> STREET SUITE’s </span>Alerts</h1>
         <p className='sm:container'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <button>Get Started</button>
+        <Link to="/signup">Get Started</Link>
         <img src={heroImg} alt="" className='hidden md:block' />
       </Hero>
       <AlertsSection />

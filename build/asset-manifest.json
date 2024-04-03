@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.153ee3e9.css",
-    "main.js": "/static/js/main.d8a0b013.js",
+    "main.css": "/static/css/main.45b9e0ec.css",
+    "main.js": "/static/js/main.804cc3e8.js",
     "static/js/453.34bc8f3b.chunk.js": "/static/js/453.34bc8f3b.chunk.js",
     "static/media/BG gradient.png": "/static/media/BG gradient.413d202560e488f8efc2.png",
     "static/media/electric-bg.png": "/static/media/electric-bg.477d71d36463b67c0507.png",
@@ -78,12 +78,12 @@
     "static/media/mail-icon.svg": "/static/media/mail-icon.6e8fd1b6bfa3de6ad04bb2cebc1a12aa.svg",
     "static/media/close icon.svg": "/static/media/close icon.3317e88c3f7eb0d27f40101d0a21e148.svg",
     "static/media/arrow icon.svg": "/static/media/arrow icon.944d8c2b6684d4cfc0f3619fcbfc99e1.svg",
-    "main.153ee3e9.css.map": "/static/css/main.153ee3e9.css.map",
-    "main.d8a0b013.js.map": "/static/js/main.d8a0b013.js.map",
+    "main.45b9e0ec.css.map": "/static/css/main.45b9e0ec.css.map",
+    "main.804cc3e8.js.map": "/static/js/main.804cc3e8.js.map",
     "453.34bc8f3b.chunk.js.map": "/static/js/453.34bc8f3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.153ee3e9.css",
-    "static/js/main.d8a0b013.js"
+    "static/css/main.45b9e0ec.css",
+    "static/js/main.804cc3e8.js"
   ]
 }

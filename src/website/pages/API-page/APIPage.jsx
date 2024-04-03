@@ -11,6 +11,7 @@ import dataPointImg6 from "../../assets/data-points6.png"
 import CompaniesCarousel from '../../components/home-page-sections/CompaniesCarousel/CompaniesCarousel'
 import TypeIt from 'typeit-react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 
 const APIPage = () => {
     return (
@@ -31,8 +32,8 @@ const APIPage = () => {
                     <h1 ><span> STREET SUITE</span> <br /> API You Can Trust </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                     <div className="flex gap-6">
-                        <button>Get Started</button>
-                        <button>API Documentation</button>
+                        <Link to="/signup">Get Started</Link >
+                        <Link to="" >API Documentation</Link >
                     </div>
 
                 </Hero>
@@ -118,9 +119,6 @@ const APIPage = () => {
                             </div>
 
                         </div>
-
-
-
                     </div>
 
 
@@ -133,7 +131,7 @@ const APIPage = () => {
 
 
                     {/* easy to use section in API page  */}
-                    <div className="easy-to-use">
+                    <div className="easy-to-use px-[16px]">
 
                         <div className="easy-to-use-card border-animate">
                             <div className="card-body p-6 flex gap-[15px] lg:gap-8">

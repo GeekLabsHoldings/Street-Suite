@@ -10,6 +10,15 @@ const CheckOutPage = () => {
 
     const navigate = useNavigate()
 
+    const handleCardDigits = (e) => {
+        console.log(e.keyCode);
+        if (e.target.keyCode !== 8) {
+          if (e.target.value.length === 4 || e.target.value.length === 9 || e.target.value.length === 14) {
+            e.target.value = e.target.value += ' ';
+          }
+        }
+      };
+      
 
     return (
         <div className='checkout-wrapper'>
@@ -44,9 +53,9 @@ const CheckOutPage = () => {
                         <h6>Card Details</h6>
                         <div className="card-details w-fit">
                             <div className="card-body space-y-6">
-                                <div className="form-input">
+                                <div className="form-input card-number">
                                     <label htmlFor="">Card Number</label>
-                                    <input type="text" name="" id="" />
+                                    <input type="text" name="" id="" pattern="(\d{4}\s?){4}" placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;" maxlength="19" onKeyUp={(e)=>handleCardDigits(e)}/>
                                 </div>
 
                                 <div className="form-input">
@@ -182,7 +191,7 @@ const CheckOutPage = () => {
                                 </div>
                                 <div className="plane-action">
                                     <p>Having second thoughts?</p>
-                                    <Link to="/checkout">Check other plans</Link>
+                                    <Link to="/pricing">Check other plans</Link>
 
                                 </div>
                             </div>

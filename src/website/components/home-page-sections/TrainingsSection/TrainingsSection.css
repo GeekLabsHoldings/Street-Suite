@@ -86,7 +86,7 @@ section.trainings {
     border-radius: 5px;
 }
 
-.signUpNow button {
+.signUpNow a {
     padding: 1rem 3rem;
     background-color: var(--Blue300);
     font-size: 16px;
@@ -180,7 +180,7 @@ section.trainings {
         text-align: center;
     }
 
-    .signUpNow .signUpNow-body .signUpNow-content button {
+    .signUpNow .signUpNow-body .signUpNow-content a {
         padding: 0.7rem 2rem;
         font-size: 12px;
     }
@@ -188,7 +188,7 @@ section.trainings {
 
 
 
-@media only screen and (min-width: 2024px) {
+@media only screen and (min-width: 2224px) {
     .trainings-container {
         max-width: 1900px;
     }

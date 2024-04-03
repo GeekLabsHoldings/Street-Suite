@@ -31,7 +31,7 @@ section.testmonial .card .opinion p {
     font-size: 19px;
 }
 
-section.testmonial .card .opinion a {
+section.testmonial .card .opinion p:last-child {
     font-size: 16px;
     color: var(--Blue300);
     font-weight: 600;
@@ -122,7 +122,7 @@ section.testmonial .testmonial-container .card:hover {
 
     }
 
-    section.testmonial .card .opinion a {
+    section.testmonial .card .opinion p:last-child {
         font-family: Poppins;
         font-size: 10px;
         font-weight: 700;
@@ -144,7 +144,7 @@ section.testmonial .testmonial-container .card:hover {
 
 
 
-@media only screen and (min-width: 2024px) {
+@media only screen and (min-width: 2224px) {
 .testmonial-container {
     max-width: 1800px;
 }
@@ -154,7 +154,7 @@ section.testmonial .section-title {
     font-size: 70px;
 }
 
-section.testmonial .card .opinion p {
+section.testmonial .card .opinion p:first-child {
     font-size: 26px;
 }
 }
