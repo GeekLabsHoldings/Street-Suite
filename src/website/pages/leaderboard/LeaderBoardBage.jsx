@@ -100,12 +100,12 @@ const LeaderBoardPage = () => {
         <div className={`overlay ${isSideFilterOpen ? 'open' : ''}`}></div>
 
         <Hero>
-          <h1>Top 20 Traders on Street Suite<br /><span> STREET SUITE’s </span></h1>
+          <h1>Top 20 Traders on <br /><span> STREET SUITE </span></h1>
         </Hero>
 
-        <div className="lg:container mx-auto px-[16px] flex flex-col lg:flex-row items-start  py-16 gap-6 lg:gap-12">
+        <div className="px-[10%]  flex flex-col lg:flex-row items-start  pb-16 gap-6 lg:gap-12">
 
-          <div className="ranking-container w-full lg:w-3/5">
+          <div className="ranking-container w-full lg:w-2/3">
             <div className="ranking-tabs">
               <ul class="tabs-nav grid grid-cols-3 p-0 m-0 list-unstyled">
                 {/* taps that show the appropriate content in leaderBoard page */}
@@ -729,7 +729,7 @@ const LeaderBoardPage = () => {
 
 
           {/* trader types on the side in leaderboard page */}
-          <div className="side-trader w-full lg:w-96">
+          <div className="side-trader w-full lg:w-1/3">
 
             <div className={`trader-types ${isSideFilterOpen ? 'open' : ''} w-full mb-6`}>
 
@@ -963,8 +963,8 @@ const LeaderBoardPage = () => {
 
         {/*  connect to your broker modal  */}
         <Transition appear show={isOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeModal}>
-            <div className="fixed inset-0 backdrop-blur-sm" aria-hidden="true" />
+          <Dialog as="div" className="relative z-10 interactiveBroker-modal" onClose={closeModal}>
+            <div className="fixed inset-0 overlay" aria-hidden="true" />
 
 
             <div className="fixed inset-0 overflow-y-auto">
@@ -997,7 +997,7 @@ const LeaderBoardPage = () => {
                           </div>
                         </div>
                       </div>
-                      <p><a href="">Learn more</a> about Interactive Brokers or <a href="">compare</a> it with other brokers.</p>
+                      <p><Link to="">Learn more</Link> about Interactive Brokers or <Link to="">compare</Link> it with other brokers.</p>
                       <div className="line"></div>
                       <div className="input-box flex flex-col items-start">
                         <label className="text-sm text-gray-500">
@@ -1015,7 +1015,7 @@ const LeaderBoardPage = () => {
                         <input type="checkbox" id="Remember-me" />
                         <label for="Remember-me">Remember me</label>
                       </div>
-                      <p className='notic'>By clicking “Connect” i confirm that I have read the <a href="">warnings</a> and the <a href="">terms of us</a> and i accept all the risk.</p>
+                      <p className='notic'>By clicking “Connect” I confirm that I have read the <Link to="/disclaimer">disclaimer</Link> and the <Link to="/terms&conditions">terms and conditions</Link> and I accept.</p>
                       <div className="mt-4">
                         <button
                           type="button"

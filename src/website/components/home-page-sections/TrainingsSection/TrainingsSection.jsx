@@ -70,7 +70,7 @@ const TrainingsSection = () => {
                 <div className="signUpNow border-animate w-full order-3">
                     <div className="signUpNow-body">
                         <div className="signUpNow-content">
-                            <h4>Seeing is believing, access All <span>Street Suite Pro</span> <br /> Features for Free, no commitments</h4>
+                            <h4>Seeing is believing, access All <span> Street Suite </span> <br /> Features for Free, no commitments</h4>
                             <Link to="/signup">Sign Up Now</Link>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ const CommingSoon = () => {
         {/* title of section */}
         <h3 className='section-title'>COMING SOON</h3>
 
-        <div className='lg:container mx-auto px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-6 commingSoon-container'>
+        <div className='mx-auto px-[16px] lg:px-[12%] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-6 commingSoon-container'>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo
             </p>

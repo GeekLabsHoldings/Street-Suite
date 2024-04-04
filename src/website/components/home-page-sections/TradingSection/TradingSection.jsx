@@ -13,7 +13,7 @@ const TradingSction = () => {
             {/* title of the section */}
             <h3 className='section-title'>Trading</h3>
 
-            <div className="lg:container mx-auto px-0 md:px-4 grid grid-cols-1 md:grid-cols-2 gap-12 gap-y-6 trading-container columns-8">
+            <div className="mx-auto lg:px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 gap-y-6 trading-container columns-8">
 
                 {/* image of trading section */}
                 <div className="img-container hidden md:block">

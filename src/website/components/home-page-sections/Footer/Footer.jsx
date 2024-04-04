@@ -25,13 +25,13 @@ const Footer = () => {
 
                         <ul>
                             <li>
-                                <Link to="">Lorem ipsum dolor sit amet consectetur.</Link>
+                                <Link >Lorem ipsum dolor sit amet consectetur.</Link>
                             </li>
                             <li>
-                                <Link to="">Lorem ipsum dolor sit amet.</Link>
+                                <Link >Lorem ipsum dolor sit amet.</Link>
                             </li>
                             <li>
-                                <Link to="">Lorem ipsum dolor sit amet consectetur.</Link>
+                                <Link >Lorem ipsum dolor sit amet consectetur.</Link>
                             </li>
                         </ul>
                     </div>
@@ -42,10 +42,10 @@ const Footer = () => {
 
                         <ul>
                             <li>
-                                <Link to="">Documenation</Link>
+                                <Link >Documenation</Link>
                             </li>
                             <li>
-                                <Link to="">Knoweledge base</Link>
+                                <Link >Knoweledge base</Link>
                             </li>
                             <li>
                                 <Link to="/api">API</Link>
@@ -71,7 +71,7 @@ const Footer = () => {
                                 <Link to="/privacy&security">Privacy</Link>
                             </li>
                             <li>
-                                <Link to="">Terms & Conditions</Link>
+                                <Link >Terms & Conditions</Link>
                             </li>
                             <li>
                                 <Link to="disclaimer">Disclaimer</Link>
@@ -85,13 +85,13 @@ const Footer = () => {
 
                         <ul>
                             <li>
-                                <Link to="">Twitter</Link>
+                                <Link >Twitter</Link>
                             </li>
                             <li>
-                                <Link to="">Reddit</Link>
+                                <Link >Reddit</Link>
                             </li>
                             <li>
-                                <Link to="">Discord</Link>
+                                <Link >Discord</Link>
                             </li>
                         </ul>
                     </div>

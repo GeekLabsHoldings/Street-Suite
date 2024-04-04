@@ -32,7 +32,7 @@ const HomePage = () => {
         <h1>Trading Opportunities<br /> with <span> STREET SUITE’s </span>Alerts</h1>
         <p className='sm:container'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
         <Link to="/signup">Get Started</Link>
-        <img src={heroImg} alt="" className='hidden md:block' />
+        <img src={heroImg} alt="" className='hidden lg:block' />
       </Hero>
       <AlertsSection />
       <TradingSction />

@@ -13,7 +13,7 @@ section.alerts {
     left: 10%;
     padding: 0 2rem;
     transform: translateY(-50%);
-    font-size: 63px;
+    font-size: clamp(24px , calc(3vw + 1rem) , 160px);
     line-height: normal;
     color: var(--Blue300);
     font-weight: 800;
@@ -59,7 +59,7 @@ section.alerts {
 }
 
 .alert-card .content p {
-    font-size: 16px;
+    font-size:  clamp(10px, calc(0.2vw + 0.5rem), 36px);
     text-align: center;
 }
 
@@ -223,7 +223,7 @@ section.alerts {
 
 /* responsive mobile view  */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
 
     .alert-card {
         height: 180px;
@@ -331,6 +331,5 @@ section.alerts {
         left: 10%;
         padding: 0 2rem;
         transform: translateY(-50%);
-        font-size: 90px;
     }  
 }

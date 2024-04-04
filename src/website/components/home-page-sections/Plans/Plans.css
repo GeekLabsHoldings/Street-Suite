@@ -11,13 +11,14 @@ section.plans {
 
 section.plans .section-title {
     color: #fff;
-    font-size: 48px;
+    font-size:  clamp(22px, calc(3.1vw + 0.5rem),140px);
     left: 50%;
     transform: translate(-50%, -50%);
+    text-wrap: nowrap;
 }
 
 .plans-container {
-    max-width: 1400px;
+    max-width: 90%;
 }
 
 .plane {
@@ -86,9 +87,8 @@ section.plans .section-title {
 }
 
 .plane-title {
-    font-size: 23px;
+    font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
     font-weight: 700;
-    line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
 }
@@ -105,9 +105,8 @@ section.plans .section-title {
 }
 
 .plane .plane-points li {
-    font-size: 16px;
+    font-size: clamp(10px, calc(0.5vw + 0.5rem), 60px);
     font-weight: 400;
-    line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
     position: relative;
@@ -127,9 +126,8 @@ section.plans .section-title {
 
 .plane-price p {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
     font-weight: 400;
-    line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
     color: #5D5D5D;
@@ -138,9 +136,8 @@ section.plans .section-title {
 
 .plane-price p>span {
     font-family: Poppins;
-    font-size: 63px;
+    font-size:  clamp(32px, calc(3vw + 0.5rem),120px);;
     font-weight: 700;
-    line-height: 65px;
     letter-spacing: 0px;
     text-align: left;
     color: #fff;
@@ -148,17 +145,15 @@ section.plans .section-title {
 
 .plane-action a {
     position: relative;
-    width: 115px;
-    height: 40px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: clamp(8px, calc(0.4vw + 0.5rem), 40px);
     font-weight: 600;
-    line-height: 17px;
     box-shadow: -1px -1px 2.6px 0px #bbbbbb;
     transition: all 0.2s;
+    padding: 0.5rem 2rem;
 }
 
 
@@ -180,9 +175,8 @@ section.plans .section-title {
 .recommended-plane h6 {
     text-align: center;
     font-family: Poppins;
-    font-size: 19px;
+    font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
     font-weight: 400;
-    line-height: 29px;
     letter-spacing: 0em;
     margin-top: 1.5rem;
 }
@@ -190,10 +184,6 @@ section.plans .section-title {
 @media only screen and (max-width: 1024px) {
     section.plans {
         padding: 20% 1rem;
-    }
-    section.plans .section-title {
-        font-size: 24px;
-        width: max-content;
     }
 
     section.plans .plans-container{
@@ -218,31 +208,10 @@ section.plans .section-title {
     }
 
     .plane-price p {
-        font-family: Poppins;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 20px;
-    }
-
-    .plane-price p>span {
-        font-family: Poppins;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 48px;
-        letter-spacing: 0px;
-        text-align: left;
-    }
-
-    .plane-price p {
         margin-bottom: 1rem;
     }
 
     .plane .plane-action a {
-        font-family: Poppins;
-        font-size: 7px;
-        font-weight: 600;
-        line-height: 8px;
-        letter-spacing: 0em;
         width: 80px;
         height: 30px;
     }
@@ -254,11 +223,7 @@ section.plans .section-title {
 
 
 
-@media only screen and (min-width: 2224px) {
-
-    .plans-container {
-        max-width: 1900px;
-    }
+/* @media only screen and (min-width: 2224px) {
 
     section.plans .section-title {
         color: #fff;
@@ -290,4 +255,4 @@ section.plans .section-title {
     .recommended-plane h6 {
         font-size: 26px;
     }
-}
+} */

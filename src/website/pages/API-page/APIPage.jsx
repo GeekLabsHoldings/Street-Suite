@@ -32,7 +32,7 @@ const APIPage = () => {
                     <h1 ><span> STREET SUITE</span> <br /> API You Can Trust </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                     <div className="flex gap-6">
-                        <Link to="/signup">Get Started</Link >
+                        <Link to="">Get Started</Link >
                         <Link to="" >API Documentation</Link >
                     </div>
 
