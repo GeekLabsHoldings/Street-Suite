@@ -50,6 +50,7 @@ import SingleCoursePage from './dashboard/pages/training page/MyCourses/SingleCo
 import DisclaimerPage from './website/pages/DisclaimerPage/DisclaimerPage';
 import PrivacyAndSecurity from './website/pages/PrivacyAndSecurity-page/PrivacyAndSecurity';
 import SignIn from './website/pages/SignIn/SignIn';
+import TermsAndConditions from './website/pages/TermsAndConditions/TermsAndConditions';
 
 
 
@@ -87,6 +88,8 @@ function App() {
             <Route path='blogs' element={<BlogPage />} />
             <Route path='blogs/specific-blog' element={<SpecificArticle />} />
             <Route path='signin' element={<SignIn />} />
+            <Route path='terms&conditions' element={< TermsAndConditions/>} />
+
 
           </Route>
 
