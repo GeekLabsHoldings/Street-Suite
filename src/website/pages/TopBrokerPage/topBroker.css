@@ -1,6 +1,6 @@
 .brokersHeader h1{
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 3rem;
+    line-height: 4.5rem;
     font-weight: 700;
 }
 .brokersHeader{
@@ -8,8 +8,8 @@
 }
 
 .rightPrt h4{
-    font-size: 28px;
-    line-height: 42px;
+    font-size: 1.75rem;
+    line-height: 2.625rem;
     font-weight: 700;
 }
 .rightPrt{
@@ -37,8 +37,8 @@
     background: linear-gradient(230deg, #00000040 40%, #53ACFF 100%);
 }
 .spacedList span{
-    font-size: 16px;
-    line-height:24px ;
+    font-size: 1rem;
+    line-height:1.5rem ;
     font-weight: 400;
 }
 .topBrokerList{
@@ -65,16 +65,16 @@
     border-right: 1px solid #979797;
 }
 .elementBorder h5{
-    font-size: 19px;
-    line-height: 28.5px;
+    font-size: 1.2rem;
+    line-height: 1.78rem;
     font-weight: 400;
 }
 .textToImg{
     padding: 0.6rem 0.1rem;
 }
 .textToImg h4{
-    font-size: 21px;
-    line-height: 34.5px;
+    font-size: 1.3125rem;
+    line-height:2.156rem;
 }
 .holder{
 position: relative;
@@ -86,8 +86,8 @@ position: relative;
     right: -6px;
 }
 .imgDivHeader{
-    width: 80px;
-    height: 93px;
+    width: 5rem;
+    height: 5.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,8 +101,8 @@ position: relative;
 }
 /* compare table css */
 .compareHeader h1{
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 3rem;
+    line-height: 4.5rem;
     font-weight: 700;
     }
     .compareTable{
@@ -111,24 +111,24 @@ position: relative;
         border-top-right-radius:1.5rem ;
     }
     .compareTable h5{
-        font-size: 19px;
-        line-height: 28.5px;
+        font-size: 1.2rem;
+        line-height: 1.78rem;
         font-weight: 700;
     }
     .compareTable h6{
-        font-size: 19px;
-        line-height: 28.5px;
+        font-size: 1.2rem;
+        line-height: 1.78rem;
         font-weight: 700;
     }
     .providerTitle h4 {
-        font-size: 23px;
-        line-height: 34.5px;
+        font-size: 1.44rem;
+        line-height:2.156rem;
         font-weight: 700;
     }
     .visitWebsite span{
         color: #979797;
-        font-size: 11px;
-        line-height: 16.5px;
+        font-size:  0.6875rem;
+        line-height: 1.03rem;
         font-weight: 400;
     }
     .rightThickBorder{
@@ -141,13 +141,13 @@ position: relative;
         background-color: rgba(41, 45, 50, 0.9);
     }
     .providerFeatureName h4{
-        font-size: 19px;
-        line-height: 28.5px;
+        font-size: 1.2rem;
+        line-height: 1.78rem;
         font-weight: 700;
     }
     .providerFeature h6{
-        font-size: 28px;
-        line-height: 42px;
+        font-size: 1.75rem;
+        line-height: 2.625rem;
         font-weight: 400;
     }
     .comparePrt{
@@ -174,90 +174,90 @@ position: relative;
 
 @media only screen and (max-width: 676px){
     .brokersHeader h1 , .brokersHeader span{
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
     }
 
     .topBrokerSM h4{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
     .oneBrokerFonts h5{
-            font-size: 10px !important;
-            line-height:15px !important;
+            font-size: 0.625rem !important;
+            line-height:0.94rem !important;
     }
     .brokersHeader{
         margin-bottom: 3rem !important;
     }
     .rightPrt h4{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
     .textSection p ,.topBrokerList span{
         font-weight: 400;
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
     }
     .spacedList{
         gap: 0.8rem;
         list-style: none;
     }
     .ourPicks{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
     /* header css */
     .textToImg h4{
-        font-size: 11px;
-        line-height: 16.5px;
+        font-size:  0.6875rem;
+        line-height: 1.03rem;
         font-weight: 700;
     }
     .elementBorder h5{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
     }
     .imgDivHeader{
-        width: 33px ;
-        height: 31px;
+        width: 2.0625rem ;
+        height: 1.94rem;
     }
     .starsImg{
-        width: 57px;
+        width: 3.56rem;
         height: 9.67px;
     }
     .holder{
         padding: 0.4rem 0rem;
     }
     .compareTable h5{
-        font-size: 15px;
-        line-height: 24px;
+        font-size: 0.94rem;
+        line-height: 1.5rem;
 
     }
     .compareTable h6{
-        font-size: 15px;
-        line-height: 24px;
+        font-size: 0.94rem;
+        line-height: 1.5rem;
 
     }
     .providerTitle h4 {
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.94rem;
+        line-height: 1.56rem;
         font-weight: 600;
     }
     .visitWebsite span{
         font-size: 8px;
-        line-height: 14px;
+        line-height: 0.875rem ;
     }
     .visitWebsite .forbtn{
-        font-size: 8px;
-        line-height: 10px;
+        font-size: 0.5rem;
+        line-height: 0.625rem;
     }
     .providerFeature h6{
-        font-size: 20px;
-        line-height: 35px;
+        font-size: 1.25rem;
+        line-height: 2.2rem;
         font-weight: 400;
     }
     .feesPrt h4,.accountPrt h4,.promotionsPrt h4{
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
         font-weight: 500;
     }
      .feesPrt{
@@ -269,8 +269,8 @@ position: relative;
         padding: 1rem 1rem;
     }
     .selectFont h5{
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
         font-weight: 500;
     }
     .accountPrt{

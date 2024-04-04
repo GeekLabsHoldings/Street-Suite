@@ -22,7 +22,7 @@
 }
 
 .content span{
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 @keyframes rotate {
@@ -35,11 +35,11 @@
 }
 
 .inForm h3{
-    font-size: 33px;
+    font-size: 2.0625rem;
 }
 
 .inForm p{
-    font-size: 19px;
+    font-size: 1.2rem;
 }
 
 .btnColor{
@@ -49,7 +49,7 @@
     border: 1px solid transparent;
     margin: 0.4rem 0;
     transition: 0.5s;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -68,16 +68,16 @@
 
 @media only screen and (max-width: 676px) {
     .content h3,.content span{
-       font-size: 24px;
-       line-height: 36px;
+       font-size: 1.5rem;
+       line-height: 2.25rem;
      }
      .content p{
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
      }
      .imgDiv{
-        width: 135px;
-        height: 60px;
+        width: 8.44rem;
+        height: 3.75rem;
      }
 
 

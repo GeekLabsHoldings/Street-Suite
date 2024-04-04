@@ -6,33 +6,33 @@
 .linksSection a{
     color: white !important;
     text-decoration: none;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
 }
 .LeftBorder h1{
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
-    line-height: 72px;
+    line-height: 4.5rem;
 }
 .loginPerson h6{
-    font-size: 15px;
+    font-size: 0.94rem;
     line-height: 22.5px;
     font-weight: 700;
 
 }
 .loginPerson p{
     color: #979797;
-    font-size:13px ;
+    font-size:0.8rem ;
     font-weight: 600;
-    line-height:19.5px ;
+    line-height:1.22rem ;
 
 }
 .settingBtn{
     border-radius: 0.2rem;
-    font-size: 12px;
+    font-size:0.75rem;
     font-weight: 600;
-    line-height: 14.4px;
+    line-height: 0.9rem;
     text-transform: none !important;
     padding: 0.5rem 1rem !important;
 }
@@ -47,8 +47,8 @@
 
 }
 .avatarTxt p{
-    font-size: 10px;
-    line-height: 18px;
+    font-size: 0.625rem;
+    line-height: 1.125rem;
     font-weight: 400;
 }
 .largeDiv{
@@ -62,8 +62,8 @@
 
 .labelColor label{
     color: #ffffff;
-    font-size: 13px;
-    line-height: 16.38px;
+    font-size: 0.8rem;
+    line-height: 1.024rem;
     font-weight: 400;
 }
 .react-international-phone-input-container input , .react-international-phone-input-container button{
@@ -83,33 +83,33 @@
 }
 .optionAndDesc span{
     color: #979797;
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 0.6875rem;
+    line-height: 1rem;
     font-weight: 400;
 }
 .accountBilling h5{
-    font-size: 25px;
-    line-height: 27.68px;
+    font-size: 1.56rem;
+    line-height:1.73rem;
     font-weight: 600;
 }
 .accountBilling p{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 .accountBilling h4{
-    font-size: 23px;
-    line-height: 34.5px;
+    font-size: 1.44rem;
+    line-height: 2.156rem;
     font-weight: 700;
 }
 .accountBilling h1{
-    font-size: 63px;
-    line-height: 94.5px;
+    font-size: 4rem;
+    line-height: 5.9rem;
     font-weight: 700;
 }
 .accountBilling h6{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
 }
 .premuimDiv{
@@ -118,8 +118,8 @@
 
 }
 .rightSecAccount h5{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 
@@ -140,13 +140,13 @@
     box-shadow: 0px -20px 10px -20px rgba(0,0,0,0.6) inset;
 }
 .tableHead li{
-    font-size: 13px;
-    line-height: 19.5px;
+    font-size: 0.8rem;
+    line-height: 1.22rem;
     font-weight: 700;
 }
 .tableBody li{
-    font-size: 11px;
-    line-height: 16.5px;
+    font-size:  0.6875rem;
+    line-height: 1.03rem;
     font-weight: 400;
 }
 
@@ -182,9 +182,11 @@ box-sizing: border-box;
 position: absolute;
 transition:all 0.5s
 }
+
 .settingCardBorder:hover::before,.premuimBorder:hover::before,.grayPositionBorder:hover::before{
 transform:translate(-50%,-50%) rotate(0deg);
 }
+
 .settingBorderContainer,.grayPositionContainer{
 border-radius: 0.5rem;
 overflow: hidden;
@@ -194,61 +196,61 @@ position: relative;
 }
 @media only screen and (max-width:676px) {
     .LeftBorder h1{
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
         font-weight: 700;
 
     }
     .rightBorder h3,.leftSectionSetting h3,.accountBilling h5 ,.accountBilling p ,.premuimDiv h4{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
         font-weight: 700;
     }
     .rightBorder p ,.leftSectionSetting p{
-        font-size: 10px;
-        line-height: 12.6px;
+        font-size: 0.625rem;
+        line-height: 0.7875rem;
         font-weight: 400;
     }
     .labelColor label{
-        font-size: 12px;
-        line-height: 15.12px;
+        font-size:0.75rem;
+        line-height: 0.945rem;
         font-weight: 400;
     }
     .avatarTxt p{
-        font-size: 12px;
-        line-height: 23.07px;
+        font-size:0.75rem;
+        line-height:1.442rem;
         font-weight: 400;
     }
     .settingBtn{
         font-size: 8.75px;
         font-weight: 600;
-        line-height: 10.51px;
+        line-height: 0.7rem;
         padding: 0.1rem 0.5rem !important;
 
     }
     .properityInSwitch p{
-        font-size: 12px;
-        line-height: 15.12px;
+        font-size:0.75rem;
+        line-height: 0.945rem;
         font-weight: 400;
     }
     .txtUnderProperities p{
-        font-size: 12px;
-        line-height: 18px;
+        font-size:0.75rem;
+        line-height: 1.125rem;
         font-weight: 400;
     }
     .premuimDiv h1{
-        font-size: 40px;
-        line-height: 60px;
+        font-size: 2.5rem;
+        line-height: 3.75rem;
         font-weight: 700;
     }
     .premuimDiv h6{
-        font-size: 23px;
-        line-height: 34.5px;
+        font-size: 1.44rem;
+        line-height: 2.156rem;
         font-weight: 400;
     }
     .rightSecAccount h5{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
         font-weight: 700;
     }
     .rightBorder{

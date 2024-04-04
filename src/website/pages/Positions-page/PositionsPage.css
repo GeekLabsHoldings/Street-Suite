@@ -3,23 +3,23 @@
     padding-left: 1.5rem;
 }
 .positionsList li{
-    font-size: 19px;
-    line-height: 28.5px;
+    font-size: 1.2rem;
+    line-height: 1.78rem;
     font-weight: 400;
 }
 .headOfRightDiv{
-    font-size:40px ;
+    font-size:2.5rem ;
     font-weight:600 ;
-    line-height: 60px;
+    line-height: 3.75rem;
 }
 .txtAlone p,.txtAlone span{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight:400 ;
 }
 .headAndUl h3{
-    font-size: 23px;
-    line-height: 34.5px;
+    font-size: 1.44rem;
+    line-height: 2.156rem;
     font-weight: 700;
 }
 
@@ -27,19 +27,19 @@
     background-color: #202020;
 }
 .positionRightPart h3{
-    font-size: 33px;
-    line-height: 49.5px;
+    font-size: 2.0625rem;
+    line-height: 3.09rem;
     font-family: 700;
 
 }
 .headOfPage h1{
-    font-size: 63px;
-    line-height: 94.5px;
+    font-size: 4rem;
+    line-height: 5.9rem;
     font-weight: 700;
 }
 .headOfPage p{
-    font-size: 23px;
-    line-height: 34.5px;
+    font-size: 1.44rem;
+    line-height: 2.156rem;
     font-weight: 400;
 }
 .fileBtn{
@@ -51,8 +51,8 @@
 }
 .applyBtn{
     padding: 0.6rem 3rem !important;
-    font-size: 16px;
-    line-height: 19.2px;
+    font-size: 1rem;
+    line-height:1.2rem;
     font-weight: 600;
     text-transform: none !important;
 
@@ -91,39 +91,41 @@
     transition:all 0.5s
 }
 .selectFile label{
-    font-size: 14px;
-    line-height:16.8px ;
+    font-size: 0.875rem ;
+    line-height:1.05rem ;
     font-weight:600 ;
 }
 .accordionDetails{
     padding: 0 3rem;
 }
+
+
 @media only screen and (max-width: 676px) {
     .headOfPage h1,.headOfRightDiv,.positionRightPart h3{
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
         font-weight: 700;
 
     }
     .headOfPage p{
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
         font-weight: 400;
     }
 
     .txtAlone p,.txtAlone span,.positionsList li{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
         font-weight: 400;
     }
     .headAndUl h3{
-        font-size: 14px;
+        font-size: 0.875rem ;
         line-height: 21px;
         font-weight: 700;
     }
     .selectFile label,.applyBtn{
-        font-size: 12px;
-        line-height:14.4px ;
+        font-size: 0.75rem;
+        line-height:0.9rem ;
         font-weight:600 ;
     }
     .accordionDetails{

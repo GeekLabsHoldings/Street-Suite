@@ -8,24 +8,24 @@
     box-shadow:0px 0px 5px 0px rgba(0,0,0,1) inset;
 }
 .oneBlogCont h3{
-font-size: 23px;
-line-height: 34.5px;
+font-size: 1.44rem;
+line-height: 2.156rem;
 font-weight: 700;
 }
 .oneBlogCont p{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
 }
 .bluecolor{
-    font-size: 16px;
-    line-height: 23.07px;
+    font-size: 1rem;
+    line-height: 1.44rem;
     font-weight: 400;
     color: #53ACFF;
 
 }
 .bottomBorder{
-    border-bottom:1px solid #979797 ;
+    border-bottom: 1px solid #979797 ;
 }
 .rightBorder{
     border-right: 1px solid #979797;
@@ -36,8 +36,8 @@ font-weight: 700;
     
 }
 .secDivOnLeft h2{
-    font-size: 30.47px;
-    line-height: 45.71px;
+    font-size: 1.9rem;
+    line-height: 2.9rem;
     font-weight: 700;
 
 }
@@ -59,28 +59,28 @@ font-weight: 700;
     right: 1.5%;
 }
 .leftBG h5{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 .coloredTxt h6{
-    font-size: 12.33px;
+    font-size: 0.77rem;
     font-weight: 400;
-    line-height: 18.49px;
+    line-height: 1.6rem;
 }
 .txtspan span{
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
     font-weight: 400;
 }
 .blackBGFonts h2{
-    font-size: 33px;
-    line-height: 49.5px;
+    font-size: 2.0625rem;
+    line-height: 3.09rem;
     font-weight: 700;
 }
 .blackBGFonts p{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
 
 }
@@ -94,62 +94,58 @@ font-weight: 700;
     background: linear-gradient(297deg, rgba(31,43,55,1) 0%, rgba(50,86,119,1) 75%);
 }
 .winnerFont h5{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 .blueContainer{
     background-color:  #53ACFF;
 }
 .blueContainer h3{
-    font-size: 27.35px;
-    line-height: 41.02px;
+    font-size: 1.71rem;
+    line-height: 2.56rem;
     font-weight: 700;
 }
 
 .lastInRight h3{
-    font-size: 23px;
+    font-size: 1.44rem;
     font-weight:700 ;
-    line-height: 34.5px;
+    line-height: 2.156rem;
 }
 .smImgSize{
-    width: 12.61px;
-    height: 12.93px;
+    width: 0.788rem;
+    height: 0.808rem;
 }
 .RbottomBorder{
     border-bottom:1px solid #979797 ;
 
 }
 .textDiv h6{
-    font-size: 16px;
-    line-height: 23.07px;
+    font-size: 1rem;
+    line-height:1.442rem;
     font-weight: 700;
 
 }
 .textDiv p{
-    font-size: 16px;
-    line-height: 23.07px;
+    font-size: 1rem;
+    line-height:1.442rem;
     font-weight: 400;
 }
-/* .imgSizeInSm{
-    width:19px;
-    height:19px;
-} */
 
 @media only screen and (max-width:676px) {
     .oneBlogCont h3 ,.leftBG h5{
-        font-size: 12px;
-        line-height: 18px;
+        font-size:0.75rem;
+        line-height: 1.125rem;
         font-weight: 700;
     }
     .oneBlogCont p ,.coloredTxt h6 ,.txtspan span{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
         font-weight: 400;
     }
     .secDivOnLeft h2{
-        font-size:14px ;
-        line-height: 21px;
+        font-size:0.875rem ;
+        line-height: 1.3125rem;
         font-weight: 700;
     }
     .leftBG{
@@ -158,30 +154,30 @@ font-weight: 700;
     }
     .topRight{
         width: 72.5px;
-        height: 72px;
+        height: 4.5rem;
         position: absolute;
         top: 14%;
         right: -4%;
     }
     .bluecolor{
-        font-size: 12px;
-        line-height: 23.07px;
+        font-size:0.75rem;
+        line-height:1.442rem;
         font-weight: 400;
         color: #53ACFF;
     }
     .textDiv p, .textDiv h6{
-        font-size: 12px;
-        line-height: 23.07px;
+        font-size:0.75rem;
+        line-height:1.442rem;
         font-weight: 400;
     }
     .blackBGFonts h2{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
         font-weight: 700;
     }
     .blackBGFonts p{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
         font-weight: 400;
     
     }
@@ -190,8 +186,8 @@ font-weight: 700;
     border-right: none
 }
 .blueContainer h3{
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.9rem;
     font-weight: 700;
 }
 
@@ -205,7 +201,7 @@ font-weight: 700;
     box-shadow:0px 0px 3px 0px rgba(0,0,0,1) inset;
 }
 .imgSizeInSm{
-    width:12.61px;
-    height:12.93px;
+    width:0.788rem;
+    height:0.808rem;
 }
 }
