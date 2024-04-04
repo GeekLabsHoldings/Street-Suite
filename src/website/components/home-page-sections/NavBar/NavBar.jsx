@@ -39,7 +39,7 @@ const NavBar = () => {
           {/* end of navbar links */}
 
           {/* navbar links */}
-          <ul className='navLinks flex gap-[16px] lg:gap-[4rem]'>
+          <ul className='navLinks flex gap-[16px] lg:gap-[3rem]'>
             <li><NavLink to="/blogs">Blog</NavLink></li>
             <li><NavLink to="/pricing">Pricing</NavLink></li>
             <li><NavLink to="/about-us">About Us</NavLink></li>

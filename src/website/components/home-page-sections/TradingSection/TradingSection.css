@@ -1,5 +1,5 @@
 section.trading{
-    padding: 10% 5% 5%;
+    padding: 10% 10% 5%;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
@@ -10,7 +10,7 @@ section.trading{
 }
 
 .trading-container{
-    max-width: 1400px;
+    max-width: 90%;
 }
 
 .img-container{
@@ -24,22 +24,21 @@ section.trading{
 
 .trading-content h4{
     color: var(--Blue300);
-    font-size: 48px;
+    font-size: clamp(24px , 2vw + 1rem , 140px);
     font-weight: 800;
-    line-height : 60px;
+    line-height : normal;
 }
 .trading-content h4+p{
     color: #A4A4A4;
-    font-size: 16px;
+    font-size: clamp(10px, 0.4vw + 0.5rem, 60px);
     font-weight: 400;
-    /* margin-bottom: 2rem; */
 }
 .trading-content h5{
-    font-size: 23px;
+    font-size: clamp(12px, 0.8vw + 0.5rem, 70px);;
     font-weight: 700;
 }
 .trading-content h5+p{
-    font-size: 16px;
+    font-size: clamp(10px, 0.4vw + 0.5rem, 60px);
     font-weight: 400;
 }
 
@@ -71,7 +70,7 @@ section.trading{
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 18px;
+    font-size: clamp(10px, 0.5vw + 0.5rem, 60px);
     padding: 0.5rem 0 0.5rem 1rem;
     border-left: 1px solid #fff;
 
@@ -116,7 +115,7 @@ section.trading{
     border-radius: 5px;
 }
 .spaceX h6{
-    font-size: 23px;
+    font-size: clamp(12px, 0.8vw + 0.5rem, 70px);
     font-weight: 600;
 }
 
@@ -208,13 +207,8 @@ section.trading{
 
 
 
-
+/* 
 @media only screen and (min-width: 2224px) {
-
-    .trading-container {
-        max-width: 1900px;
-        padding: 0 10%;
-    }
 
     .trading-content h4 {
         color: var(--Blue300);
@@ -234,4 +228,4 @@ section.trading{
         font-size: 28px;
     }
 
-}
+} */

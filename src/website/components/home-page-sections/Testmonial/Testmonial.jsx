@@ -11,7 +11,7 @@ const Testmonial = () => {
             <h3 className='section-title'>What Our Clients Say About Us</h3>
             <p className='text-center'>Our client’s <span>word of mouth</span> is our best marketing strategy.</p>
 
-            <div className='lg:container mx-auto px-0 py-4 md:px-4 grid grid-flow-row md:grid-cols-2 gap-4 md:gap-8 md:gap-y-6 testmonial-container columns-8' >
+            <div className='mx-auto py-4 md:px-4 grid grid-flow-row md:grid-cols-2 gap-4 md:gap-8 md:gap-y-6 testmonial-container columns-8' >
                 {/* card of client  */}
                 <div className="card bg-base-100 shadow-xl max-w-full">
                     <div className="card-body md:p-12">

@@ -1,6 +1,6 @@
 section.hero {
     width: 100%;
-    padding: 10% 1rem;
+    padding: 10% 1rem 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,10 +12,10 @@ section.hero {
 }
 
 section.hero h1 {
-    font-size: 48px;
+    font-size: clamp(24px , calc(2vw + 1rem) , 140px);
     font-weight: 800;
     text-align: center;
-    line-height: 63px;
+    line-height: normal;
 }
 
 section.hero img {
@@ -29,10 +29,10 @@ section.hero h1>span {
 }
 
 section.hero p {
-    font-size: 16px;
+    font-size: clamp(12px,  calc(0.4vw + 0.5rem ), 60px);
     margin: 1rem 1.5rem;
     text-align: center;
-    max-width: 600px;
+    max-width: clamp(400px, calc( 39vw + 1rem ) , 1500px);
     margin: auto;
 }
 
@@ -44,13 +44,13 @@ section.hero a {
     background-color: var(--Blue300);
     border: 1px solid var(--Blue300);
     border-radius: 4px;
-    font-size: 16px;
+    font-size: clamp(12px,  calc(0.4vw + 0.5rem ), 60px);
     font-weight: 500;
     margin: auto;
     transition: all 0.3s;
 }
 
-section.hero button:hover {
+section.hero a:hover {
     color: #fff;
     background-color: transparent;
     border: 1px solid #fff;
@@ -59,28 +59,28 @@ section.hero button:hover {
 @media only screen and (max-width: 1024px) {
     section.hero {
         width: 100%;
-        padding: 10vh 2rem;
+        padding: 10vh 10%;
         gap: 0.6rem;
         align-items: start;
     }
 
     section.hero h1 {
-        font-size: 24px;
-        font-weight: 800;
-        line-height: 40px;
         margin-bottom: 1rem;
+        text-align: left;
     }
 
     section.hero p {
         display: none;
+        text-align: left;
     }
 
-    section.hero button {
+    section.hero a {
         padding: 0.4rem 1.5rem 0.4rem;
-        font-size: 12px;
+        margin: 0 auto 0 0;
     }
 }
 
+/* 
 
 @media only screen and (min-width: 2224px) {
 
@@ -107,4 +107,4 @@ section.hero button:hover {
         font-size: 26px;
     }
 
-}
+} */

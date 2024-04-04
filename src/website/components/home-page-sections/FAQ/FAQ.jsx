@@ -16,7 +16,7 @@ const FAQ = () => {
 
         // FAQ section 
         <section className='FAQ'>
-            <div className="lg:container mx-auto px-0 md:px-4 FAQ-container">
+            <div className="mx-auto FAQ-container">
                 <h4>FAQ</h4>
 
                 {/* start FAQ Item */}

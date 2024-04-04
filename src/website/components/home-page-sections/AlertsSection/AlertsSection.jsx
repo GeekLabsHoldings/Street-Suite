@@ -34,7 +34,7 @@ const AlertsSection = () => {
       <h3 className='section-title'>Alerts</h3>
 
       {/* container that contains cards of Alerts section */}
-      <div className="md:container mx-auto px-4 grid  md:grid-cols-2 grid-cols-1 gap-6 gap-y-6 alerts-container columns-8">
+      <div className="mx-auto px-0 2xl:px-[10%] grid  lg:grid-cols-2 grid-cols-1 gap-6 gap-y-6 alerts-container columns-8">
 
       {/* first card of Alerts section (realtime) */}
         <div className="alert-card" >
