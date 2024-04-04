@@ -1,5 +1,7 @@
 import React from 'react'
 import "./GetStarted.css"
+import {Link} from 'react-router-dom'
+
 
 import getStartedImg from "../../../assets/getStartedImg.png"
 
@@ -16,7 +18,7 @@ const GetStarted = () => {
                     <h3>Get Started With Street Suite.</h3>
                     <p>Join over 31 users benefiting daily from Street Suite, reaching their trading goals and beyond.
                         Get Started For Free</p>
-                    <button>Get Started For Free</button>
+                    <Link to="/signup">Get Started For Free</Link>
                     <p>*Cancel anytime!</p>
                 </div>
                 {/* end of get started section content */}

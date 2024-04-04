@@ -32,7 +32,7 @@ const QuizResultsPage = () => {
     infinite: true,
     speed: 500,
     centerPadding: "50px",
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
     variableWidth: true,
     nextArrow: <CustomArrow />,
@@ -66,7 +66,7 @@ const QuizResultsPage = () => {
       <div className="quiz-results-title flex items-center justify-between mb-2">
         <h4>Do you know the difference? <br />
           Day Trading, Swing Trading, Position Trading. </h4>
-        <button className='try-again hidden lg:inline-block' onClick={()=>{navigate("/quezzes/quiz")}}>try again</button>
+        <button className='try-again hidden lg:inline-block' onClick={()=>{navigate("/quizzes/quiz")}}>try again</button>
       </div>
 
       <div className="quiz-view p-20 mb-16">

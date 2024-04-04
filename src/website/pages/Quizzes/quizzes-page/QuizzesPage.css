@@ -1,5 +1,6 @@
 .quizzes-wrapper section.hero {
     background-image: unset;
+    padding: 10% 1rem 5%;
 }
 
 .quizzes-wrapper {
@@ -67,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .quizzes-wrapper .check-Filter label {
@@ -126,31 +127,31 @@
     margin-left: 0.7rem;
 }
 
-.slick-next:before {
+.quizzes-wrapper .slick-next:before {
     content: unset;
 }
 
-.slick-prev:before {
+.quizzes-wrapper .slick-prev:before {
     content: unset;
 }
 
-.slick-next {
+.quizzes-wrapper .slick-next {
     transform: translate(-50px, -50%);
     z-index: 9;
 }
 
-.slick-prev {
+.quizzes-wrapper .slick-prev {
 
     transform: translate(50px, -50%) rotateY(180deg);
     z-index: 9;
 
 }
 
-.slick-list {
-    padding: 0 !important;
+.quizzes-wrapper .slick-list {
+    padding: 1rem 0 ;
 }
 
-.slick-disabled svg path {
+.quizzes-wrapper .slick-disabled svg path {
     fill-opacity: 0;
 }
 

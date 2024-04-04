@@ -36,7 +36,7 @@ section.hero p {
     margin: auto;
 }
 
-section.hero button {
+section.hero a {
     outline: none;
     color: #fff;
     border: none;
@@ -82,7 +82,7 @@ section.hero button:hover {
 }
 
 
-@media only screen and (min-width: 2024px) {
+@media only screen and (min-width: 2224px) {
 
     section.hero {
         width: 100%;

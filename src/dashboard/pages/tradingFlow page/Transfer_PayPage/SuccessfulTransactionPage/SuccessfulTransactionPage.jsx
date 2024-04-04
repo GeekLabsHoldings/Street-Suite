@@ -60,7 +60,7 @@ const SuccessfulTransactionPage = () => {
             </div>
 
             {/* button will take you to home page*/}
-            <button className={styles.go_home_btn}>Go Home</button>
+            <Link to="/trading" className={styles.go_home_btn}>Go Home</Link>
         </div>
     )
 }

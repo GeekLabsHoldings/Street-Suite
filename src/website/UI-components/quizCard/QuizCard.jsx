@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const QuizCard = ({horizontal = false , title = "Do you know the difference? Day Trading, Swing Trading, Position Trading: "}) => {
   return (
-      <Link to="quiz" className={`quiz-card block mx-2 ${horizontal ? 'horizontal-card' : ""}`}>
+      <Link to="/quizzes/quiz" className={`quiz-card block mx-2 ${horizontal ? 'horizontal-card' : ""}`}>
         <img src={hotStripeImg} alt="" className='hot-padge' />
         <img src={hotStripeDarkImg} alt="" className='hot-padge-dark' />
         <img

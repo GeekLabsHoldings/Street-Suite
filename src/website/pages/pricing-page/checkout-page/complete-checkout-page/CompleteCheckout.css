@@ -64,7 +64,7 @@
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 2.5rem 0;
 }
@@ -85,6 +85,10 @@
     line-height: 24px;
     letter-spacing: 0em;
     color: rgba(204, 204, 204, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
 }
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p>span {
@@ -128,14 +132,16 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.CompleteCheckout-wrapper .receipt-card button {
+.CompleteCheckout-wrapper .receipt-card a {
     border: none;
     outline: none;
     background: var(--Blue300);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     display: block;
-    margin: auto;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto 2rem;
     font-size: 19.46px;
     font-weight: 600;
     line-height: 23.35px;

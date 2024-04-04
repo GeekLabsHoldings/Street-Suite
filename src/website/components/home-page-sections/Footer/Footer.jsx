@@ -12,7 +12,7 @@ const Footer = () => {
 
             <div className="footer-container">
 
-                <h5>Disclamer</h5>
+                <h5>Disclaimer</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quisquam tempora adipisci facere, quidem numquam deserunt accusamus nam, sit expedita dolore libero maiores laboriosam repellat, optio aliquam. Harum voluptate, magnam neque ducimus laborum quasi asperiores qui, cupiditate perferendis vel necessitatibus!</p>
                 <div className="line"></div>
 
@@ -21,17 +21,17 @@ const Footer = () => {
 
                     {/* first col of links */}
                     <div className="links-col">
-                        <h6>Geek Labs Holding</h6>
+                        <h6>Geek Labs Holdings</h6>
 
                         <ul>
                             <li>
-                                <a href="">Lorem ipsum dolor sit amet consectetur.</a>
+                                <Link to="">Lorem ipsum dolor sit amet consectetur.</Link>
                             </li>
                             <li>
-                                <a href="">Lorem ipsum dolor sit amet.</a>
+                                <Link to="">Lorem ipsum dolor sit amet.</Link>
                             </li>
                             <li>
-                                <a href="">Lorem ipsum dolor sit amet consectetur.</a>
+                                <Link to="">Lorem ipsum dolor sit amet consectetur.</Link>
                             </li>
                         </ul>
                     </div>
@@ -42,22 +42,19 @@ const Footer = () => {
 
                         <ul>
                             <li>
-                                <a href="">Documenation</a>
+                                <Link to="">Documenation</Link>
                             </li>
                             <li>
-                                <a href="">Knoweledge base</a>
+                                <Link to="">Knoweledge base</Link>
                             </li>
                             <li>
                                 <Link to="/api">API</Link>
                             </li>
                             <li>
-                                <a href="">Live Chat</a>
+                                <Link to="/careers">Careers</Link>
                             </li>
                             <li>
-                                <a href="">Phone Support</a>
-                            </li>
-                            <li>
-                                <a href="">E-mail</a>
+                                <Link to="/contact-us">Contact Us</Link>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +68,7 @@ const Footer = () => {
                                 <Link to="/about-us">About Us</Link>
                             </li>
                             <li>
-                                <a href="">FAQ</a>
+                                <Link to="/privacy&security">Privacy</Link>
                             </li>
                             <li>
                                 <a href="/privacy&security">Privacy</a>
@@ -88,10 +85,13 @@ const Footer = () => {
 
                         <ul>
                             <li>
-                                <a href="">@Twitter</a>
+                                <Link to="">Twitter</Link>
                             </li>
                             <li>
-                                <a href="">@Instagram</a>
+                                <Link to="">Reddit</Link>
+                            </li>
+                            <li>
+                                <Link to="">Discord</Link>
                             </li>
                         </ul>
                     </div>

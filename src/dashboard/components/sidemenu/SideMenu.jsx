@@ -63,7 +63,9 @@ function SideMenu() {
 
         {/* logo in side  nav */}
         <div className={styles.logo}>
-          <img src={logoo} alt="" />
+          <Link to="/">
+            <img src={logoo} alt="" />
+          </Link>
         </div>
 
         {/* list of links in side nav */}

@@ -36,10 +36,10 @@ function DataTable() {
   const openCollaps = (e) => {
 
     // slide up all collaps are open
-    $(".tableItemCollaps").not($(e.target.offsetParent).siblings(".tableItemCollaps")).slideUp(300);
+    // $(".tableItemCollaps").not($(e.target.offsetParent).siblings(".tableItemCollaps")).slideUp(300);
 
     // toggle slide collaps by click
-    $(e.target.offsetParent).siblings(".tableItemCollaps").slideToggle(300);
+    $(e.target).parents(".tableItem").siblings(".tableItemCollaps").slideToggle(300);
   }
 
 
@@ -53,7 +53,7 @@ function DataTable() {
         <div className={styles.tableItemContainer}>
 
           {/* collaps header if i click on it , collaps will toggle slide open */}
-          <ul className={styles.tableItem} key={idx} onClick={(e) => { openCollaps(e, idx) }}>
+          <ul className={styles.tableItem + " tableItem"} key={idx} onClick={(e) => { openCollaps(e, idx) }}>
             <li>
               <img src={img1} alt="" />
               <p>{ele.value1}</p>
