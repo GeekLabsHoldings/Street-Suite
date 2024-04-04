@@ -36,6 +36,7 @@ section.trainings {
 
 .trainings-img img {
     width: 40%;
+    max-width: fit-content;
     position: absolute;
     right: 0;
     top: 10%;
@@ -138,6 +139,7 @@ section.trainings {
 
     .trainings-content .blog p {
         margin-left: 0;
+        text-align: center;
     }
 
     .trainings-img img {

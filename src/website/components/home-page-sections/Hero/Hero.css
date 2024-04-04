@@ -19,6 +19,7 @@ section.hero h1 {
 }
 
 section.hero img {
+    max-width: fit-content;
     width: 100%;
 }
 

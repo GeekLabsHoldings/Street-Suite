@@ -33,10 +33,14 @@ section.getStarted{
 .getStarted-content a:hover{
     background: var(--Blue400);
 }
+
+.getStarted-img {
+    max-width: fit-content;
+}
+
 .getStarted-img img{
     width: 100%;
 }
-
 
 
 
