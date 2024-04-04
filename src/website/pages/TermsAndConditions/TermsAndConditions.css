@@ -1,41 +1,41 @@
-.disclaimerHeader h1{
+.termsHeader h1{
     font-size: 3rem;
     line-height: 4.5rem;
     font-weight: 700;
 }
-.disclaimerHeader p{
+.termsHeader p{
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
 }
-.disclaimerContent h4{
+.termsContent h4{
     font-size: 2.5rem;
     line-height: 3.75rem;
     font-weight: 700;
 }
-.disclaimerContent p{
+.termsContent p{
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
 }
-.disclaimerBG{
+.termsBG{
    background:linear-gradient(175deg, rgba(29,36,43,1) 6%, rgba(63, 112, 158, 0.98) 47%, rgba(46,80,112,1) 65%, rgba(29,36,43,1))
 }
 
 @media only screen and (max-width: 676px){
-    .disclaimerHeader h1{
+    .termsHeader h1{
         font-size: 1.5rem;
         line-height: 2.25rem;
     }
-    .disclaimerHeader p{
+    .termsHeader p{
         font-size: 0.625rem;
         line-height: 0.9375rem;
     }
-    .disclaimerContent h4{
+    .termsContent h4{
         font-size: 1rem;
         line-height: 1.5rem;
     }
-    .disclaimerContent p{
+    .termsContent p{
         font-size: 0.75rem;
         line-height: 1.125rem;
     }

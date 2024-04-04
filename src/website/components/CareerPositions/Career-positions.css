@@ -14,8 +14,8 @@
     background-color: #202020;
 }
 .movingCards p{
-    font-size: 16px ;
-    line-height: 24px;
+    font-size: 1rem ;
+    line-height: 1.5rem;
     font-weight: 400;
 
 }

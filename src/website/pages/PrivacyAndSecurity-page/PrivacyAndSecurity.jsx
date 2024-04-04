@@ -1,26 +1,15 @@
-import { Helmet } from 'react-helmet-async';
+
 import './PrivacyAndSecurity.css';
 
-const PrivacyAndSecurity = () => {
-    return (
-
-        <>
-            <Helmet>
-                <title>Privacy and Security | Street Suite</title>
-                <meta
-                    name="description"
-                    content="Street Suite’s privacy and security policy"
-                />
-            </Helmet>
-
-            <div className='privacyBG'>
-                <div className='md:w-10/12 sm:w-11/12 mx-auto md:py-20 sm:py-10 flex flex-col md:gap-20 sm:gap-12'>
-                    <div className="privacyHeader md:w-1/2 sm:w-4/5 mx-auto text-center">
-                        <h1>Privacy and Security</h1>
-                        <p>Please read this Privacy and Security rules before using our platform. It outlines important terms and conditions for your interaction with our services. By accessing our platform, you agree to adhere to these terms. </p>
-                    </div>
-
-                    <div className=" flex flex-col md:gap-16 sm:gap-8">
+const PrivacyAndSecurity = ()=>{
+    return(
+        <div className='privacyBG'>
+            <div className='md:w-10/12 sm:w-11/12 mx-auto md:py-20 sm:py-10 flex flex-col md:gap-20 sm:gap-12'>
+            <div className="privacyHeader md:w-1/2 sm:w-4/5 mx-auto text-center">
+            <h1>Privacy and Security</h1>
+            <p>Please read this Privacy and Security rules before using our platform. It outlines important terms and conditions for your interaction with our services. By accessing our platform, you agree to adhere to these terms. </p>
+            </div>
+            <div className=" flex flex-col md:gap-16 sm:gap-8">
                         <div className="privacyContent flex flex-col md:gap-4 sm:gap-3">
                             <h4>Privacy and Security</h4>
                             <p>Many of our awareness campaigns are paid via third parties, these third parties are often investor relations companies and/or market awareness companies who have been subsequently hired by the company or an investor/investor group that have shares in the company receiving the awareness.</p>
@@ -35,11 +24,9 @@ const PrivacyAndSecurity = () => {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iru</p>
                         </div>
                     </div>
-
-                </div>
+            
+                    </div>
             </div>
-        </>
-
     )
 }
 export default PrivacyAndSecurity;
