@@ -1,7 +1,7 @@
 .time span{
     color: #53ACFF;
-    font-size: 13px;
-    line-height: 16.38px;
+    font-size: 0.8rem;
+    line-height: 1.022rem;
     font-weight: 400;
 }
 .grayOne{
@@ -10,9 +10,8 @@
 
 @media only screen and (max-width: 676px){
     .time span ,.grayOne{
-        font-size: 10px;
-        line-height: 12.6px;
+        font-size: 0.625rem;
+        line-height: 0.7875rem;
         font-weight: 400;
     }
-
 }

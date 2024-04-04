@@ -1,12 +1,12 @@
 .ourName h1{
-    font-size: 63px;
-    line-height: 94.5px;
+    font-size: 4rem;
+    line-height: 5.9rem;
     font-weight: 700;
 
 }
 .descParagraph p{
-    font-size: 14px;
-    line-height: 23.07px;
+    font-size: 0.875rem ;
+    line-height: 1.442rem;
     font-weight: 400;
 
 }
@@ -28,14 +28,14 @@
 
   @media only screen and (max-width: 676px){
     .ourName h1{
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
         font-weight: 700;
 
     }
     .descParagraph p{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
         font-weight: 400;
     
     }

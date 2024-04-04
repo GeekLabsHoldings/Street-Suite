@@ -9,10 +9,12 @@ import { useState } from 'react';
 const PositionCard =({positionTitle,positionIdx})=>{
     const [index, setIndex] = useState(0);
 
+
     return(
+
         <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
         <Accordion 
-        
+        type="single"
         sx={{
             "&.Mui-expanded":{
                 border:'1px solid #53ACFF',
@@ -24,17 +26,18 @@ const PositionCard =({positionTitle,positionIdx})=>{
             "&.Mui-expanded h2":{
                 color:"#53ACFF"
             },
-            padding:'0 2rem'
+            padding:'0 2rem',
+
         }}
          
      expanded={index === positionIdx}
      onChange={(event, expanded) => {
-       setIndex(expanded ? positionIdx : null);
+       setIndex(expanded ? positionIdx: null);
      }} 
 >
     <div className='grayPositionContainer bgPositionCard'>
     <AccordionSummary >
-    <h2 className='headOfRightDiv md:w-1/2 '>{positionTitle}</h2>
+    <h2 className='headOfRightDiv md:w-4/5'>{positionTitle}</h2>
     <div className='txtAlone'>
     <p className='ms:visible sm:hidden'>We're seeking a Senior Backend Developer to join our team and contribute to the development of our cutting-edge products and services.</p>
     </div>
@@ -142,6 +145,7 @@ const PositionCard =({positionTitle,positionIdx})=>{
 </Accordion>
 
     </div>
+
     )
 }
 

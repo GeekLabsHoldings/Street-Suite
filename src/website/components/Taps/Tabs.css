@@ -1,8 +1,8 @@
 .MyTabClass {
     text-transform: none !important;
-    font-size: 16px !important;
+    font-size: 1rem !important;
     font-weight: 400 !important;
-    line-height:23.07px !important;
+    line-height:1.442rem !important;
     width: 11%;
 }
 
@@ -12,12 +12,42 @@
     padding: 0.5rem 0;
     display: flex !important;
 }
+.blogsTabs .check-Filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.blogsTabs .check-Filter label {
+    padding: 0.5rem 1rem;
+    box-shadow: inset 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.blogsTabs .check-Filter input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.blogsTabs .check-Filter label:has(> input[type="radio"]:checked) {
+    background-color: var(--Blue300);
+}
+
 @media only screen and (max-width: 676px){
     .MyTabClass{
         text-transform: none !important;
-        font-size: 10px !important;
+        font-size: 0.625rem !important;
         font-weight: 400 !important;
-        line-height:15px !important;
+        line-height:0.94rem !important;
         width: 11%;
     }
     .tabsStyle{

@@ -193,21 +193,21 @@ const TopBroker = () => {
                                         </div>
 
 
-                                        <div className='md:py-3 px-4 md:h-[60px] sm:h-[40px] providerFeatureName '>
+                                        <div className='md:py-3 px-4 md:h-[3.75rem] sm:h-[2.5rem] providerFeatureName '>
                                         </div>
 
                                         <div className=" px-16 text-center rightThickBorder md:py-2 providerFeature">
                                             <h6>{oneCard.fees}</h6>
                                         </div>
 
-                                        <div className='md:py-3 px-4 md:h-[60px] sm:h-[40px] providerFeatureName'>
+                                        <div className='md:py-3 px-4 md:h-[3.75rem] sm:h-[2.5rem] providerFeatureName'>
                                         </div>
 
                                         <div className=" px-16 text-center rightThickBorder md:py-2 providerFeature">
                                             <h6>{oneCard.accountMin}</h6>
                                         </div>
 
-                                        <div className='md:py-3 px-4 md:h-[60px] sm:h-[40px] providerFeatureName'>
+                                        <div className='md:py-3 px-4 md:h-[3.75rem] sm:h-[2.5rem] providerFeatureName'>
                                         </div>
 
                                         <div className=" px-16 text-center rightThickBorder md:py-2 providerFeature">

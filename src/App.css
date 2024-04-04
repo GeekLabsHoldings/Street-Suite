@@ -57,12 +57,7 @@ p,h1,h2,h3,h4,h5,h6{
   padding: 2px;
   border-radius: 0.9rem;
 }
-.positionsBorder{
-  border-radius: 0.9rem 0.9rem 0 0;
-  padding: 2px 2px 0;
-  position:relative;
-  overflow: hidden;
-}
+
 .forBorder::before{
   content: "";
   background-image: conic-gradient(transparent 0deg ,#53acff 120deg,transparent 220deg );
@@ -79,8 +74,8 @@ p,h1,h2,h3,h4,h5,h6{
   transform:translate(-50%,-50%) rotate(0deg);
 }
 .labelfont{
-  font-size: 16px !important;
-  line-height: 24px;
+  font-size: 1rem !important;
+  line-height: 1.5rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -122,9 +117,9 @@ p,h1,h2,h3,h4,h5,h6{
   padding: 0.5rem 1rem;
   background-color: var(--Blue300);
   border-radius: 6px;
-font-size: 16px;
+font-size: 1rem;
 font-weight: 700;
-line-height: 24px;
+line-height: 1.5rem;
 }
 
 .equity_collapse .collapse_header.open{
@@ -179,9 +174,9 @@ line-height: 24px;
   justify-content: center;
   gap: 0.5rem;
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 1.5rem;
   text-align: left;
   padding: 0;
   border: none;
@@ -196,9 +191,9 @@ line-height: 24px;
   display: block;
   text-align: center;
   padding: 0.4rem 0.5rem;
-  font-size: 13px;
+  font-size: 0.8rem;
   font-weight: 700;
-  line-height: 16px;
+  line-height: 1rem;
 }
 
 .notification_window .selected > a {
@@ -208,20 +203,20 @@ line-height: 24px;
 
 @media only screen and (max-width:767px) {
   .formHead h3 , .formHead span{
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.9rem;
 
  }
  .formHead p ,.formHead .labelfont{
-    font-size: 14px !important;
-    line-height: 21px;
+    font-size: 0.875rem !important;
+    line-height: 1.3125rem;
  }
  .checkboxFont span{
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
  }
  .rememberClass span{
-  padding-top: 15px !important;
+  padding-top: 0.94rem !important;
  }
  .labelfont {
   align-items:start !important;

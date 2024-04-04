@@ -129,9 +129,9 @@
 
 .want_share_chart_footer .input_group label {
     font-family: Poppins;
-    font-size: 13px;
+    font-size: 0.8125px;
     font-weight: 400;
-    line-height: 16.38px;
+    line-height: 1.024rem;
     text-align: left;
     margin-bottom: 1rem;
 }

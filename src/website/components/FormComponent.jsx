@@ -27,7 +27,7 @@ import * as React from 'react';
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    padding: 8px 12px;
+    padding: 8px 0.75rem;
     border-radius: 8px;
     min-height:30%;
     color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};

@@ -24,8 +24,7 @@ const SignupPage = () => {
               <img className="w-full" src={LogoIcon} />
             </div>
             <h3>Hello! <br />
-              Let's get started with <br />
-              your 14 Day <span className='highlight'>FREE Trial</span></h3>
+              Let's get started with your 14 Day <span className='highlight'>FREE Trial</span></h3> 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia rerum vel deserunt debitis, tenetur molestiae veniam ad perspiciatis aperiam, exercitationem.</p>
           </div>
         </div>

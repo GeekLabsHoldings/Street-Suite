@@ -34,7 +34,7 @@ const CareersPage = () => {
                         <div className='w-2/3 flex flex-col gap-3 headerRight '>
                             <h3>ST Suite’s Careers</h3>
                             <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
-                            <Button className='forbtn careerBtn py-2 px-4 w-fit'>Open Vacancies</Button>
+                            <Button className='forbtn careerBtn py-[11px] px-10 w-fit' onClick={onClickHandler}>Open Vacancies</Button>
                         </div>
 
                     </div>
@@ -115,7 +115,7 @@ const CareersPage = () => {
                             <div className='forFonts paragraphFont flex flex-col md:gap-6 sm:gap-2 md:mb-40 '>
                                 <h3>Join Our Team Now!</h3>
                                 <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
-                                <Button className='forbtn py-2 px-4 w-fit'>Open Vacancies</Button>
+                                <Button className='forbtn py-2 px-4 w-fit' onClick={onClickHandler}>Open Vacancies</Button>
                             </div>
                             {/* card for datails about available positions */}
                             <CareerPositions whichMove='moveFirst' positionName='Back End Developer' />
@@ -132,7 +132,7 @@ const CareersPage = () => {
                         </div>
 
                         <div className="md:w-1/2 sm:w-1/3 flex flex-col joinTeamBG md:pe-16 align-items-end md:justify-between md:pt-2  ">
-                            <div className='smImgSize '>
+                            <div className='careerImgSize '>
                                 <img src={Logo} className='w-full' />
                             </div>
 

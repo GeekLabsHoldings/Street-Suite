@@ -15,9 +15,10 @@
 .visibleInSmBorder{
     border-radius: 0.3rem;
 }
+
 .positionsBorder::before{
     content: "";
-    background-image: conic-gradient(transparent 90deg ,#53acff 180deg,transparent 270deg );
+    background-image: conic-gradient(transparent,#53acff 90deg ,#53acff 300deg,transparent 320deg );
     width: 250%;
     height: 250%;
     top:50%;
@@ -60,20 +61,20 @@
   }
 
 .headerRight h3{
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 3rem;
+    line-height: 4.5rem;
     font-weight: 700;
   }
 .headerRight p,.everySection p{
-    font-size: 19px;
-    line-height: 28.5px;
+    font-size: 1.2rem;
+    line-height: 1.78rem;
     font-weight: 400;
 }
 
 
 .everySection h5 , .movingCards h5{
-    font-size: 23px;
-    line-height: 34.5px;
+    font-size: 1.44rem;
+    line-height:2.156rem;
     font-weight: 700;
 }
 .forAfterEffect h3{
@@ -89,13 +90,13 @@
     left:47%;
 }
 .forFonts h3{
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 3rem;
+    line-height: 4.5rem;
     font-weight: 700;
 }
 .forFonts p{
-    font-size: 23px;
-    line-height: 34.5px;
+    font-size: 1.44rem;
+    line-height:2.156rem;
     font-weight: 400;
 }
 
@@ -121,9 +122,9 @@
     height: 100%;
 }
 .careerBtn{
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700 !important;
 }
 .moveLast{
     position: absolute;
@@ -146,8 +147,8 @@
 
 }
 .visibleInSm h4{
-    font-size: 14px;
-    line-height:18px ;
+    font-size: 0.875rem ;
+    line-height:1.125rem ;
     font-weight:600 ;
 }
 .visibleInSm{
@@ -155,11 +156,17 @@
     background: linear-gradient(309deg,#233647 67% , rgb(33, 49, 65 ) 100%);
 
 }
-.smImgSize{
-    width:300px; 
-    height:100px;
+.careerImgSize{
+    width:18.75rem; 
+    height:6.25rem;
     padding-top:2rem;
 }
+.positionsBorder{
+    border-radius: 0.9rem 0.9rem 0 0;
+    padding: 2px 2px 0;
+    position:relative;
+    overflow: hidden;
+  }
 .positionsBorderW{
     border-radius: 0.9rem 0.9rem 0 0;
     padding: 2px 2px 0;
@@ -183,60 +190,60 @@
 
 @media only screen and (max-width: 676px){
 .headerRight h3{
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
     font-weight: 700;
 }
 .headerRight p{
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
     font-weight: 400;
 }
 .careerBtn{
     font-size: 10.24px;
-    line-height: 15.36px;
+    line-height: 0.96rem;
     font-weight: 700;
 }
 .forFonts h3{
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.9rem;
     font-weight: 700;
 }
 .forFonts p{
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
     font-weight: 400;
 }
 .vectorSize{
-    width: 25px;
+    width: 1.56rem;
 }
 .everySection h5{
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 0.875rem ;
+    line-height: 1.3125rem;
     font-weight: 700;
 }
 .everySection p{
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 0.625rem;
+    line-height: 0.94rem;
     font-weight: 400;
 }
 .cardsFont h5{
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 0.625rem;
+    line-height: 0.94rem;
     font-weight: 700;
 }
 .forFonts h3{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 .paragraphFont p{
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 0.625rem;
+    line-height: 0.94rem;
     font-weight: 400;
 }
-.smImgSize{
-    width: 111px;
-    height: 50px;
+.careerImgSize{
+    width: 6.94rem;
+    height: 3.125rem;
 }
 }

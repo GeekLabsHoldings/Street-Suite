@@ -14,7 +14,7 @@
 }
 .caption h3{
     font-size: 2rem;
-    line-height: 34.5px;
+    line-height: 2.156rem;
 }
 .leftBorder{
     border-left: 3px solid #FFFFFF99;
@@ -65,31 +65,31 @@
 }
 @media only screen and (max-width: 676px){
     .caption h5{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 0.625rem;
+        line-height: 0.94rem;
     }
     .caption h1{
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
     }
     .caption p{
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
     }
     .leftBorder h5{
-        font-size: 14px;
-        line-height: 21px;
+        font-size: 0.875rem ;
+        line-height: 1.3125rem;
     }
     .leftBorder p{
-        font-size: 10px;
-        line-height: 12.6px;
+        font-size: 0.625rem;
+        line-height: 0.7875rem;
     }
     .msgPrt h3{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
     .btnColor{
-        font-size: 12px;
-        line-height: 14.4px;
+        font-size: 0.75rem;
+        line-height: 0.9rem;
     }
 }

@@ -3,21 +3,21 @@
     border-radius: 0.4rem;
 }
 .putTop3{
-    width: 60px;
-    height: 55px;
+    width: 3.75rem;
+    height: 3.4rem;
     position: absolute;
     top: -7%;
     right: -3%;
 }
 .winnerBG h5{
-    font-size: 13px;
-    line-height: 19.5px;
+    font-size: 0.8rem;
+    line-height: 1.22rem;
     font-weight: 700;
 
 }
 .winnerBG p{
-    font-size: 11px;
-    line-height: 16.5px;
+    font-size: 0.6875rem;
+    line-height: 1rem;
     font-weight: 400;
 
 }

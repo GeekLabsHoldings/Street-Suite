@@ -4,14 +4,14 @@
 }
 .everyPart h5{
     font-weight: 700;
-    font-size:23px ;
-    line-height: 34.5px;
+    font-size:1.44rem ;
+    line-height: 2.156rem;
     padding-bottom: 1.2rem;
 }
 .everyPart p{
     font-weight: 400;
-    font-size: 16px ;
-    line-height: 32px;
+    font-size: 1rem ;
+    line-height: 2rem;
 }
 
 .topBrokerBtns{
@@ -34,13 +34,13 @@
 
 @media only screen and (max-width: 676px){
     .everyPart h5{
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
         font-weight: 700;
     }
     .everyPart p ,.topBrokerList li{
-        font-size: 10px;
-        line-height: 20px;
+        font-size: 0.625rem;
+        line-height: 1.25rem;
         font-weight: 400;
     }
     .anyList{

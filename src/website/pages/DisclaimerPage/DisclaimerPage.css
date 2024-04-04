@@ -17,6 +17,8 @@
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
+    text-align: justify;
+
 }
 .disclaimerBG{
    background:linear-gradient(175deg, rgba(29,36,43,1) 6%, rgba(63, 112, 158, 0.98) 47%, rgba(46,80,112,1) 65%, rgba(29,36,43,1))
