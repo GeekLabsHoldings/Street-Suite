@@ -1,26 +1,26 @@
 .likeComments p{
     font-weight: 400;
-    font-size: 13.08px;
-    line-height: 19.62px;
+    font-size: 0.8175rem;
+    line-height: 1.226rem;
     color: #53ACFF;
 
 }
 .likeComments h6{
     font-weight: 400;
-    font-size:19.02px ;
-    line-height: 28.53px;
+    font-size:1.189rem ;
+    line-height: 1.783rem;
 
 
 }
 @media only screen and (max-width:676px) {
 .likeComments p{
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 0.625rem;
+    line-height: 0.94rem;
     font-weight: 400;
 }
 .likeComments h6 {
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
     font-weight: 400;
 }
 }
