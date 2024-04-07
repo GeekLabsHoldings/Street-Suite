@@ -5,6 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
+import Button from '@mui/material/Button';
 import * as React from 'react';
 
  const grey = {
@@ -62,9 +63,9 @@ import * as React from 'react';
 const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTxt,needFirstPrt}) =>{
 
     return(
-        <div className='formHead'>
+        <div className='formHead flex flex-col gap-20'>
           <div className='flex flex-col md:gap-10'>
-         {needFirstPrt? <div >
+         {needFirstPrt? <div className='sm:pb-5' >
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
         <p>{purpose}</p>
         </div> :null}
@@ -127,19 +128,24 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
     <div>
 
     </div>
-
+ {/* Terms and Conditions */}
     {needCheckbox ? <>
     <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
-    <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label="By creating an account, I have read and agreed to Street Suite's Terms and Conditions" /></> :null}
+    <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label={<span>By creating an account, I have read and agreed to Street Suite's <a href="/terms&conditions"> Terms & Conditions.</a></span>}
+     />
+    </> :null}
 
     </FormControl>
-
+   
     </div>
           </div>
 
 
-    <div className='btnContainer'> 
+    {/* <div className='btnContainer'> 
     <button type="button" className='btnColor'>{btnTxt}</button>
+    </div> */}
+    <div className=' flex justify-center'>
+    <Button className='newBtn formBtn'>{btnTxt}</Button>
     </div>
             </div>
         )

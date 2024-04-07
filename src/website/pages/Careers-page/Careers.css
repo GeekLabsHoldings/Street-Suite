@@ -1,6 +1,9 @@
 .githubBG{
   background: linear-gradient(297deg, rgb(33, 49, 65 ) 67% ,#233647 100%);
 }
+.githubBG h4{
+    font-size: clamp(14px, calc( 1.1vw + 0.5rem ) , 70px);
+}
 
 .bgImg{
     background-image: url('../../assets/BG\ gradient.png');
@@ -18,7 +21,7 @@
 
 .positionsBorder::before{
     content: "";
-    background-image: conic-gradient(transparent,#53acff 90deg ,#53acff 300deg,transparent 320deg );
+    background-image: conic-gradient(transparent,#53acff 110deg ,#53acff 300deg,transparent 320deg );
     width: 250%;
     height: 250%;
     top:50%;
@@ -48,32 +51,31 @@
   .joinTeamBG{
     border: 1px solid transparent;
     border-radius: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.44);
   }
   .forShadow{
-            box-shadow:
-            15px -10px 10px -20px rgba(0,0,0,0.45) inset,
-            32px 39px 20px -22px rgba(0,0,0,0.45) inset,
-            -30px 20px 20px -21px rgba(0,0,0,0.45) inset,
-            -20px -30px 20px -22px rgba(0,0,0,0.45) inset;
-            border-radius: 1.6rem;
-            overflow: hidden;
-            background-color: #202020;
+    box-shadow:
+    10px -7px 5px -10px rgba(0, 0, 0, 0.137) inset,
+    10px 12px 9px -10px rgba(0, 0, 0, 0.288) inset,
+    -10px 7px 7px -8px rgba(0, 0, 0, 0.267) inset,
+    -10px -7px 7px -8px rgba(0, 0, 0, 0.363) inset;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    background-color: #202020;
   }
 
 .headerRight h3{
-    font-size: 3rem;
+    font-size: clamp(24px, calc(2.4vw + 0.5rem),140px);
     line-height: 4.5rem;
     font-weight: 700;
   }
 .headerRight p,.everySection p{
-    font-size: 1.2rem;
+    font-size: clamp(12px, calc(0.7vw + 0.5rem), 60px);
     line-height: 1.78rem;
     font-weight: 400;
 }
-
-
 .everySection h5 , .movingCards h5{
-    font-size: 1.44rem;
+    font-size: clamp(14px, calc( 0.9vw + 0.5rem ) , 70px);
     line-height:2.156rem;
     font-weight: 700;
 }
@@ -84,18 +86,18 @@
     content: "";
     position: absolute;
     background-color: #FFFFFF;
-    width: 52%;
+    width: 44.5%;
     height: 2px;
     top:25%;
-    left:47%;
+    left:55%;
 }
 .forFonts h3{
-    font-size: 3rem;
+    font-size:  clamp(20px, calc(2.5vw + 0.5rem), 140px);
     line-height: 4.5rem;
     font-weight: 700;
 }
 .forFonts p{
-    font-size: 1.44rem;
+    font-size: clamp(12px, calc( 0.9vw + 0.5rem ) , 70px);
     line-height:2.156rem;
     font-weight: 400;
 }
@@ -122,7 +124,7 @@
     height: 100%;
 }
 .careerBtn{
-    font-size: 1rem;
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
     line-height: 1.5rem;
     font-weight: 700 !important;
 }
@@ -144,17 +146,14 @@
     height: 100%;
     position: relative;
     border-radius: 0.9rem;
-
 }
-.visibleInSm h4{
-    font-size: 0.875rem ;
+.githubBG h4{
     line-height:1.125rem ;
     font-weight:600 ;
 }
 .visibleInSm{
     display: flex;
-    background: linear-gradient(309deg,#233647 67% , rgb(33, 49, 65 ) 100%);
-
+    background: linear-gradient(150deg,rgba(83, 172, 255, 0.2) 27% ,rgb(15, 23, 32) 60%);
 }
 .careerImgSize{
     width:18.75rem; 
@@ -186,31 +185,24 @@
         transition:all 0.5s
 }
 
-
-
 @media only screen and (max-width: 676px){
 .headerRight h3{
-    font-size: 1.5rem;
     line-height: 2.25rem;
     font-weight: 700;
 }
 .headerRight p{
-    font-size: 0.75rem;
     line-height: 1.125rem;
     font-weight: 400;
 }
 .careerBtn{
-    font-size: 10.24px;
     line-height: 0.96rem;
     font-weight: 700;
 }
 .forFonts h3{
-    font-size: 1.25rem;
     line-height: 1.9rem;
     font-weight: 700;
 }
 .forFonts p{
-    font-size: 0.75rem;
     line-height: 1.125rem;
     font-weight: 400;
 }
@@ -218,12 +210,10 @@
     width: 1.56rem;
 }
 .everySection h5{
-    font-size: 0.875rem ;
     line-height: 1.3125rem;
     font-weight: 700;
 }
 .everySection p{
-    font-size: 0.625rem;
     line-height: 0.94rem;
     font-weight: 400;
 }
@@ -233,7 +223,6 @@
     font-weight: 700;
 }
 .forFonts h3{
-    font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 700;
 }
@@ -245,5 +234,8 @@
 .careerImgSize{
     width: 6.94rem;
     height: 3.125rem;
+}
+.forAfterEffect h3::after{
+    display: none;
 }
 }

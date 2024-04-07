@@ -10,7 +10,7 @@
 }
 .forbtn{
     border-radius: 0.2rem !important;
-    background-color: #53ACFF;
+    background-color: #53ACFF ;
     color: #ffff !important;
     font-size: 0.8rem;
     font-weight: 600 !important;
@@ -18,7 +18,7 @@
     transition: 0.4s !important;
 }
 .forbtn:hover{
-    background: linear-gradient(4deg, rgba(50, 103, 153, 1) 33%, rgba(83, 172, 255, 1) 100%);
+    background: linear-gradient(4deg, rgba(50, 103, 153, 1) 33%, rgba(83, 172, 255, 1) 100%) ;
 }
 
 .contactWays{
@@ -36,11 +36,14 @@
     font-weight: 700;
 }
 .descPart h5 , .descPart p ,.descPart span{
-    size:1rem;
+    font-size:clamp(10px, calc( 0.6vw + 0.5rem), 60px);
     line-height: 1.5rem;
 }
+.descPart span{
+    font-weight: 400 !important;
+}
 .descPart h1{
-    font-size: 4rem;
+    font-size: clamp(24px, calc(3.6vw + 0.5rem),140px);
     line-height: 6rem;
     margin-bottom: 0;
 }
@@ -50,33 +53,49 @@
 }
 
 .descPart h3{
-    font-size: 2.06rem;
+    font-size: clamp(16px, calc(1.6vw + 0.5rem), 80px);
     line-height: 3.09rem;
     padding-bottom: 1.5rem;
 }
 .descPart h4{
-    font-size:1.4rem ;
+    font-size:clamp(12px, calc( 1vw + 0.5rem ) , 70px); 
     line-height:2.16rem ;
 }
 .formBGMsg{
-    background: linear-gradient(265deg, rgb(40, 62, 80) 20%, rgba(111, 162, 211, 0.6) 100%);
+    /* background: linear-gradient(265deg, rgb(40, 62, 80) 20%, rgba(111, 162, 211, 1) 100%); */
+    background: linear-gradient(265deg, rgb(40, 62, 80) 20%, rgb(90, 132, 172) 100%);
 }
 .formContent h3{
     font-size: 2.0625rem;
     line-height: 3.094rem;
 }
+.newBtn{
+    text-transform: none !important;
+    color: #ffff !important;
+    background: #53ACFF !important;
+    transition: all 0.4s ;
+  
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px) !important;
+}
+.contactBtn{
+    padding: 0.2rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
+
+}
+.newBtn:hover{
+/* background: linear-gradient(0deg,rgba(50, 103, 153, 1) 15%,rgba(83, 172, 255, 1) 71%) !important; */
+box-shadow: inset 0px -20px 30px -10px #165b9c;
+}
 
 @media only screen and (max-width: 676px){
     .descPart h5{
-        font-size: 0.625rem;
         line-height: 0.94rem;
     }
     .descPart h1{
-        font-size: 1.5rem;
         line-height: 2.25rem;
     }
     .descPart p, .descPart span{
-        font-size: 0.75rem;
         line-height: 1.125rem;
     }
     .forbtn{
@@ -84,11 +103,10 @@
         line-height: 0.9rem;
     }
     .descPart h3{
-        font-size: 1.25rem;
         line-height: 1.9rem;
+        padding-bottom: 0.5rem;
     }
     .descPart h4{
-        font-size: 0.875rem ;
         line-height: 1.3125rem;
     }
 }

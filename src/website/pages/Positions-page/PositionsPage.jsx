@@ -24,16 +24,15 @@ const PositionsPage = () => {
 
 
             <div className='py-5 flex flex-col gap-16 bgImg'>
-                <div className="md:w-1/2 headOfPage mx-auto flex flex-col align-items-center gap-3">
+                <div className="md:w-1/2 headOfPage mx-auto flex flex-col align-items-center text-center gap-3">
                     <h1><span className='highlight'>Street Suite</span> Vacancies </h1>
-                    <div className='md:w-7/12 sm:w-3/4 text-center'>
+                    <div className='md:w-8/12 sm:w-3/4 text-center'>
                         <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
                     </div>
                 </div>
 
-                        <AccordionGroup  transition="0.2s" disableDivider className=" w-10/12 mx-auto flex flex-col gap-6">
+                        <AccordionGroup disableDivider className=" w-10/12 mx-auto flex flex-col gap-6" sx={{transition:'2s'}} >
 
-                {/* <div className='w-10/12 mx-auto flex flex-col gap-6'> */}
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
                 <Accordion defaultExpanded
                 sx={{
@@ -164,7 +163,6 @@ const PositionsPage = () => {
                 </div>
 
                 </Accordion>
-
                 </div>
 
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
@@ -297,7 +295,6 @@ const PositionsPage = () => {
                 </div>
 
                 </Accordion>
-
                 </div>
 
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
@@ -430,7 +427,6 @@ const PositionsPage = () => {
                 </div>
 
                 </Accordion>
-
                 </div>
 
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
@@ -563,9 +559,7 @@ const PositionsPage = () => {
                 </div>
 
                 </Accordion>
-
                 </div>
-                {/* </div> */}
 
 
                 </AccordionGroup>

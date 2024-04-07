@@ -10,7 +10,7 @@ export default function BasicTabs() {
     <Box sx={{ width: '100%'}}>
       <Box className='blogsTabs '>
            {/* tabs for all filters */}
-                        <div className="check-Filter tabsStyle">
+                        <div className="check-Filter tabsStyle tabsSec">
                     <label htmlFor="private-equity"> Private Equity
                         <input type="radio" id='private-equity' name='check-Filter' />
                     </label>

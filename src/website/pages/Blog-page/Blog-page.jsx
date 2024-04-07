@@ -24,7 +24,7 @@ const BlogPage = () => {
                         <p>Dive into our interactive quizzes designed to unravel your trading persona and unveil insights into your trading prowess.</p>
                     </div>
                 </div>
-                <div className='md:w-10/12 sm:w-11/12  mx-auto'>
+                <div className='md:w-10/12 sm:w-11/12 mx-auto '>
                     {/* the page have a component for filter and component for its content */}
                     <BasicTabs />
                     <OneBlog />
