@@ -303,7 +303,7 @@
 
 
 
-@keyframes animateOnOpen {
+/* @keyframes animateOnOpen {
   0% {
     width: 220px;
   }
@@ -329,10 +329,10 @@
   100% {
     width: 100px;
   }
-}
+} */
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1024px) {
   .logo {
     height: 80px;
   }

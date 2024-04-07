@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom'
 
 const QuizCard = ({horizontal = false , title = "Do you know the difference? Day Trading, Swing Trading, Position Trading: "}) => {
   return (
-      <Link to="/quizzes/quiz" className={`quiz-card block mx-2 ${horizontal ? 'horizontal-card' : ""}`}>
+      <Link to="/quizzes/quiz" className={`quiz-card flex mx-2 ${horizontal ? 'horizontal-card flex-row' : " flex-col"}`}>
         <img src={hotStripeImg} alt="" className='hot-padge' />
         <img src={hotStripeDarkImg} alt="" className='hot-padge-dark' />
         <img
           alt=""
           src={quizCardImg}
-          className="card-img h-32 w-full object-cover lg:h-48 "
+          className="card-img h-1/2 w-full object-cover "
         />
 
         <div className="card-body flex flex-col justify-between">

@@ -112,9 +112,9 @@ const SingleCoursePage = () => {
 
                 {/* buttons action that make user takes any action he needs */}
                 <div className={styles.course_actions_btn}>
-                    <Link className={styles.restartCourse}>Restart Course </Link>
-                    <Link className={styles.continueCourse}>Continue</Link>
-                    <Link className={styles.startCourse + " hidden"}>Start Course</Link>
+                    <Link to="/dashboard/training/single-training" className={styles.restartCourse}>Restart Course </Link>
+                    <Link to="/dashboard/training/single-training" className={styles.continueCourse}>Continue</Link>
+                    <Link to="/dashboard/training/single-training" className={styles.startCourse + " hidden"}>Start Course</Link>
                 </div>
 
             </div>

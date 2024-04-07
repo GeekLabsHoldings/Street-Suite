@@ -13,7 +13,7 @@ section.clientsFavFeature .section-title {
 
 section.clientsFavFeature img {
     width: 100%;
-    transform: translateY(-300px);
+    transform: translateY(-15vw);
 }
 
 .commingSoon-container > p {

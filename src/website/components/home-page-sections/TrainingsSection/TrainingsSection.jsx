@@ -15,7 +15,7 @@ const TrainingsSection = () => {
 
             <div className='mx-auto trainings-container flex flex-col'>
 
-               <div className='flex flex-col lg:flex-row items-center px-4'>
+               <div className='flex flex-col lg:flex-row items-center pl-4 lg:pl-[10%] '>
 
                     {/* content of trainings */}
                     <div className="trainings-content lg:w-1/2 ">
@@ -67,7 +67,7 @@ const TrainingsSection = () => {
 
                </div>
                 {/* Seeing is believing, access All Street Suite Pro Features part */}
-                <div className="signUpNow border-animate w-full order-3">
+                <div className="signUpNow border-animate w-full order-3 lg:max-w-[90%] mx-auto">
                     <div className="signUpNow-body">
                         <div className="signUpNow-content">
                             <h4>Seeing is believing, access All <span> Street Suite </span> <br /> Features for Free, no commitments</h4>

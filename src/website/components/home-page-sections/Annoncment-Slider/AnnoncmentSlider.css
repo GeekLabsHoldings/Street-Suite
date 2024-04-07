@@ -3,33 +3,17 @@
     padding: 0.3rem 0;
     text-align: center;
 }
-.AnnoncmentSlider h6{
+
+.AnnoncmentSlider h6 {
     color: var(--Black200);
     font-family: Poppins;
-    font-size: 19px;
+    font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
     font-weight: 700;
-    line-height: 29px;
     letter-spacing: 0em;
     text-align: center;
-    
+
 }
 
-.AnnoncmentSlider .slick-slider .slick-list, .slick-slider .slick-track{
+.AnnoncmentSlider .slick-slider .slick-list, .slick-slider .slick-track {
     padding: 0;
-}
-
-@media only screen and (max-width: 600px) {
-    .AnnoncmentSlider h6{
-        font-size: 16px;
-    }
-}
-
-
-
-
-@media only screen and (min-width: 2224px) {
-.AnnoncmentSlider h6 {
-    font-size: 28px;
-    line-height: 40px;
-}
 }

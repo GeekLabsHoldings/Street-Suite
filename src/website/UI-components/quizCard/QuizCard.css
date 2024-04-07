@@ -1,6 +1,6 @@
 
 .quiz-card {
-    height: 365px;
+    height: clamp(250px, calc( 18vw + 0.5rem ) ,1000px);
     position: relative;
     border-radius: 15px;
     border: 1px solid transparent;
@@ -26,9 +26,8 @@
 }
 .quiz-card .card-body h4 {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px, 0.5vw + 0.5rem, 60px);
     font-weight: 700;
-    line-height: 24px;
     text-align: left;
     color: #fff;
     margin-bottom: 1.5rem;
@@ -40,9 +39,8 @@
     align-items: center;
     gap: 0.5rem;
     font-family: Poppins;
-    font-size: 19px;
+    font-size:  clamp(10px, 0.6vw + 0.5rem, 60px);
     font-weight: 400;
-    line-height: 28.5px;
     text-align: left;
 
 }
@@ -67,6 +65,7 @@
     display: none;
 }
 .horizontal-card{
+
     display: flex;
     box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
@@ -83,9 +82,8 @@
 }
 .horizontal-card .card-body h4{
 font-family: Poppins;
-font-size: 33px;
+font-size: clamp(20px,  calc( 1.7vw + 0.5rem ) , 80px);
 font-weight: 700;
-line-height: 49.5px;
 text-align: left;
 margin-bottom: 0;
 
@@ -96,9 +94,8 @@ margin-bottom: 0;
 }
 .horizontal-card .card-body .highlights span{
     padding: 0.5rem 1rem;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 20px;
     background: rgba(65, 64, 64, 0.5);
     display: block;
     width: max-content;
@@ -111,10 +108,8 @@ margin-bottom: 0;
 
 
 
-@media only screen and (max-width: 1000px) {
-    .quiz-card {
-        height: 257px;
-    }
+@media only screen and (max-width: 1024px) {
+
     .quiz-card .hot-padge, .hot-padge-dark {
         position: absolute;
         top: -8px;
@@ -124,12 +119,10 @@ margin-bottom: 0;
     .quiz-card .card-body h4 {
         font-size: 10px;
         font-weight: 700;
-        line-height: 15px;
     }
     .quiz-card .quiz-details span {
         font-size: 10px;
         font-weight: 400;
-        line-height: 15px;
         gap: 0.2rem;
     }
 
@@ -138,7 +131,7 @@ margin-bottom: 0;
     }
     .quiz-card.horizontal-card {
         margin: 0 !important;
-        height: 230px;
+        max-width: 100%;
     }
     .horizontal-card .card-body{
         padding: 1.5rem 0.5rem;
@@ -147,12 +140,10 @@ margin-bottom: 0;
         padding: 0.3rem 0.4rem;
         font-size: 10px;
         font-weight: 400;
-        line-height: 10px;
     }
 
     .quiz-card.horizontal-card .card-body h4 {
         font-size: 18px;
         font-weight: 700;
-        line-height: 28.5px;
     }
 }

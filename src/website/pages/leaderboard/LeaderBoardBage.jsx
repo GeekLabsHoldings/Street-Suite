@@ -932,7 +932,7 @@ const LeaderBoardPage = () => {
             <div className="ConnectYourBroker w-full mb-6">
               <h6>Connect your broker to see yourself on our leaderboard </h6>
 
-              <div className="brokers flex justify-between items-center gap-3 my-6">
+              <div className="brokers grid grid-cols-3 gap-[0.75rem] lg:gap-[2rem] my-6">
                 <div className="gradient-border">
                   <div className="broker-box" onClick={openModal}>
                     <img src={brokerImg1} alt="" />
@@ -997,7 +997,7 @@ const LeaderBoardPage = () => {
                           </div>
                         </div>
                       </div>
-                      <p><Link to="">Learn more</Link> about Interactive Brokers or <Link to="">compare</Link> it with other brokers.</p>
+                      <p><Link to="/top-brokers">Learn more</Link> about Interactive Brokers or <Link to="/top-brokers">compare</Link> it with other brokers.</p>
                       <div className="line"></div>
                       <div className="input-box flex flex-col items-start">
                         <label className="text-sm text-gray-500">

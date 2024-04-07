@@ -48,8 +48,9 @@ const Footer = () => {
                                 <Link >Knoweledge base</Link>
                             </li>
                             <li>
-                                <Link to="/api">API</Link>
+                                <Link to="/change-logs">Change Log</Link>
                             </li>
+                            
                             <li>
                                 <Link to="/careers">Careers</Link>
                             </li>
@@ -75,6 +76,9 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link to="disclaimer">Disclaimer</Link>
+                            </li>
+                            <li>
+                                <Link to="/api">API</Link>
                             </li>
                         </ul>
                     </div>
