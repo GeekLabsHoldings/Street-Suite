@@ -79,7 +79,7 @@ const OneBlog =()=>{
                 <div className="sm:w-8/12 md:w-3/5 babyblueDiv flex flex-col align-items-end ">
                     <div className='leftBG md:w-3/4 sm:w-full md:p-2 sm:px-4 py-2'>
                         <div className='md:w-3/4'>
-                        <h5 className='md:w-1/2 sm:w-1/2 md:pb-3 sm:pb-1'>Stock Market 101 - Advanced</h5>
+                        <h5 className='md:w-4/5 sm:w-1/2 md:pb-3 sm:pb-1'>Stock Market 101 - Advanced</h5>
                     <div className='flex justify-between align-items-center'>
                         <div className='flex flex-col md:gap-2 sm:gap-1 coloredTxt'>
                         <h6 className='highlight py-1 w-fit darkerColor'>30 Modules</h6>

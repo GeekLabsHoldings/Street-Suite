@@ -1,19 +1,29 @@
-
 .caption h1,span,h3{
     font-weight: 700;
 }
 .caption h1{
-    font-size: 3rem;
+    font-size: clamp(24px, calc(2.8vw + 0.5rem),140px);
     line-height: 4.5rem;
 }
 .caption span ,p{
-    font-size: 1rem;
+    font-size: clamp(12px, calc( 0.6vw + 0.5rem), 60px);
 }
 .caption p{
     font-weight: 400;
 }
+.gapInUpdate{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.logcardBG p{
+font-size: clamp(10px, calc( 0.3vw + 0.5rem), 60px);
+}
+.logcardBG h5{
+    font-size: clamp(14px, calc( 0.8vw + 0.5rem ) , 70px);;
+}
 .caption h3{
-    font-size: 2rem;
+    font-size: clamp(16px, calc(1.5vw + 0.5rem), 80px);;
     line-height: 2.156rem;
 }
 .leftBorder{
@@ -27,9 +37,8 @@
     background-image: url('../../assets/changeLogBG.png');
 }
 .logcardBG{
-    background: rgba(221, 209, 209, 0.521);
-    background: linear-gradient(265deg, rgb(80, 125, 165) 20%, rgba(60, 96, 131, 0.6) 100%);
-
+    background: linear-gradient(265deg, rgb(80, 125, 165) 20%, rgba(60, 96, 131, 1) 100%);
+    padding: 5rem 0 !important;
 }
 .cardContainer{
   padding-top: 2.8rem;
@@ -69,19 +78,17 @@
         line-height: 0.94rem;
     }
     .caption h1{
-        font-size: 1.5rem;
+
         line-height: 2.25rem;
     }
     .caption p{
-        font-size: 0.75rem;
+
         line-height: 1.125rem;
     }
-    .leftBorder h5{
-        font-size: 0.875rem ;
+    .logcardBG h5{
         line-height: 1.3125rem;
     }
-    .leftBorder p{
-        font-size: 0.625rem;
+    .logcardBG p{
         line-height: 0.7875rem;
     }
     .msgPrt h3{

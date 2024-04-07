@@ -41,8 +41,9 @@ const SignIn = () => {
                     <div className="md:w-1/2 flex justify-center">
                         <div className="forBorder md:w-3/5 sm:w-10/12 ">
                             <div className='formPart formBGSignIn'>
-                                <div className=" formElements flex flex-col gap-4 md:w-8/12 sm:w-10/12 mx-auto md:pt-24 md:pb-16 sm:pt-12 sm:pb-8">
-                                    <div className='md:visible sm:hidden'>
+                                <div className=" formElements flex flex-col gap-20 md:w-8/12 sm:w-10/12 mx-auto md:pt-24 md:pb-16 sm:pt-12 sm:pb-8">
+                                   <div className='flex flex-col gap-3'>
+                                     <div className='md:visible sm:hidden'>
                                         <h3>Welcome back to <span className='highlight'>Street Suite!</span></h3>
                                     </div>
                                     <div className='md:hidden sm:visible text-center flex flex-col gap-2'>
@@ -51,9 +52,9 @@ const SignIn = () => {
                                     </div>
                                     <LabelAndInput labeltext='Email' required={true} placeholder='Enter your email' />
                                     <LabelAndInput labeltext='Password' required={true} placeholder='Enter password' />
-                                    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
+                                    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" /></div>
                                     <div className='mx-auto'>
-                                        <Button className='forbtn loginBtn '>Log In</Button>
+                                        <Button className=' newBtn loginBtn '>Log In</Button>
                                     </div>
                                 </div>
                             </div>
