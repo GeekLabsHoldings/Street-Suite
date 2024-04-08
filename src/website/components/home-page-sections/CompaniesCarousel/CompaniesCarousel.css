@@ -29,7 +29,7 @@
 
 .companiesCarousel .slick-slide img {
     margin: auto;
-    width: clamp(150px, calc(15vw + 0.5rem), 500px);
+    width: clamp(100px, calc(13vw + 0.5rem), 500px);
 }
 
 

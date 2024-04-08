@@ -38,34 +38,45 @@ function QuizPage() {
   const settings = {
     className: "slider variable-width",
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     centerPadding: "50px",
-
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
     variableWidth: true,
     nextArrow: <CustomArrow />,
     prevArrow: <CustomArrow />,
     responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                variableWidth: false,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-
-            }
+      {
+        breakpoint: 1924,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          variableWidth: true,
+          infinite: false,
+          dots: false
         }
+      },
+      {
+        breakpoint: 1524,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          variableWidth: true,
+        }
+      },
+
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          dots: true
+        }
+      }
     ]
-};
+  };
 
   function closeModal() {
     setIsOpen(false);
@@ -106,7 +117,7 @@ function QuizPage() {
         </div>
         <div className="quiz-questions">
           <div className="quiz-question-view mb-[20px] lg:mb-10">
-              <h5> What is Day Trading?</h5>
+            <h5> What is Day Trading?</h5>
           </div>
           <div className="quiz-answers grid grid-cols-2 gap-[10px] lg:gap-6">
 
@@ -145,50 +156,28 @@ function QuizPage() {
           </svg></Link>
         </div>
 
-        <div className="slider-container  d-block d-lg-none ">
-                    <Slider {...settings}>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                    </Slider>
-                </div>
-                <div className="slider-container  d-none d-lg-block ">
-                    <Slider {...settings}>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                    </Slider>
-                </div>
+        <div className="slider-container">
+          <Slider {...settings}>
+            <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
+              <QuizCard />
+            </div>
+            <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
+              <QuizCard />
+            </div>
+            <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
+              <QuizCard />
+            </div>
+            <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
+              <QuizCard />
+            </div>
+            <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
+              <QuizCard />
+            </div>
+            <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
+              <QuizCard />
+            </div>
+          </Slider>
+        </div>
       </div>
 
 
@@ -211,7 +200,7 @@ function QuizPage() {
                 leaveTo="opacity-0 scale-95"
               >
                 <div className="gradient-border add-email-modal">
-                  <Dialog.Panel className="modal-body w-full max-w-xl transform overflow-hidden rounded-2xl p-10 align-middle shadow-xl transition-all">
+                  <Dialog.Panel className="modal-body w-[40vw] transform overflow-hidden rounded-2xl p-10 align-middle shadow-xl transition-all">
                     <h6 className=" text-white">
                       You Are One Step Away From Getting Your Results!
                     </h6>

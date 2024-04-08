@@ -1,6 +1,8 @@
 
 .filters_section {
-  width: 30%;
+  width: 27%;
+  position: fixed;
+  right: 0;
 }
 .filtersContainer {
   padding: 2rem;
@@ -497,14 +499,14 @@
 
 .applyBtn {
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 20px;
   letter-spacing: 0px;
   text-align: center;
   color: #fff;
-  padding: 0.6rem 0;
-  width: 160px;
+  padding: 0.5rem 0;
+  width: 140px;
   background-color: #53ACFF !important;
   border-radius: 6px;
   margin: 1.5rem 0 0;
@@ -520,14 +522,14 @@
 
 .saveFilterBtn{
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 20px;
   letter-spacing: 0px;
   text-align: center;
   color: #fff;
-  padding: 0.6rem 0;
-  width: 160px;
+  padding: 0.5rem 0;
+  width: 140px;
   background-color: transparent;
   border-radius: 6px;
   margin: 1.5rem 0 0;
@@ -569,6 +571,10 @@
     padding: 2rem 1rem;
   }
 
+  .filters{
+    max-height: 100%;
+    overflow-y: scroll;
+  }
 
   /* .filters.open::after {
     content: "";

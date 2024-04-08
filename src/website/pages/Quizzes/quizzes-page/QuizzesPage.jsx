@@ -26,7 +26,7 @@ const QuizzesPage = () => {
                 </Hero>
 
 
-                <div className="lg:container mx-auto px-[16px] items-center  py-[10px] lg:py-16">
+                <div className="quizzes-container mx-auto px-[16px] items-center  py-[10px] lg:py-16">
 
                     <Outlet />
 

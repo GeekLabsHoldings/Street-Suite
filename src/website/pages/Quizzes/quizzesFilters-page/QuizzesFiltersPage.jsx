@@ -39,27 +39,36 @@ const QuizzesFiltersPage = () => {
         nextArrow: <CustomArrow />,
         prevArrow: <CustomArrow />,
         responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    variableWidth: false,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1,
-
-                }
+          {
+            breakpoint: 1924,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              variableWidth: true,
+              infinite: false,
+              dots: false
             }
+          },
+          {
+            breakpoint: 1524,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              variableWidth: true,
+            }
+          },
+    
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 1,
+              dots: true
+            }
+          }
         ]
-    };
+      };
 
     return (
         <>
@@ -113,46 +122,24 @@ const QuizzesFiltersPage = () => {
                     <h6>Latest</h6>
                 </div>
 
-                <div className="slider-container d-block d-lg-none ">
+                <div className="slider-container">
                     <Slider {...settings}>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                    </Slider>
-                </div>
-                <div className="slider-container d-none d-lg-block ">
-                    <Slider {...settings}>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
                     </Slider>
@@ -160,9 +147,9 @@ const QuizzesFiltersPage = () => {
             </div>
 
             {/* all quizzes */}
-            <div className="quizzes-cards space-y-6">
+            <div className="quizzes-cards space-y-6 mb-6">
 
-                <div className='title flex items-center justify-between'>
+                <div className='title flex items-center justify-between my-8'>
                     <h6>Market Analysis</h6>
                     <Link to="">
                         See More 
@@ -173,53 +160,53 @@ const QuizzesFiltersPage = () => {
                 </div>
 
 
-                <div className="slider-container d-none d-lg-block">
+                <div className="slider-container d-none d-md-block">
                     <Slider {...settings}>
-                        <div style={{ width: 600 }}>
+                        <div style={{ width: "clamp(420px, calc( 30vw + 0.5rem ) ,1200px)" }}>
                             <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
                         </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
                     </Slider>
                 </div>
-                <div className="slider-container d-inline d-lg-none">
-                    <div style={{ width: 400 }}>
-                        <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
-                    </div>
+                <div className="slider-container d-inline d-md-none">
+
+                    <QuizCard horizontal={true} title="Test Your Knowledge Bundle. " />
+
                     <Slider {...settings}>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
                     </Slider>
                 </div>
             </div>
 
-            <div className="quizzes-cards space-y-6">
+            <div className="quizzes-cards space-y-6 mb-6">
 
                 <div className='title flex items-center justify-between'>
                     <h6>Market Analysis</h6>
@@ -228,46 +215,24 @@ const QuizzesFiltersPage = () => {
                     </svg></Link>
                 </div>
 
-                <div className="slider-container  d-block d-lg-none ">
+                <div className="slider-container">
                     <Slider {...settings}>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
-                        <div style={{ width: 220 }}>
-                            <QuizCard />
-                        </div>
-                    </Slider>
-                </div>
-                <div className="slider-container  d-none d-lg-block ">
-                    <Slider {...settings}>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
-                            <QuizCard />
-                        </div>
-                        <div style={{ width: 320 }}>
+                        <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
                             <QuizCard />
                         </div>
                     </Slider>

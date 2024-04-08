@@ -89,13 +89,15 @@ function SideMenu() {
 
 
         {/* user info and avatar  */}
-        <div className={styles.userInfoContent}>
-          <img src={userImg} alt="" />
-          <div>
-            <h6>Mostafa Sakr</h6>
-            <p>frontend developer</p>
+        <Link to="/setting">
+          <div className={styles.userInfoContent}>
+            <img src={userImg} alt="" />
+            <div>
+              <h6>Mostafa Sakr</h6>
+              <p>frontend developer</p>
+            </div>
           </div>
-        </div>
+        </Link>
 
         {/* copy right .. */}
         <p>Street suit .22</p>
