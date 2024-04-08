@@ -3,43 +3,40 @@
     padding: 0 0.5rem;
     border-radius: 0.2rem ;
 }
+
 .linksSection a{
     color: white !important;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
     line-height: 1.5rem;
     font-weight: 400;
 }
 .LeftBorder h1{
-    font-size: 3rem;
+    font-size: clamp(24px, calc(2.4vw + 0.5rem),140px);
     font-weight: 700;
     line-height: 4.5rem;
 }
 .loginPerson h6{
-    font-size: 0.94rem;
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
     line-height: 22.5px;
     font-weight: 700;
 
 }
 .loginPerson p{
     color: #979797;
-    font-size:0.8rem ;
+    font-size:clamp(9px, calc( 0.3vw + 0.5rem), 60px) ;
     font-weight: 600;
     line-height:1.22rem ;
 
 }
 .settingBtn{
+    font-size:clamp(10px, calc( 0.3vw + 0.5rem), 60px);
     border-radius: 0.2rem;
-    font-size:0.75rem;
     font-weight: 600;
     line-height: 0.9rem;
-    text-transform: none !important;
-    padding: 0.5rem 1rem !important;
+    padding: 0.3rem 1.5rem !important;
 }
-.changesBtn{
-    color: #ffff !important;
-    background-color: #53ACFF !important;
-}
+
 .disconnectBtn{
     color:#979797 !important ;
     border:1px solid #979797 !important;
@@ -47,7 +44,7 @@
 
 }
 .avatarTxt p{
-    font-size: 0.625rem;
+    font-size: clamp(10px, calc( 0.1vw + 0.5rem), 30px);
     line-height: 1.125rem;
     font-weight: 400;
 }
@@ -59,10 +56,9 @@
     border-radius: 0.5rem;
     background-color: #282828;
 }
-
 .labelColor label{
     color: #ffffff;
-    font-size: 0.8rem;
+    font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
     line-height: 1.024rem;
     font-weight: 400;
 }
@@ -83,42 +79,41 @@
 }
 .optionAndDesc span{
     color: #979797;
-    font-size: 0.6875rem;
+    font-size: clamp(11px, calc( 0.2vw + 0.5rem), 60px);
     line-height: 1rem;
     font-weight: 400;
 }
 .accountBilling h5{
-    font-size: 1.56rem;
+    font-size: clamp(16px, calc( 1.1vw + 0.5rem ) , 70px);
     line-height:1.73rem;
     font-weight: 600;
 }
 .accountBilling p{
-    font-size: 1rem;
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
     line-height: 1.5rem;
     font-weight: 700;
 }
 .accountBilling h4{
-    font-size: 1.44rem;
+    font-size: clamp(16px, calc( 0.9vw + 0.5rem ) , 70px);
     line-height: 2.156rem;
     font-weight: 700;
 }
 .accountBilling h1{
-    font-size: 4rem;
+    font-size: clamp(40px, calc(3.4vw + 0.5rem),140px);
     line-height: 5.9rem;
     font-weight: 700;
 }
 .accountBilling h6{
-    font-size: 1rem;
+    font-size: clamp(23px, calc( 0.9vw + 0.5rem ) , 70px);
     line-height: 1.5rem;
     font-weight: 400;
 }
 .premuimDiv{
     border-radius: 0.8rem;
     background: linear-gradient(315deg, rgb(32, 44, 54) 34%, rgb(52, 84, 114)) ;
-
 }
 .rightSecAccount h5{
-    font-size: 1rem;
+    font-size: clamp(23px, calc( 0.5vw + 0.5rem), 60px);
     line-height: 1.5rem;
     font-weight: 700;
 }
@@ -140,16 +135,18 @@
     box-shadow: 0px -20px 10px -20px rgba(0,0,0,0.6) inset;
 }
 .tableHead li{
-    font-size: 0.8rem;
+    font-size: clamp(11px, calc( 0.3vw + 0.5rem), 60px);
     line-height: 1.22rem;
     font-weight: 700;
 }
 .tableBody li{
-    font-size:  0.6875rem;
+    font-size:  clamp(11px, calc( 0.2vw + 0.5rem), 60px);
     line-height: 1.03rem;
     font-weight: 400;
 }
-
+.blueTxt{
+    color: rgba(83, 172, 255, 1);
+}
 .settingCardBorder,.grayPositionBorder{
     position:relative;
     overflow: hidden;
@@ -194,62 +191,75 @@ width: 100%;
 height: 100%;
 position: relative;
 }
+.rightBorder h3,.sectionHeader h3,.accountBilling h5{
+    font-size: clamp(16px, calc(1.2vw + 0.5rem), 70px);
+    font-weight: 700;
+    line-height: 42px;
+}
+
+.rightBorder p,.sectionHeader p{
+    font-size:clamp(10px, calc( 0.3vw + 0.5rem), 60px);
+    font-weight: 400;
+    line-height: 16.38px;
+}
+.properityInSwitch p{
+    font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
+    font-weight: 400;
+}
+
 @media only screen and (max-width:676px) {
     .LeftBorder h1{
-        font-size: 1.5rem;
         line-height: 2.25rem;
         font-weight: 700;
 
     }
     .rightBorder h3,.leftSectionSetting h3,.accountBilling h5 ,.accountBilling p ,.premuimDiv h4{
-        font-size: 1rem;
         line-height: 1.5rem;
         font-weight: 700;
     }
     .rightBorder p ,.leftSectionSetting p{
-        font-size: 0.625rem;
+
         line-height: 0.7875rem;
         font-weight: 400;
     }
     .labelColor label{
-        font-size:0.75rem;
+
         line-height: 0.945rem;
         font-weight: 400;
     }
     .avatarTxt p{
-        font-size:0.75rem;
+
         line-height:1.442rem;
         font-weight: 400;
     }
     .settingBtn{
-        font-size: 8.75px;
+
         font-weight: 600;
         line-height: 0.7rem;
         padding: 0.1rem 0.5rem !important;
 
     }
     .properityInSwitch p{
-        font-size:0.75rem;
         line-height: 0.945rem;
         font-weight: 400;
     }
     .txtUnderProperities p{
-        font-size:0.75rem;
+
         line-height: 1.125rem;
         font-weight: 400;
     }
     .premuimDiv h1{
-        font-size: 2.5rem;
+
         line-height: 3.75rem;
         font-weight: 700;
     }
     .premuimDiv h6{
-        font-size: 1.44rem;
+
         line-height: 2.156rem;
         font-weight: 400;
     }
     .rightSecAccount h5{
-        font-size: 1rem;
+
         line-height: 1.5rem;
         font-weight: 700;
     }

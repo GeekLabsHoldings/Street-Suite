@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
 import StarsImg from '../../assets/starts.svg';
 import PopularImg from '../../assets/popular-badge.png';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { add } from '../../../redux/cardsSlice';
 import './pickCard.css';
 
@@ -12,8 +12,7 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
     return(
         <div className='smforBorder'>
             <div className='formPart cardBG'>
-
- <div className='headerBG '>
+               <div className='headerBG '>
 
                 {/* reusable component for different logos */}
                 
@@ -21,7 +20,7 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
             
             <div className='md:w-1/3 sm:w-2/5 flex align-items-center md:justify-center sm:justify-between md:gap-3 sm:gap-1 '>
                 <div className="imgDivHeader sm:w-2/5 ">
-                    <img className='w-full' src={imgUrl} />
+                    <img className='w-full h-full' src={imgUrl} />
                 </div>
                 <div className=" md:w-2/3 sm:w-3/5 textToImg sm:justify-end">
                     <div className='lg:py-3 sm:py-0 sm:pe-16 elementBorder w-full '>
@@ -51,11 +50,10 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                             <img src={PopularImg} />
                             </div>
                 </div>
-
             </div>
-
         </div>
             </div>
+
                 <div className="col-md-11 m-auto md:py-5 sm:pt-4 pickContainer sm:px-3">
                     <div className='row'>
                         <div className="col-md-6 ">
@@ -72,11 +70,9 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                             {pros.map((oneProp)=>(
                                 <li>{oneProp}</li>
                             ))}
-
                         </ul>
                             </div>
                             </div>
-
                     </div>
                     <div className='row justify-between md:py-4 sm:pb-5 pt-2'>
                     <div className="col-md-6 ">
@@ -98,25 +94,25 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                         </ul>
 
                         <div className='md:visible sm:hidden flex gap-3 pt-10 justify-end'>
-                    <Button className='topBrokerBtns compareBtn forbtn py-2 px-4 w-fit' 
+                    <Button className='newBtn compareBtn' 
                     onClick={()=>{
                          dispatch(add({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview}))
                          setIsClicked(true);
                     }}>Compare</Button>
-
-
-                    <Button className='topBrokerBtns forbtn py-2 w-fit'>Create Account</Button>
+                    <Button className='newBtn pickcardBtn'>Create Account</Button>
                 </div>   
+                
                             </div>
                             </div>
                             <div className='sm:visible md:hidden flex gap-3 pt-10 sm:justify-end'>
-                    <Button className='topBrokerBtns compareBtn forbtn py-2 px-4 w-fit'onClick={()=>{
+                    <Button className='newBtn compareBtn'onClick={()=>{
                          dispatch(add({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview}))
                          setIsClicked(true);
                          setCloseCompare(false);
                     }}>Compare</Button>
-                    <Button className='topBrokerBtns forbtn py-2 w-fit'>Create Account</Button>
+                    <Button className='newBtn pickcardBtn'>Create Account</Button>
                 </div>
+
                     </div>
                 </div>
             </div>

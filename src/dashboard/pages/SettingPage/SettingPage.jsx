@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import BillIcon from '../../assets/billIcone.svg'
-
 import ProperityAndSwitch from '../../components/properitt-and-switch/ProperityAndSwitch';
 import './SettingPage.css';
 import { Helmet } from 'react-helmet-async';
@@ -148,9 +147,9 @@ const SettingPage = () => {
                                                     <div>
                                                         <Avatar alt="user avatar" src={LoginImg} />
                                                     </div>
-                                                    <div className='avatarTxt'>
-                                                        <p >Change Avatar</p>
-                                                        <p>Remove Avatar</p>
+                                                    <div className='avatarTxt flex flex-col gap-1'>
+                                                        <p><a className='blueTxt' href="#">Change Avatar</a></p>
+                                                        <p><a href="#">Remove Avatar</a></p>
                                                     </div>
 
                                                 </div>
@@ -172,7 +171,7 @@ const SettingPage = () => {
                             </div>
                             {/* private details section */}
                             <div className="md:w-1/2 flex justify-center" id='security' onClick={indicatorHandler}>
-                                <div className="w-10/12 md:py-4 sm:py-3 leftSectionSetting">
+                                <div className="w-10/12 md:py-4 sm:py-3 leftSectionSetting sectionHeader">
                                     <h3 className='pb-2'>Private Details</h3>
                                     <div className=' flex flex-col md:gap-4 sm:gap-2 mx-auto '>
                                         <div className='flex flex-col gap-1'>
@@ -187,7 +186,7 @@ const SettingPage = () => {
                                                     <label htmlFor="Email" className='w-full'>Email</label>
                                                 </div>
                                                 <div className='flex'>
-                                                    <Button className='settingBtn changesBtn w-fit'>Change email</Button>
+                                                    <Button className='newBtn settingBtn w-fit'>Change email</Button>
                                                 </div>
 
                                             </div>
@@ -197,7 +196,7 @@ const SettingPage = () => {
                                                     <label htmlFor="Password " className='w-full'>Password </label>
                                                 </div>
                                                 <div className='flex'>
-                                                    <Button className='settingBtn changesBtn w-fit'>Change Password</Button>
+                                                    <Button className='newBtn settingBtn w-fit'>Change Password</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -238,7 +237,7 @@ const SettingPage = () => {
                                         </div>
 
                                         <div className='w-full md:flex justify-end md:px-3 sm:py-3'>
-                                            <Button className='settingBtn changesBtn md:px-4 md:py-2 md:w-fit sm:w-full'>Save Changes</Button>
+                                            <Button className='newBtn settingBtn w-fit md:w-fit sm:w-full'>Save Changes</Button>
 
                                         </div>
                                     </div>
@@ -258,8 +257,8 @@ const SettingPage = () => {
                         <div className="md:w-1/2 settingCardBorder" id='leaderboard' onClick={indicatorHandler}>
                             <div className=" settingBorderContainer largeDiv">
                                 <div className='w-11/12 mx-auto md:flex px-3 py-4'>
-                                    <div className="md:w-1/2 flex flex-col gap-3">
-                                        <div className='flex flex-col md:gap-3 sm:gap-2 leftSectionSetting'>
+                                    <div className="md:w-1/2 flex flex-col gap-4">
+                                        <div className='flex flex-col md:gap-3 sm:gap-2 leftSectionSetting sectionHeader'>
                                             <h3>Leaderboard</h3>
                                             <p>This information will be publicly displayed and visible for all users.</p>
                                         </div>
@@ -289,13 +288,13 @@ const SettingPage = () => {
 
                                                     <div className='sm:visible md:hidden flex gap-2 mt-4'>
                                                         <p>Disconnect my broker’s account</p>
-                                                        <Button className='settingBtn disconnectBtn w-full '>Disconnect</Button>
+                                                        <Button className='newBtn settingBtn w-full '>Disconnect</Button>
                                                     </div>
 
                                                     <div className=' md:w-1/2 md:flex flex-col gap-2'>
-                                                        <Button className='settingBtn changesBtn w-full py-1 '>Save Changes</Button>
+                                                        <Button className='newBtn w-full '>Save Changes</Button>
                                                         <div className='sm:hidden md:visible'>
-                                                            <Button className=' settingBtn disconnectBtn w-full py-1'>Disconnect</Button>
+                                                            <Button className='newBtn settingBtn w-full '>Disconnect</Button>
                                                         </div>
                                                     </div>
                                                     <p className='sm:hidden md:visible'>Disconnect my broker’s account</p>
@@ -317,7 +316,7 @@ const SettingPage = () => {
                             <div className='settingBorderContainer largeDiv'>
                                 <div className="w-11/12 mx-auto px-3 py-4 flex flex-col md:gap-10 sm:gap-2 ">
                                     {/* notifications section */}
-                                    <div className="md:flex justify-between leftSectionSetting ">
+                                    <div className="md:flex justify-between leftSectionSetting sectionHeader">
                                         <h3>Notifications & Alerts</h3>
                                         <ProperityAndSwitch title='Allow Notifications' />
                                     </div>
@@ -325,7 +324,7 @@ const SettingPage = () => {
                                     <div className="md:flex">
                                         <div className="md:w-1/2 flex flex-col md:gap-3">
                                             <div className='p-3 sm:mb-4 forborderRaduis'>
-                                                <div className='optionAndDesc'>
+                                                <div className='optionAndDesc '>
                                                     <ProperityAndSwitch title='Pause all' />
                                                     <span>Temporarily pause notification for 4 hours</span>
                                                 </div>
@@ -340,7 +339,7 @@ const SettingPage = () => {
                                         </div>
                                         <div className="md:w-1/2 md:flex justify-end">
                                             <div className="md:w-2/5 flex h-full align-items-end">
-                                                <Button className='settingBtn changesBtn md:py-2 w-full'>Save Changes</Button>
+                                                <Button className='newBtn w-full'>Save Changes</Button>
                                             </div>
                                         </div>
                                     </div>
