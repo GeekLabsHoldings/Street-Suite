@@ -79,6 +79,7 @@
     line-height:2.156rem;
     font-weight: 700;
 }
+
 .forAfterEffect h3{
     position: relative;
 }
@@ -101,10 +102,6 @@
     line-height:2.156rem;
     font-weight: 400;
 }
-
-.flexibleBG {
-    background-color: #252525d2;
-}
 .middleCard{
     color: #53ACFF;
     background-color: #202020;
@@ -123,11 +120,7 @@
     left: 30%;
     height: 100%;
 }
-.careerBtn{
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
-    line-height: 1.5rem;
-    font-weight: 700 !important;
-}
+
 .moveLast{
     position: absolute;
     bottom: -0.3%;
@@ -155,9 +148,20 @@
     display: flex;
     background: linear-gradient(150deg,rgba(83, 172, 255, 0.2) 27% ,rgb(15, 23, 32) 60%);
 }
+.careerBtn{
+    padding: 0.7rem 1.8rem;
+    border-radius: 0.2rem !important;
+    font-weight: 600;
+}
+.positionBtn{
+    padding: 0.4rem 1rem !important;
+    font-size:  clamp(10px, calc( 0.3vw + 0.5rem), 60px) !important;
+    font-weight: 600;
+    border-radius: 0.2rem !important;
+}
 .careerImgSize{
-    width:18.75rem; 
-    height:6.25rem;
+    height: clamp(50px, calc(10vw + 0.5rem), 300px);
+    width: clamp(111px, calc(19vw + 0.5rem), 500px);
     padding-top:2rem;
 }
 .positionsBorder{
@@ -194,10 +198,7 @@
     line-height: 1.125rem;
     font-weight: 400;
 }
-.careerBtn{
-    line-height: 0.96rem;
-    font-weight: 700;
-}
+
 .forFonts h3{
     line-height: 1.9rem;
     font-weight: 700;

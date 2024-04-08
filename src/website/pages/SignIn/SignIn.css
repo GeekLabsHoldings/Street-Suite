@@ -3,27 +3,28 @@
     background: linear-gradient(190deg, rgba(32,32,32,1) 40%, rgb(67, 118, 167) 100%);
 }
 .signInLogo{
-    width: 12.1875rem;
-    height: 5.375rem;
+    width: clamp(135px, calc(11vw + 0.5rem), 500px);
+    height: clamp(60px, calc(5vw + 0.5rem), 200px);
 }
 .signinContent h2 ,.signinContent span{
-    font-size: 2.5rem;
+    font-size: clamp(24px, calc(2vw + 0.5rem), 100px);
     line-height: 3.75rem;
     font-weight: 700;
 }
 .signinContent p{
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
+    line-height: 1.8rem;
     font-weight: 400;
 }
 .signinContent{
-    padding-left: 2rem;
+    padding-left: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
 }
 .loginBtn{
     padding: 0.3rem 1.3rem !important;
+    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px) !important;
 }
 .formElements h3{
-    font-size: 2.0625rem;
+    font-size: clamp(20px, calc(1.5vw + 0.5rem), 80px);
     line-height: 3.09375rem;
     font-weight: 700;
 }
@@ -33,17 +34,11 @@
 }
 
 @media only screen and (max-width: 676px){
-    .signInLogo{
-        width: 8.4375rem;
-        height: 3.75rem;
-    }
     .signinContent h2 ,.signinContent span{
-        font-size: 1.5rem;
         line-height: 2.25rem;
         font-weight: 700;
     }
     .formElements h3{
-        font-size: 1.25rem;
         line-height: 1.875rem;
         font-weight: 700;
     }
@@ -51,7 +46,6 @@
         background: linear-gradient(203deg, rgb(44, 71, 95) 20%, rgb(66, 125, 180) 100%);
     }
     .formElements p{
-        font-size: 0.875rem;
         line-height: 1.3125rem;
         font-weight: 400;
     }

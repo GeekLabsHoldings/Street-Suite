@@ -1,25 +1,47 @@
 .cardBG{
- background-color: #181818CC;
+ background-color: #181818f5;
  border-radius: 1rem;
 }
 .everyPart h5{
     font-weight: 700;
-    font-size:1.44rem ;
+    font-size: clamp(12px, calc(0.9vw + 0.5rem), 70px);
     line-height: 2.156rem;
     padding-bottom: 1.2rem;
 }
-.everyPart p{
+.everyPart p,.topBrokerList li{
     font-weight: 400;
-    font-size: 1rem ;
+    font-size: clamp(10px, calc(0.5vw + 0.5rem), 60px);
     line-height: 2rem;
 }
-
-.topBrokerBtns{
+.elementBorder{
+    border-right: 1px solid #979797;
+}
+.elementBorder h5{
+    font-size: clamp(10px, calc(0.7vw + 0.5rem), 80px);
+    line-height: 1.78rem;
+    font-weight: 400;
+}
+.starsImg{
+    width: clamp(57px, calc(7vw + 0.5rem), 300px);
+    height: clamp(9.67px, calc(0.9vw + 0.5rem), 80px);
+}
+.popularBadge{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+.pickcardBtn{
+    font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
     border-radius: 0.2rem;
+    font-weight: 600;
 }
 .compareBtn{
     background-color: transparent !important;
     border: 1px solid white;
+    font-weight: 600;
+}
+.compareBtn:hover{
+    background-color:rgba(83, 172, 255, 1) !important;
 }
 .pickContainer{
     display: flex;
@@ -31,26 +53,28 @@
     border-start-start-radius:1rem ;
     border-start-end-radius: 1rem;
 }
-
+.topBrokerList{
+    list-style:inside;
+    padding-left:1.2rem ;
+}
 @media only screen and (max-width: 676px){
     .everyPart h5{
-        font-size: 0.75rem;
         line-height: 1.125rem;
         font-weight: 700;
+        padding-top: 1rem;
     }
     .everyPart p ,.topBrokerList li{
-        font-size: 0.625rem;
         line-height: 1.25rem;
         font-weight: 400;
     }
-    .anyList{
-        gap: 0rem !important;
-    }
-    .everyPart h5{
-        padding-top: 1rem;
-    }
     .topBrokerList{
         padding-left: 0.4rem !important;
-
     }
+    .pickcardBtn{
+        padding: 0.3rem 0.5rem !important;
+    }   
+    .elementBorder h5{
+        line-height: 0.94rem;
+    }
+
 }

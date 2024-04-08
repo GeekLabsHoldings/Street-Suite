@@ -95,8 +95,7 @@ function App() {
 
             </Route>
 
-            <Route path='/login' element={<SignIn />} />
-            <Route path='/signup' element={< SignupPage />} />
+            
 
             <Route path='/dashboard' element={<DashboardLayout />}>
 
@@ -135,6 +134,10 @@ function App() {
               <Route path="setting" element={<SettingPage />} />
 
             </Route>
+            
+            
+            <Route path='/login' element={<SignIn />} />
+            <Route path='/signup' element={< SignupPage />} />
 
           </Routes>
         </HelmetProvider>

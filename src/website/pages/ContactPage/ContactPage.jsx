@@ -76,8 +76,9 @@ const ContactPage = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-6 ">
-                        {showElement && btnCicked ?  null : <div className="col-lg-8 forBorder m-auto ">
+                    {/* {showElement && btnCicked ?  null : */}
+                    <div className="col-lg-6" >
+                         <div className={btnCicked?"col-lg-8 forBorder m-auto":'md:visible sm:hidden col-lg-8 forBorder m-auto'}>
                             <div className="formPart formBGMsg lg:pt-24 lg:pb-14 sm:pt-14 sm:pb-8 sm:px-4">
                                 <div className='inForm'>
                                     <div className='col-lg-10 m-auto'>
@@ -86,7 +87,7 @@ const ContactPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>}
+                        </div>
                     </div>
                     
                 </div>

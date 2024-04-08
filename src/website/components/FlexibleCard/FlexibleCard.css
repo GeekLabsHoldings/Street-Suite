@@ -4,7 +4,7 @@
     left: 38%;
 }
 .flexibleBG {
-    background-color: #252525d2;
+    background-color: #252525;
 }
 .smforBorder::before{
     content: "";

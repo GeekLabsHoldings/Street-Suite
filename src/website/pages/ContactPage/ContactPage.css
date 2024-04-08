@@ -8,18 +8,6 @@
 .contactBg{
     background-image: url("../../assets/background.svg");
 }
-.forbtn{
-    border-radius: 0.2rem !important;
-    background-color: #53ACFF ;
-    color: #ffff !important;
-    font-size: 0.8rem;
-    font-weight: 600 !important;
-    line-height: 1.05rem;
-    transition: 0.4s !important;
-}
-.forbtn:hover{
-    background: linear-gradient(4deg, rgba(50, 103, 153, 1) 33%, rgba(83, 172, 255, 1) 100%) ;
-}
 
 .contactWays{
     display: flex;
@@ -62,31 +50,27 @@
     line-height:2.16rem ;
 }
 .formBGMsg{
-    /* background: linear-gradient(265deg, rgb(40, 62, 80) 20%, rgba(111, 162, 211, 1) 100%); */
     background: linear-gradient(265deg, rgb(40, 62, 80) 20%, rgb(90, 132, 172) 100%);
 }
-.formContent h3{
+/* .formContent h3{
     font-size: 2.0625rem;
     line-height: 3.094rem;
-}
+} */
 .newBtn{
     text-transform: none !important;
     color: #ffff !important;
-    background: #53ACFF !important;
-    transition: all 0.4s ;
-  
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px) !important;
+    background: rgba(83, 172, 255, 1) !important;
+    transition: all 0.4s !important;
+}
+.newBtn:hover{
+    box-shadow: inset 0px -20px 30px -10px #165b9c;
 }
 .contactBtn{
     padding: 0.2rem 1.5rem !important;
     font-weight: 600 !important;
     font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
+}
 
-}
-.newBtn:hover{
-/* background: linear-gradient(0deg,rgba(50, 103, 153, 1) 15%,rgba(83, 172, 255, 1) 71%) !important; */
-box-shadow: inset 0px -20px 30px -10px #165b9c;
-}
 
 @media only screen and (max-width: 676px){
     .descPart h5{
@@ -98,10 +82,7 @@ box-shadow: inset 0px -20px 30px -10px #165b9c;
     .descPart p, .descPart span{
         line-height: 1.125rem;
     }
-    .forbtn{
-        font-size: 0.75rem;
-        line-height: 0.9rem;
-    }
+
     .descPart h3{
         line-height: 1.9rem;
         padding-bottom: 0.5rem;

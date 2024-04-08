@@ -34,7 +34,7 @@ const CareersPage = () => {
                         <div className='w-2/3 flex flex-col gap-3 headerRight '>
                             <h3>ST Suite’s Careers</h3>
                             <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
-                            <Button className='forbtn careerBtn md:py-[11px] sm:py-[8px] md:px-10 sm:px-8 w-fit' onClick={onClickHandler}>Open Vacancies</Button>
+                            <Button className=' newBtn careerBtn w-fit ' onClick={onClickHandler}>Open Vacancies</Button>
                         </div>
 
                     </div>
@@ -58,6 +58,7 @@ const CareersPage = () => {
                             </div>
                             <div>
                                 <Button className=' bg-transparent border-0 w-fit'><img src={Icon} /></Button>
+
                             </div>
                         </div>
                     </div>
@@ -106,15 +107,14 @@ const CareersPage = () => {
 
 
 
-
                 <div className='md:w-3/5 sm:w-11/12 flex m-auto joinTeamBG p-2  sm:mb-10'>
                     <div className="forShadow md:p-12 relative sm:p-4 flex w-full">
-                        <div className='md:w-1/2 sm:w-2/3 flex flex-col '>
-                            <div className='forFonts paragraphFont sm:w-11/12 flex flex-col md:gap-6 sm:gap-2 md:mb-40 '>
+                        <div className='md:w-2/3 sm:w-2/3 flex flex-col '>
+                            <div className='forFonts paragraphFont sm:w-11/12 flex flex-col md:gap-8 sm:gap-2 md:mb-40 '>
                                 <h3>Join Our Team Now!</h3>
                                 <p className='md:visible sm:hidden'>Street Suite is expanding and we are looking for talented people to join our team!</p>
                                 <p className='md:hidden sm:visible'>Street Suite is expanding, join our team!</p>
-                                <Button className='forbtn py-2 px-4 w-fit' onClick={onClickHandler}>Open Vacancies</Button>
+                                <Button className=' newBtn careerBtn w-fit ' onClick={onClickHandler}>Open Vacancies</Button>
                             </div>
                             {/* card for datails about available positions */}
                             <CareerPositions whichMove='moveFirst' positionName='Back End Developer' />
@@ -125,13 +125,15 @@ const CareersPage = () => {
                                 <div className='middleCard flex flex-col align-items-center md:w-4/5 px-4 py-10 '>
                                     <h5> Back End Developer</h5>
                                     <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
-                                    <Button className='forbtn py-2 px-4 w-fit' onClick={onClickHandler}>Apply</Button>
+                                <Button className=' newBtn positionBtn w-fit ' onClick={onClickHandler}>Apply</Button>
+
+                                    
                                 </div>
                             </div>
                         </div>
 
-                        <div className="md:w-1/2 sm:w-1/3 flex flex-col md:pe-16 align-items-end justify-between md:pt-2  ">
-                            <div className='careerImgSize flex align-items-center '>
+                        <div className="md:w-1/2 sm:w-1/3 flex flex-col align-items-center justify-between md:pt-2  ">
+                            <div className='careerImgSize flex mx-auto '>
                                 <img src={Logo} className='w-full' />
                             </div>
 

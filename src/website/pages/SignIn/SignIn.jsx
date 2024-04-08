@@ -21,11 +21,11 @@ const SignIn = () => {
             <div className="signInBG flex align-items-center ">
                 <div className="flex sm:flex-col sm:gap-24 md:gap-0 sm:py-10">
                     <div className="md:w-1/2">
-                        <div className="md:w-3/5 sm:w-10/12 mx-auto flex flex-col gap-4">
+                        <div className="md:w-3/5 sm:w-10/12 mx-auto flex flex-col gap-6">
                             <div className="signInLogo">
                                 <img className="w-full" src={LogoIcon} />
                             </div>
-                            <div className="signinContent flex flex-col md:gap-3 sm:gap-1">
+                            <div className="signinContent flex flex-col md:gap-4 sm:gap-1">
                                 <div>
                                     <h2 className='md:ps-3'>Hello!</h2>
                                     <span className="highlight px-3">
@@ -42,17 +42,20 @@ const SignIn = () => {
                         <div className="forBorder md:w-3/5 sm:w-10/12 ">
                             <div className='formPart formBGSignIn'>
                                 <div className=" formElements flex flex-col gap-20 md:w-8/12 sm:w-10/12 mx-auto md:pt-24 md:pb-16 sm:pt-12 sm:pb-8">
-                                   <div className='flex flex-col gap-3'>
-                                     <div className='md:visible sm:hidden'>
+
+                                <div className='flex flex-col gap-12'>
+                                     <div className='md:visible sm:hidden text-center'>
                                         <h3>Welcome back to <span className='highlight'>Street Suite!</span></h3>
                                     </div>
                                     <div className='md:hidden sm:visible text-center flex flex-col gap-2'>
                                         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
                                         <p>Log in to your account</p>
                                     </div>
-                                    <LabelAndInput labeltext='Email' required={true} placeholder='Enter your email' />
+                                    <div className='flex flex-col gap-3'><LabelAndInput labeltext='Email' required={true} placeholder='Enter your email' />
                                     <LabelAndInput labeltext='Password' required={true} placeholder='Enter password' />
                                     <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" /></div>
+                                </div>
+
                                     <div className='mx-auto'>
                                         <Button className=' newBtn loginBtn '>Log In</Button>
                                     </div>

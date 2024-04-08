@@ -3,6 +3,7 @@ import FormLabel from '@mui/joy/FormLabel';
 import './changeLog.css';
 import { TextareaAutosize } from '../../components/FormComponent';
 import { Helmet } from 'react-helmet-async';
+import Button from '@mui/material/Button';
 
 const ChangeLogs = () => {
     return (
@@ -64,10 +65,10 @@ const ChangeLogs = () => {
 
                                 </div>
                                 <div>
-                                    <button type="button" style={{ padding: '0.3rem 2rem' }} className='btnColor'>submit</button>
+                                    <Button className=' newBtn loginBtn '>Submit</Button>
                                 </div>
-
                             </div>
+                            
                         </div>
                     </div>
                     {/* our changes with their date */}

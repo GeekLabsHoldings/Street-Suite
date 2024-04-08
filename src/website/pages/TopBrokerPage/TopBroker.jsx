@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { reset, removeItem } from '../../../redux/cardsSlice';
 // our data here
-import { brokersData, blackBrokerData, ImagesData, cardsData } from './brokersData';
-
-import './topBroker.css';
+import { brokersData, blackBrokerData, cardsData } from './brokersData';
 import { Helmet } from 'react-helmet-async';
+import './topBroker.css';
+
 
 
 const TopBroker = () => {
@@ -39,8 +39,6 @@ const TopBroker = () => {
             </div>
         ))
     return (
-
-
         <>
             <Helmet>
                 <title>Top Brokers | Street Suite</title>
@@ -59,10 +57,10 @@ const TopBroker = () => {
                     {/* best brokers card */}
                     <div className='sm:visible md:hidden w-full'>
                         <div className='col-lg-6 smforBorder m-auto'>
-                            <div className='formPart smbrokerBG py-3'>
-                                <div className='md:w-1/2 sm:px-12 text-center topBrokerSM'>
+                            <div className='formPart py-3 smbrokerBG'>
+                                <div className='md:w-1/2 sm:px-12 text-center topBrokerSM '>
                                     <h4 className='sm:pt-5'>Best brokers for 2024</h4>
-                                    <div  >
+                                    <div>
                                         {renderBrokers}
                                     </div>
                                 </div>
@@ -70,10 +68,11 @@ const TopBroker = () => {
                         </div>
                     </div>
 
-                    <div className='row'>
+                    <div className="flex flex-col gap-20">
+                    <div className='row '>
                         {/* description of our work */}
-                        <div className='col-md-6'>
-                            <div className='col-md-10 m-auto rightPrt sm:pt-10'>
+                        <div className='col-md-6 flex justify-end'>
+                            <div className='col-md-10 rightPrt sm:pt-10'>
                                 <div>
                                     <h4 className='pb-4'>What are our Top choice’s criteria?</h4>
                                     <div className="textSection ">
@@ -109,7 +108,7 @@ const TopBroker = () => {
                         <div className='md:visible col-md-6 sm:hidden'>
                             <div className='col-lg-8 forBorder m-auto'>
                                 <div className='formPart brokerBG py-3'>
-                                    <div className='col-lg-8 m-auto text-center'>
+                                    <div className='col-lg-8 m-auto text-center topBrokerSM'>
                                         <h4 className='py-8'>Best brokers for 2024</h4>
                                         <div>
                                             {renderBrokers}
@@ -121,13 +120,14 @@ const TopBroker = () => {
                         </div>
                     </div>
                     {/* display our picks */}
-                    <div className=' col-md-10 m-auto'>
+                    <div className=' col-md-10 m-auto '>
                         <div className='col-md-10 mx-auto my-5 ourPicks'>
-                            <h4 className='md:pb-5 sm:pb-8' >More about our picks:</h4>
+                            <h4 className='md:pb-12 sm:pb-8' >More about our picks:</h4>
                             <div className='flex flex-col gap-3'>
                                 {renderCardsData}
                             </div>
                         </div>
+                    </div>
                     </div>
 
                 </div>
@@ -138,11 +138,11 @@ const TopBroker = () => {
                         <div className='w-10/12 mx-auto flex justify-between selectFont'>
                             <h5>Selected ({cards.length})</h5>
                             <div className='flex gap-2'>
-                                <Button className='forbtn md:py-2 md:px-5 compareBtn' onClick={() => {
+                                <Button className='newBtn compareBtn' onClick={() => {
                                     dispatch(reset());
                                 }}>Reset</Button>
 
-                                <Button className='forbtn md:py-2 md:px-5' onClick={() => {
+                                <Button className='newBtn pickcardBtn' onClick={() => {
                                     setStartCompare(true);
                                 }} >Compare</Button>
                             </div>
@@ -180,6 +180,7 @@ const TopBroker = () => {
                                                     <svg
                                                         onClick={() => {
                                                             dispatch(removeItem(oneCard));
+                                                            console.log(oneCard)
                                                         }}
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -187,7 +188,7 @@ const TopBroker = () => {
                                                 </div>
                                             </div>
                                             <div className="w-11/12 flex flex-col gap-2 text-center visitWebsite">
-                                                <Button className='forbtn w-full'>Learn More</Button>
+                                                <Button className='newBtn pickcardBtn w-full'>Learn More</Button>
                                                 <span>On Interactive Brokers website</span>
                                             </div>
                                         </div>
