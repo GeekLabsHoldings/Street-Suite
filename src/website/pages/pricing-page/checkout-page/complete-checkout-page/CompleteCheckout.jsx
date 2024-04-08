@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const CompleteCheckout = () => {
   return (
     <div className='CompleteCheckout-wrapper'>
-      <div className='lg:container mx-auto px-4 CompleteCheckout-container pt-[40px] lg:pt-16 flex flex-col lg:flex-row items-end justify-center gap-12'>
+      <div className='mx-auto px-4 CompleteCheckout-container pt-[40px] lg:pt-16 flex flex-col lg:flex-row items-end justify-center gap-12'>
         <div className="CompleteCheckout-message w-full lg:w-1/2">
           <h4>Thank you for your Purchase!</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>

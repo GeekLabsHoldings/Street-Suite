@@ -9,9 +9,8 @@
 }
 .tradingHistory{
     
-    height: 40px;
-    padding: 5px 2rem;
-    font-size: 14px;
+    padding: 8px 2rem;
+    font-size: clamp(10px,  calc( 0.35vw + 0.5rem ), 60px);
     border-radius: 5px;
     background-color: #53ACFF;
     color: #fff;
@@ -58,8 +57,7 @@
 }
 
 .account_number ul:first-child li:first-child span {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 500;
     text-wrap: nowrap;
 }
@@ -90,15 +88,13 @@
 }
 
 .account_number ul:last-child li span:first-child {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: clamp(10px,  calc( 0.5vw + 0.5rem ), 60px);
     font-weight: 500;
     text-wrap: nowrap;
 }
 
 .account_number ul:last-child li span:last-child {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: clamp(10px,  calc( 0.5vw + 0.5rem ), 60px);
     font-weight: 200;
     text-wrap: nowrap;
 }
@@ -119,7 +115,7 @@
 }
 
 .account_chart .chart .total_price p {
-    font-size: 48px;
+    font-size: clamp(22px, calc( 2.2vw + 0.5rem ) ,140px);
     font-weight: 600;
     margin: 0.5rem 2rem;
 }
@@ -137,16 +133,14 @@
 
 .account_chart .chart .total_price_direction span:first-child {
     color: #fff;
-    font-size: 13px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
     font-weight: 200;
-    line-height: 13px;
 }
 
 .account_chart .chart .total_price_direction span:last-child {
     color: #118F4B;
-    font-size: 13px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
     font-weight: 200;
-    line-height: 13px;
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -165,6 +159,10 @@
     width: 100%;
     display: flex;
     gap: 1.5rem;
+}
+
+.shares_equities h4{
+    font-size: clamp(10px,  calc( 1vw + 0.5rem ), 60px);
 }
 
 .shares_equities .myShares {
@@ -192,7 +190,7 @@
 }
 
 .my_positions p {
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.5vw + 0.4rem ), 60px);
     font-weight: 600;
 }
 
@@ -209,7 +207,7 @@
 }
 
 .my_positions ul li a {
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.5vw + 0.4rem ), 60px);
     transition: all 0.3s;
 }
 
@@ -230,7 +228,7 @@
 }
 
 .company_info h6 {
-    font-size: 20px;
+    font-size:  clamp(10px,  calc( 0.6vw + 0.5rem ), 60px);
     font-weight: 600;
     padding: 0.5rem 0.7rem;
     border-radius: 5px;
@@ -241,7 +239,7 @@
 }
 
 .company_info .companyName span {
-    font-size: 12px;
+    font-size:  clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
     font-weight: 300;
     display: flex;
     align-items: center;
@@ -253,7 +251,7 @@
 }
 
 .company_info span svg {
-    width: 9px;
+    width:  clamp(8px,  calc( 0.3vw + 0.5rem ), 60px);
 }
 
 .company_info span svg path {
@@ -267,12 +265,12 @@
 }
 
 .company_info ul li span:first-child {
-    font-size: 12px;
+    font-size:  clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
     font-weight: 500;
 }
 
 .company_info ul li span:last-child {
-    font-size: 12px;
+    font-size:  clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
     font-weight: 200;
 }
 
@@ -291,7 +289,7 @@
 }
 
 .number_of_sales span {
-    font-size: 15.95px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 500;
     background: var(--Blue300);
     border-radius: 5px;
@@ -299,7 +297,7 @@
 }
 
 .number_of_sales p {
-    font-size: 9.84px;
+    font-size: clamp(10px,  calc( 0.3vw + 0.1rem ), 60px);
     left: 10px;
 }
 
@@ -320,9 +318,8 @@
 
 .shares_equities .equities h6 {
     font-family: Poppins;
-    font-size: 19px;
+    font-size: clamp(9px,  calc( 0.6vw + 0.5rem ), 60px);
     font-weight: 700;
-    line-height: 28.5px;
     text-align: center;
 
 }
@@ -349,9 +346,8 @@
 }
 .equity_item span {
     font-family: Poppins;
-    font-size: 17.92px;
+    font-size: clamp(9px,  calc( 0.5vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 21.5px;
     text-align: left;
     display: flex;
     align-items: center;
@@ -380,7 +376,7 @@
 
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
 
 
 

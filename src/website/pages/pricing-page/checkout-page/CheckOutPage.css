@@ -7,7 +7,7 @@
 }
 
 .checkout-container {
-    max-width: 1400px;
+    max-width: 80vw;
 }
 
 .checkout-container .chosen-plan .recommended-plane {
@@ -51,9 +51,8 @@
 }
 
 .checkout-container .plane-pricing .plane-points li {
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
     display: flex;
@@ -66,6 +65,7 @@
 
 .checkout-container .plane-pricing .plane-points li svg {
     margin-right: 1rem;
+    width: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
 }
 
 .checkout-container .plane-pricing .plane-points li.available .false {
@@ -98,9 +98,8 @@
 .checkout-container .plane-pricing .plane-action p {
 
     font-family: Poppins;
-    font-size: 13px;
+    font-size: clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
     font-weight: 700;
-    line-height: 20px;
     letter-spacing: 0em;
     text-align: center;
     margin-bottom: 1rem;
@@ -110,7 +109,7 @@
 .checkout-container .plane-pricing .plane-action a {
     padding: 0.5rem 1rem;
     font-family: Poppins;
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -127,12 +126,11 @@
 
 .checkout-container .payment-details h6 {
     font-family: Poppins;
-    font-size: 33px;
+    font-size: clamp(14px, calc(1.7vw + 0.5rem), 90px);
     font-weight: 700;
-    line-height: 50px;
     letter-spacing: 0em;
     text-align: left;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .checkout-container .payment-details .form-input {
@@ -143,16 +141,15 @@
 
 .checkout-container .payment-details .form-input label {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(12px,  calc( 0.5vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
 }
 
 .checkout-container .payment-details .form-input input {
     font-family: Poppins;
-    font-size: 15px;
+    font-size: clamp(14px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
     letter-spacing: 0em;
     text-align: left;
@@ -212,15 +209,13 @@
     display: block;
     margin-left: auto;
     font-family: Poppins;
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 600;
-    line-height: 17px;
     letter-spacing: 0em;
     background: var(--Blue300);
     color: #fff;
     border: 1px solid var(--Blue300);
-    width: 150px;
-    height: 40px;
+    padding: 0.6rem 1.5rem;
     border-radius: 5px;
 }
 
@@ -242,7 +237,6 @@
     }
 
     .checkout-container .payment-details .form-input input {
-        font-size: 14px;
         padding: 7px 1rem;
         width: 100%;
     }

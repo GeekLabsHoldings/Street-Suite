@@ -2,8 +2,8 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999999999999999999999999999999;
-  width: 220px;
+  z-index: 999999999999999;
+  width: clamp(150px, calc(10vw + 0.5rem), 500px);
   height: 100vh;
   background-color: #0f0f0f;
   box-shadow: 10px 4px 21.100000381469727px 0px #00000061;
@@ -27,8 +27,8 @@
   justify-content: center;
 }
 
-.logo {
-  height: 100px;
+.sideMenu .sideMenuContent .logo {
+  height:  clamp(100px, calc(4.1vw + 0.5rem), 340px);
   padding: 2rem 2.5rem 1rem;
   margin-bottom: 1rem;
   transition: all 0.6s;
@@ -36,12 +36,12 @@
 
 
 
-.logo img {
+.sideMenu .sideMenuContent .logo img {
   width: 100%;
   transition: all 0.6s;
 }
 
-.menu {
+.sideMenu .sideMenuContent .menu {
   list-style: none;
   padding: 0 1rem;
   margin: auto;
@@ -50,94 +50,128 @@
   transition: all 0.6s;
 }
 
-.menu::-webkit-scrollbar-track {
+.sideMenu .sideMenuContent .menu::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   border-radius: 10px;
   background-color: transparent;
 
 }
 
-.menu::-webkit-scrollbar {
+.sideMenu .sideMenuContent .menu::-webkit-scrollbar {
   width: 4px;
   background-color: transparent;
 }
 
-.menu::-webkit-scrollbar-thumb {
+.sideMenu .sideMenuContent .menu::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: none;
   background-color: #424242;
 }
 
-.menu li {
+.sideMenu .sideMenuContent .menu li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  transition: all 0.6s;
+  transition: all 0.3s;
 }
 
-.menu svg {
-  width: 25px;
+.sideMenu .sideMenuContent .menu svg {
+  width: clamp(10px, calc(0.8vw + 0.5rem), 60px);
   fill: #fff;
   margin-right: 0.6rem;
-  transition: all 0.6s;
+  transition: all 0.3s;
 }
 
-.menu svg path {
+.sideMenu .sideMenuContent svg path {
+  transition: all 0.3s;
   fill: #fff;
 }
 
-.menu li a {
+.sideMenu .sideMenuContent .menu li a {
   text-decoration: none;
   color: #fff;
   display: flex;
   align-items: center;
   padding: 1rem;
-  font-size: 19px;
+  font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
   font-weight: 400;
-  line-height: 29px;
   letter-spacing: 0px;
-  transition: all 0.1s;
+  transition: all 0.3s;
 }
 
 
 
-.menu li a:hover p {
+.sideMenu .sideMenuContent .menu li a:hover p {
   color: #53ACFF;
 }
 
-.menu li a:hover svg {
+.sideMenu .sideMenuContent .menu li a:hover svg {
   fill: #53ACFF;
 }
 
-.menu li a:hover svg path {
+.sideMenu .sideMenuContent .menu li a:hover svg path {
   fill: #53ACFF;
 }
-
-.menu li.comingSoon a {
-  cursor: not-allowed;
+.sideMenu .sideMenuContent .menu li.comingSoon{
+  position: relative;
+}
+.sideMenu .sideMenuContent .menu li.comingSoon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(39, 68, 95);
+  box-shadow: inset 0px 0px 10px 8px #0f0f0f;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.sideMenu .sideMenuContent .menu li.comingSoon::after {
+  content: 'Cooming Soon';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
+  font-weight: 600;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
-.menu li.comingSoon a p {
+.sideMenu .sideMenuContent .menu li.comingSoon:hover::after , .sideMenu .sideMenuContent .menu li.comingSoon:hover::before{
+  visibility: visible;
+  opacity: 1;
+}
+
+.sideMenu .sideMenuContent .menu li.comingSoon a p {
   color: #FFFFFF4D;
 }
 
-.menu li.comingSoon svg {
+.sideMenu .sideMenuContent .menu li.comingSoon svg {
   fill: #FFFFFF4D;
 }
 
-.menu li.comingSoon a:hover svg {
+.sideMenu .sideMenuContent .menu li.comingSoon a:hover svg {
   fill: #FFFFFF4D;
 }
 
-.menu li.comingSoon a:hover svg path {
+.sideMenu .sideMenuContent .menu li.comingSoon a:hover svg path {
   fill: #FFFFFF4D;
 }
 
-.menu li.comingSoon svg path {
+.sideMenu .sideMenuContent .menu li.comingSoon svg path {
   fill: #FFFFFF4D;
 }
 
-.menu li a p {
+.sideMenu .sideMenuContent .menu li a p {
   position: unset;
   left: unset;
   opacity: 1;
@@ -152,16 +186,15 @@
 }
 
 .userInfoContent img {
-  width: 45px;
-  height: 45px;
+  width: clamp(22px, calc( 2vw + 0.5rem ) ,100px);
+  height: clamp(22px, calc( 2vw + 0.5rem ) ,100px);
   margin-right: 0.5rem;
   transition: all 0.6s;
 }
 
 .userInfoContent h6 {
-  font-size: 15px;
+  font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
   font-weight: 700;
-  line-height: 23px;
   letter-spacing: 0px;
   text-align: left;
   margin-bottom: 0.1rem;
@@ -173,9 +206,8 @@
 }
 
 .userInfoContent p {
-  font-size: 13px;
+  font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
   font-weight: 600;
-  line-height: 20px;
   letter-spacing: 0px;
   color: #979797;
   position: static;
@@ -186,9 +218,8 @@
 
 .userInfo>p {
   color: #424242;
-  font-size: 14px;
+  font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);;
   font-weight: 400;
-  line-height: 21px;
   letter-spacing: 0px;
   text-align: center;
   margin-bottom: 1rem;
@@ -205,7 +236,7 @@
 
 .sideMenu.onClose {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-  width: 100px;
+  width: clamp(80px, calc(4.5vw + 0.5rem), 300px);
   height: 100vh;
   animation-name: animateOnClose;
   animation-delay: 0.6s;
@@ -214,58 +245,58 @@
   animation-timing-function: ease;
 }
 
-.onClose .logo {
+.sideMenu.onClose .logo {
   padding: 2rem 1rem 1rem;
 }
 
-.onClose .logo img {
+.sideMenu.onClose .logo img {
   width: 100%;
 }
 
-.onClose .menu {
+.sideMenu.onClose .menu {
   list-style: none;
   padding: 0 1rem;
   margin: auto;
 
 }
 
-.onClose .menu li {
+.sideMenu.onClose .menu li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.onClose .menu li a p {
+.sideMenu.onClose .menu li a p {
   position: absolute;
   left: -200px;
   opacity: 0;
 
 }
 
-.onClose .menu li a img {
-  width: 30px;
+.sideMenu.onClose .menu li a img {
+  width: clamp(25px,  calc( 1.5vw + 0.5rem ) , 80px);
   margin-right: 0rem;
 }
 
-.onClose .userInfoContent img {
-  width: 55px;
-  height: 55px;
+.sideMenu.onClose .userInfoContent img {
+  width: clamp(55px,  calc( 2.5vw + 0.5rem ) , 80px);
+  height: clamp(55px,  calc( 2.5vw + 0.5rem ) , 80px);
   margin-right: 0rem;
 }
 
-.onClose .userInfoContent h6 {
+.sideMenu.onClose .userInfoContent h6 {
   position: absolute;
   left: -200px;
   opacity: 0;
 }
 
-.onClose .userInfoContent p {
+.sideMenu.onClose .userInfoContent p {
   position: absolute;
   left: -200px;
   opacity: 0;
 }
 
-.onClose .userInfo>p {
+.sideMenu.onClose .userInfo>p {
   position: absolute;
   left: -200px;
   opacity: 0;
@@ -279,7 +310,6 @@
   outline: none;
   cursor: pointer;
   position: relative;
-  animation: Ring 10s ease-in 5s infinite ;
 }
 
 .notificationBtn span {
@@ -303,33 +333,6 @@
 
 
 
-/* @keyframes animateOnOpen {
-  0% {
-    width: 220px;
-  }
-
-  50% {
-    width: 215px;
-  }
-
-  100% {
-    width: 220px;
-  }
-}
-
-@keyframes animateOnClose {
-  0% {
-    width: 100px;
-  }
-
-  50% {
-    width: 95px;
-  }
-
-  100% {
-    width: 100px;
-  }
-} */
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 1024px) {

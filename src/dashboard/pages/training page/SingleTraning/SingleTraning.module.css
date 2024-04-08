@@ -85,9 +85,8 @@
 
 .training_title h5 {
     font-family: Poppins;
-    font-size: 40px;
+    font-size:  clamp(22px, calc( 1.8vw + 0.5rem ) ,140px);
     font-weight: 700;
-    line-height: 60px;
     text-align: left;
 }
 
@@ -102,9 +101,8 @@
 
 .Bullish span {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
     font-weight: 700;
-    line-height: 34.5px;
     text-align: left;
     padding: 0.5rem;
     background: rgba(17, 143, 75, 1);
@@ -114,9 +112,8 @@
 .Bullish p {
     width: 50%;
     font-family: Poppins;
-    font-size: 12px;
+    font-size: clamp(10px,  calc( 0.3vw + 0.4rem ), 60px);
     font-weight: 500;
-    line-height: 19.5px;
     text-align: left;
 
 }
@@ -158,13 +155,16 @@
     padding: 3rem 1.5rem;
     background: rgba(24, 24, 24, 1);
     border-radius: 8px;
+    position: fixed;
+    right: 1%;
+    min-width: 300px;
+    margin-top: 2rem;
 }
 
 .table_of_content h6 {
     font-family: Poppins;
-    font-size: 19px;
+    font-size: clamp(10px,  calc( 0.6vw + 0.5rem ), 60px);
     font-weight: 700;
-    line-height: 28.5px;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -176,9 +176,8 @@
 
 .table_of_content ul li {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     text-align: left;
     margin: 1rem 0;
     display: block;
@@ -186,20 +185,11 @@
 
 .table_of_content ul li.completed {
     color: rgba(93, 93, 93, 1);
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
 }
 
 .table_of_content ul li.current {
     color: var(--Blue300);
-    font-size: 16px;
     font-weight: 700;
-    line-height: 24px;
-    text-align: left;
-
 }
 
 .intro_step {
@@ -213,11 +203,9 @@
 
 .intro_step p {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 26px;
-    text-align: justified;
-
+    text-align: justify;
 }
 
 .training_lison_collapse_header {
@@ -237,9 +225,8 @@
 
 .training_lison_collapse_header h6 {
     font-family: Poppins;
-    font-size: 33px;
+    font-size: clamp(12px,  calc( 1.3vw + 0.3rem ) , 90px);
     font-weight: 700;
-    line-height: 49.5px;
     text-align: left;
     transition: all 0.3s;
 }
@@ -263,10 +250,9 @@
 }
 
 .training_lison_collapse_body p {
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
-    text-align: justified;
+    text-align: justify;
     margin-bottom: 2rem;
 }
 
@@ -279,9 +265,8 @@
     text-align: center;
     padding: 0.6rem 2rem;
     font-family: Poppins;
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.4rem ), 60px);
     font-weight: 600;
-    line-height: 16.8px;
     margin: 1.5rem 0 0 auto;
 }
 
@@ -335,16 +320,14 @@
 
 .assessment_wrapper>h4 {
     font-family: Poppins;
-    font-size: 33px;
+    font-size: clamp(14px,  calc( 1.4vw + 0.5rem ) , 90px);
     font-weight: 700;
-    line-height: 49.5px;
     text-align: left;
 }
 
 .assessment_wrapper>p {
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     margin: 2rem 0;
 }
 
@@ -371,16 +354,14 @@
 
 .assessment_view .assessment_view_title h6 {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
     font-weight: 400;
-    line-height: 34.5px;
 }
 
 .assessment_view .assessment_view_title span {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
     font-weight: 400;
-    line-height: 34.5px;
     text-align: left;
     color: rgba(164, 164, 164, 1);
 }

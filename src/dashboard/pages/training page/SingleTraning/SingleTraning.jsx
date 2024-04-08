@@ -84,7 +84,7 @@ const SingleTraning = () => {
 
             <div className='flex gap-[50px] items-start'>
 
-                <div className="flex flex-col w-full lg:w-4/5 items-center mb-12 lg:mt-8 lg:gap-[30px]">
+                <div className="flex flex-col w-full xl:w-[77%] items-center mb-12 lg:mt-8 lg:gap-[30px]">
 
                     {/* title top of progress bar */}
                     <div className={styles.training_title}>
@@ -117,7 +117,7 @@ const SingleTraning = () => {
                 </div>
 
                 {/* table of content section */}
-                <div className={styles.table_of_content + " w-1/5 hidden lg:block"}>
+                <div className={styles.table_of_content + " w-[20%] hidden xl:block"}>
 
                     {/* title table of content section */}
                     <h6>Table of Content</h6>

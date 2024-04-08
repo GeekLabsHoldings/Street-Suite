@@ -17,7 +17,7 @@ const TradingSction = () => {
 
                 {/* image of trading section */}
                 <div className="img-container hidden md:block">
-                    <img src={tradingImg} alt="" className='w-full'/>
+                    <img src={tradingImg} alt="" className='w-full' />
                 </div>
                 {/* end image of trading section */}
 
@@ -87,13 +87,15 @@ const TradingSction = () => {
                         {/* end fourth company */}
 
                         {/* space X box */}
-                        <div className="spaceX">
-                            <img src={boxBg} alt="" />
-                            <div className="box">
+                        <a href=""  className='w-full block'>
+                            <div className="spaceX">
+                                <img src={boxBg} alt="" />
+                                <div className="box">
 
+                                </div>
+                                <h6>SPACE X <br />CASE STUDY</h6>
                             </div>
-                            <h6>SPACE X <br />CASE STUDY</h6>
-                        </div>
+                        </a>
                         {/* end space X box */}
                     </div>
                     {/* end price of private companies */}

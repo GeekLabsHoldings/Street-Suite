@@ -75,13 +75,14 @@
     padding: 3rem 1.5rem;
     background: rgba(24, 24, 24, 1);
     border-radius: 8px;
+    position: fixed;
+    right: 1%;
 }
 
 .st_suite_wiki h6 {
     font-family: Poppins;
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 600;
-    line-height: 21px;
     text-align: center;
     margin-bottom: 1.3rem;
 }
@@ -94,16 +95,14 @@
 
 .st_suite_wiki ul li {
     font-family: Poppins;
-    font-size: 13px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.4rem ), 60px);
     font-weight: 400;
-    line-height: 16.38px;
     text-align: left;
 }
 
 .st_suite_wiki ul li>a {
     color: var(--Blue300);
 }
-
 
 
 .most_liked_trainings h5 {

@@ -8,9 +8,8 @@
     padding: 0.5rem 0;
 }
 .customSelectMenu ul li{
-    font-size: 12px;
+    font-size: clamp(10px,  calc( 0.6vw + 0.1rem ), 60px);
     font-weight: 400;
-    line-height: 16.5px;
     text-align: left;
     
 }

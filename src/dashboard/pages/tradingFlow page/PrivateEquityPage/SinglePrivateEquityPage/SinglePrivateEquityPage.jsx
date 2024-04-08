@@ -84,7 +84,7 @@ const state2 = {
 
 const SinglePrivateEquityPage = () => {
     return (
-        <div className={styles.want_share + " w-full flex flex-col lg:flex-row items-start gap-[10%]"}>
+        <div className={styles.want_share + " w-full flex flex-col lg:flex-row gap-[10%]"}>
             <div className={styles.company_details + " w-full lg:w-[40%]"}>
                 <div className={styles.company_details_header}>
                     <img src={companyImg} alt="" />
@@ -95,7 +95,7 @@ const SinglePrivateEquityPage = () => {
                     </span>
                 </div>
                 <div className={styles.company_details_body}>
-                    <ul className='space-y-2 pt-4'>
+                    <ul className='space-y-[0.7vw] pt-4'>
                         <li>
                             <span>Name:</span>
                             <span>Logoipsum</span>
@@ -139,7 +139,7 @@ const SinglePrivateEquityPage = () => {
                     </ul>
                 </div>
             </div>
-            <div className={styles.want_share_chart + ' w-full lg:w-[60%] space-y-6'}>
+            <div className={styles.want_share_chart + ' w-full flex flex-col lg:w-[60%] space-y-6'}>
                 <div className={styles.want_share_chart_header}>
                     <h5>Want  A Share?</h5>
                     <div className={styles.number_of_sales}>
@@ -148,9 +148,8 @@ const SinglePrivateEquityPage = () => {
                             This Last Week</p>
                     </div>
                 </div>
-                <div className={styles.want_share_chart_body}>
-                    <ReactApexChart options={state2.options} series={state2.series} type="bar" height={200} width={"100%"} />
-
+                <div className={styles.want_share_chart_body + " h-full"}>
+                    <ReactApexChart options={state2.options} series={state2.series} type="bar" height={"100%"} width={"100%"} />
                 </div>
                 <div className={styles.want_share_chart_footer}>
                     <div className='flex items-start justify-between gap-6'>

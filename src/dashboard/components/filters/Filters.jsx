@@ -306,7 +306,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
 
           {/* button that apply filters */}
-          <div className="space-x-3">
+          <div className="space-x-3 w-full flex justify-center">
           <button className={styles.saveFilterBtn}>Save Filter</button>
           <button className={styles.applyBtn}>Apply</button>
           </div>

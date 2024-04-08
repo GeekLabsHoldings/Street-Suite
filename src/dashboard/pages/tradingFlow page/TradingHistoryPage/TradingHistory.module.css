@@ -6,11 +6,10 @@
 .trading_history_table .table_head li {
     display: block;
     text-align: center;
-    padding: 1rem 0.5rem;
+    padding: clamp(10px, calc(0.6vw + 0.1rem), 60px) clamp(10px, calc(0.3vw + 0.1rem), 60px);
     font-family: Poppins;
-    font-size: 13px;
+    font-size: clamp(10px, calc(0.6vw + 0.1rem), 60px);
     font-weight: 700;
-    line-height: 19.5px;
 }
 
 .trading_history_table .table_body {
@@ -29,14 +28,13 @@
 }
 
 .trading_history_table .table_body ul li {
-    padding: 1rem 0.5rem;
+    padding: clamp(10px, calc(0.8vw + 0.1rem), 60px) clamp(10px, calc(0.3vw + 0.1rem), 60px);
     background: rgba(32, 32, 32, 1);
     display: block;
     text-align: center;
     font-family: Poppins;
-    font-size: 11px;
+    font-size: clamp(10px, calc(0.6vw + 0.1rem), 60px);
     font-weight: 400;
-    line-height: 16.5px;
 
 }
 
@@ -47,9 +45,8 @@
 
 .trading_history_filter h6 {
     font-family: Poppins;
-    font-size: 19px;
+    font-size: clamp(10px,  calc( 0.9vw + 0.1rem ), 60px);
     font-weight: 700;
-    line-height: 28.5px;
     text-align: center;
     width: 100%;
     padding: 0 0 1rem;
@@ -62,15 +59,14 @@
     margin-bottom: 1.5rem;
 }
 .trading_history_filter .drop_down_menu p{
-    font-size: 11px;
+    font-size: clamp(10px,  calc( 0.6vw + 0.1rem ), 60px);
     font-weight: 400;
-    line-height: 16.5px;
     text-align: left;
     margin-bottom: 0.6rem;
 }
 .trading_history_filter .drop_down_menu button {
     font-family: Poppins;
-    font-size: 11px;
+    font-size: clamp(10px,  calc( 0.6vw + 0.1rem ), 60px);
     font-weight: 400;
     line-height: 16.5px;
     text-align: left;
@@ -83,11 +79,9 @@
 
 
 .trading_history_filter > button {
-    height: 32px;
-    padding: 5px 2rem;
-font-size: 12px;
-font-weight: 600;
-line-height: 14.4px;
+    padding: 8px 2rem;
+    font-size: clamp(10px, calc(0.6vw + 0.1rem), 60px);
+    font-weight: 600;
     border-radius: 5px;
     background-color: #53ACFF;
     color: #fff;

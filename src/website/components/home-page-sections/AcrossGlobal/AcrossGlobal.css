@@ -23,7 +23,7 @@ section.acrossGlobal .acrossGlobal-container .acrossGlobal-box {
     padding: clamp(22px, calc(4.1vw + 0.5rem), 140px);
     position: relative;
     background: rgb(25, 57, 85);
-    background: linear-gradient(142deg, rgb(16, 36, 54) 0%, rgba(32, 32, 32, 1) 60%);
+    background: linear-gradient(142deg, #395065, #202020 60%);
     border-radius: 50px;
     box-shadow: 0px 21.025px 33.04px 0px rgba(0, 0, 0, 0.25);
 }

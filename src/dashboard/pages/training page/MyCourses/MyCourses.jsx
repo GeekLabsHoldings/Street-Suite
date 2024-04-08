@@ -40,7 +40,7 @@ const MyCourses = () => {
 
     return (
         <div className='MyCourses-wrapper flex flex-col lg:flex-row lg:gap-8 items-start'>
-            <div className='w-full lg:w-4/5'>
+            <div className='w-full xl:w-[77%]'>
                 <SearchBar >
                     <h2>Trading</h2>
                     <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
@@ -90,7 +90,7 @@ const MyCourses = () => {
             </div>
 
             {/* ST suite wiki section */}
-            <div className={styles.st_suite_wiki + " w-full lg:w-1/5"}>
+            <div className={styles.st_suite_wiki + " w-full xl:w-[20%]"}>
                 {/* title */}
                 <h6>ST SUITE WIKI</h6>
 

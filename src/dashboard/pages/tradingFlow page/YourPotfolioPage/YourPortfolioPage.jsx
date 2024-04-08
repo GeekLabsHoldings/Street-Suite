@@ -211,7 +211,7 @@ const YourPortfolioPage = () => {
       </div>
       <div className={styles.shares_equities}>
         <div className={styles.myShares}>
-          <h4 className='text-xl md:text-3xl mb-3'>My Shares</h4>
+          <h4 className='mb-3'>My Shares</h4>
           <div className={styles.mySharesCard}>
             <div className={styles.my_positions}>
               <p>My Positions</p>

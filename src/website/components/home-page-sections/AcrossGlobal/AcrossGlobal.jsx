@@ -42,7 +42,7 @@ const AcrossGlobal = () => {
       <div className='mx-auto px-0 md:px-4 acrossGlobal-container'>
         <div className="border-animate">
           <div className="acrossGlobal-box w-full">
-            <h2><span className='counter' data-target="3001">0</span> USERS</h2>
+            <h2><span className='counter' data-target="31">31</span> USERS</h2>
             <h5>ACROSS THE GLOBE</h5>
           </div>
         </div>

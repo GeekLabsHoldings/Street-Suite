@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 
 // import all sections as components from components folder
@@ -60,83 +60,83 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <HelmetProvider>
-        <Routes>
+        <HelmetProvider>
+          <Routes>
 
-          <Route path="/" element={<WebsiteLayout />} >
+            <Route path="/" element={<WebsiteLayout />} >
 
-            <Route index element={<HomePage />} />
-            {/* quizzes page route  */}
-            <Route path='quizzes' element={<QuizzesPage />} >
-              <Route index element={<QuizzesFiltersPage />} />
-              <Route path="quiz" element={<QuizPage />} />
-              <Route path="quiz-result" element={<QuizResultsPage />} />
+              <Route index element={<HomePage />} />
+              {/* quizzes page route  */}
+              <Route path='quizzes' element={<QuizzesPage />} >
+                <Route index element={<QuizzesFiltersPage />} />
+                <Route path="quiz" element={<QuizPage />} />
+                <Route path="quiz-result" element={<QuizResultsPage />} />
+              </Route>
+
+              <Route path='leaderboard' element={<LeaderBoardPage />} />
+              <Route path='pricing' element={<PricingPage />} />
+              <Route path='checkout' element={<CheckOutPage />} />
+              <Route path='complete-checkout' element={<CompleteCheckout />} />
+              <Route path='api' element={<APIPage />} />
+              <Route path='about-us' element={<AboutUsPage />} />
+              <Route path='contact-us' element={<ContactPage />} />
+              <Route path='change-logs' element={<ChangeLogs />} />
+              <Route path='top-brokers' element={<TopBroker />} />
+              <Route path='disclaimer' element={<DisclaimerPage />} />
+              <Route path='privacy&security' element={<PrivacyAndSecurity />} />
+              <Route path='careers' element={<CareersPage />} />
+              <Route path='careers/positions' element={<PositionsPage />} />
+              <Route path='blogs' element={<BlogPage />} />
+              <Route path='blogs/specific-blog' element={<SpecificArticle />} />
+
+              <Route path='signin' element={<SignIn />} />
+              <Route path='terms&conditions' element={< TermsAndConditions />} />
+
+
             </Route>
 
-            <Route path='leaderboard' element={<LeaderBoardPage />} />
-            <Route path='pricing' element={<PricingPage />} />
-            <Route path='checkout' element={<CheckOutPage />} />
-            <Route path='complete-checkout' element={<CompleteCheckout />} />
-            <Route path='api' element={<APIPage />} />
-            <Route path='about-us' element={<AboutUsPage />} />
-            <Route path='contact-us' element={<ContactPage />} />
-            <Route path='change-logs' element={<ChangeLogs />} />
-            <Route path='top-brokers' element={<TopBroker />} />
-            <Route path='disclaimer' element={<DisclaimerPage />} />
-            <Route path='privacy&security' element={<PrivacyAndSecurity />} />
-            <Route path='careers' element={<CareersPage />} />
-            <Route path='careers/positions' element={<PositionsPage />} />
-            <Route path='blogs' element={<BlogPage />} />
-            <Route path='blogs/specific-blog' element={<SpecificArticle />} />
-            
-            <Route path='signin' element={<SignIn />} />
-            <Route path='terms&conditions' element={< TermsAndConditions/>} />
+            <Route path='/login' element={<SignIn />} />
+            <Route path='/signup' element={< SignupPage />} />
+
+            <Route path='/dashboard' element={<DashboardLayout />}>
 
 
-          </Route>
-          
-          <Route path='/login' element={<SignIn />} />
-          <Route path='/signup' element={< SignupPage />} />
-
-          <Route path='/dashboard' element={<DashboardLayout />}>
-
-
-            <Route index element={<AlertsPage />} />
-            <Route path="alerts" element={<AlertsPage />} />
-            <Route path="training" element={<TrainingPage />} >
-              <Route index element={<SuiteAcademy />} />
-              <Route path='suite-academy' element={<SuiteAcademy />} />
-              <Route path='single-training' element={<SingleTraning />} >
-                <Route index element={<LessonsPage />} />
-                <Route path='assessment' element={<AssessmentPage />} />
+              <Route index element={<AlertsPage />} />
+              <Route path="alerts" element={<AlertsPage />} />
+              <Route path="training" element={<TrainingPage />} >
+                <Route index element={<SuiteAcademy />} />
+                <Route path='suite-academy' element={<SuiteAcademy />} />
+                <Route path='single-training' element={<SingleTraning />} >
+                  <Route index element={<LessonsPage />} />
+                  <Route path='assessment' element={<AssessmentPage />} />
+                </Route>
+                <Route path='my-courses' element={<MyCourses />} >
+                  <Route index element={<MyCoursesPage />} />
+                  <Route path='single-course' element={<SingleCoursePage />} />
+                </Route>
               </Route>
-              <Route path='my-courses' element={<MyCourses />} >
-                <Route index element={<MyCoursesPage />} />
-                <Route path='single-course' element={<SingleCoursePage />} />
+              <Route path="trading" element={<TradingFlowPage />} >
+                <Route index element={<YourPortfolioPage />} />
+                <Route path='trading-history' element={<TradingHistory />} />
+                <Route path='private-equity' element={<PrivateEquityPage />} >
+                  <Route index element={<PrivateEquitiesPage />} />
+                  <Route path='single-equity' element={<SinglePrivateEquityPage />} />
+                </Route>
+                <Route path='transfer&pay' element={<Transfer_PayPage />} >
+                  <Route index element={<DepositFundsPage />} />
+                  <Route path='deposit-funds' element={<DepositFundsPage />} />
+                  <Route path="withdraw-funds" element={<WithdrawFundsPage />} />
+                  <Route path="transactions-history" element={<TransactionsHistoryPage />} />
+                  <Route path="seccssful-transaction" element={<SuccessfulTransactionPage />} />
+                </Route>
               </Route>
-            </Route>
-            <Route path="trading" element={<TradingFlowPage />} >
-              <Route index element={<YourPortfolioPage />} />
-              <Route path='trading-history' element={<TradingHistory />} />
-              <Route path='private-equity' element={<PrivateEquityPage />} >
-                <Route index element={<PrivateEquitiesPage />} />
-                <Route path='single-equity' element={<SinglePrivateEquityPage />} />
-              </Route>
-              <Route path='transfer&pay' element={<Transfer_PayPage />} >
-                <Route index element={<DepositFundsPage />} />
-                <Route path='deposit-funds' element={<DepositFundsPage />} />
-                <Route path="withdraw-funds" element={<WithdrawFundsPage />} />
-                <Route path="transactions-history" element={<TransactionsHistoryPage />} />
-                <Route path="seccssful-transaction" element={<SuccessfulTransactionPage />} />
-              </Route>
+
+
+              <Route path="setting" element={<SettingPage />} />
+
             </Route>
 
-            
-            <Route path="setting" element={<SettingPage />} />
-
-          </Route>
-
-        </Routes>
+          </Routes>
         </HelmetProvider>
       </BrowserRouter>
     </div>

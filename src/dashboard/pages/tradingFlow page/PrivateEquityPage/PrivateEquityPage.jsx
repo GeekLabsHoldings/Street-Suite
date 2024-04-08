@@ -11,7 +11,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const PrivateEquityPage = () => {
     return (
-        <div className='flex flex-col lg:flex-row gap-12 px-0 lg:px-12'>
+        <div className='flex flex-col lg:flex-row items-start gap-12 px-0 lg:px-12'>
             <div className="w-full lg:w-[70%]">
                 <SearchBar>
                     <div className="flex gap-3 lg:gap-8 flex-col lg:flex-row w-full">

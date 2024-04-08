@@ -13,6 +13,10 @@
     padding: 0 0 1.5rem 0;
     border-bottom: 1px solid #fff;
 }
+.company_details_header img{
+  width: clamp(10px,  calc( 6vw + 0.1rem ), 500px);
+
+}
 
 .company_details_body ul li {
     display: flex;
@@ -22,18 +26,16 @@
 
 .company_details_body ul li span:first-child {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 60px);
     font-weight: 700;
-    line-height: 24px;
     text-align: left;
 
 }
 
 .company_details_body ul li span:last-child {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     text-align: left;
 
 
@@ -41,9 +43,8 @@
 
 .company_details_body ul li span a {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     text-align: left;
     color: var(--Blue300);
 
@@ -63,7 +64,7 @@
 
 .want_share .total_price_direction {
     font-family: Poppins;
-    font-size: 21.64px;
+    font-size: clamp(10px,  calc( 1vw + 0.1rem ), 60px);
     font-weight: 400;
     line-height: 25.96px;
     text-align: left;
@@ -87,9 +88,8 @@
 
 .want_share_chart_header h5 {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc( 1.2vw + 0.1rem ) , 70px);
     font-weight: 700;
-    line-height: 34.5px;
     text-align: left;
 }
 
@@ -115,6 +115,7 @@
 
 .want_share_chart_body {
     width: 100%;
+    height: 100%;
     padding: 0.5rem 1.5rem 0.5rem 0.5rem;
     border: 1px solid #ffffff38;
     border-radius: 5px;
@@ -129,7 +130,7 @@
 
 .want_share_chart_footer .input_group label {
     font-family: Poppins;
-    font-size: 0.8125px;
+    font-size: clamp(12px, calc( 0.7vw + 0.1rem ) , 70px);
     font-weight: 400;
     line-height: 1.024rem;
     text-align: left;
@@ -138,20 +139,18 @@
 
 .want_share_chart_footer .input_group input {
     width: 100%;
-    height: 30px;
     padding: 7px 10px;
     border: 0;
     outline: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: clamp(12px, calc( 0.7vw + 0.1rem ) , 70px);
     color: #1E1E1E;
 }
 
 .want_share_chart_footer .input_group span {
     font-family: Poppins;
-    font-size: 11px;
+    font-size: clamp(12px, calc( 0.5vw + 0.1rem ) , 70px);
     font-weight: 400;
-    line-height: 16.5px;
     text-align: left;
     color: #ffffff96;
 }
@@ -163,12 +162,10 @@
 
 .want_share_chart_footer .actions button {
     font-family: Poppins;
-    font-size: 12px;
+    font-size: clamp(12px, calc( 0.6vw + 0.1rem ) , 70px);
     font-weight: 600;
-    line-height: 14.4px;
     text-align: center;
     padding: 0.5rem 1rem;
-    width: 90px;
     outline: none;
     box-shadow: none;
     border-radius: 5px;

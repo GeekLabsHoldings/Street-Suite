@@ -2,12 +2,18 @@
     background: linear-gradient(180deg, rgba(32, 32, 32, 1) 5%, rgba(83, 172, 255, 0.3) 100%);
 }
 
+.CompleteCheckout-wrapper .CompleteCheckout-container {
+    width: 80vw;
+}
+.CompleteCheckout-container .CompleteCheckout-img img{
+    width: 100%;
+    max-width: fit-content;
+}
 
 .CompleteCheckout-container .CompleteCheckout-message h4 {
     font-family: Poppins;
-    font-size: 64px;
+    font-size: clamp(22px, calc(2.8vw + 0.5rem), 140px);
     font-weight: 700;
-    line-height: 72px;
     letter-spacing: 0px;
     margin-bottom: 1.5rem;
     text-align: left;
@@ -15,9 +21,8 @@
 
 .CompleteCheckout-container .CompleteCheckout-message h4+p {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 4rem;
@@ -26,7 +31,8 @@
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card {
     border-radius: 20px 20px 0 0;
     box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
-    width: 80%;
+    width: 70%;
+    min-width: 400px;
 }
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card::before {
@@ -46,17 +52,15 @@
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body h6 {
     font-family: Poppins;
-    font-size: 25.95px;
+    font-size: clamp(12px, calc( 1vw + 0.5rem ) , 70px);
     font-weight: 700;
-    line-height: 38.92px;
     text-align: center;
 }
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body p {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0em;
     text-align: center;
     margin-top: 1rem;
@@ -71,18 +75,16 @@
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price h5 {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
     font-weight: 700;
-    line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
 }
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0em;
     color: rgba(204, 204, 204, 1);
     display: flex;
@@ -93,9 +95,8 @@
 
 .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body .receipt-price p>span {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
     font-weight: 700;
-    line-height: 35px;
     letter-spacing: 0em;
     text-align: left;
     color: #fff;
@@ -103,9 +104,8 @@
 
 
 .CompleteCheckout-wrapper .receipt-card .plane-points li {
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
     font-weight: 400;
-    line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
     display: flex;
@@ -139,12 +139,12 @@
     padding: 0.5rem 1rem;
     border-radius: 5px;
     display: block;
-    width: 200px;
+    padding: 0.6rem 2rem;
     text-align: center;
     margin: 0 auto 2rem;
-    font-size: 19.46px;
+    font-size: clamp(10px,  calc( 0.6vw + 0.5rem ), 60px);
     font-weight: 600;
-    line-height: 23.35px;
+    width: fit-content;
 }
 
 .CompleteCheckout-wrapper .border-animate {
@@ -153,6 +153,10 @@
 }
 
 @media only screen and (max-width: 1024px) {
+
+    .CompleteCheckout-wrapper .CompleteCheckout-container {
+        width: 100%;
+    }
 
     .CompleteCheckout-container .CompleteCheckout-message h4 {
         font-size: 24px;
@@ -233,6 +237,13 @@
         font-weight: 600;
         line-height: 14.4px;
         text-align: left;
+    }
+
+    .CompleteCheckout-container .CompleteCheckout-message .receipt-card {
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        min-width: auto;
     }
 
     .CompleteCheckout-container .CompleteCheckout-message .receipt-card .card-body p {

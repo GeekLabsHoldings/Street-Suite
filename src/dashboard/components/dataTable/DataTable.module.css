@@ -27,8 +27,7 @@
 }
 
 .table img {
-  width: 30px;
-
+  width: clamp(10px,  calc( 0.9vw + 0.5rem ), 65px);
 }
 
 .tableItemContainer {
@@ -42,7 +41,7 @@
   justify-content: space-around;
   background-color: #313131;
   border-radius: 7.69px;
-  padding: 0.5rem;
+  padding: clamp(8px,  calc( 0.4vw + 0.3rem ), 32px);
   width: 100%;
   position: relative;
   z-index: 2;
@@ -74,10 +73,8 @@
 }
 
 .tableItem li p {
-  font-family: Poppins;
-  font-size: 0.94rem;
+  font-size: clamp(10px,  calc( 0.6vw + 0.5rem ), 65px);
   font-weight: 400;
-  line-height: 23px;
   letter-spacing: 0px;
   text-align: left;
 }
