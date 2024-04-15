@@ -203,7 +203,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
       : setAppliedFilters([...newArr]);
   };
 
-  
+  // function that clear applied filters
+  const clearAppliedFilters = () => {
+    setAppliedFilters([])
+  }
 
   const strategySettings = {
     focusOnSelect: true,
@@ -281,7 +284,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
           <div className={styles.filtersApplaied}>
             <div className={styles.clearAll}>
               <p>Filters Applaied</p>
-              <button>Clear All</button>
+              <button onClick={clearAppliedFilters}>Clear All</button>
             </div>
 
             {/* container of filters that selected */}
@@ -433,6 +436,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                     <h6>Strategy</h6>
                   </div>
                   <div className={styles.selectContainer }>
+                    <div className={styles.activeBox}></div>
                     <div className="slider-container">
                       <Slider {...strategySettings}>
                         {strategySelect.map((ele, idx) => (
@@ -459,6 +463,8 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                   </div>
 
                   <div className={styles.selectContainer}>
+                  <div className={styles.activeBox}></div>
+
                     <div className="slider-container">
                       <Slider {...assetSettings}>
                         {AssetSelect.map((ele, idx) => (

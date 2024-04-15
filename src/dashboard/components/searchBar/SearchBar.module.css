@@ -140,7 +140,7 @@
 }
 
 .SearchBar .searchBtn:hover {
-  box-shadow: inset 0px 0px 20px 0px #313131;
+  box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 
