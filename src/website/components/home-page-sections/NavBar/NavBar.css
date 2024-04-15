@@ -113,9 +113,12 @@ nav .AuthButtons a.signUp {
     border: none;
     padding: 0.3rem 1.2rem 0.4rem;
     background-color: var(--Blue300);
-    border: 1px solid var(--Blue300);
     border-radius: 4px;
     font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
+    transition: all 0.3s;
+}
+nav .AuthButtons a.signUp:hover {
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 nav .AuthButtons a.logIn {
@@ -127,7 +130,12 @@ nav .AuthButtons a.logIn {
     border: 1px solid #fff;
     border-radius: 4px;
     font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
+    transition: all 0.3s;
+}
 
+nav .AuthButtons a.logIn:hover {
+    background: #53acff;
+    border: 1px solid #53acff;
 }
 
 nav .navLinks.first{
@@ -181,6 +189,10 @@ nav .navLinks.first a{
         background-color: transparent;
         align-items: flex-start;
     }
+
+    nav .mobileScreenNav .navLinks a {
+      font-size: 14px;
+  }
 
     nav .mobileScreenNav .navLinks.first a {
         background-color: #53acff98;

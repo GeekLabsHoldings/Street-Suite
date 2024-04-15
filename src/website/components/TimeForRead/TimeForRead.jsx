@@ -2,6 +2,7 @@ import Clock from '../../assets/clock.svg';
 import './TimeForRead.css';
 const TimeForRead = ()=>{
     return(
+        // common section for the time for reading any blog
         <div className='time md:w-4/5 flex justify-between align-items-center '>
         <span>25 mins ago</span>
         <div className='flex align-items-center md:gap-2 sm:gap-1'>

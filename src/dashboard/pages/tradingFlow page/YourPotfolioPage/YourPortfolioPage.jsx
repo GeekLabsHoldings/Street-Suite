@@ -171,8 +171,8 @@ const YourPortfolioPage = () => {
               <img src={searchIcon} alt="searchIcon" />
             </div>
 
-            <button className={SearchBarStyles.searchBtn + " hidden md:flex"}>Search</button>
-            <Link to="trading-history" className={styles.tradingHistory}>Trading History</Link>
+            <button className={SearchBarStyles.searchBtn + " hidden lg:flex"}>Search</button>
+            <Link to="trading-history" className={styles.tradingHistory + " hidden lg:flex"}>Trading History</Link>
           </div>
         </div>
       </SearchBar>

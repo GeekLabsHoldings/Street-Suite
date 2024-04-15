@@ -4,26 +4,26 @@ const initialState = {
   value: [],
 }
 
-
 export const featuresCardSlicer = createSlice({
   name: 'featuresCard',
   initialState,
+  // reducers here to implement some functions
   reducers: {
     add: (state,cardsData) => {
       state.value.push(cardsData.payload);
     },
 
-    removeItem: (state,cardData)=>{
-      console.log( cardData.payload);
-      state.value = state.value.filter((ele)=> ele == cardData.payload);
-      console.log(state.value.filter((ele)=> ele !== cardData.payload))
-      // console.log(state.value)
+    removeItem: (state,cardData) => {
+      console.log(cardData.payload);
+      const items = state.value.filter((ele) =>  ele !== cardData.payload);
+      state.value = items;
+      // console.log(state.value.filter(ele => ele !== cardData.payload))
     },
 
     reset: (state) => {
     state.value = []
-
     },
+
   },
 })
 

@@ -8,9 +8,9 @@ import searchIcon from "../../../assets/search.svg";
 import styles from './SingleTraning.module.css';
 
 
-import notifIcon from "../../../assets/notif.svg";
 import { NavLink, Outlet } from 'react-router-dom';
 import ProgressBar from '@ramonak/react-progress-bar';
+import NotificationWindow from '../../../UI-components/NotificationWindow/NotificationWindow';
 
 const SingleTraning = () => {
 
@@ -44,7 +44,7 @@ const SingleTraning = () => {
 
                 {/* title of page */}
                 <h2>Training</h2>
-                <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
+                <div className={SearchBarStyles.notification_searchInput + " hidden lg:flex"}>
 
                     {/* nav bar  */}
                     <div className={styles.training_navBar} >
@@ -57,7 +57,7 @@ const SingleTraning = () => {
                             </li>
                         </ul>
                     </div>
-                    
+
                     {/* search input */}
                     <div className={SearchBarStyles.searchInput + " w-full hidden lg:block"}>
                         <input
@@ -68,16 +68,15 @@ const SingleTraning = () => {
                         />
                         <img src={searchIcon} alt="searchIcon" />
                     </div>
-                    
-                    {/* notification button in nav bar */}
-                    <button className={SearchBarStyles.notificationBtn + " flex lg:hidden"} type="button">
-                        <img src={notifIcon} alt="" />
-                        <span>6</span>
-                    </button>
+
+
                 </div>
+                
+                {/* notification button in nav bar */}
+                <NotificationWindow />
 
                 {/* bars in mobile screen */}
-                <div className={` ${SearchBarStyles.bars} flex md:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
+                <div className={` ${SearchBarStyles.bars} flex lg:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
                     <div className={SearchBarStyles.bar}></div>
                 </div>
             </SearchBar>
@@ -121,7 +120,7 @@ const SingleTraning = () => {
 
                     {/* title table of content section */}
                     <h6>Table of Content</h6>
-                    
+
                     {/* list of content section */}
                     <ul>
                         <li className={styles.completed}>Intro</li>

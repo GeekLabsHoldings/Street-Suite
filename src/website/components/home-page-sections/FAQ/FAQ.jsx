@@ -7,8 +7,9 @@ const FAQ = () => {
 
     // method thet handle toggle expand collapse
     const handleCollapse = (e) => {
-        $(e.target).next().slideToggle();
-        $(e.target).toggleClass("open");
+        console.log($(e.target).parents(".collapse-header"));
+        $(e.target).parents(".collapse-header").next().slideToggle();
+        $(e.target).parents(".collapse-header").toggleClass("open");
     }
 
 

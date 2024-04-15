@@ -8,7 +8,7 @@ const OldArticle = ({classname})=>{
     }
 
     return(
-
+// section for every old article or blog contains its name and date of publish
         <div className={`flex justify-between likeComments pb-8 bottomBorder cursor-pointer ${classname}`} onClick={onClickHandler}>
         <div className='w-1/3 '>
             <p>25 MINS AGO</p>

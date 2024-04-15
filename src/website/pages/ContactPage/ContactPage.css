@@ -5,19 +5,46 @@
     display: flex;
     align-items: center;
 }
+.leftContentInContactUs{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
+}
+.timeForContact{
+    display: flex;
+    justify-content: space-between;
+}
 .contactBg{
     background-image: url("../../assets/background.svg");
 }
-
+.contactDays,.contactHours{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, calc( 0.5vw + 0.2rem), 60px);
+}
+.contactHours{
+    align-items: center;
+}
+.contactUsBrief{
+    display: flex ;
+    flex-direction: column;
+    gap: clamp(1px, calc( 0.3vw + 0.2rem), 60px);
+    padding-bottom: clamp(1px, calc( 0.5vw + 0.2rem), 60px);
+}
 .contactWays{
     display: flex;
     align-items: center;
-
+    gap: clamp(12px, calc(1.9vw + 0.3rem), 60px);
+}
+.reachUsAndContactWays{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc( 0.3vw + 0.5rem), 60px);
 }
 .containContactWays{
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: clamp(8px, calc( 0.6vw + 0.2rem), 30px);
 }
 
 .descPart h1, .descPart h5 , .descPart h3 , .descPart h4 , .formContent h3{
@@ -51,20 +78,24 @@
 }
 .formBGMsg{
     background: linear-gradient(265deg, rgb(40, 62, 80) 20%, rgb(90, 132, 172) 100%);
+    padding-top: clamp(56px, calc(5.8vw + 0.2rem),140px);
+    padding-bottom: clamp(32px, calc(2.9vw + 0.5rem),140px);
 }
-/* .formContent h3{
-    font-size: 2.0625rem;
-    line-height: 3.094rem;
-} */
+
 .newBtn{
     text-transform: none !important;
     color: #ffff !important;
     background: rgba(83, 172, 255, 1) !important;
     transition: all 0.4s !important;
+    font-family: "Poppins", sans-serif !important;
+}
+.newBtn:active{
+    background-color:rgba(83, 172, 255, 1) !important ;
 }
 .newBtn:hover{
     box-shadow: inset 0px -20px 30px -10px #165b9c;
 }
+
 .contactBtn{
     padding: 0.2rem 1.5rem !important;
     font-weight: 600 !important;
@@ -73,6 +104,9 @@
 
 
 @media only screen and (max-width: 676px){
+    .contactBg{
+        padding: 50px 0;
+    }
     .descPart h5{
         line-height: 0.94rem;
     }

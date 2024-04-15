@@ -4,9 +4,9 @@ import SearchBarStyles from "../../../components/searchBar/SearchBar.module.css"
 import searchIcon from "../../../assets/search.svg";
 import styles from "./MyCourses.module.css";
 
-import notifIcon from "../../../assets/notif.svg";
 import { NavLink, Outlet } from 'react-router-dom';
 import $ from 'jquery';
+import NotificationWindow from '../../../UI-components/NotificationWindow/NotificationWindow';
 
 
 const MyCourses = () => {
@@ -43,7 +43,7 @@ const MyCourses = () => {
             <div className='w-full xl:w-[77%]'>
                 <SearchBar >
                     <h2>Trading</h2>
-                    <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
+                    <div className={SearchBarStyles.notification_searchInput + " hidden lg:flex"}>
                         <div className={styles.training_navBar} >
                             <ul>
                                 <li>
@@ -54,11 +54,8 @@ const MyCourses = () => {
                                 </li>
                             </ul>
                         </div>
-                        <button className={SearchBarStyles.notificationBtn + " hidden lg:flex"} type="button">
-                            <img src={notifIcon} alt="" />
-                            <span>6</span>
-                        </button>
                     </div>
+                    <NotificationWindow />
                     <div className={` ${SearchBarStyles.bars} flex lg:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
                         <div className={SearchBarStyles.bar}></div>
                     </div>

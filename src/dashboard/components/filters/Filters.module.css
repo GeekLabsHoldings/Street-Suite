@@ -1,12 +1,13 @@
 
 .filters_section {
-  width: 27%;
+  width: 28%;
+  min-width: 420px;
+  padding: 0.5rem 1.5rem;
   position: fixed;
-  right: 1rem;
-  padding: 1rem 0;
+  right: 0rem;
 }
 .filtersContainer {
-  padding: clamp(32px, calc( 1.8vw + 0.5rem ) , 200px) clamp(16px, calc( 1vw + 0.4rem ) , 100px);
+  padding: clamp(16px, calc( 1vw + 0.4rem ) , 100px);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -208,21 +209,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  height: 0;
-  transition: all 0.3s;
 }
 
-.industryFilter.open .selectItems {
-  height: auto;
-  transform: translateY(0%);
-}
 
 .industryFilter .selectItems li {
-  padding: 0.1rem 0.3rem;
-  border-left: 0.76px solid #FFFFFF;
+  padding: 0.1rem 0;
   width: 50%;
 }
 
@@ -230,7 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0;
   width: max-content;
   cursor: pointer;
   border-radius: 5px;
@@ -244,7 +237,7 @@
 }
 
 .industryFilter .selectItem img {
-  width: clamp(10px,  calc( 0.6vw + 0.4rem ), 60px);
+  width: clamp(10px,calc(0.7vw + 0.1rem),60px);
   margin-right: 0.4rem;
 }
 
@@ -272,26 +265,16 @@
   margin-bottom: 2rem;
 }
 
-.MarketCapFilter.open .selectLabel img {
-  transform: rotateZ(0deg);
-}
 
 .MarketCapFilter .checkItems {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  height: 0;
   overflow: hidden;
   transition: all 0.3s;
-}
-
-.MarketCapFilter.open .checkItems {
-  height: auto;
-  transform: translateY(0%);
 }
 
 
@@ -323,7 +306,8 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
   height: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
   border: 1px solid #313131;
@@ -338,23 +322,20 @@
   height: 6px;
   background: #53ACFF;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  left: calc( clamp(10px,  calc( 0.4vw + 0.5rem ), 60px) / 2);
   border-radius: 100%;
   transition: all 0.2s ease;
 }
 
 .checkItems input:not(:checked)+label:after {
   opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
   background-color: #202020;
 }
 
 .checkItems input:checked+label:after {
   opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
 }
 
 
@@ -375,20 +356,10 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  overflow: hidden;
-  height: 0;
   transition: all 0.3s;
 }
-
-.riskLevelFilter.open .checkItems {
-  height: auto;
-  transform: translateY(0%);
-
-}
-
 
 
 .scrollSelect h6 {
@@ -398,8 +369,10 @@
 .scrollSelect {
   display: flex;
   justify-content: start;
-  gap: 7rem;
+  gap: 10%;
 }
+
+
 
 .scrollSelect .selectLabel {
   justify-content: center;
@@ -407,18 +380,22 @@
 
 .strategyFilter,
 .AssetFilter {
-  width: auto;
+  width: 40%;
 }
+
+
 
 .selectContainer {
   position: relative;
-  max-height: 82px;
+  overflow: hidden;
+  /* max-height: 82px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
-  overflow: auto;
+  align-items: center;*/
+  overflow: hidden; 
+  box-shadow: inset 0px 0px 19px 6px #202020;
 }
 
 .selectContainer::before {
@@ -427,8 +404,26 @@
   top: 0;
   width: 100%;
   height: 0;
-  box-shadow: 0px 0px 13px 4px #00000061;
+  box-shadow: 0px 0px 13px 13px #202020;
+  z-index: 3;
+}
+.selectContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 0px 13px 13px #202020;
+  z-index: 3;
+}
 
+/* .selectContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 0px 19px 6px #000000c7;
 }
 
 .selectContainer::after {
@@ -438,8 +433,19 @@
   width: 100%;
   height: 0;
   box-shadow: 0px 0px 13px 4px #00000061;
+} */
 
-}
+/* .scrollSelect .strategyFilter .selectContainer::after,
+.scrollSelect .AssetFilter .selectContainer::after{
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+  background-color: #53ACFF;
+  z-index: 99;
+} */
 
 .selectContainer::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
@@ -448,6 +454,8 @@
   width: 0;
   visibility: hidden;
 }
+
+
 
 .selectContainer::-webkit-scrollbar {
   width: 0px;
@@ -464,6 +472,7 @@
 .selectContainer .selectItem {
   position: relative;
   transition: all 0.3s;
+  height: 30px;
 }
 
 .selectContainer .selectItem input {
@@ -482,34 +491,47 @@
   letter-spacing: 0px;
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
+  text-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
-.selectContainer .selectItem input:checked+label {
+.activeBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 100%;
   background-color: #53ACFF;
-  color: #fff;
+  border-radius: 5px;
+
 }
+
+/* .selectContainer .selectItem input[checked]+label {
+  color: #fff;
+} */
 
 .applyBtn {
   font-family: Poppins;
   font-size: clamp(10px, calc(0.3vw + 0.5rem), 60px);
   font-weight: 600;
-  line-height: 20px;
   letter-spacing: 0px;
   text-align: center;
   color: #fff;
   padding: 0.5rem 1.5rem;
   width: clamp(10px, calc(7vw + 0.5rem), 300px);
   background-color: #53ACFF !important;
+  border: none;
   border-radius: 6px;
   margin: 1.5rem 0 0;
-  border: 1px solid #53ACFF;
   outline: 0;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .applyBtn:hover {
-  background-color: #53acffb0 !important;
+  box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 .saveFilterBtn{
@@ -530,6 +552,11 @@
   transition: all 0.3s;
 }
 
+.saveFilterBtn:hover{
+  background: #53acff;
+  border: 1px solid #53acff;
+}
+
 .closeFilter{
   border: none;
   outline: none;
@@ -541,9 +568,10 @@
   right: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
 
   .filters_section {
+    min-width: auto;
     position: fixed;
     width: 100% !important;
     height: 100vh;
@@ -551,7 +579,7 @@
     left: 0;
     background: #00000091;
     z-index: 9999999999999;
-    padding: 1.5rem;
+    padding: 1rem;
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s;
@@ -600,7 +628,7 @@
     margin: 1rem 0 0.5rem;
     font-size: 14px;
     line-height: 20px;
-    width: 120px;
+    width: 140px;
   }
 
 }

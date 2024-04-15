@@ -1,6 +1,6 @@
 import React from 'react'
 import "./TrainingsSection.css"
-import trainingsImg from "../../../assets/tranings-img.png"
+import trainingsImg from "../../../assets/home training img.svg"
 import {Link} from 'react-router-dom'
 
 

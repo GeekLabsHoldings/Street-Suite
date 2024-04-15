@@ -13,12 +13,12 @@ import CommingSoon from '../../components/home-page-sections/CommingSoon/Comming
 import GetStarted from '../../components/home-page-sections/GetStarted/GetStarted';
 import FAQ from '../../components/home-page-sections/FAQ/FAQ';
 
-import heroImg from "../../assets/hero-Img.png"
+import heroImg from "../../assets/hero img.svg"
 import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
   return (
-    <>
+    <div className='space-y-[20vw] lg:space-y-[10vw]'>
 
       <Helmet>
         <title>Street Suite</title>
@@ -45,7 +45,7 @@ const HomePage = () => {
       <CommingSoon />
       <GetStarted />
       <FAQ />
-    </>
+    </div>
   )
 }
 

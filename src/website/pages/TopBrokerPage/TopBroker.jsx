@@ -143,7 +143,7 @@ const TopBroker = () => {
                                 }}>Reset</Button>
 
                                 <Button className='newBtn pickcardBtn' onClick={() => {
-                                    setStartCompare(true);
+                                    setStartCompare(true); setCloseCompare(false);
                                 }} >Compare</Button>
                             </div>
                         </div>
@@ -155,7 +155,7 @@ const TopBroker = () => {
                                 <div className='flex justify-between '>
                                     <h5>Selected ({cards.length})</h5>
                                     <div>
-                                        <svg onClick={() => { setCloseCompare(true); reset() }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <svg onClick={() => { dispatch(reset()); setCloseCompare(true) }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                         </svg>
                                     </div>
@@ -164,8 +164,8 @@ const TopBroker = () => {
                             </div>
                             {/* min-w-[24rem] */}
                             <div className="flex overflow-auto max-w-full">
-                                {cards.map((oneCard) => (
-                                    <div className='flex flex-col gap-2 min-w-1/4 relative'>
+                                {cards.map((oneCard ,idx) => (
+                                    <div className='flex flex-col gap-2 min-w-1/4 relative' key={idx}>
 
                                         <div className='md:px-8 sm:px-4 rightThickBorder w-full'>
                                             <div className="flex justify-around py-3">
@@ -180,7 +180,6 @@ const TopBroker = () => {
                                                     <svg
                                                         onClick={() => {
                                                             dispatch(removeItem(oneCard));
-                                                            console.log(oneCard)
                                                         }}
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />

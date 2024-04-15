@@ -121,6 +121,7 @@
 .checkout-container .plane-pricing .plane-action a:hover {
     background: var(--Blue300);
     border: 1px solid var(--Blue300);
+    box-shadow: none;
 }
 
 
@@ -214,9 +215,14 @@
     letter-spacing: 0em;
     background: var(--Blue300);
     color: #fff;
-    border: 1px solid var(--Blue300);
+    border: none;
     padding: 0.6rem 1.5rem;
     border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.checkout-container .payment-details button:hover{
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 

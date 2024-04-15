@@ -1,11 +1,11 @@
-.likeComments p{
+.oldBlogs p{
     font-weight: 400;
     font-size: 0.8175rem;
     line-height: 1.226rem;
     color: #53ACFF;
 
 }
-.likeComments h6{
+.oldBlogs h6{
     font-weight: 400;
     font-size:1.189rem ;
     line-height: 1.783rem;
@@ -13,12 +13,12 @@
 
 }
 @media only screen and (max-width:676px) {
-.likeComments p{
+.oldBlogs p{
     font-size: 0.625rem;
     line-height: 0.94rem;
     font-weight: 400;
 }
-.likeComments h6 {
+.oldBlogs h6 {
     font-size: 0.875rem;
     line-height: 1.3125rem;
     font-weight: 400;

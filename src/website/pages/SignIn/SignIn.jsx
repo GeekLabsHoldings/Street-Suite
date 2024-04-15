@@ -17,7 +17,7 @@ const SignIn = () => {
                 />
             </Helmet>
 
-
+{/* sign in page */}
             <div className="signInBG flex align-items-center ">
                 <div className="flex sm:flex-col sm:gap-24 md:gap-0 sm:py-10">
                     <div className="md:w-1/2">
@@ -25,6 +25,7 @@ const SignIn = () => {
                             <div className="signInLogo">
                                 <img className="w-full" src={LogoIcon} />
                             </div>
+                            {/* welcoming text */}
                             <div className="signinContent flex flex-col md:gap-4 sm:gap-1">
                                 <div>
                                     <h2 className='md:ps-3'>Hello!</h2>
@@ -40,22 +41,27 @@ const SignIn = () => {
                     </div>
                     <div className="md:w-1/2 flex justify-center">
                         <div className="forBorder md:w-3/5 sm:w-10/12 ">
-                            <div className='formPart formBGSignIn'>
-                                <div className=" formElements flex flex-col gap-20 md:w-8/12 sm:w-10/12 mx-auto md:pt-24 md:pb-16 sm:pt-12 sm:pb-8">
+                            <div className='formPart formBGSignIn '>
+                                <div className="formElements flex flex-col gap-20 w-10/12 mx-auto md:pt-28 md:pb-20 sm:pt-12 sm:pb-8 ">
+                                    {/* welcoming text in large screens */}
 
-                                <div className='flex flex-col gap-12'>
+                                <div className='flex flex-col gap-12 '>
                                      <div className='md:visible sm:hidden text-center'>
                                         <h3>Welcome back to <span className='highlight'>Street Suite!</span></h3>
                                     </div>
+                                    {/* welcoming text in small screens */}
                                     <div className='md:hidden sm:visible text-center flex flex-col gap-2'>
                                         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
                                         <p>Log in to your account</p>
                                     </div>
-                                    <div className='flex flex-col gap-3'><LabelAndInput labeltext='Email' required={true} placeholder='Enter your email' />
+                                    {/* forn to enter user email and password */}
+                                    <div className=' formLabelsAndInputs'>
+                                    <LabelAndInput labeltext='Email' required={true} placeholder='Enter your email' />
                                     <LabelAndInput labeltext='Password' required={true} placeholder='Enter password' />
-                                    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" /></div>
+                                    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
+                                    </div>
                                 </div>
-
+                            {/*button to complete login  */}
                                     <div className='mx-auto'>
                                         <Button className=' newBtn loginBtn '>Log In</Button>
                                     </div>

@@ -58,20 +58,21 @@ import * as React from 'react';
     900: '#003A75',
   };
 
-  
+  // repeated form for signup and contact us
 
 const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTxt,needFirstPrt}) =>{
 
     return(
-        <div className='formHead flex flex-col gap-20'>
-          <div className='flex flex-col md:gap-10'>
-         {needFirstPrt? <div className='sm:pb-5' >
+      // welcoming text and purpose of form
+        <div className='formHead formElementsAndBtn'>
+          <div className=' formElements'>
+         {needFirstPrt? <div className='sm:pb-5 sm:text-center' >
         <h3>Welcome to <span className='highlight'>Street Suite!</span></h3>
         <p>{purpose}</p>
         </div> :null}
 <div>
       
-    <FormControl className="gap-4">
+    <FormControl className="formGroup">
 
     <div>
     <FormLabel required className='mb-1 labelfont'
@@ -125,12 +126,10 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
     </>
     }
     </div>
-    <div>
 
-    </div>
  {/* Terms and Conditions */}
     {needCheckbox ? <>
-    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label="Remember me" />
+    <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label={<span>Remember me</span>} />
     <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label={<span>By creating an account, I have read and agreed to Street Suite's <a href="/terms&conditions"> Terms & Conditions.</a></span>}
      />
     </> :null}
@@ -141,9 +140,6 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
           </div>
 
 
-    {/* <div className='btnContainer'> 
-    <button type="button" className='btnColor'>{btnTxt}</button>
-    </div> */}
     <div className=' flex justify-center'>
     <Button className='newBtn formBtn'>{btnTxt}</Button>
     </div>
