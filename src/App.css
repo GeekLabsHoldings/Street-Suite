@@ -66,10 +66,9 @@ h6 {
   margin: 0;
 }
 
-<<<<<<< HEAD
 .Msglayout{
   background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
-=======
+}
 .Signuplayout {
   background: linear-gradient(190deg, rgba(32, 32, 32, 1) 40%, rgba(47, 83, 117, 1) 100%);
   min-height: 100vh;
@@ -78,7 +77,6 @@ h6 {
 
 .Msglayout {
   background: linear-gradient(150deg, rgba(32, 32, 32, 1) 15%, rgba(47, 83, 117, 1) 100%);
->>>>>>> f12525a5a7d0d8120f19480b44b5b92272d7d03f
   min-height: 100vh;
 }
 
