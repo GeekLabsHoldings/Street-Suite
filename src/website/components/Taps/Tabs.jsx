@@ -5,7 +5,6 @@ import './Tabs.css';
 
 export default function BasicTabs() {
 
-   
   return (
     <Box sx={{ width: '100%'}}>
       <Box className='blogsTabs '>

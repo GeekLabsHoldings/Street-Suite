@@ -3,6 +3,7 @@ import './OneWinnerOrLoser.css';
 
 const OneWinner = ({imgUrl,num,winner})=>{
     return(
+        // section for name , photo and rank for every winner or loser
         <div className='flex align-items-center gap-3 winnerBG ps-4 py-2 relative '>
             <h5>{num}</h5>
             <img src={imgUrl} />

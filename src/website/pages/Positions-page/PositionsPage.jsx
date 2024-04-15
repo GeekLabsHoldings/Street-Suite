@@ -22,7 +22,7 @@ const PositionsPage = () => {
                 />
             </Helmet>
 
-
+{/* page for our open positions */}
             <div className='py-5 flex flex-col gap-16 bgImg'>
                 <div className="md:w-1/2 headOfPage mx-auto flex flex-col align-items-center text-center gap-3">
                     <h1><span className='highlight'>Street Suite</span> Vacancies </h1>
@@ -30,9 +30,9 @@ const PositionsPage = () => {
                         <p>Street Suite is expanding and we are looking for talented people to join our team!</p>
                     </div>
                 </div>
-
+        {/* expanding and collapse cards for every position */}
                         <AccordionGroup disableDivider className=" w-10/12 mx-auto flex flex-col gap-6" sx={{transition:'2s'}} >
-
+{/* first position and it's expanded by default */}
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
                 <Accordion defaultExpanded
                 sx={{
@@ -56,12 +56,14 @@ const PositionsPage = () => {
                 }} 
                 >
                 <div className='grayPositionContainer bgPositionCard'>
+                    {/* the part that appear when card is collapsed */}
                 <AccordionSummary >
                 <h2 className='headOfRightDiv md:w-4/5'>Back End Developer</h2>
                 <div className='txtAlone'>
                 <p className='ms:visible sm:hidden'>We're seeking a Senior Backend Developer to join our team and contribute to the development of our cutting-edge products and services.</p>
                 </div>
                 </AccordionSummary>
+                {/* the part that appear when the card is expanded */}
 
                 <AccordionDetails className="accordionDetails">
 
@@ -71,7 +73,7 @@ const PositionsPage = () => {
                 <div className='txtAlone'>
                 <span>We're seeking a Senior Backend Developer to join our team and contribute to the development of our cutting-edge products and services.</span>
                 </div>
-
+{/* position responsibilities */}
                 <div className='headAndUl flex flex-col md:gap-4 sm:gap-3'>
                 <h3>Responsibilities</h3>
                 <ul className='positionsList '>
@@ -89,7 +91,7 @@ const PositionsPage = () => {
                 </li>
                 </ul>
                 </div>
-
+{/* position benefits */}
                 <div className='headAndUl flex flex-col md:gap-4 sm:gap-3'>
                 <h3>Benefits</h3>
                 <ul className='positionsList'>
@@ -105,7 +107,7 @@ const PositionsPage = () => {
 
                 </ul>
                 </div>
-
+{/* position requirements */}
                 <div className='headAndUl flex flex-col md:gap-4 sm:gap-3'>
                 <h3 className='movingH3'>Requirement</h3>
                 <div>
@@ -129,6 +131,7 @@ const PositionsPage = () => {
 
                 </div>
                 </div>
+                {/* form to be filled to complete user application for position */}
                 <div className="md:w-1/2 sm:pt-10">
                 <div className="w-4/5 positionRightPart flex flex-col md:gap-20 sm:gap-7 sm:mx-auto sm:pb-4">
                 <div className='flex flex-col gap-4'>
@@ -164,7 +167,7 @@ const PositionsPage = () => {
 
                 </Accordion>
                 </div>
-
+{/* another position */}
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
                 <Accordion 
                 sx={{
@@ -297,6 +300,7 @@ const PositionsPage = () => {
                 </Accordion>
                 </div>
 
+{/* another position */}
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
                 <Accordion 
                 sx={{
@@ -429,6 +433,7 @@ const PositionsPage = () => {
                 </Accordion>
                 </div>
 
+{/* another position */}
                 <div className= 'grayPositionBorder carrerPositionCollapse md:py-0 sm:py-4' >
                 <Accordion 
                 sx={{

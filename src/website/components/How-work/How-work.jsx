@@ -2,6 +2,7 @@ import './How-work.css';
 
 const HowWork = ({Icon,Header})=>{
     return(
+        // section that explain how we work in detail
         <div className='flex w-full md:gap-10 sm:gap-4'>
     <div className='vectorSize '>
     <img className='w-full' src={Icon} />
