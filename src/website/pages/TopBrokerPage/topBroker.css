@@ -166,6 +166,9 @@ position: relative;
         font-weight: 500;
     }
 @media only screen and (max-width: 676px){
+    .brokersHeader h1{
+        line-height: 2.5rem;
+    }
      .brokersHeader span{
         font-size: 1.5rem;
         line-height: 2.25rem;
@@ -176,9 +179,7 @@ position: relative;
     .rightPrt h4{
         line-height: 1.5rem;
     }
-    .textSection p{
-        line-height: 0.94rem;
-    }
+
     .topBrokerList span{
         font-weight: 400;
         font-size: 0.625rem;

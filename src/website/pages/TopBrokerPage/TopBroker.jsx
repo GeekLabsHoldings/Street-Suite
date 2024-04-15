@@ -50,7 +50,7 @@ const TopBroker = () => {
                 />
             </Helmet>
 
-            <div className='Msglayout'>
+            <div className='Msglayout sm:px-4'>
 
                 <div className="pt-5 sm:w-full">
                     <div className="brokersHeader md:w-7/12 text-center sm:w-full m-auto">
@@ -58,7 +58,7 @@ const TopBroker = () => {
                     </div>
                     {/* best brokers card */}
                     <div className='sm:visible md:hidden w-full'>
-                        <div className='col-lg-6 smforBorder m-auto'>
+                        <div className='lg:w-1/2 smforBorder m-auto'>
                             <div className='formPart py-3 smbrokerBG'>
                                 <div className='md:w-1/2 sm:px-12 text-center topBrokerSM '>
                                     <h4 className='sm:pt-5'>Best brokers for 2024</h4>
@@ -71,10 +71,10 @@ const TopBroker = () => {
                     </div>
 
                     <div className="flex flex-col gap-20">
-                    <div className='row '>
+                    <div className='flex '>
                         {/* description of our work */}
-                        <div className='col-md-6 flex justify-end'>
-                            <div className='col-md-10 rightPrt sm:pt-10'>
+                        <div className='md:w-1/2 flex justify-end'>
+                            <div className='md:w-10/12 rightPrt sm:pt-10'>
                                 <div>
                                     <h4 className='pb-4'>What are our Top choice’s criteria?</h4>
                                     <div className="textSection ">
@@ -107,10 +107,10 @@ const TopBroker = () => {
 
                         </div>
                         {/* display our brokers */}
-                        <div className='md:visible col-md-6 sm:hidden'>
-                            <div className='col-lg-8 forBorder m-auto'>
+                        <div className='md:visible md:w-1/2 sm:hidden'>
+                            <div className='md:w-8/12 forBorder m-auto'>
                                 <div className='formPart brokerBG py-3'>
-                                    <div className='col-lg-8 m-auto text-center topBrokerSM'>
+                                    <div className='md:w-8/12 m-auto text-center topBrokerSM'>
                                         <h4 className='py-8'>Best brokers for 2024</h4>
                                         <div>
                                             {renderBrokers}
@@ -122,10 +122,10 @@ const TopBroker = () => {
                         </div>
                     </div>
                     {/* display our picks */}
-                    <div className=' col-md-10 m-auto '>
-                        <div className='col-md-10 mx-auto my-5 ourPicks'>
+                    <div className=' md:w-10/12 m-auto '>
+                        <div className='md:w-10/12 mx-auto my-5 ourPicks'>
                             <h4 className='md:pb-12 sm:pb-8' >More about our picks:</h4>
-                            <div className='flex flex-col gap-3'>
+                            <div className='flex flex-col gap-3 w-full'>
                                 {renderCardsData}
                             </div>
                         </div>
@@ -133,7 +133,6 @@ const TopBroker = () => {
                     </div>
 
                 </div>
-
 
                 <div className={isClicked && !closeCompare ? 'visible comparePrt ' : 'hidden'}>
                     <div className={isClicked && !startCompare ? 'visible selectedItems' : ' hidden'}>
@@ -152,7 +151,7 @@ const TopBroker = () => {
                         </div>
                     </div>
 
-                    <div className={startCompare && !removeLastItem ? ' visible h-3/6' : ' hidden'}>
+                    <div className={startCompare && !removeLastItem ? 'visible h-3/6' : ' hidden'}>
                         <div className='md:pt-5 sm:pt-4 compareTable'>
                             <div className='flex flex-col md:gap-4 sm:gap-2 md:px-16 sm:px-10 sm:pb-3 md:pb-0 bottomThickBorder'>
                                 <div className='flex justify-between '>
