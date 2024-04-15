@@ -152,14 +152,15 @@ section.plans .section-title {
     font-size: clamp(8px, calc(0.4vw + 0.5rem), 40px);
     font-weight: 600;
     box-shadow: -1px -1px 2.6px 0px #bbbbbb;
-    transition: all 0.2s;
+    transition: all 0.3s;
     padding: 0.5rem 2rem;
 }
 
 
 
 .plane-action a:hover {
-    box-shadow: 1px 1px 2.6px 0px #bbbbbb;
+    background-color: var(--Blue300);
+    box-shadow: none;
 }
 
 .recommended-plane .plane-action a {
@@ -168,8 +169,7 @@ section.plans .section-title {
 }
 
 .recommended-plane .plane-action a:hover {
-    background: var(--Blue300);
-    box-shadow: inset 1px 1px 2.6px 0px rgba(187, 187, 187, 0.205);
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 .recommended-plane h6 {

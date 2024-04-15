@@ -186,7 +186,7 @@ h6 {
   fill: #fff;
 }
 
-.MyCourses-wrapper .tabs-nav li a {
+.MyCourses-wrapper .myCourses-tabs .tabs-nav li a {
   display: block;
   font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
   font-weight: 700;
@@ -197,7 +197,7 @@ h6 {
   transition: all 0.3s;
 }
 
-.MyCourses-wrapper .tabs-nav li.selected a {
+.MyCourses-wrapper .myCourses-tabs .tabs-nav li.selected a {
   background-color: var(--Blue300);
   color: #fff;
 }

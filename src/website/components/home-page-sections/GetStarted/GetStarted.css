@@ -31,7 +31,7 @@ section.getStarted{
     transition: all 0.3S;
 }
 .getStarted-content a:hover{
-    background: var(--Blue400);
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 .getStarted-img {
