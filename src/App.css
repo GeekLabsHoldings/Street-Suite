@@ -25,6 +25,7 @@
 33px=> clamp(16px, calc(1.6vw + 0.5rem), 80px);
 48px=> clamp(24px, calc(2.8vw + 0.5rem),140px);
 64px=> clamp(24px, calc(3.6vw + 0.5rem),140px);
+96px => clamp(56px, calc(5.5vw + 0.5rem),140px);
 40px=> clamp(24px, calc(1.8vw + 0.5rem),90px); */
 
 
@@ -53,11 +54,7 @@ a{
 p,h1,h2,h3,h4,h5,h6{
   margin: 0;
 }
-.Signuplayout{
-  background: linear-gradient(190deg, rgba(32,32,32,1) 40%, rgba(47, 83, 117,1) 100%);
-  min-height: 100vh;
-  align-items: center;
-}
+
 .Msglayout{
   background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
   min-height: 100vh;
@@ -66,6 +63,7 @@ p,h1,h2,h3,h4,h5,h6{
   background-color: #53ACFF;
   border-radius: 0.3rem;
   padding: 0 0.3rem;
+  text-wrap: nowrap;
 }
 .forBorder,.smforBorder,.emptyDivBorder ,.whiteBorder ,.winnerAndLoserBorder{
   position:relative;

@@ -15,9 +15,9 @@ const SignupPage = () => {
                 />
             </Helmet>
     
-        <div className='Signuplayout row mx-0 sm:px-10'>
-      <div className='desc col-lg-6 col-sm-12 '>
-        <div className="col-md-7 col-sm-12 sm:py-5 m-auto" >
+        <div className='Signuplayout flex mx-0 sm:px-10 sm:flex-col gap-3'>
+      <div className='desc lg:w-1/2 md:w-full '>
+        <div className="md:w-7/12 sm:w-full sm:py-5 mx-auto" >
           {/* our logo and small intro */}
           <div className="content ">
             <div className='imgDiv lg:w-52 sm:w-32 lg:-ml-7 sm:ml-0'>
@@ -30,13 +30,12 @@ const SignupPage = () => {
         </div>
       </div>
 
-
-      <div className=' col-lg-6 col-sm-12'>
-        <div className='row col-md-11 sm:mb-7 '>
-          <div className='m-auto col-md-9 forBorder'>
-            <div className='formPart formBGSignup lg:pt-24 lg:pb-14 sm:py-14 sm:px-4 '>
+      <div className='lg:w-1/2 md:w-full'>
+        <div className='flex w-11/12 sm:mb-7 mx-auto'>
+          <div className='mx-auto md:w-3/4 forBorder'>
+            <div className='formPart formBGSignup '>
               <div className='inForm'>
-                <div className='col-md-10 formcontent'>
+                <div className='md:w-10/12 formcontent'>
                   {/* common form for signup and contact us */}
                   <FormComponent needFirstPrt={true} purpose='Create a new account' label1='Full Name' label2='Email' label3='Password' needCheckbox={true} btnTxt='Sign Up' textArea={false} />
                 </div>
