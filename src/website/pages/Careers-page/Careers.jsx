@@ -45,7 +45,7 @@ const CareersPage = () => {
                                 <h4 >Check Our Git Hub</h4>
                             </div>
                             <div className="emptyDivBorder w-4/5 m-auto h-52 mb-3 ">
-                                <div className='githubBG formPart'></div>
+                               <a href="#"> <div className='githubBG formPart'></div></a>
                             </div>
                         </div>
 
