@@ -8,9 +8,9 @@ import searchIcon from "../../../assets/search.svg";
 import styles from './SingleTraning.module.css';
 
 
-import notifIcon from "../../../assets/notif.svg";
 import { NavLink, Outlet } from 'react-router-dom';
 import ProgressBar from '@ramonak/react-progress-bar';
+import NotificationWindow from '../../../UI-components/NotificationWindow/NotificationWindow';
 
 const SingleTraning = () => {
 
@@ -70,10 +70,7 @@ const SingleTraning = () => {
                     </div>
                     
                     {/* notification button in nav bar */}
-                    <button className={SearchBarStyles.notificationBtn + " flex lg:hidden"} type="button">
-                        <img src={notifIcon} alt="" />
-                        <span>6</span>
-                    </button>
+                    <NotificationWindow />
                 </div>
 
                 {/* bars in mobile screen */}

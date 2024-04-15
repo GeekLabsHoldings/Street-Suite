@@ -1,5 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import {Route, Routes } from 'react-router-dom';
 import './App.css';
 
 // import all sections as components from components folder
@@ -50,6 +49,8 @@ import DisclaimerPage from './website/pages/DisclaimerPage/DisclaimerPage';
 import PrivacyAndSecurity from './website/pages/PrivacyAndSecurity-page/PrivacyAndSecurity';
 import SignIn from './website/pages/SignIn/SignIn';
 import TermsAndConditions from './website/pages/TermsAndConditions/TermsAndConditions';
+import ScrollToTop from './ScrollToTop';
+import NotFoundPage from './NotFoundPage';
 
 
 
@@ -59,12 +60,11 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <HelmetProvider>
+
+          <ScrollToTop />
+
           <Routes>
-
             <Route path="/" element={<WebsiteLayout />} >
-
               <Route index element={<HomePage />} />
               {/* quizzes page route  */}
               <Route path='quizzes' element={<QuizzesPage />} >
@@ -139,9 +139,10 @@ function App() {
             <Route path='/login' element={<SignIn />} />
             <Route path='/signup' element={< SignupPage />} />
 
+            <Route path='*' element={< NotFoundPage />} />
+
+
           </Routes>
-        </HelmetProvider>
-      </BrowserRouter>
     </div>
   );
 }

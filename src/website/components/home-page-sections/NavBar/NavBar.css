@@ -182,6 +182,10 @@ nav .navLinks.first a{
         align-items: flex-start;
     }
 
+    nav .mobileScreenNav .navLinks a {
+      font-size: 14px;
+  }
+
     nav .mobileScreenNav .navLinks.first a {
         background-color: #53acff98;
         border-radius: 5px;

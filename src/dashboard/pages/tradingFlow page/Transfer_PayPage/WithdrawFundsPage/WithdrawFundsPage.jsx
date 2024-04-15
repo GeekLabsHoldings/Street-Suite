@@ -22,27 +22,31 @@ const WithdrawFundsPage = () => {
 
       {/* transfer methods that user will choose from them and add more button */}
       <div className={styles.transfer_methods}>
-        <div className={styles.method_item + " " + styles.chosen}>
-          <div>
-            <p>Wire</p>
-            <p>Wire - HSBC</p>
+      <div className={styles.method_item}>
+            <input type="radio" name="transfer-methods" id="transfer-methods" />
+            <div>
+              <p>Wire</p>
+              <p>Wire - HSBC</p>
+            </div>
+            <img src={methodFlag} alt="" />
           </div>
-          <img src={methodFlag} alt="" />
-        </div>
-        <div className={styles.method_item}>
-          <div>
-            <p>Wire</p>
-            <p>Wire - HSBC</p>
+          <div className={styles.method_item}>
+            <input type="radio" name="transfer-methods" id="transfer-methods2" />
+            <div>
+              <p>Wire</p>
+              <p>Wire - HSBC</p>
+            </div>
+            <img src={methodFlag} alt="" />
           </div>
-          <img src={methodFlag} alt="" />
-        </div>
-        <div className={styles.method_item}>
-          <div>
-            <p>Wire</p>
-            <p>Wire - HSBC</p>
+          <div className={styles.method_item}>
+            <input type="radio" name="transfer-methods" id="transfer-methods3" />
+
+            <div>
+              <p>Wire</p>
+              <p>Wire - HSBC</p>
+            </div>
+            <img src={methodFlag} alt="" />
           </div>
-          <img src={methodFlag} alt="" />
-        </div>
         <div className={styles.add_more}>
           <button><img src={addIcon} alt="" />  Add More</button>
         </div>
