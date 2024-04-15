@@ -21,7 +21,7 @@ const SuiteAcademy = () => {
                 {/* nav bar */}
                 <SearchBar >
                     <h2>Training</h2>
-                    <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
+                    <div className={`${SearchBarStyles.notification_searchInput} ${isNavOpen ? " " : "hidden"} lg:flex`}>
                         <div className={styles.training_navBar} >
                             <ul>
                                 <li>
@@ -32,8 +32,10 @@ const SuiteAcademy = () => {
                                 </li>
                             </ul>
                         </div>
-                        < NotificationWindow />
+                        
                     </div>
+
+                    < NotificationWindow />
                     <div className={` ${SearchBarStyles.bars} flex md:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
                         <div className={SearchBarStyles.bar}></div>
                     </div>

@@ -1,5 +1,5 @@
 section.FAQ {
-    padding: 5% 0% 0;
+    padding: 5% 0% 10%;
 }
 
 .FAQ-container {
@@ -19,7 +19,6 @@ section.FAQ {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
     border-radius: 21px;
     box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px #00000040;
     cursor: pointer;
@@ -33,6 +32,7 @@ section.FAQ {
     font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);;
     font-weight: 400;
     letter-spacing: 0em;
+    
 }
 
 .FAQ-container .collapse-item .collapse-header svg {
@@ -71,7 +71,7 @@ section.FAQ {
 @media only screen and (max-width: 1024px) {
 
   section.FAQ {
-    padding: 5% 5% 10%;
+    padding: 0% 5% 10%;
 }
 
 .FAQ-container {

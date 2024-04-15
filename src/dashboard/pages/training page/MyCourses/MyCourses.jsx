@@ -43,7 +43,7 @@ const MyCourses = () => {
             <div className='w-full xl:w-[77%]'>
                 <SearchBar >
                     <h2>Trading</h2>
-                    <div className={SearchBarStyles.notification_searchInput + " hidden md:flex"}>
+                    <div className={SearchBarStyles.notification_searchInput + " hidden lg:flex"}>
                         <div className={styles.training_navBar} >
                             <ul>
                                 <li>
@@ -54,8 +54,8 @@ const MyCourses = () => {
                                 </li>
                             </ul>
                         </div>
-                        <NotificationWindow />
                     </div>
+                    <NotificationWindow />
                     <div className={` ${SearchBarStyles.bars} flex lg:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
                         <div className={SearchBarStyles.bar}></div>
                     </div>

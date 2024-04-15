@@ -16,7 +16,6 @@ a.tradingHistory{
     outline: none;
     border: none;
     box-shadow: none;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-wrap: nowrap;

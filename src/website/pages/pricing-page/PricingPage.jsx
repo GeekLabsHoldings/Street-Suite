@@ -114,7 +114,7 @@ const PricingPage = () => {
               <div className="plane plane-pricing popular">
                 <img src={popularBadge} alt="" />
                 <div className="plane-body flex flex-col justify-center items-center  px-[16px] py-[32px] lg:px-8 lg:py-16">
-                  <h5 className="plane-title">premium Plan</h5>
+                  <h5 className="plane-title">Premium Plan</h5>
                   <div className="line"></div>
                   <ul className="plane-points space-y-5 px-4">
                     <li className='available '>
@@ -226,7 +226,7 @@ const PricingPage = () => {
           <div className="gradient-border lg:w-1/3">
             <div className="plane plane-pricing recommended">
               <div className="plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-16">
-                <h5 className="plane-title">deluxe Plan</h5>
+                <h5 className="plane-title">Deluxe Plan</h5>
                 <div className="line"></div>
                 <ul className="plane-points space-y-5 px-4">
                   <li className='available '>

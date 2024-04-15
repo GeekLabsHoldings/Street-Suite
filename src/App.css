@@ -144,6 +144,9 @@ h6 {
   display: flex;
   overflow: hidden;
 }
+.alertsPage-wrapper .notification_window{
+  right: -5.5rem;
+}
 
 .transfer_pay_side_nav li a.active {
   padding: 0.5rem 0.8rem;

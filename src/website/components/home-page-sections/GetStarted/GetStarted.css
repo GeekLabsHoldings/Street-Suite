@@ -46,7 +46,7 @@ section.getStarted{
 
 @media only screen and (max-width: 1024px) {
     section.getStarted{
-        padding: 5% 0;
+        padding: 0;
     }
     .getStarted-content a{
         margin: 0.5rem 1rem 0.5rem 0;

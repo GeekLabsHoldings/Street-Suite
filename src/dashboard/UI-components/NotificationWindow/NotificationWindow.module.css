@@ -76,7 +76,7 @@
 }
 .notification_window li>a {
   padding: 10px 3rem;
-  font-size: clamp(8px,  calc( 1vw + 0.1rem ), 60px);
+  font-size: clamp(12px,  calc( 1vw + 0.1rem ), 60px);
   font-weight: 700;
   text-align: left;
   width: 100%;
@@ -105,7 +105,7 @@
   display: block;
 }
 .notification_item{
-  padding: clamp(8px,  calc( 0.9vw + 0.1rem ), 60px);
+  padding: clamp(10px,  calc( 0.9vw + 0.1rem ), 60px);
   border-radius: 0.625rem;
   background: #202020;
   box-shadow: 0px 4px 6.9px 0px rgba(0, 0, 0, 0.25) inset;
@@ -118,9 +118,8 @@
 }
 
 .notification_item p{
-  font-size: 16px;
+  font-size: clamp(12px,  calc( 0.9vw + 0.1rem ), 60px);
   font-weight: 400;
-  line-height: 24px;
   text-align: left;
 }
 .notification_item p>span{
@@ -128,10 +127,22 @@
 }
 .notification_item > span{
 font-family: Poppins;
-font-size: 11px;
+font-size: clamp(8px,  calc( 0.6vw + 0.1rem ), 60px);
 font-weight: 400;
-line-height: 16.5px;
 text-align: right;
 margin-top: 0.5rem;
 display: block;
+}
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+  .notification_window {
+    min-width: 300px;
+    right: -2.3rem;
+    padding: 0.7rem;
+  }
+
 }
