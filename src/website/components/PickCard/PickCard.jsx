@@ -6,6 +6,7 @@ import { add } from "../../../redux/cardsSlice";
 import "./pickCard.css";
 
 const PickCard = ({
+  id,
   imgUrl,
   title,
   whyWeLike,
@@ -54,10 +55,10 @@ const PickCard = ({
               {/* popular badge for popular picks */}
               <div className=" w-1/3 text-center sm:w-2/5 flex flex-col justify-center align-items-center">
                 <div className="starsImg flex align-items-center">
-                  <img className="img-fluid" src={StarsImg} />
+                  <img className="img-fluid" alt="stars" src={StarsImg} />
                 </div>
                 <div className="popularBadge md:visible sm:hidden">
-                  <img src={PopularImg} />
+                  <img alt="popular-badge" src={PopularImg} />
                 </div>
               </div>
             </div>
@@ -108,9 +109,11 @@ const PickCard = ({
                   <Button
                     className="newBtn compareBtn"
                     onClick={() => {
+                      setIsClicked(true);
                       setCloseCompare(false);
                       dispatch(
                         add({
+                          id,
                           imgUrl,
                           title,
                           whyWeLike,
@@ -121,8 +124,6 @@ const PickCard = ({
                           overview,
                         })
                       );
-                      setIsClicked(true);
-                      setCloseCompare(false);
                     }}
                   >
                     Compare

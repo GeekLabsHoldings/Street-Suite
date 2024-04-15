@@ -1,17 +1,15 @@
-import Follow from '../../assets/followers.svg';
-import TheCup from '../../assets/the-cup.svg';
-import Like from '../../assets/like.svg';
+import { useNavigate } from "react-router-dom";
 import FirstAvatar from '../../assets/avatar1 with flag.svg';
 import SecondAvatar from '../../assets/avatar2 with flag.svg';
 import ThirdAvatar from '../../assets/avatar3 with flag.svg';
-import HotStrip from '../../assets/hot strip gray.png' ;
+import Follow from '../../assets/followers.svg';
+import HotStrip from '../../assets/hot strip gray.png';
+import Like from '../../assets/like.svg';
+import TheCup from '../../assets/the-cup.svg';
+import OldArticle from '../OldArticle/OldArticle';
 import OneWinner from '../OneWinnerOrLoser/OneWinnerOrLoser';
 import TimeForRead from '../TimeForRead/TimeForRead';
-import OldArticle from '../OldArticle/OldArticle';
-import { useNavigate } from "react-router-dom";
 import './OneBlog.css';
-
-  
 
 const OneBlog =()=>{
     // to enable navigation
@@ -27,15 +25,15 @@ const OneBlog =()=>{
     const trainingNavigator = ()=>{
         navigate('/dashboard/training')
     }
- 
+
 // to navigate to specific blog page
-     const onClickHandler = ()=>{
+    const onClickHandler = ()=>{
         navigate("./specific-blog");
     }
 
     return (
-   <div className='md:flex sm:my-2'>
-         <div className="md:w-3/5 verticalSeparator md:my-4 md:px-4 sm:px-1 ">
+    <div className='md:flex sm:my-2'>
+        <div className="md:w-3/5 verticalSeparator md:my-4 md:px-4 sm:px-1 ">
 {/* one blog */}
             <div className="flex md:gap-4 md:py-4 sm:py-3 cursor-pointer bottomBorder sm:gap-2" onClick={onClickHandler}>
                 <div className="sm:w-7/12 md:w-1/2 ">
@@ -55,7 +53,7 @@ const OneBlog =()=>{
 
 {/* one blog */}
             <div className="sm:visible md:hidden flex py-3 cursor-pointer bottomBorder" onClick={onClickHandler} >
-                     <div className="flex gap-4 py-2 ">
+                    <div className="flex gap-4 py-2 ">
                 <div className='w-5/12 '>
                 <div className='divForImgSm md:h-28 sm:h-28'></div>
                 </div>
@@ -88,19 +86,19 @@ const OneBlog =()=>{
                         <div className='flex flex-col gap-1'>
                         <div className='flex gap-3 txtspan'>
                             <div className='imgSizeInSm'>
-                                <img className='flex w-full' src={Follow} />
+                                <img className='flex w-full' alt='followers' src={Follow} />
                             </div>
                             <span>2.1k </span>
                         </div>
-                        <div className='flex gap-3 txtspan'>
-                           <div className='imgSizeInSm'> 
-                            <img className='w-full flex' src={TheCup} />
+                    <div className='flex gap-3 txtspan'>
+                        <div className='imgSizeInSm'> 
+                            <img className='w-full flex' alt='cup' src={TheCup} />
                             </div>
                             <span>1025</span>
                         </div>
                         <div  className='flex gap-3 txtspan'>
                         <div className='imgSizeInSm'> 
-                            <img className='w-full flex ' src={Like} />
+                            <img className='w-full flex' alt='likes' src={Like} />
                             </div>
                             <span>300 </span>
                         </div>
@@ -108,9 +106,8 @@ const OneBlog =()=>{
                     </div>
                         </div>
                         <div className='topRight'>
-                        <img className='w-full' src={HotStrip} />
+                        <img className='w-full' alt='hot badge' src={HotStrip} />
                         </div>
-                  
                     </div>
                 </div>
             </div>
@@ -143,14 +140,13 @@ const OneBlog =()=>{
 
 {/* 2 different blogs about same thing and common image */}
             <div className="flex bottomBorder md:gap-5 sm:gap-3">
-           <div className="w-1/2">
-           <div className='oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 bottomBorder cursor-pointer' onClick={onClickHandler}>
+            <div className="w-1/2">
+            <div className='oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 bottomBorder cursor-pointer' onClick={onClickHandler}>
                 <div className=' flex flex-col align-items-center md:gap-4 sm:gap-2'>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
-           
-   <TimeForRead/>
+    <TimeForRead/>
             </div>
 
             <div className='oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 cursor-pointer'onClick={onClickHandler}>
@@ -158,19 +154,18 @@ const OneBlog =()=>{
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
-           
     <TimeForRead/>
             </div>
 
-           </div>
-           <div className="w-1/2 ">
-           <div className=' py-8' >
-           <div className='sm:w-11/12 md:w-9/12 cursor-pointer' onClick={onClickHandler}>
+            </div>
+            <div className="w-1/2 ">
+            <div className=' py-8' >
+            <div className='sm:w-11/12 md:w-9/12 cursor-pointer' onClick={onClickHandler}>
                 <div className='divForImgLg md:h-96 sm:h-72'></div>
                 </div>
-  
+
                 </div>
-           </div>
+            </div>
 
             </div>
 
@@ -178,7 +173,7 @@ const OneBlog =()=>{
             <div className='md:hidden sm:visible flex py-4'>
             <div className=' w-full' >
             <div className='divForImgLg h-44'></div>
-  
+
                 </div>
 
             </div>
@@ -188,8 +183,8 @@ const OneBlog =()=>{
                 </div>
 {/* sample of old blogs */}
                 <div className='md:hidden sm:visible'>
-              <OldArticle classname='pt-6'/>
-              <OldArticle classname='pt-6'/>
+                <OldArticle classname='pt-6'/>
+                <OldArticle classname='pt-6'/>
                 <OldArticle classname='pt-6'/>
                 </div>
 
@@ -202,8 +197,6 @@ const OneBlog =()=>{
                             <div className='divForImgSm md:h-48 sm:h-32'></div>
                             </div>
                         </div>
-               
-
                         <div className='md:w-2/3 sm:w-1/2 flex flex-col justify-center md:gap-4 sm:gap-3 '>
                             <div className='md:w-3/4 blackBGFonts mx-auto flex flex-col md:gap-4 sm:gap-3 sm:px-2'>
                         <div>
@@ -211,7 +204,7 @@ const OneBlog =()=>{
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                         </div>
                                     
-              <TimeForRead/>
+                <TimeForRead/>
                             </div>
                         </div>
 
@@ -226,7 +219,6 @@ const OneBlog =()=>{
                 <h3>Lorem ipsum dol</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
-           
         <TimeForRead/>
             </div>
             </div>
@@ -235,11 +227,7 @@ const OneBlog =()=>{
 
                 <div className='md:w-10/12 sm:w-11/12'>
                 <div className='divForImgLg md:h-48 sm:h-24'></div>
- 
                 </div>
-
-            
- 
             </div>
 
         </div>
@@ -251,21 +239,17 @@ const OneBlog =()=>{
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
-           
-  <TimeForRead/>
+    <TimeForRead/>
             </div>
-           
+
             </div>
             <div className="w-1/2">
                 <div className='w-11/12 pt-3'>
                 <div className='divForImgLg h-52 '></div>
 
                 </div>
- 
             </div>
-            
             </div>
-
         </div>
 
 
@@ -277,16 +261,13 @@ const OneBlog =()=>{
                 <div className='md:py-7'>
                 <div className='divForImgSm h-52'></div>
             </div>
-          
     <div className='w-full gap-3 px-2 flex flex-col justify-center pb-8'>
-           
             <div className=' flex flex-col align-items-center md:gap-4 oneBlogCont'>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
             </div>
 
             <TimeForRead/>
-      
             </div>
 
             </div>
@@ -296,7 +277,7 @@ const OneBlog =()=>{
                 <div className="md:visible sm:hidden w-9/12 flex justify-end pe-3 py-5 bottomBorder cursor-pointer" onClick={leaderboardNavigator}>
                     <div className=' w-11/12 forGradBG winnerAndLoserBorder'>
                     <div className='formPart flex flex-col align-items-center forGradBG'>
-                 <div className='w-5/6 flex justify-center bottomBorder pt-10 pb-8'>
+                    <div className='w-5/6 flex justify-center bottomBorder pt-10 pb-8'>
                     <div className='w-4/5 text-center flex flex-col gap-3 winnerFont'>
                     <h5>Biggest Winners</h5>
                     <OneWinner imgUrl={FirstAvatar} num={1} winner={true}/>
@@ -313,7 +294,7 @@ const OneBlog =()=>{
                     <OneWinner imgUrl={ThirdAvatar} num={3} winner={false}/>
                     </div>
                     </div>
-                 </div>
+                </div>
                     </div>
 
                 </div>
@@ -331,18 +312,13 @@ const OneBlog =()=>{
                 </div>
 {/* old blogs appear in large screens and appear in different form and position in small screen */}
                 <div className='md:visible sm:hidden'>
-         
                 <OldArticle classname='pt-7 '/>
                 <OldArticle  classname='pt-7 '/>
                 <OldArticle  classname='pt-7 '/>
-
-            
-         
                 </div>
 
-               
 {/* one blog */}
-            <div className="md:visible sm:hidden flex bottomBorder py-8 cursor-pointer" onClick={onClickHandler}>
+            <div className="md:visible sm:hidden flex bottomBorder py-8 cursor-pointer " onClick={onClickHandler}>
                 <div className='w-1/3 '>
                     <div className="w-11/12">
                     <div className='divForImgSm h-28'></div>
@@ -363,21 +339,18 @@ const OneBlog =()=>{
 
                 </div>
 {/* one blog */}
-                <div className='md:visible sm:hidden py-8'>
-                   <div className='w-11/12 mx-auto flex flex-col gap-3 cursor-pointer' onClick={onClickHandler}>
-                   <div className='lastInRight'>
+                <div className='md:visible sm:hidden py-8 '>
+                    <div className='w-11/12 mx-auto flex flex-col gap-3 cursor-pointer' onClick={onClickHandler}>
+                    <div className='lastInRight'>
                     <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                     </div>
                     <TimeForRead/>
-                   </div>
+                    </div>
                 </div>
             </div>
-           
-
         </div>
-   </div>
+    </div>
 
-   
     )
 
 }

@@ -16,11 +16,13 @@ const TopBroker = () => {
     const dispatch = useDispatch();
     const [isClicked, setIsClicked] = useState(false);
     const [startCompare, setStartCompare] = useState(false);
-    const [closeCompare, setCloseCompare] = useState(false)
+    const [closeCompare, setCloseCompare] = useState(false);
+    const [removeLastItem, setRemoveLastItem] = useState(false);
+
 
     // render reusable pick cards
-    const renderCardsData = cardsData.map(({ img, pros, cons, whyWeLike, title, fees, accountMin, overview }) => (
-        <PickCard setCloseCompare={setCloseCompare} setIsClicked={setIsClicked} imgUrl={img} fees={fees} title={title} whyWeLike={whyWeLike} pros={pros} cons={cons} overview={overview} accountMin={accountMin} />
+    const renderCardsData = cardsData.map(({id, img, pros, cons, whyWeLike, title, fees, accountMin, overview }) => (
+        <PickCard id={id} setCloseCompare={setCloseCompare} setIsClicked={setIsClicked} imgUrl={img} fees={fees} title={title} whyWeLike={whyWeLike} pros={pros} cons={cons} overview={overview} accountMin={accountMin} />
     ))
 
     // render our first 3 best brokers
@@ -143,13 +145,14 @@ const TopBroker = () => {
                                 }}>Reset</Button>
 
                                 <Button className='newBtn pickcardBtn' onClick={() => {
-                                    setStartCompare(true); setCloseCompare(false);
+                                    setStartCompare(true);
+                                    setCloseCompare(false);
                                 }} >Compare</Button>
                             </div>
                         </div>
                     </div>
 
-                    <div className={startCompare ? ' visible h-3/6' : ' hidden'}>
+                    <div className={startCompare && !removeLastItem ? ' visible h-3/6' : ' hidden'}>
                         <div className='md:pt-5 sm:pt-4 compareTable'>
                             <div className='flex flex-col md:gap-4 sm:gap-2 md:px-16 sm:px-10 sm:pb-3 md:pb-0 bottomThickBorder'>
                                 <div className='flex justify-between '>
@@ -162,15 +165,13 @@ const TopBroker = () => {
                                 </div>
                                 <h6>Selected Providers</h6>
                             </div>
-                            {/* min-w-[24rem] */}
                             <div className="flex overflow-auto max-w-full">
-                                {cards.map((oneCard ,idx) => (
-                                    <div className='flex flex-col gap-2 min-w-1/4 relative' key={idx}>
-
+                                {cards.map((oneCard ) => (
+                                    <div className='flex flex-col gap-2 min-w-1/4 relative'>
                                         <div className='md:px-8 sm:px-4 rightThickBorder w-full'>
                                             <div className="flex justify-around py-3">
                                                 <div className="w-1/5 flex align-items-center">
-                                                    <img className='w-full' src={oneCard.imgUrl} />
+                                                    <img className='w-full' alt='card-img' src={oneCard.imgUrl} />
                                                 </div>
 
                                                 <div className="w-3/5 providerTitle">
@@ -180,6 +181,9 @@ const TopBroker = () => {
                                                     <svg
                                                         onClick={() => {
                                                             dispatch(removeItem(oneCard));
+                                                            if (cards.length === 1) {
+                                                                setRemoveLastItem(true);
+                                                            }
                                                         }}
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -226,10 +230,6 @@ const TopBroker = () => {
                                     <h4>Promotions</h4>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
