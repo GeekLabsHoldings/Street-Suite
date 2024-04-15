@@ -1,6 +1,6 @@
 
 .notificationBtn {
-  width: clamp(10px,  calc( 1vw + 0.5rem ), 100px);
+  width: clamp(20px,  calc( 1vw + 0.5rem ), 100px);
   background: transparent;
   border: none;
   outline: none;
@@ -16,13 +16,13 @@
 .notificationBtn > span {
   position: absolute;
   top: -5px;
-  right: 0;
-  width: clamp(8px,  calc( 0.8vw + 0.1rem ), 60px);
-  height: clamp(8px,  calc( 0.8vw + 0.1rem ), 60px);
+  right: -3px;
+  width: clamp(15px, calc(0.8vw + 0.1rem), 60px);
+  height: clamp(15px, calc(0.8vw + 0.1rem), 60px);
   background-color: #118F4B;
   color: #fff;
   font-family: Nunito Sans;
-  font-size: clamp(8px,  calc( 0.7vw + 0.1rem ), 60px);
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 60px);
   font-weight: 700;
   letter-spacing: 0px;
   border-radius: 50%;

@@ -1,11 +1,13 @@
 
 .filters_section {
-  width: 27%;
+  width: 28%;
   min-width: 420px;
-  padding: 1rem 0;
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  right: 0rem;
 }
 .filtersContainer {
-  padding: clamp(32px, calc( 1.8vw + 0.5rem ) , 200px) clamp(16px, calc( 1vw + 0.4rem ) , 100px);
+  padding: clamp(16px, calc( 1vw + 0.4rem ) , 100px);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -207,21 +209,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  height: 0;
-  transition: all 0.3s;
 }
 
-.industryFilter.open .selectItems {
-  height: auto;
-  transform: translateY(0%);
-}
 
 .industryFilter .selectItems li {
-  padding: 0.1rem 0.3rem;
-  border-left: 0.76px solid #FFFFFF;
+  padding: 0.1rem 0;
   width: 50%;
 }
 
@@ -229,7 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0;
   width: max-content;
   cursor: pointer;
   border-radius: 5px;
@@ -271,26 +265,16 @@
   margin-bottom: 2rem;
 }
 
-.MarketCapFilter.open .selectLabel img {
-  transform: rotateZ(0deg);
-}
 
 .MarketCapFilter .checkItems {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  height: 0;
   overflow: hidden;
   transition: all 0.3s;
-}
-
-.MarketCapFilter.open .checkItems {
-  height: auto;
-  transform: translateY(0%);
 }
 
 
@@ -372,18 +356,9 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  overflow: hidden;
-  height: 0;
   transition: all 0.3s;
-}
-
-.riskLevelFilter.open .checkItems {
-  height: auto;
-  transform: translateY(0%);
-
 }
 
 
@@ -393,8 +368,8 @@
 
 .scrollSelect {
   display: flex;
-  justify-content: center;
-  gap: clamp(2rem,  calc( 2vw + 0.2rem ), 10rem);;
+  justify-content: start;
+  gap: 10%;
 }
 
 
@@ -405,7 +380,7 @@
 
 .strategyFilter,
 .AssetFilter {
-  width: auto;
+  width: 40%;
 }
 
 

@@ -15,7 +15,6 @@ import industrialsIcon from "../../assets/industry/industrials.svg";
 import matrialsIcon from "../../assets/industry/matrials.svg";
 import estateIcon from "../../assets/industry/real estate.svg";
 import utilitiesIcon from "../../assets/industry/utilities.svg";
-import filterIcon from "../../assets/filterIcon.png";
 import Slider from "react-slick";
 
 // array of industry filter data that used in industry select input
@@ -110,30 +109,6 @@ const AssetSelect = [
 
 function Filters({ openFilterInMobile, toggleFilterMenu }) {
   const [appliedFilters, setAppliedFilters] = useState([]);
-
-  // open industry filter state
-  const [industryFilterIsOpen, setIndustryFilterIsOpen] = useState(true);
-
-  // open marketCap filter state
-  const [marketCapFilterIsOpen, setMarketCapFilterIsOpen] = useState(true);
-
-  // open riskLevel filter state
-  const [riskLevelFilterIsOpen, setRiskLevelFilterIsOpen] = useState(true);
-
-  // function that toggle industry filter
-  const toggleindustryFilter = () => {
-    setIndustryFilterIsOpen(!industryFilterIsOpen);
-  };
-
-  // function that toggle Market Cap filter
-  const toggleMarketCapFilter = () => {
-    setMarketCapFilterIsOpen(!marketCapFilterIsOpen);
-  };
-
-  // function that toggle Risk Level filter
-  const toggleRiskLevelFilter = () => {
-    setRiskLevelFilterIsOpen(!riskLevelFilterIsOpen);
-  };
 
   // function that get value of market cap filter and add it to applied filters
   const handleMarketCapFilter = (e) => {
@@ -324,18 +299,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
               {/* Industry filter */}
               <div
-                className={
-                  industryFilterIsOpen
-                    ? styles.industryFilter + " " + styles.open
-                    : styles.industryFilter
-                }
+                className={styles.industryFilter}
               >
                 {/* industry filter title  */}
-                <div
-                  className={styles.selectLabel}
-                  onClick={toggleindustryFilter}
-                >
-                  <img src={arrowIcon} alt="" />
+                <div className={styles.selectLabel}>
                   <h6>Industry</h6>
                 </div>
 
@@ -362,18 +329,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
               {/* Market Cap filter */}
               <div className={styles.checkBoxFilters}>
                 <div
-                  className={
-                    marketCapFilterIsOpen
-                      ? styles.MarketCapFilter + " " + styles.open
-                      : styles.MarketCapFilter
-                  }
+                  className={styles.MarketCapFilter}
                 >
                   {/* Market Cap filter title  */}
-                  <div
-                    className={styles.selectLabel}
-                    onClick={toggleMarketCapFilter}
-                  >
-                    <img src={arrowIcon} alt="" />
+                  <div className={styles.selectLabel} >
                     <h6>Market Cap</h6>
                   </div>
 
@@ -396,18 +355,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
                 {/* Risk Level filter */}
                 <div
-                  className={
-                    riskLevelFilterIsOpen
-                      ? styles.riskLevelFilter + " " + styles.open
-                      : styles.riskLevelFilter
-                  }
+                  className={styles.riskLevelFilter}
                 >
                   {/* Risk Level filter title  */}
-                  <div
-                    className={styles.selectLabel}
-                    onClick={toggleRiskLevelFilter}
-                  >
-                    <img src={arrowIcon} alt="" />
+                  <div className={styles.selectLabel} >
                     <h6>Risk Level</h6>
                   </div>
 
