@@ -150,6 +150,10 @@ h6 {
 
 .transfer_pay_side_nav li a.active {
   padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+}
+
+.transfer_pay_side_nav li:has(a.active) {
   background-color: var(--Blue300);
   border-radius: 5px;
 }
@@ -210,13 +214,8 @@ h6 {
   color: #fff;
 }
 
-.dashboard-wrapper ul li a.active {
+.dashboard-wrapper ul li:has(a.active)  {
   background-color: var(--Blue300);
-
-}
-
-.dashboard-wrapper ul li a.active:hover {
-  color: #fff;
 }
 
 .private_equities_table .customSelectMenu button {
@@ -362,15 +361,6 @@ input[type="search"]::-webkit-search-results-decoration {
     margin: 0
   }
 
-  .transfer_pay_side_nav li a {
-    display: none;
-  }
-
-  .transfer_pay_side_nav li a.active {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    margin-bottom: 1rem;
-  }
 
   .MyCourses-wrapper .tabs-nav li a {
     padding: 0.4rem 1rem;

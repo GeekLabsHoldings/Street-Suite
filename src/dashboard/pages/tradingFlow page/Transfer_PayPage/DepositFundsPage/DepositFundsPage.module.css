@@ -18,8 +18,8 @@
 }
 
 .choose_transfer_method_card .card_header .complete_icon {
-    width: clamp(10px,  calc( 1.4vw + 0.1rem ), 80px);
-    height: clamp(10px,  calc( 1.4vw + 0.1rem ), 80px);
+    width: clamp(18px,  calc( 1.4vw + 0.1rem ), 80px);
+    height: clamp(18px,  calc( 1.4vw + 0.1rem ), 80px);
     border-radius: 50%;
     background-color: rgba(70, 70, 70, 1);
     display: flex;
@@ -59,6 +59,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    transition: all 0.3s;
 }
 
 .choose_transfer_method_card .transfer_methods .method_item input {
@@ -93,12 +94,11 @@
 }
 
 .choose_transfer_method_card .transfer_methods .method_item img {
-    width: clamp(10px,  calc( 2vw + 0.1rem ), 80px);
+    width: clamp(25px,  calc( 2vw + 0.1rem ), 80px);
 }
 
 .choose_transfer_method_card .transfer_methods .add_more {
     width: 25%;
-
 }
 
 .choose_transfer_method_card .transfer_methods .add_more button {
@@ -334,7 +334,7 @@
 
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
 
     .choose_transfer_method_card {
         padding: 2rem 1rem;
@@ -350,7 +350,7 @@
     .choose_transfer_method_card .transfer_methods {
         flex-direction: column;
         gap: 1rem;
-        padding: 0 1.5rem;
+        padding: 0 0.5rem;
     }
 
     .choose_transfer_method_card .transfer_methods .method_item {
@@ -395,7 +395,6 @@
     }
 
     .confirm_btn {
-        width: 140px;
         margin: 2rem auto 1rem;
         font-size: 12px;
     }
@@ -437,10 +436,6 @@
 
     .bank_transfer_transaction_card .card_body ul li a > img {
         width: 20px;
-    }
-
-    .bank_transfer_transaction_card .confirm_btn{
-        width: 220px;
     }
 
     .tooltip .tooltiptext {

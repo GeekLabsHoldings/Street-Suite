@@ -251,7 +251,7 @@
     line-height: 14px;
   }
 
-  .SearchBar ul{
+  .SearchBar .navBar ul{
     position: absolute;
     top: 0;
     left: -16px;

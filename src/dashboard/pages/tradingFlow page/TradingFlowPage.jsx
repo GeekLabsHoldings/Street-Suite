@@ -34,7 +34,7 @@ const TradingFlowPage = () => {
           </div>
         </div>
 
-        <div className='flex gap-[0.5rem]'>
+        <div className='flex'>
           <NotificationWindow />
           <div className={` ${SearchBarStyles.bars} flex lg:hidden ${isNavOpen ? SearchBarStyles.open : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
             <div className={SearchBarStyles.bar}></div>
