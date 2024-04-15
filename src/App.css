@@ -63,12 +63,9 @@ h6 {
   margin: 0;
 }
 
-<<<<<<< HEAD
-=======
 .Msglayout{
   background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
 }
->>>>>>> 719c84751e8b9c29e0c452a5cca7ad76051f90a4
 .Signuplayout {
   background: linear-gradient(190deg, rgba(32, 32, 32, 1) 40%, rgba(47, 83, 117, 1) 100%);
   min-height: 100vh;
@@ -181,6 +178,9 @@ h6 {
   border-radius: 5px;
 }
 
+.transfer_pay_side_nav li:has(a.active):hover {
+  color: #fff;
+}
 
 .slick-slider .slick-list,
 .slick-slider .slick-track {
