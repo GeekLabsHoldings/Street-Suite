@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from './Transfer_PayPage.module.css'
 import ProgressBar from '@ramonak/react-progress-bar'
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 const Transfer_PayPage = () => {
 

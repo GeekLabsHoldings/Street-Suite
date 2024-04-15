@@ -1,5 +1,4 @@
 section.plans {
-    padding: 10% 5%;
     border-top: 1px solid #5D5D5D;
     position: relative;
     margin-top: 10vh;
@@ -19,6 +18,7 @@ section.plans .section-title {
 
 .plans-container {
     max-width: 90%;
+    padding: 10% 5%;
 }
 
 .plane {

@@ -8,9 +8,8 @@
 
 .SuccessfulTransactionPage h4 {
     font-family: Poppins;
-    font-size: 40px;
+    font-size: clamp(10px,  calc( 3vw + 0.1rem ), 80px);
     font-weight: 700;
-    line-height: 60px;
     text-align: left;
     margin-bottom: 1rem;
 
@@ -18,24 +17,22 @@
 
 .SuccessfulTransactionPage p {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.9vw + 0.1rem ), 80px);
     font-weight: 400;
-    line-height: 24px;
     text-align: left;
 
 }
 
 .SuccessfulTransactionPage p:first-child {
-    margin-bottom: 2rem;
+    margin-bottom: clamp(10px,  calc( 2vw + 0.1rem ), 80px);
 }
 
 .SuccessfulTransactionPage h6 {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.9vw + 0.1rem ), 80px);
     font-weight: 700;
-    line-height: 24px;
     text-align: left;
-    margin-top: 3rem;
+    margin-top: clamp(10px,  calc( 3vw + 0.1rem ), 80px);
 }
 
 .SuccessfulTransactionPage h6>a {
@@ -44,14 +41,13 @@
 
 .SuccessfulTransactionPage ul li {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.9vw + 0.1rem ), 80px);
     font-weight: 400;
-    line-height: 24px;
     text-align: left;
     color: rgba(204, 204, 204, 1);
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: clamp(10px,  calc( 1.5vw + 0.1rem ), 80px);
     margin: 0.5rem 0;
 }
 
@@ -61,18 +57,16 @@
 
 .SuccessfulTransactionPage ul li span {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px,  calc( 0.9vw + 0.1rem ), 80px);
     font-weight: 400;
-    line-height: 24px;
     text-align: left;
     color: rgba(204, 204, 204, 1);
 }
 
 .SuccessfulTransactionPage ul li:first-child {
     font-family: Poppins;
-    font-size: 19px;
+    font-size: clamp(10px,  calc( 1.1vw + 0.1rem ), 80px);
     font-weight: 700;
-    line-height: 20.5px;
     text-align: left;
     color: #fff;
     margin-bottom: 1rem;
@@ -80,17 +74,16 @@
 
 .go_home_btn {
     display: block;
-    font-size: 14px;
+    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 80px);
     font-weight: 600;
-    line-height: 16.8px;
     text-align: center;
-    width: 140px;
-    padding: 8px;
+    padding: 8px 3rem;
     background-color: var(--Blue300);
     border-radius: 4px;
     outline: none;
     border: none;
     margin: 1rem 0 0 auto;
+    width: max-content;
 }
 
 
@@ -138,7 +131,7 @@
         margin-bottom: 0.5rem;
         font-size: 14px;
         font-weight: 700;
-        line-height: 16px;
+        line-height: clamp(10px,  calc( 0.9vw + 0.1rem ), 80px);
     }
     .SuccessfulTransactionPage ul li span>img{
         width: 15px;
