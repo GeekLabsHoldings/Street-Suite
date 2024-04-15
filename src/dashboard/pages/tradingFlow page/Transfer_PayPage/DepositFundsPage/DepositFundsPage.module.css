@@ -110,12 +110,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: clamp(10px,  calc( 2.5vw + 0.1rem ), 60px);
     font-family: Poppins;
     font-size: clamp(10px,  calc( 0.9vw + 0.1rem ), 60px);
     font-weight: 700;
     text-align: left;
     box-sizing: content-box;
+    transition: all 0.3s;
+}
+.choose_transfer_method_card .transfer_methods .add_more button:hover {
+    background: #53acff;
+    border: 1px solid #53acff;
 }
 
 .input_group {
@@ -225,6 +230,11 @@
     outline: none;
     border: none;
     margin: 1rem 0 0 auto;
+    transition: all 0.3s;
+}
+
+.confirm_btn:hover{
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 

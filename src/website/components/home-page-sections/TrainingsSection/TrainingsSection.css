@@ -2,7 +2,6 @@ section.trainings {
     padding: 15% 5% 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
-    margin-top: 10vh;
 }
 
 .blog {
@@ -39,7 +38,7 @@ section.trainings {
 }
 
 .signUpNow {
-    margin: 10%;
+    margin: 10% 10% 0;
     border-radius: 15px;
 }
 
@@ -107,7 +106,7 @@ section.trainings {
 
 @media only screen and (max-width: 1024px) {
     section.trainings {
-        padding: 20% 0rem 10%;
+        padding: 20% 0rem 0%;
     }
 
     .trainings-container {

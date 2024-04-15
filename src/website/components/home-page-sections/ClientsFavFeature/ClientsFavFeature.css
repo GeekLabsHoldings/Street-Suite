@@ -2,7 +2,6 @@ section.clientsFavFeature {
     padding: 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
-    margin-top: 10vh;
 }
 
 section.clientsFavFeature .section-title {
@@ -22,11 +21,11 @@ section.clientsFavFeature img {
 
 @media only screen and (max-width: 1024px) {
     section.clientsFavFeature {
-        padding: 10% 0;
+        padding: 10% 0 0;
     }
     section.clientsFavFeature img {
         width: 100%;
-      transform: translateY(-25vw);
+        transform: translateY(0);
     }
     .commingSoon-container > p {
         margin: 2rem 0;

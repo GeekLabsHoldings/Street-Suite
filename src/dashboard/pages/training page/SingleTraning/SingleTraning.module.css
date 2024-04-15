@@ -268,12 +268,18 @@
     font-size: clamp(10px,  calc( 0.4vw + 0.4rem ), 60px);
     font-weight: 600;
     margin: 1.5rem 0 0 auto;
+    transition: all 0.3s;
+}
+.makeCompleteBtn:hover{
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 .makeCompleteBtn:disabled {
     background-color: rgba(126, 126, 126, 1);
 }
-
+.makeCompleteBtn:disabled:hover {
+    box-shadow: none;
+}
 .previous_assessment_btn {
     width: 100%;
     display: flex;

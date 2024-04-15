@@ -1,8 +1,7 @@
 section.trading{
-    padding: 10% 10% 5%;
+    padding: 10% 10% 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
-    margin-top: 10vh;
     background-image: url("../../../assets/tradingBgShadow.png");
     background-position: center left;
     background-size: contain;
@@ -194,7 +193,7 @@ section.trading .trading-container .img-container{
         font-size: 14px;
     }
     section.trading {
-        padding: 20% 5%;
+        padding: 20% 5% 0;
     }
     .section-title {
         left: 10%;
@@ -202,9 +201,6 @@ section.trading .trading-container .img-container{
         font-size: 32px;
     }
 
-    section.alerts {
-        padding: 20% 0%;
-    }
 }
 
 

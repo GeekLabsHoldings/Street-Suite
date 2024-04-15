@@ -13,7 +13,7 @@ const Plans = () => {
 
                 {/* first plane */}
                 <div className="plane">
-                    <div className="plane-body flex flex-col justify-center items-center p-6 lg:px-8 md:py-12">
+                    <div className="plane-body flex flex-col justify-center items-center">
                         <h5 className="plane-title">Starter Plane</h5>
                         <div className="line"></div>
                         <ul className="plane-points space-y-5 pl-5 pr-1 md:px-4">
@@ -37,7 +37,7 @@ const Plans = () => {
                 {/* second and recommended plane */}
                 <div className="recommended-plane">
                     <div className="plane recommended">
-                        <div className="plane-body flex flex-col justify-center items-center p-6 lg:px-8 py-12">
+                        <div className="plane-body flex flex-col justify-center items-center">
                             <h5 className="plane-title">Premium Plan</h5>
                             <div className="line"></div>
                             <ul className="plane-points space-y-5 px-4">
@@ -62,7 +62,7 @@ const Plans = () => {
 
                 {/* third plane */}
                 <div className="plane">
-                    <div className="plane-body flex flex-col justify-center items-center p-6 lg:px-8 md:py-12">
+                    <div className="plane-body flex flex-col justify-center items-center">
                         <h5 className="plane-title">Starter Plane</h5>
                         <div className="line"></div>
                         <ul className="plane-points space-y-5 pl-5 pr-1 md:px-4">

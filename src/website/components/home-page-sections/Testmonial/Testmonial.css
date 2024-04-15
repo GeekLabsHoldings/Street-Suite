@@ -1,8 +1,7 @@
 section.testmonial {
-    padding: 4rem 5% 10%;
+    padding: 4rem 5% 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
-    margin-top: 10vh;
 }
 
 section.testmonial .section-title {
@@ -88,7 +87,7 @@ section.testmonial .testmonial-container .card:hover {
 
 @media only screen and (max-width: 1024px) {
     section.testmonial {
-        padding: 2rem 5% 10%;
+        padding: 2rem 5% 0%;
     }
     .testmonial-container {
         max-width: 100%;

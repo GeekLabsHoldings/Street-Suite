@@ -213,6 +213,11 @@ cursor: pointer;
     outline: none;
     border: none;
     margin: 2rem 0 0 auto;
+    transition: all 0.3s;
+}
+.confirm_btn:hover{
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
+
 }
 
 .available_cash li {
