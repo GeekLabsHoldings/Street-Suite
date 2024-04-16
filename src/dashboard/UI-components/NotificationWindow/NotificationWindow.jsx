@@ -37,113 +37,113 @@ const NotificationWindow = () => {
 
   return (
     <div className="relative">
-              <button className={styles.notificationBtn + " notificationBtn"} type="button" onClick={toggleNotificationWindow}>
-                <img src={notifIcon} alt="" />
-                <span>6</span>
-              </button>
-              <div className={openNotificationWindow ? styles.notification_window + " notification_window " + styles.open : styles.notification_window + " notification_window "} >
-                <ul class="tabs-nav flex items-center">
+      <button className={styles.notificationBtn + " notificationBtn"} type="button" onClick={toggleNotificationWindow}>
+        <img src={notifIcon} alt="" />
+        <span>6</span>
+      </button>
+      <div className={openNotificationWindow ? styles.notification_window + " notification_window " + styles.open : styles.notification_window + " notification_window "} >
+        <ul class="tabs-nav flex items-center">
 
-                  {/* taps that show the appropriate content in leaderBoard page */}
-                  <li><a href="#Alerts">Alerts</a></li>
-                  <li><a href="#News">News</a></li>
+          {/* taps that show the appropriate content in leaderBoard page */}
+          <li><a href="#Alerts">Alerts</a></li>
+          <li><a href="#News">News</a></li>
 
-                </ul>
-                <div class={styles.tabs_content + " tabs-stage"}>
+        </ul>
+        <div class={styles.tabs_content + " tabs-stage"}>
 
-                  {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
-                  <div id="Alerts" className='tab space-y-4'>
-                    <Link to="/dashboard/alerts">
+          {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
+          <div id="Alerts" className='tab space-y-4'>
+            <Link to="/dashboard/alerts">
 
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                  </div>
-
-                  <div id="News" className='tab space-y-4'>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div>
-                    </Link>
-                    <Link to="/dashboard/alerts">
-
-                      <div className={styles.notification_item}>
-                        <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
-                        <span>26 mins ago</span>
-                      </div></Link>
-                  </div>
-
-                </div>
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
               </div>
-            </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+          </div>
+
+          <div id="News" className='tab space-y-4'>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div>
+            </Link>
+            <Link to="/dashboard/alerts">
+
+              <div className={styles.notification_item}>
+                <p><span>$TSLA</span> just announced an acquisition of <span>$NFLX</span> at <span>$200 B</span>. </p>
+                <span>26 mins ago</span>
+              </div></Link>
+          </div>
+
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -1,12 +1,12 @@
 section.commingSoon {
-    padding: 5% 0;
+    padding: 5% 0 0;
     border-top: 1px solid #5D5D5D;
     position: relative;
     background-image: url("../../../assets/PlansBgShadow.png");
     background-position: right top;
     background-size: contain;
     background-repeat: no-repeat;
-
+    margin-top: 0 !important;
 }
 
 .commingSoon-container > p {
@@ -47,6 +47,10 @@ text-align: left;
 
 
 @media only screen and (max-width: 1024px) {
+    section.commingSoon {
+        margin-top: 20vw !important;
+
+    }
     .commingSoon-container > p {
         margin: 1.5rem 0;
         width: 100%;

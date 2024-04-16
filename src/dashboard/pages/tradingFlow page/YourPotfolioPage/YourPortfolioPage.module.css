@@ -7,8 +7,7 @@
     line-height: 42px;
     text-align: left;
 }
-.tradingHistory{
-    
+a.tradingHistory{
     padding: 8px 2rem;
     font-size: clamp(10px,  calc( 0.35vw + 0.5rem ), 60px);
     border-radius: 5px;
@@ -17,11 +16,13 @@
     outline: none;
     border: none;
     box-shadow: none;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-wrap: nowrap;
     transition: all 0.3s;
+}
+a.tradingHistory:hover{
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 .account_chart {
     width: 100%;

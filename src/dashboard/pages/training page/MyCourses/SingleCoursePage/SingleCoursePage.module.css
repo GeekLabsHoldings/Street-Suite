@@ -193,18 +193,25 @@
     line-height: 16.8px;
     color: #fff;
     border-radius: 5px;
+    transition: all 0.3s;
 }
 
 .course_actions_btn .restartCourse{
     border: 1px solid #fff;
     background-color: transparent;
 }
+.course_actions_btn .restartCourse:hover{
+    background-color: #53ACFF;
+    border: 1px solid #53ACFF;
+}
 
 .course_actions_btn .continueCourse , .course_actions_btn .startCourse{
-    border: 1px solid #53ACFF;
     background-color: #53ACFF;
 }
 
+.course_actions_btn .continueCourse:hover , .course_actions_btn .startCourse:hover{
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
+}
 
 
 

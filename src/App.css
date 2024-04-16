@@ -63,6 +63,12 @@ h6 {
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
+.Msglayout{
+  background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
+}
+>>>>>>> 719c84751e8b9c29e0c452a5cca7ad76051f90a4
 .Signuplayout {
   background: linear-gradient(190deg, rgba(32, 32, 32, 1) 40%, rgba(47, 83, 117, 1) 100%);
   min-height: 100vh;
@@ -161,6 +167,9 @@ h6 {
   display: flex;
   overflow: hidden;
 }
+.alertsPage-wrapper .notification_window{
+  right: -5.5rem;
+}
 
 .transfer_pay_side_nav li a.active {
   padding: 0.5rem 0.8rem;
@@ -208,7 +217,7 @@ h6 {
   fill: #fff;
 }
 
-.MyCourses-wrapper .tabs-nav li a {
+.MyCourses-wrapper .myCourses-tabs .tabs-nav li a {
   display: block;
   font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
   font-weight: 700;
@@ -219,7 +228,7 @@ h6 {
   transition: all 0.3s;
 }
 
-.MyCourses-wrapper .tabs-nav li.selected a {
+.MyCourses-wrapper .myCourses-tabs .tabs-nav li.selected a {
   background-color: var(--Blue300);
   color: #fff;
 }

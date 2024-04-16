@@ -173,10 +173,21 @@
 
 .want_share_chart_footer .actions button:first-child {
     background-color: var(--Blue300);
-    border: 1px solid var(--Blue300);
+    border: none;
+    transition: all 0.3s;
+}
+
+.want_share_chart_footer .actions button:first-child:hover {
+    box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 .want_share_chart_footer .actions button:last-child {
     background: rgba(204, 204, 204, 0.22);
     border: 1px solid rgba(204, 204, 204, 0.22);
+    transition: all 0.3s;
+}
+
+.want_share_chart_footer .actions button:last-child:hover {
+    background: var(--Blue300);
+    border: 1px solid var(--Blue300);
 }

@@ -92,9 +92,8 @@
 }
 
 .navBar a {
-  font-size: 16px;
+  font-size: clamp(12px, calc(0.9vw + 0.1rem), 70px);
   font-weight: 400;
-  line-height: 24px;
   padding: 7px;
   border-radius: 5px;
   transition: all 0.3s;
@@ -140,7 +139,7 @@
 }
 
 .SearchBar .searchBtn:hover {
-  box-shadow: inset 0px 0px 20px 0px #313131;
+  box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 
@@ -224,6 +223,7 @@
     gap: 0.5rem;
     padding: 1rem 0 0;
     margin-bottom: 1rem;
+    position: relative;
   }
 
   .SearchBar h2 {
@@ -246,20 +246,21 @@
 
   }
 
-  .searchInput img {
-    top: 8px;
-    right: 10px;
-    width: 14px;
-    height: 14px;
-  }
-
   .searchInput input::placeholder {
     font-size: 10px;
     line-height: 14px;
   }
 
-  .navBar {
-    display: none;
+  .SearchBar ul{
+    position: absolute;
+    top: 0;
+    left: -16px;
+    width: 100%;
+    background: #202020;
+    width: calc(100% - 1rem);
+    z-index: 9999;
+    padding: 1rem;
+    gap: 1rem;
   }
 
 }

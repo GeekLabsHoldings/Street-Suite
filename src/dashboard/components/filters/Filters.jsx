@@ -15,7 +15,6 @@ import industrialsIcon from "../../assets/industry/industrials.svg";
 import matrialsIcon from "../../assets/industry/matrials.svg";
 import estateIcon from "../../assets/industry/real estate.svg";
 import utilitiesIcon from "../../assets/industry/utilities.svg";
-import filterIcon from "../../assets/filterIcon.png";
 import Slider from "react-slick";
 
 // array of industry filter data that used in industry select input
@@ -111,30 +110,6 @@ const AssetSelect = [
 function Filters({ openFilterInMobile, toggleFilterMenu }) {
   const [appliedFilters, setAppliedFilters] = useState([]);
 
-  // open industry filter state
-  const [industryFilterIsOpen, setIndustryFilterIsOpen] = useState(true);
-
-  // open marketCap filter state
-  const [marketCapFilterIsOpen, setMarketCapFilterIsOpen] = useState(true);
-
-  // open riskLevel filter state
-  const [riskLevelFilterIsOpen, setRiskLevelFilterIsOpen] = useState(true);
-
-  // function that toggle industry filter
-  const toggleindustryFilter = () => {
-    setIndustryFilterIsOpen(!industryFilterIsOpen);
-  };
-
-  // function that toggle Market Cap filter
-  const toggleMarketCapFilter = () => {
-    setMarketCapFilterIsOpen(!marketCapFilterIsOpen);
-  };
-
-  // function that toggle Risk Level filter
-  const toggleRiskLevelFilter = () => {
-    setRiskLevelFilterIsOpen(!riskLevelFilterIsOpen);
-  };
-
   // function that get value of market cap filter and add it to applied filters
   const handleMarketCapFilter = (e) => {
     let index = null;
@@ -203,7 +178,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
       : setAppliedFilters([...newArr]);
   };
 
-  
+  // function that clear applied filters
+  const clearAppliedFilters = () => {
+    setAppliedFilters([])
+  }
 
   const strategySettings = {
     focusOnSelect: true,
@@ -281,7 +259,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
           <div className={styles.filtersApplaied}>
             <div className={styles.clearAll}>
               <p>Filters Applaied</p>
-              <button>Clear All</button>
+              <button onClick={clearAppliedFilters}>Clear All</button>
             </div>
 
             {/* container of filters that selected */}
@@ -321,18 +299,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
               {/* Industry filter */}
               <div
-                className={
-                  industryFilterIsOpen
-                    ? styles.industryFilter + " " + styles.open
-                    : styles.industryFilter
-                }
+                className={styles.industryFilter}
               >
                 {/* industry filter title  */}
-                <div
-                  className={styles.selectLabel}
-                  onClick={toggleindustryFilter}
-                >
-                  <img src={arrowIcon} alt="" />
+                <div className={styles.selectLabel}>
                   <h6>Industry</h6>
                 </div>
 
@@ -359,18 +329,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
               {/* Market Cap filter */}
               <div className={styles.checkBoxFilters}>
                 <div
-                  className={
-                    marketCapFilterIsOpen
-                      ? styles.MarketCapFilter + " " + styles.open
-                      : styles.MarketCapFilter
-                  }
+                  className={styles.MarketCapFilter}
                 >
                   {/* Market Cap filter title  */}
-                  <div
-                    className={styles.selectLabel}
-                    onClick={toggleMarketCapFilter}
-                  >
-                    <img src={arrowIcon} alt="" />
+                  <div className={styles.selectLabel} >
                     <h6>Market Cap</h6>
                   </div>
 
@@ -393,18 +355,10 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
                 {/* Risk Level filter */}
                 <div
-                  className={
-                    riskLevelFilterIsOpen
-                      ? styles.riskLevelFilter + " " + styles.open
-                      : styles.riskLevelFilter
-                  }
+                  className={styles.riskLevelFilter}
                 >
                   {/* Risk Level filter title  */}
-                  <div
-                    className={styles.selectLabel}
-                    onClick={toggleRiskLevelFilter}
-                  >
-                    <img src={arrowIcon} alt="" />
+                  <div className={styles.selectLabel} >
                     <h6>Risk Level</h6>
                   </div>
 
@@ -433,6 +387,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                     <h6>Strategy</h6>
                   </div>
                   <div className={styles.selectContainer }>
+                    <div className={styles.activeBox}></div>
                     <div className="slider-container">
                       <Slider {...strategySettings}>
                         {strategySelect.map((ele, idx) => (
@@ -459,6 +414,8 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                   </div>
 
                   <div className={styles.selectContainer}>
+                  <div className={styles.activeBox}></div>
+
                     <div className="slider-container">
                       <Slider {...assetSettings}>
                         {AssetSelect.map((ele, idx) => (

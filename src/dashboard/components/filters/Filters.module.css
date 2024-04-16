@@ -1,11 +1,13 @@
 
 .filters_section {
-  width: 27%;
+  width: 28%;
   min-width: 420px;
-  padding: 1rem 0;
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  right: 0rem;
 }
 .filtersContainer {
-  padding: clamp(32px, calc( 1.8vw + 0.5rem ) , 200px) clamp(16px, calc( 1vw + 0.4rem ) , 100px);
+  padding: clamp(16px, calc( 1vw + 0.4rem ) , 100px);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -207,21 +209,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  height: 0;
-  transition: all 0.3s;
 }
 
-.industryFilter.open .selectItems {
-  height: auto;
-  transform: translateY(0%);
-}
 
 .industryFilter .selectItems li {
-  padding: 0.1rem 0.3rem;
-  border-left: 0.76px solid #FFFFFF;
+  padding: 0.1rem 0;
   width: 50%;
 }
 
@@ -229,7 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0;
   width: max-content;
   cursor: pointer;
   border-radius: 5px;
@@ -243,7 +237,7 @@
 }
 
 .industryFilter .selectItem img {
-  width: clamp(10px,  calc( 0.6vw + 0.4rem ), 60px);
+  width: clamp(10px,calc(0.7vw + 0.1rem),60px);
   margin-right: 0.4rem;
 }
 
@@ -271,26 +265,16 @@
   margin-bottom: 2rem;
 }
 
-.MarketCapFilter.open .selectLabel img {
-  transform: rotateZ(0deg);
-}
 
 .MarketCapFilter .checkItems {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  height: 0;
   overflow: hidden;
   transition: all 0.3s;
-}
-
-.MarketCapFilter.open .checkItems {
-  height: auto;
-  transform: translateY(0%);
 }
 
 
@@ -372,18 +356,9 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 1.1rem;
+  padding: 0;
   flex-wrap: wrap;
-  transform: translateY(-150%);
-  overflow: hidden;
-  height: 0;
   transition: all 0.3s;
-}
-
-.riskLevelFilter.open .checkItems {
-  height: auto;
-  transform: translateY(0%);
-
 }
 
 
@@ -393,8 +368,8 @@
 
 .scrollSelect {
   display: flex;
-  justify-content: center;
-  gap: clamp(2rem,  calc( 2vw + 0.2rem ), 10rem);;
+  justify-content: start;
+  gap: 10%;
 }
 
 
@@ -405,7 +380,7 @@
 
 .strategyFilter,
 .AssetFilter {
-  width: auto;
+  width: 40%;
 }
 
 
@@ -418,9 +393,28 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
-  overflow: auto; */
-  box-shadow: inset 0px 0px 19px 6px #000000c7;
+  align-items: center;*/
+  overflow: hidden; 
+  box-shadow: inset 0px 0px 19px 6px #202020;
+}
+
+.selectContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 0px 13px 13px #202020;
+  z-index: 3;
+}
+.selectContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 0px 13px 13px #202020;
+  z-index: 3;
 }
 
 /* .selectContainer::before {
@@ -499,35 +493,45 @@
   padding: 0.2rem 0.5rem;
   text-wrap: nowrap;
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 
-.selectContainer .selectItem input[checked]+label {
+.activeBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  width: 100%;
   background-color: #53ACFF;
-  color: #fff;
+  border-radius: 5px;
+
 }
+
+/* .selectContainer .selectItem input[checked]+label {
+  color: #fff;
+} */
 
 .applyBtn {
   font-family: Poppins;
   font-size: clamp(10px, calc(0.3vw + 0.5rem), 60px);
   font-weight: 600;
-  line-height: 20px;
   letter-spacing: 0px;
   text-align: center;
   color: #fff;
   padding: 0.5rem 1.5rem;
   width: clamp(10px, calc(7vw + 0.5rem), 300px);
   background-color: #53ACFF !important;
+  border: none;
   border-radius: 6px;
   margin: 1.5rem 0 0;
-  border: 1px solid #53ACFF;
   outline: 0;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .applyBtn:hover {
-  background-color: #53acffb0 !important;
+  box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
 
 .saveFilterBtn{
@@ -546,6 +550,11 @@
   outline: 0;
   cursor: pointer;
   transition: all 0.3s;
+}
+
+.saveFilterBtn:hover{
+  background: #53acff;
+  border: 1px solid #53acff;
 }
 
 .closeFilter{
