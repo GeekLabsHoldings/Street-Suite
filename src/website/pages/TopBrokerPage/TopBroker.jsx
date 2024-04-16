@@ -16,11 +16,13 @@ const TopBroker = () => {
     const dispatch = useDispatch();
     const [isClicked, setIsClicked] = useState(false);
     const [startCompare, setStartCompare] = useState(false);
-    const [closeCompare, setCloseCompare] = useState(false)
+    const [closeCompare, setCloseCompare] = useState(false);
+    const [removeLastItem, setRemoveLastItem] = useState(false);
+
 
     // render reusable pick cards
-    const renderCardsData = cardsData.map(({ img, pros, cons, whyWeLike, title, fees, accountMin, overview }) => (
-        <PickCard setCloseCompare={setCloseCompare} setIsClicked={setIsClicked} imgUrl={img} fees={fees} title={title} whyWeLike={whyWeLike} pros={pros} cons={cons} overview={overview} accountMin={accountMin} />
+    const renderCardsData = cardsData.map(({id, img, pros, cons, whyWeLike, title, fees, accountMin, overview }) => (
+        <PickCard id={id} setCloseCompare={setCloseCompare} setIsClicked={setIsClicked} imgUrl={img} fees={fees} title={title} whyWeLike={whyWeLike} pros={pros} cons={cons} overview={overview} accountMin={accountMin} />
     ))
 
     // render our first 3 best brokers
@@ -48,7 +50,7 @@ const TopBroker = () => {
                 />
             </Helmet>
 
-            <div className='Msglayout'>
+            <div className='Msglayout sm:px-4'>
 
                 <div className="pt-5 sm:w-full">
                     <div className="brokersHeader md:w-7/12 text-center sm:w-full m-auto">
@@ -56,7 +58,7 @@ const TopBroker = () => {
                     </div>
                     {/* best brokers card */}
                     <div className='sm:visible md:hidden w-full'>
-                        <div className='col-lg-6 smforBorder m-auto'>
+                        <div className='lg:w-1/2 smforBorder m-auto'>
                             <div className='formPart py-3 smbrokerBG'>
                                 <div className='md:w-1/2 sm:px-12 text-center topBrokerSM '>
                                     <h4 className='sm:pt-5'>Best brokers for 2024</h4>
@@ -69,10 +71,10 @@ const TopBroker = () => {
                     </div>
 
                     <div className="flex flex-col gap-20">
-                    <div className='row '>
+                    <div className='flex '>
                         {/* description of our work */}
-                        <div className='col-md-6 flex justify-end'>
-                            <div className='col-md-10 rightPrt sm:pt-10'>
+                        <div className='md:w-1/2 flex justify-end'>
+                            <div className='md:w-10/12 rightPrt sm:pt-10'>
                                 <div>
                                     <h4 className='pb-4'>What are our Top choice’s criteria?</h4>
                                     <div className="textSection ">
@@ -105,10 +107,10 @@ const TopBroker = () => {
 
                         </div>
                         {/* display our brokers */}
-                        <div className='md:visible col-md-6 sm:hidden'>
-                            <div className='col-lg-8 forBorder m-auto'>
+                        <div className='md:visible md:w-1/2 sm:hidden'>
+                            <div className='md:w-8/12 forBorder m-auto'>
                                 <div className='formPart brokerBG py-3'>
-                                    <div className='col-lg-8 m-auto text-center topBrokerSM'>
+                                    <div className='md:w-8/12 m-auto text-center topBrokerSM'>
                                         <h4 className='py-8'>Best brokers for 2024</h4>
                                         <div>
                                             {renderBrokers}
@@ -120,10 +122,10 @@ const TopBroker = () => {
                         </div>
                     </div>
                     {/* display our picks */}
-                    <div className=' col-md-10 m-auto '>
-                        <div className='col-md-10 mx-auto my-5 ourPicks'>
+                    <div className=' md:w-10/12 m-auto '>
+                        <div className='md:w-10/12 mx-auto my-5 ourPicks'>
                             <h4 className='md:pb-12 sm:pb-8' >More about our picks:</h4>
-                            <div className='flex flex-col gap-3'>
+                            <div className='flex flex-col gap-3 w-full'>
                                 {renderCardsData}
                             </div>
                         </div>
@@ -131,7 +133,6 @@ const TopBroker = () => {
                     </div>
 
                 </div>
-
 
                 <div className={isClicked && !closeCompare ? 'visible comparePrt ' : 'hidden'}>
                     <div className={isClicked && !startCompare ? 'visible selectedItems' : ' hidden'}>
@@ -143,13 +144,14 @@ const TopBroker = () => {
                                 }}>Reset</Button>
 
                                 <Button className='newBtn pickcardBtn' onClick={() => {
-                                    setStartCompare(true); setCloseCompare(false);
+                                    setStartCompare(true);
+                                    setCloseCompare(false);
                                 }} >Compare</Button>
                             </div>
                         </div>
                     </div>
 
-                    <div className={startCompare ? ' visible h-3/6' : ' hidden'}>
+                    <div className={startCompare && !removeLastItem ? 'visible h-3/6' : ' hidden'}>
                         <div className='md:pt-5 sm:pt-4 compareTable'>
                             <div className='flex flex-col md:gap-4 sm:gap-2 md:px-16 sm:px-10 sm:pb-3 md:pb-0 bottomThickBorder'>
                                 <div className='flex justify-between '>
@@ -162,15 +164,13 @@ const TopBroker = () => {
                                 </div>
                                 <h6>Selected Providers</h6>
                             </div>
-                            {/* min-w-[24rem] */}
                             <div className="flex overflow-auto max-w-full">
-                                {cards.map((oneCard ,idx) => (
-                                    <div className='flex flex-col gap-2 min-w-1/4 relative' key={idx}>
-
+                                {cards.map((oneCard ) => (
+                                    <div className='flex flex-col gap-2 min-w-1/4 relative'>
                                         <div className='md:px-8 sm:px-4 rightThickBorder w-full'>
                                             <div className="flex justify-around py-3">
                                                 <div className="w-1/5 flex align-items-center">
-                                                    <img className='w-full' src={oneCard.imgUrl} />
+                                                    <img className='w-full' alt='card-img' src={oneCard.imgUrl} />
                                                 </div>
 
                                                 <div className="w-3/5 providerTitle">
@@ -180,6 +180,9 @@ const TopBroker = () => {
                                                     <svg
                                                         onClick={() => {
                                                             dispatch(removeItem(oneCard));
+                                                            if (cards.length === 1) {
+                                                                setRemoveLastItem(true);
+                                                            }
                                                         }}
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -226,10 +229,6 @@ const TopBroker = () => {
                                     <h4>Promotions</h4>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>

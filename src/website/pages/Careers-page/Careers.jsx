@@ -57,7 +57,7 @@ const CareersPage = () => {
                                 <h4>Check Our Git Hub</h4>
                             </div>
                             <div>
-                                <Button className=' bg-transparent border-0 w-fit'><img src={Icon} /></Button>
+                                <Button className=' bg-transparent border-0 w-fit'><img alt='arrow for github' src={Icon} /></Button>
 
                             </div>
                         </div>
@@ -81,7 +81,7 @@ const CareersPage = () => {
 
                             </div>
                             <div className="md:visible sm:hidden w-1/2 flex justify-end">
-                                <img src={TeamWork} />
+                                <img alt='team-work' src={TeamWork} />
                             </div>
                         </div>
                     </div>

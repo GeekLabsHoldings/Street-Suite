@@ -66,11 +66,11 @@ const ContactPage = () => {
 
                                 <div className='containContactWays '>
                                     <div className='contactWays'>
-                                        <img src={MailIcon} />
+                                        <img alt='contact by mail' src={MailIcon} />
                                         <span>stsuite@gmail.com</span>
                                     </div>
                                     <div className='contactWays'>
-                                        <img src={PhoneIcon} />
+                                        <img alt='contact by call' src={PhoneIcon} />
                                         <span>+02  015698564</span>
                                     </div>
                                 </div>

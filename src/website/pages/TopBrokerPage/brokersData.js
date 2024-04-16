@@ -50,6 +50,7 @@ import FifthImg from '../../assets/fifthImgBroker.svg';
  ]
 
 export const cardsData = [{
+    id:1,
     img:FirstImg,
     title:'Interactive Brokers',
     fees:'$0',
@@ -59,7 +60,8 @@ export const cardsData = [{
     whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
 },
-{
+    {
+    id:2,
     img:SecondImg,
     title:'Interactive Brokers',
     fees:'$0',
@@ -69,7 +71,8 @@ export const cardsData = [{
     whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
 },
-{
+    {
+    id:3,
     img:ThirdImg,
     title:'Interactive Brokers',
     fees:'$0',
@@ -79,7 +82,8 @@ export const cardsData = [{
     whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
 },
-{
+    {
+    id:4,
     img:ForthImg,
     title:'Interactive Brokers',
     fees:'$0',
@@ -89,7 +93,8 @@ export const cardsData = [{
     whyWeLike:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     cons:['Lorem ipsum dolor sit amet, consectetur','sed do eiusmod tempor incididunt ut labore et','dolore magna aliqua. Ut enim ad minim']
 },
-{
+    {
+    id: 5,
     img:FifthImg,
     title:'Interactive Brokers',
     fees:'$0',
