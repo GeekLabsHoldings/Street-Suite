@@ -25,7 +25,8 @@ const SignIn = () => {
             <div className="signInBG flex align-items-center ">
                 <div className="flex sm:flex-col sm:gap-24 md:gap-0 sm:py-10">
                     <div className="md:w-1/2">
-                        <div className="md:w-3/5 sm:w-10/12 mx-auto flex flex-col gap-6">
+
+                        <div className="md:w-3/5 sm:w-10/12 mx-auto txtPrtLogin">
                             <div className="signInLogo">
                                 <img className="w-full" src={LogoIcon} />
                             </div>

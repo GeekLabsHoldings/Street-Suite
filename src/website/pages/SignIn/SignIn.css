@@ -11,6 +11,12 @@
     line-height: 3.75rem;
     font-weight: 700;
 }
+.txtPrtLogin{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, calc( 1.1vw + 0.3rem ) , 70px);
+    padding-top: clamp(90px, calc(6vw + 0.5rem),200px)
+}
 .signinContent p{
     font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
     line-height: 1.8rem;
