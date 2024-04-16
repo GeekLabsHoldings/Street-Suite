@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import logoImg from "../../../assets/Logo.png"
 import "./NavBar.css"
 import { Link, NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import {logout} from '../../../../redux/cardsSlice';
 import LoginImg from '../../../../dashboard/assets/imgOfPerson.svg';
-import $ from 'jquery'
-
 
 const NavBar = () => {
 
@@ -18,10 +16,8 @@ const NavBar = () => {
 
 
   return (
-
-    <section className='navbar '>
 <div>
-    <section className='navbar relative'>
+    <section className='navbar '>
      {isNavOpen && <div className='overlay'></div>}
       <nav className='mx-auto px-[2rem] justify-between '>
 
@@ -54,24 +50,15 @@ const NavBar = () => {
           <Link to="/login" className='logIn'>Log In</Link>
           <Link to="/signup" className='signUp'>Sign Up</Link>
         </div> : 
-        < div className='flex gap-2 cursor-pointer' onClick={()=>{setOpenDropDown(!openDropDown)}}>
+        <div>
+           <div className='flex gap-2 cursor-pointer relative' onClick={()=>{setOpenDropDown(!openDropDown)}}>
          <img src={LoginImg} alt="" />
          <div className='loginPerson'>
              <h6>Moni Roy</h6>
              <p>Beginner</p>
          </div>
-         </div> 
-    }
-
-        {/*  end of navbar auth bttons */}
-
-        <div className={` bars flex lg:hidden ${isNavOpen ? "open" : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
-          <div className='bar'></div>
-        </div>
-      </nav>
-    </section>
-
-       {openDropDown && !selected ? 
+         </div>
+         {openDropDown && !selected ? 
        <div className='userOptions'>
         <ul className='ulSection'>
        <li><a href="/dashboard/setting">setting</a></li>
@@ -82,6 +69,19 @@ const NavBar = () => {
       </ul>
        </div>
        :null}
+        </div>
+         
+    }
+
+        {/*  end of navbar auth bttons */}
+
+        <div className={` bars flex lg:hidden ${isNavOpen ? "open" : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
+          <div className='bar'></div>
+        </div>
+      </nav>
+    </section>
+
+       
 
       </div>
     

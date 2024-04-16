@@ -27,7 +27,7 @@ export const featuresCardSlicer = createSlice({
 export const loggedInSlicer = createSlice({
   name: 'login',
   initialState: {
-    loggedIn : false,
+    loggedIn : true,
   },
   // reducers here to implement some functions
   reducers: {

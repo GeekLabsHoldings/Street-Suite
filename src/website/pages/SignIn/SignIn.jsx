@@ -46,10 +46,10 @@ const SignIn = () => {
                     <div className="md:w-1/2 flex justify-center">
                         <div className="forBorder md:w-3/5 sm:w-10/12 ">
                             <div className='formPart formBGSignIn '>
-                                <div className="formElements flex flex-col gap-20 w-10/12 mx-auto md:pt-28 md:pb-20 sm:pt-12 sm:pb-8 ">
+                                <div className="formElements w-10/12 mx-auto signInForm ">
                                     {/* welcoming text in large screens */}
 
-                                <div className='flex flex-col gap-12 '>
+                                <div className=' signinFormContent '>
                                      <div className='md:visible sm:hidden text-center'>
                                         <h3>Welcome back to <span className='highlight'>Street Suite!</span></h3>
                                     </div>
