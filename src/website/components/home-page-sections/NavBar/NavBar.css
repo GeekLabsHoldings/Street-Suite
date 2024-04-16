@@ -6,20 +6,22 @@ section.navbar {
     display: flex;
     flex-direction: column;
     background-color: #1F2021;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    overflow: hidden;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0px 30px 20px -10px rgba(0,0,0,0.45) inset;
     gap: 0;
-
+}
+.loginPerson{
+    padding-right: 12px;
 }
 .ulSection li{
     display: block;
-    /* padding: 10px 0; */
 }
 .ulSection li a{
-    padding: 10px 45px;
+    padding: 15px 60px;
     color: #fff;
     font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
-    border-radius: 4px;
     transition: all 0.3s;
 }
 .ulSection li a:hover{
@@ -28,7 +30,7 @@ section.navbar {
 }
 .userOptions{
     position: absolute;
-    top: 100%;
+    top: 105%;
     right: 1%;
 }
 

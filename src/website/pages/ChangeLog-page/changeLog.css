@@ -3,7 +3,6 @@
 }
 .caption h1{
     font-size: clamp(24px, calc(2.8vw + 0.5rem),140px);
-    line-height: 4.5rem;
 }
 .caption span ,.caption p{
     font-size: clamp(12px, calc( 0.6vw + 0.5rem), 60px);
@@ -24,7 +23,6 @@ font-size: clamp(10px, calc( 0.3vw + 0.5rem), 60px);
 }
 .caption h3{
     font-size: clamp(16px, calc(1.5vw + 0.5rem), 80px);;
-    line-height: 2.156rem;
 }
 .leftBorder{
     border-left: 3px solid #FFFFFF99;

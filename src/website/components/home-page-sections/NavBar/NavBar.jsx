@@ -51,9 +51,9 @@ const NavBar = () => {
           <Link to="/signup" className='signUp'>Sign Up</Link>
         </div> : 
         <div>
-           <div className='flex gap-2 cursor-pointer relative' onClick={()=>{setOpenDropDown(!openDropDown)}}>
+           <div className='flex gap-2 cursor-pointer relative loginPerson' onClick={()=>{setOpenDropDown(!openDropDown)}}>
          <img src={LoginImg} alt="" />
-         <div className='loginPerson'>
+         <div className='loginPerson '>
              <h6>Moni Roy</h6>
              <p>Beginner</p>
          </div>

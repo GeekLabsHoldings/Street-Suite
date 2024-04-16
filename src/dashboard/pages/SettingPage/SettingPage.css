@@ -8,17 +8,14 @@
     color: white !important;
     text-decoration: none;
     font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
-    line-height: 1.5rem;
     font-weight: 400;
 }
 .LeftBorder h1{
     font-size: clamp(24px, calc(2.4vw + 0.5rem),140px);
     font-weight: 700;
-    line-height: 4.5rem;
 }
 .loginPerson h6{
     font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
-    line-height: 22.5px;
     font-weight: 700;
 
 }
@@ -26,7 +23,6 @@
     color: #979797;
     font-size:clamp(9px, calc( 0.3vw + 0.5rem), 60px) ;
     font-weight: 600;
-    line-height:1.22rem ;
 }
 .spaceBottom{
     padding-bottom: clamp(20px, calc(1.5vw + 0.5rem), 70px);
@@ -63,7 +59,6 @@
 }
 .avatarTxt p{
     font-size: clamp(10px, calc( 0.1vw + 0.5rem), 30px);
-    line-height: 1.125rem;
     font-weight: 400;
 }
 .largeDiv{
@@ -77,7 +72,6 @@
 .labelColor label{
     color: #ffffff;
     font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
-    line-height: 1.024rem;
     font-weight: 400;
 }
 .react-international-phone-input-container input , .react-international-phone-input-container button{
@@ -98,32 +92,26 @@
 .optionAndDesc span{
     color: #979797;
     font-size: clamp(11px, calc( 0.2vw + 0.5rem), 60px);
-    line-height: 1rem;
     font-weight: 400;
 }
 .accountBilling h5{
     font-size: clamp(16px, calc( 1.1vw + 0.5rem ) , 70px);
-    line-height:1.73rem;
     font-weight: 600;
 }
 .accountBilling p{
     font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
-    line-height: 1.5rem;
     font-weight: 700;
 }
 .accountBilling h4{
     font-size: clamp(16px, calc( 0.9vw + 0.5rem ) , 70px);
-    line-height: 2.156rem;
     font-weight: 700;
 }
 .accountBilling h1{
     font-size: clamp(40px, calc(3.4vw + 0.5rem),140px);
-    line-height: 5.9rem;
     font-weight: 700;
 }
 .accountBilling h6{
     font-size: clamp(23px, calc( 0.9vw + 0.5rem ) , 70px);
-    line-height: 1.5rem;
     font-weight: 400;
 }
 .premuimDiv{
@@ -132,7 +120,6 @@
 }
 .rightSecAccount h5{
     font-size: clamp(23px, calc( 0.5vw + 0.5rem), 60px);
-    line-height: 1.5rem;
     font-weight: 700;
 }
 
@@ -154,12 +141,10 @@
 }
 .tableHead li{
     font-size: clamp(11px, calc( 0.3vw + 0.5rem), 60px);
-    line-height: 1.22rem;
     font-weight: 700;
 }
 .tableBody li{
     font-size:  clamp(11px, calc( 0.2vw + 0.5rem), 60px);
-    line-height: 1.03rem;
     font-weight: 400;
 }
 .blueTxt{
@@ -186,16 +171,16 @@
 }
 
 .settingCardBorder::before ,.premuimBorder::before{
-content: "";
-background-image: conic-gradient(transparent 0deg ,transparent -90deg ,#53acff 250deg,transparent 280deg );
-width: 250%;
-height: 250%;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%) rotate(180deg);
-box-sizing: border-box;
-position: absolute;
-transition:all 0.5s
+    content: "";
+    background-image: conic-gradient(transparent 0deg ,transparent -90deg ,#53acff 250deg,transparent 280deg );
+    width: 250%;
+    height: 250%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(180deg);
+    box-sizing: border-box;
+    position: absolute;
+    transition:all 0.5s
 }
 
 .settingCardBorder:hover::before,.premuimBorder:hover::before,.grayPositionBorder:hover::before{
@@ -212,13 +197,11 @@ position: relative;
 .rightBorder h3,.sectionHeader h3,.accountBilling h5{
     font-size: clamp(16px, calc(1.2vw + 0.5rem), 70px);
     font-weight: 700;
-    line-height: 42px;
 }
 
 .rightBorder p,.sectionHeader p{
     font-size:clamp(10px, calc( 0.3vw + 0.5rem), 60px);
     font-weight: 400;
-    line-height: 16.38px;
 }
 .properityInSwitch p{
     font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
