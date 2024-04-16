@@ -12,11 +12,13 @@ import ClientsFavFeature from '../../components/home-page-sections/ClientsFavFea
 import CommingSoon from '../../components/home-page-sections/CommingSoon/CommingSoon';
 import GetStarted from '../../components/home-page-sections/GetStarted/GetStarted';
 import FAQ from '../../components/home-page-sections/FAQ/FAQ';
-
+import { useDispatch, useSelector } from 'react-redux';
 import heroImg from "../../assets/hero img.svg"
 import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
+  const userState = useSelector((state) => state.login.loggedIn);
+
   return (
     <div className='space-y-[20vw] lg:space-y-[10vw]'>
 
@@ -31,7 +33,7 @@ const HomePage = () => {
       <Hero>
         <h1>Trading Opportunities<br /> with <span> STREET SUITE’s </span>Alerts</h1>
         <p className='sm:container'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <Link to="/signup">Get Started</Link>
+        {!userState ? <Link to="/signup">Get Started</Link>:<Link to="/dashboard">Dashboard</Link>}
         <img src={heroImg} alt="" className='hidden lg:block' />
       </Hero>
       <AlertsSection />

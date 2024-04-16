@@ -5,8 +5,12 @@ import LabelAndInput from '../../components/LabelAndInput';
 import Button from '@mui/material/Button';
 import './SignIn.css'
 import { Helmet } from 'react-helmet-async';
+import { useDispatch, useSelector } from 'react-redux';
+import {signIn} from '../../../redux/cardsSlice';
 
 const SignIn = () => {
+    const userState = useSelector((state) => state.login.value);
+    const dispatch = useDispatch();
     return (
         <>
             <Helmet>
@@ -63,7 +67,7 @@ const SignIn = () => {
                                 </div>
                             {/*button to complete login  */}
                                     <div className='mx-auto'>
-                                        <Button className=' newBtn loginBtn '>Log In</Button>
+                                        <Button className='newBtn loginBtn' onClick={()=>{dispatch(signIn())}}>Log In</Button>
                                     </div>
                                 </div>
                             </div>

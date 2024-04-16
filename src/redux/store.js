@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import featuresCardReducer from './cardsSlice'
+import { featuresCardSlicer, loggedInSlicer } from './cardsSlice'
+// import {featuresCardReducer, featuresCardSlicer} from './cardsSlice'
 export const store = configureStore({
   reducer: {
-    featuresCard: featuresCardReducer,
+    // featuresCard: featuresCardReducer,
+    featuresCard : featuresCardSlicer.reducer,
+    login : loggedInSlicer.reducer
   },
 })
 

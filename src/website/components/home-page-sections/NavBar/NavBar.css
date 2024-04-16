@@ -3,6 +3,28 @@ section.navbar {
     background: #1F2021;
 }
 
+.ulSection li{
+    padding: 10px 0;
+    background-color: #1F2021;
+    border-radius: 0.5rem;
+}
+.ulSection li a{
+    padding: 10px 45px;
+    color: #fff;
+    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+.ulSection li a:hover{
+    font-weight: 500;
+}
+.userOptions{
+    position: absolute;
+    /* background-color: #1F2021; */
+    top: 12%;
+    right: 1%;
+}
+
 section.navbar .overlay{
     position: absolute;
     top: 100%;
@@ -98,7 +120,7 @@ nav ul li a {
 
 }
 
-nav ul li a:hover, nav .navLinks li a.active:hover {
+nav ul li a:hover, nav .navLinks li a.active:hover ,.ulSection li a:hover {
     background-color: var(--Blue300);
 }
 
@@ -204,25 +226,3 @@ nav .navLinks.first a{
     }
 
 }
-
-
-
-
-/* @media only screen and (min-width: 2224px) {
-
-    nav ul li a {
-        font-size: 28px;
-    }
-    nav .AuthButtons button.logIn , nav .AuthButtons button.signUp{
-        font-size: 22px;
-        padding: 0.7rem 2rem;
-    }
-    nav .logo {
-        width: 144px;
-    }
-
-    nav .logo img{
-        width: 100%;
-    }
-
-} */
