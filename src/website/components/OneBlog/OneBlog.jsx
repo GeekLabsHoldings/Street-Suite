@@ -349,7 +349,7 @@ const OneBlog =()=>{
                     </div>
                 </div>
 
-                <div className='w-2/3 likeComments flex flex-col gap-3 '>
+                <div className='w-2/3 oldBlogs flex flex-col gap-3 '>
                     <div className='w-8/12 flex flex-col gap-3'>
                     <div>
                     <h6>China Kicks U.S Butt In The Latest Whatever</h6>

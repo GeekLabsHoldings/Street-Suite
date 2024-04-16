@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import BillIcon from '../../assets/billIcone.svg'
-import ProperityAndSwitch from '../../components/properitt-and-switch/ProperityAndSwitch';
+import ProperityAndSwitch from '../../components/properity-and-switch/ProperityAndSwitch';
 import './SettingPage.css';
 import { Helmet } from 'react-helmet-async';
 
@@ -58,11 +58,13 @@ border: 1px solid #979797;
 const SettingPage = () => {
 
     const [changeClass, setChangeClass] = useState('');
+    const [linkClicked,setLinkClicked] = useState('')
 
     const indicatorHandler = (e) => {
         setChangeClass(e.currentTarget.id);
-
+        setLinkClicked(e.currentTarget.id);
     }
+
 
     const [phone, setPhone] = useState('');
 
@@ -94,11 +96,11 @@ const SettingPage = () => {
 
                     <div className='sm:hidden md:visible'>
                         <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }} className='linksSection'>
-                            <Link href="#public-info" style={changeClass === 'public-info' ? styles.highlightStyle : null}>Public info</Link>
-                            <Link href="#account-billing" style={changeClass === 'account-billing' ? styles.highlightStyle : null}>Account Billing</Link>
-                            <Link href="#leaderboard" style={changeClass === 'leaderboard' ? styles.highlightStyle : null}>Leaderboard</Link>
-                            <Link href="#notification" style={changeClass === 'notification' ? styles.highlightStyle : null}>Notifications</Link>
-                            <Link href="#security" style={changeClass === 'security' ? styles.highlightStyle : null}>Privacy & Security</Link>
+                            <Link href="#public-info" id='public-info' onClick={indicatorHandler} style={changeClass === 'public-info' || linkClicked === 'public-info' ? styles.highlightStyle : null} >Public info</Link>
+                            <Link href="#account-billing" id='account-billing' onClick={indicatorHandler} style={changeClass === 'account-billing'  || linkClicked === 'account-billing' ? styles.highlightStyle : null} >Account Billing</Link>
+                            <Link href="#leaderboard" id='leaderboard' onClick={indicatorHandler} style={changeClass === 'leaderboard' || linkClicked === 'leaderboard'? styles.highlightStyle : null} >Leaderboard</Link>
+                            <Link href="#notification" id='notification' onClick={indicatorHandler} style={changeClass === 'notification'|| linkClicked === 'notification' ? styles.highlightStyle : null} >Notifications</Link>
+                            <Link href="#security" id='security' onClick={indicatorHandler} style={changeClass === 'security' || linkClicked === 'security'? styles.highlightStyle : null} >Private Details</Link>
                         </Box>
                     </div>
 
@@ -123,11 +125,13 @@ const SettingPage = () => {
                             {/* public information editing section */}
                             <div className="md:w-1/2 flex justify-center" id='public-info' onClick={indicatorHandler}>
                                 <div className=' py-4 w-10/12 flex flex-col justify-center'>
-                                    <div className='rightBorder sm:py-3 '>
-                                        <h3 className=' pb-2'>Public Information</h3>
+                                    <div className='rightBorder sm:py-3'>
+                                        <div className='nameAndDescEverySec spaceBottom'>
+                                        <h3>Public Information</h3>
+                                        <p>This information will be publicly displayed and visible for all users.</p>
+                                        </div>
                                         <div className='flex flex-col md:gap-8 sm:gap-4 mx-auto '>
-                                            <p>This information will be publicly displayed and visible for all users.</p>
-
+                                           
                                             {/* change username */}
                                             <div className='md:flex align-items-center '>
                                                 <div className=' labelColor md:w-1/4 '>
@@ -172,12 +176,12 @@ const SettingPage = () => {
                             {/* private details section */}
                             <div className="md:w-1/2 flex justify-center" id='security' onClick={indicatorHandler}>
                                 <div className="w-10/12 md:py-4 sm:py-3 leftSectionSetting sectionHeader">
-                                    <h3 className='pb-2'>Private Details</h3>
-                                    <div className=' flex flex-col md:gap-4 sm:gap-2 mx-auto '>
-                                        <div className='flex flex-col gap-1'>
-
-                                            <p>This information will not be publicly displayed.</p>
+                                <div className='nameAndDescEverySec spaceBottom'>
+                                        <h3>Private Details</h3>
+                                        <p>This information will be publicly displayed and visible for all users.</p>
                                         </div>
+
+                                    <div className=' flex flex-col md:gap-4 sm:gap-2 mx-auto '>
 
                                         <div className='flex md:flex-col gap-2'>
                                             {/* change email */}
@@ -258,9 +262,10 @@ const SettingPage = () => {
                             <div className=" settingBorderContainer largeDiv">
                                 <div className='w-11/12 mx-auto md:flex px-3 py-4'>
                                     <div className="md:w-1/2 flex flex-col gap-4">
-                                        <div className='flex flex-col md:gap-3 sm:gap-2 leftSectionSetting sectionHeader'>
-                                            <h3>Leaderboard</h3>
-                                            <p>This information will be publicly displayed and visible for all users.</p>
+                                       
+                                        <div className='nameAndDescEverySec leftSectionSetting sectionHeader'>
+                                        <h3>Leaderboard</h3>
+                                        <p>This information will be publicly displayed and visible for all users.</p>
                                         </div>
 
                                         <div className='sm:visible md:hidden'>
@@ -292,9 +297,9 @@ const SettingPage = () => {
                                                     </div>
 
                                                     <div className=' md:w-1/2 md:flex flex-col gap-2'>
-                                                        <Button className='newBtn w-full '>Save Changes</Button>
+                                                        <Button className='newBtn settingBtn w-full '>Save Changes</Button>
                                                         <div className='sm:hidden md:visible'>
-                                                            <Button className='newBtn settingBtn w-full '>Disconnect</Button>
+                                                            <Button className=' settingBtn disconnetBtn w-full '>Disconnect</Button>
                                                         </div>
                                                     </div>
                                                     <p className='sm:hidden md:visible'>Disconnect my broker’s account</p>
@@ -339,7 +344,7 @@ const SettingPage = () => {
                                         </div>
                                         <div className="md:w-1/2 md:flex justify-end">
                                             <div className="md:w-2/5 flex h-full align-items-end">
-                                                <Button className='newBtn w-full'>Save Changes</Button>
+                                                <Button className='newBtn settingBtn w-full'>Save Changes</Button>
                                             </div>
                                         </div>
                                     </div>

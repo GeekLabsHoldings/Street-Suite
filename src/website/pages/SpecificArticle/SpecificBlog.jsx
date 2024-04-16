@@ -3,7 +3,7 @@ import './SpecificBlog.css';
 
 const SpecificBlog = ()=>{
     return(
-        
+        // page to show one blog and its all details
         <div className='pageBG'>
             <div className='w-3/4 mx-auto py-5'>
            <div className='md:pb-10'>

@@ -29,13 +29,10 @@
 96px => clamp(56px, calc(5.5vw + 0.5rem),140px);
 40px=> clamp(24px, calc(1.8vw + 0.5rem),90px); */
 
-
 body {
   color: #fff;
   overflow-x: hidden;
 }
-
-
 * {
   padding: 0;
   margin: 0;
@@ -66,19 +63,19 @@ h6 {
   margin: 0;
 }
 
-<<<<<<< HEAD
-.Msglayout{
-  background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
-=======
 .Signuplayout {
   background: linear-gradient(190deg, rgba(32, 32, 32, 1) 40%, rgba(47, 83, 117, 1) 100%);
   min-height: 100vh;
   align-items: center;
 }
+.formGroup{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(15px, calc(1.4vw + 0.2rem), 60px);
+}
 
 .Msglayout {
   background: linear-gradient(150deg, rgba(32, 32, 32, 1) 15%, rgba(47, 83, 117, 1) 100%);
->>>>>>> f12525a5a7d0d8120f19480b44b5b92272d7d03f
   min-height: 100vh;
 }
 
@@ -98,6 +95,24 @@ h6 {
   overflow: hidden;
   padding: 1px;
   border-radius: 0.9rem;
+}
+
+.formElementsAndBtn{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, calc(4.7vw + 0.2rem),140px);
+}
+
+.formElements{
+  display: flex;
+  flex-direction: column;
+  gap:clamp(0px, calc(2vw + 0.5rem),60px);
+}
+
+.labelAndInputStyle{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, calc( 0.3vw + 0.2rem), 15px);
 }
 
 .forBorder::before {

@@ -2,6 +2,7 @@ import './TermsAndConditions.css';
 
 const TermsAndConditions = ()=>{
     return(
+        // page contains our terms and conditions 
         <div className='termsBG'>
             <div className='md:w-10/12 sm:w-11/12 mx-auto md:py-20 sm:py-10 flex flex-col md:gap-20 sm:gap-12'>
             <div className="termsHeader md:w-1/2 sm:w-4/5 mx-auto text-center">

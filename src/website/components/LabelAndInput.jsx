@@ -4,7 +4,8 @@ import FormLabel from '@mui/joy/FormLabel';
 const LabelAndInput = ({labeltext,required,placeholder})=>{
     
     return(
-        <div>
+        // simple label and input section
+        <div className='labelAndInputStyle'>
         <FormLabel required={required} className='mb-1 labelfont'
         sx={{
         "& .MuiFormLabel-asterisk":{

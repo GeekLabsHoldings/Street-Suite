@@ -10,6 +10,7 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
   
 
     return(
+        // card specify our picks details
         <div className='smforBorder'>
             <div className='formPart cardBG'>
                <div className='headerBG '>
@@ -28,7 +29,7 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                     </div>
                 </div>
             </div>
-
+{/* the amount of fees */}
             <div className='md:w-2/3  sm:w-3/5 flex justify-center px-0'>
                 <div className="md:w-1/3 sm:w-1/5 text-center flex flex-col justify-center align-items-center ">
                         <div className='elementBorder flex flex-col align-items-center sm:px-4 w-full'>
@@ -42,6 +43,7 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                         <h5>Account Min.</h5>
                         </div>
                 </div>
+                {/* popular badge for popular picks */}
                 <div className=" w-1/3 text-center sm:w-2/5 flex flex-col justify-center align-items-center">
                         <div className='starsImg flex align-items-center'>
                                 <img className='img-fluid' src={StarsImg} />
@@ -92,7 +94,9 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                                 <li>{oneCon}</li>
                             ))}
                         </ul>
+{/* compare button to enables you to select many picks and compare between them */}
 
+{/* the shape of buttons in large screens */}
                         <div className='md:visible sm:hidden flex gap-3 pt-10 justify-end'>
                     <Button className='newBtn compareBtn' 
                     onClick={()=>{
@@ -104,6 +108,8 @@ const PickCard = ({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview,set
                 
                             </div>
                             </div>
+{/* the shape of buttons in small screens */}
+
                             <div className='sm:visible md:hidden flex gap-3 pt-10 sm:justify-end'>
                     <Button className='newBtn compareBtn'onClick={()=>{
                          dispatch(add({imgUrl,title,whyWeLike,pros,cons,fees,accountMin,overview}))
