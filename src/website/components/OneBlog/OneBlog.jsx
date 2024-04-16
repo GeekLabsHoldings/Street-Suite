@@ -70,11 +70,12 @@ const OneBlog =()=>{
                 </div>
             </div>
 {/* blog about our training */}
-            <div className='flex justify-around secDivOnLeft py-8 relative bottomBorder cursor-pointer' onClick={trainingNavigator}>
-                <div className='sm:w-4/12 md:w-1/4 flex align-items-center'>
+            <div className='flex justify-between px-8 secDivOnLeft py-8 bottomBorder cursor-pointer' onClick={trainingNavigator}>
+                <div className='sm:w-4/12 md:w-4/12 flex align-items-center'>
                 <h2>Get Better with ST Suite Trainings</h2>
                 </div>
-                <div className="sm:w-8/12 md:w-3/5 babyblueDiv flex flex-col align-items-end ">
+                <div className="md:w-3/5 sm:w-8/12 flex justify-center relative">
+                <div className=" md:w-10/12 babyblueDiv flex flex-col align-items-end ">
                     <div className='leftBG md:w-3/4 sm:w-full md:p-2 sm:px-4 py-2'>
                         <div className='md:w-3/4'>
                         <h5 className='md:w-4/5 sm:w-1/2 md:pb-3 sm:pb-1'>Stock Market 101 - Advanced</h5>
@@ -110,6 +111,7 @@ const OneBlog =()=>{
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
 {/* blog about our private equity */}
@@ -140,6 +142,7 @@ const OneBlog =()=>{
 
 {/* 2 different blogs about same thing and common image */}
             <div className="flex bottomBorder md:gap-5 sm:gap-3">
+
             <div className="w-1/2">
             <div className='oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 bottomBorder cursor-pointer' onClick={onClickHandler}>
                 <div className=' flex flex-col align-items-center md:gap-4 sm:gap-2'>
@@ -158,8 +161,9 @@ const OneBlog =()=>{
             </div>
 
             </div>
-            <div className="w-1/2 ">
-            <div className=' py-8' >
+
+            <div className="w-1/2">
+            <div className=' py-8 md:pe-3 flex justify-center' >
             <div className='sm:w-11/12 md:w-9/12 cursor-pointer' onClick={onClickHandler}>
                 <div className='divForImgLg md:h-96 sm:h-72'></div>
                 </div>
@@ -190,8 +194,8 @@ const OneBlog =()=>{
 
 {/* feature */}
 
-        <div className='md:py-8 sm:py-6 bottomBorder'>
-        <div className='flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer' onClick={onClickHandler}>
+        <div className='md:py-8 sm:py-6 bottomBorder md:pe-8 flex justify-center'>
+        <div className='flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer ' onClick={onClickHandler}>
                         <div className='md:w-1/3 sm:w-1/2 ps-3 sm:pt-1'>
                             <div className='w-10/12 '>
                             <div className='divForImgSm md:h-48 sm:h-32'></div>
@@ -213,7 +217,7 @@ const OneBlog =()=>{
         </div>
 {/* one blog */}
         <div className="flex md:py-4 sm:py-2 md:gap-4 sm:gap-4 RbottomBorder cursor-pointer" onClick={onClickHandler}>
-            <div className='md:w-2/5 sm:w-1/2 md:py-2 '>
+            <div className='md:w-3/5 sm:w-1/2 md:py-2 '>
             <div className='md:w-11/12 oneBlogCont flex flex-col md:gap-4 sm:gap-2 md:py-8 sm:py-4 pe-3 rightBorder'>
                 <div className=' flex flex-col md:gap-4 sm:gap-2'>
                 <h3>Lorem ipsum dol</h3>
@@ -223,17 +227,17 @@ const OneBlog =()=>{
             </div>
             </div>
 
-            <div className="md:w-3/5 sm:w-1/2 md:pt-3 sm:pt-5 ">
+            <div className="md:w-3/5 sm:w-1/2 md:pt-3 sm:pt-5 md:flex justify-center md:pe-11">
 
-                <div className='md:w-10/12 sm:w-11/12'>
+                <div className='md:w-11/12 sm:w-11/12 '>
                 <div className='divForImgLg md:h-48 sm:h-24'></div>
                 </div>
             </div>
 
         </div>
 {/* one blog */}
-        <div className="sm:hidden md:visible flex py-4 cursor-pointer " onClick={onClickHandler}>
-            <div className='w-1/2 pt-3'>
+        <div className="sm:hidden md:visible flex md:justify-between py-4 cursor-pointer " onClick={onClickHandler}>
+            <div className='w-5/12 pt-3 '>
             <div className='oneBlogCont flex flex-col gap-4'>
                 <div className='flex flex-col align-items-center gap-3'>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
@@ -243,7 +247,7 @@ const OneBlog =()=>{
             </div>
 
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 flex md:pe-6">
                 <div className='w-11/12 pt-3'>
                 <div className='divForImgLg h-52 '></div>
 

@@ -5,8 +5,12 @@ import LabelAndInput from '../../components/LabelAndInput';
 import Button from '@mui/material/Button';
 import './SignIn.css'
 import { Helmet } from 'react-helmet-async';
+import { useDispatch, useSelector } from 'react-redux';
+import {signIn} from '../../../redux/cardsSlice';
 
 const SignIn = () => {
+    const userState = useSelector((state) => state.login.value);
+    const dispatch = useDispatch();
     return (
         <>
             <Helmet>
@@ -21,7 +25,8 @@ const SignIn = () => {
             <div className="signInBG flex align-items-center ">
                 <div className="flex sm:flex-col sm:gap-24 md:gap-0 sm:py-10">
                     <div className="md:w-1/2">
-                        <div className="md:w-3/5 sm:w-10/12 mx-auto flex flex-col gap-6">
+
+                        <div className="md:w-3/5 sm:w-10/12 mx-auto txtPrtLogin">
                             <div className="signInLogo">
                                 <img className="w-full" src={LogoIcon} />
                             </div>
@@ -42,10 +47,10 @@ const SignIn = () => {
                     <div className="md:w-1/2 flex justify-center">
                         <div className="forBorder md:w-3/5 sm:w-10/12 ">
                             <div className='formPart formBGSignIn '>
-                                <div className="formElements flex flex-col gap-20 w-10/12 mx-auto md:pt-28 md:pb-20 sm:pt-12 sm:pb-8 ">
+                                <div className="formElements w-10/12 mx-auto signInForm ">
                                     {/* welcoming text in large screens */}
 
-                                <div className='flex flex-col gap-12 '>
+                                <div className=' signinFormContent '>
                                      <div className='md:visible sm:hidden text-center'>
                                         <h3>Welcome back to <span className='highlight'>Street Suite!</span></h3>
                                     </div>
@@ -63,7 +68,7 @@ const SignIn = () => {
                                 </div>
                             {/*button to complete login  */}
                                     <div className='mx-auto'>
-                                        <Button className=' newBtn loginBtn '>Log In</Button>
+                                        <Button className='newBtn loginBtn' onClick={()=>{dispatch(signIn())}}>Log In</Button>
                                     </div>
                                 </div>
                             </div>

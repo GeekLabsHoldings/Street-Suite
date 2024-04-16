@@ -8,13 +8,26 @@
 }
 .signinContent h2 ,.signinContent span{
     font-size: clamp(24px, calc(2vw + 0.5rem), 100px);
-    line-height: 3.75rem;
     font-weight: 700;
 }
+.txtPrtLogin{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, calc( 1.1vw + 0.3rem ) , 70px);
+    padding-top: clamp(90px, calc(6vw + 0.5rem),200px)
+}
 .signinContent p{
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
-    line-height: 1.8rem;
+    font-size: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
     font-weight: 400;
+}
+.signinFormContent{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, calc(2.9vw + 0.3rem),100px);
+}
+.signInForm{
+    padding-top: clamp(48px, calc(6.5vw + 0.3rem),180px);
+    padding-bottom: clamp(32px, calc(4.5vw + 0.3rem),160px);
 }
 .signinContent{
     padding-left: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
@@ -22,7 +35,7 @@
 .formLabelsAndInputs{
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: clamp(16px, calc( 1vw + 0.3rem ) , 50px);
 }
 .loginBtn{
     padding: 8px 32px !important;
@@ -30,7 +43,6 @@
 }
 .formElements h3{
     font-size: clamp(20px, calc(1.5vw + 0.5rem), 80px);
-    line-height: 3.09375rem;
     font-weight: 700;
 }
 

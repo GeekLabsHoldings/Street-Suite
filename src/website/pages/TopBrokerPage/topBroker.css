@@ -1,6 +1,5 @@
 .brokersHeader h1{
     font-size: clamp(24px, calc(2.3vw + 0.5rem), 140px);
-    line-height: 4.5rem;
     font-weight: 700;
 }
 .brokersHeader{
@@ -8,7 +7,6 @@
 }
 .rightPrt h4{
     font-size: clamp(16px, calc(1.3vw + 0.5rem), 70px);
-    line-height: 2.625rem;
     font-weight: 700;
 }
 .topBrokerSM h4{
@@ -44,7 +42,6 @@
 }
 .spacedList span{
     font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
-    line-height:1.5rem ;
     font-weight: 400;
 }
 .anyList{
@@ -89,7 +86,6 @@ position: relative;
 /* compare table css */
 .compareHeader h1{
     font-size: 3rem;
-    line-height: 4.5rem;
     font-weight: 700;
     }
     .compareTable{
@@ -99,18 +95,15 @@ position: relative;
     }
     .compareTable h5, .compareTable h6{
         font-size:  clamp(15px, calc(0.7vw + 0.5rem), 60px);
-        line-height: 1.78rem;
         font-weight: 700;
     }
     .providerTitle h4 {
         font-size: clamp(12px, calc( 0.9vw + 0.5rem ) , 70px);
-        line-height:2.156rem;
         font-weight: 700;
     }
     .visitWebsite span{
         color: #979797;
         font-size: clamp(10px, calc(0.2vw + 0.5rem), 60px);
-        line-height: 1.03rem;
         font-weight: 400;
     }
     .rightThickBorder{
@@ -125,7 +118,6 @@ position: relative;
 
     .providerFeature h6{
         font-size: clamp(20px, calc(1.3vw + 0.5rem), 70px);
-        line-height: 2.625rem;
         font-weight: 400;
     }
     .comparePrt{
@@ -136,7 +128,6 @@ position: relative;
     }
     .comparePrt h4,.feesPrt h4 ,.accountPrt h4{
         font-size: clamp(18px, calc(0.7vw + 0.5rem), 60px);;
-        line-height: 1.78rem;
         font-weight: 700;
     }
     .feesPrt{

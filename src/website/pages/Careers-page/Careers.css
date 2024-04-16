@@ -66,17 +66,14 @@
 
 .headerRight h3{
     font-size: clamp(24px, calc(2.4vw + 0.5rem),140px);
-    line-height: 4.5rem;
     font-weight: 700;
   }
 .headerRight p,.everySection p{
     font-size: clamp(12px, calc(0.7vw + 0.5rem), 60px);
-    line-height: 1.78rem;
     font-weight: 400;
 }
 .everySection h5 , .movingCards h5{
     font-size: clamp(14px, calc( 0.9vw + 0.5rem ) , 70px);
-    line-height:2.156rem;
     font-weight: 700;
 }
 
@@ -94,12 +91,10 @@
 }
 .forFonts h3{
     font-size:  clamp(20px, calc(2.5vw + 0.5rem), 140px);
-    line-height: 4.5rem;
     font-weight: 700;
 }
 .forFonts p{
     font-size: clamp(12px, calc( 0.9vw + 0.5rem ) , 70px);
-    line-height:2.156rem;
     font-weight: 400;
 }
 .middleCard{
@@ -141,7 +136,6 @@
     border-radius: 0.9rem;
 }
 .githubBG h4{
-    line-height:1.125rem ;
     font-weight:600 ;
 }
 .visibleInSm{

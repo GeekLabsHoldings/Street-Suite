@@ -140,6 +140,7 @@ const PickCard = ({
                 onClick={() => {
                   dispatch(
                     add({
+                      id,
                       imgUrl,
                       title,
                       whyWeLike,

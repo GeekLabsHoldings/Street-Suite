@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  value: [],
-}
+
 
 export const featuresCardSlicer = createSlice({
   name: 'featuresCard',
-  initialState,
+  initialState: {
+    value:  [],
+  },
   // reducers here to implement some functions
   reducers: {
     add: (state,cardsData) => {
@@ -21,11 +21,30 @@ export const featuresCardSlicer = createSlice({
     reset: (state) => {
     state.value = []
     },
+  },
+})
 
+export const loggedInSlicer = createSlice({
+  name: 'login',
+  initialState: {
+    loggedIn : true,
+  },
+  // reducers here to implement some functions
+  reducers: {
+    signIn: (state) => {
+      state.loggedIn = true;
+      console.log(state.loggedIn)
+    },
+    logout:(state)=>{
+      state.loggedIn = false;
+      console.log(state.loggedIn)
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { add, reset,removeItem } = featuresCardSlicer.actions;
+export const { add, reset ,removeItem } = featuresCardSlicer.actions;
+export const { signIn , logout } = loggedInSlicer.actions;
 
-export default featuresCardSlicer.reducer;
+
+// export {featuresCardSlicer,loggedInSlicer};

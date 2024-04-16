@@ -8,7 +8,7 @@
     box-shadow:0px 0px 5px 0px rgba(0,0,0,1) inset;
 }
 .oneBlogCont h3{
-font-size: clamp(12px, calc( 1vw + 0.5rem ) , 70px);
+font-size: clamp(12px, calc( 1.2vw + 0.1rem ) , 70px);
 line-height: 2.156rem;
 font-weight: 700;
 }
@@ -52,8 +52,8 @@ font-weight: 700;
 }
 .topRight{
     position: absolute;
-    top: 8%;
-    right: 0.7%;
+    top: -11%;
+    right: 4%;
 }
 .leftBG h5{
     font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);

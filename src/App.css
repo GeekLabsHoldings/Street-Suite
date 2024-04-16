@@ -13,6 +13,10 @@
   --Black300: #000000;
   --white: #fff;
 }
+.linksSection{
+  display: flex !important;
+  gap: clamp(12px, calc( 1.4vw + 0.1rem ) , 70px) !important;
+}
 
 /*
 12px/13px=> clamp(10px, calc( 0.3vw + 0.5rem), 60px)
@@ -75,7 +79,7 @@ h6 {
 .formGroup{
   display: flex !important;
   flex-direction: column !important;
-  gap: clamp(15px, calc(1.4vw + 0.2rem), 60px);
+  gap: clamp(15px, calc(1.3vw + 0.1rem), 60px);
 }
 
 .Msglayout {
@@ -140,8 +144,7 @@ h6 {
 }
 
 .labelfont {
-  font-size: clamp(14px, calc(0.5vw + 0.5rem), 60px) !important;
-  line-height: 1.5rem;
+  font-size: clamp(14px, calc(0.9vw + 0.1rem), 60px) !important;
   font-family: "Poppins", sans-serif;
   font-weight: 400 !important;
   font-style: normal;
@@ -292,6 +295,7 @@ h6 {
 
 .labelfont span {
   font-weight: 400 !important;
+  font-size: clamp(10px, calc( 0.7vw + 0.1rem), 60px) !important;
 
 }
 
@@ -299,6 +303,11 @@ h6 {
 .dashboard-side-menu ul li a.active>svg path {
   color: #53ACFF !important;
   fill: #53ACFF !important;
+}
+.checkboxes{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, calc( 0.01vw + 0.1rem), 60px);
 }
 
 @media only screen and (max-width:767px) {

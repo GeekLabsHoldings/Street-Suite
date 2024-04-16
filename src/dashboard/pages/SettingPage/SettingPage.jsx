@@ -291,11 +291,12 @@ const SettingPage = () => {
                                                 {/* disconnect broker's account and this section appear in small screens only */}
                                                 <div className='flex flex-col md:gap-2 sm:gap-4 txtUnderProperities'>
 
-                                                    <div className='sm:visible md:hidden flex gap-2 mt-4'>
+                                                    <div className='sm:visible md:hidden flex mt-4 gap-2'>
                                                         <p>Disconnect my broker’s account</p>
                                                         <Button className='newBtn settingBtn w-full '>Disconnect</Button>
                                                     </div>
 
+                                                    <div className='disconnectSetting'>
                                                     <div className=' md:w-1/2 md:flex flex-col gap-2'>
                                                         <Button className='newBtn settingBtn w-full '>Save Changes</Button>
                                                         <div className='sm:hidden md:visible'>
@@ -303,6 +304,7 @@ const SettingPage = () => {
                                                         </div>
                                                     </div>
                                                     <p className='sm:hidden md:visible'>Disconnect my broker’s account</p>
+                                                    </div>
                                                 </div>
 
                                             </div>

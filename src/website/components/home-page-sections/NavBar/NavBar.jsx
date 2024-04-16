@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import logoImg from "../../../assets/Logo.png"
 import "./NavBar.css"
 import { Link, NavLink } from 'react-router-dom'
-import $ from 'jquery'
-
+import { useDispatch, useSelector } from 'react-redux';
+import {logout} from '../../../../redux/cardsSlice';
+import LoginImg from '../../../../dashboard/assets/imgOfPerson.svg';
 
 const NavBar = () => {
 
+  const userState = useSelector((state) => state.login.loggedIn);
+  const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(false);
-  
+  const [openDropDown,setOpenDropDown] = useState(false);
+  const [selected,setSelected] = useState(false);
 
-  useEffect(()=>{
-    
-    if (isNavOpen) {
-      $("body").addClass("overflow-hidden");
-    }else{
-      $("body").removeClass("overflow-hidden");
-    }
-
-  },[isNavOpen])
 
   return (
-
+<div>
     <section className='navbar '>
      {isNavOpen && <div className='overlay'></div>}
       <nav className='mx-auto px-[2rem] justify-between '>
@@ -51,17 +46,47 @@ const NavBar = () => {
 
 
         {/* navbar auth bttons */}
-        <div className="AuthButtons hidden lg:flex gap-[16px]">
+        {!userState ? <div className="AuthButtons hidden lg:flex gap-[16px]">
           <Link to="/login" className='logIn'>Log In</Link>
           <Link to="/signup" className='signUp'>Sign Up</Link>
+        </div> : 
+        <div>
+           <div className='flex gap-2 cursor-pointer relative loginPerson' onClick={()=>{setOpenDropDown(!openDropDown)}}>
+         <img src={LoginImg} alt="" />
+         <div className='loginPerson '>
+             <h6>Moni Roy</h6>
+             <p>Beginner</p>
+         </div>
+         </div>
+         {openDropDown && !selected ? 
+       <div className='userOptions'>
+        <ul className='ulSection'>
+       <li><a href="/dashboard/setting">setting</a></li>
+       <li onClick={()=>{
+         dispatch(logout());
+         setSelected(true)
+       }}><a onClick={()=>{setSelected(true)}}>logout</a></li>
+      </ul>
+       </div>
+       :null}
         </div>
+         
+    }
+
         {/*  end of navbar auth bttons */}
 
         <div className={` bars flex lg:hidden ${isNavOpen ? "open" : ""}`} onClick={() => { setIsNavOpen(!isNavOpen) }}>
           <div className='bar'></div>
         </div>
       </nav>
-    </section>// start of navbar 
+    </section>
+
+       
+
+      </div>
+    
+    
+    // start of navbar 
 
     // end of navbar 
 
