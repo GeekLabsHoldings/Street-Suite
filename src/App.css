@@ -66,10 +66,7 @@ h6 {
 .Msglayout{
   background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 1761a1f8fde37412c71f1ac4e7167e1d88a10cb4
 .Signuplayout {
   background: linear-gradient(190deg, rgba(32, 32, 32, 1) 40%, rgba(47, 83, 117, 1) 100%);
   min-height: 100vh;
@@ -91,6 +88,9 @@ h6 {
   border-radius: 0.3rem;
   padding: 0 0.3rem;
   text-wrap: nowrap;
+}
+.homePage-wrapper section.hero{
+  padding: 10vh 10% 0;
 }
 
 .forBorder,

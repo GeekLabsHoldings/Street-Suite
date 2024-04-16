@@ -1,26 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logoImg from "../../../assets/Logo.png"
 import "./NavBar.css"
 import { Link, NavLink } from 'react-router-dom'
+import $ from 'jquery'
 
 
 const NavBar = () => {
 
   const [isNavOpen, setIsNavOpen] = useState(false);
+  
 
-  // useEffect(()=>{
+  useEffect(()=>{
+    
+    if (isNavOpen) {
+      $("body").addClass("overflow-hidden");
+    }else{
+      $("body").removeClass("overflow-hidden");
+    }
 
-  //   if (isNavOpen) {
-  //     $(".mobileScreenNav").slideDown(300);
-  //   }else{
-  //     $(".mobileScreenNav").slide(300);
-  //   }
-
-  // },[])
+  },[isNavOpen])
 
   return (
 
-    <section className='navbar'>
+    <section className='navbar '>
      {isNavOpen && <div className='overlay'></div>}
       <nav className='mx-auto px-[2rem] justify-between '>
 

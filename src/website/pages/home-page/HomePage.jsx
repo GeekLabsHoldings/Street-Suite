@@ -18,7 +18,7 @@ import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
   return (
-    <div className='space-y-[20vw] lg:space-y-[10vw]'>
+    <div className='space-y-[20vw] lg:space-y-[10vw] homePage-wrapper'>
 
       <Helmet>
         <title>Street Suite</title>

@@ -17,7 +17,7 @@ section.plans .section-title {
 
 .plans-container {
     max-width: 90%;
-    padding: 10% 5% 0%;
+    padding: 10% 5% 7%;
 }
 
 .plane {
@@ -183,7 +183,7 @@ section.plans .section-title {
 
 @media only screen and (max-width: 1024px) {
     section.plans {
-        padding: 10% 0 10% 1rem;
+        padding: 10% 0 0% 1rem;
         margin-top: 0;
     }
 
