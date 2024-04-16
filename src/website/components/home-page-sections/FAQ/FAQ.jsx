@@ -21,7 +21,7 @@ const FAQ = () => {
                 <h4>FAQ</h4>
 
                 {/* start FAQ Item */}
-                <div className="collapse-item w-full mb-4 md:mb-6">
+                <div className="collapse-item w-full">
                     <div className="collapse-header" onClick={(e) => handleCollapse(e)}>
                         <p>How do i sign up?</p>
                         <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ const FAQ = () => {
                 {/* end of FAQ item */}
 
                 {/* start FAQ Item */}
-                <div className="collapse-item w-full mb-4 md:mb-6">
+                <div className="collapse-item w-full">
                     <div className="collapse-header" onClick={(e) => handleCollapse(e)}>
                         <p>How long is the Free trial?</p>
                         <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@ const FAQ = () => {
 
                 {/* start FAQ Item */}
 
-                <div className="collapse-item w-full mb-4 md:mb-6">
+                <div className="collapse-item w-full">
                     <div className="collapse-header" onClick={(e) => handleCollapse(e)}>
                         <p>What are Alerts?</p>
                         <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@ const FAQ = () => {
 
                 {/* start FAQ Item */}
 
-                <div className="collapse-item w-full mb-4 md:mb-6">
+                <div className="collapse-item w-full">
                     <div className="collapse-header" onClick={(e) => handleCollapse(e)}>
                         <p>Is there a refund policy?</p>
                         <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@ const FAQ = () => {
                 {/* end of FAQ item */}
 
                 {/* start FAQ Item */}
-                <div className="collapse-item w-full mb-4 md:mb-6">
+                <div className="collapse-item w-full">
                     <div className="collapse-header" onClick={(e) => handleCollapse(e)}>
                         <p>How to apply filters?</p>
                         <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">

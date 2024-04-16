@@ -1,5 +1,5 @@
 .companiesCarousel {
-    padding: 3rem 0;
+    padding:  clamp(3rem , calc(3vw + 0.1rem), 400px) 0;
     box-shadow: 0px 15px 50px -3px #00000088;
     position: relative;
 }

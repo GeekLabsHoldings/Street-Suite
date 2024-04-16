@@ -9,73 +9,78 @@ section.trading{
 }
 
 section.trading .trading-container .img-container{
-    padding: 3rem;
-    backdrop-filter: blur(100px);
+    padding: clamp(12px, calc(3vw + 0.1rem), 700px);
+    backdrop-filter: blur(30px);
     background: linear-gradient(90deg, rgba(83,172,255,0.1) 0%, rgba(35,53,70,0.1) 100%);
     border: 1px solid #eeeeee23;
     border-radius: 35.74px;
     box-shadow: 0px 15px 50px -3px #000;
-    max-width: fit-content;
+    width: 100%;
     margin-left: auto;
 }
 
 .trading-content h4{
     color: var(--Blue300);
-    font-size: clamp(24px , 2vw + 1rem , 140px);
+    font-size: clamp(24px , calc(2.4vw + 0.1rem) , 300px);
     font-weight: 800;
     line-height : normal;
 }
 .trading-content h4+p{
     color: #A4A4A4;
-    font-size: clamp(10px, 0.4vw + 0.5rem, 60px);
+    font-size: clamp(10px, calc(0.8vw + 0.1rem), 160px);
     font-weight: 400;
 }
 .trading-content h5{
-    font-size: clamp(12px, 0.8vw + 0.5rem, 70px);;
+    font-size: clamp(12px, calc(1.2vw + 0.1rem), 170px);;
     font-weight: 700;
 }
 .trading-content h5+p{
-    font-size: clamp(10px, 0.4vw + 0.5rem, 60px);
+    font-size: clamp(10px, calc(0.8vw + 0.1rem), 160px);
     font-weight: 400;
 }
 
 .private-companies-box{
-    padding: 2rem;
+    padding: clamp(16px , calc(2vw + 0.1rem) , 300px);
     box-shadow: inset 0px 15px 50px -3px #000000b9;
     background-image: url("../../../assets/privat\ company\ bg.png");
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
+    gap: clamp(10px, calc(1vw + 0.1rem), 160px);
 }
 .private-companies-box .item{
     width: 48%;
-    padding: 0.7rem 1rem;
+    padding: clamp(10px, calc(0.7vw + 0.1rem), 160px) clamp(10px, calc(1vw + 0.1rem), 160px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #313131;
     border-radius: 15px;
-    gap: 1rem;
+    gap: clamp(10px, calc(0.8vw + 0.1rem), 160px);
 }
 .private-companies-box .item img{
     width: 50%;
-    max-width: fit-content;
+    min-width: fit-content;
 }
 .private-companies-box .item .price{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0 0.5rem 1rem;
+    gap: clamp(10px, calc(0.5vw + 0.1rem), 100px);
+    padding: clamp(6px, calc(0.5vw + 0.1rem), 100px) 0 clamp(6px, calc(0.5vw + 0.1rem), 100px) clamp(12px, calc(0.9vw + 0.1rem), 100px);
     border-left: 1px solid #fff;
 
 }
 .private-companies-box .item .price p{
-    font-size: clamp(10px, 0.5vw + 0.5rem, 60px);
+    font-size: clamp(10px, 1vw + 0.1rem, 60px);
     text-wrap: nowrap;
 }
+
+.private-companies-box .price svg{
+    width: clamp(10px, 0.6vw + 0.1rem, 60px);
+}
+
 .private-companies-box .price.up svg{
     transform: rotateX(180deg);
 }
@@ -94,7 +99,7 @@ section.trading .trading-container .img-container{
     display: flex;
     align-items: center;
     justify-content: start;
-    padding: 1.5rem;
+    padding: clamp(16px, calc(1.5vw + 0.1rem), 160px);
     position: relative;
     background: linear-gradient(166deg, rgba(105,180,255,0.02189250700280112) 0%, rgba(32,32,32,0.9183648459383753) 46%);
     border-radius: 10px;
@@ -111,12 +116,12 @@ section.trading .trading-container .img-container{
 }
 .spaceX .box {
     width: 35%;
-    min-height: 6rem;
+    min-height: clamp(6rem, calc(4vw + 0.1rem), 700px);
     border: 1px solid var(--Blue300);
     border-radius: 5px;
 }
 .spaceX h6{
-    font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
+    font-size: clamp(12px, calc(1.3vw + 0.1rem), 70px);
     font-weight: 600;
 }
 

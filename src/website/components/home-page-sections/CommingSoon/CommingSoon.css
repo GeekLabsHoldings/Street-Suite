@@ -11,14 +11,14 @@ section.commingSoon {
 
 .commingSoon-container > p {
     font-family: Poppins;
-    font-size: clamp(11px, calc(0.8vw + 0.5rem), 70px);
+    font-size: clamp(11px, calc(1.2vw + 0.1rem), 100px);
     text-align: left;
-    margin-bottom: 4rem;
+    margin-bottom: clamp(3rem, calc(2.2vw + 0.1rem), 500px);
     width: 70%;
 }
 
 .expanding-box{
-    padding: 3rem 2rem;
+    padding: clamp(3rem, calc(3vw + 0.1rem), 500px) clamp(2rem, calc(2vw + 0.1rem), 400px);
     background-image: url("../../../assets/expandingBg.png");
     background-position: center;
     background-size: cover;
@@ -26,20 +26,22 @@ section.commingSoon {
 }
 
 .expanding-box .item{
-    padding-left: 1rem;
+    padding-left: clamp(1rem, calc(2vw + 0.1rem), 500px);
     border-left: 2px solid #fff;
 }
+
 .expanding-box .item h6{
 font-family: Poppins;
-font-size:  clamp(14px, calc(2.3vw + 0.5rem), 60px);
+font-size:  clamp(14px, calc(2.8vw + 0.1rem), 600px);
 font-weight: 700;
 letter-spacing: 0em;
 text-align: left;
-margin-bottom: 1rem;
+margin-bottom: clamp(1rem, calc(1.2vw + 0.1rem), 500px);
 }
+
 .expanding-box .item p{
 font-family: Poppins;
-font-size:  clamp(10px, calc(0.4vw + 0.5rem), 60px);
+font-size:  clamp(10px, calc(1vw + 0.1rem), 60px);
 font-weight: 400;
 letter-spacing: 0em;
 text-align: left;
