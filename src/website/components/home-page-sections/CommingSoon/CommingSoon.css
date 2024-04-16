@@ -6,7 +6,7 @@ section.commingSoon {
     background-position: right top;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 0 !important;
+    /* margin-top: 0 !important; */
 }
 
 .commingSoon-container > p {
@@ -47,10 +47,10 @@ text-align: left;
 
 
 @media only screen and (max-width: 1024px) {
-    section.commingSoon {
+    /* section.commingSoon {
         margin-top: 20vw !important;
 
-    }
+    } */
     .commingSoon-container > p {
         margin: 1.5rem 0;
         width: 100%;

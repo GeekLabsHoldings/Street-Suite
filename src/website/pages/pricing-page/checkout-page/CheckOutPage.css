@@ -107,6 +107,7 @@
 }
 
 .checkout-container .plane-pricing .plane-action a {
+    width: auto;
     padding: 0.5rem 1rem;
     font-family: Poppins;
     font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
@@ -234,7 +235,7 @@
     }
 
     .checkout-container .plane {
-        border-radius: 11px;
+        border-radius: 50px;
     }
 
     .checkout-container .chosen-plan .recommended-plane {

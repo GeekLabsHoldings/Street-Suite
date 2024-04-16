@@ -20,7 +20,7 @@ const HomePage = () => {
   const userState = useSelector((state) => state.login.loggedIn);
 
   return (
-    <div className='space-y-[20vw] lg:space-y-[10vw]'>
+    <div className='space-y-[20vw] lg:space-y-[10vw] homePage-wrapper'>
 
       <Helmet>
         <title>Street Suite</title>

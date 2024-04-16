@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logoImg from "../../../assets/Logo.png"
 import "./NavBar.css"
 import { Link, NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import {logout} from '../../../../redux/cardsSlice';
 import LoginImg from '../../../../dashboard/assets/imgOfPerson.svg';
+import $ from 'jquery'
+
 
 const NavBar = () => {
 
@@ -16,6 +18,8 @@ const NavBar = () => {
 
 
   return (
+
+    <section className='navbar '>
 <div>
     <section className='navbar relative'>
      {isNavOpen && <div className='overlay'></div>}

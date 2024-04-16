@@ -118,7 +118,7 @@
 }
 
 .notification_item p{
-  font-size: clamp(12px,  calc( 0.9vw + 0.1rem ), 60px);
+  font-size: clamp(11px,  calc( 0.9vw + 0.1rem ), 60px);
   font-weight: 400;
   text-align: left;
 }
@@ -137,11 +137,12 @@ display: block;
 
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 767px) {
 
   .notification_window {
-    min-width: 300px;
-    right: -2rem;
+    min-width: 270px;
+    max-width: 270px;
+    right: -2.2rem;
     padding: 0.7rem;
   }
 
