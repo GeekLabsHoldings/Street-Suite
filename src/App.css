@@ -66,7 +66,10 @@ h6 {
 .Msglayout{
   background: linear-gradient(150deg, rgba(32,32,32,1) 15%, rgba(47, 83, 117,1) 100%);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1761a1f8fde37412c71f1ac4e7167e1d88a10cb4
 .Signuplayout {
   background: linear-gradient(190deg, rgba(32, 32, 32, 1) 40%, rgba(47, 83, 117, 1) 100%);
   min-height: 100vh;
@@ -171,10 +174,17 @@ h6 {
 
 .transfer_pay_side_nav li a.active {
   padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+}
+
+.transfer_pay_side_nav li:has(a.active) {
   background-color: var(--Blue300);
   border-radius: 5px;
 }
 
+.transfer_pay_side_nav li:has(a.active):hover {
+  color: #fff;
+}
 
 .slick-slider .slick-list,
 .slick-slider .slick-track {
@@ -231,13 +241,8 @@ h6 {
   color: #fff;
 }
 
-.dashboard-wrapper ul li a.active {
+.dashboard-wrapper ul li:has(a.active)  {
   background-color: var(--Blue300);
-
-}
-
-.dashboard-wrapper ul li a.active:hover {
-  color: #fff;
 }
 
 .private_equities_table .customSelectMenu button {
@@ -383,15 +388,6 @@ input[type="search"]::-webkit-search-results-decoration {
     margin: 0
   }
 
-  .transfer_pay_side_nav li a {
-    display: none;
-  }
-
-  .transfer_pay_side_nav li a.active {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    margin-bottom: 1rem;
-  }
 
   .MyCourses-wrapper .tabs-nav li a {
     padding: 0.4rem 1rem;

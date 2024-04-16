@@ -4,7 +4,7 @@
   background: transparent;
   border: none;
   outline: none;
-  margin-left: 1rem;
+  margin: 0 1rem;
   cursor: pointer;
   position: relative;
 }
@@ -141,7 +141,7 @@ display: block;
 
   .notification_window {
     min-width: 300px;
-    right: -2.3rem;
+    right: -2rem;
     padding: 0.7rem;
   }
 

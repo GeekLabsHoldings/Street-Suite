@@ -1,7 +1,7 @@
 .supTitle {
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 28px;
+    font-size: clamp(16px,  calc( 1.7vw + 0.1rem ), 80px);;
     font-weight: 700;
     line-height: 42px;
     text-align: left;
@@ -42,13 +42,15 @@
     padding: 0.5rem 1rem;
 
 }
-
+.transfer_pay_side_nav li{
+    transition: all 0.3s;
+}
 .transfer_pay_side_nav li a {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(14px,  calc( 1.2vw + 0.1rem ), 80px);;
     font-weight: 400;
-    line-height: 34.5px;
-    text-align: left;
+    display: block;
+    padding: 0.5rem 0.8rem;
     transition: all 0.3s;
 }
 
@@ -71,6 +73,12 @@
 
     .transfer_pay_side_nav {
         padding: 0.5rem 0rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin-bottom: clamp(24px,  calc( 1.5vw + 0.1rem ), 100px);
     }
 
     .ProgressBar span {
@@ -78,14 +86,13 @@
     }
 
     .ProgressBar {
-        margin-bottom: 3rem;
+        margin-bottom: clamp(48px,  calc( 5vw + 0.1rem ), 120px);
     }
 
     .transfer_pay_side_nav li a {
         font-family: Poppins;
-        font-size: 14px;
+        font-size: clamp(12px,  calc( 0.7vw + 0.1rem ), 60px);
         font-weight: 700;
-        line-height: 21px;
-        text-align: left;
+        text-align: center;
     }
 }

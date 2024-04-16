@@ -89,6 +89,7 @@
 
 .navBar ul li {
   display: block;
+  border-radius: 5px;
 }
 
 .navBar a {
@@ -99,18 +100,12 @@
   transition: all 0.3s;
 }
 
-.navBar a:hover {
-  color: #53ACFF;
-}
 
 .navBar a.active {
   color: #fff;
   background-color: #53ACFF;
 }
 
-.navBar a.active:hover {
-  color: #53ACFF;
-}
 
 .navBar a.tradingHistory {
   text-wrap: nowrap;
@@ -141,10 +136,6 @@
 .SearchBar .searchBtn:hover {
   box-shadow: inset 0px -20px 30px -10px #165B9C;
 }
-
-
-
-
 
 .bars {
   height: 21px;
@@ -251,7 +242,7 @@
     line-height: 14px;
   }
 
-  .SearchBar ul{
+  .SearchBar .navBar ul{
     position: absolute;
     top: 0;
     left: -16px;
