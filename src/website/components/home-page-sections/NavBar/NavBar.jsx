@@ -19,7 +19,7 @@ const NavBar = () => {
 <div>
     <section className='navbar '>
      {isNavOpen && <div className='overlay'></div>}
-      <nav className='mx-auto px-[2rem] justify-between '>
+      <nav className='mx-auto px-[2vw] justify-between '>
 
         {/* navbar logo */}
         <Link to="/" className="logo">

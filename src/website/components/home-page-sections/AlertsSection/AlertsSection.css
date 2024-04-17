@@ -23,7 +23,7 @@ section.alerts {
 
 /* card in alert section style and add some animation ^_^ */
 .alert-card {
-    height: 342px;
+  height: clamp(300px,  calc( 16vw + 0.1rem ), 1400px);
     padding: 4rem;
     transition: all 0.3s;
     backdrop-filter: blur(30px);
@@ -58,12 +58,13 @@ section.alerts {
 }
 
 .alert-card .content p {
-    font-size:  clamp(10px, calc(0.2vw + 0.5rem), 36px);
+    font-size:  clamp(10px, calc(0.7vw + 0.1rem), 360px);
     text-align: center;
 }
 
 .animat-text {
-    width: 300px;
+    width: 85%;
+    height: 85%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -79,13 +80,17 @@ section.alerts {
 }
 
 .alert-card:hover .animat-text img:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     opacity: 0;
 }
 
 .alert-card .animat-text.realtime img:nth-child(2) {
+  width: clamp(100px, calc(8vw + 0.1rem), 1200px);
     position: absolute;
-    left: 111px;
-    width: 217px;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: all 0.3s;
@@ -94,8 +99,8 @@ section.alerts {
 .alert-card .animat-text.realtime img:nth-child(3) {
     position: absolute;
     top: 50%;
-    left: 188px;
-    width: 217px;
+    left: 50%;
+    width: clamp(100px, calc(8vw + 0.1rem), 1200px);
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: all 0.3s;
@@ -103,12 +108,18 @@ section.alerts {
 
 
 .alert-card:hover .animat-text.realtime img:nth-child(2) {
-    transform: translate(-85%, -135%);
+    top: 0;
+    left: 0;
+    transform: none;
     opacity: 1;
 }
 
 .alert-card:hover .animat-text.realtime img:nth-child(3) {
-    transform: translate(-20%, 35%);
+  top: unset;
+  left: unset;
+    bottom: 0;
+    right: 0;
+    transform: none;
     opacity: 1;
 }
 

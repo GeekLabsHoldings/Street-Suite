@@ -50,7 +50,7 @@ nav {
     display: flex;
     align-items: center;
     background-color: transparent;
-    padding:  clamp(10px,  calc( 0.3vw + 0.1rem ), 80px) clamp(32px,  calc( 1.8vw + 0.1rem ), 140px);
+    padding:  clamp(10px,  calc( 0.5vw + 0.1rem ), 80px) clamp(32px,  calc( 1.8vw + 0.1rem ), 140px);
     width: 100%;
 }
 
