@@ -1,6 +1,6 @@
 .AnnoncmentSlider {
     background-color: var(--Blue300);
-    padding: clamp(10px, calc(0.7vw + 0.1rem), 80px) 0;
+    padding: clamp(10px, calc(0.5vw + 0.1rem), 80px) 0;
     text-align: center;
 }
 

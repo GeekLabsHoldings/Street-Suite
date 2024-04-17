@@ -1,6 +1,6 @@
 footer {
     background: #232323;
-    padding-top: 5rem;
+    padding-top: clamp(14px, calc(4.5vw + 0.1rem), 2000px);
     position: relative;
     z-index: 0;
     box-shadow: 0px -11px 14.600000381469727px 0px rgba(0, 0, 0, 0.336);
@@ -15,30 +15,29 @@ footer .gradient-line {
 }
 
 footer .footer-container {
-    padding: 3rem;
+    padding: clamp(14px, calc(2.5vw + 0.1rem), 1000px);
     border-top: 1px solid #fff;
     position: relative;
 }
 
 footer .footer-container h5 {
     font-family: Poppins;
-    font-size: 23px;
+    font-size: clamp(14px, calc(1.5vw + 0.1rem), 1000px);
     font-weight: 700;
-    line-height: 35px;
+    line-height: 25px;
     letter-spacing: 0em;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #232323;
-    padding: 1rem 3rem;
+    padding: clamp(14px, calc(0.5vw + 0.1rem), 1000px) clamp(14px, calc(2.5vw + 0.1rem), 1000px);
 }
 
 footer .footer-container p {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px, calc(0.8vw + 0.1rem), 1000px);
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0em;
     text-align: center;
     width: 70%;
@@ -49,33 +48,31 @@ footer .footer-container .line {
     width: 50%;
     height: 1px;
     background: #5D5D5D;
-    margin: 3rem auto;
+    margin: clamp(20px, calc(2.5vw + 0.1rem), 1000px) auto;
 }
 
 footer .footer-container .footer-links {
     display: flex;
     justify-content: space-around;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: clamp(10px, calc(0.8vw + 0.1rem), 1000px);
+    margin-bottom: clamp(10px, calc(1.2vw + 0.1rem), 1000px);
 }
 
 footer .footer-container .footer-links .links-col h6 {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px, calc(0.8vw + 0.1rem), 1000px);
     font-weight: 700;
-    line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
     color: #979797;
-    margin-bottom: 0.8rem;
+    margin-bottom: clamp(10px, calc(0.6vw + 0.1rem), 1000px);
 }
 
 footer .footer-container .footer-links .links-col a {
     color: #979797;
     font-family: Poppins;
-    font-size: 16px;
+    font-size: clamp(10px, calc(0.8vw + 0.1rem), 1000px);
     font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
     transition: all 0.3s;
@@ -87,7 +84,7 @@ footer .footer-container .footer-links .links-col a:hover {
 
 footer .footer-container .footer-links .links-col ul li {
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(10px, calc(1.2vw + 0.1rem), 1000px);
 }
 
 .copyright {

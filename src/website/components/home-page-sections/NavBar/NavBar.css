@@ -50,7 +50,7 @@ nav {
     display: flex;
     align-items: center;
     background-color: transparent;
-    padding:  clamp(10px,  calc( 0.3vw + 0.1rem ), 80px) clamp(32px,  calc( 1.8vw + 0.1rem ), 140px);
+    padding:  clamp(10px,  calc( 0.5vw + 0.1rem ), 80px) clamp(32px,  calc( 1.8vw + 0.1rem ), 140px);
     width: 100%;
 }
 
@@ -125,7 +125,7 @@ nav ul li a {
     display: block;
     text-decoration: none;
     color: #fff;
-    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 60px);
+    font-size: clamp(10px,  calc( 0.7vw + 0.1rem ), 60px);
     padding:  clamp(10px,  calc( 0.3vw + 0.1rem ), 80px) clamp(32px,  calc( 1.8vw + 0.1rem ), 140px);
     border-radius: 4px;
     font-weight: 300;

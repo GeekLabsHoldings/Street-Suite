@@ -19,7 +19,7 @@ const NavBar = () => {
 <div>
     <section className='navbar '>
      {isNavOpen && <div className='overlay'></div>}
-      <nav className='mx-auto px-[2rem] justify-between '>
+      <nav className='mx-auto px-[2vw] justify-between '>
 
         {/* navbar logo */}
         <Link to="/" className="logo">
@@ -27,7 +27,7 @@ const NavBar = () => {
         </Link>
         {/*end of navbar logo */}
 
-        <div className={`mobileScreenNav ${isNavOpen ? "open" : ""} hidden md:flex justify-around w-[50%] gap-[16px] lg:gap-[0px]`}>
+        <div className={`mobileScreenNav ${isNavOpen ? "open" : ""} hidden md:flex justify-around w-auto gap-[5vw]`}>
           {/* navbar links */}
           <ul className='navLinks first flex gap-[16px] lg:gap-0'>
             <li ><NavLink to="/quizzes">Quizzes</NavLink></li>
