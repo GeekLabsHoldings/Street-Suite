@@ -2,7 +2,7 @@ section.clientsFavFeature {
     padding: 10% 0 0 3%;
     border-top: 1px solid #5D5D5D;
     position: relative;
-    margin-top: 10vh;
+    overflow-x: clip;
 }
 
 section.clientsFavFeature .section-title {
@@ -34,7 +34,6 @@ section.clientsFavFeature .clientsFavFeature-img img {
     backdrop-filter: blur(10.6px);
     -webkit-backdrop-filter: blur(10.6px);
     border: 1px solid rgba(255, 255, 255, 0.19);
-    
 }
 
 .clientsFavFeatures-content .clientsFavFeatures-reviews .clientsFavFeatures-review:nth-child(2) {

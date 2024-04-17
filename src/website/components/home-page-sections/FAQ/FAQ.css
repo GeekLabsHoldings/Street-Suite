@@ -27,7 +27,7 @@ section.FAQ {
     background: #2F2F2F;
     position: relative;
     z-index: 1;
-    padding: clamp(14px, calc(1.5vw + 0.1rem), 100px);
+    padding: clamp(14px, calc(1.5vw + 0.1rem), 1000px);
 }
 
 .FAQ-container .collapse-item .collapse-header p {
