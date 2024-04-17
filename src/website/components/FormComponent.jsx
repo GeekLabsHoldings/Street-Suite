@@ -128,11 +128,11 @@ const FormComponent = ({purpose,label1,label2,label3,textArea,needCheckbox,btnTx
     </div>
 
  {/* Terms and Conditions */}
-    {needCheckbox ? <>
+    {needCheckbox ? <div className='checkboxes'>
     <FormControlLabel control={<Checkbox />} className='labelfont checkboxFont rememberClass' label={<span>Remember me</span>} />
     <FormControlLabel required control={<Checkbox />} className='labelfont checkboxFont' label={<span>By creating an account, I have read and agreed to Street Suite's <a href="/terms&conditions"> Terms & Conditions.</a></span>}
      />
-    </> :null}
+    </div> :null}
 
     </FormControl>
    

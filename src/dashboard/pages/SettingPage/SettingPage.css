@@ -7,8 +7,10 @@
 .linksSection a{
     color: white !important;
     text-decoration: none;
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
+    font-size: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
     font-weight: 400;
+}.linksSection a{
+    text-decoration: none !important;
 }
 .LeftBorder h1{
     font-size: clamp(24px, calc(2.4vw + 0.5rem),140px);
@@ -36,10 +38,10 @@
 /* .css-1e6y48t-MuiButtonBase-root-MuiButton-root:focus{
 } */
 .settingBtn{
-    font-size:clamp(10px, calc( 0.2vw + 0.5rem), 60px) !important;
+    font-size:clamp(10px, calc( 0.5vw + 0.1rem), 60px) !important;
     border-radius: 0.2rem !important;
     font-weight: 600 !important;
-    padding: 0.3rem 1.5rem !important;
+    padding: clamp(1.6px, calc( 0.08vw + 0.1rem), 60px) clamp(8px, calc( 0.6vw + 0.1rem ) , 70px) !important;
 }
 .disconnetBtn{
     background: transparent;  
@@ -57,8 +59,8 @@
     background-color: transparent !important;
 
 }
-.avatarTxt p{
-    font-size: clamp(10px, calc( 0.1vw + 0.5rem), 30px);
+.avatarTxt a{
+    font-size: clamp(8px, calc( 0.6vw + 0.1rem), 30px);
     font-weight: 400;
 }
 .largeDiv{
@@ -68,10 +70,13 @@
 .forborderRaduis{
     border-radius: 0.5rem;
     background-color: #282828;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px, calc(0.5vw + 0.1rem), 60px);
 }
 .labelColor label{
     color: #ffffff;
-    font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
+    font-size: clamp(12px, calc(0.7vw + 0.1rem), 60px);
     font-weight: 400;
 }
 .react-international-phone-input-container input , .react-international-phone-input-container button{
@@ -91,27 +96,32 @@
 }
 .optionAndDesc span{
     color: #979797;
-    font-size: clamp(11px, calc( 0.2vw + 0.5rem), 60px);
+    font-size: clamp(11px, calc( 0.4vw + 0.1rem), 60px);
     font-weight: 400;
 }
+.accountBilling{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc( 0.7vw + 0.1rem), 60px);
+}
 .accountBilling h5{
-    font-size: clamp(16px, calc( 1.1vw + 0.5rem ) , 70px);
+    font-size: clamp(16px, calc(1.5vw + 0.1rem), 70px);
     font-weight: 600;
 }
 .accountBilling p{
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
+    font-size: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
     font-weight: 700;
 }
 .accountBilling h4{
-    font-size: clamp(16px, calc( 0.9vw + 0.5rem ) , 70px);
+    font-size: clamp(16px, calc( 1.2vw + 0.1rem ) , 70px);
     font-weight: 700;
 }
 .accountBilling h1{
-    font-size: clamp(40px, calc(3.4vw + 0.5rem),140px);
+    font-size: clamp(40px, calc(3.7vw + 0.1rem),140px);
     font-weight: 700;
 }
 .accountBilling h6{
-    font-size: clamp(23px, calc( 0.9vw + 0.5rem ) , 70px);
+    font-size: clamp(23px, calc( 1.2vw + 0.1rem ) , 70px);
     font-weight: 400;
 }
 .premuimDiv{
@@ -128,7 +138,14 @@
     border-radius: 0.5rem;
     overflow: hidden;
 }
-
+.disconnectSetting{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, calc(0.3vw + 0.1rem), 60px) ;
+}
+.disconnectSetting p{
+    font-size: clamp(8px, calc(0.5vw + 0.1rem), 60px);;
+}
 .itemsBG li{
     text-align: center;
     background-color: #2E2E2E;
@@ -140,15 +157,16 @@
     box-shadow: 0px -20px 10px -20px rgba(0,0,0,0.6) inset;
 }
 .tableHead li{
-    font-size: clamp(11px, calc( 0.3vw + 0.5rem), 60px);
+    font-size:clamp(11px, calc( 0.6vw + 0.1rem), 60px);
     font-weight: 700;
 }
 .tableBody li{
-    font-size:  clamp(11px, calc( 0.2vw + 0.5rem), 60px);
+    font-size:  clamp(11px, calc( 0.6vw + 0.1rem), 60px);
     font-weight: 400;
 }
 .blueTxt{
     color: rgba(83, 172, 255, 1);
+    font-size: clamp(8px, calc( 0.6vw + 0.1rem), 60px);
 }
 .settingCardBorder,.grayPositionBorder{
     position:relative;
@@ -200,11 +218,11 @@ position: relative;
 }
 
 .rightBorder p,.sectionHeader p{
-    font-size:clamp(10px, calc( 0.3vw + 0.5rem), 60px);
+    font-size:clamp(10px, calc( 0.6vw + 0.1rem), 60px);
     font-weight: 400;
 }
 .properityInSwitch p{
-    font-size: clamp(12px, calc( 0.3vw + 0.5rem), 60px);
+    font-size:clamp(12px, calc( 0.6vw + 0.1rem), 60px);
     font-weight: 400;
 }
 
@@ -228,7 +246,7 @@ position: relative;
         line-height: 0.945rem;
         font-weight: 400;
     }
-    .avatarTxt p{
+    .avatarTxt a{
 
         line-height:1.442rem;
         font-weight: 400;
@@ -237,7 +255,7 @@ position: relative;
 
         font-weight: 600;
         line-height: 0.7rem;
-        padding: 0.1rem 0.5rem !important;
+
 
     }
     .properityInSwitch p{

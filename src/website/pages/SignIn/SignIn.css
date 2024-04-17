@@ -17,7 +17,7 @@
     padding-top: clamp(90px, calc(6vw + 0.5rem),200px)
 }
 .signinContent p{
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 60px);
+    font-size: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
     font-weight: 400;
 }
 .signinFormContent{
