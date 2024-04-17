@@ -8,6 +8,7 @@
     font-weight: 400;
 
 }
+
 .winnerAndLoserBorder::before{
     content: "";
     background-image: conic-gradient(transparent 0deg ,#53acff 120deg,transparent 220deg );

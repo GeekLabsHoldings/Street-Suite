@@ -1,7 +1,6 @@
 .time span{
     color: #53ACFF;
-    font-size: clamp(10px, calc( 0.3vw + 0.5rem), 60px);
-    line-height: 1.022rem;
+    font-size: clamp(10px, calc( 0.5vw + 0.1rem), 60px);
     font-weight: 400;
 }
 .grayOne{

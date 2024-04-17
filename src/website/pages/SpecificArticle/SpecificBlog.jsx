@@ -32,7 +32,7 @@ const SpecificBlog = ()=>{
            </div>
             <div className='md:w-1/3'>
                 <div className='md:visible sm:hidden bottomBorder py-4'>
-                <div className='divForImgSm h-48 '></div>
+                <div className='divForImgSm '></div>
                 </div>
 {/* similar blogs to read */}
                <BlogForm/>

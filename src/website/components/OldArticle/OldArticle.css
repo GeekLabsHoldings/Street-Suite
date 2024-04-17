@@ -1,16 +1,17 @@
 .oldBlogs p{
     font-weight: 400;
-    font-size: 0.8175rem;
-    line-height: 1.226rem;
+    font-size: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
     color: #53ACFF;
-
 }
 .oldBlogs h6{
     font-weight: 400;
     font-size:1.189rem ;
-    line-height: 1.783rem;
-
-
+}
+.minPrt p{
+    font-size: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
+}
+.blogTitle h6{
+    font-size: clamp(10px, calc(0.8vw + 0.1rem), 60px);
 }
 @media only screen and (max-width:676px) {
 .oldBlogs p{
