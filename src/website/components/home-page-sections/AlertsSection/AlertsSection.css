@@ -26,7 +26,7 @@ section.alerts .alerts-container{
 
 /* card in alert section style and add some animation ^_^ */
 .alert-card {
-  height: clamp(300px,  calc( 16vw + 0.1rem ), 1400px);
+  height: clamp(180px,  calc( 16vw + 0.1rem ), 1400px);
     padding: clamp(2rem,  calc( 3vw + 0.1rem ), 1400px);
     transition: all 0.3s;
     backdrop-filter: blur(30px);
@@ -242,101 +242,85 @@ section.alerts .alerts-container{
         padding: 15% 0% 0;
     }
 
-    .alert-card {
-        height: 180px;
-    }
-
     .alert-card .content p {
         font-size: 11px;
-    }
-
-    .animat-text {
-        width: 170px;
     }
 
     .alert-card .animat-text.realtime img:nth-child(1) {
         width: 130px;
     }
     .alert-card .animat-text.realtime img:nth-child(2) {
-        left: 68px;
         width: 97px;
     }
 
     .alert-card .animat-text.realtime img:nth-child(3) {
-        left: 102px;
         width: 97px;
     }
 
-    .alert-card:hover .animat-text.realtime img:nth-child(2) {
+    /* .alert-card:hover .animat-text.realtime img:nth-child(2) {
         transform: translate(-125%, -125%);
     }
 
     .alert-card:hover .animat-text.realtime img:nth-child(3) {
         transform: translate(25%, 40%);
-    }
+    } */
 
     .alert-card .animat-text.filter img:nth-child(1) {
         width: 95px;
     }
     .alert-card .animat-text.filter img:nth-child(2) {
-        left: 77px;
         width: 85px;
     }
 
     .alert-card .animat-text.filter img:nth-child(3) {
-        left: 80px;
         width: 85px;
     }
 
-    .alert-card:hover .animat-text.filter img:nth-child(2) {
+    /* .alert-card:hover .animat-text.filter img:nth-child(2) {
         transform: translate(-140%, -110%);
     }
 
     .alert-card:hover .animat-text.filter img:nth-child(3) {
         transform: translate(50%, 10%);
-    }
+    } */
 
     .alert-card .animat-text.special img:nth-child(1) {
         width: 115px;
     }
 
     .alert-card .animat-text.special img:nth-child(2) {
-        left: 73px;
         width: 95px;
     }
 
     .alert-card .animat-text.special img:nth-child(3) {
-        left: 99px;
         width: 90px;
     }
 
-    .alert-card:hover .animat-text.special img:nth-child(2) {
+    /* .alert-card:hover .animat-text.special img:nth-child(2) {
         transform: translate(-130%, -130%);
     }
 
     .alert-card:hover .animat-text.special img:nth-child(3) {
         transform: translate(30%, 30%);
-    }
+    } */
     .alert-card .animat-text.scanner img:nth-child(1) {
         width: 135px;
     }
     .alert-card .animat-text.scanner img:nth-child(2) {
-        left: 66px;
         width: 100px;
     }
 
     .alert-card .animat-text.scanner img:nth-child(3) {
-        left: 103px;
         width: 97px;
     }
 
-    .alert-card:hover .animat-text.scanner img:nth-child(2) {
+    /* .alert-card:hover .animat-text.scanner img:nth-child(2) {
         transform: translate(-115%, -140%);
     }
 
     .alert-card:hover .animat-text.scanner img:nth-child(3) {
         transform: translate(20%, 40%);
-    }
+    } */
 }
 
 
