@@ -12,26 +12,28 @@ section.alerts {
     left: 10%;
     padding: 0 2rem;
     transform: translateY(-50%);
-    font-size: clamp(24px , calc(3vw + 1rem) , 160px);
+    font-size: clamp(24px , calc(3vw + 0.1rem) , 1600px);
     line-height: normal;
     color: var(--Blue300);
     font-weight: 800;
     background-color: #202020;
     text-shadow: 0px 10px 10px #000;
 }
+section.alerts .alerts-container{
+    gap: clamp(16px , calc(1vw + 0.1rem) , 1600px);
+}
 
 
 /* card in alert section style and add some animation ^_^ */
 .alert-card {
   height: clamp(300px,  calc( 16vw + 0.1rem ), 1400px);
-    padding: 4rem;
+    padding: clamp(2rem,  calc( 3vw + 0.1rem ), 1400px);
     transition: all 0.3s;
     backdrop-filter: blur(30px);
     background: linear-gradient(90deg, rgba(83, 172, 255, 0.1) 0%, rgba(35, 53, 70, 0.1) 100%);
     border-radius: 35.74px;
     position: relative;
     border: 1px solid #5252527a;
-    transition: all 0.4s;
     box-shadow: 1px 0px 5px 0px var(--Blue300);
 }
 
@@ -63,8 +65,8 @@ section.alerts {
 }
 
 .animat-text {
-    width: 85%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -72,11 +74,12 @@ section.alerts {
 }
 
 .alert-card .animat-text img:nth-child(1) {
+    width: clamp(100px, calc(11vw + 0.1rem), 1200px);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 .alert-card:hover .animat-text img:nth-child(1) {
@@ -86,7 +89,7 @@ section.alerts {
     opacity: 0;
 }
 
-.alert-card .animat-text.realtime img:nth-child(2) {
+.alert-card .animat-text img:nth-child(2) {
   width: clamp(100px, calc(8vw + 0.1rem), 1200px);
     position: absolute;
     top: 50%;
@@ -96,7 +99,7 @@ section.alerts {
     transition: all 0.3s;
 }
 
-.alert-card .animat-text.realtime img:nth-child(3) {
+.alert-card .animat-text img:nth-child(3) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -107,14 +110,14 @@ section.alerts {
 }
 
 
-.alert-card:hover .animat-text.realtime img:nth-child(2) {
+.alert-card:hover .animat-text img:nth-child(2) {
     top: 0;
     left: 0;
     transform: none;
     opacity: 1;
 }
 
-.alert-card:hover .animat-text.realtime img:nth-child(3) {
+.alert-card:hover .animat-text img:nth-child(3) {
   top: unset;
   left: unset;
     bottom: 0;
@@ -125,7 +128,7 @@ section.alerts {
 
 
 
-
+/* 
 .alert-card .animat-text.filter img:nth-child(2) {
     position: absolute;
     top: 50%;
@@ -222,7 +225,7 @@ section.alerts {
 .alert-card:hover .animat-text.scanner img:nth-child(3) {
     transform: translate(-15%, 35%);
     opacity: 1;
-}
+} */
 
 
 /* end of card in alert section style */
@@ -233,11 +236,10 @@ section.alerts {
 
 /* responsive mobile view  */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 767px) {
 
-    
     section.alerts {
-        padding: 20% 0% 0;
+        padding: 15% 0% 0;
     }
 
     .alert-card {
