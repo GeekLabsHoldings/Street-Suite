@@ -8,7 +8,7 @@ const ProperityAndSwitch = ({title})=>{
         // To turn on or off specific thing 
         <div className='flex align-items-center justify-between properityInSwitch'>
                 <p>{title}</p>
-                <Switch {...label} />
+                <Switch className='switchStyle' {...label} />
         </div>
     )
 }

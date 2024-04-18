@@ -90,7 +90,7 @@ const ContactPage = () => {
                                 <div className='inForm'>
                                     <div className='lg:w-10/12 sm:w-10/12 mx-auto '>
                                         {/* form for signup and contact us */}
-                                        <FormComponent needFirstPrt={true} purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true} />
+                                        <FormComponent needForthInput={false} needFirstPrt={true} purpose='Send Us a Message!' label1='Full Name' label2='Email' label3='Message' btnTxt='Submit' needCheckbox={false} textArea={true} />
                                     </div>
                                 </div>
                             </div>

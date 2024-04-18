@@ -9,16 +9,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    padding-top: clamp(4px, calc(0.8vw + 0.1rem), 60px);
+    padding-bottom: clamp(4px, calc(0.8vw + 0.1rem), 60px);
+    margin-bottom: clamp(16px, calc(1.7vw + 0.1rem), 80px);
 }
 
 .blogsTabs .check-Filter label {
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     border-radius: 5px;
     color: #fff;
     position: relative;
     transition: all 0.3s;
-    font-size: clamp(10px, calc( 0.6vw + 0.5rem), 60px) !important;
+    font-size: clamp(10px, calc( 0.8vw + 0.1rem), 60px) !important;
     font-weight: 400 !important;
     line-height:1.442rem !important;
 }
