@@ -1,121 +1,127 @@
 section.testmonial {
-    padding: 4rem 5% 0;
-    border-top: 1px solid hsl(0, 0%, 36%);
-    position: relative;
+  padding: 4rem 5% 0;
+  border-top: 1px solid hsl(0, 0%, 36%);
+  position: relative;
 }
 
 section.testmonial .section-title {
-    color: #fff;
-    font-size: clamp(22px, calc(3.5vw + 0.1rem), 502px);
-    text-wrap: nowrap;
-    line-height: 10px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: clamp(22px, calc(3.5vw + 0.1rem), 502px);
+  text-wrap: nowrap;
+  line-height: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .section-title+p {
-    color: #979797;
-    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
-    margin: clamp(22px, calc(2vw + 0.1rem), 502px) 0 7%;
+  color: #979797;
+  font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
+  margin: clamp(22px, calc(2vw + 0.1rem), 502px) 0 7%;
 }
 
 .section-title+p>span {
-    color: #fff;
-    font-weight: 700;
+  color: #fff;
+  font-weight: 700;
 }
 
 .testmonial-container {
-    max-width: 90%;
+  max-width: 90%;
 }
 
 section.testmonial .card .opinion p {
-    font-size: clamp(10px, calc( 0.6vw + 0.5rem ), 60px);
+  font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
 }
 
 section.testmonial .card .opinion p:last-child {
-    font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
-    color: var(--Blue300);
-    font-weight: 600;
+  font-size: clamp(10px, calc(0.9vw + 0.1rem), 60px);
+  color: var(--Blue300);
+  font-weight: 600;
 }
 
 section.testmonial .card .date {
-    color: #5D5D5D;
-    font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
+  color: #5D5D5D;
+  font-size: clamp(10px, calc(0.8vw + 0.1rem), 600px);
 }
 
 section.testmonial .testmonial-container .card {
-    border-radius: 55px;
-    box-shadow: 0px 20px 30px -13px #00000088;
-    border: none;
-    background: linear-gradient(136deg, rgb(233, 233, 233) 0%, rgba(32, 32, 32, 0.8183648459383753) 100%);
-    transition: all 0.3s;
+  border-radius: clamp(55px, calc(3vw + 0.1rem), 5000px);
+  box-shadow: 0px 20px 30px -13px #00000088;
+  border: none;
+  background: linear-gradient(136deg, rgb(233, 233, 233) 0%, rgba(32, 32, 32, 0.8183648459383753) 100%);
+  transition: all 0.3s;
 }
 
 section.testmonial .testmonial-container .card .card-body {
-    background-color: #202020;
-    transform: translate(1px, 1px);
-    border-radius: 55px;
-    border: none;
+  background-color: #202020;
+  transform: translate(1px, 1px);
+  border-radius: clamp(55px, calc(3vw + 0.1rem), 5000px);
+  border: none;
+  padding: clamp(10px, calc(2.4vw + 0.1rem), 1000px);
+}
+
+section.testmonial .testmonial-container .card .card-body .avatar {
+  gap: clamp(10px, calc(0.8vw + 0.1rem), 1000px);
 }
 
 section.testmonial .testmonial-container .card .card-body .avatar img {
-    width: clamp(30px, calc(3.2vw + 0.5rem), 100px);
-    height: clamp(30px, calc(3.2vw + 0.5rem), 100px);
+  width: clamp(30px, calc(3.5vw + 0.1rem), 1000px);
+  height: clamp(30px, calc(3.5vw + 0.1rem), 1000px);
 }
 
 section.testmonial .testmonial-container .card .card-body .avatar .user-info h6 {
-    font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
+  font-size: clamp(12px, calc(1.3vw + 0.1rem), 1000px);
 }
 
 section.testmonial .testmonial-container .card .card-body .avatar .user-info p {
-    font-size: clamp(10px, calc( 0.5vw + 0.5rem), 40px);
+  font-size: clamp(10px, calc(0.9vw + 0.1rem), 1000px);
 }
 
 section.testmonial .testmonial-container .card .card-body .opinion p {
-    font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
-
+  font-size: clamp(10px, calc(1vw + 0.1rem), 1000px);
+  margin: clamp(10px, calc(1.3vw + 0.1rem), 1000px) 0;
 }
 
 section.testmonial .testmonial-container .card:hover {
-    transform: translateY(-5px);
-    border-radius: 55px;
-    box-shadow: 4px 5px 12px -1px rgba(83, 172, 255, 0.9);
-    background: #202020;
+  transform: translateY(-5px);
+  border-radius: 55px;
+  box-shadow: 4px 5px 12px -1px rgba(83, 172, 255, 0.9);
+  background: #202020;
 }
 
 
 
 @media only screen and (max-width: 1024px) {
-    section.testmonial {
-        padding: 2rem 5% 0%;
-    }
-    .testmonial-container {
-        max-width: 100%;
-    }
+  section.testmonial {
+    padding: 2rem 5% 0%;
+  }
+
+  .testmonial-container {
+    max-width: 100%;
+  }
 
 
-    section.testmonial .testmonial-container {
-        display: flex;
-        margin-bottom: 10%;
-    }
+  section.testmonial .testmonial-container {
+    display: flex;
+    margin-bottom: 10%;
+  }
 
-    section.testmonial .testmonial-container .card {
-        border-radius: 30px;
-        min-width: 300px;
-    }
+  section.testmonial .testmonial-container .card {
+    border-radius: 30px;
+    min-width: 300px;
+  }
 
-    section.testmonial .testmonial-container .card .card-body {
-        padding: 1rem 2rem;
-        border-radius: 30px;
+  section.testmonial .testmonial-container .card .card-body {
+    padding: 1rem 2rem;
+    border-radius: 30px;
 
-    }
+  }
 
-    section.testmonial .card .opinion p {
-        margin-bottom: 0.5rem;
+  section.testmonial .card .opinion p {
+    margin-bottom: 0.5rem;
 
-    }
+  }
 
-    .testmonial-container {
-        overflow-x: auto;
-    }
+  .testmonial-container {
+    overflow-x: auto;
+  }
 }

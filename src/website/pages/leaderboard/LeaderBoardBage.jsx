@@ -117,10 +117,10 @@ const LeaderBoardPage = () => {
 
                 {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
                 <div id="tab-1" className='tab'>
-                  <div className="collapse-item renking-1 w-full mb-6">
+                  <div className="collapse-item renking-1 w-full">
                     <div className="collapse-header">
                       <span>1</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row gap-:gap-4 items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -135,10 +135,10 @@ const LeaderBoardPage = () => {
                   </div>
 
 
-                  <div className="collapse-item renking-2 w-full mb-6">
+                  <div className="collapse-item renking-2 w-full">
                     <div className="collapse-header">
                       <span>2</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -153,10 +153,10 @@ const LeaderBoardPage = () => {
                   </div>
 
 
-                  <div className="collapse-item renking-3 w-full mb-6">
+                  <div className="collapse-item renking-3 w-full">
                     <div className="collapse-header">
                       <span>3</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -170,10 +170,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>4</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -186,10 +186,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>5</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -202,10 +202,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>6</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -218,10 +218,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>7</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -238,10 +238,10 @@ const LeaderBoardPage = () => {
                 {/* Biggest losers content that show when user click on Biggest losers tab in leaderBoard page */}
                 <div id="tab-2" className='tab'>
 
-                  <div className="collapse-item renking-1 w-full mb-6">
+                  <div className="collapse-item renking-1 w-full">
                     <div className="collapse-header">
                       <span>1</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -256,10 +256,10 @@ const LeaderBoardPage = () => {
                   </div>
 
 
-                  <div className="collapse-item renking-2 w-full mb-6">
+                  <div className="collapse-item renking-2 w-full">
                     <div className="collapse-header">
                       <span>2</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -274,10 +274,10 @@ const LeaderBoardPage = () => {
                   </div>
 
 
-                  <div className="collapse-item renking-3 w-full mb-6">
+                  <div className="collapse-item renking-3 w-full">
                     <div className="collapse-header">
                       <span>3</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -291,10 +291,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>4</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -307,10 +307,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>5</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -323,10 +323,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>6</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -339,10 +339,10 @@ const LeaderBoardPage = () => {
                     </div>
                   </div>
 
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>7</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -358,11 +358,11 @@ const LeaderBoardPage = () => {
 
                 {/* ranking content that show when user click on ranking tab in leaderBoard page */}
                 <div id="tab-3" className='tab Ranking-tap'>
-                  <div className="collapse-item renking-1 w-full mb-6">
+                  <div className="collapse-item renking-1 w-full">
                     <div className="collapse-header">
                       <img src={badg1} alt="" className='padge' />
                       <span>1</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -399,11 +399,11 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item renking-2 w-full mb-6">
+                  <div className="collapse-item renking-2 w-full">
                     <div className="collapse-header">
                       <img src={badg2} alt="" className='padge' />
                       <span>2</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -440,11 +440,11 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item renking-3 w-full mb-6">
+                  <div className="collapse-item renking-3 w-full">
                     <div className="collapse-header">
                       <img src={badg3} alt="" className='padge' />
                       <span>3</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -481,10 +481,10 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>4</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -521,10 +521,10 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>5</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -561,10 +561,10 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>6</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -601,10 +601,10 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>7</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -641,10 +641,10 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>8</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -681,10 +681,10 @@ const LeaderBoardPage = () => {
 
                     </div>
                   </div>
-                  <div className="collapse-item w-full mb-6">
+                  <div className="collapse-item w-full">
                     <div className="collapse-header">
                       <span>9</span>
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -731,7 +731,7 @@ const LeaderBoardPage = () => {
           {/* trader types on the side in leaderboard page */}
           <div className="side-trader w-full lg:w-1/3">
 
-            <div className={`trader-types ${isSideFilterOpen ? 'open' : ''} w-full mb-6`}>
+            <div className={`trader-types ${isSideFilterOpen ? 'open' : ''} w-full`}>
 
               <button className='toggle-side-fiter block lg:hidden' onClick={() => setIsSideFilterOpen(!isSideFilterOpen)}>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -795,14 +795,14 @@ const LeaderBoardPage = () => {
             </div>
 
             {/* featured-stories section in leaderboard */}
-            <div className="featured-stories w-full mb-6">
+            <div className="featured-stories w-full">
               <h5>Featured stories</h5>
 
               <div className="block lg:hidden">
                 <Slider {...settings}>
                   <div className='px-2'>
                     <div className="story">
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -815,7 +815,7 @@ const LeaderBoardPage = () => {
                   </div>
                   <div className='px-2'>
                     <div className="story">
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -828,7 +828,7 @@ const LeaderBoardPage = () => {
                   </div>
                   <div className='px-2'>
                     <div className="story">
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -841,7 +841,7 @@ const LeaderBoardPage = () => {
                   </div>
                   <div className='px-2'>
                     <div className="story">
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -854,7 +854,7 @@ const LeaderBoardPage = () => {
                   </div>
                   <div className='px-2'>
                     <div className="story">
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -867,7 +867,7 @@ const LeaderBoardPage = () => {
                   </div>
                   <div className='px-2'>
                     <div className="story">
-                      <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                      <div className="avatar flex flex-row items-center">
                         <img src={avatar1} alt="" />
                         <div className="user-info flex flex-col">
                           <h6>Alex Horren</h6>
@@ -880,9 +880,9 @@ const LeaderBoardPage = () => {
                   </div>
                 </Slider>
               </div>
-              <div className='hidden lg:block space-y-4'>
+              <div className='hidden lg:block'>
                 <div className="story">
-                  <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                  <div className="avatar flex flex-row items-center">
                     <img src={avatar1} alt="" />
                     <div className="user-info flex flex-col">
                       <h6>Alex Horren</h6>
@@ -893,7 +893,7 @@ const LeaderBoardPage = () => {
                   <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
                 <div className="story">
-                  <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                  <div className="avatar flex flex-row items-center">
                     <img src={avatar1} alt="" />
                     <div className="user-info flex flex-col">
                       <h6>Alex Horren</h6>
@@ -904,7 +904,7 @@ const LeaderBoardPage = () => {
                   <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
                 <div className="story">
-                  <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                  <div className="avatar flex flex-row items-center">
                     <img src={avatar1} alt="" />
                     <div className="user-info flex flex-col">
                       <h6>Alex Horren</h6>
@@ -915,7 +915,7 @@ const LeaderBoardPage = () => {
                   <Link to="/blogs/specific-blog">Read more</Link>
                 </div>
                 <div className="story">
-                  <div className="avatar flex flex-row gap-2 lg:gap-4 items-center">
+                  <div className="avatar flex flex-row items-center">
                     <img src={avatar1} alt="" />
                     <div className="user-info flex flex-col">
                       <h6>Alex Horren</h6>
@@ -929,10 +929,10 @@ const LeaderBoardPage = () => {
             </div>
 
             {/* connect your broker section in leaderboard */}
-            <div className="ConnectYourBroker w-full mb-6">
+            <div className="ConnectYourBroker w-full">
               <h6>Connect your broker to see yourself on our leaderboard </h6>
 
-              <div className="brokers grid grid-cols-3 gap-[0.75rem] lg:gap-[2rem] my-6">
+              <div className="brokers grid grid-cols-3">
                 <div className="gradient-border">
                   <div className="broker-box" onClick={openModal}>
                     <img src={brokerImg1} alt="" />
@@ -979,8 +979,8 @@ const LeaderBoardPage = () => {
                   leaveTo="opacity-0 scale-95"
                 >
                   <div className="gradient-border interactiveBroker-modal">
-                    <Dialog.Panel className="modal-body w-full max-w-xl transform overflow-hidden rounded-2xl p-10 align-middle shadow-xl transition-all">
-                      <div className="modal-header flex items-start justify-start gap-2 lg:gap-4">
+                    <Dialog.Panel className="modal-body w-full transform overflow-hidden align-middle shadow-xl transition-all">
+                      <div className="modal-header flex items-start justify-start">
                         <img src={brokerImg1} alt="" />
                         <div className="broker-info flex flex-col justify-start items-start">
                           <h4>Interactive Brokers</h4>
@@ -990,7 +990,7 @@ const LeaderBoardPage = () => {
                               starRatedColor="#53ACFF"
                               numberOfStars={5}
                               name='rating'
-                              starDimension="20px"
+                              starDimension="clamp(20px, calc( 1.8vw + 0.1rem ) , 700px)"
                               starSpacing="2px"
                             />
                             <span>4.5</span>

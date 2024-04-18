@@ -11,19 +11,19 @@ const Testmonial = () => {
             <h3 className='section-title'>What Our Clients Say About Us</h3>
             <p className='text-center'>Our client’s <span>word of mouth</span> is our best marketing strategy.</p>
 
-            <div className='mx-auto py-4 md:px-4 grid grid-flow-row md:grid-cols-2 gap-4 md:gap-8 md:gap-y-6 testmonial-container columns-8' >
+            <div className='mx-auto py-4 md:px-4 grid grid-flow-row md:grid-cols-2 gap-[2vw] gap-y-[2vw] testmonial-container columns-8' >
                 {/* card of client  */}
                 <div className="card bg-base-100 shadow-xl max-w-full">
-                    <div className="card-body md:p-12">
-                        <div className="avatar flex flex-row gap-2 md:gap-4 mb-6 items-center">
+                    <div className="card-body">
+                        <div className="avatar flex flex-row mb-6 items-center">
                             <img src={avatar1} alt="" />
                             <div className="user-info flex flex-col">
                                 <h6>Alex Horren</h6>
                                 <p>@alexhorennnn</p>
                             </div>
                         </div>
-                        <div className="opinion mb-8">
-                            <p className='mb-6'>Great Experience! Trading made easy!</p>
+                        <div className="opinion">
+                            <p>Great Experience! Trading made easy!</p>
                             <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
@@ -35,16 +35,16 @@ const Testmonial = () => {
 
                 {/* card of client  */}
                 <div className="card bg-base-100 shadow-xl w-full">
-                    <div className="card-body p-12">
-                        <div className="avatar flex flex-row gap-4 mb-6 items-center">
+                    <div className="card-body">
+                        <div className="avatar flex flex-row items-center">
                             <img src={avatar2} alt="" />
                             <div className="user-info flex flex-col">
                                 <h6>Alex Horren</h6>
                                 <p>@alexhorennnn</p>
                             </div>
                         </div>
-                        <div className="opinion mb-8">
-                            <p className='mb-6'>Great Experience! Trading made easy!</p>
+                        <div className="opinion">
+                            <p>Great Experience! Trading made easy!</p>
                             <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
@@ -56,16 +56,16 @@ const Testmonial = () => {
 
                 {/* card of client  */}
                 <div className="card bg-base-100 shadow-xl w-full">
-                    <div className="card-body p-12">
-                        <div className="avatar flex flex-row gap-4 mb-6 items-center">
+                    <div className="card-body">
+                        <div className="avatar flex flex-row items-center">
                             <img src={avatar2} alt="" />
                             <div className="user-info flex flex-col">
                                 <h6>Alex Horren</h6>
                                 <p>@alexhorennnn</p>
                             </div>
                         </div>
-                        <div className="opinion mb-8">
-                            <p className='mb-6'>Great Experience! Trading made easy!</p>
+                        <div className="opinion">
+                            <p>Great Experience! Trading made easy!</p>
                             <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">
@@ -77,16 +77,16 @@ const Testmonial = () => {
 
                 {/* card of client  */}
                 <div className="card bg-base-100 shadow-xl w-full">
-                    <div className="card-body p-12">
-                        <div className="avatar flex flex-row gap-4 mb-6 items-center">
+                    <div className="card-body">
+                        <div className="avatar flex flex-row items-center">
                             <img src={avatar1} alt="" />
                             <div className="user-info flex flex-col">
                                 <h6>Alex Horren</h6>
                                 <p>@alexhorennnn</p>
                             </div>
                         </div>
-                        <div className="opinion mb-8">
-                            <p className='mb-6'>Great Experience! Trading made easy!</p>
+                        <div className="opinion">
+                            <p>Great Experience! Trading made easy!</p>
                             <p>8 Recommendations</p>
                         </div>
                         <div className="date flex justify-end">

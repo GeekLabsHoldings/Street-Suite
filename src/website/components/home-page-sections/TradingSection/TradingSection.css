@@ -61,7 +61,6 @@ section.trading .trading-container .img-container{
 }
 .private-companies-box .item img{
     width: 50%;
-    min-width: fit-content;
 }
 .private-companies-box .item .price{
     display: flex;
@@ -184,10 +183,6 @@ section.trading .trading-container .img-container{
         letter-spacing: 0em;
         text-align: left;
         margin-bottom: 1.5rem;
-    }
-
-    .private-companies-box .item img{
-        width: 60px;
     }
 
     .spaceX {
