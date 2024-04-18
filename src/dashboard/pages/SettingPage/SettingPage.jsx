@@ -18,10 +18,15 @@ const SettingPage = () => {
 
     const [changeClass, setChangeClass] = useState('');
     const [linkClicked,setLinkClicked] = useState('');
-    const [beginChange,setBeginChange] = useState(false);
+    const [beginEmailChange,setBeginEmailChange] = useState(false);
+    const [beginPassChange,setBeginPassChange] = useState(false);
 
-    const changeValue = ()=>{
-        setBeginChange(true);
+
+    const changeEmail = ()=>{
+        setBeginEmailChange(true);
+    }
+    const changePass = ()=>{
+        setBeginPassChange(true);
     }
 
     const indicatorHandler = (e) => {
@@ -153,13 +158,18 @@ const SettingPage = () => {
 
                                         <div className='flex md:flex-col md:gap-2 sm:gap-8'>
                                             {/* change email */}
-                                            <div className='md:flex align-items-center '>
-                                                <div className=' labelColor md:w-1/4 '>
+                                            <div className='md:flex align-items-center'>
+                                                <div className=' labelColor md:w-1/4'>
                                                     <label htmlFor="Email" className='w-full'>Email</label>
                                                 </div>
-                                                <div className='flex'>
-                                                    <Button className={!beginChange ? 'newBtn settingBtn w-fit' : 'hidden'} onClick={changeValue}>Change email</Button>
-                                                    <input type="text" id='change-email' className={beginChange ?'w-full everyInput':'hidden'} />
+                                                <div className=' inputAndChangeBtn'>
+                                                <div className={beginEmailChange ? 'w-7/12 flex align-items-center':'hidden'}>
+                                                    <input type="text" id='change-email' className={beginEmailChange ?'w-full everyInput':'hidden'} />
+                                                </div>
+                                                    <div className={!beginEmailChange ? 'w-full' :'w-5/12'}>
+                                                    <Button className={!beginEmailChange ? 'newBtn settingBtn w-fit':'newBtn settingBtn w-full'} onClick={changeEmail}>Change email</Button>
+                                                    </div>
+                                                    
                                                 </div>
 
                                             </div>
@@ -168,8 +178,15 @@ const SettingPage = () => {
                                                 <div className=' labelColor md:w-1/4 '>
                                                     <label htmlFor="Password " className='w-full'>Password </label>
                                                 </div>
-                                                <div className='flex'>
-                                                    <Button className='newBtn settingBtn w-fit'>Change Password</Button>
+                                             
+                                                <div className=' inputAndChangeBtn'>
+                                                <div className={beginPassChange ? 'w-7/12 flex align-items-center':'hidden'}>
+                                                    <input type="text" id='change-email' className={beginPassChange ?'w-full everyInput':'hidden'} />
+                                                </div>
+                                                    <div className={!beginPassChange ? 'w-full' :'w-5/12'}>
+                                                    <Button className={!beginPassChange ? 'newBtn settingBtn w-fit':'newBtn settingBtn w-full'} onClick={changePass}>Change Password</Button>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -320,8 +337,6 @@ const SettingPage = () => {
                                             </div>
                                         </div>
                                 </div>
-
-
                             </div>
                         </div>
 

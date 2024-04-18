@@ -1,16 +1,52 @@
 .githubBG{
   background: linear-gradient(297deg, rgb(33, 49, 65 ) 67% ,#233647 100%);
+
+}
+.textAndGitHubImg{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, calc(1vw + 0.1rem), 80px);
+    padding-top:clamp(10px, calc( 0.6vw + 0.1rem), 60px) ;
+    padding-bottom: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
+}
+.benefitsWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, calc( 1.8vw + 0.1rem), 800px);
+    padding-top:clamp(0px, calc(7vw + 0.5rem),500px) ;
+    padding-bottom: clamp(0px, calc(7vw + 0.5rem),500px);
+}
+.benefitsHeader{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: clamp(10px, calc( 1.3vw + 0.1rem), 300px);
+    padding-bottom: clamp(8px, calc(3vw + 0.1rem),300px);
+}
+.positionFlexCard{
+    margin-top: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
+    margin-bottom: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
 }
 .githubBG h4{
-    font-size: clamp(14px, calc( 1.1vw + 0.5rem ) , 70px);
+    font-size: clamp(14px, calc( 1.3vw + 0.1rem ) , 70px);
 }
-
+.howWeWork{
+    padding-bottom: clamp(40px, calc(2.5vw + 0.1rem),120px);
+}
+.howWeWorkDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(16px, calc(1.3vw + 0.1rem), 900px);
+}
 .bgImg{
     background-image: url('../../assets/BG\ gradient.png');
     min-height: 100vh;
     background-position:center;
     background-size:cover ;
     background-repeat: no-repeat;
+    padding-top: clamp(10px, calc( 1.2vw + 0.1rem), 300px);
+    padding-bottom: clamp(10px, calc( 2vw + 0.1rem), 300px);
 }
 .careerForBorder{
     box-shadow: -10px 5px 100px 0 #00000093 !important;
@@ -18,7 +54,12 @@
 .visibleInSmBorder{
     border-radius: 0.3rem;
 }
-
+.paragraphFont{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc(1.2vw + 0.1rem), 80px);
+    margin-bottom: clamp(56px, calc(7vw + 0.5rem),500px);
+}
 .positionsBorder::before{
     content: "";
     background-image: conic-gradient(transparent,#53acff 110deg ,#53acff 300deg,transparent 320deg );
@@ -31,7 +72,10 @@
     position: absolute;
     transition:all 0.5s
 }
-
+.githubImg{
+    height: clamp(44px, calc(11vw + 0.1rem),500px);
+    margin-bottom: 12px;
+}
 .emptyDivBorder::before{
     content: "";
     background-image: conic-gradient(transparent 240deg ,#53acff 300deg,transparent 360deg );
@@ -62,18 +106,21 @@
     border-radius: 1.6rem;
     overflow: hidden;
     background-color: #202020;
+    padding: clamp(16px, calc(2vw + 0.5rem), 500px);
+    display: flex;
+    position: relative;
   }
 
 .headerRight h3{
-    font-size: clamp(24px, calc(2.4vw + 0.5rem),140px);
+    font-size:clamp(24px, calc(2.6vw + 0.1rem),140px);
     font-weight: 700;
   }
 .headerRight p,.everySection p{
-    font-size: clamp(12px, calc(0.7vw + 0.5rem), 60px);
+    font-size:clamp(14px, calc( 1.2vw + 0.1rem ) , 70px);
     font-weight: 400;
 }
 .everySection h5 , .movingCards h5{
-    font-size: clamp(14px, calc( 0.9vw + 0.5rem ) , 70px);
+    font-size: clamp(15px, calc( 1.2vw + 0.1rem ) , 70px);
     font-weight: 700;
 }
 
@@ -84,17 +131,17 @@
     content: "";
     position: absolute;
     background-color: #FFFFFF;
-    width: 44.5%;
+    width: clamp(56px, calc(42vw + 0.1rem),6128px);
     height: 2px;
+    transform: translate(10px,0);
     top:25%;
-    left:55%;
 }
 .forFonts h3{
-    font-size:  clamp(20px, calc(2.5vw + 0.5rem), 140px);
+    font-size:clamp(20px, calc( 2.5vw + 0.1rem ) , 70px);
     font-weight: 700;
 }
 .forFonts p{
-    font-size: clamp(12px, calc( 0.9vw + 0.5rem ) , 70px);
+    font-size: clamp(12px, calc( 1.2vw + 0.1rem ) , 70px);
     font-weight: 400;
 }
 .middleCard{
@@ -106,13 +153,19 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: clamp(10px, calc( 0.7vw + 0.1rem), 150px);
+    padding-right: clamp(10px, calc( 0.7vw + 0.1rem), 150px);
+    padding-left: clamp(10px, calc( 0.7vw + 0.1rem), 150px);
+    padding-top: clamp(24px, calc(1.8vw + 0.1rem),90px);
+    padding-bottom: clamp(24px, calc(1.8vw + 0.1rem),90px);
     border-radius: 0.9rem 0.9rem 0 0;
 }
 .moveMiddle{
     position: absolute;
-    bottom: -1px;
+    bottom: 0;
     left: 30%;
+    transform: translate(12px, 20px);
     height: 100%;
 }
 
@@ -143,20 +196,27 @@
     background: linear-gradient(150deg,rgba(83, 172, 255, 0.2) 27% ,rgb(15, 23, 32) 60%);
 }
 .careerBtn{
-    padding: 0.7rem 1.8rem;
+    padding-top:  clamp(10px, calc( 0.5vw + 0.1rem), 60px);
+    padding-bottom:  clamp(10px, calc( 0.6vw + 0.1rem), 60px);
+    padding-right: clamp(20px, calc(1.2vw + 0.5rem), 70px);
+    padding-left: clamp(20px, calc(1.2vw + 0.5rem), 70px);
     border-radius: 0.2rem !important;
     font-weight: 600;
+    font-size: clamp(10px, calc( 0.7vw + 0.1rem), 60px);
 }
 .positionBtn{
-    padding: 0.4rem 1rem !important;
-    font-size:  clamp(10px, calc( 0.3vw + 0.5rem), 60px) !important;
+    padding-top: clamp(4px, calc( 0.3vw + 0.1rem), 60px) !important;
+    padding-bottom: clamp(4px, calc( 0.3vw + 0.1rem), 60px) !important;
+    padding-right: clamp(10px, calc( 0.7vw + 0.1rem), 60px) !important;
+    padding-left: clamp(10px, calc( 0.7vw + 0.1rem), 60px) !important;
+    font-size:  clamp(10px, calc( 0.6vw + 0.1rem), 60px) !important;
     font-weight: 600;
     border-radius: 0.2rem !important;
 }
 .careerImgSize{
-    height: clamp(50px, calc(10vw + 0.5rem), 300px);
-    width: clamp(111px, calc(19vw + 0.5rem), 500px);
-    padding-top:2rem;
+    height:clamp(50px, calc(9vw + 0.1rem), 300px);
+    width: clamp(111px, calc(24vw + 0.1rem), 500px);
+    padding-top:clamp(16px, calc(2.4vw + 0.1rem), 80px);
 }
 .positionsBorder{
     border-radius: 0.9rem 0.9rem 0 0;
@@ -182,8 +242,35 @@
         position: absolute;
         transition:all 0.5s
 }
+.textAndGitHub{
+    margin-top: clamp(24px, calc(3.2vw + 0.1rem),140px);
+    margin-bottom: clamp(24px, calc(3.2vw + 0.1rem),140px);
+}
+.cardsFont{
+    margin-right: clamp(20px, calc(1.8vw + 0.1rem),90px);
+    margin-left: clamp(20px, calc(1.8vw + 0.1rem),90px);
+}
 
 @media only screen and (max-width: 676px){
+    .bgImg{
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+    }
+    .joinTeamBG {
+        border-radius: 0.8rem;
+    }
+    .forShadow {
+        border-radius: 0.8rem;
+    }
+    .benefitsWrapper{
+        padding-top: 0;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+    }
 .headerRight h3{
     line-height: 2.25rem;
     font-weight: 700;
@@ -193,33 +280,26 @@
     font-weight: 400;
 }
 
-.forFonts h3{
-    line-height: 1.9rem;
-    font-weight: 700;
-}
 .forFonts p{
-    line-height: 1.125rem;
     font-weight: 400;
 }
 .vectorSize{
     width: 1.56rem;
 }
-.everySection h5{
-    line-height: 1.3125rem;
-    font-weight: 700;
-}
+
 .everySection p{
-    line-height: 0.94rem;
     font-weight: 400;
 }
 .cardsFont h5{
     font-size: 0.625rem;
-    line-height: 0.94rem;
     font-weight: 700;
 }
 .forFonts h3{
     line-height: 1.5rem;
     font-weight: 700;
+}
+.paragraphFont{
+    margin-bottom: 0;
 }
 .paragraphFont p{
     font-size: 0.625rem;

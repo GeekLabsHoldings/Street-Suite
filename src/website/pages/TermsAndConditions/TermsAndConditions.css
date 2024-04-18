@@ -1,17 +1,39 @@
 .termsHeader h1{
-    font-size: clamp(24px, calc(2.4vw + 0.5rem), 140px);
+    font-size:  clamp(24px, calc(2.5vw + 0.1rem), 140px);
     font-weight: 700;
 }
 .termsHeader p{
-    font-size:  clamp(10px, calc( 0.5vw + 0.5rem), 60px);
+    font-size:  clamp(10px, calc( 0.8vw + 0.1rem), 60px);
     font-weight: 400;
 }
+.termsAndConditionsPage{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(48px, calc(3.4vw + 0.1rem),200px);
+    padding-top: clamp(40px, calc(3.8vw + 0.1rem),200px);
+    padding-bottom: clamp(40px, calc(3.8vw + 0.1rem),200px);
+}
+.termsHeader{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, calc( 0.6vw + 0.1rem), 60px);
+}
+.termsContentParent{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(32px, calc(3.3vw + 0.1rem),160px);
+}
+.termsContent{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, calc(0.9vw + 0.1rem), 150px)    ;
+}
 .termsContent h4{
-    font-size:clamp(16px, calc(1.8vw + 0.5rem), 140px);
+    font-size:clamp(16px, calc(1.9vw + 0.1rem), 140px);
     font-weight: 700;
 }
 .termsContent p{
-    font-size: clamp(12px, calc( 0.5vw + 0.5rem), 60px);
+    font-size:clamp(12px, calc( 0.8vw + 0.1rem), 60px);
     font-weight: 400;
     text-align: justify;
 }

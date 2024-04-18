@@ -2,6 +2,7 @@
     position: absolute;
     top: -15%;
     left: 38%;
+    transform: translate(10px, -20px);
 }
 .flexibleBG {
     background-color: #252525;
@@ -26,8 +27,8 @@
 
 @media only screen and (max-width: 676px) {
     .goUp{
-        top: 90%;
-        left: 30%;
+        top: 120%;
+        left: 25%;
     }
     
 }

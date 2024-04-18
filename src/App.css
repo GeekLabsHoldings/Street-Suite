@@ -30,11 +30,14 @@
 30px=> clamp(14px, calc(2.5vw + 0.5rem), 80px);
 33px=> clamp(16px, calc(2.2vw + 0.1rem), 80px);
 48px=> clamp(24px, calc(2.8vw + 0.5rem),140px);
-64px=> clamp(24px, calc(3.6vw + 0.5rem),140px);
+64px=> clamp(24px, calc(3.8vw + 0.1rem),140px);
 96px => clamp(56px, calc(5.5vw + 0.5rem),140px);
-40px=> clamp(24px, calc(1.8vw + 0.5rem),90px); 
+40px=> clamp(24px, calc(1.8vw + 0.1rem),90px); 
 320px=> clamp(56px, calc(15vw + 0.1rem),500px)*/
 
+.css-1gw9vc6-JoyInput-input{
+  padding: clamp(4px, calc(0.2vw + 0.1rem), 100px) 0px !important;
+}
 body {
   color: #fff;
   overflow-x: hidden;

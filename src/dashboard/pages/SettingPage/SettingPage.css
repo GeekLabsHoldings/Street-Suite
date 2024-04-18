@@ -35,8 +35,6 @@
     gap:clamp(2px, calc( 0.1vw + 0.2rem), 20px);
 
 }
-/* .css-1e6y48t-MuiButtonBase-root-MuiButton-root:focus{
-} */
 .settingBtn{
     font-size:clamp(10px, calc( 0.5vw + 0.1rem), 60px) !important;
     border-radius: 0.2rem !important;
@@ -98,6 +96,12 @@
     border-radius: 0.2rem;
     color: white !important;
 }
+.inputAndChangeBtn{
+    display: flex;
+    transition: all 2s ;
+    gap: clamp(4px, calc( 0.15vw + 0.1rem), 60px);
+}
+
 .react-international-phone-country-selector-dropdown__list-item span{
     color: black !important;
 }
