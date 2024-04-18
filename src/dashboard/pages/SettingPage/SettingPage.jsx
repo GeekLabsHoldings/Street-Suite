@@ -4,7 +4,6 @@ import LoginImg from '../../assets/imgOfPerson.svg';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/system';
-import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
@@ -13,52 +12,17 @@ import ProperityAndSwitch from '../../components/properity-and-switch/ProperityA
 import './SettingPage.css';
 import { Helmet } from 'react-helmet-async';
 
-const grey = {
-    50: '#F3F6F9',
-    100: '#E5EAF2',
-    200: '#DAE2ED',
-    300: '#C7D0DD',
-    400: '#B0B8C4',
-    500: '#9DA8B7',
-    600: '#6B7A90',
-    700: '#434D5B',
-    800: '#303740',
-    900: '#1C2025',
-};
 
-const TextareaAutosize = styled(BaseTextareaAutosize)(
-    ({ theme }) => `
-box-sizing: border-box;
-width: 100%;
-font-family: "Poppins", sans-serif;
-font-size: 0.875rem;
-font-weight: 400;
-line-height: 1.5;
-padding: 8px 0.75rem;
-border-radius: 0.2rem;
-min-height:5%;
-color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-background: #2E2E2E ;
-border: 1px solid #979797;
-
-&:hover {
-    border-color: #ffffff;
-}
-
-&:focus {
-    border-color: #ffffff;
-
-}
-&:focus-visible {
-    outline: 0;
-}
-`,
-);
 
 const SettingPage = () => {
 
     const [changeClass, setChangeClass] = useState('');
-    const [linkClicked,setLinkClicked] = useState('')
+    const [linkClicked,setLinkClicked] = useState('');
+    const [beginChange,setBeginChange] = useState(false);
+
+    const changeValue = ()=>{
+        setBeginChange(true);
+    }
 
     const indicatorHandler = (e) => {
         setChangeClass(e.currentTarget.id);
@@ -73,8 +37,12 @@ const SettingPage = () => {
             backgroundColor: '#53ACFF',
             borderRadius: '0.3rem',
             padding: '0 0.3rem'
+        },
+        changeBtn:{
+            display:'none !important'
         }
     }
+
 
     return (
 
@@ -165,7 +133,7 @@ const SettingPage = () => {
                                                     <label htmlFor="about" className='w-full'>About me</label>
                                                 </div>
                                                 <div className=" md:w-1/2 ">
-                                                    <TextareaAutosize id='about' aria-label="empty textarea" />
+                                                    <textarea name="aboutMe" id="about" className='w-full textArea everyInput ' rows="2"></textarea>
                                                 </div>
                                             </div>
 
@@ -175,22 +143,23 @@ const SettingPage = () => {
                             </div>
                             {/* private details section */}
                             <div className="md:w-1/2 flex justify-center" id='security' onClick={indicatorHandler}>
-                                <div className="w-10/12 md:py-4 sm:py-3 leftSectionSetting sectionHeader">
+                                <div className="w-11/12 md:pb-6 md:pt-10 sm:py-3 leftSectionSetting sectionHeader">
                                 <div className='nameAndDescEverySec spaceBottom'>
                                         <h3>Private Details</h3>
                                         <p>This information will be publicly displayed and visible for all users.</p>
                                         </div>
 
-                                    <div className=' flex flex-col md:gap-4 sm:gap-2 mx-auto '>
+                                    <div className=' flex flex-col md:gap-4 sm:gap-2 mx-auto'>
 
-                                        <div className='flex md:flex-col gap-2'>
+                                        <div className='flex md:flex-col md:gap-2 sm:gap-8'>
                                             {/* change email */}
                                             <div className='md:flex align-items-center '>
                                                 <div className=' labelColor md:w-1/4 '>
                                                     <label htmlFor="Email" className='w-full'>Email</label>
                                                 </div>
                                                 <div className='flex'>
-                                                    <Button className='newBtn settingBtn w-fit'>Change email</Button>
+                                                    <Button className={!beginChange ? 'newBtn settingBtn w-fit' : 'hidden'} onClick={changeValue}>Change email</Button>
+                                                    <input type="text" id='change-email' className={beginChange ?'w-full everyInput':'hidden'} />
                                                 </div>
 
                                             </div>
@@ -212,7 +181,6 @@ const SettingPage = () => {
                                             </div>
                                             <div className="md:w-1/2 ">
                                                 <input type="text" id='first-name' className='w-full everyInput' />
-
                                             </div>
                                         </div>
 
@@ -241,7 +209,7 @@ const SettingPage = () => {
                                         </div>
 
                                         <div className='w-full md:flex justify-end md:px-3 sm:py-3'>
-                                            <Button className='newBtn settingBtn w-fit md:w-fit sm:w-full'>Save Changes</Button>
+                                            <Button className='newBtn widerBtn w-fit md:w-fit sm:w-full'>Save Changes</Button>
 
                                         </div>
                                     </div>
@@ -319,10 +287,10 @@ const SettingPage = () => {
 
                         <div className="md:w-1/2 settingCardBorder" id='notification' onClick={indicatorHandler}>
 
-
+                        {/* notifications section */}
                             <div className='settingBorderContainer largeDiv'>
                                 <div className="w-11/12 mx-auto px-3 py-4 flex flex-col md:gap-10 sm:gap-2 ">
-                                    {/* notifications section */}
+                                    
                                     <div className="md:flex justify-between leftSectionSetting sectionHeader">
                                         <h3>Notifications & Alerts</h3>
                                         <ProperityAndSwitch title='Allow Notifications' />
@@ -333,23 +301,24 @@ const SettingPage = () => {
                                             <div className='p-3 sm:mb-4 forborderRaduis'>
                                                 <div className='optionAndDesc '>
                                                     <ProperityAndSwitch title='Pause all' />
-                                                    <span>Temporarily pause notification for 4 hours</span>
+                                                    <span className='lightTxt'>Temporarily pause notification for 4 hours</span>
                                                 </div>
                                                 <div className='optionAndDesc'>
                                                     <ProperityAndSwitch title='Quiet mode' />
-                                                    <span>Automatically mute notifications at night</span>
+                                                    <span className='lightTxt'>Automatically mute notifications at night</span>
                                                 </div>
                                                 <div className='optionAndDesc'>
                                                     <ProperityAndSwitch title='Notify via Email' />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="md:w-1/2 md:flex justify-end">
-                                            <div className="md:w-2/5 flex h-full align-items-end">
-                                                <Button className='newBtn settingBtn w-full'>Save Changes</Button>
+                                     
+                                    </div>
+                                    <div className=" md:flex justify-end">
+                                            <div className="flex ">
+                                                <Button className='newBtn widerBtn'>Save Changes</Button>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
 
 
@@ -370,7 +339,7 @@ const SettingPage = () => {
                                         <div className='md:w-2/3 premuimBorder'>
                                             <div className='flex flex-col align-items-center md:p-3 sm:py-3 gap-2 premuimContainer premuimDiv'>
                                                 <div className='bottomBorder p-3 sm:w-10/12 sm:text-center md:w-fit  '>
-                                                    <h4>premium Plan</h4>
+                                                    <h4>Premium Plan</h4>
                                                 </div>
                                                 <div className='flex align-items-center'>
                                                     <h1>$15</h1>
@@ -382,7 +351,7 @@ const SettingPage = () => {
                                 </div>
                                 <div className="md:w-10/12 ">
                                     <div className='rightSecAccount flex flex-col gap-4'>
-                                        <h5>In Voice:</h5>
+                                        <h5>Invoice:</h5>
 
                                         <div>
 

@@ -41,7 +41,19 @@
     font-size:clamp(10px, calc( 0.5vw + 0.1rem), 60px) !important;
     border-radius: 0.2rem !important;
     font-weight: 600 !important;
-    padding: clamp(1.6px, calc( 0.08vw + 0.1rem), 60px) clamp(8px, calc( 0.6vw + 0.1rem ) , 70px) !important;
+    padding-top: clamp(1.6px, calc( 0.3vw + 0.1rem), 60px) !important;
+    padding-bottom: clamp(1.6px, calc( 0.3vw + 0.1rem), 60px) !important;
+    padding-left: clamp(8px, calc( 0.6vw + 0.1rem ) , 70px) !important;
+    padding-right: clamp(8px, calc( 0.6vw + 0.1rem ) , 70px) !important;
+}
+.widerBtn{
+    font-size:clamp(10px, calc( 0.5vw + 0.1rem), 60px) !important;
+    border-radius: 0.2rem !important;
+    font-weight: 600 !important;
+    padding-top: clamp(1.6px, calc( 0.3vw + 0.1rem), 60px) !important;
+    padding-bottom: clamp(1.6px, calc( 0.3vw + 0.1rem), 60px) !important;
+    padding-left: clamp(8px, calc( 1.2vw + 0.1rem ) , 70px) !important;
+    padding-right: clamp(8px, calc( 1.2vw + 0.1rem ) , 70px) !important;
 }
 .disconnetBtn{
     background: transparent;  
@@ -93,8 +105,9 @@
     border:1px solid #979797;
     border-radius:0.2rem;
     background-color:#2E2E2E;
+    padding: 0 4px;
 }
-.optionAndDesc span{
+.lightTxt{
     color: #979797;
     font-size: clamp(11px, calc( 0.4vw + 0.1rem), 60px);
     font-weight: 400;
@@ -200,7 +213,10 @@
     position: absolute;
     transition:all 0.5s
 }
-
+.textArea{
+    overflow-y: auto;
+    resize: none;
+}
 .settingCardBorder:hover::before,.premuimBorder:hover::before,.grayPositionBorder:hover::before{
 transform:translate(-50%,-50%) rotate(0deg);
 }
@@ -263,8 +279,7 @@ position: relative;
         font-weight: 400;
     }
     .txtUnderProperities p{
-
-        line-height: 1.125rem;
+        font-size: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
         font-weight: 400;
     }
     .premuimDiv h1{

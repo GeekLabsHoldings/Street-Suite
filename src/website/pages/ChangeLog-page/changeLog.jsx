@@ -1,7 +1,6 @@
 
 import FormLabel from '@mui/joy/FormLabel';
 import './changeLog.css';
-import { TextareaAutosize } from '../../components/FormComponent';
 import { Helmet } from 'react-helmet-async';
 import Button from '@mui/material/Button';
 
@@ -17,12 +16,13 @@ const ChangeLogs = () => {
             </Helmet>
 
             <div className="Msglayout">
-                <div className='row forBG changeLogLayout sm:px-7 sm:py-10'>
-                    {/* description of new changes and why we do it */}
-                    <div className="col-lg-6 col-sm-12">
-                        <div className="caption col-lg-8 m-auto">
+                <div className=' forBG changeLogLayout sm:px-7 sm:py-10'>
+                    <div className='row'>
+                        {/* description of new changes and why we do it */}
+                    <div className="col-lg-6 col-sm-12 ">
+                        <div className="caption col-lg-8 m-auto ">
                             <div className='col-lg-10 col-sm-8 md:pb-6 md:flex flex-col gap-4'>
-                               <div>
+                               <div className='updatesChangeLog'>
                                <h5 className="highlight d-inline-block">Street Suite Updates</h5>
                                </div>
                                 <h1>We’ve Made Some Changes</h1>
@@ -59,9 +59,7 @@ const ChangeLogs = () => {
                                 <div className='pt-5 '>
                                     <h3 className='md:pb-4'>Have A Feature In Mind?</h3>
                                     <FormLabel className='mb-1 labelfont'>Send us a message</FormLabel>
-                                    <TextareaAutosize sx={{
-                                        minHeight: '10%'
-                                    }} aria-label="empty textarea" placeholder="......" />
+                                     <textarea placeholder='....' name="aboutMe" id="about" className='w-full textArea msgTextArea' rows="4"></textarea>
 
                                 </div>
                                 <div>
@@ -100,6 +98,7 @@ const ChangeLogs = () => {
 
                         </div>
 
+                    </div>
                     </div>
 
                 </div>

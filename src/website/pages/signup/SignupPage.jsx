@@ -2,6 +2,9 @@ import FormComponent from "../../components/FormComponent";
 import LogoIcon from '../../assets/street suite logo-04 1.svg';
 import './SignupPage.css';
 import { Helmet } from "react-helmet-async";
+import Input from '@mui/joy/Input';
+import FormLabel from '@mui/joy/FormLabel';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const SignupPage = () => {
   return (
@@ -37,7 +40,7 @@ const SignupPage = () => {
               <div className='inForm'>
                 <div className='md:w-10/12 formcontent'>
                   {/* common form for signup and contact us */}
-                  <FormComponent needFirstPrt={true} purpose='Create a new account' label1='Full Name' label2='Email' label3='Password' needCheckbox={true} btnTxt='Sign Up' textArea={false} />
+                  <FormComponent needForthInput={true} label4='Password' needFirstPrt={true} purpose='Create a new account' label1='First Name' label2='Last Name' label3='Email' needCheckbox={true} btnTxt='Sign Up' textArea={false} />
                 </div>
               </div>
             </div>
