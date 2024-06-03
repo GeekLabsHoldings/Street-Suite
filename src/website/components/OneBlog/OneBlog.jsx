@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FirstAvatar from "../../assets/avatar1 with flag.svg";
 import SecondAvatar from "../../assets/avatar2 with flag.svg";
 import ThirdAvatar from "../../assets/avatar3 with flag.svg";
@@ -12,6 +12,7 @@ import TimeForRead from "../TimeForRead/TimeForRead";
 import "./OneBlog.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../Loader/Loader";
 
 const OneBlog = () => {
   // to enable navigation
@@ -29,12 +30,22 @@ const OneBlog = () => {
 
   // to navigate to specific blog page
   const onClickHandler = () => {
-    navigate("./specific-blog");
+    navigate("./");
   };
+
+  function titleToSlug(title) {
+    // Convert to lowercase
+    title = title.toLowerCase();
+    // Replace spaces with hyphens
+    title = title.replace(/\s+/g, "-");
+    // Remove any characters that are not alphanumeric or hyphens
+    title = title.replace(/[^a-z0-9-]/g, "");
+    return title;
+  }
 
   const [blogsList, setBlogsList] = useState([]);
   const [pageLoading, setPageLoading] = useState(false);
-  
+
   async function getAllBlogs() {
     try {
       // window.scrollTo(0, 0);
@@ -54,6 +65,14 @@ const OneBlog = () => {
     getAllBlogs();
   }, []);
 
+  if (blogsList.length === 0 || pageLoading) {
+    return (
+      <div className="h-[100vh] flex justify-center items-start">
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     <div className="md:flex sm:my-2">
       <div className="md:w-3/5 verticalSeparator ">
@@ -61,26 +80,35 @@ const OneBlog = () => {
           return (
             <div
               className="flex cursor-pointer firstBlog bottomBorder "
-              onClick={onClickHandler}
               key={idx}
             >
-              <div className="sm:w-7/12 md:w-1/2 ">
-                <div className="oneBlogCont">
+              <Link
+                to={`/blogs/${titleToSlug(blog.title)}`}
+                target="_black"
+                className="block sm:w-7/12 md:w-1/2"
+              >
+                <div className=" oneBlogCont">
                   <h3>{blog.title}</h3>
                   <p>{blog.description}</p>
                   <TimeForRead />
                 </div>
-              </div>
+              </Link>
 
-              <div className="sm:w-5/12 md:w-1/2 ">
-                <div className="md:w-10/12 sm:w-11/12 ">
-                  <img
-                    src={`https://abdulrahman.onrender.com/${blog.image_url}`}
-                    alt="1"
-                    className="w-full"
-                  />
+              <Link
+                to={`/blogs/${titleToSlug(blog.title)}`}
+                target="_black"
+                className="sm:w-5/12 md:w-1/2"
+              >
+                <div className=" ">
+                  <div className="md:w-10/12 sm:w-11/12 ">
+                    <img
+                      src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                      alt={blog.title}
+                      className="w-full"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           );
         })}
@@ -149,8 +177,6 @@ const OneBlog = () => {
           </p>
         </div>
 
-   
-
         {/* ad section */}
         <div className="md:hidden sm:visible flex py-4 ">
           <div className=" w-full">
@@ -199,26 +225,35 @@ const OneBlog = () => {
           return (
             <div
               className="flex cursor-pointer firstBlog bottomBorder "
-              onClick={onClickHandler}
               key={idx}
             >
-              <div className="sm:w-7/12 md:w-1/2 ">
-                <div className="oneBlogCont">
+              <Link
+                to={`/blogs/${titleToSlug(blog.title)}`}
+                target="_black"
+                className="block sm:w-7/12 md:w-1/2"
+              >
+                <div className=" oneBlogCont">
                   <h3>{blog.title}</h3>
                   <p>{blog.description}</p>
                   <TimeForRead />
                 </div>
-              </div>
+              </Link>
 
-              <div className="sm:w-5/12 md:w-1/2 ">
-                <div className="md:w-10/12 sm:w-11/12 ">
-                  <img
-                    src={`https://abdulrahman.onrender.com/${blog.image_url}`}
-                    alt="1"
-                    className="w-full"
-                  />
+              <Link
+                to={`/blogs/${titleToSlug(blog.title)}`}
+                target="_black"
+                className="sm:w-5/12 md:w-1/2"
+              >
+                <div className=" ">
+                  <div className="md:w-10/12 sm:w-11/12 ">
+                    <img
+                      src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                      alt={blog.title}
+                      className="w-full"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           );
         })}

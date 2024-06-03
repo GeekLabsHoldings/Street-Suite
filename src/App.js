@@ -87,7 +87,7 @@ function App() {
               <Route path='careers' element={<CareersPage />} />
               <Route path='careers/positions' element={<PositionsPage />} />
               <Route path='blogs' element={<BlogPage />} />
-              <Route path='blogs/specific-blog' element={<SpecificArticle />} />
+              <Route path='blogs/:id' element={<SpecificArticle />} />
 
               <Route path='signin' element={<SignIn />} />
               <Route path='terms&conditions' element={< TermsAndConditions />} />
