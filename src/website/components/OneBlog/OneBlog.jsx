@@ -28,10 +28,6 @@ const OneBlog = () => {
     navigate("/dashboard/training");
   };
 
-  // to navigate to specific blog page
-  const onClickHandler = () => {
-    navigate("./");
-  };
 
   function titleToSlug(title) {
     // Convert to lowercase
@@ -252,7 +248,6 @@ const OneBlog = () => {
         <div className=" bottomBorder parentOfBlackBg ">
           <div
             className="flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer "
-            onClick={onClickHandler}
           >
             <div className="md:w-1/3 sm:w-1/2 ps-3 sm:pt-1">
               <div className="w-10/12 ">
@@ -391,7 +386,6 @@ const OneBlog = () => {
           {/* one blog */}
           <div
             className="md:visible sm:hidden flex justify-between bottomBorder py-8 cursor-pointer "
-            onClick={onClickHandler}
           >
             <div className="w-5/12">
               <div className="w-11/12">
@@ -414,7 +408,6 @@ const OneBlog = () => {
           <div className="md:visible sm:hidden py-8 ">
             <div
               className="w-11/12 mx-auto flex flex-col gap-3 cursor-pointer"
-              onClick={onClickHandler}
             >
               <div className="lastInRight">
                 <h3>
