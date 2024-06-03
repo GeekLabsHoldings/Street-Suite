@@ -34,6 +34,7 @@ const OneBlog = () => {
 
   const [blogsList, setBlogsList] = useState([]);
   const [pageLoading, setPageLoading] = useState(false);
+  
   async function getAllBlogs() {
     try {
       // window.scrollTo(0, 0);
@@ -48,6 +49,7 @@ const OneBlog = () => {
       setPageLoading(false);
     }
   }
+
   useEffect(() => {
     getAllBlogs();
   }, []);
@@ -55,47 +57,33 @@ const OneBlog = () => {
   return (
     <div className="md:flex sm:my-2">
       <div className="md:w-3/5 verticalSeparator ">
+        {blogsList.slice(0, 4).map((blog, idx) => {
+          return (
+            <div
+              className="flex cursor-pointer firstBlog bottomBorder "
+              onClick={onClickHandler}
+              key={idx}
+            >
+              <div className="sm:w-7/12 md:w-1/2 ">
+                <div className="oneBlogCont">
+                  <h3>{blog.title}</h3>
+                  <p>{blog.description}</p>
+                  <TimeForRead />
+                </div>
+              </div>
 
-
-{
-  blogsList.slice(0,4).map((blog, idx) => {
-    return (
-      <div
-      className="flex cursor-pointer firstBlog bottomBorder "
-      onClick={onClickHandler}
-      key={idx}
-    >
-      <div className="sm:w-7/12 md:w-1/2 ">
-        <div className="oneBlogCont">
-          <h3>{blog.title}</h3>
-          <p>
-            {blog.description}
-          </p>
-          <TimeForRead />
-        </div>
-      </div>
-
-      <div className="sm:w-5/12 md:w-1/2 ">
-        <div className="md:w-10/12 sm:w-11/12 ">
-        <img src={`https://abdulrahman.onrender.com/${blog.image_url}`} alt="1" className="w-full" />
-        </div>
-      </div>
-    </div>
-    );
-  })
-}
-
-
-
-
-
-
-
-
-
-
-
-
+              <div className="sm:w-5/12 md:w-1/2 ">
+                <div className="md:w-10/12 sm:w-11/12 ">
+                  <img
+                    src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                    alt="1"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
 
         {/* blog about our training */}
         <div
@@ -153,8 +141,6 @@ const OneBlog = () => {
           </div>
         </div>
 
-
-
         <div className="textDiv bottomBorder">
           <h6>Private Equity: </h6>
           <p>
@@ -163,53 +149,7 @@ const OneBlog = () => {
           </p>
         </div>
 
-        {/* 2 different blogs about same thing and common image */}
-        {/* <div className=" bottomBorder twoSimilarBlogs">
-          <div className="w-2/5 md:pt-6 sm:pt-4">
-            <div
-              className="oneBlogCont bottomBorder cursor-pointer textToTwoBlogs"
-              onClick={onClickHandler}
-            >
-              <div className=" flex flex-col align-items-center md:gap-4 sm:gap-2">
-                <h3>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore.
-                </p>
-              </div>
-              <TimeForRead />
-            </div>
-
-            <div
-              className="oneBlogCont md:pb-0 pt-3 cursor-pointer textToTwoBlogs"
-              onClick={onClickHandler}
-            >
-              <div className=" flex flex-col align-items-center md:gap-4 sm:gap-2">
-                <h3>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore.
-                </p>
-              </div>
-              <TimeForRead />
-            </div>
-          </div>
-
-          <div className="w-1/2">
-            <div className=" py-8 md:pe-3 flex justify-center">
-              <div
-                className="sm:w-11/12 md:w-9/12 cursor-pointer"
-                onClick={onClickHandler}
-              >
-                <div className="divNextToTwoDivs"></div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+   
 
         {/* ad section */}
         <div className="md:hidden sm:visible flex py-4 ">
@@ -255,64 +195,33 @@ const OneBlog = () => {
           </div>
         </div>
 
+        {blogsList.slice(4, 8).map((blog, idx) => {
+          return (
+            <div
+              className="flex cursor-pointer firstBlog bottomBorder "
+              onClick={onClickHandler}
+              key={idx}
+            >
+              <div className="sm:w-7/12 md:w-1/2 ">
+                <div className="oneBlogCont">
+                  <h3>{blog.title}</h3>
+                  <p>{blog.description}</p>
+                  <TimeForRead />
+                </div>
+              </div>
 
-
-
-
-
-
-        {
-  blogsList.slice(4,8).map((blog, idx) => {
-    return (
-      <div
-      className="flex cursor-pointer firstBlog bottomBorder "
-      onClick={onClickHandler}
-      key={idx}
-    >
-      <div className="sm:w-7/12 md:w-1/2 ">
-        <div className="oneBlogCont">
-          <h3>{blog.title}</h3>
-          <p>
-            {blog.description}
-          </p>
-          <TimeForRead />
-        </div>
-      </div>
-
-      <div className="sm:w-5/12 md:w-1/2 ">
-        <div className="md:w-10/12 sm:w-11/12 ">
-        <img src={`https://abdulrahman.onrender.com/${blog.image_url}`} alt="1" className="w-full" />
-        </div>
-      </div>
-    </div>
-    );
-  })
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              <div className="sm:w-5/12 md:w-1/2 ">
+                <div className="md:w-10/12 sm:w-11/12 ">
+                  <img
+                    src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                    alt="1"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       <div className="md:w-2/5 sm:w-full mx-auto flex flex-col align-items-center ">
