@@ -28,14 +28,12 @@ const PrivateEquitiesPage = () => {
 
     // function that open & close collaps 
     const openCollaps = (e) => {
-
         // slide up all collaps are open
         $(".collapse_body").not($(e.target).parents(".collapse_header").siblings(".collapse_body")).slideUp(300);
         $(".collapse_header").not($(e.target).parents(".collapse_header")).removeClass("open")
 
         // toggle slide collaps by click
         $(e.target).parents(".collapse_header").siblings(".collapse_body").slideToggle(300);
-
         $(e.target).parents(".collapse_header").addClass("open");
     }
 
