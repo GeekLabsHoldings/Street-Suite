@@ -127,7 +127,7 @@ const OneBlog = () => {
   return (
     <div className="md:flex sm:my-2">
       <div className="md:w-3/5 verticalSeparator ">
-        {blogsList.slice(0, 4).map((blog, idx) => {
+        {blogsList.slice(1, 4).map((blog, idx) => {
           return (
             <div
               className="flex cursor-pointer firstBlog bottomBorder "
@@ -318,28 +318,29 @@ const OneBlog = () => {
 
       <div className="md:w-2/5 sm:w-full mx-auto flex flex-col align-items-center ">
         {/* one blog appear in large screen and appear in another form and position in small screens */}
-        <div
-          className="md:visible sm:hidden w-9/12 flex md:pe-3 py-4 bottomBorder cursor-pointer"
-          onClick={onClickHandler}
-        >
-          <div className="w-11/12">
+        <div className="md:visible sm:hidden w-9/12 flex md:pe-3 py-4 bottomBorder cursor-pointer">
+          <Link to={`/blogs/${titleToSlug(blogsList[0].title)}`} target="_blank" className="w-11/12 block">
             <div className="md:py-7">
-              <div className="divForImgSm h-52"></div>
+              <div className="divForImgSm h-52">
+                <img
+                  src={`https://abdulrahman.onrender.com/${blogsList[0].image_url}`}
+                  alt={blogsList[0].title}
+                  className="w-full h-full"
+                />
+              </div>
             </div>
             <div className="w-full gap-3 px-2 flex flex-col justify-center pb-8">
               <div className=" flex flex-col align-items-center md:gap-4 oneBlogCont">
-                <h3>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore.
-                </p>
+                <h3>{blogsList[0].title}</h3>
+                <p>{blogsList[0].description}</p>
               </div>
 
-              <TimeForRead />
+              <TimeForRead
+                datePosted={timeAgo(blogsList[0].date_posted)}
+                timeRead={timeReadDuration(blogsList[0].time_reading)}
+              />
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* about our leader board */}
