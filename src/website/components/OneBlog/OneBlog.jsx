@@ -65,12 +65,63 @@ const OneBlog = () => {
     getAllBlogs();
   }, []);
 
-  if (blogsList.length === 0 || pageLoading) {
+  if (pageLoading) {
     return (
       <div className="h-[100vh] flex justify-center items-start">
         <Loader />
       </div>
     );
+  }
+
+  if (blogsList.length === 0) {
+    return (
+      <div className="h-[100vh] flex justify-center items-start">
+        <Loader />
+      </div>
+    );
+  }
+
+  function timeAgo(dateString) {
+    if (dateString) {
+      const date = new Date(dateString);
+      const now = new Date();
+      const diffInSeconds = Math.floor((now - date) / 1000);
+
+      const intervals = [
+        { label: "year", seconds: 31536000 },
+        { label: "month", seconds: 2592000 },
+        { label: "week", seconds: 604800 },
+        { label: "day", seconds: 86400 },
+        { label: "hour", seconds: 3600 },
+        { label: "minute", seconds: 60 },
+        { label: "second", seconds: 1 },
+      ];
+
+      for (const interval of intervals) {
+        const count = Math.floor(diffInSeconds / interval.seconds);
+        if (count >= 1) {
+          return `${count} ${interval.label}${count !== 1 ? "s" : ""} ago`;
+        }
+      }
+      return "just now";
+    } else {
+      return "n days ago";
+    }
+  }
+
+  function timeReadDuration(timeString) {
+    if (timeString) {
+      // Split the time string into hours, minutes, and seconds
+      const [hours, minutes, seconds] = timeString?.split(":").map(Number);
+
+      // Convert the entire time to minutes
+      const totalMinutes = hours * 60 + minutes + Math.round(seconds / 60);
+
+      // Return the formatted string
+      return `${totalMinutes} min read`;
+    } else {
+      return `n min read`;
+    }
   }
 
   return (
@@ -83,14 +134,17 @@ const OneBlog = () => {
               key={idx}
             >
               <Link
-                to={`/blogs/${titleToSlug(blog.title)}`}
+                to={`/blogs/${titleToSlug(blog?.title)}`}
                 target="_black"
                 className="block sm:w-7/12 md:w-1/2"
               >
                 <div className=" oneBlogCont">
-                  <h3>{blog.title}</h3>
-                  <p>{blog.description}</p>
-                  <TimeForRead />
+                  <h3>{blog?.title}</h3>
+                  <p>{blog?.description}</p>
+                  <TimeForRead
+                    datePosted={timeAgo(blog?.date_posted)}
+                    timeRead={timeReadDuration(blog?.time_reading)}
+                  />
                 </div>
               </Link>
 
@@ -228,14 +282,17 @@ const OneBlog = () => {
               key={idx}
             >
               <Link
-                to={`/blogs/${titleToSlug(blog.title)}`}
+                to={`/blogs/${titleToSlug(blog?.title)}`}
                 target="_black"
                 className="block sm:w-7/12 md:w-1/2"
               >
                 <div className=" oneBlogCont">
-                  <h3>{blog.title}</h3>
-                  <p>{blog.description}</p>
-                  <TimeForRead />
+                  <h3>{blog?.title}</h3>
+                  <p>{blog?.description}</p>
+                  <TimeForRead
+                    datePosted={timeAgo(blog?.date_posted)}
+                    timeRead={timeReadDuration(blog?.time_reading)}
+                  />
                 </div>
               </Link>
 

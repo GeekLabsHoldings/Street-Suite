@@ -4,6 +4,7 @@ import "./SpecificBlog.css";
 import { useParams } from "react-router-dom/dist";
 import axios from "axios";
 import { useEffect } from "react";
+import Loader from "../../components/Loader/Loader";
 
 const SpecificBlog = () => {
   const { id } = useParams();
@@ -29,6 +30,22 @@ const SpecificBlog = () => {
     getBlogDetails();
   }, []);
 
+  if (pageLoading) {
+    return (
+      <div className="h-[100vh] flex justify-center items-center">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (blogDetails === null) {
+    return (
+      <div className="h-[100vh] flex justify-center items-center">
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     // page to show one blog and its all details
     <div className="pageBG">
@@ -39,17 +56,19 @@ const SpecificBlog = () => {
             <h1>{blogDetails?.title}</h1>
           </div>
           {/* big image about it */}
-          <div className="divForImgLg md:h-96 sm:h-40 md:my-5 sm:mt-2 sm:mb-5"></div>
+          <div className="divForImgLg md:h-96 sm:h-40 md:my-5 sm:mt-2 sm:mb-5">
+            <img src={blogDetails?.image} alt={blogDetails?.title} className="w-full h-full" />
+          </div>
         </div>
         {/* blog title */}
         <div className="headerFotTxtSec">
-          <h3>{blogDetails?.title}</h3>
+          <h3>{blogDetails?.description}</h3>
         </div>
         {/* blog description */}
         <div className="md:flex">
           <div className="md:w-2/3">
             <div className="txtSection w-11/12">
-              <p>{blogDetails?.description}</p>
+              <p>{blogDetails?.content}</p>
             </div>
           </div>
           <div className="md:w-1/3">
