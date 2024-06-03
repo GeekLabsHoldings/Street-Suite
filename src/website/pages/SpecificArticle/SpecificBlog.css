@@ -8,8 +8,8 @@
 }
 .divForImgSm{
     border-radius: 0.6rem;
-    height: clamp(110px, calc(10vw + 0.1rem),600px);
-    width: clamp(181px, calc(20vw + 0.1rem),900px);
+    /* height: clamp(110px, calc(10vw + 0.1rem),600px);
+    width: clamp(181px, calc(20vw + 0.1rem),900px); */
 }
 .largeHeader h1{
     font-size: clamp(20px, calc(3.7vw + 0.5rem),140px);
