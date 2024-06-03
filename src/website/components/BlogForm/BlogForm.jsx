@@ -14,7 +14,7 @@ const BlogForm = ({ classname }) => {
         <div className="similarBlogs flex flex-col md:gap-3 sm:gap-2">
           <h5>China Kicks U.S Butt In The Latest Whatever</h5>
           <div className="bluecolor">
-            <h6>25 MINS AGO</h6>
+            <span>25 MINS AGO</span>
           </div>
         </div>
       </div>
