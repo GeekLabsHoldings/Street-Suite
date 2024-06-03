@@ -299,3 +299,16 @@ font-weight: 700;
     padding: 0;
 }
 }
+
+/* No blogs found Alert */
+.alert-message {
+    color: #ff0000; /* Red text color for emphasis */
+    background-color: #232323;
+    border: 1px solid #1F2021;
+    padding: 20px 25px; /* Padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 26px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align text */
+    margin: 20px 0; /* Margin for spacing */
+}

@@ -76,7 +76,7 @@ const OneBlog = () => {
   if (blogsList.length === 0) {
     return (
       <div className="h-[100vh] flex justify-center items-start">
-        <Loader />
+        <p class="alert-message">No blogs found</p>
       </div>
     );
   }

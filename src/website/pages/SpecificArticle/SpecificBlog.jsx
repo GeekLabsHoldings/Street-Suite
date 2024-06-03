@@ -41,7 +41,7 @@ const SpecificBlog = () => {
   if (blogDetails === null) {
     return (
       <div className="h-[100vh] flex justify-center items-center">
-        <Loader />
+        <p class="alert-message">No blog found</p>
       </div>
     );
   }
