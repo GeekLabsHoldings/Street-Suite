@@ -28,7 +28,6 @@ const OneBlog = () => {
     navigate("/dashboard/training");
   };
 
-
   function titleToSlug(title) {
     // Convert to lowercase
     title = title.toLowerCase();
@@ -246,9 +245,7 @@ const OneBlog = () => {
 
         {/* feature */}
         <div className=" bottomBorder parentOfBlackBg ">
-          <div
-            className="flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer "
-          >
+          <div className="flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer ">
             <div className="md:w-1/3 sm:w-1/2 ps-3 sm:pt-1">
               <div className="w-10/12 ">
                 <div className="divForBlackBg"></div>
@@ -314,7 +311,11 @@ const OneBlog = () => {
       <div className="md:w-2/5 sm:w-full mx-auto flex flex-col align-items-center ">
         {/* one blog appear in large screen and appear in another form and position in small screens */}
         <div className="md:visible sm:hidden w-9/12 flex md:pe-3 py-4 bottomBorder cursor-pointer">
-          <Link to={`/blogs/${titleToSlug(blogsList[0].title)}`} target="_blank" className="w-11/12 block">
+          <Link
+            to={`/blogs/${titleToSlug(blogsList[0].title)}`}
+            target="_blank"
+            className="w-11/12 block"
+          >
             <div className="md:py-7">
               <div className="divForImgSm h-52">
                 <img
@@ -384,9 +385,7 @@ const OneBlog = () => {
           </div>
 
           {/* one blog */}
-          <div
-            className="md:visible sm:hidden flex justify-between bottomBorder py-8 cursor-pointer "
-          >
+          <div className="md:visible sm:hidden flex justify-between bottomBorder py-8 cursor-pointer ">
             <div className="w-5/12">
               <div className="w-11/12">
                 <div className=" chinaImgDiv h-28"></div>
@@ -406,9 +405,7 @@ const OneBlog = () => {
           </div>
           {/* one blog */}
           <div className="md:visible sm:hidden py-8 ">
-            <div
-              className="w-11/12 mx-auto flex flex-col gap-3 cursor-pointer"
-            >
+            <div className="w-11/12 mx-auto flex flex-col gap-3 cursor-pointer">
               <div className="lastInRight">
                 <h3>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
