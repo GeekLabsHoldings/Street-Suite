@@ -20,15 +20,16 @@ const ContactPage = () => {
     try {
       // window.scrollTo(0, 0);
       const headers = {
-        'accept': 'application/json',
-        'Content-Type': 'application/json',
-        'X-CSRFToken': 'TSHnlGLv6MGh6C55ELz456q5Ujo9XT6lPemaFviA9Aw2l0GTfYiow7J45L4fFQ6I'
+        accept: "application/json",
+        "Content-Type": "application/json",
+        "X-CSRFToken":
+          "NyCfwBfMeFGygOz4VcQNlsoCJFLM3WKqOEcR47uzMDzQ3mCCeNHQWZw7HCLGPaPy",
       };
 
       const { data } = await axios.post(
         `http://abdulrahman.onrender.com/contact_us/post_message/`,
         { full_name: "string", email: "user@example.com", message: "string" },
-        {headers}
+        { headers }
       );
       console.log(data);
     } catch (e) {
@@ -36,20 +37,18 @@ const ContactPage = () => {
     } finally {
     }
   }
-  useEffect(()=>{
-sendContactUS()
-  },[])
 
-//   useEffect(() => {
-//     if (seconds > 0) {
-//       const timerId = setInterval(() => {
-//         setSeconds((prevSeconds) => prevSeconds - 1);
-//       }, 1000);
 
-//       // Clean up the interval on component unmount
-//       return () => clearInterval(timerId);
-//     }
-//   }, [seconds]);
+  //   useEffect(() => {
+  //     if (seconds > 0) {
+  //       const timerId = setInterval(() => {
+  //         setSeconds((prevSeconds) => prevSeconds - 1);
+  //       }, 1000);
+
+  //       // Clean up the interval on component unmount
+  //       return () => clearInterval(timerId);
+  //     }
+  //   }, [seconds]);
 
   return (
     <>
@@ -71,7 +70,7 @@ sendContactUS()
                 <div className="sm:pb-5 contactUsBrief">
                   <div>
                     <h5 className="highlight d-inline-block">
-                    {seconds > 0 ? seconds : 'Time is up!'}
+                      {seconds > 0 ? seconds : "Time is up!"}
                       Say Hi To Street Suite
                     </h5>
                   </div>
@@ -160,6 +159,7 @@ sendContactUS()
                       btnTxt="Submit"
                       needCheckbox={false}
                       textArea={true}
+                      onSubmit={sendContactUS}
                     />
                   </div>
                 </div>
