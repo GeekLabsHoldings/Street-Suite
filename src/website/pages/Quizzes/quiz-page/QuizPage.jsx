@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import QuizzesCards from "../../../UI-components/quizzesCards/QuizzesCards";
 import "./QuizPage.css";
@@ -127,7 +127,7 @@ function QuizPage() {
   ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState("10:00");
+  const [timeRemaining, setTimeRemaining] = useState(120); // time in seconds
   const [highestScore, setHighestScore] = useState(100);
   const totalQuestions = quizData.length;
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -152,6 +152,23 @@ function QuizPage() {
     }
   };
 
+  useEffect(() => {
+    if (timeRemaining <= 0 && currentQuestionIndex <= totalQuestions - 1) {
+      setIsOpen(true);
+      return;
+    }
+    const timer = setInterval(() => {
+      setTimeRemaining((prevTime) => prevTime - 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [timeRemaining]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}`;
+  };
+
   return (
     <div className="quiz-wrapper">
       <h4>
@@ -164,7 +181,7 @@ function QuizPage() {
           <div className="w-1/4">
             <div className="quiz-score-sheet-card">
               <p>Timer</p>
-              <span>{timeRemaining}</span>
+              <span>{formatTime(timeRemaining)}</span>
             </div>
           </div>
           <div className="w-1/4">
