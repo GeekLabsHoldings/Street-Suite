@@ -39,6 +39,14 @@ font-size: clamp(10px, calc( 0.7vw + 0.1rem), 60px);
     flex-direction: column;
     gap:1rem
 }
+.leftBorder::-webkit-scrollbar{
+    width: 0;
+    display: none;
+}
+.leftBorder::-webkit-scrollbar-thumb{
+    width: 0;
+    display: none;
+}
 .changeLogLayout{
     background-image: url('../../assets/changeLogBG.png');
 }

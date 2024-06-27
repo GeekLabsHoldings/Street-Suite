@@ -28,7 +28,6 @@ const CustomArrow = (props) => {
 
 const QuizzesFiltersPage = () => {
   const [categoryList, setCategoryList] = useState([]);
-  const [subCategoryList, setSubCategoryList] = useState([]);
 
   async function getAllCategories() {
     try {
@@ -46,21 +45,6 @@ const QuizzesFiltersPage = () => {
     }
   }
 
-  async function getAllSubCategories() {
-    try {
-      // window.scrollTo(0, 0);
-      //   setPageLoading(true);
-      const { data } = await axios.get(
-        `https://abdulrahman.onrender.com/quizzes/categories/`
-      );
-      setCategoryList(data);
-      console.log(data);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      //   setPageLoading(false);
-    }
-  }
   const settings = {
     className: "slider variable-width",
     dots: false,
@@ -105,9 +89,9 @@ const QuizzesFiltersPage = () => {
   };
 
   useEffect(() => {
-    console.log("aa");
     getAllCategories();
   }, []);
+
   return (
     <>
       <div className="quizzes-filter">
@@ -150,11 +134,10 @@ const QuizzesFiltersPage = () => {
             Latest
             <input type="radio" id="Latest" name="check-Filter" />
           </label>
-          {categoryList.map((e, i) => (
-            <label htmlFor={e.text}>
-              {" "}
-              {e.text}
-              <input type="radio" id={e.text} name="check-Filter" />
+          {categoryList.map((e) => (
+            <label htmlFor={e.title} key={e.id}>
+              {e.title}
+              <input type="radio" id={e.title} name="check-Filter" />
             </label>
           ))}
         </div>
