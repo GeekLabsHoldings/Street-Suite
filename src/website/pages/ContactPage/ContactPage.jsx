@@ -39,6 +39,24 @@ const ContactPage = () => {
   }
 
 
+  async function sendContactUS1(values) {
+  
+    try {
+      const { data } = await axios.post(
+        "https://ecommerce.routemisr.com/api/v1/auth/signup",
+        values
+      );
+
+
+    } catch (e) {
+      console.log(e);
+ 
+    }
+
+   
+  }
+
+
   //   useEffect(() => {
   //     if (seconds > 0) {
   //       const timerId = setInterval(() => {
@@ -159,7 +177,7 @@ const ContactPage = () => {
                       btnTxt="Submit"
                       needCheckbox={false}
                       textArea={true}
-                      onSubmit={sendContactUS}
+                      onSubmit={sendContactUS1}
                     />
                   </div>
                 </div>
