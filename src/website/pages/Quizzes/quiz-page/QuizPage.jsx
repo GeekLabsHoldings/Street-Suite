@@ -1,81 +1,13 @@
 import React, { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import QuizzesCards from "../../../UI-components/quizzesCards/QuizzesCards";
 import "./QuizPage.css";
-
-import QuizCard from "../../../UI-components/quizCard/QuizCard";
-import Slider from "react-slick";
-import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
-
-const CustomArrow = (props) => {
-  const { className, style, onClick } = props;
-
-  return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
-      <svg
-        width="31"
-        height="41"
-        viewBox="0 0 31 41"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.72503e-06 2.05123L2.11204e-06 38.9523C0.00118656 39.3259 0.10525 39.6921 0.300989 40.0115C0.496727 40.3309 0.77673 40.5914 1.11086 40.7649C1.44499 40.9385 1.82059 41.0185 2.19724 40.9964C2.57389 40.9743 2.93731 40.8509 3.2484 40.6395L30.1631 22.189C31.279 21.4243 31.279 19.5833 30.1631 18.8166L3.2484 0.366085C2.93796 0.15252 2.57435 0.0272807 2.19708 0.00397365C1.81981 -0.0193334 1.4433 0.0601835 1.10846 0.233885C0.773622 0.407587 0.493259 0.668829 0.297838 0.989229C0.102417 1.30963 -0.000591351 1.67693 3.72503e-06 2.05123Z"
-          fill="#53ACFF"
-          fill-opacity="1"
-        />
-      </svg>
-    </div>
-  );
-};
 
 function QuizPage() {
   let [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-
-  const settings = {
-    className: "slider variable-width",
-    dots: false,
-    infinite: false,
-    speed: 500,
-    centerPadding: "50px",
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    variableWidth: true,
-    nextArrow: <CustomArrow />,
-    prevArrow: <CustomArrow />,
-    responsive: [
-      {
-        breakpoint: 1924,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          variableWidth: true,
-          infinite: false,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 1524,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          variableWidth: true,
-        },
-      },
-
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: true,
-        },
-      },
-    ],
-  };
 
   function closeModal() {
     setIsOpen(false);
@@ -85,6 +17,140 @@ function QuizPage() {
   function openModal() {
     setIsOpen(true);
   }
+
+  const quizData = [
+    {
+      title: "which of those is a musical movie ?",
+      answer: [
+        {
+          answer_text: "black panther",
+          is_right: false,
+        },
+        {
+          answer_text: "scarface",
+          is_right: false,
+        },
+        {
+          answer_text: "spiderman",
+          is_right: false,
+        },
+        {
+          answer_text: "back again",
+          is_right: true,
+        },
+      ],
+    },
+    {
+      title: "who is the director of Batman the dark knight",
+      answer: [
+        {
+          answer_text: "Ben afleck",
+          is_right: false,
+        },
+        {
+          answer_text: "christopher nolan",
+          is_right: true,
+        },
+        {
+          answer_text: "David yates",
+          is_right: false,
+        },
+        {
+          answer_text: "Chris Columbus",
+          is_right: false,
+        },
+      ],
+    },
+    {
+      title: "who played Captain America's role ?",
+      answer: [
+        {
+          answer_text: "Chris Hermesworth",
+          is_right: false,
+        },
+        {
+          answer_text: "Chris Evans",
+          is_right: true,
+        },
+        {
+          answer_text: "Robert Downey Jr",
+          is_right: false,
+        },
+        {
+          answer_text: "Samuel L Jackson",
+          is_right: false,
+        },
+      ],
+    },
+    {
+      title: "who is the actor of the matrix",
+      answer: [
+        {
+          answer_text: "Chris Evans",
+          is_right: false,
+        },
+        {
+          answer_text: "Robert Deniro",
+          is_right: false,
+        },
+        {
+          answer_text: "Ben Afleck",
+          is_right: false,
+        },
+        {
+          answer_text: "Keanu Reeves",
+          is_right: true,
+        },
+      ],
+    },
+    {
+      title: "which of those is a superhero",
+      answer: [
+        {
+          answer_text: "spiderman",
+          is_right: false,
+        },
+        {
+          answer_text: "superman",
+          is_right: false,
+        },
+        {
+          answer_text: "batman",
+          is_right: false,
+        },
+        {
+          answer_text: "all of these",
+          is_right: true,
+        },
+      ],
+    },
+  ];
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [timeRemaining, setTimeRemaining] = useState("10:00");
+  const [highestScore, setHighestScore] = useState(100);
+  const totalQuestions = quizData.length;
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [selectedAnswerCorrectness, setSelectedAnswerCorrectness] =
+    useState(null);
+
+  const handleAnswerChange = (event, isRight) => {
+    setSelectedAnswer(event.target.value);
+    setSelectedAnswerCorrectness(isRight);
+    setTimeout(() => {
+      handleNextQuestion();
+    }, 500); // Delay for user to see the selection
+  };
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setSelectedAnswer(null);
+      setSelectedAnswerCorrectness(null);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   return (
     <div className="quiz-wrapper">
@@ -98,109 +164,62 @@ function QuizPage() {
           <div className="w-1/4">
             <div className="quiz-score-sheet-card">
               <p>Timer</p>
-              <span>12:25</span>
+              <span>{timeRemaining}</span>
             </div>
           </div>
           <div className="w-1/4">
             <div className="quiz-score-sheet-card">
               <p>Questions</p>
-              <span>9/10</span>
+              <span>
+                {currentQuestionIndex + 1}/{totalQuestions}
+              </span>
             </div>
           </div>
           <div className="w-1/4">
             <div className="quiz-score-sheet-card">
               <p>Highest Score</p>
-              <span>100</span>
+              <span>{highestScore}</span>
             </div>
           </div>
           <button onClick={openModal} className="w-1/4">
             Results
           </button>
         </div>
+
         <div className="quiz-questions">
           <div className="quiz-question-view mb-[20px] lg:mb-10">
-            <h5> What is Day Trading?</h5>
+            <h5>{quizData[currentQuestionIndex].title}</h5>
           </div>
           <div className="quiz-answers grid grid-cols-2 gap-[10px] lg:gap-6">
-            <label htmlFor="Latest">
-              Latest
-              <input type="radio" id="Latest" name="check-Filter" />
-            </label>
-
-            <label htmlFor="Trading-Styles">
-              Trading Styles
-              <input type="radio" id="Trading-Styles" name="check-Filter" />
-            </label>
-
-            <label htmlFor="Risk-Management">
-              Risk Management
-              <input type="radio" id="Risk-Management" name="check-Filter" />
-            </label>
-
-            <label htmlFor="Market-Analysis">
-              Market Analysis
-              <input type="radio" id="Market-Analysis" name="check-Filter" />
-            </label>
+            {quizData[currentQuestionIndex].answer.map((ans, index) => (
+              <label
+                key={index}
+                htmlFor={`answer-${index}`}
+                className={
+                  selectedAnswer === ans.answer_text
+                    ? selectedAnswerCorrectness
+                      ? "bg-green-500"
+                      : "bg-red-500"
+                    : ""
+                }
+              >
+                {ans.answer_text}
+                <input
+                  type="radio"
+                  id={`answer-${index}`}
+                  name="quiz-answer"
+                  onChange={(e) => handleAnswerChange(e, ans.is_right)}
+                  checked={selectedAnswer === ans.answer_text}
+                  value={ans.answer_text}
+                />
+              </label>
+            ))}
           </div>
         </div>
       </div>
 
       {/* more quizzes in quiz page */}
-      <div className="quizzes-cards space-y-6">
-        <div className="title flex items-center justify-between">
-          <h6>More Quizzes</h6>
-          <Link to="">
-            See More{" "}
-            <svg
-              width="10"
-              height="23"
-              viewBox="0 0 30 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.5009 22.7027L28.5017 22.7027C28.775 22.7018 29.043 22.6256 29.2767 22.4823C29.5104 22.3389 29.701 22.1339 29.828 21.8892C29.955 21.6445 30.0135 21.3694 29.9974 21.0936C29.9812 20.8177 29.8909 20.5516 29.7362 20.3238L16.2358 0.612931C15.6763 -0.20431 14.3293 -0.20431 13.7683 0.612931L0.267868 20.3238C0.111601 20.5511 0.0199624 20.8174 0.00290847 21.0937C-0.0141455 21.37 0.0440377 21.6457 0.171136 21.8909C0.298235 22.1362 0.489388 22.3415 0.723827 22.4846C0.958267 22.6277 1.22703 22.7031 1.5009 22.7027Z"
-                fill="white"
-              />
-            </svg>
-          </Link>
-        </div>
-
-        <div className="slider-container">
-          <Slider {...settings}>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-          </Slider>
-        </div>
-      </div>
+      <QuizzesCards />
 
       {/* add email modal in quiz page to show resalt of quiz */}
       <Transition appear show={isOpen} as={Fragment}>
