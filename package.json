@@ -22,6 +22,7 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "dayjs": "^1.11.10",
+    "formik": "^2.4.6",
     "jquery": "^3.7.1",
     "react-apexcharts": "^1.4.1",
     "react-bootstrap": "^2.10.1",
@@ -35,7 +36,8 @@
     "react-slick": "^0.30.2",
     "react-star-ratings": "^2.3.0",
     "typeit-react": "^2.7.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
