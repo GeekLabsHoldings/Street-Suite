@@ -39,18 +39,10 @@ const FormComponent = ({
   });
 
   async function callRegister(reqBody) {
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-      },
-      body: reqBody
-    };
-
-    console.log(reqBody);
+    console.log("asd");
     // setIsLoading(true);
     await axios
-      .post(`http://abdulrahman.onrender.com/accounts/register/`, config)
+      .post(`https://abdulrahman.onrender.com/accounts/register/`, reqBody)
       .then(({ data }) => {
         // if (data.message == "success") {
         //   setIsLoading(false);

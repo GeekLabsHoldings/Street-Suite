@@ -184,8 +184,8 @@ const PositionsPage = () => {
                             Upload CV
                           </FormLabel>
                           <div className="selectFile">
-                            <input type="file" id="files" class="hidden" />
-                            <label for="files" className="w-fit fileBtn">
+                            <input type="file" id="files" className="hidden" />
+                            <label htmlFor="files" className="w-fit fileBtn">
                               Attach pdf
                             </label>
                           </div>
