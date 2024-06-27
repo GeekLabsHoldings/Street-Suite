@@ -40,7 +40,7 @@ const SignupPage = () => {
               <div className='inForm'>
                 <div className='md:w-10/12 formcontent'>
                   {/* common form for signup and contact us */}
-                  <FormComponent needForthInput={true} label4='Password' needFirstPrt={true} purpose='Create a new account' label1='First Name' label2='Last Name' label3='Email' needCheckbox={true} btnTxt='Sign Up' textArea={false} />
+                  <FormComponent needForthInput={true} label4='Password' label5='RePassword' needFirstPrt={true} purpose='Create a new account' label1='First Name' label2='Last Name' label3='Email' needCheckbox={true} btnTxt='Sign Up' textArea={false} />
                 </div>
               </div>
             </div>
