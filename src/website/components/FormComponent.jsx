@@ -26,15 +26,18 @@ const FormComponent = ({
   btnTxt,
   needFirstPrt,
   verificationModal,
-  setVerificationModal
+  setVerificationModal,
 }) => {
   const validationSchema = Yup.object({
-    first_name: Yup.string().required("Name is required"),
-    last_name: Yup.string().required("Name is required"),
+    first_name: Yup.string().required("First name is required"),
+    last_name: Yup.string().required("Last name is required"),
     email: Yup.string()
       .email("Email is not valid")
       .required("Email is required"),
-    password: Yup.string().required("Password is required"),
+    password: Yup.string().required("Password is required").matches(
+      /^[A-Z][a-z0-9]{8,}$/,
+      "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
+    ),
     password2: Yup.string()
       .oneOf([Yup.ref("password")], "password and rePassword should match")
       .required("RePassword is required"),
@@ -53,7 +56,7 @@ const FormComponent = ({
         // }
         // setIsLoading(false);
 
-        setVerificationModal(true)
+        setVerificationModal(true);
       })
       .catch((err) => {
         console.log(err);
@@ -103,6 +106,7 @@ const FormComponent = ({
                 {label1}
               </FormLabel>
               <Input
+                sx={{ marginBottom: "0.3vh" }}
                 name="first_name"
                 id="first_name"
                 type="text"
@@ -111,6 +115,13 @@ const FormComponent = ({
                 value={registerForm.values.first_name}
                 onBlur={registerForm.handleBlur}
               />
+
+                {registerForm.errors.first_name &&
+                registerForm.touched.first_name ? (
+                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.first_name}
+                  </div>
+                ) : null}
             </div>
 
             <div>
@@ -126,6 +137,7 @@ const FormComponent = ({
                 {label2}
               </FormLabel>
               <Input
+                sx={{ marginBottom: "0.3vh" }}
                 name="last_name"
                 id="last_name"
                 type="text"
@@ -134,6 +146,12 @@ const FormComponent = ({
                 value={registerForm.values.last_name}
                 onBlur={registerForm.handleBlur}
               />
+              {registerForm.errors.last_name &&
+                registerForm.touched.last_name ? (
+                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.last_name}
+                  </div>
+                ) : null}
             </div>
 
             <div>
@@ -173,6 +191,7 @@ const FormComponent = ({
 
                   <Input
                     name="email"
+                sx={{ marginBottom: "0.3vh" }}
                     id="email"
                     placeholder={`Enter your ${label3}`}
                     type="email"
@@ -180,6 +199,12 @@ const FormComponent = ({
                     value={registerForm.values.email}
                     onBlur={registerForm.handleBlur}
                   />
+                  {registerForm.errors.email &&
+                registerForm.touched.email ? (
+                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.email}
+                  </div>
+                ) : null}
                 </>
               )}
             </div>
@@ -197,6 +222,7 @@ const FormComponent = ({
                   {label4}
                 </FormLabel>
                 <Input
+                sx={{ marginBottom: "0.3vh" }}
                   name="password"
                   id="password"
                   type="password"
@@ -205,6 +231,12 @@ const FormComponent = ({
                   value={registerForm.values.password}
                   onBlur={registerForm.handleBlur}
                 />
+                {registerForm.errors.password &&
+                registerForm.touched.password ? (
+                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.password}
+                  </div>
+                ) : null}
               </div>
             ) : null}
             {needForthInput ? (
@@ -221,6 +253,7 @@ const FormComponent = ({
                   {label5}
                 </FormLabel>
                 <Input
+                sx={{ marginBottom: "0.3vh" }}
                   name="password2"
                   id="password2"
                   type="password"
@@ -229,6 +262,12 @@ const FormComponent = ({
                   value={registerForm.values.password2}
                   onBlur={registerForm.handleBlur}
                 />
+                {registerForm.errors.password2 &&
+                registerForm.touched.password2 ? (
+                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.password2}
+                  </div>
+                ) : null}
               </div>
             ) : null}
 
