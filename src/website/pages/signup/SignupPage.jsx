@@ -72,7 +72,7 @@ const SignupPage = () => {
         <div className="lg:w-1/2 md:w-full">
           <div className="flex w-11/12 sm:mb-7 mx-auto">
             <div className="mx-auto md:w-3/4 forBorder">
-              <div className="formPart formBGSignup ">
+              <div className="formPart formBGSignup py-[4vh]">
                 <div className="inForm">
                   <div className="md:w-10/12 formcontent">
                     {/* common form for signup and contact us */}

@@ -20,13 +20,16 @@ const SignIn = () => {
   const navigate = useNavigate();
   const userState = useSelector((state) => state.login.value);
   const dispatch = useDispatch();
-  const {authToken,setAuthToken} = useContext(tokenContext)
+  const { authToken, setAuthToken } = useContext(tokenContext);
 
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Email is not valid")
       .required("Email is required"),
-    password: Yup.string().required("Password is required"),
+    password: Yup.string().required("Password is required").matches(
+      /^[A-Z][a-z0-9]{9,}$/,
+      "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
+    ),
   });
 
   async function callRegister(reqBody) {
@@ -35,11 +38,10 @@ const SignIn = () => {
     await axios
       .post(`https://abdulrahman.onrender.com/accounts/login/`, reqBody)
       .then(({ data }) => {
-
-        setAuthToken(data.token)
-        localStorage.setItem("userToken",data.token)
+        setAuthToken(data.token);
+        localStorage.setItem("userToken", data.token);
         if (data?.token) {
-          navigate("/")
+          navigate("/");
         }
       })
       .catch((err) => {
@@ -57,9 +59,9 @@ const SignIn = () => {
     validationSchema,
     onSubmit: callRegister,
   });
-  useEffect(()=>{
+  useEffect(() => {
     console.log(authToken);
-  },[authToken])
+  }, [authToken]);
 
   return (
     <>
@@ -119,25 +121,51 @@ const SignIn = () => {
                       className="formGroup"
                       onSubmit={registerForm.handleSubmit}
                     >
-                      <div className=" formLabelsAndInputs">
-                        <Input
-                          name="email"
-                          id="email"
-                          type="text"
-                          placeholder={`Enter your email`}
-                          onChange={registerForm.handleChange}
-                          value={registerForm.values.email}
-                          onBlur={registerForm.handleBlur}
-                        />
-                        <Input
-                          name="password"
-                          id="password"
-                          type="password"
-                          placeholder={`Enter your password`}
-                          onChange={registerForm.handleChange}
-                          value={registerForm.values.password}
-                          onBlur={registerForm.handleBlur}
-                        />
+                      <div className=" formLabelsAndInputs flex flex-col gap-[2vh]">
+                        <div>
+                          <label htmlFor="email" className=" mb-[0.8vh]">
+                            Email *
+                          </label>
+                          <Input
+                          sx={{marginBottom:"0.8vh"}}
+
+                            name="email"
+                            id="email"
+                            type="text"
+                            placeholder={`Enter your email`}
+                            onChange={registerForm.handleChange}
+                            value={registerForm.values.email}
+                            onBlur={registerForm.handleBlur}
+                          />
+                          {registerForm.errors.email &&
+                registerForm.touched.email ? (
+                  <div className="error rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.email}
+                  </div>
+                ) : null}
+                        </div>
+                        <div>
+                          <label htmlFor="password" className=" mb-[0.8vh]">
+                            Password *
+                          </label>
+                          <Input
+                          sx={{marginBottom:"0.8vh"}}
+                            name="password"
+                            id="password"
+                            type="password"
+                            placeholder={`Enter your password`}
+                            onChange={registerForm.handleChange}
+                            value={registerForm.values.password}
+                            onBlur={registerForm.handleBlur}
+                          />
+                          {registerForm.errors.password &&
+                registerForm.touched.password ? (
+                  <div className="error rounded-md bg-red-200 border-red-900 p-2 text-black">
+                    {registerForm.errors.password}
+                  </div>
+                ) : null}
+                        </div>
+
                         <FormControlLabel
                           control={<Checkbox />}
                           className="labelfont checkboxFont rememberClass"

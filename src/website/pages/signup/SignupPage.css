@@ -57,8 +57,7 @@
 
 .formBGSignup{
     background: linear-gradient(265deg, rgb(23, 37, 49) 20%, rgb(48, 73, 97) 100%);
-    padding-top:clamp(56px, calc(5.8vw + 0.1rem),140px) ; 
-    padding-bottom:clamp(56px, calc(3.7vw + 0.1rem),140px) ;
+
 }
 
 @media only screen and (max-width: 676px) {
