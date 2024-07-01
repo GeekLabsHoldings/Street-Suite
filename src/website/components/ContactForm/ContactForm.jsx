@@ -9,12 +9,34 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { FormGroup } from "@mui/material";
+import { useEffect } from "react";
 
 // repeated form for signup and contact us
 
+//Append a susses message to the form after submission
+
 const ContactForm = () => {
+  useEffect(() => {
+    document.getElementById("popupAlert")?.remove();
+    const newElement = document.createElement("div");
+    newElement.className =
+      "absolute right-7 bg-blue-800 top-6 rounded w-[20em]";
+
+    newElement.style.zIndex = "1000";
+    newElement.id = "popupAlert";
+    newElement.innerHTML = `
+          <p class="text-white p-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quaerat accusantium magnam incidunt.
+          </p>
+          <div className="h-[15px] w-full">
+            <div className="h-full w-[60%] bg-white">
+            </div>
+          </div>
+`;
+    document.body.appendChild(newElement);
+  }, []);
   const validationSchema = Yup.object({
-    first_name: Yup.string().required("Full Name is required"),
+    full_name: Yup.string().required("Full Name is required"),
     email: Yup.string()
       .email("Email is not valid")
       .required("Email is required"),
@@ -23,27 +45,29 @@ const ContactForm = () => {
 
   async function callRegister(reqBody) {
     console.log("asd");
-    // setIsLoading(true);
-    // await axios
-    //   .post(
-    //     `https://abdulrahman.onrender.com/contact_us/post_message/
-    //     `,
-    //     reqBody
-    //   )
-    //   .then(({ data }) => {
-    //     // if (data.message == "success") {
-    //     //   setIsLoading(false);
-    //     //   setErrorMessage(null);
-    //     //   navigate("/login");
-    //     // }
-    //     // setIsLoading(false);
-    //     console.log(data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     // setErrorMessage(err.response.data.message);
-    //     // setIsLoading(false);
-    //   });
+    await axios
+      .post(
+        `https://abdulrahman.onrender.com/contact_us/post_message/
+        `,
+        reqBody
+      )
+      .then(({ data }) => {
+        // if (data.message == "success") {
+        //   setIsLoading(false);
+        //   setErrorMessage(null);
+        //   navigate("/login");
+        // }
+        // setIsLoading(false);
+        console.log(data);
+      })
+      .then(() => {
+        registerForm.resetForm();
+      })
+      .catch((err) => {
+        console.log(err);
+        // setErrorMessage(err.response.data.message);
+        // setIsLoading(false);
+      });
   }
 
   const registerForm = useFormik({
@@ -70,7 +94,7 @@ const ContactForm = () => {
             className="formGroup"
             // onSubmit={registerForm.handleSubmit}
           >
-            <div>
+            <div className=" formLabelsAndInputs">
               <FormLabel
                 required
                 className="mb-1 labelfont"
@@ -86,14 +110,12 @@ const ContactForm = () => {
                 name="full_name"
                 id="full_name"
                 type="text"
-                placeholder={`Enter your Full Name`}
+                placeholder={`Enter your full name`}
                 onChange={registerForm.handleChange}
                 value={registerForm.values.full_name}
                 onBlur={registerForm.handleBlur}
               />
-            </div>
 
-            <div>
               <FormLabel
                 required
                 className="mb-1 labelfont"
@@ -109,14 +131,12 @@ const ContactForm = () => {
                 name="email"
                 id="email"
                 type="email"
-                placeholder={`Enter your Email`}
+                placeholder={`Enter your email`}
                 onChange={registerForm.handleChange}
                 value={registerForm.values.email}
                 onBlur={registerForm.handleBlur}
               />
-            </div>
 
-            <div>
               <FormLabel
                 required
                 className="mb-1 labelfont"
@@ -128,29 +148,30 @@ const ContactForm = () => {
               >
                 Message
               </FormLabel>
-              <input
+              <textarea
                 name="message"
                 id="message"
-                className="w-full textArea textAreaInForm "
-                type="text"
+                row={4}
+                placeholder={`Enter your message`}
                 onChange={registerForm.handleChange}
                 value={registerForm.values.message}
                 onBlur={registerForm.handleBlur}
-              />
+                className="w-full textArea textAreaInForm "
+              ></textarea>
+            </div>
+            <div className="mx-auto">
+              <Button
+                className="newBtn loginBtn"
+                type="submit"
+                onClick={() => {
+                  registerForm.handleSubmit();
+                }}
+              >
+                Submit
+              </Button>
             </div>
           </FormGroup>
         </div>
-      </div>
-
-      <div className=" flex justify-center">
-        <Button
-          type="submit"
-          className="newBtn formBtn"
-          // disabled={!(registerForm.isValid && registerForm.dirty)}
-          onClick={registerForm.handleSubmit}
-        >
-          Submit
-        </Button>
       </div>
     </div>
   );
