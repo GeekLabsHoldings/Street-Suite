@@ -35,7 +35,7 @@ const FormComponent = ({
       .email("Email is not valid")
       .required("Email is required"),
     password: Yup.string().required("Password is required").matches(
-      /^[A-Z][a-z0-9]{8,}$/,
+      /^[A-Z][a-z0-9]{9,}$/,
       "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
     ),
     password2: Yup.string()
