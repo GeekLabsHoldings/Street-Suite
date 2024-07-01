@@ -1,11 +1,11 @@
 import "./ContactPage.css";
-import FormComponent from "../../components/FormComponent";
 import PhoneIcon from "../../assets/phone.svg";
 import MailIcon from "../../assets/mail.svg";
 import Button from "@mui/material/Button";
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ContactForm from "../../components/ContactForm/ContactForm";
 const ContactPage = () => {
   const [showElement, setShowElement] = useState(true);
   const [btnCicked, setBtnClicked] = useState(false);
@@ -38,24 +38,16 @@ const ContactPage = () => {
     }
   }
 
-
   async function sendContactUS1(values) {
-  
     try {
       const { data } = await axios.post(
         "https://ecommerce.routemisr.com/api/v1/auth/signup",
         values
       );
-
-
     } catch (e) {
       console.log(e);
- 
     }
-
-   
   }
-
 
   //   useEffect(() => {
   //     if (seconds > 0) {
@@ -167,18 +159,7 @@ const ContactPage = () => {
                 <div className="inForm">
                   <div className="lg:w-10/12 sm:w-10/12 mx-auto ">
                     {/* form for signup and contact us */}
-                    <FormComponent
-                      needForthInput={false}
-                      needFirstPrt={true}
-                      purpose="Send Us a Message!"
-                      label1="Full Name"
-                      label2="Email"
-                      label3="Message"
-                      btnTxt="Submit"
-                      needCheckbox={false}
-                      textArea={true}
-                      onSubmit={sendContactUS1}
-                    />
+                    <ContactForm />
                   </div>
                 </div>
               </div>
