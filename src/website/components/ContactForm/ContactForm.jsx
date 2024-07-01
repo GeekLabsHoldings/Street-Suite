@@ -24,7 +24,7 @@ const ContactForm = () => {
     const newElement = document.createElement("div");
     // Add box shadow to the new element
     newElement.className =
-      "sticky top-[20%] right-[-100%] bg-[linear-gradient(265deg,rgb(40,62,80)20%,rgb(53,111,166)100%)] top-6 overflow-hidden rounded w-[20em] transition-all duration-[500ms] py-1 px-3 shadow-lg";
+      "fixed top-[15%] right-[-100%] bg-[linear-gradient(265deg,rgb(40,62,80)20%,rgb(53,111,166)100%)] overflow-hidden rounded  min-w-[20em] transition-all duration-[500ms] py-1 px-3 shadow-lg";
 
     newElement.style.zIndex = "1000";
     newElement.id = "popupAlert";
