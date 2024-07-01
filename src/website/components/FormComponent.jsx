@@ -34,8 +34,7 @@ const FormComponent = ({
     email: Yup.string()
       .email("Email is not valid")
       .required("Email is required"),
-    password: Yup.string()
-      .required("Password is required"),
+    password: Yup.string().required("Password is required"),
     password2: Yup.string()
       .oneOf([Yup.ref("password")], "password and rePassword should match")
       .required("RePassword is required"),
@@ -260,8 +259,8 @@ const FormComponent = ({
       </div>
 
       <div className=" flex justify-center">
-        <Button 
-        type="submit"
+        <Button
+          type="submit"
           className="newBtn formBtn"
           disabled={!(registerForm.isValid && registerForm.dirty)}
           // onSubmit={registerForm.handleSubmit}
