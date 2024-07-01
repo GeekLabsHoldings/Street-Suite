@@ -36,6 +36,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "react-star-ratings": "^2.3.0",
+    "react-verification-input": "^4.1.2",
     "typeit-react": "^2.7.1",
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
