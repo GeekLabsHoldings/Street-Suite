@@ -35,15 +35,12 @@ const SignIn = () => {
     await axios
       .post(`https://abdulrahman.onrender.com/accounts/login/`, reqBody)
       .then(({ data }) => {
-        // if (data.message == "success") {
-        //   setIsLoading(false);
-        //   setErrorMessage(null);
-        //   navigate("/login");
-        // }
-        // setIsLoading(false);
-        console.log(data);
+
         setAuthToken(data.token)
         localStorage.setItem("userToken",data.token)
+        if (data?.token) {
+          navigate("/")
+        }
       })
       .catch((err) => {
         console.log(err);

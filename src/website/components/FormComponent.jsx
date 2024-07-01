@@ -9,6 +9,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { FormGroup } from "@mui/material";
+import { useState } from "react";
 
 // repeated form for signup and contact us
 
@@ -24,6 +25,8 @@ const FormComponent = ({
   needForthInput,
   btnTxt,
   needFirstPrt,
+  verificationModal,
+  setVerificationModal
 }) => {
   const validationSchema = Yup.object({
     first_name: Yup.string().required("Name is required"),
@@ -50,7 +53,8 @@ const FormComponent = ({
         //   navigate("/login");
         // }
         // setIsLoading(false);
-        console.log(data);
+
+        setVerificationModal(true)
       })
       .catch((err) => {
         console.log(err);
