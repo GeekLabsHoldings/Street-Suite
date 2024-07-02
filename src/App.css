@@ -131,7 +131,7 @@ h6 {
 .formElementsAndBtn{
   display: flex;
   flex-direction: column;
-  gap: clamp(30px, calc(4.7vw + 0.2rem),140px);
+  gap: clamp(6px, calc(1.7vw + 0.1rem),140px);
 }
 
 .formElements{
@@ -472,4 +472,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .wheelSelectInput.checked {
   background-color: #53ACFF;
+}
+
+.overlay-modal {
+
+  background:  linear-gradient(355deg, rgba(2, 0, 36, 1) 0%, #165b9c 72%, rgb(197 197 197) 100%) !important;
 }

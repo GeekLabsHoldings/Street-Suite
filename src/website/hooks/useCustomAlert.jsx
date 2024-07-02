@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-const useCustomAlert = () => {
-  const [show, setShow] = useState(false);
-  const [message, setMessage] = useState("");
+const customAlert = (message) => {
+  // const [show, setShow] = useState(false);
+  // const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    if (!show) return;
+  // useEffect(() => {
+  //   if (!show) return;
 
     const newElement = document.createElement("div");
     newElement.className =
@@ -35,21 +35,24 @@ const useCustomAlert = () => {
       document.getElementById("progress").style.right = "-100%";
     }, 4500);
     setTimeout(() => {
-      setShow(false);
+      // setShow(false);
       newElement.remove();
     }, 5000);
 
-    return () => {
-      newElement.remove();
-    };
-  }, [show, message]);
 
-  const showAlert = (msg) => {
-    setMessage(msg);
-    setShow(true);
-  };
 
-  return showAlert;
+
+    // return () => {
+    //   newElement.remove();
+    // };
+  // }, [show, message]);
+
+  // const showAlert = (msg) => {
+  //   setMessage(msg);
+  //   setShow(true);
+  // };
+
+  // return showAlert;
 };
 
-export default useCustomAlert;
+export default customAlert;
