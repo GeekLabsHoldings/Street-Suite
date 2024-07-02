@@ -18,7 +18,7 @@ import { tokenContext } from "../../context/appContext";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import VerificationInput from "react-verification-input";
-import customAlert from "../../hooks/useCustomAlert";
+import customAlert from "../../utils/customAlert";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -57,6 +57,7 @@ const SignIn = () => {
         setAuthToken(data.token);
         localStorage.setItem("userToken", data.token);
         if (data?.token) {
+          customAlert("Logged in successfully");
           navigate("/");
         }
       })
@@ -123,12 +124,12 @@ const SignIn = () => {
           },
         }
       );
-      customAlert(data.message)
+      customAlert(data.message);
       setInReset(false);
-      updatePasswordFormik.resetForm()
-      
-      setRePasswordRes("")
-      setWrongPass(false)
+      updatePasswordFormik.resetForm();
+
+      setRePasswordRes("");
+      setWrongPass(false);
       return data;
     } catch (err) {
       console.log(err);

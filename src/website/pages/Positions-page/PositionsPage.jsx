@@ -9,11 +9,9 @@ import AccordionDetails from "@mui/joy/AccordionDetails";
 import AccordionSummary from "@mui/joy/AccordionSummary";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import useCustomAlert from "../../hooks/useCustomAlert";
+import customAlert from "../../utils/customAlert";
 
 const PositionsPage = () => {
-  const showAlert = useCustomAlert();
-
   const [index, setIndex] = useState(0);
   const [vacanciesList, setVacanciesList] = useState([]);
 
@@ -40,7 +38,7 @@ const PositionsPage = () => {
       );
 
       console.log(data);
-      await showAlert("Application Sent Successfully!");
+      customAlert("Application Sent Successfully!");
 
       document.querySelectorAll("input").forEach((e) => (e.value = ""));
     } catch (e) {
