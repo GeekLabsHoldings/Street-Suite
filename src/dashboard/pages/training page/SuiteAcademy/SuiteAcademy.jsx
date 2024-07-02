@@ -117,8 +117,8 @@ const SuiteAcademy = () => {
                     >
                       <h4>{course.title}</h4>
                       <div className="my-[16px] hidden lg:flex items-center gap-[50px]">
-                        <span>6 Modules</span>
-                        <span>5-6 Week Completion </span>
+                        <span>{course.module_numbers} Modules</span>
+                        <span>{course.duration} Week Completion </span>
                       </div>
                       <ul>
                         <li>
@@ -152,7 +152,7 @@ const SuiteAcademy = () => {
                               fill="#53ACFF"
                             />
                           </svg>
-                          2.1k
+                          {course.duration}
                         </li>
                         <li>
                           <svg
@@ -165,7 +165,7 @@ const SuiteAcademy = () => {
                               fill="#53ACFF"
                             />
                           </svg>
-                          1025
+                          {course.completed}
                         </li>
                         <li>
                           <svg
@@ -178,7 +178,7 @@ const SuiteAcademy = () => {
                               fill="#53ACFF"
                             />
                           </svg>
-                          300
+                          {course.likes_number}
                         </li>
                         <li className="d-none d-lg-flex">
                           <svg
@@ -199,7 +199,7 @@ const SuiteAcademy = () => {
                               fill="#53ACFF"
                             />
                           </svg>
-                          Trading Styles
+                          {course.category}
                         </li>
                       </ul>
                     </div>
