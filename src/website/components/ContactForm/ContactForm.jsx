@@ -9,16 +9,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { FormGroup } from "@mui/material";
-import { useEffect } from "react";
-import useCustomAlert from "../../hooks/useCustomAlert";
+import customAlert from "../../utils/customAlert";
 
 // repeated form for signup and contact us
 
 //Append a susses message to the form after submission
 
 const ContactForm = () => {
-  const showAlert = useCustomAlert();
-
   const validationSchema = Yup.object({
     full_name: Yup.string().required("Full Name is required"),
     email: Yup.string()
@@ -36,22 +33,14 @@ const ContactForm = () => {
         reqBody
       )
       .then(({ data }) => {
-        // if (data.message == "success") {
-        //   setIsLoading(false);
-        //   setErrorMessage(null);
-        //   navigate("/login");
-        // }
-        // setIsLoading(false);
         console.log(data);
-        showAlert("Message Sent Successfully!");
+        customAlert("Message Sent Successfully!");
       })
       .then(() => {
         registerForm.resetForm();
       })
       .catch((err) => {
         console.log(err);
-        // setErrorMessage(err.response.data.message);
-        // setIsLoading(false);
       });
   }
 

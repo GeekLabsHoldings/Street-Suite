@@ -116,12 +116,12 @@ const FormComponent = ({
                 onBlur={registerForm.handleBlur}
               />
 
-                {registerForm.errors.first_name &&
-                registerForm.touched.first_name ? (
-                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
-                    {registerForm.errors.first_name}
-                  </div>
-                ) : null}
+              {registerForm.errors.first_name &&
+              registerForm.touched.first_name ? (
+                <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                  {registerForm.errors.first_name}
+                </div>
+              ) : null}
             </div>
 
             <div>
@@ -147,11 +147,11 @@ const FormComponent = ({
                 onBlur={registerForm.handleBlur}
               />
               {registerForm.errors.last_name &&
-                registerForm.touched.last_name ? (
-                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
-                    {registerForm.errors.last_name}
-                  </div>
-                ) : null}
+              registerForm.touched.last_name ? (
+                <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                  {registerForm.errors.last_name}
+                </div>
+              ) : null}
             </div>
 
             <div>
@@ -191,7 +191,7 @@ const FormComponent = ({
 
                   <Input
                     name="email"
-                sx={{ marginBottom: "0.3vh" }}
+                    sx={{ marginBottom: "0.3vh" }}
                     id="email"
                     placeholder={`Enter your ${label3}`}
                     type="email"
@@ -199,12 +199,11 @@ const FormComponent = ({
                     value={registerForm.values.email}
                     onBlur={registerForm.handleBlur}
                   />
-                  {registerForm.errors.email &&
-                registerForm.touched.email ? (
-                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
-                    {registerForm.errors.email}
-                  </div>
-                ) : null}
+                  {registerForm.errors.email && registerForm.touched.email ? (
+                    <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                      {registerForm.errors.email}
+                    </div>
+                  ) : null}
                 </>
               )}
             </div>
@@ -222,7 +221,7 @@ const FormComponent = ({
                   {label4}
                 </FormLabel>
                 <Input
-                sx={{ marginBottom: "0.3vh" }}
+                  sx={{ marginBottom: "0.3vh" }}
                   name="password"
                   id="password"
                   type="password"
@@ -253,7 +252,7 @@ const FormComponent = ({
                   {label5}
                 </FormLabel>
                 <Input
-                sx={{ marginBottom: "0.3vh" }}
+                  sx={{ marginBottom: "0.3vh" }}
                   name="password2"
                   id="password2"
                   type="password"
@@ -298,7 +297,6 @@ const FormComponent = ({
       </div>
 
       <div className=" flex justify- flex-col gap-[2vh] w-fit mx-auto">
-        
         <Button
           type="submit"
           className="newBtn formBtn"
@@ -309,15 +307,41 @@ const FormComponent = ({
           {btnTxt}
         </Button>
         <Button
-
-          sx={{backgroundColor:"white" , color:"black" , fontWeight:"600", px:"1vw" , fontFamily:"inherit" , textTransform:"inherit" , '&:hover': {backgroundColor: 'white'}}}
-          startIcon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z" fill="#FFC107"/>
-            <path d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z" fill="#FF3D00"/>
-            <path d="M12.0002 22.0003C14.5832 22.0003 16.9302 21.0118 18.7047 19.4043L15.6097 16.7853C14.5719 17.5745 13.3039 18.0014 12.0002 18.0003C9.39916 18.0003 7.19066 16.3418 6.35866 14.0273L3.09766 16.5398C4.75266 19.7783 8.11366 22.0003 12.0002 22.0003Z" fill="#4CAF50"/>
-            <path d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z" fill="#1976D2"/>
+          sx={{
+            backgroundColor: "white",
+            color: "black",
+            fontWeight: "600",
+            px: "1vw",
+            fontFamily: "inherit",
+            textTransform: "inherit",
+            "&:hover": { backgroundColor: "white" },
+          }}
+          startIcon={
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+                fill="#FFC107"
+              />
+              <path
+                d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z"
+                fill="#FF3D00"
+              />
+              <path
+                d="M12.0002 22.0003C14.5832 22.0003 16.9302 21.0118 18.7047 19.4043L15.6097 16.7853C14.5719 17.5745 13.3039 18.0014 12.0002 18.0003C9.39916 18.0003 7.19066 16.3418 6.35866 14.0273L3.09766 16.5398C4.75266 19.7783 8.11366 22.0003 12.0002 22.0003Z"
+                fill="#4CAF50"
+              />
+              <path
+                d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+                fill="#1976D2"
+              />
             </svg>
-            }
+          }
         >
           Sign Up With Google
         </Button>
