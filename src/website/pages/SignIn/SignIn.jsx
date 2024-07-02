@@ -26,14 +26,14 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const { authToken, setAuthToken } = useContext(tokenContext);
   const [wrongPass, setWrongPass] = useState(false);
+  const [wrongEmail, setWrongEmail] = useState(false);
   const [inForgot, setInForgot] = useState(false);
   const [inReset, setInReset] = useState(false);
   const [showVerification, setShowVerification] = useState(false);
   const [verificationValue, setVerificationValue] = useState(0);
   const [emailVer, setEmailVer] = useState("");
   const [tokenVer, setTokenVer] = useState("");
-  const [passwordRes, setPasswordRes] = useState("");
-  const [rePasswordRes, setRePasswordRes] = useState("");
+  const [invalidVer,setInvalidVer] = useState("")
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -42,7 +42,7 @@ const SignIn = () => {
     password: Yup.string()
       .required("Password is required")
       .matches(
-        /^[A-Z][a-z0-9]{8,}$/,
+        /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{8,}$/,
         "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
       ),
   });
@@ -64,6 +64,8 @@ const SignIn = () => {
         console.log(err);
         if (err.response.data.message == "wrong password") {
           setWrongPass(true);
+        } else if (err.response.data.message == "your email not exists in the website"){
+          setWrongEmail("your email does not exist in the website")
         }
         // setErrorMessage(err.response.data.message);
         // setIsLoading(false);
@@ -81,6 +83,7 @@ const SignIn = () => {
 
       console.log(data);
       setTokenVer(data.token);
+      setShowVerification(true)
       return data;
     } catch (err) {
       console.log(err);
@@ -105,9 +108,13 @@ const SignIn = () => {
       console.log(data);
       setInForgot(false);
       setInReset(true);
+      setShowVerification(false)
       return data;
     } catch (err) {
       console.log(err);
+      if (err.response.data.message == "Invalid verification code") {
+        setInvalidVer("Invalid verification code")
+      }
     }
   }
   async function resetPass(reqBody) {
@@ -127,7 +134,6 @@ const SignIn = () => {
       setInReset(false);
       updatePasswordFormik.resetForm()
       
-      setRePasswordRes("")
       setWrongPass(false)
       return data;
     } catch (err) {
@@ -148,7 +154,7 @@ const SignIn = () => {
     password: Yup.string()
       .required("Password is required")
       .matches(
-        /^[A-Z][a-z0-9]{8,}$/,
+        /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{8,}$/,
         "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
       ),
     password_confirmation: Yup.string()
@@ -228,11 +234,13 @@ const SignIn = () => {
                       onSubmit={registerForm.handleSubmit}
                     >
                       <div className=" formLabelsAndInputs flex flex-col gap-[2vh] ">
-                        {wrongPass && (
+                        {wrongPass ? (
                           <div className=" bg-red-200 text-black rounded-md w-full p-1 border-red-950 border-2 border-solid text-center">
                             Wrong Password
                           </div>
-                        )}
+                        ) : wrongEmail ? <div className=" bg-red-200 text-black rounded-md w-full p-1 border-red-950 border-2 border-solid text-center">
+                        {wrongEmail}
+                      </div> : null}
                         <div>
                           <label htmlFor="email" className=" mb-[0.8vh]">
                             Email *
@@ -282,14 +290,14 @@ const SignIn = () => {
                             className="labelfont checkboxFont rememberClass"
                             label="Remember me"
                           />
-                          {wrongPass && (
+                          
                             <button
                               onClick={() => setInForgot(true)}
                               className=" underline cursor-pointer bg-transparent outline-none border-none text-sm"
                             >
                               Forgot Password?
                             </button>
-                          )}
+                          
                         </div>
                       </div>
                       <div className="mx-auto flex flex-col gap-[2vh]">
@@ -393,6 +401,7 @@ const SignIn = () => {
                       >
                         Send Verification Code
                       </button>
+                      {showVerification ? <p className=" text-center mt-2">The verification code has been sent to you</p> : null}
                       <div className="line"></div>
 
                       <div className="mt-2">
@@ -405,6 +414,7 @@ const SignIn = () => {
                           onChange={(value) => setVerificationValue(value)}
                         />
                       </div>
+                      {invalidVer ? <p className=" text-center mt-2">{invalidVer}</p> : null}
 
                       <div className="mt-4">
                         <button

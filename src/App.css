@@ -476,5 +476,5 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .overlay-modal {
 
-  background:  linear-gradient(355deg, rgba(2, 0, 36, 1) 0%, #165b9c 72%, rgb(197 197 197) 100%) !important;
+  background:  linear-gradient(180deg, rgba(32,32,32,1) 40%, rgb(37, 66, 94) 100%) !important;
 }
