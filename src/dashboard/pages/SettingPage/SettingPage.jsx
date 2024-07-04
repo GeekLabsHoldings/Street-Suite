@@ -86,7 +86,7 @@ const SettingPage = () => {
     profile: Yup.object({
       About: Yup.string(),
       Phone_Number: Yup.string(),
-      image: Yup.string(),
+      image: Yup.string().required("Img is required"),
     }),
   });
 
@@ -104,9 +104,6 @@ const SettingPage = () => {
     );
     formData.append("profile.image", imageSrc);
 
-    console.log(formData);
-
-    console.log(reqBody.profile.image, "sdadasdqwe");
     await axios
       .patch(
         `https://abdulrahman.onrender.com/accounts/profile-settings/`,
