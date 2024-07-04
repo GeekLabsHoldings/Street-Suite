@@ -110,9 +110,15 @@ if (localStorage.getItem("userToken")) {
             <Route path="training" element={<TrainingPage />}>
               <Route index element={<SuiteAcademy />} />
               <Route path="suite-academy" element={<SuiteAcademy />} />
-              <Route path="single-training" element={<SingleTraning />}>
+              <Route
+                path="single-training/:courseId"
+                element={<SingleTraning />}
+              >
                 <Route index element={<LessonsPage />} />
-                <Route path="assessment" element={<AssessmentPage />} />
+                <Route
+                  path="assessment/:moduleId"
+                  element={<AssessmentPage />}
+                />
               </Route>
               <Route path="my-courses" element={<MyCourses />}>
                 <Route index element={<MyCoursesPage />} />
