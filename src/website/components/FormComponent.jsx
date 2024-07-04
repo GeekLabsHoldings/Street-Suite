@@ -10,6 +10,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import { FormGroup } from "@mui/material";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // repeated form for signup and contact us
 
@@ -28,16 +30,25 @@ const FormComponent = ({
   verificationModal,
   setVerificationModal,
 }) => {
+
+
+  const handleExternalNavigation = () => {
+    // Use window.location.href to navigate to an external URL
+    window.location.href = 'https://abdulrahman.onrender.com/accounts/google-signup';
+  };
+
   const validationSchema = Yup.object({
     first_name: Yup.string().required("First name is required"),
     last_name: Yup.string().required("Last name is required"),
     email: Yup.string()
       .email("Email is not valid")
       .required("Email is required"),
-    password: Yup.string().required("Password is required").matches(
-      /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{8,}$/,
-      "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
-    ),
+    password: Yup.string()
+      .required("Password is required")
+      .matches(
+        /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{8,}$/,
+        "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
+      ),
     password2: Yup.string()
       .oneOf([Yup.ref("password")], "password and rePassword should match")
       .required("RePassword is required"),
@@ -307,6 +318,7 @@ const FormComponent = ({
           {btnTxt}
         </Button>
         <Button
+          onClick={handleExternalNavigation}
           sx={{
             backgroundColor: "white",
             color: "black",
