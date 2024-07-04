@@ -5,20 +5,20 @@ import styles from "../SingleTraning.module.css";
 
 import AssessmentChart from "./AssessmentChart";
 import axios from "axios";
-import { courseContext } from "../../context/coursesContext";
+import { useParams } from "react-router-dom";
 
 // assessment page
 const AssessmentPage = () => {
-  const { currentModule } = useContext(courseContext);
+  const { moduleId } = useParams();
+  const [assessmentData, setAssessmentData] = useState({});
 
   // useEffect that fetch data from api
   useEffect(() => {
     axios
-      .get(
-        `https://abdulrahman.onrender.com/courses/assessment/${currentModule.id}`
-      )
+      .get(`https://abdulrahman.onrender.com/courses/assessment/${moduleId}`)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data[0]);
+        setAssessmentData(res.data[0]);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -29,13 +29,7 @@ const AssessmentPage = () => {
     >
       {/* title of the page */}
       <h4>Assessment</h4>
-      <p>
-        Welcome to the post-course assessment on the Bull Flag Pattern!
-        Congratulations on completing the course and gaining valuable insights
-        into this powerful technical analysis pattern. Now, it's time to put
-        your knowledge to the test and demonstrate your proficiency in
-        identifying bull flag patterns in live stock charts
-      </p>
+      <p>{assessmentData.description}</p>
 
       {/* Instructions of assessment page */}
       <div className=" training_lison_collapse">
@@ -67,29 +61,7 @@ const AssessmentPage = () => {
         >
           <div className="flex items-start gap-[50px]">
             <div className={styles.training_lison_content}>
-              <p>
-                1. Scroll through the live stock chart and carefully analyze the
-                price movements.
-              </p>
-              <p>
-                2. Look for instances where the price exhibits a sharp upward
-                movement followed by a period of consolidation, resembling a
-                flagpole and flag formation.
-              </p>
-              <p>
-                3. Once you've identified a potential bull flag pattern, select
-                one of the provided bull flag pattern overlays from the options
-                provided.
-              </p>
-              <p>
-                4. Drag the selected overlay and place it over the detected bull
-                flag pattern in the live chart, ensuring it aligns accurately
-                with the flagpole and flag formation.
-              </p>
-              <p>
-                5. Confirm your selection and proceed to the next assessment
-                question.
-              </p>
+              <p>{assessmentData.instructions}</p>
             </div>
           </div>
         </div>
@@ -245,14 +217,15 @@ const AssessmentPage = () => {
       </div>
 
       {/* assessment score that will appear when user complete the assessment */}
-      <div className={styles.assesment_score}>
-        {/* title */}
-        <h5>Assessment Score</h5>
+      {assessmentData.is_completed.is_completed && (
+        <div className={styles.assesment_score}>
+          {/* title */}
+          <h5>Assessment Score</h5>
 
-        {/* score of assessment */}
-        <span>88%</span>
-      </div>
-
+          {/* score of assessment */}
+          <span>88%</span>
+        </div>
+      )}
       <div className={styles.previous_assessment_btn}>
         {/* previous button that return user to lessons */}
         <button className={styles.previous_btn}>Previous</button>

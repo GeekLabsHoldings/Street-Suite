@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import $ from "jquery";
 
 import styles from "../SingleTraning.module.css";
@@ -13,9 +13,21 @@ import axios from "axios";
 const LessonsPage = () => {
   const { currentModule } = useContext(courseContext);
 
+  const [completedSections, setCompletedSections] = useState([]);
+
   useEffect(() => {
-    console.log(currentModule);
+    if (currentModule.section_set) {
+      const updatedSections = currentModule.section_set.map((element) => ({
+        id: element.id,
+        is_completed: element.is_completed,
+      }));
+      setCompletedSections(updatedSections);
+    }
   }, [currentModule]);
+
+  useEffect(() => {
+    console.log(completedSections);
+  }, [completedSections]);
 
   // function that open & close collaps
   const openCollaps = (e) => {
@@ -60,9 +72,9 @@ const LessonsPage = () => {
         <div
           key={index}
           className={`training_lison_collapse ${
-            section.is_completed
+            completedSections[index]?.is_completed
               ? "completed"
-              : getCurrent(currentModule.section_set)?.id === section.id
+              : getCurrent(completedSections)?.id === section.id
               ? "current"
               : ""
           }`}
@@ -110,10 +122,25 @@ const LessonsPage = () => {
             <button
               data-id={section.id}
               className={styles.makeCompleteBtn}
-              disabled={section.is_completed}
-              onClick={makeComplete}
+              disabled={completedSections[index]?.is_completed}
+              onClick={(e) => {
+                makeComplete(e);
+                setCompletedSections(
+                  completedSections.map((item) => {
+                    if (item.id === section.id) {
+                      return {
+                        ...item,
+                        is_completed: true,
+                      };
+                    }
+                    return item;
+                  })
+                );
+              }}
             >
-              {section.is_completed ? "Completed" : "Mark as complete"}
+              {completedSections[index]?.is_completed
+                ? "Completed"
+                : "Mark as complete"}
             </button>
           </div>
         </div>
@@ -121,7 +148,7 @@ const LessonsPage = () => {
 
       {/* button that redirect to assessment page */}
       <Link
-        to={`/dashboard/training/single-training/${currentModule.id}/assessment`}
+        to={`/dashboard/training/single-training/${currentModule.course}/assessment/${currentModule.id}`}
         className={styles.assessment_btn}
       >
         Assessment

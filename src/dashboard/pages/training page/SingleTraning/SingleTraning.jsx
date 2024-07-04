@@ -7,7 +7,7 @@ import searchIcon from "../../../assets/search.svg";
 import styles from "./SingleTraning.module.css";
 
 import { courseContext } from "../context/coursesContext";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import ProgressBar from "@ramonak/react-progress-bar";
 import NotificationWindow from "../../../UI-components/NotificationWindow/NotificationWindow";
 import axios from "axios";
@@ -19,6 +19,7 @@ const SingleTraning = () => {
   const { currentCourse, setCurrentCourse } = useContext(courseContext);
   const { currentModule, setCurrentModule } = useContext(courseContext);
 
+  const { courseId } = useParams();
   // function that open & close collaps
   const openCollaps = (e) => {
     console.log($(e.target).parentsUntil(".training_lison_collapse"));
@@ -39,7 +40,6 @@ const SingleTraning = () => {
   };
 
   useEffect(() => {
-    const courseId = window.location.pathname.split("/").pop();
     axios
       .get(`https://abdulrahman.onrender.com/courses/modules/${courseId}`, {
         headers: {
