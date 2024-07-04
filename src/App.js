@@ -52,8 +52,23 @@ import TermsAndConditions from "./website/pages/TermsAndConditions/TermsAndCondi
 import ScrollToTop from "./ScrollToTop";
 import NotFoundPage from "./NotFoundPage";
 import TokenContextProvider from "./website/context/appContext";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { signIn } from "./redux/cardsSlice";
 
 function App() {
+  const userState = useSelector((state) => state.login.loggedIn);
+  const dispatch = useDispatch()
+
+
+useEffect(()=>{
+if (localStorage.getItem("userToken")) {
+  dispatch(signIn())
+
+}
+},[])
+
+
   return (
     <TokenContextProvider>
       <div className="App">
