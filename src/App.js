@@ -95,7 +95,7 @@ function App() {
             <Route path="training" element={<TrainingPage />}>
               <Route index element={<SuiteAcademy />} />
               <Route path="suite-academy" element={<SuiteAcademy />} />
-              <Route path="single-training" element={<SingleTraning />}>
+              <Route path="single-training/:id" element={<SingleTraning />}>
                 <Route index element={<LessonsPage />} />
                 <Route path="assessment" element={<AssessmentPage />} />
               </Route>

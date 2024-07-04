@@ -1,593 +1,595 @@
 .training_navBar {
-    width: 100%;
+  width: 100%;
 }
 
 .training_navBar ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
 }
 
 .training_navBar ul li a {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 24.32px;
-    text-align: left;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24.32px;
+  text-align: left;
 }
 
 .training_navBar ul li a.active {
-    padding: 0.5rem 0.8rem;
-    background-color: var(--Blue300);
-    border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  background-color: var(--Blue300);
+  border-radius: 5px;
 }
 
 .supTitle {
-    padding: 0.3rem 0.7rem;
-    width: max-content;
-    border-radius: 10px;
-    background-color: var(--Blue300);
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 42px;
-    text-align: left;
+  padding: 0.3rem 0.7rem;
+  width: max-content;
+  border-radius: 10px;
+  background-color: var(--Blue300);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: left;
 }
 
 .searchInput {
-    position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .searchInput input {
-    width: 100%;
-    height: 40px;
-    background-color: #313131;
-    border: 1px solid #313131;
-    border-radius: 5px;
-    color: #ffff;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
-    text-align: left;
-    padding: 10px 20px;
-    outline: none;
-    transition: all 0.3s;
+  width: 100%;
+  height: 40px;
+  background-color: #313131;
+  border: 1px solid #313131;
+  border-radius: 5px;
+  color: #ffff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding: 10px 20px;
+  outline: none;
+  transition: all 0.3s;
 }
 
 .searchInput input::placeholder {
-    color: #ffffff62;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
+  color: #ffffff62;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 .searchInput input:focus {
-    border: 1px solid #53ACFF;
+  border: 1px solid #53acff;
 }
 
 .searchInput img {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 .training_title {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .training_title h5 {
-    font-family: Poppins;
-    font-size:  clamp(22px, calc( 1.8vw + 0.5rem ) ,140px);
-    font-weight: 700;
-    text-align: left;
+  font-family: Poppins;
+  font-size: clamp(22px, calc(1.8vw + 0.5rem), 140px);
+  font-weight: 700;
+  text-align: left;
 }
 
 .Bullish {
-    padding: 0.6rem;
-    background: rgba(24, 24, 24, 1);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
+  padding: 0.6rem;
+  background: rgba(24, 24, 24, 1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .Bullish span {
-    font-family: Poppins;
-    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
-    font-weight: 700;
-    text-align: left;
-    padding: 0.5rem;
-    background: rgba(17, 143, 75, 1);
-    border-radius: 6px;
+  font-family: Poppins;
+  font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
+  font-weight: 700;
+  text-align: left;
+  padding: 0.5rem;
+  background: rgba(17, 143, 75, 1);
+  border-radius: 6px;
 }
 
 .Bullish p {
-    width: 50%;
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.3vw + 0.4rem ), 60px);
-    font-weight: 500;
-    text-align: left;
-
+  width: 50%;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.3vw + 0.4rem), 60px);
+  font-weight: 500;
+  text-align: left;
 }
 
 .ProgressBar {
-    position: relative;
+  position: relative;
 }
 
 .ProgressBar span {
-    position: absolute;
-    top: 16px;
-    font-family: Poppins;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    line-height: 11.5px;
-    padding: 4px 6px;
-    background-color: var(--Blue300);
-    border-radius: 5px;
-    text-wrap: nowrap;
-    transform: translateX(50%);
+  position: absolute;
+  top: 16px;
+  font-family: Poppins;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 11.5px;
+  padding: 4px 6px;
+  background-color: var(--Blue300);
+  border-radius: 5px;
+  text-wrap: nowrap;
+  transform: translateX(50%);
 }
 
 .ProgressBar span::before {
-    content: "";
-    position: absolute;
-    bottom: calc(100% - 1px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0px;
-    height: 0px;
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    border-bottom: 5px solid var(--Blue300);
+  content: "";
+  position: absolute;
+  bottom: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0px;
+  height: 0px;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid var(--Blue300);
 }
 
-
-
 .table_of_content {
-    padding: 3rem 1.5rem;
-    background: rgba(24, 24, 24, 1);
-    border-radius: 8px;
-    position: fixed;
-    right: 1%;
-    min-width: 300px;
-    margin-top: 2rem;
+  padding: 3rem 1.5rem;
+  background: rgba(24, 24, 24, 1);
+  border-radius: 8px;
+  position: fixed;
+  right: 1%;
+  min-width: 300px;
+  margin-top: 2rem;
 }
 
 .table_of_content h6 {
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.6vw + 0.5rem ), 60px);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.6vw + 0.5rem), 60px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .table_of_content ul {
-    padding: 1rem 0 1rem 1.5rem;
-    border-left: 2px solid rgba(65, 64, 64, 1);
+  padding: 1rem 0 1rem 1.5rem;
+  border-left: 2px solid rgba(65, 64, 64, 1);
 }
 
 .table_of_content ul li {
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
-    font-weight: 400;
-    text-align: left;
-    margin: 1rem 0;
-    display: block;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
+  font-weight: 400;
+  text-align: left;
+  margin: 1rem 0;
+  display: block;
 }
 
 .table_of_content ul li.completed {
-    color: rgba(93, 93, 93, 1);
+  color: rgba(93, 93, 93, 1);
 }
 
 .table_of_content ul li.current {
-    color: var(--Blue300);
-    font-weight: 700;
+  color: var(--Blue300);
+  font-weight: 700;
 }
 
 .intro_step {
-    padding: 3rem 2rem;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
 }
 
 .intro_step p {
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
-    font-weight: 400;
-    text-align: justify;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
+  font-weight: 400;
+  text-align: justify;
 }
 
 .training_lison_collapse_header {
-    background: rgba(50, 50, 50, 1);
-    padding: 1.5rem 3rem;
-    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s;
+  background: rgba(50, 50, 50, 1);
+  padding: 1.5rem 3rem;
+  box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px
+    rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
 }
 
 .training_lison_collapse_header h6 {
-    font-family: Poppins;
-    font-size: clamp(12px,  calc( 1.3vw + 0.3rem ) , 90px);
-    font-weight: 700;
-    text-align: left;
-    transition: all 0.3s;
+  font-family: Poppins;
+  font-size: clamp(12px, calc(1.3vw + 0.3rem), 90px);
+  font-weight: 700;
+  text-align: left;
+  transition: all 0.3s;
 }
 
 .training_lison_collapse_header svg {
-    width: 21px;
-    transform: rotateX(180deg);
-    transition: all 0.3s;
+  width: 21px;
+  transform: rotateX(180deg);
+  transition: all 0.3s;
 }
 
 .training_lison_collapse_body {
-    padding: 2.5rem 2rem 2rem;
-    background: rgba(24, 24, 24, 1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    border-radius: 0 0 8px 8px;
-    transform: translateY(-8px);
-    display: none;
+  padding: 2.5rem 2rem 2rem;
+  background: rgba(24, 24, 24, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  border-radius: 0 0 8px 8px;
+  transform: translateY(-8px);
+  display: none;
 }
 
 .training_lison_collapse_body p {
-    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
-    font-weight: 400;
-    text-align: justify;
-    margin-bottom: 2rem;
+  font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 2rem;
 }
 
 .makeCompleteBtn {
-    display: block;
-    border: none;
-    outline: none;
-    background-color: var(--Blue300);
-    border-radius: 5px;
-    text-align: center;
-    padding: 0.6rem 2rem;
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.4vw + 0.4rem ), 60px);
-    font-weight: 600;
-    margin: 1.5rem 0 0 auto;
-    transition: all 0.3s;
+  display: block;
+  border: none;
+  outline: none;
+  background-color: var(--Blue300);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.6rem 2rem;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.4vw + 0.4rem), 60px);
+  font-weight: 600;
+  margin: 1.5rem 0 0 auto;
+  transition: all 0.3s;
 }
-.makeCompleteBtn:hover{
-    box-shadow: inset 0px -20px 30px -10px #165B9C;
+.makeCompleteBtn:hover {
+  box-shadow: inset 0px -20px 30px -10px #165b9c;
 }
 
 .makeCompleteBtn:disabled {
-    background-color: rgba(126, 126, 126, 1);
+  background-color: rgba(126, 126, 126, 1);
 }
 .makeCompleteBtn:disabled:hover {
-    box-shadow: none;
+  box-shadow: none;
 }
 .previous_assessment_btn {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .previous_btn {
-    display: block;
-    border: 1px solid #fff;
-    outline: none;
-    background-color: transparent;
-    border-radius: 5px;
-    text-align: center;
-    padding: 0.6rem 2rem;
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 60px);
-    font-weight: 600;
-    margin: 0.5rem 0;
-    transition: all 0.3s;
+  display: block;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.6rem 2rem;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.8vw + 0.1rem), 60px);
+  font-weight: 600;
+  margin: 0.5rem 0;
+  transition: all 0.3s;
 }
 
 .previous_btn:hover {
-    background: #53acff;
-    border: 1px solid #53acff;
+  background: #53acff;
+  border: 1px solid #53acff;
 }
 
 .assessment_btn {
-    display: block;
-    width: fit-content;
-    border: none;
-    outline: none;
-    background-color: var(--Blue300);
-    border-radius: 5px;
-    text-align: center;
-    padding: 0.6rem 2rem;
-    font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.8vw + 0.1rem ), 60px);
-    font-weight: 600;
-    margin: 0.5rem 0 0 auto;
-    transition: all 0.3s;
+  display: block;
+  width: fit-content;
+  border: none;
+  outline: none;
+  background-color: var(--Blue300);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.6rem 2rem;
+  font-family: Poppins;
+  font-size: clamp(10px, calc(0.8vw + 0.1rem), 60px);
+  font-weight: 600;
+  margin: 0.5rem 0 0 auto;
+  transition: all 0.3s;
 }
 
 .assessment_btn:hover {
-    box-shadow: inset 0px -20px 30px -10px #165B9C;
+  box-shadow: inset 0px -20px 30px -10px #165b9c;
 }
 
 .assessment_btn:disabled {
-    background-color: rgba(126, 126, 126, 1);
-    border: 1px solid rgba(126, 126, 126, 1);
+  background-color: rgba(126, 126, 126, 1);
+  border: 1px solid rgba(126, 126, 126, 1);
 }
 
 .assessment_btn:disabled:hover {
-    box-shadow: none;
+  box-shadow: none;
 }
 
-.assessment_wrapper>h4 {
-    font-family: Poppins;
-    font-size: clamp(14px,  calc( 1.4vw + 0.5rem ) , 90px);
-    font-weight: 700;
-    text-align: left;
+.assessment_wrapper > h4 {
+  font-family: Poppins;
+  font-size: clamp(14px, calc(1.4vw + 0.5rem), 90px);
+  font-weight: 700;
+  text-align: left;
 }
 
-.assessment_wrapper>p {
-    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
-    font-weight: 400;
-    margin: 2rem 0;
+.assessment_wrapper > p {
+  font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
+  font-weight: 400;
+  margin: 2rem 0;
 }
 
 .assessment_wrapper .training_lison_collapse_body p {
-    margin-bottom: 0rem;
+  margin-bottom: 0rem;
 }
 
 .assessment_wrapper .training_lison_collapse_body {
-    display: block;
+  display: block;
 }
 
 .assessment_view {
-    padding: 3rem 2rem;
-    border-radius: 15px;
-    background: rgba(23, 23, 23, 1);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  background: rgba(23, 23, 23, 1);
 }
 
 .assessment_view .assessment_view_title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .assessment_view .assessment_view_title h6 {
-    font-family: Poppins;
-    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
-    font-weight: 400;
+  font-family: Poppins;
+  font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
+  font-weight: 400;
 }
 
 .assessment_view .assessment_view_title span {
-    font-family: Poppins;
-    font-size: clamp(12px, calc( 0.8vw + 0.5rem ) , 70px);
-    font-weight: 400;
-    text-align: left;
-    color: rgba(164, 164, 164, 1);
+  font-family: Poppins;
+  font-size: clamp(12px, calc(0.8vw + 0.5rem), 70px);
+  font-weight: 400;
+  text-align: left;
+  color: rgba(164, 164, 164, 1);
 }
-.assessment_view_answers{
-    flex-direction: column;
+.assessment_view_answers {
+  flex-direction: column;
 }
 .assessment_view_answers .answer {
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    position: relative;
-    background: rgba(23, 23, 23, 1);
-    border: 1px solid #ffffff4b;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: relative;
+  background: rgba(23, 23, 23, 1);
+  border: 1px solid #ffffff4b;
 }
 
 .assessment_view_answers .answer svg {
-    cursor: move;
+  cursor: move;
 }
 
 .tradingview_widget_container iframe:not(:first-child) {
-    display: none !important;
+  display: none !important;
 }
 
 .assesment_score {
-    background: linear-gradient(270deg, #53ACFF 0%, rgba(83, 172, 255, 0.272676) 43.12%, rgba(83, 172, 255, 0.207852) 62.57%, rgba(83, 172, 255, 0) 102.41%);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(10px,  calc( 3vw + 0.1rem ), 60px);
-    box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    270deg,
+    #53acff 0%,
+    rgba(83, 172, 255, 0.272676) 43.12%,
+    rgba(83, 172, 255, 0.207852) 62.57%,
+    rgba(83, 172, 255, 0) 102.41%
+  );
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, calc(3vw + 0.1rem), 60px);
+  box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px
+    rgba(0, 0, 0, 0.25);
 }
 
 .assesment_score h5 {
-    font-family: Poppins;
-    font-size: clamp(24px,  calc( 2.8vw + 0.1rem ), 160px);
-    font-weight: 700;
-    text-align: left;
-
+  font-family: Poppins;
+  font-size: clamp(24px, calc(2.8vw + 0.1rem), 160px);
+  font-weight: 700;
+  text-align: left;
 }
 
 .assesment_score span {
-    font-family: Poppins;
-    font-size:  clamp(22px, calc( 3vw + 0.5rem ) ,140px);
-    font-weight: 700;
-    text-align: left;
+  font-family: Poppins;
+  font-size: clamp(22px, calc(3vw + 0.5rem), 140px);
+  font-weight: 700;
+  text-align: left;
 }
 
-.ChartOverlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    z-index: 4;
+.ChartOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 4;
 }
 
 @media only screen and (max-width: 1024px) {
+  .training_navBar ul {
+    display: none;
+  }
 
-    .training_navBar ul {
-        display: none;
-    }
+  .ProgressBar span {
+    font-size: 9px !important;
+  }
 
+  .ProgressBar {
+    margin-bottom: 3rem;
+  }
 
-    .ProgressBar span {
-        font-size: 9px !important;
-    }
+  .training_title {
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
 
-    .ProgressBar {
-        margin-bottom: 3rem;
-    }
+  .training_title h5 {
+    width: 60%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+  }
 
-    .training_title {
-        gap: 0.3rem;
-        margin-bottom: 1rem;
-    }
+  .Bullish {
+    padding: 0.4rem;
+    width: 40%;
+    gap: 0.3rem;
+  }
 
-    .training_title h5 {
-        width: 60%;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 24px;
-        text-align: left;
-    }
+  .Bullish span {
+    padding: 0.3rem;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14.22px;
+  }
 
-    .Bullish {
-        padding: 0.4rem;
-        width: 40%;
-        gap: 0.3rem;
-    }
+  .Bullish p {
+    width: 50%;
+    font-size: 6.86px;
+    font-weight: 500;
+    line-height: 10.3px;
+    text-align: left;
+  }
 
-    .Bullish span {
-        padding: 0.3rem;
-        font-size: 10px;
-        font-weight: 700;
-        line-height: 14.22px;
-    }
+  .intro_step {
+    padding: 1.5rem 0.8rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
 
-    .Bullish p {
-        width: 50%;
-        font-size: 6.86px;
-        font-weight: 500;
-        line-height: 10.3px;
-        text-align: left;
-    }
+  .intro_step img {
+    width: 100%;
+  }
 
-    .intro_step {
-        padding: 1.5rem 0.8rem;
-        flex-direction: column-reverse;
-        gap: 1rem;
-    }
+  .intro_step p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 15px;
+  }
 
-    .intro_step img {
-        width: 100%;
-    }
+  .training_lison_collapse_header {
+    padding: 0.8rem 0.5rem;
+  }
 
-    .intro_step p {
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 15px;
-    }
+  .training_lison_collapse_header h6 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+  }
 
-    .training_lison_collapse_header {
-        padding: 0.8rem 0.5rem;
-    }
+  .training_lison_collapse_header svg {
+    width: 10px;
+  }
 
-    .training_lison_collapse_header h6 {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-    }
+  .training_lison_collapse_body {
+    padding: 1.5rem 1rem 1rem;
+  }
 
-    .training_lison_collapse_header svg {
-        width: 10px;
-    }
+  .training_lison_collapse_body img {
+    width: 100%;
+  }
 
-    .training_lison_collapse_body {
-        padding: 1.5rem 1rem 1rem;
-    }
+  .training_lison_collapse_body p {
+    margin-bottom: 1rem;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 15px;
+  }
 
-    .training_lison_collapse_body img{
-        width: 100%;
-    }
-
-    .training_lison_collapse_body p {
-        margin-bottom: 1rem;
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 15px;
-    }
-
-    .makeCompleteBtn {
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 14.4px;
-        padding: 0.6rem;
-        display: block;
-        width: 100%;
-        margin: 0;
-    }
-    .assessment_wrapper>h4 {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 30px;
-        text-align: left;
-    }
-    .assessment_wrapper>p {
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 15px;
-        text-align: justified;
-    }
-    .assessment_view {
-        padding: 1.5rem 1rem;
-    }
-    .assessment_view .assessment_view_title h6 {
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 18px;
-    }
-    .assessment_view .assessment_view_title span {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 21px;
-    }
-    .assessment_view_answers{
-        flex-direction: row;
-    }
-    .assessment_view_answers .answer {
-        padding: 0.5rem;
-    }
-    .assessment_view_answers .answer svg{
-        width: 100%;
-    }
-    .assessment_btn {
-        padding: 0.6rem 1rem;
-        margin: 0;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 14.4px;
-    }
-    .SingleTraning_previous_btn__bLVoy {
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 14.4px;
-    }
-
+  .makeCompleteBtn {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.4px;
+    padding: 0.6rem;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .assessment_wrapper > h4 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+  }
+  .assessment_wrapper > p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: justified;
+  }
+  .assessment_view {
+    padding: 1.5rem 1rem;
+  }
+  .assessment_view .assessment_view_title h6 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+  .assessment_view .assessment_view_title span {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+  }
+  .assessment_view_answers {
+    flex-direction: row;
+  }
+  .assessment_view_answers .answer {
+    padding: 0.5rem;
+  }
+  .assessment_view_answers .answer svg {
+    width: 100%;
+  }
+  .assessment_btn {
+    padding: 0.6rem 1rem;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.4px;
+  }
+  .SingleTraning_previous_btn__bLVoy {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.4px;
+  }
 }
