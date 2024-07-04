@@ -22,6 +22,7 @@ console.log(token);
 
 const SettingPage = () => {
   const [profData, setProfData] = useState();
+  const refAva = useRef()
 
   async function getProfSett() {
     await axios
@@ -73,8 +74,7 @@ const SettingPage = () => {
   };
 
   function removeAva() {
-    profSett.values.profile.image =
-      "https://upload.wikimedia.org/wikipediasda/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png";
+    refAva.current.src = ""
   }
 
   const validationSchema = Yup.object({
@@ -340,6 +340,7 @@ const SettingPage = () => {
                           <div className="md:w-1/2 flex gap-2 align-items-center">
                             <div>
                               <img
+                              ref={refAva}
                                 src={
                                   imagePhoto
                                     ? imagePhoto
