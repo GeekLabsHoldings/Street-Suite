@@ -41,7 +41,11 @@ const SingleTraning = () => {
   useEffect(() => {
     const courseId = window.location.pathname.split("/").pop();
     axios
-      .get(`https://abdulrahman.onrender.com/courses/modules/${courseId}`)
+      .get(`https://abdulrahman.onrender.com/courses/modules/${courseId}`, {
+        headers: {
+          Authorization: `Token 6d07e1e16a4a70507660569941981aed44c84654`,
+        },
+      })
       .then((res) => {
         // console.log(res.data);
         setCourseModules(res.data);
@@ -167,7 +171,7 @@ const SingleTraning = () => {
               <li
                 key={section.id}
                 className={
-                  getCurrent(currentModule.section_set).id === section.id
+                  getCurrent(currentModule.section_set)?.id === section.id
                     ? styles.current
                     : section.completed === 1
                     ? styles.completed

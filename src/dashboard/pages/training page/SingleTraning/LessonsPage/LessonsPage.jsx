@@ -30,14 +30,20 @@ const LessonsPage = () => {
   };
 
   async function makeComplete(e) {
-    axios
-      .post(
-        `https://abdulrahman.onrender.com/courses/section/complete/${e.target.id}`
-      )
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
+    try {
+      const response = await axios.patch(
+        `https://abdulrahman.onrender.com/courses/section_complete/${e.target.dataset.id}`,
+        {}, // Assuming no body is needed for the PATCH request
+        {
+          headers: {
+            Authorization: `Token 6d07e1e16a4a70507660569941981aed44c84654`,
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
@@ -56,7 +62,7 @@ const LessonsPage = () => {
           className={`training_lison_collapse ${
             section.is_completed
               ? "completed"
-              : getCurrent(currentModule.section_set).id === section.id
+              : getCurrent(currentModule.section_set)?.id === section.id
               ? "current"
               : ""
           }`}
@@ -102,6 +108,7 @@ const LessonsPage = () => {
               </div>
             </div>
             <button
+              data-id={section.id}
               className={styles.makeCompleteBtn}
               disabled={section.is_completed}
               onClick={makeComplete}
@@ -114,7 +121,7 @@ const LessonsPage = () => {
 
       {/* button that redirect to assessment page */}
       <Link
-        to="/dashboard/training/single-training/assessment"
+        to={`/dashboard/training/single-training/${currentModule.id}/assessment`}
         className={styles.assessment_btn}
       >
         Assessment
