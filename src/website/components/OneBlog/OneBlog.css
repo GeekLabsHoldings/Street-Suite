@@ -1,314 +1,339 @@
-.pageBG{
-    background: linear-gradient(0deg, rgba(36,48,58,1) 36%, rgba(32,38,44,1) 49%, rgba(27,28,29,1) 77%);
+.pageBG {
+  background: linear-gradient(
+    0deg,
+    rgba(36, 48, 58, 1) 36%,
+    rgba(32, 38, 44, 1) 49%,
+    rgba(27, 28, 29, 1) 77%
+  );
 }
-.blogsDivForImg{
-    width: 100%;
-    height: clamp(128px, calc(15vw + 0.1rem),500px);
-    background-color:#3B3B3B ;
-    border-radius: 1.2rem;
-    box-shadow:0px 0px 5px 0px rgba(0,0,0,1) inset;
+.blogsDivForImg {
+  width: 100%;
+  height: clamp(128px, calc(15vw + 0.1rem), 500px);
+  background-color: #3b3b3b;
+  border-radius: 1.2rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1) inset;
 }
-.oneBlogCont{
-    display: flex;
-    flex-direction: column;
-    padding-top: clamp(10px, calc( 0.35vw + 0.1rem), 60px);
-    gap: clamp(12px, calc(0.4vw + 0.1rem), 60px);
+.oneBlogCont {
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(10px, calc(0.35vw + 0.1rem), 60px);
+  gap: clamp(12px, calc(0.4vw + 0.1rem), 60px);
 }
-.privateEquityCont{
-    display: flex;
-    flex-direction: column;
-    gap: clamp(16px, calc(0.7vw + 0.1rem), 60px);
-    padding-top: 16px;
-    padding-bottom: 16px;
+.privateEquityCont {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, calc(0.7vw + 0.1rem), 60px);
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-.privateEquityDetail{
-    display: flex;
-    flex-direction: column;
-    gap: clamp(4px, calc( 0.2vw + 0.1rem), 60px);
+.privateEquityDetail {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, calc(0.2vw + 0.1rem), 60px);
 }
-.oneBlogCont h3{
-font-size: clamp(12px, calc( 1.2vw + 0.1rem ) , 70px);
-font-weight: 700;
+.oneBlogCont h3 {
+  font-size: clamp(12px, calc(1.2vw + 0.1rem), 70px);
+  font-weight: 700;
 }
-.oneBlogCont p{
-    font-size: clamp(10px, calc( 0.7vw + 0.1rem), 60px);
-    font-weight: 400;
+.oneBlogCont p {
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 60px);
+  font-weight: 400;
 }
-.bluecolor{
-    font-size: clamp(12px, calc( 0.7vw + 0.1rem), 60px);
-    font-weight: 400;
-    color: #53ACFF;
+.bluecolor {
+  font-size: clamp(12px, calc(0.7vw + 0.1rem), 60px);
+  font-weight: 400;
+  color: #53acff;
 }
-.bottomBorder{
-    border-bottom: 1px solid #979797 ;
+.bottomBorder {
+  border-bottom: 1px solid #979797;
 }
-.rightBorder{
-    border-right: 1px solid #979797;
+.rightBorder {
+  border-right: 1px solid #979797;
 }
-.parentDiv{
-    padding-right: clamp(10px, calc( 0.9vw + 0.1rem), 60px);
+.parentDiv {
+  padding-right: clamp(10px, calc(0.9vw + 0.1rem), 60px);
 }
-.verticalSeparator{
-    border-right: 1px solid #979797;
-    margin-top: clamp(0px, calc( 0.4vw + 0.1rem), 60px);
-    margin-bottom: clamp(0px, calc( 0.4vw + 0.1rem), 60px);
-    padding-left: clamp(4px, calc( 0.4vw + 0.1rem), 60px);
-    padding-right: clamp(4px, calc( 0.4vw + 0.1rem), 60px);
+.verticalSeparator {
+  border-right: 1px solid #979797;
+  margin-top: clamp(0px, calc(0.4vw + 0.1rem), 60px);
+  margin-bottom: clamp(0px, calc(0.4vw + 0.1rem), 60px);
+  padding-left: clamp(4px, calc(0.4vw + 0.1rem), 60px);
+  padding-right: clamp(4px, calc(0.4vw + 0.1rem), 60px);
 }
-.secDivOnLeft{
-    padding-top:clamp(16px, calc(2.2vw + 0.1rem), 80px);
-    padding-bottom:clamp(16px, calc(2.2vw + 0.1rem), 80px);
+.secDivOnLeft {
+  padding-top: clamp(16px, calc(2.2vw + 0.1rem), 80px);
+  padding-bottom: clamp(16px, calc(2.2vw + 0.1rem), 80px);
+}
+.secDivOnLeft h2 {
+  font-size: clamp(14px, calc(2vw + 0.1rem), 80px);
+  font-weight: 700;
+}
+.darkerColor {
+  background-color: rgb(60, 89, 115);
+  border-radius: 0.3rem;
+  text-wrap: nowrap;
+  padding-right: clamp(6px, calc(0.4vw + 0.5rem), 60px);
+  padding-left: clamp(6px, calc(0.4vw + 0.5rem), 60px);
+}
+.privateEquityDiv {
+  display: flex;
+  gap: clamp(8px, calc(0.5vw + 0.1rem), 60px);
+  padding-top: clamp(12px, calc(0.5vw + 0.1rem), 60px);
+  padding-bottom: clamp(12px, calc(0.5vw + 0.1rem), 60px);
+}
+.babyblueDiv {
+  border-radius: 0.8rem;
+  background-image: linear-gradient(
+    0deg,
+    rgb(51, 106, 158),
+    57%,
+    rgb(73, 141, 204) 100%
+  );
+}
+.divNextToTwoDivs {
+  border-radius: 1.5rem;
+  width: clamp(159px, calc(21vw + 0.1rem), 900px);
+  height: clamp(221px, calc(25vw + 0.1rem), 900px);
+}
+.leftBG {
+  border-radius: 0 0.8rem 0.8rem 0;
+  background-image: linear-gradient(
+    180deg,
+    rgb(79, 165, 244),
+    57%,
+    rgb(35, 88, 138) 100%
+  );
+  height: 100%;
+  padding: clamp(8px, calc(0.6vw + 0.1rem), 60px);
+}
+.topRight {
+  position: absolute;
+  width: 20%;
+  top: 0;
+  right: 0;
+  transform: translate(17%, -10%);
+}
+.leftBG h5 {
+  font-size: clamp(12px, calc(1vw + 0.1rem), 70px);
+  font-weight: 700;
+}
+.stockMarket {
+  padding-bottom: clamp(4px, calc(0.3vw + 0.1rem), 60px);
+}
+.coloredTxt {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, calc(0.15vw + 0.1rem), 60px);
+}
+.coloredTxt h6 {
+  font-size: clamp(10px, calc(0.6vw + 0.1rem), 60px);
+  font-weight: 400;
+}
+.txtspan {
+  display: flex;
+  gap: clamp(6px, calc(0.6vw + 0.1rem), 60px);
+}
+.txtspan span {
+  font-size: clamp(10px, calc(0.6vw + 0.1rem), 60px);
+  font-weight: 400;
+}
+.blackBGFonts h2 {
+  font-size: clamp(16px, calc(1.8vw + 0.1rem), 80px);
+  font-weight: 700;
+}
+.blackBGFonts p {
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 60px);
+  font-weight: 400;
+}
+.divBg {
+  background-color: #202020;
+  border: 1px solid #979797;
+  border-radius: 0.5rem;
+}
+.firstBlog {
+  gap: clamp(8px, calc(0.5vw + 0.1rem), 60px);
+  padding-top: clamp(12px, calc(0.35vw + 0.1rem), 60px);
+  padding-bottom: clamp(12px, calc(0.35vw + 0.1rem), 60px);
+}
+.forGradBG {
+  background: linear-gradient(
+    297deg,
+    rgba(31, 43, 55, 1) 0%,
+    rgba(50, 86, 119, 1) 75%
+  );
+}
+.winnerFont h5 {
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 60px);
+  font-weight: 700;
+}
+.blueContainer {
+  background-color: #53acff;
+}
+.blueContainer h3 {
+  font-size: clamp(20px, calc(1.4vw + 0.1rem), 70px);
+  font-weight: 700;
+}
+.lastInRight h3 {
+  font-size: clamp(12px, calc(1vw + 0.1rem), 70px);
+  font-weight: 700;
+}
+.twoSimilarBlogs {
+  display: flex;
+  gap: clamp(12px, calc(0.7vw + 0.1rem), 60px);
+}
+.chinaImgDiv {
+  border-radius: 0.6rem;
+  width: clamp(90px, calc(10vw + 0.5rem), 400px);
+  height: clamp(56px, calc(6vw + 0.5rem), 250px);
+}
+.divForBlackBg {
+  border-radius: 0.6rem;
+  width: clamp(141px, calc(12vw + 0.5rem), 500px);
+  height: clamp(127px, calc(9.5vw + 0.5rem), 400px);
+}
+.lastInLeftImg {
+  border-radius: 1.5rem;
+  width: clamp(150px, calc(22vw + 0.1rem), 840px);
+  height: clamp(110px, calc(12vw + 0.5rem), 350px);
+}
+.rightBorderDiv {
+  width: clamp(159px, calc(22vw + 0.1rem), 3000px);
+  height: clamp(89px, calc(9vw + 0.5rem), 500px);
+  border-radius: 1.5rem;
+}
+.parentOfBlackBg {
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(24px, calc(2vw + 0.1rem), 80px);
+  padding-bottom: clamp(24px, calc(2vw + 0.1rem), 80px);
+  padding-right: clamp(12px, calc(2.2vw + 0.1rem), 80px);
+}
+.textToTwoBlogs {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, calc(0.7vw + 0.1rem), 60px);
+  padding-bottom: clamp(16px, calc(2vw + 0.1rem), 80px);
+}
+.smImgSize {
+  width: 0.788rem;
+  height: 0.808rem;
+}
+.RbottomBorder {
+  border-bottom: 1px solid #979797;
+}
+.textDiv {
+  display: flex;
+  gap: clamp(10px, calc(0.6vw + 0.1rem), 60px);
+  padding-top: clamp(8px, calc(0.7vw + 0.1rem), 60px);
+  padding-bottom: clamp(8px, calc(0.7vw + 0.1rem), 60px);
+}
+.textDiv h6 {
+  font-size: clamp(12px, calc(0.7vw + 0.1rem), 60px);
+  font-weight: 700;
+}
+.textDiv p {
+  font-size: clamp(12px, calc(0.7vw + 0.1rem), 60px);
+  font-weight: 400;
+}
+.imgSizeInSm {
+  width: clamp(10px, calc(0.8vw + 0.1rem), 60px);
+  height: clamp(10px, calc(0.83vw + 0.1rem), 60px);
+}
 
-}
-.secDivOnLeft h2{
-    font-size: clamp(14px, calc(2vw + 0.1rem), 80px);
-    font-weight: 700;
-}
-.darkerColor{
-    background-color: rgb(60, 89, 115);
-    border-radius: 0.3rem;
-    text-wrap: nowrap;
-    padding-right: clamp(6px, calc( 0.4vw + 0.5rem), 60px);
-    padding-left: clamp(6px, calc( 0.4vw + 0.5rem), 60px);
-}
-.privateEquityDiv{
-    display: flex;
-    gap: clamp(8px, calc( 0.5vw + 0.1rem), 60px);
-    padding-top: clamp(12px, calc( 0.5vw + 0.1rem), 60px);
-    padding-bottom: clamp(12px, calc( 0.5vw + 0.1rem), 60px);
-}
-.babyblueDiv{
-    border-radius: 0.8rem;
-    background-image: linear-gradient(0deg ,rgb(51,106,158) ,57%,rgb(73, 141, 204) 100%);
-}
-.divNextToTwoDivs{
-    border-radius: 1.5rem;
-    width: clamp(159px, calc(21vw + 0.1rem),900px);
-    height: clamp(221px, calc(25vw + 0.1rem),900px);
+@media only screen and (max-width: 676px) {
+  .parentOfBlackBg {
+    padding-left: 0;
+    padding-right: 0;
   }
-.leftBG{
-    border-radius:0 0.8rem 0.8rem 0;
-    background-image: linear-gradient(180deg ,rgb(79,165,244) ,57%,rgb(35, 88, 138) 100%);
-    height: 100%;
-    padding: clamp(8px, calc( 0.6vw + 0.1rem), 60px);
-}
-.topRight{
-    position: absolute;
-    width: 20%;
-    top: 0;
-    right: 0;
-    transform: translate(17%, -10%);
-}
-.leftBG h5{
-    font-size: clamp(12px, calc( 1vw + 0.1rem ) , 70px);
+  .privateEquityCont {
+    padding: 0;
+  }
+  .oneBlogCont {
+    padding: 0;
+  }
+  .oneBlogCont h3,
+  .leftBG h5 {
+    line-height: 1.125rem;
     font-weight: 700;
-}
-.stockMarket{
-    padding-bottom: clamp(4px, calc( 0.3vw + 0.1rem), 60px);
-}
-.coloredTxt{
-    display: flex;
-    flex-direction: column;
-    gap: clamp(4px, calc( 0.15vw + 0.1rem), 60px);
-}
-.coloredTxt h6{
-    font-size: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
+  }
+  .oneBlogCont p,
+  .coloredTxt h6,
+  .txtspan span {
+    line-height: 0.94rem;
     font-weight: 400;
-}
-.txtspan{
-    display: flex;
-    gap: clamp(6px, calc( 0.6vw + 0.1rem), 60px);
-}
-.txtspan span{
-    font-size: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
+  }
+  .secDivOnLeft h2 {
+    line-height: 1.3125rem;
+    font-weight: 700;
+  }
+  .leftBG {
+    border-radius: 0.8rem;
+    background-image: linear-gradient(
+      0deg,
+      rgb(68, 141, 208) 57%,
+      rgb(79, 165, 244) 100%
+    );
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .bluecolor {
+    line-height: 1.442rem;
     font-weight: 400;
-}
-.blackBGFonts h2{
-    font-size: clamp(16px, calc(1.8vw + 0.1rem), 80px);
-    font-weight: 700;
-}
-.blackBGFonts p{
-    font-size: clamp(10px, calc( 0.7vw + 0.1rem), 60px);
+    color: #53acff;
+  }
+  .textDiv {
+    gap: 0;
+  }
+  .textDiv p,
+  .textDiv h6 {
+    line-height: 1.442rem;
     font-weight: 400;
-}
-.divBg{
-    background-color: #202020;
-    border: 1px solid #979797 ;
-    border-radius: 0.5rem;
-}
-.firstBlog{
-    gap: clamp(8px, calc( 0.5vw + 0.1rem), 60px);
-    padding-top: clamp(12px, calc( 0.35vw + 0.1rem), 60px);
-    padding-bottom: clamp(12px, calc( 0.35vw + 0.1rem), 60px);
-}
-.forGradBG{
-    background: linear-gradient(297deg, rgba(31,43,55,1) 0%, rgba(50,86,119,1) 75%);
-}
-.winnerFont h5{
-    font-size: clamp(10px, calc( 0.7vw + 0.1rem), 60px);
+  }
+  .blackBGFonts h2 {
+    line-height: 1.5rem;
     font-weight: 700;
-}
-.blueContainer{
-    background-color:  #53ACFF;
-}
-.blueContainer h3{
-    font-size:  clamp(20px, calc(1.4vw + 0.1rem), 70px);
-    font-weight: 700;
-}
-.lastInRight h3{
-    font-size:clamp(12px, calc( 1vw + 0.1rem ) , 70px);
-    font-weight:700 ;
-}
-.twoSimilarBlogs{
-    display: flex;
-    gap: clamp(12px, calc(0.7vw + 0.1rem), 60px);
-}
-.chinaImgDiv{
-    border-radius: 0.6rem;
-    width: clamp(90px, calc(10vw + 0.5rem),400px);
-    height: clamp(56px, calc(6vw + 0.5rem),250px);
-}
-.divForBlackBg{
-    border-radius: 0.6rem;
-    width: clamp(141px, calc(12vw + 0.5rem),500px);
-    height: clamp(127px, calc(9.5vw + 0.5rem),400px);
-}
-.lastInLeftImg{
-    border-radius: 1.5rem;
-    width: clamp(150px, calc(22vw + 0.1rem),840px);
-    height: clamp(110px, calc(12vw + 0.5rem),350px);
-}
-.rightBorderDiv{
-    width: clamp(159px, calc(22vw + 0.1rem),3000px);
-    height: clamp(89px, calc(9vw + 0.5rem),500px);
-    border-radius: 1.5rem;
-}
-.parentOfBlackBg{
-    display: flex;
-    justify-content: center;
-    padding-top: clamp(24px, calc(2vw + 0.1rem), 80px);
-    padding-bottom: clamp(24px, calc(2vw + 0.1rem), 80px);
-    padding-right: clamp(12px, calc(2.2vw + 0.1rem), 80px);
-}
-.textToTwoBlogs{
-    display: flex;
-    flex-direction: column;
-    gap: clamp(8px, calc( 0.7vw + 0.1rem), 60px);
-    padding-bottom: clamp(16px, calc(2vw + 0.1rem), 80px);
-}
-.smImgSize{
-    width: 0.788rem;
-    height: 0.808rem;
-}
-.RbottomBorder{
-    border-bottom:1px solid #979797 ;
-}
-.textDiv{
-    display: flex;
-    gap: clamp(10px, calc( 0.6vw + 0.1rem), 60px);
-    padding-top: clamp(8px, calc( 0.7vw + 0.1rem), 60px);
-    padding-bottom: clamp(8px, calc( 0.7vw + 0.1rem), 60px);
-}
-.textDiv h6{
-    font-size: clamp(12px, calc(0.7vw + 0.1rem), 60px);;
-    font-weight: 700;
-}
-.textDiv p{
-    font-size: clamp(12px, calc( 0.7vw + 0.1rem), 60px);
+  }
+  .blackBGFonts p {
+    line-height: 0.94rem;
     font-weight: 400;
-}
-.imgSizeInSm{
-    width: clamp(10px, calc(0.8vw + 0.1rem), 60px);
-    height: clamp(10px, calc(0.83vw + 0.1rem), 60px);
-}
+  }
 
-@media only screen and (max-width:676px) {
-    .parentOfBlackBg{
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .privateEquityCont{
-        padding: 0;
-    }
-    .oneBlogCont{
-        padding: 0;
-    }
-    .oneBlogCont h3 ,.leftBG h5{
-        line-height: 1.125rem;
-        font-weight: 700;
-    }
-    .oneBlogCont p ,.coloredTxt h6 ,.txtspan span{
-        line-height: 0.94rem;
-        font-weight: 400;
-    }
-    .secDivOnLeft h2{
-        line-height: 1.3125rem;
-        font-weight: 700;
-    }
-    .leftBG{
-        border-radius: 0.8rem;
-        background-image: linear-gradient(0deg ,rgb(68, 141, 208) 57%, rgb(79,165,244) 100%);
-        padding-right: 16px;
-        padding-left: 16px;
-    }
-    .bluecolor{
-        line-height:1.442rem;
-        font-weight: 400;
-        color: #53ACFF;
-    }
-    .textDiv{
-        gap: 0;
-    }
-    .textDiv p, .textDiv h6{
-        line-height:1.442rem;
-        font-weight: 400;
-    }
-    .blackBGFonts h2{
-        line-height: 1.5rem;
-        font-weight: 700;
-    }
-    .blackBGFonts p{
-        line-height: 0.94rem;
-        font-weight: 400;
-    
-    }
-    
-.verticalSeparator{
+  .verticalSeparator {
     border-right: 0;
     margin: 0;
-}
-.blueContainer h3{
+  }
+  .blueContainer h3 {
     line-height: 1.9rem;
     font-weight: 700;
-}
+  }
 
-.RbottomBorder{
+  .RbottomBorder {
     border-bottom: none;
-}
-.blogsDivForImg{
+  }
+  .blogsDivForImg {
     width: 100%;
-    background-color:#3B3B3B ;
+    background-color: #3b3b3b;
     border-radius: 0.5rem;
-    box-shadow:0px 0px 3px 0px rgba(0,0,0,1) inset;
-}
-.imgSizeInSm{
-    width:0.788rem;
-    height:0.808rem;
-}
-.privateEquityDiv{
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1) inset;
+  }
+  .imgSizeInSm {
+    width: 0.788rem;
+    height: 0.808rem;
+  }
+  .privateEquityDiv {
     padding: 0;
-}
+  }
 }
 
 /* No blogs found Alert */
 .alert-message {
-    color: #ff0000; /* Red text color for emphasis */
-    background-color: #232323;
-    border: 1px solid #1F2021;
-    padding: 20px 25px; /* Padding for spacing */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 26px; /* Font size */
-    font-weight: bold; /* Bold text */
-    text-align: center; /* Center align text */
-    margin: 20px 0; /* Margin for spacing */
+  color: #8a8a8a; /* Red text color for emphasis */
+  background-color: #232323;
+  border: 1px solid #1f2021;
+  padding: 20px 25px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 26px; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center align text */
+  margin: 20px 0; /* Margin for spacing */
 }

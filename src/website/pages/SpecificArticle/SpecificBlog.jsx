@@ -56,7 +56,7 @@ const SpecificBlog = () => {
             <h1>{blogDetails?.title}</h1>
           </div>
           {/* big image about it */}
-          <div className="divForImgLg md:h-96 sm:h-40 md:my-5 sm:mt-2 sm:mb-5">
+          <div className="divForImgLg md:h-96 sm:h-40 md:my-5 sm:mt-2 sm:mb-5 rounded-xl overflow-hidden">
             <img
               src={blogDetails?.image}
               alt={blogDetails?.title}
