@@ -58,16 +58,13 @@ import { signIn } from "./redux/cardsSlice";
 
 function App() {
   const userState = useSelector((state) => state.login.loggedIn);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-
-useEffect(()=>{
-if (localStorage.getItem("userToken")) {
-  dispatch(signIn())
-
-}
-},[])
-
+  useEffect(() => {
+    if (localStorage.getItem("userToken")) {
+      dispatch(signIn());
+    }
+  }, []);
 
   return (
     <TokenContextProvider>
@@ -80,7 +77,7 @@ if (localStorage.getItem("userToken")) {
             {/* quizzes page route  */}
             <Route path="quizzes" element={<QuizzesPage />}>
               <Route index element={<QuizzesFiltersPage />} />
-              <Route path="quiz" element={<QuizPage />} />
+              <Route path="quiz/:quizId" element={<QuizPage />} />
               <Route path="quiz-result" element={<QuizResultsPage />} />
             </Route>
 

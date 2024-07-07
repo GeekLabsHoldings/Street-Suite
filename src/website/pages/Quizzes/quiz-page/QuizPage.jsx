@@ -3,12 +3,14 @@ import { Dialog, Transition } from "@headlessui/react";
 import QuizzesCards from "../../../UI-components/quizzesCards/QuizzesCards";
 import "./QuizPage.css";
 import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function QuizPage() {
   let [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  const { quizId } = useParams();
 
   function closeModal() {
     setIsOpen(false);
@@ -152,6 +154,17 @@ function QuizPage() {
       setIsOpen(true);
     }
   };
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://abdulrahman.onrender.com/quizzes/4`)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   useEffect(() => {
     if (timeRemaining <= 0 && currentQuestionIndex <= totalQuestions - 1) {
