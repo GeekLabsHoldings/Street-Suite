@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import OneBlog from "../../components/OneBlog/OneBlog";
 import BasicTabs from "../../components/Taps/Tabs";
 import "./Blog-page.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const BlogPage = () => {
   const [filter, setFilter] = useState("All");

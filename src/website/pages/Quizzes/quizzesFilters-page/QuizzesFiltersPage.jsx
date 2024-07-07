@@ -28,6 +28,7 @@ const CustomArrow = (props) => {
 
 const QuizzesFiltersPage = () => {
   const [categoryList, setCategoryList] = useState([]);
+  const [quizData, setQuizData] = useState([]);
 
   async function getAllCategories() {
     try {
@@ -44,6 +45,17 @@ const QuizzesFiltersPage = () => {
       //   setPageLoading(false);
     }
   }
+
+  useEffect(() => {
+    axios
+      .get("https://abdulrahman.onrender.com/quizzes/")
+      .then((res) => {
+        setQuizData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const settings = {
     className: "slider variable-width",
@@ -151,36 +163,13 @@ const QuizzesFiltersPage = () => {
 
         <div className="slider-container">
           <Slider {...settings}>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
+            {quizData.map((quiz) => (
+              <div
+                style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
+              >
+                <QuizCard />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>

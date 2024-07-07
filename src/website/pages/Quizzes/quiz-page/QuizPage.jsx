@@ -4,6 +4,7 @@ import QuizzesCards from "../../../UI-components/quizzesCards/QuizzesCards";
 import "./QuizPage.css";
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function QuizPage() {
   let [isOpen, setIsOpen] = useState(false);
@@ -166,7 +167,9 @@ function QuizPage() {
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}`;
+    return `${minutes}:${
+      remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds
+    }`;
   };
 
   return (
