@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import logoImg from "../../../assets/Logo.png"
 import "./NavBar.css"
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import {logout} from '../../../../redux/cardsSlice';
 import LoginImg from '../../../../dashboard/assets/imgOfPerson.svg';
+import { tokenContext } from '../../../context/appContext';
 
 const NavBar = () => {
 
@@ -13,6 +14,7 @@ const NavBar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [openDropDown,setOpenDropDown] = useState(false);
   const [selected,setSelected] = useState(false);
+ 
 
 
   return (

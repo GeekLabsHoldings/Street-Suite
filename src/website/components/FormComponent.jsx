@@ -12,6 +12,8 @@ import { FormGroup } from "@mui/material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { PhoneInput } from "react-international-phone";
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 // repeated form for signup and contact us
 
@@ -30,11 +32,15 @@ const FormComponent = ({
   verificationModal,
   setVerificationModal,
 }) => {
-
-
   const handleExternalNavigation = () => {
     // Use window.location.href to navigate to an external URL
-    window.location.href = 'https://abdulrahman.onrender.com/accounts/google-signup';
+    window.location.href =
+      "https://abdulrahman.onrender.com/accounts/google-signup";
+  };
+
+  const validatePhoneNumber = (value) => {
+    const phone_number = parsePhoneNumberFromString(value);
+    return phone_number && phone_number.isValid();
   };
 
   const validationSchema = Yup.object({
@@ -52,11 +58,36 @@ const FormComponent = ({
     password2: Yup.string()
       .oneOf([Yup.ref("password")], "password and rePassword should match")
       .required("RePassword is required"),
+    phone_number: Yup.string().required("Phone number is required").test('isValidPhoneNumber', 'Phone number is not valid', value =>
+      validatePhoneNumber(value)
+    ),
   });
 
+  async function callGoogleLogin() {
+
+    await axios
+      .get(`https://abdulrahman.onrender.com/accounts/google/login/`)
+      .then(({ data }) => {
+        // if (data.message == "success") {
+        //   setIsLoading(false);
+        //   setErrorMessage(null);
+        //   navigate("/login");
+        // }
+        // setIsLoading(false);
+
+        console.log("yes");
+        return data
+      })
+      .catch((err) => {
+        console.log(err);
+        // setErrorMessage(err.response.data.message);
+        // setIsLoading(false);
+      });
+  }
+
+
   async function callRegister(reqBody) {
-    console.log("asd");
-    // setIsLoading(true);
+    console.log(reqBody);
     await axios
       .post(`https://abdulrahman.onrender.com/accounts/register/`, reqBody)
       .then(({ data }) => {
@@ -83,6 +114,7 @@ const FormComponent = ({
       email: "",
       password: "",
       password2: "",
+      phone_number: "",
     },
     validationSchema,
     onSubmit: callRegister,
@@ -250,35 +282,65 @@ const FormComponent = ({
               </div>
             ) : null}
             {needForthInput ? (
-              <div>
-                <FormLabel
-                  required
-                  className="mb-1 labelfont"
-                  sx={{
-                    "& .MuiFormLabel-asterisk": {
-                      color: "white",
-                    },
-                  }}
-                >
-                  {label5}
-                </FormLabel>
-                <Input
-                  sx={{ marginBottom: "0.3vh" }}
-                  name="password2"
-                  id="password2"
-                  type="password"
-                  placeholder={`Enter your ${label4}`}
-                  onChange={registerForm.handleChange}
-                  value={registerForm.values.password2}
-                  onBlur={registerForm.handleBlur}
-                />
-                {registerForm.errors.password2 &&
-                registerForm.touched.password2 ? (
-                  <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
-                    {registerForm.errors.password2}
+              <>
+                <div>
+                  <FormLabel
+                    required
+                    className="mb-1 labelfont"
+                    sx={{
+                      "& .MuiFormLabel-asterisk": {
+                        color: "white",
+                      },
+                    }}
+                  >
+                    {label5}
+                  </FormLabel>
+                  <Input
+                    sx={{ marginBottom: "0.3vh" }}
+                    name="password2"
+                    id="password2"
+                    type="password"
+                    placeholder={`Enter your ${label4}`}
+                    onChange={registerForm.handleChange}
+                    value={registerForm.values.password2}
+                    onBlur={registerForm.handleBlur}
+                  />
+                  {registerForm.errors.password2 &&
+                  registerForm.touched.password2 ? (
+                    <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                      {registerForm.errors.password2}
+                    </div>
+                  ) : null}
+                </div>
+
+                <div>
+                  <div className=" labelColor md:w-1/4 ">
+                    <FormLabel
+                      htmlFor="Phone-number"
+                      className="w-full labelfont mb-1"
+                    >
+                      Phone number
+                    </FormLabel>
                   </div>
-                ) : null}
-              </div>
+                  <div>
+                    <PhoneInput
+                      // defaultCountry="eg"
+                      className="registerPhone mb-[0.3vh]"
+                      id="phone_number"
+                      name="phone_number"
+                      value={registerForm.values.phone_number}
+                      onChange={(value) => registerForm.setFieldValue('phone_number', value)}
+                      onBlur={registerForm.handleBlur}                                    
+                    />
+                  </div>
+                  {registerForm.errors.phone_number &&
+                  registerForm.touched.phone_number ? (
+                    <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black">
+                      {registerForm.errors.phone_number}
+                    </div>
+                  ) : null}
+                </div>
+              </>
             ) : null}
 
             {/* Terms and Conditions */}
@@ -318,7 +380,7 @@ const FormComponent = ({
           {btnTxt}
         </Button>
         <Button
-          onClick={handleExternalNavigation}
+          onClick={()=>callGoogleLogin()}
           sx={{
             backgroundColor: "white",
             color: "black",

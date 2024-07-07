@@ -25,6 +25,7 @@
     "formik": "^2.4.6",
     "jquery": "^3.7.1",
     "jwt-decode": "^4.0.0",
+    "libphonenumber-js": "^1.11.4",
     "react-apexcharts": "^1.4.1",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",

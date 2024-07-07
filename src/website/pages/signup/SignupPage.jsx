@@ -32,6 +32,7 @@ const SignupPage = () => {
         }
       })
       .catch((err) => {
+        console.log("saddwqe21weq");
         console.log(err.response.data.message);
         setErrorMessage(err.response.data.message);
       });

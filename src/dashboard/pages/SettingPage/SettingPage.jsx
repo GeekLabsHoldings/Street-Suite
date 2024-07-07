@@ -16,19 +16,25 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FormGroup } from "@mui/material";
 import customAlert from "../../../website/utils/customAlert";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 const token = localStorage.getItem("userToken");
 console.log(token);
 
 const SettingPage = () => {
   const [profData, setProfData] = useState();
-  const refAva = useRef()
+  const refAva = useRef();
+
+  const [passModal, setPassModal] = useState(false);
+  const [errorPassMsg, setErrorPassMsg] = useState("");
 
   async function getProfSett() {
     await axios
       .get(`https://abdulrahman.onrender.com/accounts/profile-settings/`, {
         headers: {
-          Authorization: `Token 6d92bcb1ca90108efadfd74474d461cb93f658fc`,
+          Authorization: `Token ${token}`,
         },
       })
       .then(({ data }) => {
@@ -74,8 +80,13 @@ const SettingPage = () => {
   };
 
   function removeAva() {
-    refAva.current.src = ""
+    refAva.current.src = "";
   }
+
+  const validatePhoneNumber = (value) => {
+    const Phone_Number = parsePhoneNumberFromString(value);
+    return Phone_Number && Phone_Number.isValid();
+  };
 
   const validationSchema = Yup.object({
     username: Yup.string(),
@@ -85,10 +96,17 @@ const SettingPage = () => {
     password: Yup.string().required("Password is required"),
     profile: Yup.object({
       About: Yup.string(),
-      Phone_Number: Yup.string(),
+      Phone_Number: Yup.string()
+        .required("Phone number is required")
+        .test("isValidPhoneNumber", "Phone number is not valid", (value) =>
+          validatePhoneNumber(value)
+        ),
       image: Yup.string().required("Img is required"),
     }),
   });
+
+  // Initialize a state to track if the image has changed
+  const [imageChanged, setImageChanged] = useState(false);
 
   async function callEditSett(reqBody) {
     const formData = new FormData();
@@ -102,7 +120,9 @@ const SettingPage = () => {
       "profile.Phone_Number",
       profSett.values.profile.Phone_Number
     );
-    formData.append("profile.image", imageSrc);
+    if (imageChanged) {
+      formData.append("profile.image", imageSrc);
+    }
 
     await axios
       .patch(
@@ -111,7 +131,7 @@ const SettingPage = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: "Token 6d92bcb1ca90108efadfd74474d461cb93f658fc",
+            Authorization: `Token ${token}`,
           },
         }
       )
@@ -143,8 +163,54 @@ const SettingPage = () => {
     onSubmit: callEditSett,
   });
 
-  const chooseFile = document.getElementById("choose-file");
-  const imgPreview = document.getElementById("img-preview");
+  const passwordSchema = Yup.object({
+    old_password: Yup.string().required("Old password is required"),
+    new_password: Yup.string()
+      .required("Password is required")
+      .matches(
+        /^[A-Z][a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{8,}$/,
+        "Password must start with an uppercase and contain range of numbers or characters bigger than 8"
+      ),
+    password_confirmation: Yup.string()
+      .oneOf([Yup.ref("new_password")], "password and rePassword should match")
+      .required("RePassword is required"),
+  });
+
+  async function changePassword(reqBody) {
+    try {
+      const { data } = await axios.post(
+        `https://abdulrahman.onrender.com/accounts/change-password/`,
+        reqBody,
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+          },
+        }
+      );
+      if (data.message == "password changed successfully") {
+        console.log("changed");
+        customAlert(data?.messgae);
+        changePasswordFormik.resetForm();
+        setPassModal(false);
+        setErrorPassMsg("")
+      } else if (data.message == "old password not correct") {
+        setErrorPassMsg(data?.message);
+      }
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const changePasswordFormik = useFormik({
+    initialValues: {
+      old_password: "",
+      new_password: "",
+      password_confirmation: "",
+    },
+    validationSchema: passwordSchema,
+    onSubmit: changePassword,
+  });
 
   const [imageSrc, setImageSrc] = useState(null);
   const [imagePhoto, setImagePhoto] = useState("");
@@ -156,7 +222,8 @@ const SettingPage = () => {
       fileReader.readAsDataURL(file);
       fileReader.onload = () => {
         profSett.values.profile.image = fileReader.result;
-        setImagePhoto(fileReader.result)
+        setImagePhoto(fileReader.result);
+        setImageChanged(true); // Set imageChanged to true when image is changed
       };
     }
   };
@@ -177,7 +244,9 @@ const SettingPage = () => {
       profile: {
         About: `${profData?.profile?.About ? profData?.profile?.About : ""}`,
         Phone_Number: `${
-          profData?.profile?.Phone_Number ? profData?.profile?.Phone_Number : ""
+          profData?.profile?.Phone_Number
+            ? profData?.profile?.Phone_Number
+            : "213"
         }`,
         image: `${
           profData?.profile?.image
@@ -337,7 +406,7 @@ const SettingPage = () => {
                           <div className="md:w-1/2 flex gap-2 align-items-center">
                             <div>
                               <img
-                              ref={refAva}
+                                ref={refAva}
                                 src={
                                   imagePhoto
                                     ? imagePhoto
@@ -357,8 +426,9 @@ const SettingPage = () => {
                                   name="choose-file"
                                   accept="image/*"
                                   className=" hidden absolute inset-0"
-                                  onChange={(e) => {setImageSrc(e.target.files[0]);
-                                    handleFileChange(e)
+                                  onChange={(e) => {
+                                    setImageSrc(e.target.files[0]);
+                                    handleFileChange(e);
                                   }}
                                 />
 
@@ -473,37 +543,16 @@ const SettingPage = () => {
                           </div>
 
                           <div className=" inputAndChangeBtn">
-                            <div
+                            <Button
                               className={
-                                beginPassChange
-                                  ? "w-7/12 flex align-items-center"
-                                  : "hidden"
+                                !beginPassChange
+                                  ? "newBtn settingBtn w-fit"
+                                  : "newBtn settingBtn w-full"
                               }
+                              onClick={() => setPassModal(true)}
                             >
-                              <input
-                                type="text"
-                                id="change-email"
-                                className={
-                                  beginPassChange
-                                    ? "w-full everyInput"
-                                    : "hidden"
-                                }
-                              />
-                            </div>
-                            <div
-                              className={!beginPassChange ? "w-full" : "w-5/12"}
-                            >
-                              <Button
-                                className={
-                                  !beginPassChange
-                                    ? "newBtn settingBtn w-fit"
-                                    : "newBtn settingBtn w-full"
-                                }
-                                onClick={changePass}
-                              >
-                                Change Password
-                              </Button>
-                            </div>
+                              Change Password
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -555,9 +604,16 @@ const SettingPage = () => {
                         </div>
                         <div className="md:w-1/2 ">
                           <PhoneInput
-                            defaultCountry="eg"
-                            value={phone}
-                            onChange={(phone) => setPhone(phone)}
+                            id="Phone_Number"
+                            name="Phone_Number"
+                            value={profSett.values.profile.Phone_Number}
+                            onChange={(value) =>
+                              profSett.setFieldValue(
+                                "profile.Phone_Number",
+                                value
+                              )
+                            }
+                            onBlur={profSett.handleBlur}
                           />
                         </div>
                       </div>
@@ -787,6 +843,125 @@ const SettingPage = () => {
             </div>
           </div>
         </div>
+        {passModal ? (
+          <Transition appear show={passModal} as={Fragment}>
+            <Dialog
+              as="div"
+              className="relative z-10"
+              onClose={() => {
+                console.log("a");
+              }}
+            >
+              {/* <div className="fixed inset-0 " aria-hidden="true" /> */}
+
+              <div className="fixed inset-0 overflow-y-auto bg-neutral-900 bg-opacity-45">
+                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <div className="gradient-border add-register-modal">
+                      <Dialog.Panel className="modal-body w-[40vw] transform overflow-hidden rounded-2xl p-10 align-middle shadow-xl transition-all">
+                        <div className=" flex flex-col gap-2 mb-[3vh]">
+                          <label
+                            htmlFor="old_password"
+                            className=" text-white text-xl block"
+                          >
+                            Enter Your Old Password
+                          </label>
+                          <input
+                            name="old_password"
+                            onChange={changePasswordFormik.handleChange}
+                            value={changePasswordFormik.values.old_password}
+                            onBlur={changePasswordFormik.handleBlur}
+                            type="password"
+                            id="old_password"
+                            className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black "
+                          />
+                          {changePasswordFormik.errors.old_password &&
+                          changePasswordFormik.touched.old_password ? (
+                            <div className=" w-[60%] mx-auto bg-red-300 text-black rounded-md text-center text-sm p-1">
+                              {changePasswordFormik.errors.old_password}
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className=" flex flex-col gap-2 mb-[3vh]">
+                          <label
+                            htmlFor="new_password"
+                            className=" text-white text-xl block"
+                          >
+                            Enter Your New Password
+                          </label>
+                          <input
+                            name="new_password"
+                            onChange={changePasswordFormik.handleChange}
+                            value={changePasswordFormik.values.new_password}
+                            onBlur={changePasswordFormik.handleBlur}
+                            type="password"
+                            id="new_password"
+                            className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black text-sm p-1"
+                          />
+                          {changePasswordFormik.errors.new_password &&
+                          changePasswordFormik.touched.new_password ? (
+                            <div className=" w-[60%] mx-auto bg-red-300 text-black rounded-md text-center">
+                              {changePasswordFormik.errors.new_password}
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className=" flex flex-col gap-2 mb-[3vh]">
+                          <label
+                            htmlFor="password_confirmation"
+                            className=" text-white text-xl block"
+                          >
+                            Re-enter Your New Password
+                          </label>
+                          <input
+                            name="password_confirmation"
+                            onChange={changePasswordFormik.handleChange}
+                            value={
+                              changePasswordFormik.values.password_confirmation
+                            }
+                            onBlur={changePasswordFormik.handleBlur}
+                            type="password"
+                            id="password_confirmation"
+                            className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black text-sm p-1"
+                          />
+                          {changePasswordFormik.errors.password_confirmation &&
+                          changePasswordFormik.touched.password_confirmation ? (
+                            <div className=" w-[60%] mx-auto bg-red-300 text-black rounded-md text-center">
+                              {
+                                changePasswordFormik.errors
+                                  .password_confirmation
+                              }
+                            </div>
+                          ) : null}
+                        </div>
+                        {errorPassMsg ? <p className=" text-center text-red-800">{errorPassMsg}</p> : null}
+
+                        <div className="mt-4">
+                          <button
+                            type="submit"
+                            className="inline-flex"
+                            onClick={() => {
+                              changePasswordFormik.handleSubmit();
+                            }}
+                          >
+                            Confirm
+                          </button>
+                        </div>
+                      </Dialog.Panel>
+                    </div>
+                  </Transition.Child>
+                </div>
+              </div>
+            </Dialog>
+          </Transition>
+        ) : null}
       </div>
     </>
   );

@@ -184,3 +184,12 @@ code {
   }
 }
 /* ===== End Loader ===== */
+
+
+.registerPhone .react-international-phone-input {
+  background-color: white !important;
+  color: black !important;
+} 
+ .registerPhone .react-international-phone-country-selector-button {
+  background-color: white !important;
+} 
