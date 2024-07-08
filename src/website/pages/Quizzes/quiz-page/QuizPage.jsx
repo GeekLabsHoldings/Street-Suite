@@ -8,6 +8,7 @@ import axios from "axios";
 
 function QuizPage() {
   let [isOpen, setIsOpen] = useState(false);
+  const [questions, setQuestions] = useState([]);
   const navigate = useNavigate();
 
   const { quizId } = useParams();
@@ -166,6 +167,7 @@ function QuizPage() {
           .get(`https://abdulrahman.onrender.com/quizzes/${quizId}/questions/`)
           .then(({ data }) => {
             console.log(data);
+            setQuestions(data);
           })
           .catch((err) => {
             console.log(err);
@@ -214,7 +216,7 @@ function QuizPage() {
             <div className="quiz-score-sheet-card">
               <p>Questions</p>
               <span>
-                {currentQuestionIndex + 1}/{totalQuestions}
+                {currentQuestionIndex + 1}/{questions.length}
               </span>
             </div>
           </div>
@@ -231,10 +233,10 @@ function QuizPage() {
 
         <div className="quiz-questions">
           <div className="quiz-question-view mb-[20px] lg:mb-10">
-            <h5>{quizData[currentQuestionIndex].title}</h5>
+            <h5>{questions[currentQuestionIndex]?.title}</h5>
           </div>
           <div className="quiz-answers grid grid-cols-2 gap-[10px] lg:gap-6">
-            {quizData[currentQuestionIndex].answer.map((ans, index) => (
+            {questions[currentQuestionIndex]?.answer.map((ans, index) => (
               <label
                 key={index}
                 htmlFor={`answer-${index}`}
