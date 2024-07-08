@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import QuizCard from "../../../UI-components/quizCard/QuizCard";
+import QuizCard, {
+  SkeletonQuizCard,
+} from "../../../UI-components/quizCard/QuizCard";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -30,6 +32,7 @@ const QuizzesFiltersPage = () => {
   const [categoryList, setCategoryList] = useState([]);
   const [quizData, setQuizData] = useState([]);
   const [filter, setFilter] = useState("latest");
+  const [pageLoading, setPageLoading] = useState(true);
 
   async function getAllCategories(data) {
     // try {
@@ -54,6 +57,7 @@ const QuizzesFiltersPage = () => {
       .then((res) => {
         setQuizData(res.data);
         setCategoryList(res.data.map((quiz) => quiz.text));
+        setPageLoading(false);
       })
       .then((res) => {})
       .then((res) => {
@@ -168,26 +172,30 @@ const QuizzesFiltersPage = () => {
 
         <div className="slider-container">
           <Slider {...settings}>
-            {quizData
-              .filter((quizes) => {
-                return quizes.text === filter;
-              })[0]
-              ?.quizzes?.map((quiz) => {
-                return (
-                  <div
-                    style={{
-                      width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
-                    }}
-                    key={quiz?.id}
-                  >
-                    <QuizCard
-                      title={quiz?.title}
-                      linkId={quiz?.id}
-                      image={quiz?.image}
-                    />
-                  </div>
-                );
-              })}
+            {pageLoading
+              ? Array(10)
+                  .fill(0)
+                  .map((_, idx) => <SkeletonQuizCard key={idx} />)
+              : quizData
+                  .filter((quizes) => {
+                    return quizes.text === filter;
+                  })[0]
+                  ?.quizzes?.map((quiz) => {
+                    return (
+                      <div
+                        style={{
+                          width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                        }}
+                        key={quiz?.id}
+                      >
+                        <QuizCard
+                          title={quiz?.title}
+                          linkId={quiz?.id}
+                          image={quiz?.image}
+                        />
+                      </div>
+                    );
+                  })}
           </Slider>
         </div>
       </div>

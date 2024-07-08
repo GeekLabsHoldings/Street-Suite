@@ -155,16 +155,26 @@ function QuizPage() {
     }
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://abdulrahman.onrender.com/quizzes/4`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`https://abdulrahman.onrender.com/quizzes/${quizId}/`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .then(() => {
+        axios
+          .get(`https://abdulrahman.onrender.com/quizzes/${quizId}/questions/`)
+          .then(({ data }) => {
+            console.log(data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   useEffect(() => {
     if (timeRemaining <= 0 && currentQuestionIndex <= totalQuestions - 1) {
