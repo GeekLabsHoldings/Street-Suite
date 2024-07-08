@@ -57,15 +57,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "./redux/cardsSlice";
 
 function App() {
-  const userState = useSelector((state) => state.login.loggedIn);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (localStorage.getItem("userToken")) {
-      dispatch(signIn());
-    }
-  }, []);
-
   return (
     <TokenContextProvider>
       <div className="App">

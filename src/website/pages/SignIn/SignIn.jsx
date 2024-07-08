@@ -20,9 +20,10 @@ import { Fragment } from "react";
 import VerificationInput from "react-verification-input";
 import customAlert from "../../utils/customAlert";
 
+
 const SignIn = () => {
   const navigate = useNavigate();
-  const userState = useSelector((state) => state.login.value);
+  const userState = useSelector((state) => state.login.loggedIn);
   const dispatch = useDispatch();
   const { authToken, setAuthToken } = useContext(tokenContext);
   const [wrongPass, setWrongPass] = useState(false);
@@ -54,9 +55,10 @@ const SignIn = () => {
       .post(`https://abdulrahman.onrender.com/accounts/login/`, reqBody)
       .then(({ data }) => {
         console.log(data);
-        setAuthToken(data.token);
-        localStorage.setItem("userToken", data.token);
+        setAuthToken(data?.token);
+        localStorage.setItem("userToken", data?.token);
         if (data?.token) {
+          dispatch(signIn())
           customAlert("Logged in successfully");
           navigate("/");
         }
