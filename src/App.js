@@ -69,7 +69,7 @@ function App() {
             <Route path="quizzes" element={<QuizzesPage />}>
               <Route index element={<QuizzesFiltersPage />} />
               <Route path="quiz/:quizId" element={<QuizPage />} />
-              <Route path="quiz-result" element={<QuizResultsPage />} />
+              <Route path=":quizId/quiz-result" element={<QuizResultsPage />} />
             </Route>
 
             <Route path="leaderboard" element={<LeaderBoardPage />} />
