@@ -43,7 +43,7 @@ const SingleTraning = () => {
     axios
       .get(`https://abdulrahman.onrender.com/courses/modules/${courseId}`, {
         headers: {
-          Authorization: `Token 6d07e1e16a4a70507660569941981aed44c84654`,
+          Authorization: `Token 3a6dc74f572324f8445310e28c8fb4e2f3ee5cce`,
         },
       })
       .then((res) => {

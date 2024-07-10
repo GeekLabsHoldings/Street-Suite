@@ -2,8 +2,11 @@ import { Helmet } from "react-helmet-async";
 import OneBlog from "../../components/OneBlog/OneBlog";
 import BasicTabs from "../../components/Taps/Tabs";
 import "./Blog-page.css";
+import { useEffect, useState } from "react";
 
 const BlogPage = () => {
+  const [filter, setFilter] = useState("All");
+
   return (
     <>
       <Helmet>
@@ -28,8 +31,8 @@ const BlogPage = () => {
         </div>
         <div className="md:w-10/12 sm:w-11/12 mx-auto ">
           {/* the page have a component for filter and component for its content */}
-          <BasicTabs />
-          <OneBlog />
+          <BasicTabs setFilter={setFilter} />
+          <OneBlog filter={filter} />
         </div>
       </div>
     </>

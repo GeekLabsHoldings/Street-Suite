@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import QuizCard from "../../../UI-components/quizCard/QuizCard";
+import QuizCard, {
+  SkeletonQuizCard,
+} from "../../../UI-components/quizCard/QuizCard";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -28,22 +30,43 @@ const CustomArrow = (props) => {
 
 const QuizzesFiltersPage = () => {
   const [categoryList, setCategoryList] = useState([]);
+  const [quizData, setQuizData] = useState([]);
+  const [filter, setFilter] = useState("latest");
+  const [pageLoading, setPageLoading] = useState(true);
 
-  async function getAllCategories() {
-    try {
-      // window.scrollTo(0, 0);
-      //   setPageLoading(true);
-      const { data } = await axios.get(
-        `https://abdulrahman.onrender.com/quizzes/categories/`
-      );
-      setCategoryList(data);
-      console.log(data);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      //   setPageLoading(false);
-    }
+  async function getAllCategories(data) {
+    // try {
+    //   // window.scrollTo(0, 0);
+    //   //   setPageLoading(true);
+    //   const { data } = await axios.get(
+    //     `https://abdulrahman.onrender.com/quizzes/categories/`
+    //   );
+    //   setCategoryList(data);
+    //   console.log(data);
+    // } catch (e) {
+    //   console.error(e);
+    // } finally {
+    //   //   setPageLoading(false);
+    // }
+    // const categories = data.map((quiz) => quiz.quzzies
   }
+
+  useEffect(() => {
+    axios
+      .get("https://abdulrahman.onrender.com/quizzes/")
+      .then((res) => {
+        setQuizData(res.data);
+        setCategoryList(res.data.map((quiz) => quiz.text));
+        setPageLoading(false);
+      })
+      .then((res) => {})
+      .then((res) => {
+        console.log(categoryList);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const settings = {
     className: "slider variable-width",
@@ -88,10 +111,6 @@ const QuizzesFiltersPage = () => {
     ],
   };
 
-  useEffect(() => {
-    getAllCategories();
-  }, []);
-
   return (
     <>
       <div className="quizzes-filter">
@@ -129,15 +148,17 @@ const QuizzesFiltersPage = () => {
 
         {/* filter to show more specific quizzes */}
         <div className="check-Filter">
-          <label htmlFor="Latest">
-            {" "}
-            Latest
-            <input type="radio" id="Latest" name="check-Filter" />
-          </label>
-          {categoryList.map((e) => (
-            <label htmlFor={e.title} key={e.id}>
-              {e.title}
-              <input type="radio" id={e.title} name="check-Filter" />
+          {categoryList.map((ele, idx) => (
+            <label htmlFor={ele} key={idx}>
+              {ele}
+              <input
+                type="radio"
+                id={ele}
+                name="check-Filter"
+                onClick={(e) =>
+                  setFilter(e.target.parentElement.textContent.trim())
+                }
+              />
             </label>
           ))}
         </div>
@@ -146,41 +167,35 @@ const QuizzesFiltersPage = () => {
       {/* all quizzes */}
       <div className="quizzes-cards space-y-6">
         <div className="title flex items-center justify-between">
-          <h6>Latest</h6>
+          <h6>{filter}</h6>
         </div>
 
         <div className="slider-container">
           <Slider {...settings}>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
+            {pageLoading
+              ? Array(10)
+                  .fill(0)
+                  .map((_, idx) => <SkeletonQuizCard key={idx} />)
+              : quizData
+                  .filter((quizes) => {
+                    return quizes.text === filter;
+                  })[0]
+                  ?.quizzes?.map((quiz) => {
+                    return (
+                      <div
+                        style={{
+                          width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                        }}
+                        key={quiz?.id}
+                      >
+                        <QuizCard
+                          title={quiz?.title}
+                          linkId={quiz?.id}
+                          image={quiz?.image}
+                        />
+                      </div>
+                    );
+                  })}
           </Slider>
         </div>
       </div>

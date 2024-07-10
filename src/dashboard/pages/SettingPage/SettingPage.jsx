@@ -192,7 +192,7 @@ const SettingPage = () => {
         customAlert(data?.message);
         changePasswordFormik.resetForm();
         setPassModal(false);
-        setErrorPassMsg("")
+        setErrorPassMsg("");
       } else if (data.message == "old password not correct") {
         setErrorPassMsg(data?.message);
       }
@@ -899,7 +899,11 @@ const SettingPage = () => {
                             </div>
                           ) : null}
                         </div>
-                        {errorPassMsg ? <p className=" text-center text-red-800">{errorPassMsg}</p> : null}
+                        {errorPassMsg ? (
+                          <p className=" text-center text-red-800">
+                            {errorPassMsg}
+                          </p>
+                        ) : null}
 
                         <div className="mt-4">
                           <button

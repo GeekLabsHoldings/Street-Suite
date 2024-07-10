@@ -61,13 +61,14 @@ const FormComponent = ({
     password2: Yup.string()
       .oneOf([Yup.ref("password")], "password and rePassword should match")
       .required("RePassword is required"),
-    phone_number: Yup.string().required("Phone number is required").test('isValidPhoneNumber', 'Phone number is not valid', value =>
-      validatePhoneNumber(value)
-    ),
+    phone_number: Yup.string()
+      .required("Phone number is required")
+      .test("isValidPhoneNumber", "Phone number is not valid", (value) =>
+        validatePhoneNumber(value)
+      ),
   });
 
   async function callGoogleLogin() {
-
     await axios
       .get(`https://abdulrahman.onrender.com/accounts/google/login/`)
       .then(({ data }) => {
@@ -79,7 +80,7 @@ const FormComponent = ({
         // setIsLoading(false);
 
         console.log("yes");
-        return data
+        return data;
       })
       .catch((err) => {
         console.log(err);
@@ -87,7 +88,6 @@ const FormComponent = ({
         // setIsLoading(false);
       });
   }
-
 
   async function callRegister(reqBody) {
     console.log(reqBody);
@@ -349,8 +349,10 @@ const FormComponent = ({
                       id="phone_number"
                       name="phone_number"
                       value={registerForm.values.phone_number}
-                      onChange={(value) => registerForm.setFieldValue('phone_number', value)}
-                      onBlur={registerForm.handleBlur}                                    
+                      onChange={(value) =>
+                        registerForm.setFieldValue("phone_number", value)
+                      }
+                      onBlur={registerForm.handleBlur}
                     />
                   </div>
                   {registerForm.errors.phone_number &&

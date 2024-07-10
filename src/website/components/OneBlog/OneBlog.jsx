@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
 
-const OneBlog = () => {
+const OneBlog = ({ filter }) => {
   // to enable navigation
   const navigate = useNavigate();
 
@@ -122,45 +122,56 @@ const OneBlog = () => {
   return (
     <div className="md:flex sm:my-2">
       <div className="md:w-3/5 verticalSeparator ">
-        {blogsList.slice(1, 4).map((blog, idx) => {
-          return (
-            <div
-              className="flex cursor-pointer firstBlog bottomBorder "
-              key={idx}
-            >
-              <Link
-                to={`/blogs/${titleToSlug(blog?.title)}`}
-                target="_black"
-                className="block sm:w-7/12 md:w-1/2"
+        {blogsList
+          .slice(1, 4)
+          .filter((blog) => {
+            console.log(blog.categories, filter);
+            if (filter === "All") {
+              return blog;
+            }
+            return blog.categories
+              .map((category) => category.text)
+              .includes(filter);
+          })
+          .map((blog, idx) => {
+            return (
+              <div
+                className="flex cursor-pointer firstBlog bottomBorder "
+                key={idx}
               >
-                <div className=" oneBlogCont">
-                  <h3>{blog?.title}</h3>
-                  <p>{blog?.description}</p>
-                  <TimeForRead
-                    datePosted={timeAgo(blog?.date_posted)}
-                    timeRead={timeReadDuration(blog?.time_reading)}
-                  />
-                </div>
-              </Link>
-
-              <Link
-                to={`/blogs/${titleToSlug(blog.title)}`}
-                target="_black"
-                className="sm:w-5/12 md:w-1/2"
-              >
-                <div className=" ">
-                  <div className="md:w-10/12 sm:w-11/12 ">
-                    <img
-                      src={`https://abdulrahman.onrender.com/${blog.image_url}`}
-                      alt={blog.title}
-                      className="w-full"
+                <Link
+                  to={`/blogs/${titleToSlug(blog?.title)}`}
+                  target="_black"
+                  className="block sm:w-7/12 md:w-1/2"
+                >
+                  <div className=" oneBlogCont">
+                    <h3>{blog?.title}</h3>
+                    <p>{blog?.description}</p>
+                    <TimeForRead
+                      datePosted={timeAgo(blog?.date_posted)}
+                      timeRead={timeReadDuration(blog?.time_reading)}
                     />
                   </div>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
+                </Link>
+
+                <Link
+                  to={`/blogs/${titleToSlug(blog.title)}`}
+                  target="_black"
+                  className="sm:w-5/12 md:w-1/2"
+                >
+                  <div className=" ">
+                    <div className="md:w-10/12 sm:w-11/12 rounded-md overflow-hidden">
+                      <img
+                        src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                        alt={blog.title}
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
 
         {/* blog about our training */}
         <div
@@ -317,7 +328,7 @@ const OneBlog = () => {
             className="w-11/12 block"
           >
             <div className="md:py-7">
-              <div className="divForImgSm h-52">
+              <div className="divForImgSm h-52 rounded-md overflow-hidden">
                 <img
                   src={`https://abdulrahman.onrender.com/${blogsList[0].image_url}`}
                   alt={blogsList[0].title}

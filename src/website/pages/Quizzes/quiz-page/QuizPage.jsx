@@ -3,154 +3,189 @@ import { Dialog, Transition } from "@headlessui/react";
 import QuizzesCards from "../../../UI-components/quizzesCards/QuizzesCards";
 import "./QuizPage.css";
 import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import customAlert from "../../../utils/customAlert";
+import { duration } from "@mui/material";
+import { Check } from "@mui/icons-material";
 
 function QuizPage() {
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [questions, setQuestions] = useState([]);
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const { quizId } = useParams();
 
   function closeModal() {
-    setIsOpen(false);
-    navigate("/quizzes/quiz-result");
+    axios
+      .post(`https://abdulrahman.onrender.com/quizzes/send_result/`, {
+        email: email,
+        result: score,
+      })
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem(
+          `quiz-${quizId}`,
+          JSON.stringify({
+            ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+            totalUserScore: res.data.result,
+          })
+        );
+
+        customAlert(res.data.response);
+      })
+      .then(() => {
+        navigate(`/quizzes/${quizId}/quiz-result`);
+      })
+      .catch((err) => {
+        console.log(email);
+        console.log(err);
+      })
+      .finally(() => {
+        setIsOpen(false);
+      });
   }
 
   function openModal() {
     setIsOpen(true);
   }
 
-  const quizData = [
-    {
-      title: "which of those is a musical movie ?",
-      answer: [
-        {
-          answer_text: "black panther",
-          is_right: false,
-        },
-        {
-          answer_text: "scarface",
-          is_right: false,
-        },
-        {
-          answer_text: "spiderman",
-          is_right: false,
-        },
-        {
-          answer_text: "back again",
-          is_right: true,
-        },
-      ],
-    },
-    {
-      title: "who is the director of Batman the dark knight",
-      answer: [
-        {
-          answer_text: "Ben afleck",
-          is_right: false,
-        },
-        {
-          answer_text: "christopher nolan",
-          is_right: true,
-        },
-        {
-          answer_text: "David yates",
-          is_right: false,
-        },
-        {
-          answer_text: "Chris Columbus",
-          is_right: false,
-        },
-      ],
-    },
-    {
-      title: "who played Captain America's role ?",
-      answer: [
-        {
-          answer_text: "Chris Hermesworth",
-          is_right: false,
-        },
-        {
-          answer_text: "Chris Evans",
-          is_right: true,
-        },
-        {
-          answer_text: "Robert Downey Jr",
-          is_right: false,
-        },
-        {
-          answer_text: "Samuel L Jackson",
-          is_right: false,
-        },
-      ],
-    },
-    {
-      title: "who is the actor of the matrix",
-      answer: [
-        {
-          answer_text: "Chris Evans",
-          is_right: false,
-        },
-        {
-          answer_text: "Robert Deniro",
-          is_right: false,
-        },
-        {
-          answer_text: "Ben Afleck",
-          is_right: false,
-        },
-        {
-          answer_text: "Keanu Reeves",
-          is_right: true,
-        },
-      ],
-    },
-    {
-      title: "which of those is a superhero",
-      answer: [
-        {
-          answer_text: "spiderman",
-          is_right: false,
-        },
-        {
-          answer_text: "superman",
-          is_right: false,
-        },
-        {
-          answer_text: "batman",
-          is_right: false,
-        },
-        {
-          answer_text: "all of these",
-          is_right: true,
-        },
-      ],
-    },
-  ];
-
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(120); // time in seconds
-  const [highestScore, setHighestScore] = useState(100);
-  const totalQuestions = quizData.length;
+  const [timeRemaining, setTimeRemaining] = useState(0); // time in seconds
+  const [highestScore, setHighestScore] = useState(0);
+  const [totalQuestions, setTotalQuestions] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [selectedAnswerCorrectness, setSelectedAnswerCorrectness] =
     useState(null);
+  const [score, setScore] = useState(0);
+  const [scorePerQuestion, setScorePerQuestion] = useState(0);
+  const [toggleSetScore, setToggleSetScore] = useState(false);
 
   const handleAnswerChange = (event, isRight) => {
     setSelectedAnswer(event.target.value);
     setSelectedAnswerCorrectness(isRight);
+    if (isRight) {
+      setScore((prevScore) => prevScore + scorePerQuestion);
+
+      localStorage.setItem(
+        `quiz-${quizId}`,
+        JSON.stringify({
+          ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+          totalRightAnswers:
+            JSON.parse(localStorage.getItem(`quiz-${quizId}`))
+              .totalRightAnswers + 1,
+        })
+      );
+    }
+    setToggleSetScore(true);
     setTimeout(() => {
       handleNextQuestion();
     }, 500); // Delay for user to see the selection
   };
 
+  useEffect(() => {
+    if (localStorage.getItem(`quiz-${quizId}`) && toggleSetScore) {
+      localStorage.setItem(
+        `quiz-${quizId}`,
+        JSON.stringify({
+          ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+          score: score,
+        })
+      );
+    }
+  }, [score, toggleSetScore]);
+
   const handleNextQuestion = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      // Save the current question index and start time to local storage
+      localStorage.setItem(
+        `quiz-${quizId}`,
+        JSON.stringify({
+          ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+          currentQuestionIndex: currentQuestionIndex + 1,
+        })
+      );
+
       setSelectedAnswer(null);
       setSelectedAnswerCorrectness(null);
     } else {
       setIsOpen(true);
     }
   };
+
+  useEffect(() => {
+    axios
+      .get(`https://abdulrahman.onrender.com/quizzes/${quizId}/`)
+      .then((res) => {
+        console.log(res.data);
+        if (!localStorage.getItem(`quiz-${quizId}`)) {
+          localStorage.setItem(
+            `quiz-${quizId}`,
+            JSON.stringify({
+              currentQuestionIndex: 0,
+              score: 0,
+              startTimestamp: Date.now(),
+              duration: res.data.duration * 60,
+              totalRightAnswers: 0,
+              totalQuizScore: res.data.result,
+            })
+          );
+          console.log(res.data.duration * 60);
+          setTimeRemaining(res.data.duration);
+        } else {
+          const { currentQuestionIndex, startTimestamp, score, duration } =
+            JSON.parse(localStorage.getItem(`quiz-${quizId}`));
+          console.log(score);
+          setScore(score);
+          setCurrentQuestionIndex(currentQuestionIndex);
+          setTimeRemaining(
+            Math.max(
+              0,
+              duration - Math.floor((Date.now() - startTimestamp) / 1000)
+            )
+          );
+        }
+
+        setScorePerQuestion(res.data.result);
+        return res;
+      })
+      .then((res) => {
+        // Check if questions exists in local storage
+        if (!JSON.parse(localStorage.getItem(`quiz-${quizId}`)).questions) {
+          axios
+            .get(
+              `https://abdulrahman.onrender.com/quizzes/${quizId}/questions/`
+            )
+            .then(({ data }) => {
+              localStorage.setItem(
+                `quiz-${quizId}`,
+                JSON.stringify({
+                  ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+                  questions: data,
+                })
+              );
+              console.log(data);
+              setQuestions(data);
+              setTotalQuestions(data.length);
+              setHighestScore(res.data.result * data.length);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } else {
+          const { questions } = JSON.parse(
+            localStorage.getItem(`quiz-${quizId}`)
+          );
+          setQuestions(questions);
+          setTotalQuestions(questions.length);
+          setHighestScore(res.data.result * questions.length);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   useEffect(() => {
     if (timeRemaining <= 0 && currentQuestionIndex <= totalQuestions - 1) {
@@ -164,9 +199,11 @@ function QuizPage() {
   }, [timeRemaining]);
 
   const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}`;
+    const minutes = Math.floor(seconds / 60) > 0 ? Math.floor(seconds / 60) : 0;
+    const remainingSeconds = seconds % 60 > 0 ? seconds % 60 : 0;
+    return `${minutes}:${
+      remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds
+    }`;
   };
 
   return (
@@ -188,7 +225,7 @@ function QuizPage() {
             <div className="quiz-score-sheet-card">
               <p>Questions</p>
               <span>
-                {currentQuestionIndex + 1}/{totalQuestions}
+                {currentQuestionIndex + 1}/{questions.length}
               </span>
             </div>
           </div>
@@ -205,10 +242,10 @@ function QuizPage() {
 
         <div className="quiz-questions">
           <div className="quiz-question-view mb-[20px] lg:mb-10">
-            <h5>{quizData[currentQuestionIndex].title}</h5>
+            <h5>{questions[currentQuestionIndex]?.title}</h5>
           </div>
           <div className="quiz-answers grid grid-cols-2 gap-[10px] lg:gap-6">
-            {quizData[currentQuestionIndex].answer.map((ans, index) => (
+            {questions[currentQuestionIndex]?.answer.map((ans, index) => (
               <label
                 key={index}
                 htmlFor={`answer-${index}`}
@@ -267,7 +304,11 @@ function QuizPage() {
                       </p>
                     </div>
                     <div className="input-text flex flex-col items-start">
-                      <input type="text" className="w-full" />
+                      <input
+                        type="email"
+                        className="w-full"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
                       <span>
                         Rest assured, by signing up with your email, we promise
                         to never inundate your inbox with spam or unwanted

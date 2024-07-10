@@ -78,13 +78,13 @@ function App() {
             {/* quizzes page route  */}
             <Route path="quizzes" element={<QuizzesPage />}>
               <Route index element={<QuizzesFiltersPage />} />
-              <Route path="quiz" element={<QuizPage />} />
-              <Route path="quiz-result" element={<QuizResultsPage />} />
+              <Route path="quiz/:quizId" element={<QuizPage />} />
+              <Route path=":quizId/quiz-result" element={<QuizResultsPage />} />
             </Route>
 
             <Route path="leaderboard" element={<LeaderBoardPage />} />
             <Route path="pricing" element={<PricingPage />} />
-            <Route path="checkout" element={<CheckOutPage />} />
+            <Route path="checkout/:planId" element={<CheckOutPage />} />
             <Route path="complete-checkout" element={<CompleteCheckout />} />
             <Route path="api" element={<APIPage />} />
             <Route path="about-us" element={<AboutUsPage />} />
