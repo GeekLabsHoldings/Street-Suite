@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 
 // import all sections as components from components folder
 import HomePage from "./website/pages/home-page/HomePage";
@@ -61,6 +63,11 @@ function App() {
 
 
   return (
+
+
+
+<GoogleOAuthProvider clientId="1087496419901-tbjkftcp70hp02dvun2j6aufnnhgelub.apps.googleusercontent.com">
+
     <TokenContextProvider>
       <div className="App">
         <ScrollToTop />
@@ -151,6 +158,9 @@ function App() {
         </Routes>
       </div>
     </TokenContextProvider>
+
+</GoogleOAuthProvider>
+
   );
 }
 

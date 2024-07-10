@@ -1,11 +1,14 @@
 import { jwtDecode } from "jwt-decode";
 import { createContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../../redux/cardsSlice";
 
 export let tokenContext = createContext();
 export default function TokenContextProvider({ children }) {
 
-
+const userState = useSelector(state => state.login.loggedIn)
+const dispatch = useDispatch();
 
   const [authToken, setAuthToken] = useState(localStorage.getItem("userToken") ? localStorage.getItem("userToken") : null);
   const [user, setUser] = useState({
@@ -17,6 +20,9 @@ export default function TokenContextProvider({ children }) {
  
   const navigate = useNavigate()
   useEffect(() => {
+    if (localStorage.getItem("userToken")) {
+      dispatch(signIn())
+    }
     const handleStorageChange = () => {
       if (!localStorage.getItem("userToken")) {
         setAuthToken(null);
@@ -29,6 +35,7 @@ export default function TokenContextProvider({ children }) {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
+    
   }, []);
 
   return (

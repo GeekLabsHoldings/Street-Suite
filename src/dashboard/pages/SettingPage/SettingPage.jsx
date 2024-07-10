@@ -188,8 +188,8 @@ const SettingPage = () => {
         }
       );
       if (data.message == "password changed successfully") {
-        console.log("changed");
-        customAlert(data?.messgae);
+
+        customAlert(data?.message);
         changePasswordFormik.resetForm();
         setPassModal(false);
         setErrorPassMsg("")
@@ -385,15 +385,7 @@ const SettingPage = () => {
                             </label>
                           </div>
                           <div className="md:w-1/2 ">
-                            <input
-                              type="text"
-                              id="username"
-                              className="w-full everyInput"
-                              disabled
-                              value={profSett.values.username}
-                              onChange={profSett.handleChange}
-                              onBlur={profSett.handleBlur}
-                            />
+                          <p style={{fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`}}>{profSett.values.username}</p>
                           </div>
                         </div>
                         {/* change avatar or remove it */}
@@ -498,41 +490,7 @@ const SettingPage = () => {
                               Email
                             </label>
                           </div>
-                          <div className=" inputAndChangeBtn">
-                            <div
-                              className={
-                                beginEmailChange
-                                  ? "w-7/12 flex align-items-center"
-                                  : "hidden"
-                              }
-                            >
-                              <input
-                                type="text"
-                                id="change-email"
-                                className={
-                                  beginEmailChange
-                                    ? "w-full everyInput"
-                                    : "hidden"
-                                }
-                              />
-                            </div>
-                            <div
-                              className={
-                                !beginEmailChange ? "w-full" : "w-5/12"
-                              }
-                            >
-                              <Button
-                                className={
-                                  !beginEmailChange
-                                    ? "newBtn settingBtn w-fit"
-                                    : "newBtn settingBtn w-full"
-                                }
-                                onClick={changeEmail}
-                              >
-                                Change email
-                              </Button>
-                            </div>
-                          </div>
+                          <p style={{fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`}}>{profSett.values.email}</p>
                         </div>
                         {/* cahnge password section */}
                         <div className="md:flex align-items-center">

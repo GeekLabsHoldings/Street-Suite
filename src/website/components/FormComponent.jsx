@@ -14,6 +14,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { PhoneInput } from "react-international-phone";
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
+
 
 // repeated form for signup and contact us
 
@@ -119,6 +122,23 @@ const FormComponent = ({
     validationSchema,
     onSubmit: callRegister,
   });
+
+
+  const login = useGoogleLogin({
+    onSuccess: async(response) => {
+      try {
+        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo",{
+          headers:{
+            Authorization:`Bearer ${response.access_token}`
+          }
+        })
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  });
+
   return (
     // welcoming text and purpose of form
     <div className="formHead formElementsAndBtn">
@@ -379,7 +399,14 @@ const FormComponent = ({
         >
           {btnTxt}
         </Button>
-        <Button
+
+
+
+
+
+
+
+        {/* <Button
           onClick={()=>callGoogleLogin()}
           sx={{
             backgroundColor: "white",
@@ -418,7 +445,32 @@ const FormComponent = ({
           }
         >
           Sign Up With Google
-        </Button>
+        </Button> */}
+
+
+
+
+<GoogleLogin
+  onSuccess={credentialResponse => {
+    let decoded = jwtDecode(credentialResponse.credential);
+    console.log(credentialResponse);
+    console.log(decoded);
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>
+
+
+
+
+
+
+
+
+
+<button onClick={()=>login()}>test login</button>
+
       </div>
     </div>
   );

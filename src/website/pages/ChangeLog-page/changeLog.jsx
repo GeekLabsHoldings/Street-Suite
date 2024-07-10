@@ -5,10 +5,13 @@ import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../../components/Loader/Loader";
+import customAlert from "../../utils/customAlert";
 
 const ChangeLogs = () => {
   const [changeLogs, setChangeLogs] = useState([]);
   const [pageLoading, setPageLoading] = useState(false);
+  const [textFeature,setTextFeature] = useState("")
+  const [errorText,setErrorText] = useState("")
 
   async function getAllChangeLogs() {
     try {
@@ -22,6 +25,23 @@ const ChangeLogs = () => {
       console.error(e);
     } finally {
       setPageLoading(false);
+    }
+  }
+  async function postFeature() {
+    try {
+      const {data} = await axios.post(`https://abdulrahman.onrender.com/change_log/post_feature/`,{
+        text_message:textFeature
+      })
+      if (data.message == "Message sent successfully!") {
+      customAlert("Message sent successfully!")
+      }
+      setErrorText("")
+      return data
+    } catch (error) {
+      if (error.response.data.text_message[0] == "This field may not be blank.") {
+        setErrorText("You should type something")
+      }
+      console.log(error);
     }
   }
 
@@ -136,10 +156,13 @@ const ChangeLogs = () => {
                       id="about"
                       className="w-full textArea msgTextArea"
                       rows="4"
+                      value={textFeature}
+                      onChange={(e)=>setTextFeature(e.target.value)}
                     ></textarea>
+                    {errorText && <p className=" mb-[0.4vh] text-red-700" style={{fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`}}>{errorText}</p>}
                   </div>
                   <div>
-                    <Button className=" newBtn loginBtn ">Submit</Button>
+                    <Button className=" newBtn loginBtn " onClick={()=>{postFeature()}}>Submit</Button>
                   </div>
                 </div>
               </div>

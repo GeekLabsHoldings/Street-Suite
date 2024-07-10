@@ -174,10 +174,6 @@ const SignIn = () => {
     onSubmit: resetPass,
   });
 
-  useEffect(() => {
-    console.log(authToken);
-  }, [authToken]);
-
   return (
     <>
       <Helmet>
@@ -413,7 +409,7 @@ const SignIn = () => {
                         </p>
                       </div>
                       <div className="input-text flex flex-col justify-center items-center gap-[2vh]">
-                        <VerificationInput
+                        <VerificationInput placeholder="" validChars="0-9"
                           onChange={(value) => setVerificationValue(value)}
                         />
                       </div>

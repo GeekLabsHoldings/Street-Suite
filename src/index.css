@@ -193,3 +193,6 @@ code {
  .registerPhone .react-international-phone-country-selector-button {
   background-color: white !important;
 } 
+.vi__character {
+  border-radius: 6px;
+}
