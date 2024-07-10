@@ -74,7 +74,7 @@ function App() {
 
             <Route path="leaderboard" element={<LeaderBoardPage />} />
             <Route path="pricing" element={<PricingPage />} />
-            <Route path="checkout" element={<CheckOutPage />} />
+            <Route path="checkout/:planId" element={<CheckOutPage />} />
             <Route path="complete-checkout" element={<CompleteCheckout />} />
             <Route path="api" element={<APIPage />} />
             <Route path="about-us" element={<AboutUsPage />} />
