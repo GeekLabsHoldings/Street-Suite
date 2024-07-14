@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "./CheckOutPage.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -13,9 +13,13 @@ import {
 } from "@stripe/react-stripe-js";
 import popularBadge from "../../../assets/popular-badge.png";
 import axios from "axios";
+import customAlert from "../../../utils/customAlert";
+import { tokenContext } from "../../../context/appContext";
 
 // Initialize Stripe.js with your publishable key
-const stripePromise = loadStripe("your-publishable-key-here");
+const stripePromise = loadStripe(
+  "pk_test_51PNAn4Bizf1bE4kF5t6GuaMhTbT9nU02TJD0Sw0ANJBD8BFfjiVamDKYXDPsS8YIpNTlLddW2MmM88gxwZ6AmMTG00nOn5E1kP"
+);
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
@@ -42,17 +46,18 @@ const CheckoutForm = () => {
   const { planId } = useParams();
 
   const [checkout, setCheckout] = useState({});
+  const { authToken } = useContext(tokenContext);
 
-  useEffect(() => {
-    axios
-      .get(`http://abdulrahman.onrender.com/pricing/checkout/${planId}`)
-      .then((res) => {
-        setCheckout(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [planId]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://abdulrahman.onrender.com/pricing/checkout/${planId}`)
+  //     .then((res) => {
+  //       setCheckout(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [planId]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,15 +66,26 @@ const CheckoutForm = () => {
       return;
     }
 
+    // customAlert("Payment processing...", "info");
+
     // Get the card elements
     const cardNumberElement = elements.getElement(CardNumberElement);
-
+    console.log(cardNumberElement);
     // Call your server to create a PaymentIntent
-    const response = await fetch("/create-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: 1500 }), // Amount in cents
-    });
+    const response = await fetch(
+      `https://abdulrahman.onrender.com/pricing/checkout/${planId}/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Token ${authToken}`,
+        },
+        body: JSON.stringify({
+          paymentMethodType: "card",
+          currency: "usd",
+        }),
+      }
+    );
 
     const { clientSecret } = await response.json();
 
@@ -88,8 +104,11 @@ const CheckoutForm = () => {
 
     if (error) {
       console.log("[error]", error);
+      customAlert(error.message, "error");
     } else if (paymentIntent.status === "succeeded") {
       console.log("[PaymentIntent]", paymentIntent);
+      customAlert("Payment successful", "success");
+      console.log("[PaymentIntent]", paymentIntent.status, paymentIntent.id);
       navigate("/complete-checkout");
     }
   };
@@ -186,16 +205,16 @@ const CheckOutPage = () => {
 
   const [checkout, setCheckout] = useState({});
 
-  useEffect(() => {
-    axios
-      .get(`http://abdulrahman.onrender.com/pricing/checkout/${planId}`)
-      .then((res) => {
-        setCheckout(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [planId]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://abdulrahman.onrender.com/pricing/checkout/${planId}`)
+  //     .then((res) => {
+  //       setCheckout(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [planId]);
 
   return (
     <div className="checkout-wrapper">
