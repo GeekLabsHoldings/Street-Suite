@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { GoogleOAuthProvider } from '@react-oauth/google';
-
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 // import all sections as components from components folder
 import HomePage from "./website/pages/home-page/HomePage";
@@ -57,110 +56,130 @@ import TokenContextProvider from "./website/context/appContext";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "./redux/cardsSlice";
+import { gapi } from "gapi-script";
 
 function App() {
-  
 
+
+  useEffect(() => {
+    function start() {
+      // Initialize Google API client
+      gapi.client.init({
+        clientId: "1087496419901-tbjkftcp70hp02dvun2j6aufnnhgelub.apps.googleusercontent.com", // Replace with your actual client ID
+        scope: "profile email", // Specify the scopes you need, e.g., profile, email, etc.
+      }).then(() => {
+        // Do something after client initialization if needed
+        console.log('Google API client initialized');
+      }).catch((error) => {
+        console.error('Error initializing Google API client:', error);
+      });
+    }
+  
+    // Load Google API client library and initialize auth2
+    gapi.load("client:auth2", start);
+  }, []);
+
+  // var accessToken = gapi.auth.getToken().access_token
 
   return (
+    <GoogleOAuthProvider clientId="1087496419901-tbjkftcp70hp02dvun2j6aufnnhgelub.apps.googleusercontent.com">
+      <TokenContextProvider>
+        <div className="App">
+          <ScrollToTop />
 
+          <Routes>
+            <Route path="/" element={<WebsiteLayout />}>
+              <Route index element={<HomePage />} />
+              {/* quizzes page route  */}
+              <Route path="quizzes" element={<QuizzesPage />}>
+                <Route index element={<QuizzesFiltersPage />} />
+                <Route path="quiz/:quizId" element={<QuizPage />} />
+                <Route
+                  path=":quizId/quiz-result"
+                  element={<QuizResultsPage />}
+                />
+              </Route>
 
+              <Route path="leaderboard" element={<LeaderBoardPage />} />
+              <Route path="pricing" element={<PricingPage />} />
+              <Route path="checkout/:planId" element={<CheckOutPage />} />
+              <Route path="complete-checkout" element={<CompleteCheckout />} />
+              <Route path="api" element={<APIPage />} />
+              <Route path="about-us" element={<AboutUsPage />} />
+              <Route path="contact-us" element={<ContactPage />} />
+              <Route path="change-logs" element={<ChangeLogs />} />
+              <Route path="top-brokers" element={<TopBroker />} />
+              <Route path="disclaimer" element={<DisclaimerPage />} />
+              <Route path="privacy&security" element={<PrivacyAndSecurity />} />
+              <Route path="careers" element={<CareersPage />} />
+              <Route path="careers/positions" element={<PositionsPage />} />
+              <Route path="blogs" element={<BlogPage />} />
+              <Route path="blogs/:id" element={<SpecificArticle />} />
 
-<GoogleOAuthProvider clientId="1087496419901-tbjkftcp70hp02dvun2j6aufnnhgelub.apps.googleusercontent.com">
-
-    <TokenContextProvider>
-      <div className="App">
-        <ScrollToTop />
-
-        <Routes>
-          <Route path="/" element={<WebsiteLayout />}>
-            <Route index element={<HomePage />} />
-            {/* quizzes page route  */}
-            <Route path="quizzes" element={<QuizzesPage />}>
-              <Route index element={<QuizzesFiltersPage />} />
-              <Route path="quiz/:quizId" element={<QuizPage />} />
-              <Route path=":quizId/quiz-result" element={<QuizResultsPage />} />
+              <Route path="signin" element={<SignIn />} />
+              <Route path="terms&conditions" element={<TermsAndConditions />} />
             </Route>
 
-            <Route path="leaderboard" element={<LeaderBoardPage />} />
-            <Route path="pricing" element={<PricingPage />} />
-            <Route path="checkout/:planId" element={<CheckOutPage />} />
-            <Route path="complete-checkout" element={<CompleteCheckout />} />
-            <Route path="api" element={<APIPage />} />
-            <Route path="about-us" element={<AboutUsPage />} />
-            <Route path="contact-us" element={<ContactPage />} />
-            <Route path="change-logs" element={<ChangeLogs />} />
-            <Route path="top-brokers" element={<TopBroker />} />
-            <Route path="disclaimer" element={<DisclaimerPage />} />
-            <Route path="privacy&security" element={<PrivacyAndSecurity />} />
-            <Route path="careers" element={<CareersPage />} />
-            <Route path="careers/positions" element={<PositionsPage />} />
-            <Route path="blogs" element={<BlogPage />} />
-            <Route path="blogs/:id" element={<SpecificArticle />} />
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<AlertsPage />} />
+              <Route path="alerts" element={<AlertsPage />} />
+              <Route path="training" element={<TrainingPage />}>
+                <Route index element={<SuiteAcademy />} />
+                <Route path="suite-academy" element={<SuiteAcademy />} />
+                <Route
+                  path="single-training/:courseId"
+                  element={<SingleTraning />}
+                >
+                  <Route index element={<LessonsPage />} />
+                  <Route
+                    path="assessment/:moduleId"
+                    element={<AssessmentPage />}
+                  />
+                </Route>
+                <Route path="my-courses" element={<MyCourses />}>
+                  <Route index element={<MyCoursesPage />} />
+                  <Route path="single-course" element={<SingleCoursePage />} />
+                </Route>
+              </Route>
+              <Route path="trading" element={<TradingFlowPage />}>
+                <Route index element={<YourPortfolioPage />} />
+                <Route path="trading-history" element={<TradingHistory />} />
+                <Route path="private-equity" element={<PrivateEquityPage />}>
+                  <Route index element={<PrivateEquitiesPage />} />
+                  <Route
+                    path="single-equity"
+                    element={<SinglePrivateEquityPage />}
+                  />
+                </Route>
+                <Route path="transfer&pay" element={<Transfer_PayPage />}>
+                  <Route index element={<DepositFundsPage />} />
+                  <Route path="deposit-funds" element={<DepositFundsPage />} />
+                  <Route
+                    path="withdraw-funds"
+                    element={<WithdrawFundsPage />}
+                  />
+                  <Route
+                    path="transactions-history"
+                    element={<TransactionsHistoryPage />}
+                  />
+                  <Route
+                    path="seccssful-transaction"
+                    element={<SuccessfulTransactionPage />}
+                  />
+                </Route>
+              </Route>
 
-            <Route path="signin" element={<SignIn />} />
-            <Route path="terms&conditions" element={<TermsAndConditions />} />
-          </Route>
-
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<AlertsPage />} />
-            <Route path="alerts" element={<AlertsPage />} />
-            <Route path="training" element={<TrainingPage />}>
-              <Route index element={<SuiteAcademy />} />
-              <Route path="suite-academy" element={<SuiteAcademy />} />
-              <Route
-                path="single-training/:courseId"
-                element={<SingleTraning />}
-              >
-                <Route index element={<LessonsPage />} />
-                <Route
-                  path="assessment/:moduleId"
-                  element={<AssessmentPage />}
-                />
-              </Route>
-              <Route path="my-courses" element={<MyCourses />}>
-                <Route index element={<MyCoursesPage />} />
-                <Route path="single-course" element={<SingleCoursePage />} />
-              </Route>
-            </Route>
-            <Route path="trading" element={<TradingFlowPage />}>
-              <Route index element={<YourPortfolioPage />} />
-              <Route path="trading-history" element={<TradingHistory />} />
-              <Route path="private-equity" element={<PrivateEquityPage />}>
-                <Route index element={<PrivateEquitiesPage />} />
-                <Route
-                  path="single-equity"
-                  element={<SinglePrivateEquityPage />}
-                />
-              </Route>
-              <Route path="transfer&pay" element={<Transfer_PayPage />}>
-                <Route index element={<DepositFundsPage />} />
-                <Route path="deposit-funds" element={<DepositFundsPage />} />
-                <Route path="withdraw-funds" element={<WithdrawFundsPage />} />
-                <Route
-                  path="transactions-history"
-                  element={<TransactionsHistoryPage />}
-                />
-                <Route
-                  path="seccssful-transaction"
-                  element={<SuccessfulTransactionPage />}
-                />
-              </Route>
+              <Route path="setting" element={<SettingPage />} />
             </Route>
 
-            <Route path="setting" element={<SettingPage />} />
-          </Route>
+            <Route path="/login" element={<SignIn />} />
+            <Route path="/signup" element={<SignupPage />} />
 
-          <Route path="/login" element={<SignIn />} />
-          <Route path="/signup" element={<SignupPage />} />
-
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
-    </TokenContextProvider>
-
-</GoogleOAuthProvider>
-
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </TokenContextProvider>
+    </GoogleOAuthProvider>
   );
 }
 

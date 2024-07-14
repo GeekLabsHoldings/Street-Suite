@@ -13,10 +13,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { PhoneInput } from "react-international-phone";
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
-import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-
 
 // repeated form for signup and contact us
 
@@ -35,12 +34,6 @@ const FormComponent = ({
   verificationModal,
   setVerificationModal,
 }) => {
-  const handleExternalNavigation = () => {
-    // Use window.location.href to navigate to an external URL
-    window.location.href =
-      "https://abdulrahman.onrender.com/accounts/google-signup";
-  };
-
   const validatePhoneNumber = (value) => {
     const phone_number = parsePhoneNumberFromString(value);
     return phone_number && phone_number.isValid();
@@ -67,27 +60,6 @@ const FormComponent = ({
         validatePhoneNumber(value)
       ),
   });
-
-  async function callGoogleLogin() {
-    await axios
-      .get(`https://abdulrahman.onrender.com/accounts/google/login/`)
-      .then(({ data }) => {
-        // if (data.message == "success") {
-        //   setIsLoading(false);
-        //   setErrorMessage(null);
-        //   navigate("/login");
-        // }
-        // setIsLoading(false);
-
-        console.log("yes");
-        return data;
-      })
-      .catch((err) => {
-        console.log(err);
-        // setErrorMessage(err.response.data.message);
-        // setIsLoading(false);
-      });
-  }
 
   async function callRegister(reqBody) {
     console.log(reqBody);
@@ -123,22 +95,53 @@ const FormComponent = ({
     onSubmit: callRegister,
   });
 
-
   const login = useGoogleLogin({
-    onSuccess: async(response) => {
+    onSuccess: async (response) => {
+      console.log(response.scope);
       try {
-        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo",{
-          headers:{
-            Authorization:`Bearer ${response.access_token}`
-          }
-        })
+        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+          headers: {
+            Authorization: `Bearer ${response.access_token}`,
+          },
+        });
         console.log(res);
+        console.log(response.access_token);
+
+        if (res?.data.name) {
+          try {
+            // Fetch the picture as a blob
+            const pictureResponse = await fetch(res.data.picture);
+            console.log(pictureResponse);
+            const pictureBlob = await pictureResponse.blob();
+            console.log(pictureBlob);
+
+            // Convert the blob to a File
+            const pictureFile = new File([pictureBlob], 'profile_picture.jpg', { type: pictureBlob.type });
+            console.log(pictureFile);
+
+            // Create a FormData object to include the file
+            const formData = new FormData();
+            formData.append('email', res.data.email);
+            formData.append('family_name', res.data.family_name);
+            formData.append('given_name', res.data.given_name);
+            formData.append('name', res.data.name);
+            formData.append('picture', pictureFile);
+
+            const data = await axios.post('https://abdulrahman.onrender.com/accounts/google/login/', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+            console.log(data, "post google");
+          } catch (error) {
+            console.log(error);
+          }
+        }
       } catch (error) {
         console.log(error);
       }
-    }
+    },
   });
-
   return (
     // welcoming text and purpose of form
     <div className="formHead formElementsAndBtn">
@@ -401,78 +404,36 @@ const FormComponent = ({
         >
           {btnTxt}
         </Button>
-
-
-
-
-
-
-
-        {/* <Button
-          onClick={()=>callGoogleLogin()}
-          sx={{
-            backgroundColor: "white",
-            color: "black",
-            fontWeight: "600",
-            px: "1vw",
-            fontFamily: "inherit",
-            textTransform: "inherit",
-            "&:hover": { backgroundColor: "white" },
-          }}
-          startIcon={
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
-                fill="#FFC107"
-              />
-              <path
-                d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z"
-                fill="#FF3D00"
-              />
-              <path
-                d="M12.0002 22.0003C14.5832 22.0003 16.9302 21.0118 18.7047 19.4043L15.6097 16.7853C14.5719 17.5745 13.3039 18.0014 12.0002 18.0003C9.39916 18.0003 7.19066 16.3418 6.35866 14.0273L3.09766 16.5398C4.75266 19.7783 8.11366 22.0003 12.0002 22.0003Z"
-                fill="#4CAF50"
-              />
-              <path
-                d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
-                fill="#1976D2"
-              />
-            </svg>
-          }
+        <button
+          className=" text-black rounded-md border-none py-2 px-4"
+          onClick={() => login()}
         >
-          Sign Up With Google
-        </Button> */}
-
-
-
-
-<GoogleLogin
-  onSuccess={credentialResponse => {
-    let decoded = jwtDecode(credentialResponse.credential);
-    console.log(credentialResponse);
-    console.log(decoded);
-  }}
-  onError={() => {
-    console.log('Login Failed');
-  }}
-/>
-
-
-
-
-
-
-
-
-
-<button onClick={()=>login()}>test login</button>
-
+          Sign In With Google{" "}
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+              fill="#FFC107"
+            />
+            <path
+              d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z"
+              fill="#FF3D00"
+            />
+            <path
+              d="M12.0002 22.0003C14.5832 22.0003 16.9302 21.0118 18.7047 19.4043L15.6097 16.7853C14.5719 17.5745 13.3039 18.0014 12.0002 18.0003C9.39916 18.0003 7.19066 16.3418 6.35866 14.0273L3.09766 16.5398C4.75266 19.7783 8.11366 22.0003 12.0002 22.0003Z"
+              fill="#4CAF50"
+            />
+            <path
+              d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+              fill="#1976D2"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
