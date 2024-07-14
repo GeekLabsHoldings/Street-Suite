@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "./CheckOutPage.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -14,6 +14,7 @@ import {
 import popularBadge from "../../../assets/popular-badge.png";
 import axios from "axios";
 import customAlert from "../../../utils/customAlert";
+import { tokenContext } from "../../../context/appContext";
 
 // Initialize Stripe.js with your publishable key
 const stripePromise = loadStripe(
@@ -45,6 +46,7 @@ const CheckoutForm = () => {
   const { planId } = useParams();
 
   const [checkout, setCheckout] = useState({});
+  const { authToken } = useContext(tokenContext);
 
   // useEffect(() => {
   //   axios
@@ -64,7 +66,7 @@ const CheckoutForm = () => {
       return;
     }
 
-    customAlert("Payment processing...");
+    // customAlert("Payment processing...", "info");
 
     // Get the card elements
     const cardNumberElement = elements.getElement(CardNumberElement);
@@ -76,7 +78,7 @@ const CheckoutForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Token f93c2a5cb23ef26d37bb100e219729b2162d36b6",
+          Authorization: `Token ${authToken}`,
         },
         body: JSON.stringify({
           paymentMethodType: "card",
@@ -105,11 +107,10 @@ const CheckoutForm = () => {
       customAlert(error.message, "error");
     } else if (paymentIntent.status === "succeeded") {
       console.log("[PaymentIntent]", paymentIntent);
+      customAlert("Payment successful", "success");
+      console.log("[PaymentIntent]", paymentIntent.status, paymentIntent.id);
       navigate("/complete-checkout");
     }
-
-    console.log("[PaymentIntent]", paymentIntent.status, paymentIntent.id);
-    customAlert("Payment successful", "success");
   };
 
   return (
