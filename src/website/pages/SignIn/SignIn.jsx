@@ -470,7 +470,7 @@ const SignIn = () => {
                           onBlur={updatePasswordFormik.handleBlur}
                           type="password"
                           id="password"
-                          className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black "
+                          className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black"
                         />
                         {updatePasswordFormik.errors.password &&
                         updatePasswordFormik.touched.password ? (
@@ -495,7 +495,7 @@ const SignIn = () => {
                           onBlur={updatePasswordFormik.handleBlur}
                           type="password"
                           id="password_confirmation"
-                          className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black text-sm p-1"
+                          className=" w-[60%] mx-auto rounded-md outline-none border-none py-1 px-2 text-black"
                         />
                         {updatePasswordFormik.errors.password_confirmation &&
                         updatePasswordFormik.touched.password_confirmation ? (

@@ -134,7 +134,7 @@ const SignupPage = () => {
                           </p>
                         </div>
                         <div className="input-text flex flex-col justify-center items-center gap-[2vh]">
-                          <VerificationInput
+                          <VerificationInput placeholder=""
                             onChange={(value) => setVerificationValue(value)}
                           />
                           {errorMessage ? (
