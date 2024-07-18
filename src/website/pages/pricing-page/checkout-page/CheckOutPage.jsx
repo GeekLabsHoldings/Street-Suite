@@ -87,29 +87,35 @@ const CheckoutForm = () => {
       }
     );
 
-    const { clientSecret } = await response.json();
-
-    // Confirm the PaymentIntent with the card details
-    const { error, paymentIntent } = await stripe.confirmCardPayment(
-      clientSecret,
-      {
-        payment_method: {
-          card: cardNumberElement,
-          billing_details: {
-            // Include any additional billing details here
-          },
-        },
-      }
-    );
+    const { clientSecret, error } = await response.json();
 
     if (error) {
       console.log("[error]", error);
-      customAlert(error.message, "error");
-    } else if (paymentIntent.status === "succeeded") {
-      console.log("[PaymentIntent]", paymentIntent);
-      customAlert("Payment successful", "success");
-      console.log("[PaymentIntent]", paymentIntent.status, paymentIntent.id);
-      navigate("/complete-checkout");
+      customAlert(error, "error");
+      return;
+    } else {
+      // Confirm the PaymentIntent with the card details
+      const { error, paymentIntent } = await stripe.confirmCardPayment(
+        clientSecret,
+        {
+          payment_method: {
+            card: cardNumberElement,
+            billing_details: {
+              // Include any additional billing details here
+            },
+          },
+        }
+      );
+
+      if (error) {
+        console.log("[error]", error);
+        customAlert(error.message, "error");
+      } else if (paymentIntent.status === "succeeded") {
+        console.log("[PaymentIntent]", paymentIntent);
+        customAlert("Payment successful", "success");
+        console.log("[PaymentIntent]", paymentIntent.status, paymentIntent.id);
+        navigate("/complete-checkout");
+      }
     }
   };
 

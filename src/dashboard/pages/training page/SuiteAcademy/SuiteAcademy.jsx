@@ -19,16 +19,26 @@ const SuiteAcademy = () => {
 
   useEffect(() => {
     try {
-      axios.get("https://abdulrahman.onrender.com/courses/").then((res) => {
-        setCourses(res.data);
-      });
+      axios
+        .get("https://abdulrahman.onrender.com/courses/", {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
+          },
+        })
+        .then((res) => {
+          setCourses(res.data);
+        });
     } catch (error) {
       console.log(error);
     }
 
     try {
       axios
-        .get("https://abdulrahman.onrender.com/courses/?order_by=most_liked")
+        .get("https://abdulrahman.onrender.com/courses/?order_by=most_liked", {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
+          },
+        })
         .then((res) => {
           setMostLikedCourses(res.data);
         });
@@ -39,7 +49,12 @@ const SuiteAcademy = () => {
     try {
       axios
         .get(
-          "https://abdulrahman.onrender.com/courses/?order_by=most_completed"
+          "https://abdulrahman.onrender.com/courses/?order_by=most_completed",
+          {
+            headers: {
+              Authorization: `Token ${localStorage.getItem("userToken")}`,
+            },
+          }
         )
         .then((res) => {
           setMostCompletedCourses(res.data);

@@ -217,7 +217,7 @@ const AssessmentPage = () => {
       </div>
 
       {/* assessment score that will appear when user complete the assessment */}
-      {assessmentData.is_completed.is_completed && (
+      {assessmentData?.is_completed?.is_completed && (
         <div className={styles.assesment_score}>
           {/* title */}
           <h5>Assessment Score</h5>

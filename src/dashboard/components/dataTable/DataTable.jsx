@@ -6,6 +6,7 @@ import img2 from "../../assets/table/Vector2.svg";
 import img3 from "../../assets/table/Vector.svg";
 import img4 from "../../assets/table/Group 63.svg";
 import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 // array of data that will be show in the table in alerts page
 const tableData = [
@@ -27,17 +28,29 @@ const tableData = [
   { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
 ];
 
+async function getAlerts() {
+  const response = await axios.get("https://abdulrahman.onrender.com/alerts/");
+  console.log(response.data);
+  return response.data;
+}
+
 function DataTable() {
-  const [alerts, setAlerts] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://abdulrahman.onrender.com/Alerts/")
-      .then((res) => {
-        console.log(res.data);
-        setAlerts(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // const [alerts, setAlerts] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://abdulrahman.onrender.com/alerts/")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setAlerts(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["alerts"],
+    queryFn: getAlerts,
+    refetchInterval: 1000,
+  });
 
   // function that open & close collaps
   const openCollaps = (e) => {
@@ -51,12 +64,14 @@ function DataTable() {
       .slideToggle(300);
   };
 
+  if (isLoading) return <h1>Loading...</h1>;
+
   return (
     // alerts table in alerts page
     <div className={styles.table}>
       {/* make map on array of tableData to show all data in table as a rows */}
-      {alerts.map((ele, idx) => (
-        <div className={styles.tableItemContainer}>
+      {data.map((ele, idx) => (
+        <div className={styles.tableItemContainer} key={idx}>
           {/* collaps header if i click on it , collaps will toggle slide open */}
           <ul
             className={styles.tableItem + " tableItem"}
@@ -75,8 +90,18 @@ function DataTable() {
             </li> */}
             <li>
               <img src={img3} alt="" />
-              <p className={ele.RSI > 0 ? styles.UP : styles.DOWN}>
-                {Number(ele.RSI).toFixed(3)} %
+              <p
+                className={
+                  ele.risk_level == "Bearish"
+                    ? styles.DOWN
+                    : ele.risk_level == "Bullish"
+                    ? styles.UP
+                    : ""
+                }
+              >
+                {`${Number(ele.value).toFixed(3)}  ${
+                  ele.strategy.split(" ")[0]
+                }`}
               </p>
             </li>
             <li>

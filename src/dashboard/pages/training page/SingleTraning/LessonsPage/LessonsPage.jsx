@@ -19,7 +19,7 @@ const LessonsPage = () => {
     if (currentModule.section_set) {
       const updatedSections = currentModule.section_set.map((element) => ({
         id: element.id,
-        is_completed: element.is_completed,
+        is_completed: element?.is_completed,
       }));
       setCompletedSections(updatedSections);
     }
