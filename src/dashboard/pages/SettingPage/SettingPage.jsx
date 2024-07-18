@@ -110,11 +110,14 @@ const SettingPage = () => {
 
   async function callEditSett(reqBody) {
     const formData = new FormData();
-    formData.append("username", profSett.values.username);
+    console.log(profSett.values.username.trim());
+    formData.append("username", profSett.values.username.replace(" ",""));
     formData.append("first_name", profSett.values.first_name);
     formData.append("last_name", profSett.values.last_name);
     formData.append("email", profSett.values.email);
+    if (profSett.values.password.trim() != "") {
     formData.append("password", profSett.values.password);
+    }
     formData.append("profile.About", profSett.values.profile.About);
     formData.append(
       "profile.Phone_Number",

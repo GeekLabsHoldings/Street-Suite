@@ -154,7 +154,7 @@ const FormComponent = ({
             console.log(data?.data?.message);
             if (data?.data?.message == "loged in successfully!") {
               console.log("sadasewqe");
-              localStorage.setItem("userToken",response.access_token)
+              localStorage.setItem("userToken",data.data.token)
               dispatch(signIn());
               customAlert("Logged in successfully");
               navigate("/");
