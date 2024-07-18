@@ -16,6 +16,9 @@ import { PhoneInput } from "react-international-phone";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { useDispatch } from "react-redux";
+import { signIn } from "../../redux/cardsSlice";
+import customAlert from "../utils/customAlert";
 
 // repeated form for signup and contact us
 
@@ -38,6 +41,10 @@ const FormComponent = ({
     const phone_number = parsePhoneNumberFromString(value);
     return phone_number && phone_number.isValid();
   };
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
     first_name: Yup.string().required("First name is required"),
@@ -99,40 +106,59 @@ const FormComponent = ({
     onSuccess: async (response) => {
       console.log(response.scope);
       try {
-        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
-          headers: {
-            Authorization: `Bearer ${response.access_token}`,
-          },
-        });
+        const res = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`,
+            },
+          }
+        );
         console.log(res);
         console.log(response.access_token);
 
         if (res?.data.name) {
           try {
             // Fetch the picture as a blob
-            const pictureResponse = await fetch(res.data.picture);
+            const pictureResponse = await fetch(res?.data?.picture, {
+              mode: "no-cors",
+            });
             console.log(pictureResponse);
             const pictureBlob = await pictureResponse.blob();
             console.log(pictureBlob);
 
             // Convert the blob to a File
-            const pictureFile = new File([pictureBlob], 'profile_picture.jpg', { type: pictureBlob.type });
+            const pictureFile = new File([pictureBlob], "profile_picture.jpg", {
+              type: pictureBlob.type,
+            });
             console.log(pictureFile);
 
             // Create a FormData object to include the file
             const formData = new FormData();
-            formData.append('email', res.data.email);
-            formData.append('family_name', res.data.family_name);
-            formData.append('given_name', res.data.given_name);
-            formData.append('name', res.data.name);
-            formData.append('picture', pictureFile);
+            formData.append("email", res.data.email);
+            formData.append("family_name", res.data.family_name);
+            formData.append("given_name", res.data.given_name);
+            formData.append("name", res.data.name);
+            formData.append("picture", pictureFile);
 
-            const data = await axios.post('https://abdulrahman.onrender.com/accounts/google/login/', formData, {
-              headers: {
-                'Content-Type': 'multipart/form-data',
-              },
-            });
+            const data = await axios.post(
+              "https://abdulrahman.onrender.com/accounts/google/login/",
+              formData,
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
+            );
             console.log(data, "post google");
+            console.log(data?.data?.message);
+            if (data?.data?.message == "loged in successfully!") {
+              console.log("sadasewqe");
+              localStorage.setItem("userToken",response.access_token)
+              dispatch(signIn());
+              customAlert("Logged in successfully");
+              navigate("/");
+            }
           } catch (error) {
             console.log(error);
           }
