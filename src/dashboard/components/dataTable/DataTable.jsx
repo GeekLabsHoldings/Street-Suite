@@ -90,8 +90,18 @@ function DataTable() {
             </li> */}
             <li>
               <img src={img3} alt="" />
-              <p className={ele.RSI > 0 ? styles.UP : styles.DOWN}>
-                {Number(ele.value).toFixed(3)} %
+              <p
+                className={
+                  ele.risk_level == "Bearish"
+                    ? styles.DOWN
+                    : ele.risk_level == "Bullish"
+                    ? styles.UP
+                    : ""
+                }
+              >
+                {`${Number(ele.value).toFixed(3)}  ${
+                  ele.strategy.split(" ")[0]
+                }`}
               </p>
             </li>
             <li>
