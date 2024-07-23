@@ -49,7 +49,7 @@ const QuizResultsPage = () => {
       setTotalUserScore(totalUserScore);
     }
     axios
-      .get(`https://abdulrahman.onrender.com/quizzes/${quizId}/questions/`)
+      .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/questions/`)
       .then((res) => {
         setTotalQuestions(res.data.length);
       });

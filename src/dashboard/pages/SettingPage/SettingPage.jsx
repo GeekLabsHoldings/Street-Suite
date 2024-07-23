@@ -32,7 +32,7 @@ const SettingPage = () => {
 
   async function getProfSett() {
     await axios
-      .get(`https://abdulrahman.onrender.com/accounts/profile-settings/`, {
+      .get(`${process.env.REACT_APP_API_URL}accounts/profile-settings/`, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -111,12 +111,12 @@ const SettingPage = () => {
   async function callEditSett(reqBody) {
     const formData = new FormData();
     console.log(profSett.values.username.trim());
-    formData.append("username", profSett.values.username.replace(" ",""));
+    formData.append("username", profSett.values.username.replace(" ", ""));
     formData.append("first_name", profSett.values.first_name);
     formData.append("last_name", profSett.values.last_name);
     formData.append("email", profSett.values.email);
     if (profSett.values.password.trim() != "") {
-    formData.append("password", profSett.values.password);
+      formData.append("password", profSett.values.password);
     }
     formData.append("profile.About", profSett.values.profile.About);
     formData.append(
@@ -129,7 +129,7 @@ const SettingPage = () => {
 
     await axios
       .patch(
-        `https://abdulrahman.onrender.com/accounts/profile-settings/`,
+        `${process.env.REACT_APP_API_URL}accounts/profile-settings/`,
         formData,
         {
           headers: {
@@ -182,7 +182,7 @@ const SettingPage = () => {
   async function changePassword(reqBody) {
     try {
       const { data } = await axios.post(
-        `https://abdulrahman.onrender.com/accounts/change-password/`,
+        `${process.env.REACT_APP_API_URL}accounts/change-password/`,
         reqBody,
         {
           headers: {
@@ -191,7 +191,6 @@ const SettingPage = () => {
         }
       );
       if (data.message == "password changed successfully") {
-
         customAlert(data?.message);
         changePasswordFormik.resetForm();
         setPassModal(false);
@@ -253,7 +252,7 @@ const SettingPage = () => {
         }`,
         image: `${
           profData?.profile?.image
-            ? `https://abdulrahman.onrender.com/${profData?.profile?.image}`
+            ? `${process.env.REACT_APP_API_URL}${profData?.profile?.image}`
             : ""
         }`,
       },
@@ -388,7 +387,13 @@ const SettingPage = () => {
                             </label>
                           </div>
                           <div className="md:w-1/2 ">
-                          <p style={{fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`}}>{profSett.values.username}</p>
+                            <p
+                              style={{
+                                fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`,
+                              }}
+                            >
+                              {profSett.values.username}
+                            </p>
                           </div>
                         </div>
                         {/* change avatar or remove it */}
@@ -493,7 +498,13 @@ const SettingPage = () => {
                               Email
                             </label>
                           </div>
-                          <p style={{fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`}}>{profSett.values.email}</p>
+                          <p
+                            style={{
+                              fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`,
+                            }}
+                          >
+                            {profSett.values.email}
+                          </p>
                         </div>
                         {/* cahnge password section */}
                         <div className="md:flex align-items-center">

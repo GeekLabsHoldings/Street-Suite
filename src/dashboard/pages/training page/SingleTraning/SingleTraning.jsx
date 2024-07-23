@@ -41,7 +41,7 @@ const SingleTraning = () => {
 
   useEffect(() => {
     axios
-      .get(`https://abdulrahman.onrender.com/courses/modules/${courseId}`, {
+      .get(`${process.env.REACT_APP_API_URL}courses/modules/${courseId}`, {
         headers: {
           Authorization: `Token 3a6dc74f572324f8445310e28c8fb4e2f3ee5cce`,
         },
@@ -54,7 +54,7 @@ const SingleTraning = () => {
 
     if (currentCourse.length < 1) {
       axios
-        .get(`https://abdulrahman.onrender.com/courses/${courseId}`)
+        .get(`${process.env.REACT_APP_API_URL}courses/${courseId}`)
         .then((res) => {
           setCurrentCourse(res.data[0]);
         })

@@ -39,7 +39,7 @@ const QuizzesFiltersPage = () => {
     //   // window.scrollTo(0, 0);
     //   //   setPageLoading(true);
     //   const { data } = await axios.get(
-    //     `https://abdulrahman.onrender.com/quizzes/categories/`
+    //     `${process.env.REACT_APP_API_URL}quizzes/categories/`
     //   );
     //   setCategoryList(data);
     //   console.log(data);
@@ -53,15 +53,11 @@ const QuizzesFiltersPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://abdulrahman.onrender.com/quizzes/")
+      .get(`${process.env.REACT_APP_API_URL}quizzes/`)
       .then((res) => {
         setQuizData(res.data);
         setCategoryList(res.data.map((quiz) => quiz.text));
         setPageLoading(false);
-      })
-      .then((res) => {})
-      .then((res) => {
-        console.log(categoryList);
       })
       .catch((err) => {
         console.log(err);

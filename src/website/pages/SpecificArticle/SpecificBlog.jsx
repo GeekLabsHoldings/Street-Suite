@@ -16,7 +16,7 @@ const SpecificBlog = () => {
       // window.scrollTo(0, 0);
       setPageLoading(true);
       const { data } = await axios.get(
-        `https://abdulrahman.onrender.com/blogs/post/${id}/`
+        `${process.env.REACT_APP_API_URL}blogs/post/${id}/`
       );
       setBlogDetails(data);
     } catch (e) {

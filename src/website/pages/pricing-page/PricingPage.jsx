@@ -15,7 +15,7 @@ const PricingPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://abdulrahman.onrender.com/pricing/")
+      .get(`${process.env.REACT_APP_API_URL}pricing/`)
       .then((res) => {
         setPlans(res.data);
         console.log(res.data);

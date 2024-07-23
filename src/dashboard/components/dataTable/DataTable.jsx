@@ -29,7 +29,7 @@ const tableData = [
 ];
 
 async function getAlerts() {
-  const response = await axios.get("https://abdulrahman.onrender.com/alerts/");
+  const response = await axios.get(`${process.env.REACT_APP_API_URL}alerts/`);
   console.log(response.data);
   return response.data;
 }
@@ -38,7 +38,7 @@ function DataTable() {
   // const [alerts, setAlerts] = useState([]);
   // useEffect(() => {
   //   axios
-  //     .get("https://abdulrahman.onrender.com/alerts/")
+  //     .get(`${process.env.REACT_APP_API_URL}alerts/")
   //     .then((res) => {
   //       console.log(res.data);
   //       setAlerts(res.data);

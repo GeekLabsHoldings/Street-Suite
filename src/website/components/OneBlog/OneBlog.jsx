@@ -46,7 +46,7 @@ const OneBlog = ({ filter }) => {
       // window.scrollTo(0, 0);
       setPageLoading(true);
       const { data } = await axios.get(
-        `https://abdulrahman.onrender.com/blogs/`
+        `${process.env.REACT_APP_API_URL}blogs/`
       );
       setBlogsList(data);
     } catch (e) {
@@ -162,7 +162,7 @@ const OneBlog = ({ filter }) => {
                   <div className=" ">
                     <div className="md:w-10/12 sm:w-11/12 rounded-md overflow-hidden">
                       <img
-                        src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                        src={`${process.env.REACT_APP_API_URL}${blog.image_url}`}
                         alt={blog.title}
                         className="w-full"
                       />
@@ -307,7 +307,7 @@ const OneBlog = ({ filter }) => {
                 <div className=" ">
                   <div className="md:w-10/12 sm:w-11/12 ">
                     <img
-                      src={`https://abdulrahman.onrender.com/${blog.image_url}`}
+                      src={`${process.env.REACT_APP_API_URL}${blog.image_url}`}
                       alt={blog.title}
                       className="w-full"
                     />
@@ -330,7 +330,7 @@ const OneBlog = ({ filter }) => {
             <div className="md:py-7">
               <div className="divForImgSm h-52 rounded-md overflow-hidden">
                 <img
-                  src={`https://abdulrahman.onrender.com/${blogsList[0].image_url}`}
+                  src={`${process.env.REACT_APP_API_URL}${blogsList[0].image_url}`}
                   alt={blogsList[0].title}
                   className="w-full h-full"
                 />

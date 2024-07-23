@@ -15,7 +15,7 @@ const AssessmentPage = () => {
   // useEffect that fetch data from api
   useEffect(() => {
     axios
-      .get(`https://abdulrahman.onrender.com/courses/assessment/${moduleId}`)
+      .get(`${process.env.REACT_APP_API_URL}courses/assessment/${moduleId}`)
       .then((res) => {
         console.log(res.data[0]);
         setAssessmentData(res.data[0]);

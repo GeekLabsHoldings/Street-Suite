@@ -21,7 +21,6 @@ import VerificationInput from "react-verification-input";
 import customAlert from "../../utils/customAlert";
 import { useGoogleLogin } from "@react-oauth/google";
 
-
 const SignIn = () => {
   const navigate = useNavigate();
   const userState = useSelector((state) => state.login.loggedIn);
@@ -35,7 +34,7 @@ const SignIn = () => {
   const [verificationValue, setVerificationValue] = useState(0);
   const [emailVer, setEmailVer] = useState("");
   const [tokenVer, setTokenVer] = useState("");
-  const [invalidVer,setInvalidVer] = useState("")
+  const [invalidVer, setInvalidVer] = useState("");
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -89,7 +88,7 @@ const SignIn = () => {
             formData.append("picture", pictureFile);
 
             const data = await axios.post(
-              "https://abdulrahman.onrender.com/accounts/google/login/",
+              `${process.env.REACT_APP_API_URL}accounts/google/login/`,
               formData,
               {
                 headers: {
@@ -101,7 +100,7 @@ const SignIn = () => {
             console.log(data?.data?.message);
             if (data?.data?.message == "loged in successfully!") {
               console.log("sadasewqe");
-              localStorage.setItem("userToken",data.data.token)
+              localStorage.setItem("userToken", data.data.token);
               dispatch(signIn());
               customAlert("Logged in successfully");
               navigate("/");
@@ -116,18 +115,17 @@ const SignIn = () => {
     },
   });
 
-
   async function callRegister(reqBody) {
     console.log("reqBody");
     // setIsLoading(true);
     await axios
-      .post(`https://abdulrahman.onrender.com/accounts/login/`, reqBody)
+      .post(`${process.env.REACT_APP_API_URL}accounts/login/`, reqBody)
       .then(({ data }) => {
         console.log(data);
         setAuthToken(data?.token);
         localStorage.setItem("userToken", data?.token);
         if (data?.token) {
-          dispatch(signIn())
+          dispatch(signIn());
           customAlert("Logged in successfully");
           navigate("/");
         }
@@ -136,8 +134,10 @@ const SignIn = () => {
         console.log(err);
         if (err.response.data.message == "wrong password") {
           setWrongPass(true);
-        } else if (err.response.data.message == "your email not exists in the website"){
-          setWrongEmail("your email does not exist in the website")
+        } else if (
+          err.response.data.message == "your email not exists in the website"
+        ) {
+          setWrongEmail("your email does not exist in the website");
         }
         // setErrorMessage(err.response.data.message);
         // setIsLoading(false);
@@ -147,7 +147,7 @@ const SignIn = () => {
     try {
       console.log(email);
       const { data } = await axios.post(
-        `https://abdulrahman.onrender.com/accounts/forgetpassword/`,
+        `${process.env.REACT_APP_API_URL}accounts/forgetpassword/`,
         {
           email: email,
         }
@@ -155,7 +155,7 @@ const SignIn = () => {
 
       console.log(data);
       setTokenVer(data.token);
-      setShowVerification(true)
+      setShowVerification(true);
       return data;
     } catch (err) {
       console.log(err);
@@ -166,7 +166,7 @@ const SignIn = () => {
       console.log(token);
       console.log(verificationValue.toString());
       const { data } = await axios.post(
-        `https://abdulrahman.onrender.com/accounts/forgetpassword/verify/`,
+        `${process.env.REACT_APP_API_URL}accounts/forgetpassword/verify/`,
         {
           verification_code: verificationValue.toString(),
         },
@@ -180,12 +180,12 @@ const SignIn = () => {
       console.log(data);
       setInForgot(false);
       setInReset(true);
-      setShowVerification(false)
+      setShowVerification(false);
       return data;
     } catch (err) {
       console.log(err);
       if (err.response.data.message == "Invalid verification code") {
-        setInvalidVer("Invalid verification code")
+        setInvalidVer("Invalid verification code");
       }
     }
   }
@@ -194,7 +194,7 @@ const SignIn = () => {
       console.log(reqBody);
       console.log(tokenVer, "tokenVer");
       const { data } = await axios.post(
-        `https://abdulrahman.onrender.com/accounts/forgetpassword/reset/`,
+        `${process.env.REACT_APP_API_URL}accounts/forgetpassword/reset/`,
         reqBody,
         {
           headers: {
@@ -204,9 +204,9 @@ const SignIn = () => {
       );
       customAlert(data.message);
       setInReset(false);
-      updatePasswordFormik.resetForm()
-      
-      setWrongPass(false)
+      updatePasswordFormik.resetForm();
+
+      setWrongPass(false);
       return data;
     } catch (err) {
       console.log(err);
@@ -306,9 +306,11 @@ const SignIn = () => {
                           <div className=" bg-red-200 text-black rounded-md w-full p-1 border-red-950 border-2 border-solid text-center">
                             Wrong Password
                           </div>
-                        ) : wrongEmail ? <div className=" bg-red-200 text-black rounded-md w-full p-1 border-red-950 border-2 border-solid text-center">
-                        {wrongEmail}
-                      </div> : null}
+                        ) : wrongEmail ? (
+                          <div className=" bg-red-200 text-black rounded-md w-full p-1 border-red-950 border-2 border-solid text-center">
+                            {wrongEmail}
+                          </div>
+                        ) : null}
                         <div>
                           <label htmlFor="email" className=" mb-[0.8vh]">
                             Email *
@@ -358,14 +360,13 @@ const SignIn = () => {
                             className="labelfont checkboxFont rememberClass"
                             label="Remember me"
                           />
-                          
-                            <button
-                              onClick={() => setInForgot(true)}
-                              className=" underline cursor-pointer bg-transparent outline-none border-none text-sm"
-                            >
-                              Forgot Password?
-                            </button>
-                          
+
+                          <button
+                            onClick={() => setInForgot(true)}
+                            className=" underline cursor-pointer bg-transparent outline-none border-none text-sm"
+                          >
+                            Forgot Password?
+                          </button>
                         </div>
                       </div>
                       <div className="mx-auto flex flex-col gap-[2vh]">
@@ -382,35 +383,35 @@ const SignIn = () => {
                           Log In
                         </Button>
                         <button
-          className=" text-black rounded-md border-none py-2 px-4"
-          onClick={() => login()}
-        >
-          Sign In With Google{" "}
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
-              fill="#FFC107"
-            />
-            <path
-              d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z"
-              fill="#FF3D00"
-            />
-            <path
-              d="M12.0002 22.0003C14.5832 22.0003 16.9302 21.0118 18.7047 19.4043L15.6097 16.7853C14.5719 17.5745 13.3039 18.0014 12.0002 18.0003C9.39916 18.0003 7.19066 16.3418 6.35866 14.0273L3.09766 16.5398C4.75266 19.7783 8.11366 22.0003 12.0002 22.0003Z"
-              fill="#4CAF50"
-            />
-            <path
-              d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
-              fill="#1976D2"
-            />
-          </svg>
-        </button>
+                          className=" text-black rounded-md border-none py-2 px-4"
+                          onClick={() => login()}
+                        >
+                          Sign In With Google{" "}
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+                              fill="#FFC107"
+                            />
+                            <path
+                              d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z"
+                              fill="#FF3D00"
+                            />
+                            <path
+                              d="M12.0002 22.0003C14.5832 22.0003 16.9302 21.0118 18.7047 19.4043L15.6097 16.7853C14.5719 17.5745 13.3039 18.0014 12.0002 18.0003C9.39916 18.0003 7.19066 16.3418 6.35866 14.0273L3.09766 16.5398C4.75266 19.7783 8.11366 22.0003 12.0002 22.0003Z"
+                              fill="#4CAF50"
+                            />
+                            <path
+                              d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+                              fill="#1976D2"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </FormGroup>
                   </div>
@@ -460,7 +461,11 @@ const SignIn = () => {
                       >
                         Send Verification Code
                       </button>
-                      {showVerification ? <p className=" text-center mt-2">The verification code has been sent to you</p> : null}
+                      {showVerification ? (
+                        <p className=" text-center mt-2">
+                          The verification code has been sent to you
+                        </p>
+                      ) : null}
                       <div className="line"></div>
 
                       <div className="mt-2">
@@ -469,11 +474,15 @@ const SignIn = () => {
                         </p>
                       </div>
                       <div className="input-text flex flex-col justify-center items-center gap-[2vh]">
-                        <VerificationInput placeholder="" validChars="0-9"
+                        <VerificationInput
+                          placeholder=""
+                          validChars="0-9"
                           onChange={(value) => setVerificationValue(value)}
                         />
                       </div>
-                      {invalidVer ? <p className=" text-center mt-2">{invalidVer}</p> : null}
+                      {invalidVer ? (
+                        <p className=" text-center mt-2">{invalidVer}</p>
+                      ) : null}
 
                       <div className="mt-4">
                         <button

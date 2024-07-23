@@ -18,7 +18,7 @@ function QuizPage() {
 
   function closeModal() {
     axios
-      .post(`https://abdulrahman.onrender.com/quizzes/send_result/`, {
+      .post(`${process.env.REACT_APP_API_URL}quizzes/send_result/`, {
         email: email,
         result: score,
       })
@@ -116,7 +116,7 @@ function QuizPage() {
 
   useEffect(() => {
     axios
-      .get(`https://abdulrahman.onrender.com/quizzes/${quizId}/`)
+      .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/`)
       .then((res) => {
         console.log(res.data);
         if (!localStorage.getItem(`quiz-${quizId}`)) {
@@ -154,9 +154,7 @@ function QuizPage() {
         // Check if questions exists in local storage
         if (!JSON.parse(localStorage.getItem(`quiz-${quizId}`)).questions) {
           axios
-            .get(
-              `https://abdulrahman.onrender.com/quizzes/${quizId}/questions/`
-            )
+            .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/questions/`)
             .then(({ data }) => {
               localStorage.setItem(
                 `quiz-${quizId}`,

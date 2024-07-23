@@ -20,7 +20,7 @@ const SuiteAcademy = () => {
   useEffect(() => {
     try {
       axios
-        .get("https://abdulrahman.onrender.com/courses/", {
+        .get(`${process.env.REACT_APP_API_URL}courses/`, {
           headers: {
             Authorization: `Token ${localStorage.getItem("userToken")}`,
           },
@@ -34,7 +34,7 @@ const SuiteAcademy = () => {
 
     try {
       axios
-        .get("https://abdulrahman.onrender.com/courses/?order_by=most_liked", {
+        .get(`${process.env.REACT_APP_API_URL}courses/?order_by=most_liked`, {
           headers: {
             Authorization: `Token ${localStorage.getItem("userToken")}`,
           },
@@ -49,7 +49,7 @@ const SuiteAcademy = () => {
     try {
       axios
         .get(
-          "https://abdulrahman.onrender.com/courses/?order_by=most_completed",
+          `${process.env.REACT_APP_API_URL}courses/?order_by=most_completed`,
           {
             headers: {
               Authorization: `Token ${localStorage.getItem("userToken")}`,

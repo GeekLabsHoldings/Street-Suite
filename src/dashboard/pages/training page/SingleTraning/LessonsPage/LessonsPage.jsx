@@ -44,7 +44,7 @@ const LessonsPage = () => {
   async function makeComplete(e) {
     try {
       const response = await axios.patch(
-        `https://abdulrahman.onrender.com/courses/section_complete/${e.target.dataset.id}`,
+        `${process.env.REACT_APP_API_URL}courses/section_complete/${e.target.dataset.id}`,
         {}, // Assuming no body is needed for the PATCH request
         {
           headers: {

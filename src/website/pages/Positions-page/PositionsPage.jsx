@@ -33,7 +33,7 @@ const PositionsPage = () => {
 
     try {
       const { data } = await axios.post(
-        `https://abdulrahman.onrender.com/careers/positions/apply/project-manager/`,
+        `${process.env.REACT_APP_API_URL}careers/positions/apply/project-manager/`,
         payload
       );
 
@@ -51,7 +51,7 @@ const PositionsPage = () => {
       // window.scrollTo(0, 0);
       //   setPageLoading(true);
       const { data } = await axios.get(
-        `https://abdulrahman.onrender.com/careers/positions/vacancy/`
+        `${process.env.REACT_APP_API_URL}careers/positions/vacancy/`
       );
       setVacanciesList(data);
       console.log(data);

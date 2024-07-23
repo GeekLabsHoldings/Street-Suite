@@ -10,15 +10,15 @@ import customAlert from "../../utils/customAlert";
 const ChangeLogs = () => {
   const [changeLogs, setChangeLogs] = useState([]);
   const [pageLoading, setPageLoading] = useState(false);
-  const [textFeature,setTextFeature] = useState("")
-  const [errorText,setErrorText] = useState("")
+  const [textFeature, setTextFeature] = useState("");
+  const [errorText, setErrorText] = useState("");
 
   async function getAllChangeLogs() {
     try {
       // window.scrollTo(0, 0);
       setPageLoading(true);
       const { data } = await axios.get(
-        `https://abdulrahman.onrender.com/change_log/list_all/`
+        `${process.env.REACT_APP_API_URL}change_log/list_all/`
       );
       setChangeLogs(data);
     } catch (e) {
@@ -29,17 +29,22 @@ const ChangeLogs = () => {
   }
   async function postFeature() {
     try {
-      const {data} = await axios.post(`https://abdulrahman.onrender.com/change_log/post_feature/`,{
-        text_message:textFeature
-      })
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_API_URL}change_log/post_feature/`,
+        {
+          text_message: textFeature,
+        }
+      );
       if (data.message == "Message sent successfully!") {
-      customAlert("Message sent successfully!")
+        customAlert("Message sent successfully!");
       }
-      setErrorText("")
-      return data
+      setErrorText("");
+      return data;
     } catch (error) {
-      if (error.response.data.text_message[0] == "This field may not be blank.") {
-        setErrorText("You should type something")
+      if (
+        error.response.data.text_message[0] == "This field may not be blank."
+      ) {
+        setErrorText("You should type something");
       }
       console.log(error);
     }
@@ -157,12 +162,28 @@ const ChangeLogs = () => {
                       className="w-full textArea msgTextArea"
                       rows="4"
                       value={textFeature}
-                      onChange={(e)=>setTextFeature(e.target.value)}
+                      onChange={(e) => setTextFeature(e.target.value)}
                     ></textarea>
-                    {errorText && <p className=" mb-[0.4vh] text-red-700" style={{fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`}}>{errorText}</p>}
+                    {errorText && (
+                      <p
+                        className=" mb-[0.4vh] text-red-700"
+                        style={{
+                          fontSize: `clamp(10px, calc( 0.8vw + 0.1rem), 60px)`,
+                        }}
+                      >
+                        {errorText}
+                      </p>
+                    )}
                   </div>
                   <div>
-                    <Button className=" newBtn loginBtn " onClick={()=>{postFeature()}}>Submit</Button>
+                    <Button
+                      className=" newBtn loginBtn "
+                      onClick={() => {
+                        postFeature();
+                      }}
+                    >
+                      Submit
+                    </Button>
                   </div>
                 </div>
               </div>

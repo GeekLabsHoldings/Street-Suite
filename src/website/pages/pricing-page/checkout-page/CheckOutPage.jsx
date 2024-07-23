@@ -50,7 +50,7 @@ const CheckoutForm = () => {
 
   // useEffect(() => {
   //   axios
-  //     .get(`https://abdulrahman.onrender.com/pricing/checkout/${planId}`)
+  //     .get(`${process.env.REACT_APP_API_URL}pricing/checkout/${planId}`)
   //     .then((res) => {
   //       setCheckout(res.data);
   //     })
@@ -73,7 +73,7 @@ const CheckoutForm = () => {
     console.log(cardNumberElement);
     // Call your server to create a PaymentIntent
     const response = await fetch(
-      `https://abdulrahman.onrender.com/pricing/checkout/${planId}/`,
+      `${process.env.REACT_APP_API_URL}pricing/checkout/${planId}/`,
       {
         method: "POST",
         headers: {

@@ -13,7 +13,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [verificationModal, setVerificationModal] = useState(false);
   const [verificationValue, setVerificationValue] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
@@ -22,13 +22,13 @@ const SignupPage = () => {
     console.log("asd");
 
     await axios
-      .post(`https://abdulrahman.onrender.com/accounts/signup/verify/`, {
-        "verification_code": verificationValue.toString()
+      .post(`${process.env.REACT_APP_API_URL}accounts/signup/verify/`, {
+        verification_code: verificationValue.toString(),
       })
       .then(({ data }) => {
-        setVerificationModal(false)
+        setVerificationModal(false);
         if (data?.message == "User created successfully.") {
-          navigate("/login")
+          navigate("/login");
         }
       })
       .catch((err) => {
@@ -134,7 +134,8 @@ const SignupPage = () => {
                           </p>
                         </div>
                         <div className="input-text flex flex-col justify-center items-center gap-[2vh]">
-                          <VerificationInput placeholder=""
+                          <VerificationInput
+                            placeholder=""
                             onChange={(value) => setVerificationValue(value)}
                           />
                           {errorMessage ? (

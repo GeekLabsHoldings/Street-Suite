@@ -71,7 +71,7 @@ const FormComponent = ({
   async function callRegister(reqBody) {
     console.log(reqBody);
     await axios
-      .post(`https://abdulrahman.onrender.com/accounts/register/`, reqBody)
+      .post(`${process.env.REACT_APP_API_URL}accounts/register/`, reqBody)
       .then(({ data }) => {
         // if (data.message == "success") {
         //   setIsLoading(false);
@@ -142,7 +142,7 @@ const FormComponent = ({
             formData.append("picture", pictureFile);
 
             const data = await axios.post(
-              "https://abdulrahman.onrender.com/accounts/google/login/",
+              `${process.env.REACT_APP_API_URL}accounts/google/login/`,
               formData,
               {
                 headers: {
@@ -154,7 +154,7 @@ const FormComponent = ({
             console.log(data?.data?.message);
             if (data?.data?.message == "loged in successfully!") {
               console.log("sadasewqe");
-              localStorage.setItem("userToken",data.data.token)
+              localStorage.setItem("userToken", data.data.token);
               dispatch(signIn());
               customAlert("Logged in successfully");
               navigate("/");

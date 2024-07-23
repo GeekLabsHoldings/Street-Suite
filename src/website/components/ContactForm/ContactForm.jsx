@@ -28,7 +28,7 @@ const ContactForm = () => {
     console.log("asd");
     await axios
       .post(
-        `https://abdulrahman.onrender.com/contact_us/post_message/
+        `${process.env.REACT_APP_API_URL}contact_us/post_message/
         `,
         reqBody
       )
