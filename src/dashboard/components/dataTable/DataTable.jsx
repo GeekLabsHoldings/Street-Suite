@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import $ from "jquery";
 import styles from "./DataTable.module.css";
 import img1 from "../../assets/table/Group.svg";
@@ -6,117 +6,120 @@ import img2 from "../../assets/table/Vector2.svg";
 import img3 from "../../assets/table/Vector.svg";
 import img4 from "../../assets/table/Group 63.svg";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-// array of data that will be show in the table in alerts page
-const tableData = [
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "0.25", value4: "Low Risk" },
-  { value1: "AMZN", value2: "200", value3: "-0.25", value4: "Low Risk" },
-];
-
-async function getAlerts() {
-  const response = await axios.get(`${process.env.REACT_APP_API_URL}alerts/`);
-  console.log(response.data);
+const fetchAlerts = async ({
+  pageParam = 1,
+  strategy,
+  ticker__industry,
+  ticker__market_capital,
+  risk_level,
+}) => {
+  const response = await axios.get(`${process.env.REACT_APP_API_URL}alerts/`, {
+    params: {
+      page: pageParam,
+      strategy,
+      ticker__industry,
+      ticker__market_capital,
+      risk_level,
+    },
+  });
   return response.data;
-}
+};
 
-function DataTable() {
-  // const [alerts, setAlerts] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}alerts/")
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setAlerts(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-  const { data, error, isLoading } = useQuery({
+function DataTable(strategy, industry, marketCap, riskLevel) {
+  const {
+    data,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isLoading,
+    status,
+  } = useInfiniteQuery({
     queryKey: ["alerts"],
-    queryFn: getAlerts,
+    queryFn: () => fetchAlerts({ strategy, industry, marketCap, riskLevel }),
+    getNextPageParam: (lastPage, pages) => {
+      if (lastPage.next) {
+        return pages.length + 1;
+      } else {
+        return undefined;
+      }
+    },
     refetchInterval: 1000,
   });
 
-  // function that open & close collaps
   const openCollaps = (e) => {
-    // slide up all collaps are open
-    // $(".tableItemCollaps").not($(e.target.offsetParent).siblings(".tableItemCollaps")).slideUp(300);
-
-    // toggle slide collaps by click
     $(e.target)
       .parents(".tableItem")
       .siblings(".tableItemCollaps")
       .slideToggle(300);
   };
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div className="w-full flex justify-center items-center pt-5 pb-8">
+        <div className="h-16 w-16 rounded-full border-8 border-solid border-r-transparent border-[#53ACFF] animate-spin"></div>
+      </div>
+    );
+  if (status === "error") return <h1>Error loading data</h1>;
+
+  const alerts = data?.pages?.flatMap((page) => page.results) || [];
 
   return (
-    // alerts table in alerts page
-    <div className={styles.table}>
-      {/* make map on array of tableData to show all data in table as a rows */}
-      {data.map((ele, idx) => (
-        <div className={styles.tableItemContainer} key={idx}>
-          {/* collaps header if i click on it , collaps will toggle slide open */}
-          <ul
-            className={styles.tableItem + " tableItem"}
-            key={idx}
-            onClick={(e) => {
-              openCollaps(e, idx);
-            }}
-          >
-            <li>
-              <img src={img1} alt="" />
-              <p>{ele.ticker}</p>
-            </li>
-            {/* <li>
-              <img src={img2} alt="" />
-              <p>{ele.value2}</p>
-            </li> */}
-            <li>
-              <img src={img3} alt="" />
-              <p
-                className={
-                  ele.risk_level == "Bearish"
-                    ? styles.DOWN
-                    : ele.risk_level == "Bullish"
-                    ? styles.UP
-                    : ""
-                }
-              >
-                {`${Number(ele.value).toFixed(3)}  ${
-                  ele.strategy.split(" ")[0]
-                }`}
-              </p>
-            </li>
-            <li>
-              <img src={img4} alt="" />
-              <p>{ele.risk_level}</p>
-            </li>
-          </ul>
-
-          {/* collaps body that will be show and hidden by click on collaps */}
-          <div className={`${styles.tableItemCollaps} tableItemCollaps`}>
-            <p>{ele.message}</p>
-          </div>
+    <InfiniteScroll
+      dataLength={alerts.length}
+      next={fetchNextPage}
+      hasMore={hasNextPage}
+      loader={
+        <div className="w-full flex justify-center items-center pt-5 pb-8">
+          <div className="h-16 w-16 rounded-full border-8 border-solid border-r-transparent border-[#53ACFF] animate-spin"></div>
         </div>
-      ))}
-    </div>
+      }
+      className="overflow-y-hidden"
+    >
+      <div className={styles.table}>
+        {alerts.map((ele, idx) => (
+          <div className={styles.tableItemContainer} key={idx}>
+            <ul
+              className={styles.tableItem + " tableItem"}
+              onClick={(e) => {
+                openCollaps(e, idx);
+              }}
+            >
+              <li>
+                <img src={img1} alt="" />
+                <p>{ele.ticker["symbol"]}</p>
+              </li>
+              <li>
+                <img src={img3} alt="" />
+                <p
+                  className={
+                    ele?.risk_level === "Bearish"
+                      ? styles.DOWN
+                      : ele?.risk_level === "Bullish"
+                      ? styles.UP
+                      : ""
+                  }
+                >
+                  {`${Number(ele?.result_value).toFixed(3)}  ${
+                    ele?.strategy.split(" ")[0]
+                  }`}
+                </p>
+              </li>
+              <li>
+                <img src={img4} alt="" />
+                <p>{ele?.risk_level}</p>
+              </li>
+            </ul>
+            <div className={`${styles.tableItemCollaps} tableItemCollaps`}>
+              <p>{ele?.message}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </InfiniteScroll>
   );
 }
 

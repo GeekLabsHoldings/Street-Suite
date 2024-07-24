@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import $ from 'jquery'
+import $ from "jquery";
 import styles from "./Filters.module.css";
 import closeIcon from "../../assets/close icon.svg";
 import filterSearchIcon from "../../assets/filter search icon.svg";
@@ -107,7 +107,14 @@ const AssetSelect = [
   { type: "radio", name: "Asset-Filter", id: "now", label: "Now" },
 ];
 
-function Filters({ openFilterInMobile, toggleFilterMenu }) {
+function Filters({
+  openFilterInMobile,
+  toggleFilterMenu,
+  setStrategy,
+  setIndustry,
+  setMarketCap,
+  setRiskLevel,
+}) {
   const [appliedFilters, setAppliedFilters] = useState([]);
 
   // function that get value of market cap filter and add it to applied filters
@@ -125,6 +132,8 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
     index === null
       ? setAppliedFilters((prev) => [...prev, e.target.value])
       : setAppliedFilters([...newArr]);
+
+    setMarketCap(e.target.value);
   };
 
   // function that get value of market cap filter and add it to applied filters
@@ -142,6 +151,8 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
     index === null
       ? setAppliedFilters((prev) => [...prev, e.target.value])
       : setAppliedFilters([...newArr]);
+
+    setRiskLevel(e.target.value);
   };
 
   // function that get value of market cap filter and add it to applied filters
@@ -159,6 +170,8 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
     index === null
       ? setAppliedFilters((prev) => [...prev, value])
       : setAppliedFilters([...newArr]);
+
+    setStrategy(value);
   };
 
   // function that get value of market cap filter and add it to applied filters
@@ -176,12 +189,17 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
     index === null
       ? setAppliedFilters((prev) => [...prev, value])
       : setAppliedFilters([...newArr]);
+
+    setIndustry(value);
   };
 
   // function that clear applied filters
   const clearAppliedFilters = () => {
-    setAppliedFilters([])
-  }
+    setAppliedFilters([]);
+    setStrategy("");
+    setIndustry("");
+    setMarketCap("");
+  };
 
   const strategySettings = {
     focusOnSelect: true,
@@ -196,11 +214,13 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
     speed: 300,
 
     afterChange: function (currentSlide) {
-      const slides = document.querySelectorAll(".strategyFilter .slick-active input");
+      const slides = document.querySelectorAll(
+        ".strategyFilter .slick-active input"
+      );
       console.log(currentSlide);
-      $(".strategyFilter input").removeAttr("checked" , 0)
-      slides[2].setAttribute("checked","checked");
-      handleStrategyFilter(slides[2].getAttribute("value"))
+      $(".strategyFilter input").removeAttr("checked", 0);
+      slides[2].setAttribute("checked", "checked");
+      handleStrategyFilter(slides[2].getAttribute("value"));
     },
   };
 
@@ -217,11 +237,13 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
     speed: 300,
 
     afterChange: function (currentSlide) {
-      const slides = document.querySelectorAll(".AssetFilter .slick-active input");
+      const slides = document.querySelectorAll(
+        ".AssetFilter .slick-active input"
+      );
       console.log(currentSlide);
-      $(".AssetFilter input").removeAttr("checked" , 0)
-      slides[1].setAttribute("checked","checked");
-      handleAssetFilter(slides[1].getAttribute("value"))
+      $(".AssetFilter input").removeAttr("checked", 0);
+      slides[1].setAttribute("checked", "checked");
+      handleAssetFilter(slides[1].getAttribute("value"));
     },
   };
 
@@ -298,9 +320,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
               </div>
 
               {/* Industry filter */}
-              <div
-                className={styles.industryFilter}
-              >
+              <div className={styles.industryFilter}>
                 {/* industry filter title  */}
                 <div className={styles.selectLabel}>
                   <h6>Industry</h6>
@@ -328,11 +348,9 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
 
               {/* Market Cap filter */}
               <div className={styles.checkBoxFilters}>
-                <div
-                  className={styles.MarketCapFilter}
-                >
+                <div className={styles.MarketCapFilter}>
                   {/* Market Cap filter title  */}
-                  <div className={styles.selectLabel} >
+                  <div className={styles.selectLabel}>
                     <h6>Market Cap</h6>
                   </div>
 
@@ -354,11 +372,9 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                 </div>
 
                 {/* Risk Level filter */}
-                <div
-                  className={styles.riskLevelFilter}
-                >
+                <div className={styles.riskLevelFilter}>
                   {/* Risk Level filter title  */}
-                  <div className={styles.selectLabel} >
+                  <div className={styles.selectLabel}>
                     <h6>Risk Level</h6>
                   </div>
 
@@ -386,7 +402,7 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                   <div className={styles.selectLabel}>
                     <h6>Strategy</h6>
                   </div>
-                  <div className={styles.selectContainer }>
+                  <div className={styles.selectContainer}>
                     <div className={styles.activeBox}></div>
                     <div className="slider-container">
                       <Slider {...strategySettings}>
@@ -414,14 +430,14 @@ function Filters({ openFilterInMobile, toggleFilterMenu }) {
                   </div>
 
                   <div className={styles.selectContainer}>
-                  <div className={styles.activeBox}></div>
+                    <div className={styles.activeBox}></div>
 
                     <div className="slider-container">
                       <Slider {...assetSettings}>
                         {AssetSelect.map((ele, idx) => (
                           <div className={styles.selectItem} key={idx}>
                             <input
-                            className="wheelSelectInput"
+                              className="wheelSelectInput"
                               type={ele.type}
                               name={ele.name}
                               id={ele.id}

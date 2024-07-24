@@ -10,6 +10,11 @@ import axios from "axios";
 
 function AlertsPage() {
   const [openFilterInMobile, setOpenFilterInMobile] = useState(false);
+  const [strategy, setStrategy] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [marketCap, setMarketCap] = useState("");
+  const [riskLevel, setRiskLevel] = useState("");
+
   const toggleFilterMenu = () => {
     setOpenFilterInMobile(!openFilterInMobile);
   };
@@ -53,13 +58,22 @@ function AlertsPage() {
         </SearchBar>
 
         {/* dataTable component from components folder at dashboard */}
-        <DataTable />
+        <DataTable
+          strategy={strategy}
+          industry={industry}
+          marketCap={marketCap}
+          riskLevel={riskLevel}
+        />
       </div>
 
       {/* filters component from components folder at dashboard */}
       <Filters
         openFilterInMobile={openFilterInMobile}
         toggleFilterMenu={toggleFilterMenu}
+        setStrategy={setStrategy}
+        setIndustry={setIndustry}
+        setMarketCap={setMarketCap}
+        setRiskLevel={setRiskLevel}
       />
     </div>
   );
