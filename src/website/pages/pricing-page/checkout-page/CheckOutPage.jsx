@@ -48,17 +48,6 @@ const CheckoutForm = () => {
   const [checkout, setCheckout] = useState({});
   const { authToken } = useContext(tokenContext);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}pricing/checkout/${planId}`)
-  //     .then((res) => {
-  //       setCheckout(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [planId]);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -211,16 +200,17 @@ const CheckOutPage = () => {
 
   const [checkout, setCheckout] = useState({});
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://abdulrahman.onrender.com/pricing/checkout/${planId}`)
-  //     .then((res) => {
-  //       setCheckout(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [planId]);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}pricing/checkout/${planId}/`)
+      .then((res) => {
+        setCheckout(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [planId]);
 
   return (
     <div className="checkout-wrapper">
