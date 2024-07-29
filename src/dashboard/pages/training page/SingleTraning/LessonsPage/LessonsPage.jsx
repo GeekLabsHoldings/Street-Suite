@@ -16,7 +16,7 @@ const LessonsPage = () => {
   const [completedSections, setCompletedSections] = useState([]);
 
   useEffect(() => {
-    if (currentModule.section_set) {
+    if (currentModule?.section_set) {
       const updatedSections = currentModule.section_set.map((element) => ({
         id: element.id,
         is_completed: element?.is_completed,
@@ -148,7 +148,7 @@ const LessonsPage = () => {
 
       {/* button that redirect to assessment page */}
       <Link
-        to={`/dashboard/training/single-training/${currentModule.course}/assessment/${currentModule.id}`}
+        to={`/dashboard/training/single-training/${currentModule?.course}/assessment/${currentModule?.id}`}
         className={styles.assessment_btn}
       >
         Assessment

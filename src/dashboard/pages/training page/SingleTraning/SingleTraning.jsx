@@ -167,7 +167,7 @@ const SingleTraning = () => {
 
           {/* list of content section */}
           <ul>
-            {currentModule.section_set?.map((section) => (
+            {currentModule?.section_set?.map((section) => (
               <li
                 key={section.id}
                 className={

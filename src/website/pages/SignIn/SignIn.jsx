@@ -495,6 +495,8 @@ const SignIn = () => {
                           Send
                         </button>
                       </div>
+                      <button className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400" onClick={()=>setInForgot(false)}>Close</button>
+
                     </Dialog.Panel>
                   </div>
                 </Transition.Child>
@@ -585,6 +587,8 @@ const SignIn = () => {
                           Confirm
                         </button>
                       </div>
+                      <button className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400" onClick={()=>setInReset(false)}>Close</button>
+
                     </Dialog.Panel>
                   </div>
                 </Transition.Child>

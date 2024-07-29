@@ -48,19 +48,18 @@ const PositionsPage = () => {
 
   async function getAllVacancies() {
     try {
-      // window.scrollTo(0, 0);
-      //   setPageLoading(true);
       const { data } = await axios.get(
         `${process.env.REACT_APP_API_URL}careers/positions/vacancy/`
       );
       setVacanciesList(data);
       console.log(data);
+      console.log("asdwqe");
     } catch (e) {
       console.error(e);
-    } finally {
-      //   setPageLoading(false);
-    }
+    } 
   }
+
+  
   useEffect(() => {
     getAllVacancies();
   }, []);

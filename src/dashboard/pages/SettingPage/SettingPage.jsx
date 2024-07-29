@@ -89,19 +89,14 @@ const SettingPage = () => {
   };
 
   const validationSchema = Yup.object({
-    username: Yup.string(),
     first_name: Yup.string().required("First name is required"),
     last_name: Yup.string().required("Last name is required"),
-    email: Yup.string(),
-    password: Yup.string().required("Password is required"),
     profile: Yup.object({
-      About: Yup.string(),
       Phone_Number: Yup.string()
         .required("Phone number is required")
         .test("isValidPhoneNumber", "Phone number is not valid", (value) =>
           validatePhoneNumber(value)
         ),
-      image: Yup.string().required("Img is required"),
     }),
   });
 
@@ -246,9 +241,7 @@ const SettingPage = () => {
       profile: {
         About: `${profData?.profile?.About ? profData?.profile?.About : ""}`,
         Phone_Number: `${
-          profData?.profile?.Phone_Number
-            ? profData?.profile?.Phone_Number
-            : "213"
+          profData?.profile?.Phone_Number ? profData?.profile?.Phone_Number : ""
         }`,
         image: `${
           profData?.profile?.image
@@ -361,7 +354,7 @@ const SettingPage = () => {
 
         <div className="settingContent md:w-11/12 mx-auto flex flex-col gap-4 ">
           <div className="settingCardBorder">
-            <FormGroup onSubmit={profSett.handleSubmit}>
+            <form onSubmit={profSett.handleSubmit}>
               <div className=" md:flex settingBorderContainer largeDiv">
                 {/* public information editing section */}
                 <div
@@ -530,7 +523,7 @@ const SettingPage = () => {
                       </div>
 
                       {/* change first or last name */}
-                      <div className="md:flex align-items-center">
+                      <div className="md:flex items-start">
                         <div className=" labelColor md:w-1/4 ">
                           <label htmlFor="first-name" className="w-full">
                             First name
@@ -546,10 +539,16 @@ const SettingPage = () => {
                             onChange={profSett.handleChange}
                             onBlur={profSett.handleBlur}
                           />
+                          {profSett.errors.first_name &&
+                          profSett.touched.first_name ? (
+                            <div className=" rounded-md border-red-900 p-2 text-red-600">
+                              {profSett.errors.first_name}
+                            </div>
+                          ) : null}
                         </div>
                       </div>
 
-                      <div className="md:flex align-items-center">
+                      <div className="md:flex items-start">
                         <div className=" labelColor md:w-1/4 ">
                           <label htmlFor="Last-name" className="w-full">
                             Last name
@@ -565,6 +564,12 @@ const SettingPage = () => {
                             onChange={profSett.handleChange}
                             onBlur={profSett.handleBlur}
                           />
+                          {profSett.errors.last_name &&
+                          profSett.touched.last_name ? (
+                            <div className=" rounded-md border-red-900 p-2 text-red-600">
+                              {profSett.errors.last_name}
+                            </div>
+                          ) : null}
                         </div>
                       </div>
                       {/* change phone number */}
@@ -576,8 +581,9 @@ const SettingPage = () => {
                         </div>
                         <div className="md:w-1/2 ">
                           <PhoneInput
-                            id="Phone_Number"
-                            name="Phone_Number"
+                            required
+                            id="profile.Phone_Number"
+                            name="profile.Phone_Number"
                             value={profSett.values.profile.Phone_Number}
                             onChange={(value) =>
                               profSett.setFieldValue(
@@ -587,6 +593,12 @@ const SettingPage = () => {
                             }
                             onBlur={profSett.handleBlur}
                           />
+                          {profSett.errors.profile?.Phone_Number &&
+                          profSett.touched.profile?.Phone_Number ? (
+                            <div className=" rounded-md border-red-900 p-2 text-red-600">
+                              {profSett.errors.profile?.Phone_Number}
+                            </div>
+                          ) : null}
                         </div>
                       </div>
 
@@ -599,6 +611,7 @@ const SettingPage = () => {
                             profSett.handleSubmit();
                           }}
                           id="here"
+                          disabled={!(profSett.isValid && profSett.dirty)}
                         >
                           Save Changes
                         </Button>
@@ -607,7 +620,7 @@ const SettingPage = () => {
                   </div>
                 </div>
               </div>
-            </FormGroup>
+            </form>
           </div>
 
           <div className="flex sm:flex-col gap-4">
@@ -926,10 +939,17 @@ const SettingPage = () => {
                             onClick={() => {
                               changePasswordFormik.handleSubmit();
                             }}
+                            disabled={
+                              !(
+                                changePasswordFormik.isValid &&
+                                changePasswordFormik.dirty
+                              )
+                            }
                           >
                             Confirm
                           </button>
                         </div>
+                        <button className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400" onClick={()=>setPassModal(false)}>Close</button>
                       </Dialog.Panel>
                     </div>
                   </Transition.Child>
