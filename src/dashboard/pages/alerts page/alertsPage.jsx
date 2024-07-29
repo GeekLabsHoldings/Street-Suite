@@ -14,6 +14,7 @@ function AlertsPage() {
   const [industry, setIndustry] = useState("");
   const [marketCap, setMarketCap] = useState("");
   const [riskLevel, setRiskLevel] = useState("");
+  const [alerts, setAlerts] = useState([]);
 
   const toggleFilterMenu = () => {
     setOpenFilterInMobile(!openFilterInMobile);
@@ -63,6 +64,8 @@ function AlertsPage() {
           industry={industry}
           marketCap={marketCap}
           riskLevel={riskLevel}
+          setAlerts={setAlerts}
+          alerts={alerts}
         />
       </div>
 
@@ -74,6 +77,8 @@ function AlertsPage() {
         setIndustry={setIndustry}
         setMarketCap={setMarketCap}
         setRiskLevel={setRiskLevel}
+        setAlerts={setAlerts}
+        alert={alerts}
       />
     </div>
   );

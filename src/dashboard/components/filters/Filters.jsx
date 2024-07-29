@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import styles from "./Filters.module.css";
 import closeIcon from "../../assets/close icon.svg";
@@ -37,25 +37,43 @@ const strategySelect = [
   {
     type: "radio",
     name: "Strategy-Filter",
-    id: "Big-Option-Buys",
-    label: "Big Option Buys",
+    id: "EMA",
+    label: "EMA",
   },
   {
     type: "radio",
     name: "Strategy-Filter",
-    id: "Marger-Arbitrage",
-    label: "Marger Arbitrage",
+    id: "Unusual-Option-Buys",
+    label: "Unusual Option Buys",
   },
   {
     type: "radio",
     name: "Strategy-Filter",
-    id: "Short-Reports",
-    label: "Short Reports",
+    id: "RSI",
+    label: "RSI",
+  },
+  {
+    type: "radio",
+    name: "Strategy-Filter",
+    id: "Relative-Volume",
+    label: "Relative Volume",
+  },
+  {
+    type: "radio",
+    name: "Strategy-Filter",
+    id: "Earning",
+    label: "Earning",
   },
 ];
 
 // array of Market Cap filter data that used in Market Cap select input
 const marketCapSelect = [
+  {
+    type: "radio",
+    name: "marketCap",
+    id: "nano",
+    label: "Nano",
+  },
   {
     type: "radio",
     name: "marketCap",
@@ -71,8 +89,20 @@ const marketCapSelect = [
   {
     type: "radio",
     name: "marketCap",
+    id: "medium",
+    label: "Medium",
+  },
+  {
+    type: "radio",
+    name: "marketCap",
     id: "large",
     label: "Large",
+  },
+  {
+    type: "radio",
+    name: "marketCap",
+    id: "mega",
+    label: "Mega",
   },
 ];
 
@@ -114,8 +144,27 @@ function Filters({
   setIndustry,
   setMarketCap,
   setRiskLevel,
+  setAlerts,
+  alert,
 }) {
   const [appliedFilters, setAppliedFilters] = useState([]);
+  const [strategy, getStrategy] = useState("");
+  const [industry, getIndustry] = useState("");
+  const [marketCap, getMarketCap] = useState("");
+  const [riskLevel, getRiskLevel] = useState("");
+
+  const applyFilters = () => {
+    setAlerts([]);
+  };
+
+  useEffect(() => {
+    if (alert.length === 0) {
+      setStrategy(strategy);
+      setIndustry(industry);
+      setMarketCap(marketCap);
+      setRiskLevel(riskLevel);
+    }
+  }, [alert]);
 
   // function that get value of market cap filter and add it to applied filters
   const handleMarketCapFilter = (e) => {
@@ -133,7 +182,7 @@ function Filters({
       ? setAppliedFilters((prev) => [...prev, e.target.value])
       : setAppliedFilters([...newArr]);
 
-    setMarketCap(e.target.value);
+    getMarketCap(e.target.value);
   };
 
   // function that get value of market cap filter and add it to applied filters
@@ -152,7 +201,7 @@ function Filters({
       ? setAppliedFilters((prev) => [...prev, e.target.value])
       : setAppliedFilters([...newArr]);
 
-    setRiskLevel(e.target.value);
+    getRiskLevel(e.target.value);
   };
 
   // function that get value of market cap filter and add it to applied filters
@@ -171,7 +220,7 @@ function Filters({
       ? setAppliedFilters((prev) => [...prev, value])
       : setAppliedFilters([...newArr]);
 
-    setStrategy(value);
+    getStrategy(value);
   };
 
   // function that get value of market cap filter and add it to applied filters
@@ -189,8 +238,6 @@ function Filters({
     index === null
       ? setAppliedFilters((prev) => [...prev, value])
       : setAppliedFilters([...newArr]);
-
-    setIndustry(value);
   };
 
   // function that clear applied filters
@@ -219,8 +266,8 @@ function Filters({
       );
       console.log(currentSlide);
       $(".strategyFilter input").removeAttr("checked", 0);
-      slides[2].setAttribute("checked", "checked");
-      handleStrategyFilter(slides[2].getAttribute("value"));
+      slides[1].setAttribute("checked", "checked");
+      handleStrategyFilter(slides[1].getAttribute("value"));
     },
   };
 
@@ -331,11 +378,14 @@ function Filters({
                   {industryFilter.map((ele, idx) => (
                     <li
                       key={idx}
-                      onClick={() =>
+                      onClick={() => {
                         setAppliedFilters((prev) =>
                           prev.includes(ele.title) ? prev : [...prev, ele.title]
-                        )
-                      }
+                        );
+                        console.log(ele.title);
+                        console.log(industry);
+                        getIndustry(ele.title);
+                      }}
                     >
                       <div className={styles.selectItem}>
                         <img src={ele.icon} alt={ele.title} />
@@ -457,7 +507,9 @@ function Filters({
           {/* button that apply filters */}
           <div className="space-x-3 w-full flex justify-center">
             <button className={styles.saveFilterBtn}>Save Filter</button>
-            <button className={styles.applyBtn}>Apply</button>
+            <button className={styles.applyBtn} onClick={applyFilters}>
+              Apply
+            </button>
           </div>
         </div>
       </div>
