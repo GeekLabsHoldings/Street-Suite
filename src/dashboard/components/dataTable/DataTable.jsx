@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import $ from "jquery";
 import styles from "./DataTable.module.css";
 import img1 from "../../assets/table/Group.svg";
@@ -9,26 +9,16 @@ import axios from "axios";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const fetchAlerts = async ({
-  pageParam = 1,
-  strategy,
-  ticker__industry,
-  ticker__market_capital,
-  risk_level,
-}) => {
+const fetchAlerts = async ({ pageParam = 1 }) => {
   const response = await axios.get(`${process.env.REACT_APP_API_URL}alerts/`, {
     params: {
       page: pageParam,
-      strategy,
-      ticker__industry,
-      ticker__market_capital,
-      risk_level,
     },
   });
   return response.data;
 };
 
-function DataTable(strategy, industry, marketCap, riskLevel) {
+function DataTable() {
   const {
     data,
     error,
@@ -39,7 +29,7 @@ function DataTable(strategy, industry, marketCap, riskLevel) {
     status,
   } = useInfiniteQuery({
     queryKey: ["alerts"],
-    queryFn: () => fetchAlerts({ strategy, industry, marketCap, riskLevel }),
+    queryFn: fetchAlerts,
     getNextPageParam: (lastPage, pages) => {
       if (lastPage.next) {
         return pages.length + 1;
@@ -47,7 +37,7 @@ function DataTable(strategy, industry, marketCap, riskLevel) {
         return undefined;
       }
     },
-    refetchInterval: 1000,
+    refetchInterval: 100000,
   });
 
   const openCollaps = (e) => {
@@ -85,7 +75,7 @@ function DataTable(strategy, industry, marketCap, riskLevel) {
             <ul
               className={styles.tableItem + " tableItem"}
               onClick={(e) => {
-                openCollaps(e, idx);
+                openCollaps(e);
               }}
             >
               <li>
