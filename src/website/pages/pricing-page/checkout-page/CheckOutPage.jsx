@@ -224,7 +224,7 @@ const CheckOutPage = () => {
             <img src={popularBadge} alt="" />
             <div className="plane plane-pricing border-animate">
               <div className="plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-16">
-                <h5 className="plane-title">premium Plan</h5>
+                <h5 className="plane-title">{checkout?.product?.title}</h5>
                 <div className="line"></div>
                 <ul className="plane-points space-y-5 px-4">
                   <li className="available ">
@@ -464,7 +464,10 @@ const CheckOutPage = () => {
                 <div className="line"></div>
                 <div className="plane-price">
                   <p>
-                    <span>$0</span> / month
+                    <span>${checkout?.product?.amount}</span>/{" "}
+                    {checkout?.product?.title === "Monthly Plan"
+                      ? "month"
+                      : "week"}
                   </p>
                 </div>
                 <div className="plane-action">
