@@ -41,7 +41,7 @@ const FormComponent = ({
     const phone_number = parsePhoneNumberFromString(value);
     return phone_number && phone_number.isValid();
   };
-
+  const [errMessage,setErrMessage] = useState("")
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -81,9 +81,14 @@ const FormComponent = ({
         // setIsLoading(false);
 
         setVerificationModal(true);
+        setErrMessage("")
       })
       .catch((err) => {
         console.log(err);
+        setErrMessage("")
+        if (err.response.data.message == "Email account is already exists") {
+          setErrMessage(err.response.data.message)
+        }
         // setErrorMessage(err.response.data.message);
         // setIsLoading(false);
       });
@@ -180,6 +185,7 @@ const FormComponent = ({
             <p>{purpose}</p>
           </div>
         ) : null}
+        {errMessage ? <div className=" rounded-md bg-red-200 border-red-900 p-2 text-black text-center">{errMessage}</div> : null}
         <div>
           <FormGroup
             className="formGroup"
