@@ -84,7 +84,7 @@ const NavBar = () => {
                 <div className="userOptions">
                   <ul className="ulSection">
                     <li>
-                      <a href="/dashboard/setting">setting</a>
+                      <Link to={"/dashboard/setting"} href="/dashboard/setting">setting</Link>
                     </li>
                     <li>
                       <a
