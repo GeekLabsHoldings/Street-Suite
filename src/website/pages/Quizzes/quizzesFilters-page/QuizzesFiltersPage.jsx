@@ -33,6 +33,7 @@ const QuizzesFiltersPage = () => {
   const [quizData, setQuizData] = useState([]);
   const [filter, setFilter] = useState("latest");
   const [pageLoading, setPageLoading] = useState(true);
+  const [searchedQuizzes , setSearchedQuizzes] = useState([])
 
   async function getAllCategories(data) {
     // try {
@@ -51,10 +52,27 @@ const QuizzesFiltersPage = () => {
     // const categories = data.map((quiz) => quiz.quzzies
   }
 
+
+  async function handleSearchChange(val) {
+    const newData = quizData
+    const shownData = newData.map((e,i)=>{
+      return e.quizzes
+    })
+    const searchedData = Array.from(new Map(shownData.map((e,i)=>e.filter((x,z)=>x.title.toLowerCase().includes(val.toLowerCase()))).flat().map(item => [item.id, item])).values())
+    console.log(searchedData);
+    setSearchedQuizzes(searchedData)
+    console.log(new Map([["a",5,"s"] , ["c",4]]).values());
+    
+    
+  }
+
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}quizzes/`)
       .then((res) => {
+        console.log(res.data);
+        
         setQuizData(res.data);
         setCategoryList(res.data.map((quiz) => quiz.text));
         setPageLoading(false);
@@ -113,7 +131,14 @@ const QuizzesFiltersPage = () => {
         {/* search input to search for quizzes */}
         <div className="search-input">
           <div className="input-box">
-            <input type="text" placeholder="Search by..." />
+            <input type="text" placeholder="Search by..." onChange={(e)=>{
+              if (e.target.value.length > 0) {
+                handleSearchChange(e.target.value)
+              } else {
+                setSearchedQuizzes([])
+              }
+            }
+            }/>
             <svg
               width="22"
               height="23"
@@ -141,6 +166,11 @@ const QuizzesFiltersPage = () => {
           </div>
           <button>Search</button>
         </div>
+        {searchedQuizzes.length > 0 ? <div className=" w-full mb-6 bg-white rounded-[4px]">
+          {searchedQuizzes?.map((e,i)=>{
+          return <Link to={`/quizzes/quiz/${e.id}`} className="block border-t-0 border-r-0 border-l-0 border-b-[1px] px-2 border-solid border-[#d9d9d9] text-black">{e.title}</Link>
+          })}
+        </div> : null}
 
         {/* filter to show more specific quizzes */}
         <div className="check-Filter">
