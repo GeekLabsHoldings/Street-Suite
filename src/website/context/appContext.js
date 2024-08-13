@@ -16,6 +16,7 @@ const dispatch = useDispatch();
     username: "",
     email: ""
   });
+  const [seeMore,setSeeMore] = useState("")
 
  
   const navigate = useNavigate()
@@ -40,7 +41,7 @@ const dispatch = useDispatch();
 
   return (
     <tokenContext.Provider
-      value={{ authToken, setAuthToken }}
+      value={{ authToken, setAuthToken,seeMore,setSeeMore }}
     >
       {children}
     </tokenContext.Provider>

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import QuizCard from "../quizCard/QuizCard";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { tokenContext } from "../../context/appContext";
 
-export default function QuizzesCards() {
+export default function QuizzesCards({ category, title }) {
 
   const CustomArrow = (props) => {
     const { className, style, onClick } = props;
-  
+
     return (
       <div className={className} style={{ ...style }} onClick={onClick}>
         <svg
@@ -70,11 +72,35 @@ export default function QuizzesCards() {
     ],
   };
 
+  const navigate = useNavigate();
+
+  const {setSeeMore} = useContext(tokenContext);
+  const [moreQuizzes, setMoreQuizzes] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}quizzes/`)
+      .then((res) => {
+        console.log(res.data);
+
+        console.log(res.data.filter((e, i) => e.text == category));
+        setMoreQuizzes(
+          res.data.filter((e, i) => e.text == category)[0].quizzes
+        );
+        console.log(res.data.filter((e, i) => e.text == category)[0].quizzes);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [category]);
+
   return (
     <div className="quizzes-cards space-y-6">
       <div className="title flex items-center justify-between">
         <h6>More Quizzes</h6>
-        <Link to="">
+        <Link to={"/quizzes"}  onClick={()=>{setSeeMore(category);
+
+        }}>
           See More{" "}
           <svg
             width="10"
@@ -93,24 +119,26 @@ export default function QuizzesCards() {
 
       <div className="slider-container">
         <Slider {...settings}>
-          <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
-            <QuizCard />
-          </div>
-          <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
-            <QuizCard />
-          </div>
-          <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
-            <QuizCard />
-          </div>
-          <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
-            <QuizCard />
-          </div>
-          <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
-            <QuizCard />
-          </div>
-          <div style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}>
-            <QuizCard />
-          </div>
+          {moreQuizzes
+            .filter((quizes) => {
+              return quizes.title !== title;
+            })
+            ?.map((quiz) => {
+              return (
+                <div
+                  style={{
+                    width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                  }}
+                  key={quiz?.id}
+                >
+                  <QuizCard
+                    title={quiz?.title}
+                    linkId={quiz?.id}
+                    image={quiz?.image}
+                  />
+                </div>
+              );
+            })}
         </Slider>
       </div>
     </div>

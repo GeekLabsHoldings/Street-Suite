@@ -21,6 +21,7 @@ function QuizPage() {
       .post(`${process.env.REACT_APP_API_URL}quizzes/send_result/`, {
         email: email,
         result: score,
+        quiz_id: quizId
       })
       .then((res) => {
         console.log(res.data);
@@ -55,11 +56,12 @@ function QuizPage() {
   const [highestScore, setHighestScore] = useState(0);
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [selectedAnswerCorrectness, setSelectedAnswerCorrectness] =
-    useState(null);
+  const [selectedAnswerCorrectness, setSelectedAnswerCorrectness] = useState(null);
   const [score, setScore] = useState(0);
   const [scorePerQuestion, setScorePerQuestion] = useState(0);
   const [toggleSetScore, setToggleSetScore] = useState(false);
+  const [quizCat,setQuizCat] = useState(null)
+  const [quizTitle,setQuizTitle] = useState(null)
 
   const handleAnswerChange = (event, isRight) => {
     setSelectedAnswer(event.target.value);
@@ -110,7 +112,19 @@ function QuizPage() {
       setSelectedAnswer(null);
       setSelectedAnswerCorrectness(null);
     } else {
-      setIsOpen(true);
+      if (!localStorage.getItem("userToken")) {
+        setIsOpen(true);
+      } else {
+        localStorage.setItem(
+          `quiz-${quizId}`,
+          JSON.stringify({
+            ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+            totalUserScore: score,
+          })
+        );
+        navigate(`/quizzes/${quizId}/quiz-result`);
+
+      }
     }
   };
 
@@ -119,6 +133,8 @@ function QuizPage() {
       .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/`)
       .then((res) => {
         console.log(res.data);
+        setQuizCat(res.data.category.text)
+        setQuizTitle(res.data.title)
         if (!localStorage.getItem(`quiz-${quizId}`)) {
           localStorage.setItem(
             `quiz-${quizId}`,
@@ -204,6 +220,9 @@ function QuizPage() {
     }`;
   };
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+
   return (
     <div className="quiz-wrapper">
       <h4>
@@ -213,13 +232,13 @@ function QuizPage() {
 
       <div className="quiz-view gap-12 mb-4">
         <div className="quiz-score-sheet flex h-full gap-[5px] lg:gap-[1rem] mb-[20px] lg:mb-10">
-          <div className="w-1/4">
+          <div className="w-1/3">
             <div className="quiz-score-sheet-card">
               <p>Timer</p>
               <span>{formatTime(timeRemaining)}</span>
             </div>
           </div>
-          <div className="w-1/4">
+          <div className="w-1/3">
             <div className="quiz-score-sheet-card">
               <p>Questions</p>
               <span>
@@ -227,15 +246,15 @@ function QuizPage() {
               </span>
             </div>
           </div>
-          <div className="w-1/4">
+          <div className="w-1/3">
             <div className="quiz-score-sheet-card">
               <p>Highest Score</p>
               <span>{highestScore}</span>
             </div>
           </div>
-          <button onClick={openModal} className="w-1/4">
+          {/* <button onClick={openModal} className="w-1/4">
             Results
-          </button>
+          </button> */}
         </div>
 
         <div className="quiz-questions">
@@ -271,7 +290,7 @@ function QuizPage() {
       </div>
 
       {/* more quizzes in quiz page */}
-      <QuizzesCards />
+      <QuizzesCards category={quizCat} title={quizTitle}/>
 
       {/* add email modal in quiz page to show resalt of quiz */}
       <Transition appear show={isOpen} as={Fragment}>
@@ -316,6 +335,7 @@ function QuizPage() {
 
                     <div className="mt-4">
                       <button
+                      disabled={!emailRegex.test(email)}
                         type="button"
                         className="inline-flex"
                         onClick={closeModal}

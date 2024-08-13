@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import QuizCard from "../../../UI-components/quizCard/QuizCard";
 import Slider from "react-slick";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { tokenContext } from "../../../context/appContext";
 
 const CustomArrow = (props) => {
   const { className, style, onClick } = props;
@@ -27,6 +28,9 @@ const CustomArrow = (props) => {
 };
 
 const QuizResultsPage = () => {
+
+  const {setSeeMore} = useContext(tokenContext);
+
   const navigate = useNavigate();
   const [score, setScore] = useState(null);
   const [totalQuizScore, setTotalQuizScore] = useState(null);
@@ -34,6 +38,8 @@ const QuizResultsPage = () => {
   const [totalQuestions, setTotalQuestions] = useState(null);
   const [totalRightAnswers, setTotalRightAnswers] = useState(null);
   const { quizId } = useParams();
+  const [quizCat,setQuizCat] = useState(null)
+  const [quizTitle,setQuizTitle] = useState(null)
   useEffect(() => {
     if (!localStorage.getItem(`quiz-${quizId}`)) {
       console.log("No quiz found");
@@ -85,6 +91,35 @@ const QuizResultsPage = () => {
     totalUserScore,
     quizId,
   ]);
+   useEffect(()=>{
+    axios
+      .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/`)
+      .then((res) => {
+        console.log(res.data)
+        setQuizCat(res.data.category.text)
+        setQuizTitle(res.data.title)
+      })
+   },[])
+
+  const [moreQuizzes, setMoreQuizzes] = useState([]);
+
+
+   useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}quizzes/`)
+      .then((res) => {
+        console.log(res.data);
+
+        console.log(res.data.filter((e, i) => e.text == quizCat));
+        setMoreQuizzes(
+          res.data.filter((e, i) => e.text == quizCat)[0].quizzes
+        );
+        console.log(res.data.filter((e, i) => e.text == quizCat)[0].quizzes);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [quizCat]);
 
   const settings = {
     className: "slider variable-width",
@@ -209,7 +244,9 @@ const QuizResultsPage = () => {
       <div className="quizzes-cards space-y-6">
         <div className="title flex items-center justify-between">
           <h6>More Quizzes</h6>
-          <Link to="/quizzes">
+          <Link to={"/quizzes"} onClick={()=>{setSeeMore(quizCat);
+
+        }}>
             See More{" "}
             <svg
               width="10"
@@ -228,36 +265,26 @@ const QuizResultsPage = () => {
 
         <div className="slider-container">
           <Slider {...settings}>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
-            <div
-              style={{ width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)" }}
-            >
-              <QuizCard />
-            </div>
+          {moreQuizzes
+            .filter((quizes) => {
+              return quizes.title !== quizTitle;
+            })
+            ?.map((quiz) => {
+              return (
+                <div
+                  style={{
+                    width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                  }}
+                  key={quiz?.id}
+                >
+                  <QuizCard
+                    title={quiz?.title}
+                    linkId={quiz?.id}
+                    image={quiz?.image}
+                  />
+                </div>
+              );
+            })}
           </Slider>
         </div>
       </div>
