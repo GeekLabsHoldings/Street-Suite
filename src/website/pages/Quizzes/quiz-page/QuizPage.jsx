@@ -17,11 +17,17 @@ function QuizPage() {
   const { quizId } = useParams();
 
   function closeModal() {
+    const token = localStorage.getItem("userToken");
     axios
-      .post(`${process.env.REACT_APP_API_URL}quizzes/send_result/`, {
+      .post(`${process.env.REACT_APP_API_URL}quizzes/send_result/` , {
         email: email,
         result: score,
         quiz_id: quizId
+      } , token && {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Token ${token}`,
+        },
       })
       .then((res) => {
         console.log(res.data);
@@ -56,12 +62,13 @@ function QuizPage() {
   const [highestScore, setHighestScore] = useState(0);
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [selectedAnswerCorrectness, setSelectedAnswerCorrectness] = useState(null);
+  const [selectedAnswerCorrectness, setSelectedAnswerCorrectness] =
+    useState(null);
   const [score, setScore] = useState(0);
   const [scorePerQuestion, setScorePerQuestion] = useState(0);
   const [toggleSetScore, setToggleSetScore] = useState(false);
-  const [quizCat,setQuizCat] = useState(null)
-  const [quizTitle,setQuizTitle] = useState(null)
+  const [quizCat, setQuizCat] = useState(null);
+  const [quizTitle, setQuizTitle] = useState(null);
 
   const handleAnswerChange = (event, isRight) => {
     setSelectedAnswer(event.target.value);
@@ -100,14 +107,14 @@ function QuizPage() {
   const handleNextQuestion = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-      // Save the current question index and start time to local storage
-      localStorage.setItem(
-        `quiz-${quizId}`,
-        JSON.stringify({
-          ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
-          currentQuestionIndex: currentQuestionIndex + 1,
-        })
-      );
+      // // Save the current question index and start time to local storage
+      // localStorage.setItem(
+      //   `quiz-${quizId}`,
+      //   JSON.stringify({
+      //     ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
+      //     currentQuestionIndex: currentQuestionIndex + 1,
+      //   })
+      // );
 
       setSelectedAnswer(null);
       setSelectedAnswerCorrectness(null);
@@ -115,15 +122,7 @@ function QuizPage() {
       if (!localStorage.getItem("userToken")) {
         setIsOpen(true);
       } else {
-        localStorage.setItem(
-          `quiz-${quizId}`,
-          JSON.stringify({
-            ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
-            totalUserScore: score,
-          })
-        );
-        navigate(`/quizzes/${quizId}/quiz-result`);
-
+        closeModal();
       }
     }
   };
@@ -133,68 +132,35 @@ function QuizPage() {
       .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/`)
       .then((res) => {
         console.log(res.data);
-        setQuizCat(res.data.category.text)
-        setQuizTitle(res.data.title)
-        if (!localStorage.getItem(`quiz-${quizId}`)) {
-          localStorage.setItem(
-            `quiz-${quizId}`,
-            JSON.stringify({
-              currentQuestionIndex: 0,
-              score: 0,
-              startTimestamp: Date.now(),
-              duration: res.data.duration * 60,
-              totalRightAnswers: 0,
-              totalQuizScore: res.data.result,
-            })
-          );
-          console.log(res.data.duration * 60);
-          setTimeRemaining(res.data.duration);
-        } else {
-          const { currentQuestionIndex, startTimestamp, score, duration } =
-            JSON.parse(localStorage.getItem(`quiz-${quizId}`));
-          console.log(score);
-          setScore(score);
-          setCurrentQuestionIndex(currentQuestionIndex);
-          setTimeRemaining(
-            Math.max(
-              0,
-              duration - Math.floor((Date.now() - startTimestamp) / 1000)
-            )
-          );
-        }
-
+        setQuizCat(res.data.category.text);
+        setQuizTitle(res.data.title);
+        localStorage.setItem(
+          `quiz-${quizId}`,
+          JSON.stringify({
+            currentQuestionIndex: 0,
+            score: 0,
+            totalRightAnswers: 0,
+            totalQuizScore: res.data.result,
+          })
+        );
+        console.log(res.data.duration * 60);
         setScorePerQuestion(res.data.result);
         return res;
       })
       .then((res) => {
         // Check if questions exists in local storage
-        if (!JSON.parse(localStorage.getItem(`quiz-${quizId}`)).questions) {
-          axios
-            .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/questions/`)
-            .then(({ data }) => {
-              localStorage.setItem(
-                `quiz-${quizId}`,
-                JSON.stringify({
-                  ...JSON.parse(localStorage.getItem(`quiz-${quizId}`)),
-                  questions: data,
-                })
-              );
-              console.log(data);
-              setQuestions(data);
-              setTotalQuestions(data.length);
-              setHighestScore(res.data.result * data.length);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        } else {
-          const { questions } = JSON.parse(
-            localStorage.getItem(`quiz-${quizId}`)
-          );
-          setQuestions(questions);
-          setTotalQuestions(questions.length);
-          setHighestScore(res.data.result * questions.length);
-        }
+        axios
+          .get(`${process.env.REACT_APP_API_URL}quizzes/${quizId}/questions/`)
+          .then(({ data }) => {
+            console.log(data);
+            setQuestions(data);
+            setTotalQuestions(data.length);
+            setHighestScore(res.data.result * data.length);
+            setTimeRemaining(res.data.duration * 60);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -203,7 +169,11 @@ function QuizPage() {
 
   useEffect(() => {
     if (timeRemaining <= 0 && currentQuestionIndex <= totalQuestions - 1) {
-      setIsOpen(true);
+      if(!localStorage.getItem("userToken")) {
+        setIsOpen(true);
+      } else {
+        closeModal();
+      }
       return;
     }
     const timer = setInterval(() => {
@@ -221,7 +191,6 @@ function QuizPage() {
   };
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  
 
   return (
     <div className="quiz-wrapper">
@@ -290,7 +259,7 @@ function QuizPage() {
       </div>
 
       {/* more quizzes in quiz page */}
-      <QuizzesCards category={quizCat} title={quizTitle}/>
+      <QuizzesCards category={quizCat} title={quizTitle} />
 
       {/* add email modal in quiz page to show resalt of quiz */}
       <Transition appear show={isOpen} as={Fragment}>
@@ -335,7 +304,7 @@ function QuizPage() {
 
                     <div className="mt-4">
                       <button
-                      disabled={!emailRegex.test(email)}
+                        disabled={!emailRegex.test(email)}
                         type="button"
                         className="inline-flex"
                         onClick={closeModal}

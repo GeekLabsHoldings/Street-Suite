@@ -8,7 +8,7 @@ import img4 from "../../assets/table/Group 63.svg";
 import axios from "axios";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScroll from "react-infinite-scroll-component";
-
+import useWebSocket from "react-use-websocket";
 const fetchAlerts = async ({
   pageParam = 1,
   strategy,
@@ -64,6 +64,23 @@ function DataTable({
       }
     },
   });
+
+  const { sendMessage, lastMessage, readyState } = useWebSocket(
+    "ws://127.0.0.1:8000/ws/alerts/"
+  );
+
+  useEffect(() => {
+    if (lastMessage !== null) {
+      console.log(lastMessage.data);
+
+      const newAlert = JSON.parse(lastMessage.data);
+      setAlerts((prevAlerts) => {
+        const updatedAlerts = [newAlert, ...prevAlerts]; // Create a new array with the new alert
+        console.log(updatedAlerts); // Log the updated alerts
+        return updatedAlerts;
+      });
+    }
+  }, [lastMessage]);
 
   useEffect(() => {
     setAlerts(data?.pages?.flatMap((page) => page.results) || []);

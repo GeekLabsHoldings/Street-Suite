@@ -81,7 +81,7 @@ const QuizResultsPage = () => {
       totalQuizScore !== null &&
       totalUserScore !== null
     ) {
-      localStorage.removeItem(`quiz-${quizId}`);
+      // localStorage.removeItem(`quiz-${quizId}`);
     }
   }, [
     score,
