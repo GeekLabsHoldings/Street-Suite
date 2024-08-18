@@ -66,7 +66,7 @@ function DataTable({
   });
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    "ws://127.0.0.1:8000/ws/alerts/"
+    "ws://ec2-16-171-5-225.eu-north-1.compute.amazonaws.com:8000/ws/alerts/"
   );
 
   useEffect(() => {
@@ -75,8 +75,8 @@ function DataTable({
 
       const newAlert = JSON.parse(lastMessage.data);
       setAlerts((prevAlerts) => {
-        const updatedAlerts = [newAlert, ...prevAlerts]; // Create a new array with the new alert
-        console.log(updatedAlerts); // Log the updated alerts
+        const updatedAlerts = [newAlert, ...prevAlerts];
+        console.log(updatedAlerts);
         return updatedAlerts;
       });
     }
