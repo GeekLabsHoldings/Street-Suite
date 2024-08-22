@@ -3,6 +3,7 @@ import styles from './NotificationWindow.module.css'
 import { Link } from 'react-router-dom';
 import notifIcon from "../../assets/notif.svg";
 import $ from 'jquery';
+import useWebSocket from 'react-use-websocket';
 
 
 const NotificationWindow = () => {
@@ -12,6 +13,22 @@ const NotificationWindow = () => {
   const toggleNotificationWindow = () => {
     setOpenNotificationWindow(!openNotificationWindow)
   }
+
+  const { sendMessage, lastMessage, readyState } = useWebSocket(
+    "ws://ec2-100-24-32-146.compute-1.amazonaws.com:8000/ws/blogs/"
+  );
+
+  useEffect(() => {
+    if (lastMessage !== null) {
+      console.log(lastMessage);
+      
+      console.log(lastMessage.data);
+
+      const newAlert = JSON.parse(lastMessage.data);
+      
+    }
+  }, [lastMessage]);
+
 
   useEffect(() => {
 

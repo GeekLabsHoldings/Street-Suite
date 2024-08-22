@@ -31,7 +31,7 @@ const HomePage = () => {
       </Helmet>
 
       <Hero>
-        <h1>Trading Opportunities<br /> with <span> STREET SUITE’s </span>Alerts</h1>
+        <h1>Trading Opportunities<br /> with <span> STREET SUITE’s</span> Alerts</h1>
         <p className='sm:container'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
         {!userState ? <Link to="/signup">Get Started</Link>:<Link to="/dashboard">Dashboard</Link>}
         <img src={heroImg} alt="" className='hidden lg:block' />

@@ -66,7 +66,7 @@ function DataTable({
   });
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    "ws://ec2-16-171-5-225.eu-north-1.compute.amazonaws.com:8000/ws/alerts/"
+    "ws://ec2-100-24-32-146.compute-1.amazonaws.com:8000/ws/alerts/"
   );
 
   useEffect(() => {
