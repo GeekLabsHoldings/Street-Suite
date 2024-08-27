@@ -64,7 +64,7 @@ function DataTable({
   });
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    "ws://ec2-44-219-37-232.compute-1.amazonaws.com/ws/alerts/"
+    "wss://api.streetsuite.com/ws/alerts/"
   );
 
   useEffect(() => {
