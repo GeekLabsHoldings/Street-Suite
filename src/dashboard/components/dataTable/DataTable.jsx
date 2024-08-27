@@ -31,7 +31,6 @@ const fetchAlerts = async ({
 const createFetchAlerts =
   (strategy, industry, marketCap, riskLevel) =>
   ({ pageParam = 1 }) => {
-    console.log("Hellllllo");
     return fetchAlerts({ pageParam, strategy, industry, marketCap, riskLevel });
   };
 
@@ -55,7 +54,6 @@ function DataTable({
     queryKey: ["alerts", strategy, industry, marketCap, riskLevel],
     queryFn: createFetchAlerts(strategy, industry, marketCap, riskLevel),
     getNextPageParam: (lastPage, pages) => {
-      console.log("Hiiiiiiiiiiiiii");
       if (alerts.length === 0) return 1;
       if (lastPage.next) {
         return pages.length + 1;
@@ -66,7 +64,7 @@ function DataTable({
   });
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    "ws://ec2-100-24-32-146.compute-1.amazonaws.com:8000/ws/alerts/"
+    "ws://ec2-44-219-37-232.compute-1.amazonaws.com/ws/alerts/"
   );
 
   useEffect(() => {
