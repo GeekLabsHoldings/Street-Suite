@@ -14,6 +14,7 @@ function AlertsPage() {
   const [industry, setIndustry] = useState("");
   const [marketCap, setMarketCap] = useState("");
   const [riskLevel, setRiskLevel] = useState("");
+  const [ticker, setTicker] = useState("");
   const [alerts, setAlerts] = useState([]);
 
   const toggleFilterMenu = () => {
@@ -64,6 +65,7 @@ function AlertsPage() {
           industry={industry}
           marketCap={marketCap}
           riskLevel={riskLevel}
+          ticker={ticker}
           setAlerts={setAlerts}
           alerts={alerts}
         />
@@ -77,6 +79,7 @@ function AlertsPage() {
         setIndustry={setIndustry}
         setMarketCap={setMarketCap}
         setRiskLevel={setRiskLevel}
+        setTicker={setTicker}
         setAlerts={setAlerts}
         alert={alerts}
       />

@@ -245,7 +245,7 @@ const SettingPage = () => {
         }`,
         image: `${
           profData?.profile?.image
-            ? `${process.env.REACT_APP_API_URL}${profData?.profile?.image}`
+            ? `https://api.streetsuite.com${profData?.profile?.image}`
             : ""
         }`,
       },
@@ -949,7 +949,12 @@ const SettingPage = () => {
                             Confirm
                           </button>
                         </div>
-                        <button className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400" onClick={()=>setPassModal(false)}>Close</button>
+                        <button
+                          className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400"
+                          onClick={() => setPassModal(false)}
+                        >
+                          Close
+                        </button>
                       </Dialog.Panel>
                     </div>
                   </Transition.Child>
