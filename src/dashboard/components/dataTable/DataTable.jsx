@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import $ from "jquery";
 import styles from "./DataTable.module.css";
 import img1 from "../../assets/table/Group.svg";
@@ -9,29 +9,49 @@ import axios from "axios";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScroll from "react-infinite-scroll-component";
 import useWebSocket from "react-use-websocket";
+import { alertsContext } from "../../_context/alretsContext";
 const fetchAlerts = async ({
   pageParam = 1,
   strategy,
   industry,
   marketCap,
   riskLevel,
+  ticker,
 }) => {
   const response = await axios.get(`${process.env.REACT_APP_API_URL}alerts/`, {
-    params: {
-      page: pageParam,
-      strategy,
-      ticker__industry: industry,
-      ticker__market_capital: marketCap,
-      riskLevel,
-    },
+    params: ticker
+      ? {
+          page: pageParam,
+          search: ticker,
+        }
+      : {
+          page: pageParam,
+          strategy: strategy,
+          ticker__industry: industry,
+          ticker__market_capital: marketCap,
+          riskLevel: riskLevel,
+        },
   });
   return response.data;
 };
 
 const createFetchAlerts =
-  (strategy, industry, marketCap, riskLevel) =>
+  (strategy, industry, marketCap, riskLevel, ticker) =>
   ({ pageParam = 1 }) => {
-    return fetchAlerts({ pageParam, strategy, industry, marketCap, riskLevel });
+    console.log("strategy", strategy);
+    console.log("industry", industry);
+    console.log("marketCap", marketCap);
+    console.log("riskLevel", riskLevel);
+    console.log("ticker", ticker);
+
+    return fetchAlerts({
+      pageParam,
+      strategy,
+      industry,
+      marketCap,
+      riskLevel,
+      ticker,
+    });
   };
 
 function DataTable({
@@ -39,9 +59,12 @@ function DataTable({
   industry,
   marketCap,
   riskLevel,
+  ticker,
   setAlerts,
   alerts,
 }) {
+  const { newAlerts, setNewAlerts } = useContext(alertsContext);
+
   const {
     data,
     error,
@@ -51,8 +74,14 @@ function DataTable({
     isLoading,
     status,
   } = useInfiniteQuery({
-    queryKey: ["alerts", strategy, industry, marketCap, riskLevel],
-    queryFn: createFetchAlerts(strategy, industry, marketCap, riskLevel),
+    queryKey: ["alerts", strategy, industry, marketCap, riskLevel, ticker],
+    queryFn: createFetchAlerts(
+      strategy,
+      industry,
+      marketCap,
+      riskLevel,
+      ticker
+    ),
     getNextPageParam: (lastPage, pages) => {
       if (alerts.length === 0) return 1;
       if (lastPage.next) {
@@ -73,6 +102,12 @@ function DataTable({
 
       const newAlert = JSON.parse(lastMessage.data);
       setAlerts((prevAlerts) => {
+        const updatedAlerts = [newAlert, ...prevAlerts];
+        console.log(updatedAlerts);
+        return updatedAlerts;
+      });
+
+      setNewAlerts((prevAlerts) => {
         const updatedAlerts = [newAlert, ...prevAlerts];
         console.log(updatedAlerts);
         return updatedAlerts;

@@ -16,6 +16,7 @@ import matrialsIcon from "../../assets/industry/matrials.svg";
 import estateIcon from "../../assets/industry/real estate.svg";
 import utilitiesIcon from "../../assets/industry/utilities.svg";
 import Slider from "react-slick";
+import useDebounce from "../../../hooks/useDebounce";
 
 // array of industry filter data that used in industry select input
 const industryFilter = [
@@ -144,6 +145,7 @@ function Filters({
   setIndustry,
   setMarketCap,
   setRiskLevel,
+  setTicker,
   setAlerts,
   alert,
 }) {
@@ -152,19 +154,36 @@ function Filters({
   const [industry, getIndustry] = useState("");
   const [marketCap, getMarketCap] = useState("");
   const [riskLevel, getRiskLevel] = useState("");
+  const [ticker, getTicker] = useState("");
 
   const applyFilters = () => {
-    setAlerts([]);
+    if (!ticker) {
+      console.log("ticker is empty");
+      setStrategy(strategy);
+      setIndustry(industry);
+      setMarketCap(marketCap);
+      setRiskLevel(riskLevel);
+    } else {
+      setTicker("");
+      getTicker("");
+    }
+    // setStrategy(strategy);
+    // setIndustry(industry);
+    // setMarketCap(marketCap);
+    // setRiskLevel(riskLevel);
+    // setAlerts([]);
   };
 
   useEffect(() => {
-    if (alert.length === 0) {
+    console.log("ticker is empty");
+    if (!ticker) {
+      console.log("ticker is empty");
       setStrategy(strategy);
       setIndustry(industry);
       setMarketCap(marketCap);
       setRiskLevel(riskLevel);
     }
-  }, [alert]);
+  }, [ticker]);
 
   // function that get value of market cap filter and add it to applied filters
   const handleMarketCapFilter = (e) => {
@@ -240,12 +259,16 @@ function Filters({
       : setAppliedFilters([...newArr]);
   };
 
+  // function that apply filters and get data from api with filters
+
   // function that clear applied filters
   const clearAppliedFilters = () => {
     setAppliedFilters([]);
     setStrategy("");
     setIndustry("");
     setMarketCap("");
+    setRiskLevel("");
+    setTicker("");
   };
 
   const strategySettings = {
@@ -294,6 +317,23 @@ function Filters({
     },
   };
 
+  const debouncedFunc = useDebounce(ticker, 500);
+
+  useEffect(() => {
+    setTicker(debouncedFunc);
+  }, [debouncedFunc]);
+
+  useEffect(() => {
+    console.log(appliedFilters);
+    if (appliedFilters.length === 0) {
+      console.log(appliedFilters);
+      setStrategy("");
+      setIndustry("");
+      setMarketCap("");
+      setRiskLevel("");
+    }
+  }, [appliedFilters]);
+
   return (
     // filters part in right side in alerts page
 
@@ -338,11 +378,11 @@ function Filters({
                 <li>
                   {ele}
                   <span
-                    onClick={() =>
+                    onClick={() => {
                       setAppliedFilters((prev) =>
                         prev.filter((elm) => elm !== ele)
-                      )
-                    }
+                      );
+                    }}
                   >
                     <img src={closeIcon} alt="delete" />
                   </span>
@@ -362,6 +402,8 @@ function Filters({
                   name="search"
                   id="search"
                   placeholder="$  TICKER"
+                  value={ticker}
+                  onChange={(e) => getTicker(e.target.value)}
                 />
                 <img src={filterSearchIcon} alt="searchIcon" />
               </div>

@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./NotificationWindow.module.css";
 import { Link } from "react-router-dom";
 import notifIcon from "../../assets/notif.svg";
 import $ from "jquery";
 import useWebSocket from "react-use-websocket";
+import { alertsContext } from "../../_context/alretsContext";
 
 const NotificationWindow = () => {
   const [openNotificationWindow, setOpenNotificationWindow] = useState(false);
-
+  const { newAlerts } = useContext(alertsContext);
   const toggleNotificationWindow = () => {
     setOpenNotificationWindow(!openNotificationWindow);
   };
@@ -53,7 +54,7 @@ const NotificationWindow = () => {
         onClick={toggleNotificationWindow}
       >
         <img src={notifIcon} alt="" />
-        <span>6</span>
+        <span>{newAlerts.length}</span>
       </button>
       <div
         className={
@@ -74,60 +75,18 @@ const NotificationWindow = () => {
         <div class={styles.tabs_content + " tabs-stage"}>
           {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
           <div id="Alerts" className="tab space-y-4">
-            <Link to="/dashboard/alerts">
-              <div className={styles.notification_item}>
-                <p>
-                  <span>$TSLA</span> just announced an acquisition of{" "}
-                  <span>$NFLX</span> at <span>$200 B</span>.{" "}
-                </p>
-                <span>26 mins ago</span>
-              </div>
-            </Link>
-            <Link to="/dashboard/alerts">
-              <div className={styles.notification_item}>
-                <p>
-                  <span>$TSLA</span> just announced an acquisition of{" "}
-                  <span>$NFLX</span> at <span>$200 B</span>.{" "}
-                </p>
-                <span>26 mins ago</span>
-              </div>
-            </Link>
-            <Link to="/dashboard/alerts">
-              <div className={styles.notification_item}>
-                <p>
-                  <span>$TSLA</span> just announced an acquisition of{" "}
-                  <span>$NFLX</span> at <span>$200 B</span>.{" "}
-                </p>
-                <span>26 mins ago</span>
-              </div>
-            </Link>
-            <Link to="/dashboard/alerts">
-              <div className={styles.notification_item}>
-                <p>
-                  <span>$TSLA</span> just announced an acquisition of{" "}
-                  <span>$NFLX</span> at <span>$200 B</span>.{" "}
-                </p>
-                <span>26 mins ago</span>
-              </div>
-            </Link>
-            <Link to="/dashboard/alerts">
-              <div className={styles.notification_item}>
-                <p>
-                  <span>$TSLA</span> just announced an acquisition of{" "}
-                  <span>$NFLX</span> at <span>$200 B</span>.{" "}
-                </p>
-                <span>26 mins ago</span>
-              </div>
-            </Link>
-            <Link to="/dashboard/alerts">
-              <div className={styles.notification_item}>
-                <p>
-                  <span>$TSLA</span> just announced an acquisition of{" "}
-                  <span>$NFLX</span> at <span>$200 B</span>.{" "}
-                </p>
-                <span>26 mins ago</span>
-              </div>
-            </Link>
+            {newAlerts.map((alert, index) => (
+              <Link to="/dashboard/alerts" key={index}>
+                <div className={styles.notification_item}>
+                  <p>
+                    <span>{alert.symbol}</span> just announced an acquisition of{" "}
+                    <span>{alert.acquiredSymbol}</span> at{" "}
+                    <span>{alert.amount}</span>.{" "}
+                  </p>
+                  <span>{alert.time}</span>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div id="News" className="tab space-y-4">
