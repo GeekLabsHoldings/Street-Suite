@@ -28,13 +28,11 @@
 }
 
 .sideMenu .sideMenuContent .logo {
-  height:  clamp(100px, calc(4.1vw + 0.5rem), 340px);
+  height: clamp(100px, calc(4.1vw + 0.5rem), 340px);
   padding: 2rem 2.5rem 1rem;
   margin-bottom: 1rem;
   transition: all 0.6s;
 }
-
-
 
 .sideMenu .sideMenuContent .logo img {
   width: 100%;
@@ -54,7 +52,6 @@
   -webkit-box-shadow: none;
   border-radius: 10px;
   background-color: transparent;
-
 }
 
 .sideMenu .sideMenuContent .menu::-webkit-scrollbar {
@@ -99,20 +96,18 @@
   transition: all 0.3s;
 }
 
-
-
 .sideMenu .sideMenuContent .menu li a:hover p {
-  color: #53ACFF;
+  color: #53acff;
 }
 
 .sideMenu .sideMenuContent .menu li a:hover svg {
-  fill: #53ACFF;
+  fill: #53acff;
 }
 
 .sideMenu .sideMenuContent .menu li a:hover svg path {
-  fill: #53ACFF;
+  fill: #53acff;
 }
-.sideMenu .sideMenuContent .menu li.comingSoon{
+.sideMenu .sideMenuContent .menu li.comingSoon {
   position: relative;
 }
 .sideMenu .sideMenuContent .menu li.comingSoon::before {
@@ -130,7 +125,7 @@
   transition: all 0.3s;
 }
 .sideMenu .sideMenuContent .menu li.comingSoon::after {
-  content: 'Coming Soon';
+  content: "Coming Soon";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -139,36 +134,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
+  font-size: clamp(10px, calc(0.3vw + 0.5rem), 60px);
   font-weight: 600;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
 }
 
-.sideMenu .sideMenuContent .menu li.comingSoon:hover::after , .sideMenu .sideMenuContent .menu li.comingSoon:hover::before{
+.sideMenu .sideMenuContent .menu li.comingSoon:hover::after,
+.sideMenu .sideMenuContent .menu li.comingSoon:hover::before {
   visibility: visible;
   opacity: 1;
 }
 
 .sideMenu .sideMenuContent .menu li.comingSoon a p {
-  color: #FFFFFF4D;
+  color: #ffffff4d;
 }
 
 .sideMenu .sideMenuContent .menu li.comingSoon svg {
-  fill: #FFFFFF4D;
+  fill: #ffffff4d;
 }
 
 .sideMenu .sideMenuContent .menu li.comingSoon a:hover svg {
-  fill: #FFFFFF4D;
+  fill: #ffffff4d;
 }
 
 .sideMenu .sideMenuContent .menu li.comingSoon a:hover svg path {
-  fill: #FFFFFF4D;
+  fill: #ffffff4d;
 }
 
 .sideMenu .sideMenuContent .menu li.comingSoon svg path {
-  fill: #FFFFFF4D;
+  fill: #ffffff4d;
 }
 
 .sideMenu .sideMenuContent .menu li a p {
@@ -181,19 +177,23 @@
 .userInfoContent {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 1rem;
 }
 
+.sideMenu.onClose .userInfoContent {
+  justify-content: center;
+}
+
 .userInfoContent img {
-  width: clamp(22px, calc( 2vw + 0.5rem ) ,100px);
-  height: clamp(22px, calc( 2vw + 0.5rem ) ,100px);
+  width: clamp(22px, calc(2vw + 0.5rem), 100px);
+  height: clamp(22px, calc(2vw + 0.5rem), 100px);
   margin-right: 0.5rem;
   transition: all 0.6s;
 }
 
 .userInfoContent h6 {
-  font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
+  font-size: clamp(10px, calc(0.4vw + 0.5rem), 60px);
   font-weight: 700;
   letter-spacing: 0px;
   text-align: left;
@@ -206,7 +206,7 @@
 }
 
 .userInfoContent p {
-  font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);
+  font-size: clamp(10px, calc(0.4vw + 0.3rem), 60px);
   font-weight: 600;
   letter-spacing: 0px;
   color: #979797;
@@ -216,9 +216,9 @@
   transition: all 0.6s;
 }
 
-.userInfo>p {
+.userInfo > p {
   color: #424242;
-  font-size: clamp(10px,  calc( 0.4vw + 0.3rem ), 60px);;
+  font-size: clamp(10px, calc(0.4vw + 0.3rem), 60px);
   font-weight: 400;
   letter-spacing: 0px;
   text-align: center;
@@ -229,10 +229,7 @@
   transition: all 0.6s;
 }
 
-
-
 /* ======================================= */
-
 
 .sideMenu.onClose {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -257,7 +254,6 @@
   list-style: none;
   padding: 0 1rem;
   margin: auto;
-
 }
 
 .sideMenu.onClose .menu li {
@@ -270,17 +266,16 @@
   position: absolute;
   left: -200px;
   opacity: 0;
-
 }
 
 .sideMenu.onClose .menu li a img {
-  width: clamp(25px,  calc( 1.5vw + 0.5rem ) , 80px);
+  width: clamp(25px, calc(1.5vw + 0.5rem), 80px);
   margin-right: 0rem;
 }
 
 .sideMenu.onClose .userInfoContent img {
-  width: clamp(40px,  calc( 2.5vw + 0.5rem ) , 80px);
-  height: clamp(40px,  calc( 2.5vw + 0.5rem ) , 80px);
+  width: clamp(40px, calc(2.5vw + 0.5rem), 80px);
+  height: clamp(40px, calc(2.5vw + 0.5rem), 80px);
   margin-right: 0rem;
 }
 
@@ -296,12 +291,11 @@
   opacity: 0;
 }
 
-.sideMenu.onClose .userInfo>p {
+.sideMenu.onClose .userInfo > p {
   position: absolute;
   left: -200px;
   opacity: 0;
 }
-
 
 .notificationBtn {
   width: 30px;
@@ -318,7 +312,7 @@
   right: 0;
   width: 15px;
   height: 15px;
-  background-color: #118F4B;
+  background-color: #118f4b;
   color: #fff;
   font-family: Nunito Sans;
   font-size: 12px;
@@ -330,9 +324,6 @@
   align-items: center;
   justify-content: center;
 }
-
-
-
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 1024px) {
