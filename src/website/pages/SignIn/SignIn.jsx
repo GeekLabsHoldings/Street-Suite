@@ -128,9 +128,9 @@ const SignIn = () => {
       .post(`${process.env.REACT_APP_API_URL}accounts/login/`, reqBody)
       .then(({ data }) => {
         console.log(data);
-        setAuthToken(data?.token);
-        localStorage.setItem("userToken", data?.token);
-        if (data?.token) {
+        setAuthToken(data?.Token);
+        localStorage.setItem("userToken", data?.Token);
+        if (data?.Token) {
           dispatch(signIn());
           customAlert("Logged in successfully");
           navigate("/");
