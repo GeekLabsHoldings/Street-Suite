@@ -14,7 +14,7 @@ const NotificationWindow = () => {
   };
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    "wss://api.streetsuite.com/ws/blogs/"
+    "ws://ec2-44-219-37-232.compute-1.amazonaws.com/ws/blogs/"
   );
 
   useEffect(() => {
