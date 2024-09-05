@@ -157,7 +157,7 @@ const FormComponent = ({
             );
             console.log(data, "post google");
             console.log(data?.data?.message);
-            if (data?.data?.message == "loged in successfully!") {
+            if (data?.data?.message == "logged in successfully!") {
               console.log("sadasewqe");
               localStorage.setItem("userToken", data.data.token);
               dispatch(signIn());
