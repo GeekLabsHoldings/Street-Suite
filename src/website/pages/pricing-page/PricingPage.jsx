@@ -40,17 +40,17 @@ const PricingPage = () => {
           <h1>
             <span>Transparent</span> Pricing for All
           </h1>
-          <p>
-            At street Suite it’s all about transparent pricing - no hidden fees,
+          <p className=" text-center">
+            At street Suite it’s all about transparent pricing - no hidden <br /> fees,
             just straight forward honest rates
           </p>
         </Hero>
 
         <div className="mx-auto px-4 gap-[16px] lg:gap-8 pricing-container columns-8 flex items-start justify-around py-[0px] lg:py-28">
           {/* first plane */}
-          <div className="gradient-border lg:w-1/3">
-            <div className="plane plane-pricing recommended">
-              <div className="plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-16">
+          <div className="gradient-border lg:w-1/3 !p-0">
+            <div className="plane plane-pricing recommended !rounded-[--21px]">
+              <div className="plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-16 !rounded-[--21px]">
                 <h5 className="plane-title">{plans[0]?.title}</h5>
                 <div className="line"></div>
                 <ul className="plane-points space-y-5 px-[5px] lg:px-4">
@@ -485,13 +485,13 @@ const PricingPage = () => {
 
         {/* comparison between our company featurs and other companies features */}
         <div className="setting-ourselves mx-auto px-4 pb-20">
-          <h5>Setting Ourselves Apart</h5>
-          <p>The Unique Attributes that Distinguish Us in the Market</p>
+          <h5 className=" !text-[--48px]">Setting Ourselves Apart</h5>
+          <p className=" !text-[--28px]">The Unique Attributes that Distinguish Us in the Market</p>
 
           <div className="feature-comparison flex gap-[16px] lg:gap-12 items-center justify-between">
             {/* our company features */}
 
-            <div className="ourFeature-card w-1/3">
+            <div className="ourFeature-card mainFeatureCard w-1/3">
               <div className="card-content">
                 <div className="card-body">
                   <div className="card-header">
@@ -515,7 +515,7 @@ const PricingPage = () => {
 
             <div className="line"></div>
 
-            <div className="other-company-features w-2/3 flex gap-6">
+            <div className="other-company-features w-2/3 flex gap-[--47px]">
               {/* other companies features  */}
               <div className="ourFeature-card w-1/2">
                 <div className="card-content">

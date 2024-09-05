@@ -91,9 +91,13 @@ const menuItems = [
   },
 ];
 
+
+
 function SideMenu() {
   // open side nav state
   const [isOpen, setIsOpen] = useState(false);
+
+  const [username,setUsername] = useState("")
 
   // function that open side nav on hover
   const OpenSideMenu = () => {
@@ -106,11 +110,12 @@ function SideMenu() {
   };
 
   useEffect(() => {
-    console.log(
-      jwtDecode(
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1MDI0MTI2LCJpYXQiOjE3MjQ5Mzc3MjYsImp0aSI6IjIwOGJlZmMwYjQzMDRkOGI5MTgxMzMxNmNjYzc2ZWQwIiwidXNlcl9pZCI6MTl9.len6YjCciqJb1moaVDYAA17JVckjSeV9Bx6INO2u_6w"
-      )
-    );
+    if (localStorage.getItem("userToken")) {
+      console.log(jwtDecode(localStorage.getItem("userToken")));
+      setUsername(jwtDecode(localStorage.getItem("userToken")).first_name + " " + jwtDecode(localStorage.getItem("userToken")).last_name)
+      console.log(username);
+      
+    }
   }, []);
 
   return (
@@ -163,10 +168,8 @@ function SideMenu() {
           <div className={`${styles.userInfoContent} w-full`}>
             <img src={userImg} alt="" />
             <div>
-              <h6 className="w-[70%] text-ellipsis overflow-hidden whitespace-nowrap">
-                {/* {jwtDecode(
-                  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1MDI0MTI2LCJpYXQiOjE3MjQ5Mzc3MjYsImp0aSI6IjIwOGJlZmMwYjQzMDRkOGI5MTgxMzMxNmNjYzc2ZWQwIiwidXNlcl9pZCI6MTl9.len6YjCciqJb1moaVDYAA17JVckjSeV9Bx6INO2u_6w"
-                )} */}
+              <h6 className="w-[90%] text-ellipsis overflow-hidden whitespace-nowrap">
+                {username}
               </h6>
               <p>frontend developer</p>
             </div>

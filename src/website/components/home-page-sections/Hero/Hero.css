@@ -12,8 +12,8 @@ section.hero {
 }
 
 section.hero h1 {
-    font-size: clamp(24px, calc(3vw + 0.1rem), 140px);
-    font-weight: 800;
+    font-size: var(--50px);
+    font-weight: 700;
     text-align: center;
     line-height: normal;
 }
@@ -27,10 +27,11 @@ section.hero h1>span {
     border-radius: 5px;
     padding: 0.2rem 1rem;
     text-wrap: nowrap;
+    font-weight: 700;
 }
 
 section.hero p {
-    font-size: clamp(12px, calc(0.9vw + 0.1rem), 160px);
+    font-size: var(--16px);
     margin: 1rem 1.5rem;
     text-align: center;
     max-width: clamp(400px, calc(39vw + 1rem), 1500px);

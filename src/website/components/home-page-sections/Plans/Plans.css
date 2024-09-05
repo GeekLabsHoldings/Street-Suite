@@ -22,7 +22,7 @@ section.plans .section-title {
 
 .plane {
     box-shadow: 0px 18.83098602294922px 29.591548919677734px 0px #00000040;
-    border-radius: 50px;
+    border-radius: var(--21px);
     padding: 1px;
     background-color: transparent;
     position: relative;
@@ -65,7 +65,7 @@ section.plans .section-title {
     top: 1px;
     left: 1px;
     background-color: #202020;
-    border-radius: 50px;
+    border-radius: var(--21px);
     z-index: 1;
 }
 
@@ -81,7 +81,7 @@ section.plans .section-title {
     height: 100%;
     padding: clamp(32px, calc(3vw + 0.1rem), 400px) clamp(12px, calc(1.7vw + 0.1rem), 400px);
     background: #252525;
-    border-radius: 50px;
+    border-radius: var(--21px);
     position: relative;
     z-index: 2;
 }
@@ -94,7 +94,7 @@ section.plans .section-title {
 }
 
 .plane .line {
-    width: 65%;
+    width: 90%;
     height: 1px;
     background-color: #414040;
     margin: 2.5rem 0;

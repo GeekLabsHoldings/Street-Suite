@@ -1,5 +1,5 @@
 footer {
-    background: #232323;
+    background: #25252580;
     padding-top: clamp(14px, calc(4.5vw + 0.1rem), 2000px);
     position: relative;
     z-index: 0;

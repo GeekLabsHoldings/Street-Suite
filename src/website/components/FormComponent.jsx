@@ -159,7 +159,7 @@ const FormComponent = ({
             console.log(data?.data?.message);
             if (data?.data?.message == "logged in successfully!") {
               console.log("sadasewqe");
-              localStorage.setItem("userToken", data.data.token);
+              localStorage.setItem("userToken", data?.data?.Token);
               dispatch(signIn());
               customAlert("Logged in successfully");
               navigate("/");
@@ -190,6 +190,7 @@ const FormComponent = ({
           <FormGroup
             className="formGroup"
             // onSubmit={registerForm.handleSubmit}
+            sx={{gap:"var(--13px)"}}
           >
             <div>
               <FormLabel
@@ -409,8 +410,9 @@ const FormComponent = ({
                   label={<span>Remember me</span>}
                 />
                 <FormControlLabel
+                sx={{alignItems:"start"}}
                   required
-                  control={<Checkbox />}
+                  control={<Checkbox sx={{transform:"translateY(-7px)"}}/>}
                   className="labelfont checkboxFont"
                   label={
                     <span>
@@ -426,7 +428,7 @@ const FormComponent = ({
         </div>
       </div>
 
-      <div className=" flex justify- flex-col gap-[2vh] w-fit mx-auto">
+      <div className=" flex justify- flex-col gap-[--sy-16px] w-full mx-auto">
         <Button
           type="submit"
           className="newBtn formBtn"

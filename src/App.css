@@ -125,7 +125,7 @@ h6 {
   position: relative;
   overflow: hidden;
   padding: 1px;
-  border-radius: 0.9rem;
+  border-radius: var(--21px);
 }
 
 .formElementsAndBtn{
@@ -164,7 +164,7 @@ h6 {
 }
 
 .labelfont {
-  font-size: clamp(14px, calc(0.9vw + 0.1rem), 60px) !important;
+  font-size: var(--14px) !important;
   font-family: "Poppins", sans-serif;
   font-weight: 400 !important;
   font-style: normal;
@@ -180,7 +180,7 @@ h6 {
 }
 
 .formPart {
-  border-radius: 0.9rem;
+  border-radius: var(--21px);
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -327,7 +327,6 @@ h6 {
 .checkboxes{
   display: flex;
   flex-direction: column;
-  gap: clamp(2px, calc( 0.01vw + 0.1rem), 60px);
 }
 
 @media only screen and (max-width:767px) {

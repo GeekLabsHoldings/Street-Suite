@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../../redux/cardsSlice";
 import LoginImg from "../../../../dashboard/assets/imgOfPerson.svg";
 import { tokenContext } from "../../../context/appContext";
+import { jwtDecode } from "jwt-decode";
 
 const NavBar = () => {
   const userState = useSelector((state) => state.login.loggedIn);
@@ -13,7 +14,15 @@ const NavBar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [openDropDown, setOpenDropDown] = useState(false);
   const [selected, setSelected] = useState(false);
-
+  const [username,setUsername] = useState("")
+  useEffect(() => {
+    if (localStorage.getItem("userToken")) {
+      console.log(jwtDecode(localStorage.getItem("userToken")));
+      setUsername(jwtDecode(localStorage.getItem("userToken")).first_name + " " + jwtDecode(localStorage.getItem("userToken")).last_name)
+      console.log(username);
+      
+    }
+  }, []);
   return (
     <div>
       <section className="navbar ">
@@ -76,7 +85,7 @@ const NavBar = () => {
               >
                 <img src={LoginImg} alt="" />
                 <div className="loginPerson ">
-                  <h6>Moni Roy</h6>
+                  <h6>{username}</h6>
                   <p>Beginner</p>
                 </div>
               </div>
@@ -84,7 +93,9 @@ const NavBar = () => {
                 <div className="userOptions">
                   <ul className="ulSection">
                     <li>
-                      <Link to={"/dashboard/setting"} href="/dashboard/setting">setting</Link>
+                      <Link to={"/dashboard/setting"} href="/dashboard/setting">
+                        setting
+                      </Link>
                     </li>
                     <li>
                       <a

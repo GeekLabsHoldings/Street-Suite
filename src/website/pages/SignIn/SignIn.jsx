@@ -104,9 +104,9 @@ const SignIn = () => {
             console.log(data?.data?.message);
             if (data?.data?.message == "logged in successfully!") {
               console.log("aha");
-              
+              console.log(data.data.Token);
               console.log("sadasewqe");
-              localStorage.setItem("userToken", data.data.token);
+              localStorage.setItem("userToken", data.data.Token);
               dispatch(signIn());
               customAlert("Logged in successfully");
               navigate("/");
@@ -160,7 +160,7 @@ const SignIn = () => {
       );
 
       console.log(data);
-      setTokenVer(data.token);
+      setTokenVer(data.Token);
       setShowVerification(true);
       return data;
     } catch (err) {
@@ -307,7 +307,7 @@ const SignIn = () => {
                       className="formGroup"
                       onSubmit={registerForm.handleSubmit}
                     >
-                      <div className=" formLabelsAndInputs flex flex-col gap-[2vh] ">
+                      <div className=" formLabelsAndInputs flex flex-col !gap-[--sy-25px] ">
                         {wrongPass ? (
                           <div className=" bg-red-200 text-black rounded-md w-full p-1 border-red-950 border-2 border-solid text-center">
                             Wrong Password
@@ -317,12 +317,12 @@ const SignIn = () => {
                             {wrongEmail}
                           </div>
                         ) : null}
-                        <div>
-                          <label htmlFor="email" className=" mb-[0.8vh]">
+                        <div className=" mb-[--sy-4px]">
+                          <label htmlFor="email" className=" mb-[--sy-15px] !font-normal text-[--16px]">
                             Email *
                           </label>
                           <Input
-                            sx={{ marginBottom: "0.8vh" }}
+                            sx={{ marginBottom: "0.8vh", padding:"4px 14px" }}
                             name="email"
                             id="email"
                             type="text"
@@ -339,11 +339,11 @@ const SignIn = () => {
                           ) : null}
                         </div>
                         <div>
-                          <label htmlFor="password" className=" mb-[0.8vh]">
+                          <label htmlFor="password" className=" mb-[--sy-15px] !font-normal text-[--16px]">
                             Password *
                           </label>
                           <Input
-                            sx={{ marginBottom: "0.8vh" }}
+                            sx={{ marginBottom: "0.8vh", padding:"4px 14px" }}
                             name="password"
                             id="password"
                             type="password"
@@ -375,9 +375,9 @@ const SignIn = () => {
                           </button>
                         </div>
                       </div>
-                      <div className="mx-auto flex flex-col gap-[2vh]">
+                      <div className="mx-auto flex flex-col gap-[--sy-16px] w-full">
                         <Button
-                          className="newBtn loginBtn"
+                          className="newBtn loginBtn w-full block"
                           type="submit"
                           disabled={
                             !(registerForm.isValid && registerForm.dirty)
@@ -385,11 +385,12 @@ const SignIn = () => {
                           onClick={() => {
                             registerForm.handleSubmit();
                           }}
+
                         >
                           Log In
                         </Button>
                         <button
-                          className=" text-black rounded-md border-none py-2 px-4"
+                          className=" text-black rounded-md border-none py-2 !w-full block text-[--16px]"
                           onClick={() => login()}
                         >
                           Sign In With Google{" "}

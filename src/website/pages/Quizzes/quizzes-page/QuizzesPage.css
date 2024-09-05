@@ -1,10 +1,10 @@
 .quizzes-wrapper section.hero {
     background-image: unset;
-    padding: 10% 1rem 5%;
+    padding: 8% 1rem 5%;
 }
 
 .quizzes-wrapper {
-    background: linear-gradient(0deg, rgba(83, 172, 255, 0.3) 0%, rgba(32, 32, 32, 0.5) 100%);
+    background: linear-gradient(180deg,rgba(32, 32, 32, 0.5) 20%, rgba(83, 172, 255, 0.3) 88.17%,rgba(32, 32, 32, 0.5));
     padding: 0 0 5% 0;
 }
 

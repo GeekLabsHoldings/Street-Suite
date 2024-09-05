@@ -195,22 +195,27 @@ function QuizPage() {
   return (
     <div className="quiz-wrapper">
       <h4>
-        Day Trading, Swing Trading, Position Trading: Which Style Suits You
-        Best?
+      Do you know the difference? <br />
+      Day Trading, Swing Trading, Position Trading. 
       </h4>
 
-      <div className="quiz-view gap-12 mb-4">
+      <div className=" bg-[#00000040] !rounded-[--15px]">
+      <div className="quiz-view gap-12 mb-4 !rounded-[--15px]">
         <div className="quiz-score-sheet flex h-full gap-[5px] lg:gap-[1rem] mb-[20px] lg:mb-10">
           <div className="w-1/3">
             <div className="quiz-score-sheet-card">
               <p>Timer</p>
-              <span>{formatTime(timeRemaining)}</span>
+              <span className="!bg-[#202020]" style={{
+               boxShadow: "3.4px 3.4px 4.25px 0px #00000040 inset, -3.4px -3.4px 4.25px 0px #00000040 inset",
+             }}>{formatTime(timeRemaining)}</span>
             </div>
           </div>
           <div className="w-1/3">
             <div className="quiz-score-sheet-card">
               <p>Questions</p>
-              <span>
+              <span className="!bg-[#202020]" style={{
+               boxShadow: "3.4px 3.4px 4.25px 0px #00000040 inset, -3.4px -3.4px 4.25px 0px #00000040 inset",
+             }}>
                 {currentQuestionIndex + 1}/{questions.length}
               </span>
             </div>
@@ -218,7 +223,9 @@ function QuizPage() {
           <div className="w-1/3">
             <div className="quiz-score-sheet-card">
               <p>Highest Score</p>
-              <span>{highestScore}</span>
+              <span className="!bg-[#202020]" style={{
+               boxShadow: "3.4px 3.4px 4.25px 0px #00000040 inset, -3.4px -3.4px 4.25px 0px #00000040 inset",
+             }}>{highestScore}</span>
             </div>
           </div>
           {/* <button onClick={openModal} className="w-1/4">
@@ -228,7 +235,7 @@ function QuizPage() {
 
         <div className="quiz-questions">
           <div className="quiz-question-view mb-[20px] lg:mb-10">
-            <h5>{questions[currentQuestionIndex]?.title}</h5>
+            <h5 className=" !text-[--33px]">{questions[currentQuestionIndex]?.title}</h5>
           </div>
           <div className="quiz-answers grid grid-cols-2 gap-[10px] lg:gap-6">
             {questions[currentQuestionIndex]?.answer.map((ans, index) => (
@@ -236,11 +243,11 @@ function QuizPage() {
                 key={index}
                 htmlFor={`answer-${index}`}
                 className={
-                  selectedAnswer === ans.answer_text
+                  `${selectedAnswer === ans.answer_text
                     ? selectedAnswerCorrectness
                       ? "bg-green-500"
                       : "bg-red-500"
-                    : ""
+                    : ""} !text-[--28px] !py-[--sy-40px] text-center !rounded-[--10px]`
                 }
               >
                 {ans.answer_text}
@@ -256,6 +263,7 @@ function QuizPage() {
             ))}
           </div>
         </div>
+      </div>
       </div>
 
       {/* more quizzes in quiz page */}

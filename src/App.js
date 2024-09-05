@@ -59,22 +59,26 @@ import { signIn } from "./redux/cardsSlice";
 import { gapi } from "gapi-script";
 
 function App() {
-
+  
 
   useEffect(() => {
     function start() {
       // Initialize Google API client
-      gapi.client.init({
-        clientId: "1087496419901-tbjkftcp70hp02dvun2j6aufnnhgelub.apps.googleusercontent.com", // Replace with your actual client ID
-        scope: "profile email", // Specify the scopes you need, e.g., profile, email, etc.
-      }).then(() => {
-        // Do something after client initialization if needed
-        console.log('Google API client initialized');
-      }).catch((error) => {
-        console.error('Error initializing Google API client:', error);
-      });
+      gapi.client
+        .init({
+          clientId:
+            "1087496419901-tbjkftcp70hp02dvun2j6aufnnhgelub.apps.googleusercontent.com", // Replace with your actual client ID
+          scope: "profile email", // Specify the scopes you need, e.g., profile, email, etc.
+        })
+        .then(() => {
+          // Do something after client initialization if needed
+          console.log("Google API client initialized");
+        })
+        .catch((error) => {
+          console.error("Error initializing Google API client:", error);
+        });
     }
-  
+
     // Load Google API client library and initialize auth2
     gapi.load("client:auth2", start);
   }, []);

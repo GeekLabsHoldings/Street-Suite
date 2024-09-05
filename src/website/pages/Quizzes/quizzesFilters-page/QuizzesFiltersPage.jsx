@@ -9,6 +9,7 @@ import { tokenContext } from "../../../context/appContext";
 
 const CustomArrow = (props) => {
   const { className, style, onClick } = props;
+  const [arrowHovered, setArrowHovered] = useState(false);
 
   return (
     <div className={className} style={{ ...style }} onClick={onClick}>
@@ -21,8 +22,11 @@ const CustomArrow = (props) => {
       >
         <path
           d="M3.72503e-06 2.05123L2.11204e-06 38.9523C0.00118656 39.3259 0.10525 39.6921 0.300989 40.0115C0.496727 40.3309 0.77673 40.5914 1.11086 40.7649C1.44499 40.9385 1.82059 41.0185 2.19724 40.9964C2.57389 40.9743 2.93731 40.8509 3.2484 40.6395L30.1631 22.189C31.279 21.4243 31.279 19.5833 30.1631 18.8166L3.2484 0.366085C2.93796 0.15252 2.57435 0.0272807 2.19708 0.00397365C1.81981 -0.0193334 1.4433 0.0601835 1.10846 0.233885C0.773622 0.407587 0.493259 0.668829 0.297838 0.989229C0.102417 1.30963 -0.000591351 1.67693 3.72503e-06 2.05123Z"
-          fill="#53ACFF"
+          fill={`${arrowHovered ? "#53ACFF" : "#53ACFF50"}`}
           fill-opacity="1"
+          onMouseOver={() => setArrowHovered(true)}
+          onMouseLeave={() => setArrowHovered(false)}
+          className=" transition-all duration-300"
         />
       </svg>
     </div>
@@ -77,7 +81,6 @@ const QuizzesFiltersPage = () => {
     );
     console.log(searchedData);
     setSearchedQuizzes(searchedData);
-    
   }
 
   useEffect(() => {
@@ -146,6 +149,7 @@ const QuizzesFiltersPage = () => {
           <div className="input-box relative">
             <input
               type="text"
+              className=" placeholder:text-white !px-[--18px] !py-[--sy-23px]"
               placeholder="Search by..."
               onChange={(e) => {
                 if (e.target.value.length > 0) {
@@ -200,18 +204,28 @@ const QuizzesFiltersPage = () => {
         {/* filter to show more specific quizzes */}
         <div className="check-Filter">
           {categoryList.map((ele, idx) => (
-            <label htmlFor={ele} key={idx}>
-              {ele}
+            <div key={idx} className="flex items-center">
               <input
                 type="radio"
                 id={ele}
                 name="check-Filter"
+                className="peer hidden" // Add peer class here and hide the input
                 onClick={(e) => {
-                  setFilter(e.target.parentElement.textContent.trim());
+                  setFilter(e.target.nextSibling.textContent.trim());
                   setSelectedFilter(true);
                 }}
               />
-            </label>
+              <label
+                htmlFor={ele}
+                className="font-normal cursor-pointer peer-checked:font-bold peer-checked:bg-[#53ACFF] text-[23px] hover:bg-[#1F4262]"
+                style={{
+                  boxShadow:
+                    "3.4px 3.4px 4.25px 0px #00000040 inset, -3.4px -3.4px 4.25px 0px #00000040 inset",
+                }}
+              >
+                {ele}
+              </label>
+            </div>
           ))}
         </div>
       </div>
@@ -256,6 +270,8 @@ const QuizzesFiltersPage = () => {
                       .map((_, idx) => <SkeletonQuizCard key={idx} />)
                   : quizData
                       .filter((quizes) => {
+                        console.log(quizData);
+
                         return quizes.text === filter;
                       })[0]
                       ?.quizzes?.map((quiz) => {
@@ -283,13 +299,13 @@ const QuizzesFiltersPage = () => {
           {!selectedFilter
             ? quizData
                 .filter((e, i) => e.text !== "latest")
-                .map((f, idx) => {
-                  return (
-                    <div className="quizzes-cards space-y-6 mb-6">
+                .map((f, idx) =>
+                  f?.quizzes?.length > 0 ? (
+                    <div className="quizzes-cards space-y-6 mb-6" key={idx}>
                       <div className="title flex items-center justify-between">
                         <h6>{f.text}</h6>
                         <Link
-                          onClick={(e) => {
+                          onClick={() => {
                             setFilter(f.text);
                             setSelectedFilter(true);
                           }}
@@ -317,31 +333,27 @@ const QuizzesFiltersPage = () => {
                                 .fill(0)
                                 .map((_, idx) => <SkeletonQuizCard key={idx} />)
                             : quizData
-                                .filter((quizes) => {
-                                  return quizes.text === f.text;
-                                })[0]
-                                ?.quizzes?.map((quiz) => {
-                                  return (
-                                    <div
-                                      style={{
-                                        width:
-                                          "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
-                                      }}
-                                      key={quiz?.id}
-                                    >
-                                      <QuizCard
-                                        title={quiz?.title}
-                                        linkId={quiz?.id}
-                                        image={quiz?.image}
-                                      />
-                                    </div>
-                                  );
-                                })}
+                                .filter((quizes) => quizes.text === f.text)[0]
+                                ?.quizzes?.map((quiz) => (
+                                  <div
+                                    style={{
+                                      width:
+                                        "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                                    }}
+                                    key={quiz?.id}
+                                  >
+                                    <QuizCard
+                                      title={quiz?.title}
+                                      linkId={quiz?.id}
+                                      image={quiz?.image}
+                                    />
+                                  </div>
+                                ))}
                         </Slider>
                       </div>
                     </div>
-                  );
-                })
+                  ) : null
+                )
             : null}
         </div>
       )}

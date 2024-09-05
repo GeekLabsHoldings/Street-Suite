@@ -24,7 +24,9 @@ const stripePromise = loadStripe(
 const CARD_ELEMENT_OPTIONS = {
   style: {
     base: {
-      color: "#ffffff",
+      backgroundColor: "white",
+      padding: "5px",
+      color: "#2b2b2b",
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: "antialiased",
       fontSize: "16px",
@@ -144,30 +146,41 @@ const CheckoutForm = () => {
           <input type="password" id="password" placeholder="*******" required />
         </div>
 
-        <h6>Card Details</h6>
+        <h6 className=" !font-normal text-[--33px]">Card Details</h6>
         <div className="card-details w-fit">
           <div className="card-body space-y-6">
             <div className="form-input card-number">
               <label htmlFor="card-number-element">Card Number</label>
-              <CardNumberElement
-                id="card-number-element"
-                options={CARD_ELEMENT_OPTIONS}
-              />
-            </div>
-            <div className="flex gap-6 w-full">
-              <div className="form-input card-expiry w-1/2 flex-1">
-                <label htmlFor="card-expiry-element">Expiry Date</label>
-                <CardExpiryElement
-                  id="card-expiry-element"
+              <div className="bg-white px-[--13px] py-[--sy-12px] rounded-[--6px]">
+                <CardNumberElement
+                  id="card-number-element"
                   options={CARD_ELEMENT_OPTIONS}
                 />
               </div>
-              <div className="form-input card-cvc w-1/2 flex-1">
+            </div>
+            <div className="form-input card-number">
+              <label htmlFor="card-number-element">Card Holder Name</label>
+                <input type="text" placeholder="Enter your name" className=" placeholder:text-[#aab7c4] bg-white px-[--13px] !py-[--sy-12px] rounded-[--6px] text-[#2b2b2b]"/>
+            </div>
+            
+            <div className="flex gap-[--40px] w-full">
+              <div className="form-input card-expiry">
+                <label htmlFor="card-expiry-element">Expiry Date</label>
+                <div className="bg-white px-[--13px] py-[--sy-12px] rounded-[--6px] w-[--102px]">
+                  <CardExpiryElement
+                    id="card-expiry-element"
+                    options={CARD_ELEMENT_OPTIONS}
+                  />
+                </div>
+              </div>
+              <div className="form-input card-cvc">
                 <label htmlFor="card-cvc-element">CVC</label>
-                <CardCvcElement
-                  id="card-cvc-element"
-                  options={CARD_ELEMENT_OPTIONS}
-                />
+                <div className="bg-white px-[--13px] py-[--sy-12px] rounded-[--6px] w-[--102px]">
+                  <CardCvcElement
+                    id="card-cvc-element"
+                    options={CARD_ELEMENT_OPTIONS}
+                  />
+                </div>
               </div>
             </div>
           </div>
