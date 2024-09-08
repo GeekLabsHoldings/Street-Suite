@@ -88,6 +88,9 @@ const ContactForm = () => {
                 onChange={registerForm.handleChange}
                 value={registerForm.values.full_name}
                 onBlur={registerForm.handleBlur}
+                sx={{
+                  padding:"var(--sy-9px) var(--14px)"
+                }}
               />
 
               <FormLabel
@@ -109,6 +112,9 @@ const ContactForm = () => {
                 onChange={registerForm.handleChange}
                 value={registerForm.values.email}
                 onBlur={registerForm.handleBlur}
+                sx={{
+                  padding:"var(--sy-9px) var(--14px)"
+                }}
               />
 
               <FormLabel
@@ -126,15 +132,18 @@ const ContactForm = () => {
                 name="message"
                 id="message"
                 row={4}
-                placeholder={`Enter your message`}
+                placeholder={`....`}
                 onChange={registerForm.handleChange}
                 value={registerForm.values.message}
                 onBlur={registerForm.handleBlur}
-                className="w-full textArea textAreaInForm "
+                className="w-full textArea textAreaInForm !px-[--14px] !py-[--sy-11px]"
               ></textarea>
             </div>
-            <div className="mx-auto">
+            <div className="mx-auto mt-[--sy-20px]">
               <Button
+              sx={{
+                padding:"var(--sy-19px) var(--38px) !important"
+              }}
                 className="newBtn loginBtn"
                 type="submit"
                 onClick={() => {

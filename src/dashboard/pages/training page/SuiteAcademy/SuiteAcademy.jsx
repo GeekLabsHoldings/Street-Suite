@@ -34,7 +34,7 @@ const SuiteAcademy = () => {
 
     try {
       axios
-        .get(`${process.env.REACT_APP_API_URL}courses/?order_by=most_liked`, {
+        .get(`${process.env.REACT_APP_API_URL}courses/mostlike/`, {
           headers: {
             Authorization: `Token ${localStorage.getItem("userToken")}`,
           },
@@ -49,7 +49,7 @@ const SuiteAcademy = () => {
     try {
       axios
         .get(
-          `${process.env.REACT_APP_API_URL}courses/?order_by=most_completed`,
+          `${process.env.REACT_APP_API_URL}courses/mostcomplete/`,
           {
             headers: {
               Authorization: `Token ${localStorage.getItem("userToken")}`,

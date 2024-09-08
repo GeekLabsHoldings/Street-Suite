@@ -70,7 +70,7 @@ const ContactPage = () => {
         />
       </Helmet>
 
-      <div className="Msglayout">
+      <div className="Msglayout contactPage">
         <div className="forBG flex sm:flex-col contactBg mx-0">
           {/* other ways to get in touch */}
 

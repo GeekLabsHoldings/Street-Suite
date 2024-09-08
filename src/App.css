@@ -160,9 +160,11 @@ h6 {
 }
 
 .forBorder:hover::before {
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(180deg);
 }
-
+.contactPage .labelfont {
+  font-size: var(--16px) !important;
+}
 .labelfont {
   font-size: var(--14px) !important;
   font-family: "Poppins", sans-serif;
@@ -476,4 +478,10 @@ input[type="search"]::-webkit-search-results-decoration {
 .overlay-modal {
 
   background:  linear-gradient(180deg, rgba(32,32,32,1) 40%, rgb(37, 66, 94) 100%) !important;
+}
+.contactPage .formLabelsAndInputs {
+  gap: var(--sy-14px) !important;
+}
+.contactPage .css-kf85qm-JoyInput-root {
+  margin-bottom: var(--sy-15px);
 }

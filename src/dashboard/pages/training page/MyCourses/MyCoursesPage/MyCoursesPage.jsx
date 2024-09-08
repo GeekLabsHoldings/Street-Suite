@@ -1,17 +1,48 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./MyCoursesPage.module.css";
 
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import ProgressBar from '@ramonak/react-progress-bar';
+import axios from 'axios';
 
 
 const MyCoursesPage = () => {
-
-
+const [completed,setCompleted] = useState([])
+const [inProg,setInProg] = useState([])
+async function getCompletedCourses() {
+    console.log(localStorage.getItem("userToken"));
+    
+    try {
+        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}courses/my_courses/completed/`,{
+            headers:{
+                Authorization:`Token ${localStorage.getItem("userToken")}`
+            }
+        })
+        console.log(data);
+        setCompleted(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+async function getInProgCourses() {
+    console.log(localStorage.getItem("userToken"));
+    
+    try {
+        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}courses/my_courses/inprogress/`,{
+            headers:{
+                Authorization:`Token ${localStorage.getItem("userToken")}`
+            }
+        })
+        console.log(data);
+        setInProg(data)
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
 
     useEffect(() => {
-
 
         // Show the first tab by default
         $('.myCourses-tabs .tab').hide();
@@ -32,6 +63,13 @@ const MyCoursesPage = () => {
         });
 
     }, [])
+
+    useEffect(()=>{
+getCompletedCourses()
+getInProgCourses()
+console.log("asdasdasdasdasdsadsadsda");
+
+    },[])
 
 
     return (
