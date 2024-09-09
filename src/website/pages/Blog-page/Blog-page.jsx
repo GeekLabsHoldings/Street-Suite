@@ -18,7 +18,7 @@ const BlogPage = () => {
       </Helmet>
 
       <div className="pageBG">
-        <div className="md:w-1/3 sm:w-2/3  mx-auto flex flex-col md:gap-8 sm:gap-3 md:py-10 sm:py-5">
+        <div className="md:w-1/3 sm:w-2/3  mx-auto flex flex-col md:gap-9 sm:gap-3 md:pt-32 md:pb-16 sm:py-5">
           <div className="flex justify-center ourName">
             <h1 className="highlight w-fit">Street Suite</h1>
           </div>

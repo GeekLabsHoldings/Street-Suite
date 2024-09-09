@@ -26,7 +26,7 @@ background-color: #252b31;
 }
 
 .leaderBoard-wrapper .ranking-tabs .tabs-nav li {
-    background: rgba(32, 32, 32, 1);
+    background: linear-gradient(130deg, #22272b 24%, #202020 100%);
     border-bottom: clamp(1px, calc(0.02vw + 0.1rem), 2px) solid rgba(83, 172, 255, 1);
     width: 100%;
     height: clamp(40px, calc(3.5vw + 0.1rem), 3000px);
@@ -84,7 +84,7 @@ background-color: #252b31;
     letter-spacing: 0em;
     text-align: center;
     color: #fff;
-    background-color: transparent;
+    background: linear-gradient(130deg, #22272b 24%, #202020 100%);
     outline: 0;
     height: clamp(9vh, 10vh, 200px);
 
@@ -305,12 +305,15 @@ background-color: #252b31;
     font-family: Poppins;
     font-size: clamp(10px, calc(0.7vw + 0.1rem), 700px);
     font-weight: 400;
-    padding: clamp(10px, calc(0.5vw + 0.1rem), 700px) clamp(10px, calc(1.3vw + 0.1rem), 700px);
+    padding: var(--sy-2px) var(--16px);
     letter-spacing: 0em;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.1s;
+}
+.trader-types .check-trade-during label:hover{
+    background-color: #294864;
 }
 
 .trader-types .check-trade-during input {
@@ -367,7 +370,15 @@ background-color: #252b31;
     flex-direction: column;
     gap: clamp(8px, calc(0.6vw + 0.1rem), 600px);
 }
-
+.trader-types-wrapper::before{
+    background-image: conic-gradient(transparent 180deg, transparent 240deg, #FFFFFFBB 280deg, transparent 360deg) !important;
+}
+.featuredStories::before{
+    background-image: conic-gradient(transparent 180deg, transparent 240deg, #FFFFFFBB 280deg, transparent 360deg) !important;
+}
+.ConnectYourBrokerSec::before{
+    background-image: conic-gradient(transparent 180deg, transparent 240deg, #FFFFFFBB 280deg, transparent 360deg) !important;
+}
 .trader-types .check-leaderBoard-guid label {
     width: 100%;
     padding: clamp(8px, calc(0.6vw + 0.1rem), 600px) clamp(8px, calc(1vw + 0.1rem), 600px);
@@ -388,7 +399,9 @@ background-color: #252b31;
     border: 1px solid rgba(255, 255, 255, 0.6);
     transition: all 0.1s;
 }
-
+.trader-types .check-leaderBoard-guid label:hover {
+    background-color: #294864;
+}
 .trader-types .check-leaderBoard-guid input {
     position: absolute;
     width: 100%;

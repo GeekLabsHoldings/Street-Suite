@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import styles from "./Filters.module.css";
-import closeIcon from "../../assets/close icon.svg";
+import closeWhiteIcon from "../../assets/closeWhite icon.svg";
 import filterSearchIcon from "../../assets/filter search icon.svg";
 import arrowIcon from "../../assets/industry/arrow icon.svg";
 import healthIcon from "../../assets/industry/health care.svg";
@@ -282,6 +282,7 @@ function Filters({
     verticalSwiping: true,
     arrows: true,
     speed: 300,
+    draggable: true,
 
     afterChange: function (currentSlide) {
       const slides = document.querySelectorAll(
@@ -375,16 +376,17 @@ function Filters({
             <ul className={styles.filtersApplaiedContainer}>
               {/* filter selected */}
               {appliedFilters.map((ele) => (
-                <li>
+                <li className=" text-white">
                   {ele}
-                  <span
+                  <span 
                     onClick={() => {
                       setAppliedFilters((prev) =>
                         prev.filter((elm) => elm !== ele)
                       );
+                      document.querySelectorAll("input[type='radio']").forEach((e,i)=>e.checked = false) 
                     }}
                   >
-                    <img src={closeIcon} alt="delete" />
+                    <img src={closeWhiteIcon} alt="delete" />
                   </span>
                 </li>
               ))}
@@ -429,7 +431,7 @@ function Filters({
                         getIndustry(ele.title);
                       }}
                     >
-                      <div className={styles.selectItem}>
+                      <div className={`${styles.selectItem} !px-[--8px] !py-[--sy-4px]`}>
                         <img src={ele.icon} alt={ele.title} />
                         <p>{ele.title}</p>
                       </div>

@@ -116,6 +116,8 @@ function DataTable({
   }, [lastMessage]);
 
   useEffect(() => {
+    console.log(data);
+    
     setAlerts(data?.pages?.flatMap((page) => page.results) || []);
   }, [data]);
   const openCollaps = (e) => {

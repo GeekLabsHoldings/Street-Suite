@@ -62,6 +62,7 @@ const LeaderBoardPage = () => {
       if ($(".Ranking").parent().hasClass("selected")) {
         $(".featured-stories").slideUp(300);
         $(".leaderBoard-guid").slideDown(300);
+        $(".featuredStories.border-animate").hide()
       }
 
       if ($(".Ranking").parent().hasClass("not-selected")) {
@@ -808,19 +809,14 @@ const LeaderBoardPage = () => {
 
           {/* trader types on the side in leaderboard page */}
           <div className="side-trader w-full lg:w-[30%]">
-            <div className=" relative rounded-[--11px]">
+            <div className="trader-types-wrapper relative rounded-[--11px] border-animate">
+             
               <div
-                className=" absolute !top-[-0.4%] left-[-0.2%] rounded-[--12px] w-[100.5%] h-[90.5%] translate-y-0"
-                style={{
-                  background:
-                    "linear-gradient(145.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 40%)",
-                }}
-              ></div>
-              <div
-                className={`trader-types !border-none !border-0 relative z-[3] ${
+                className={`trader-types !rounded-[--11px] !p-[2px] !border-none !border-0 relative  ${
                   isSideFilterOpen ? "open" : ""
                 } w-full`}
               >
+                <div className=" relative z-[50] bg-[#202020] !rounded-[--11px] px-[--30px] py-[--sy-22px]">
                 <button
                   className="toggle-side-fiter block lg:hidden"
                   onClick={() => setIsSideFilterOpen(!isSideFilterOpen)}
@@ -911,18 +907,13 @@ const LeaderBoardPage = () => {
                     </label>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
 
             {/* featured-stories section in leaderboard */}
-            <div className=" relative rounded-[--11px]">
-              <div
-                className=" absolute !top-[-0.1%] left-[-0.2%] rounded-[--12px] w-[90.5%] h-[90.5%] translate-y-0"
-                style={{
-                  background:
-                    "linear-gradient(120.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 40%)",
-                }}
-              ></div>
+            <div className="featuredStories relative rounded-[--11px] border-animate">
+              
               <div className="featured-stories w-full relative z-[3] border-none border-0">
                 <h5>Featured stories</h5>
 
@@ -1088,14 +1079,8 @@ const LeaderBoardPage = () => {
             </div>
 
             {/* connect your broker section in leaderboard */}
-            <div className=" relative rounded-[--11px]">
-              <div
-                className=" absolute !top-[-0.3%] left-[-0.2%] rounded-[--12px] w-[90.5%] h-[70.5%] translate-y-0"
-                style={{
-                  background:
-                    "linear-gradient(145.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 40%)",
-                }}
-              ></div>
+            <div className="ConnectYourBrokerSec relative rounded-[--11px] border-animate">
+              
               <div className="ConnectYourBroker w-full relative z-[3] border-0 border-none">
                 <h6>Connect your broker to see yourself on our leaderboard </h6>
 

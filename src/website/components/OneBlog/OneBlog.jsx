@@ -48,6 +48,8 @@ const OneBlog = ({ filter }) => {
       const { data } = await axios.get(
         `${process.env.REACT_APP_API_URL}blogs/`
       );
+      console.log(data);
+      
       setBlogsList(data);
     } catch (e) {
       console.error(e);
@@ -135,8 +137,13 @@ const OneBlog = ({ filter }) => {
           })
           .map((blog, idx) => {
             return (
+              <div className=" pt-[--sy-40px] px-[--5px]">
+           <div className=" flex gap-[--18px] items-center">
+           {blog.categories.map((c,i) =>{
+            return <p className=" text-[#53ACFF] text-[--16px]">{c.text}</p>})}
+           </div>
               <div
-                className="flex cursor-pointer firstBlog bottomBorder "
+                className="flex cursor-pointer firstBlog bottomBorder !pb-[--sy-40px]"
                 key={idx}
               >
                 <Link
@@ -169,6 +176,7 @@ const OneBlog = ({ filter }) => {
                     </div>
                   </div>
                 </Link>
+              </div>
               </div>
             );
           })}
@@ -256,14 +264,14 @@ const OneBlog = ({ filter }) => {
 
         {/* feature */}
         <div className=" bottomBorder parentOfBlackBg ">
-          <div className="flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer ">
+          <div className="flex divBg md:w-11/12 md:py-4 sm:py-3 cursor-pointer !rounded-[--10px]">
             <div className="md:w-1/3 sm:w-1/2 ps-3 sm:pt-1">
               <div className="w-10/12 ">
                 <div className="divForBlackBg"></div>
               </div>
             </div>
             <div className="md:w-2/3 sm:w-1/2 flex flex-col justify-center md:gap-4 sm:gap-3 ">
-              <div className="md:w-3/4 blackBGFonts mx-auto flex flex-col md:gap-4 sm:gap-3 sm:px-2">
+              <div className="md:w-[80%] blackBGFonts mx-auto flex flex-col md:gap-4 sm:gap-3 sm:px-2">
                 <div>
                   <h2>Here’s The Worlds Best Kept Secret</h2>
                   <p>
@@ -272,7 +280,8 @@ const OneBlog = ({ filter }) => {
                   </p>
                 </div>
 
-                <TimeForRead />
+                <div className=" w-[75%]">
+                <TimeForRead /></div>
               </div>
             </div>
           </div>
@@ -280,8 +289,13 @@ const OneBlog = ({ filter }) => {
 
         {blogsList.slice(4, 8).map((blog, idx) => {
           return (
-            <div
-              className="flex cursor-pointer firstBlog bottomBorder "
+           <div className=" pt-[--sy-40px] px-[--35px]">
+           <div className=" flex gap-[--18px] items-center">
+           {blog.categories.map((c,i) =>{
+            return <p className=" text-[#53ACFF] text-[--16px]">{c.text}</p>})}
+           </div>
+               <div
+              className="flex cursor-pointer firstBlog bottomBorder !pb-[--sy-40px]"
               key={idx}
             >
               <Link
@@ -305,7 +319,7 @@ const OneBlog = ({ filter }) => {
                 className="sm:w-5/12 md:w-1/2"
               >
                 <div className=" ">
-                  <div className="md:w-10/12 sm:w-11/12 ">
+                  <div className="md:w-10/12 sm:w-11/12">
                     <img
                       src={`${process.env.REACT_APP_API_URL}${blog.image_url}`}
                       alt={blog.title}
@@ -315,6 +329,7 @@ const OneBlog = ({ filter }) => {
                 </div>
               </Link>
             </div>
+           </div>
           );
         })}
       </div>

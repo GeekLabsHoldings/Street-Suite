@@ -36,7 +36,6 @@
     line-height: 95px;
     letter-spacing: 0px;
     text-align: center;
-    text-shadow: 0px 10px 15px #000;
 
 }
 
@@ -69,7 +68,7 @@
 
 .APIPage-wrapper .data-points-section .data-points .data-point-card .card-body {
     padding: 3rem;
-    background: linear-gradient(80deg, rgb(35, 53, 68) 0%, rgb(38, 64, 88) 100%);
+    background: linear-gradient(167deg, rgb(23 36 46) 0%, rgb(38, 64, 88) 100%);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -97,7 +96,6 @@
     line-height: 95px;
     letter-spacing: 0px;
     text-align: center;
-    text-shadow: 0px 10px 15px #000;
 
 }
 
@@ -121,14 +119,14 @@
 }
 
 .analytics-accessible-card.border-animate::before {
-    background-image: conic-gradient(transparent 0deg, #ffffffbb 80deg, transparent 170deg, #ffffffbb 220deg, transparent 360deg);
+    background-image: conic-gradient(transparent 0deg, transparent 80deg, transparent 170deg, #ffffffbb 333deg, transparent 360deg);
     width: 200%;
     height: 300%;
 }
 
 .analytics-accessible-card .card-body {
     padding: 4rem 3rem;
-    background: linear-gradient(0deg, rgb(35, 53, 68) 0%, rgb(91, 144, 194) 100%);
+    background: linear-gradient(0deg, rgb(37 74 104) 0%, rgb(68 115 159) 100%);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -197,7 +195,6 @@
     line-height: 95px;
     letter-spacing: 0px;
     text-align: center;
-    text-shadow: 0px 10px 15px #000;
     margin-bottom: 5rem;
 }
 
@@ -220,7 +217,8 @@
 
 .easy-to-use-card .card-body {
     position: relative;
-    background: linear-gradient(0deg, rgb(25, 38, 49) 0%, rgb(32, 53, 63) 100%);
+    background: radial-gradient(926.89% 248.71% at 46.42% -82.2%, rgb(47 90 131) 20.62%, rgb(31 36 40) 57.79%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    filter: blur(0.1);
     border-radius: 20px;
     padding: 3rem;
     display: flex;
@@ -248,7 +246,6 @@
     line-height: 72px;
     letter-spacing: 0em;
     text-align: left;
-    text-shadow: 0px 10px 15px #000;
     margin-bottom: 2rem;
 }
 
@@ -265,7 +262,7 @@
 }
 
 .api-code-card .card-content p {
-    color: var(--Blue300);
+    color: #5386ff;
 }
 
 .easy-to-use-content button {

@@ -142,7 +142,7 @@ const ContactForm = () => {
             <div className="mx-auto mt-[--sy-20px]">
               <Button
               sx={{
-                padding:"var(--sy-19px) var(--38px) !important"
+                padding:"var(--sy-16px) var(--38px) !important"
               }}
                 className="newBtn loginBtn"
                 type="submit"

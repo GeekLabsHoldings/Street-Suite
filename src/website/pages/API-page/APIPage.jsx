@@ -42,7 +42,7 @@ const APIPage = () => {
 
 
                 <div className="shadow-bg">
-                    <div className='lg:container mx-auto px-4 APIPage-container py:8 lg:py-20'>
+                    <div className='lg:container mx-auto px-4 APIPage-container pt:8 lg:pt-20'>
 
                         {/* data points section in API page */}
                         <div className="data-points-section py-12">
@@ -54,39 +54,50 @@ const APIPage = () => {
                                 {/* data point card */}
                                 <div className="data-point-card border-animate">
                                     <div className="card-body  relative">
+                                        <div className=' w-3/4 flex justify-between items-center'>
                                         <img src={dataPointImg1} alt="" />
-                                        <h6>Data Point 1</h6>
+                                        <h6>Data Point 1</h6></div>
                                     </div>
                                 </div>
 
                                 <div className="data-point-card border-animate">
                                     <div className="card-body  relative">
+                                    <div className=' w-3/4 flex justify-between items-center'>
                                         <img src={dataPointImg2} alt="" />
                                         <h6>Data Point 1</h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="data-point-card border-animate">
                                     <div className="card-body  relative">
+                                    <div className=' w-3/4 flex justify-between items-center'>
                                         <img src={dataPointImg3} alt="" />
                                         <h6>Data Point 1</h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="data-point-card border-animate">
                                     <div className="card-body  relative">
+                                    <div className=' w-3/4 flex justify-between items-center'>
                                         <img src={dataPointImg4} alt="" />
                                         <h6>Data Point 1</h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="data-point-card border-animate">
                                     <div className="card-body  relative">
+                                    <div className=' w-3/4 flex justify-between items-center'>
                                         <img src={dataPointImg5} alt="" />
                                         <h6>Data Point 1</h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="data-point-card border-animate">
                                     <div className="card-body  relative">
+                                    <div className=' w-3/4 flex justify-between items-center'>
                                         <img src={dataPointImg6} alt="" />
                                         <h6>Data Point 1</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +106,7 @@ const APIPage = () => {
 
 
                         {/* analytics accessible section in API page */}
-                        <div className="analytics-accessible-section py-12 flex flex-col">
+                        <div className="analytics-accessible-section py-24 flex flex-col">
                             <h3>Analytics & Data Accessible To All </h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo</p>
 
@@ -143,21 +154,18 @@ const APIPage = () => {
                                             speed: 30,
                                             waitUntilVisible: true,
                                         }}>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur, blanditiis quis expedita eos minima asperiores,</p>
-                                            {/* <code>
-                                        [
-                                            "statusCode": 200,
-                                            "headers" {"Content-Type": "application/json"},
-                                            "body": {
-                                                "results": {
-                                                    "name": "LEASES_PAYMENTS",
-                                                    "description": "Total of all future operating lease payments",
-                                                    "endpoints": "Modal Data, Adjusted Fundamentals.",
-                                                }
-                                            }
-                                        ]          
-                                    </code> */}
-
+                                            <p className=' whitespace-pre font-medium'>
+                                                {`{`} <br />
+                                                 {` "StatusCode":`} {` 200`}, <br />
+                                                {` "headers":`} {` {"Content-Type": " application/json"},`} <br />
+                                                {` "body":`} {` {`} <br />
+                                                {`   "results":`} {` {`} <br />
+                                                {`       "name":`} {` " Leases_Payments",`} <br />
+                                                {`       "description":`} {` " Total of all future operating lease payments",`} <br />
+                                                {`       "endpoints":`} {` "Modal Data, Adjusted Fundamentals.",`} <br />
+                                                {`   }`} <br />
+                                                {` }`}
+                                            </p>{`}`}
                                         </TypeIt>
                                     </div>
                                 </div>

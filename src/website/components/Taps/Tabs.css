@@ -9,16 +9,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: clamp(4px, calc(0.8vw + 0.1rem), 60px);
-    padding-bottom: clamp(4px, calc(0.8vw + 0.1rem), 60px);
-    margin-bottom: clamp(16px, calc(1.7vw + 0.1rem), 80px);
+    margin-bottom: var(--sy-10px);
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow-x: visible;
+}
+.blogsTabs .check-Filter > div {
+    padding: var(--20px) 0;
+    position: relative;
 }
 
 .blogsTabs .check-Filter label {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     color: #fff;
-    position: relative;
+    
     transition: all 0.3s;
     font-size: clamp(10px, calc( 0.8vw + 0.1rem), 60px) !important;
     font-weight: 400 !important;
@@ -38,7 +43,38 @@
 .blogsTabs .check-Filter label:has(> input[type="radio"]:checked) {
     background-color: var(--Blue300);
 }
+.blogsTabs .check-Filter label:not(:has(> input[type="radio"]:checked)):hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -1px;
+    transition: all 3s;
+}
+.blogsTabs .check-Filter label:not(:has(> input[type="radio"]:checked)):hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: -1px;
+    transition: all 3s;
+}
+.blogsTabs .check-Filter label:not(:has(> input[type="radio"]:checked)):hover {
+    color: #53ACFF;
+}
+.blogsTabs .check-Filter label:not(:has(> input[type="radio"]:checked)):hover::before  {
+    background-color: #53ACFF;
 
+}
+.blogsTabs .check-Filter label:not(:has(> input[type="radio"]:checked)):hover::after {
+    background-color: #53ACFF;
+}
 @media only screen and (max-width: 676px){
 
     .blogsTabs .check-Filter label{

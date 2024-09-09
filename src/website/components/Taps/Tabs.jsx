@@ -13,6 +13,7 @@ export default function BasicTabs({ setFilter }) {
       <Box className="blogsTabs">
         {/* tabs for all filters */}
         <div className="check-Filter tabsStyle tabsSec">
+          <div>
           <label htmlFor="private-equity">
             Private Equity
             <input
@@ -22,6 +23,8 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
+          </div>
+          <div>
           <label htmlFor="Market">
             Market
             <input
@@ -31,6 +34,8 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
+          </div>
+          <div>
           <label htmlFor="Options">
             Options
             <input
@@ -40,7 +45,9 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
-          <label htmlFor="Large-Caps">
+          </div>
+         <div>
+         <label htmlFor="Large-Caps">
             Large Caps
             <input
               type="radio"
@@ -49,7 +56,9 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
-          <label htmlFor="Small-Caps">
+         </div>
+         <div>
+         <label htmlFor="Small-Caps">
             Small Caps
             <input
               type="radio"
@@ -58,7 +67,9 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
-          <label htmlFor="private-equity">
+         </div>
+        <div>
+        <label htmlFor="private-equity">
             Private Equity
             <input
               type="radio"
@@ -67,7 +78,9 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
-          <label htmlFor="Market">
+        </div>
+         <div>
+         <label htmlFor="Market">
             Market
             <input
               type="radio"
@@ -76,7 +89,9 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
-          <label htmlFor="Options">
+         </div>
+         <div>
+         <label htmlFor="Options">
             Options
             <input
               type="radio"
@@ -85,6 +100,8 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
+         </div>
+          <div>
           <label htmlFor="Large-Caps">
             Large Caps
             <input
@@ -94,6 +111,7 @@ export default function BasicTabs({ setFilter }) {
               onChange={handleFilterChange}
             />
           </label>
+          </div>
         </div>
       </Box>
     </Box>

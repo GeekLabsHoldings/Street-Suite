@@ -428,7 +428,7 @@ const FormComponent = ({
         </div>
       </div>
 
-      <div className=" flex justify- flex-col gap-[--sy-16px] w-full mx-auto">
+      <div className=" flex justify- flex-col gap-[--sy-13px] w-full mx-auto">
         <Button
           type="submit"
           className="newBtn formBtn"
@@ -439,7 +439,7 @@ const FormComponent = ({
           {btnTxt}
         </Button>
         <button
-          className=" text-black rounded-md border-none py-2 px-4"
+          className=" text-black rounded-md border-none py-2 px-4 font-semibold"
           onClick={() => login()}
         >
           Sign In With Google{" "}
