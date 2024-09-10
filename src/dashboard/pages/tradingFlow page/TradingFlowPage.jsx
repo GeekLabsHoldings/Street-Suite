@@ -25,10 +25,10 @@ const TradingFlowPage = () => {
           <div className={SearchBarStyles.navBar} >
             <ul>
               <li>
-                <NavLink to="private-equity">Private Equities</NavLink>
+                <NavLink to="transfer&pay">Transfer & Pay</NavLink>
               </li>
               <li>
-                <NavLink to="transfer&pay">Transfer & Pay</NavLink>
+                <NavLink to="private-equity">Private Equities</NavLink>
               </li>
             </ul>
           </div>

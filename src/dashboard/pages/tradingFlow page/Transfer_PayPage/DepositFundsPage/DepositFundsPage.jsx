@@ -108,7 +108,7 @@ const DepositFundsPage = () => {
 
         {/* amount details of transfer  */}
         <div className={styles.amount_details}>
-          <div className="flex flex-col lg:flex-row gap-3 lg:gap-8 items-start">
+          <div className="flex flex-col lg:flex-row gap-3 lg:!gap-[--102px] items-start">
             <div className={styles.input_group + " w-full lg:w-[30%]"}>
               <label htmlFor="">Deposit Amount</label>
               <div className="flex gap-2 w-full">

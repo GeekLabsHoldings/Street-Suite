@@ -183,13 +183,13 @@ const TradingHistory = () => {
 
                 {/* filter in trading history page that filters data of table */}
                 <div className={styles.trading_history_filter + " w-full lg:w-1/6 "}>
-                    <h6>Filterd By</h6>
+                    <h6 className='!text-[--19px]'>Filter By</h6>
 
                     <div className={styles.drop_down_menu}>
                         <p>Date</p>
                         <CustomSelectMenu options={options} />
                     </div>
-                    <div className={styles.drop_down_menu}>
+                    <div className={`!mb-[--sy-29px] ${styles.drop_down_menu}`}>
                         <p>Type</p>
                         <CustomSelectMenu options={options}/>
                     </div>

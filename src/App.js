@@ -142,7 +142,7 @@ function App() {
                 </Route>
                 <Route path="my-courses" element={<MyCourses />}>
                   <Route index element={<MyCoursesPage />} />
-                  <Route path="single-course" element={<SingleCoursePage />} />
+                  <Route path=":slug" element={<SingleCoursePage />} />
                 </Route>
               </Route>
               <Route path="trading" element={<TradingFlowPage />}>

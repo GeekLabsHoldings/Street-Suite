@@ -11,7 +11,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const PrivateEquityPage = () => {
   return (
     <div className="flex flex-col lg:flex-row items-start gap-12 px-0 lg:px-12">
-      <div className="w-full lg:w-[70%]">
+      <div className="w-full lg:w-[100%]">
         <SearchBar>
           <div className="flex gap-3 lg:gap-8 flex-col lg:flex-row w-full">
             <h5
@@ -43,14 +43,14 @@ const PrivateEquityPage = () => {
 
       <div className={styles.equities + " w-full lg:w-[30%] d-none d-lg-block"}>
         <img src={popularPadge} alt="" className={styles.padge} />
-        <h6>Recommended Equities</h6>
+        <h6 className=" tracking-widest !text-[--20px]">Recommended Equities</h6>
 
         <div className={styles.recommended_equities + " space-y-3"}>
           <NavLink
             to="single-equity"
             className={styles.equity_item + " " + styles.Up}
           >
-            <img src={companyImg} alt="" />
+            <img src={companyImg} alt="" className="!w-[--146px]"/>
             <span>
               $ 190
               <svg
@@ -71,7 +71,7 @@ const PrivateEquityPage = () => {
             to="single-equity"
             className={styles.equity_item + " " + styles.Down}
           >
-            <img src={companyImg} alt="" />
+            <img src={companyImg} alt="" className="!w-[--146px]"/>
             <span>
               $ 190
               <svg
@@ -92,7 +92,7 @@ const PrivateEquityPage = () => {
             to="single-equity"
             className={styles.equity_item + " " + styles.Down}
           >
-            <img src={companyImg} alt="" />
+            <img src={companyImg} alt="" className="!w-[--146px]"/>
             <span>
               $ 190
               <svg
@@ -113,7 +113,7 @@ const PrivateEquityPage = () => {
             to="single-equity"
             className={styles.equity_item + " " + styles.Up}
           >
-            <img src={companyImg} alt="" />
+            <img src={companyImg} alt="" className="!w-[--146px]"/>
             <span>
               $ 190
               <svg
@@ -134,7 +134,7 @@ const PrivateEquityPage = () => {
             to="single-equity"
             className={styles.equity_item + " " + styles.Up}
           >
-            <img src={companyImg} alt="" />
+            <img src={companyImg} alt="" className="!w-[--146px]"/>
             <span>
               $ 190
               <svg

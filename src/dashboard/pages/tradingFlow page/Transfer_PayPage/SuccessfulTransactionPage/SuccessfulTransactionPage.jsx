@@ -12,7 +12,7 @@ import chatIcon from "../../../../assets/chat-icon.svg"
 const SuccessfulTransactionPage = () => {
 
     return (
-        <div className={styles.SuccessfulTransactionPage}>
+        <div className={`w-full !px-[--120px] !py-[--60px] ${styles.SuccessfulTransactionPage}`}>
 
             {/* main message */}
             <h4>SUCCESSFUL<br /> TRANSACTION</h4>
@@ -28,7 +28,7 @@ const SuccessfulTransactionPage = () => {
                         Rest assured, our team is diligently working to ensure a swift processing of your transaction.
                     </p>
 
-                    <h6>If you have any questions or concerns feel free to <Link>contact us</Link></h6>
+                    <h6 className=' !text-[--16px]'>If you have any questions or concerns feel free to <Link className='underline'>contact us</Link></h6>
                 </div>
 
                 {/* lists of some info about st suite */}

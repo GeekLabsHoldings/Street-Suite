@@ -12,7 +12,7 @@ export default function CustomSelectMenu({options}) {
   return (
     <div className={styles.customSelectMenu + " customSelectMenu w-full"}>
       <Listbox value={selected} onChange={setSelected}>
-        <div className="relative mt-1">
+        <div className="relative">
           <Listbox.Button className="w-full flex items-center justify-between">
             <span className="block truncate">{selected.name}</span>
             <span>

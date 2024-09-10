@@ -275,7 +275,25 @@ cursor: pointer;
 }
 
 
+.withdraw_funds .complete_icon {
+    width: clamp(18px,  calc( 1.4vw + 0.1rem ), 80px);
+    height: clamp(18px,  calc( 1.4vw + 0.1rem ), 80px);
+    border-radius: 50%;
+    background-color: rgba(70, 70, 70, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.withdraw_funds .complete_icon svg {
+    stroke: #0000008e;
+    line-height: 0;
+    width: clamp(10px,  calc( 0.7vw + 0.1rem ), 80px);
+}
+
+.withdraw_funds .complete_icon.completed {
+    background-color: var(--Blue300);
+}
 
 
 

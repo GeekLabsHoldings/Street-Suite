@@ -96,7 +96,7 @@ a.tradingHistory:hover{
 
 .account_number ul:last-child li span:last-child {
     font-size: clamp(10px,  calc( 0.5vw + 0.5rem ), 60px);
-    font-weight: 200;
+    font-weight: 400;
     text-wrap: nowrap;
 }
 
@@ -108,7 +108,6 @@ a.tradingHistory:hover{
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .chart_container {
@@ -167,11 +166,11 @@ a.tradingHistory:hover{
 }
 
 .shares_equities .myShares {
-    width: 70%;
+    width: 100%;
 }
 
 .shares_equities .myShares .mySharesCard {
-    padding: 3rem 1rem;
+    padding: var(--36px) 0rem;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
     display: flex;
@@ -181,7 +180,6 @@ a.tradingHistory:hover{
 
 .my_positions {
     width: 25%;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -203,7 +201,7 @@ a.tradingHistory:hover{
     gap: 0.7rem;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0;
     width: 70%;
 }
 
@@ -219,8 +217,7 @@ a.tradingHistory:hover{
 .company_info_chart {
     width: 75%;
     display: flex;
-    gap: 4rem;
-    align-items: center;
+    gap: 0;
     padding: 0 2rem;
 }
 
@@ -262,23 +259,25 @@ a.tradingHistory:hover{
 .company_info ul li {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: var(--80px);
+    width: 100%;
 }
 
 .company_info ul li span:first-child {
     font-size:  clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
     font-weight: 500;
+    width: 50%;
 }
 
 .company_info ul li span:last-child {
     font-size:  clamp(10px,  calc( 0.3vw + 0.5rem ), 60px);
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .company_chart {
     width: 100%;
     padding: 0.5rem 1.5rem 0.5rem 0.5rem;
-    border: 1px solid #ffffff38;
+    border: 1px solid #59AFFF80;
     border-radius: 5px;
 }
 
@@ -291,7 +290,7 @@ a.tradingHistory:hover{
 
 .number_of_sales span {
     font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
-    font-weight: 500;
+    font-weight: 700;
     background: var(--Blue300);
     border-radius: 5px;
     padding: 0 0.2rem;
@@ -299,12 +298,13 @@ a.tradingHistory:hover{
 
 .number_of_sales p {
     font-size: clamp(10px,  calc( 0.3vw + 0.1rem ), 60px);
+    font-weight: 700;
     left: 10px;
 }
 
 .shares_equities .equities {
     width: 30%;
-    padding: 2rem 5rem;
+    padding: 2rem var(--50px);
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
     position: relative;
@@ -332,7 +332,7 @@ a.tradingHistory:hover{
 }
 
 .equity_item {
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

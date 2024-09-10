@@ -40,7 +40,7 @@
 
 .trading_history_filter {
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25) inset;
-    padding: 2rem 1.5rem;
+    padding: var(--sy-19px) 1.5rem;
 }
 
 .trading_history_filter h6 {
@@ -49,14 +49,14 @@
     font-weight: 700;
     text-align: center;
     width: 100%;
-    padding: 0 0 1rem;
+    padding: 0 0 var(--sy-15px);
     border-bottom: 1px solid #fff;
     margin: 0 0 1rem;
 
 }
 
 .trading_history_filter .drop_down_menu{
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--sy-16px);
 }
 .trading_history_filter .drop_down_menu p{
     font-size: clamp(10px,  calc( 0.6vw + 0.1rem ), 60px);

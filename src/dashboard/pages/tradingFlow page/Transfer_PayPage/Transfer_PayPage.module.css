@@ -44,6 +44,7 @@
 }
 .transfer_pay_side_nav li{
     transition: all 0.3s;
+    width: fit-content;
 }
 .transfer_pay_side_nav li a {
     font-family: Poppins;
@@ -52,6 +53,7 @@
     display: block;
     padding: 0.5rem 0.8rem;
     transition: all 0.3s;
+    width: fit-content;
 }
 
 

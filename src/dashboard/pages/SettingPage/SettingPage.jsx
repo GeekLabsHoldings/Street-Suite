@@ -482,7 +482,7 @@ const SettingPage = () => {
                       </p>
                     </div>
 
-                    <div className=" flex flex-col md:gap-4 sm:gap-2 mx-auto">
+                    <div className=" flex flex-col md:gap-[--sy-21px] sm:gap-2 mx-auto">
                       <div className="flex md:flex-col md:gap-2 sm:gap-8">
                         {/* change email */}
                         <div className="md:flex align-items-center">
@@ -646,7 +646,7 @@ const SettingPage = () => {
                     </div>
 
                     <div className="p-3 forborderRaduis">
-                      <ProperityAndSwitch title="Wins Percentage" />
+                      <ProperityAndSwitch title="Wins Percentage"/>
                       <ProperityAndSwitch title="Profit" />
                       <ProperityAndSwitch title="Average Gain" />
                       <ProperityAndSwitch title="Wins Percentage" />
@@ -655,7 +655,7 @@ const SettingPage = () => {
                   </div>
 
                   <div className="md:w-1/2 flex md:justify-end">
-                    <div className="md:w-10/12 flex flex-col justify-between">
+                    <div className="md:w-10/12 flex flex-col justify-between max-w-[clamp(11vw,_12vw,_220px)]">
                       <div className="sm:hidden md:visible">
                         <ProperityAndSwitch title="Appear on leaderboard" />
                       </div>
@@ -670,8 +670,10 @@ const SettingPage = () => {
                           </div>
 
                           <div className="disconnectSetting">
-                            <div className=" md:w-1/2 md:flex flex-col gap-2">
-                              <Button className="newBtn settingBtn w-full ">
+                            <div className=" md:w-[62%] md:flex flex-col gap-2">
+                              <Button className="newBtn settingBtn w-full " sx={{
+                                textWrap:"nowrap",
+                              }}>
                                 Save Changes
                               </Button>
                               <div className="sm:hidden md:visible">
@@ -742,14 +744,14 @@ const SettingPage = () => {
             onClick={indicatorHandler}
           >
             <div className="settingBorderContainer largeDiv">
-              <div className="w-10/12 md:flex py-8 mx-auto">
+              <div className="w-full md:flex py-8 mx-[--60px]">
                 <div className="md:w-1/3 sm:pb-4">
                   {/* your plan and premuim plan and its cost */}
                   <div className=" flex flex-col md:gap-2 sm:gap-4 accountBilling">
                     <h5>Account Billing</h5>
                     <p>My Current Plan:</p>
                     <div className="md:w-2/3 premuimBorder">
-                      <div className="flex flex-col align-items-center md:p-3 sm:py-3 gap-2 premuimContainer premuimDiv">
+                      <div className=" flex flex-col align-items-center md:py-[--sy-20px] px-[--40px] sm:py-3 gap-2 premuimContainer premuimDiv">
                         <div className="bottomBorder p-3 sm:w-10/12 sm:text-center md:w-fit  ">
                           <h4>Premium Plan</h4>
                         </div>
@@ -761,7 +763,7 @@ const SettingPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-10/12 ">
+                <div className="md:w-[56.333333%] ">
                   <div className="rightSecAccount flex flex-col gap-4">
                     <h5>Invoice:</h5>
 

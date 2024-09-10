@@ -41,7 +41,7 @@ const WithdrawFundsPage = () => {
           <div className={styles.method_item}>
             <input type="radio" name="transfer-methods" id="transfer-methods3" />
 
-            <div>
+            <div >
               <p>Wire</p>
               <p>Wire - HSBC</p>
             </div>
@@ -63,12 +63,12 @@ const WithdrawFundsPage = () => {
         </div>
       </div>
 
-      <div className={styles.method_item}>
-        <div>
+      <div className={" flex gap-[--35px]"}>
+        <div >
           <p>Wire</p>
           <p>Wire - HSBC</p>
         </div>
-        <img src={methodFlag} alt="" />
+        <img src={methodFlag} alt="" className=' self-end'/>
       </div>
 
       <div className={styles.wire_amount}>

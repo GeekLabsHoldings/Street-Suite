@@ -1,20 +1,50 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import styles from "./SingleCoursePage.module.css"
 import ProgressBar from '@ramonak/react-progress-bar'
+import axios from 'axios'
+import { error } from 'jquery'
+const token = localStorage.getItem("userToken");
 
 const SingleCoursePage = () => {
+    const {slug} = useParams()
+    console.log(slug);
+    
+const [details,setDetails] = useState([])
+    async function getDet() {
+        console.log(token);
+        
+        await axios
+      .get(`${process.env.REACT_APP_API_URL}courses/${slug}/`, {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then(({ data }) => {
+        console.log("asd");
+        console.log(data);
+        setDetails(data)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+        
+    }
+    useEffect(()=>{
+getDet()
+    },[])
+
     return (
         <div className=" flex flex-col lg:flex-row gap-[50px] pt-[20px]">
 
-            <div className={styles.single_course + ' w-full lg:w-2/3'}>
+            <div className={styles.single_course + ' w-full lg:w-[75%]'}>
                 {/* global course details*/}
                 <div className={styles.course_card_info + " w-full space-y-2 lg:space-y-5 mb-8"}>
                     <div className='flex items-center justify-between'>
-                        <h4>Day Trading, Swing Trading, Position Trading</h4>
-                        <div className={styles.enrolled_date}>
-                            <p>12 July</p>
-                            <span>Started</span>
+                        <h4>{details.title}</h4>
+                        <div className={`${styles.enrolled_date} !px-[--10px] !py-[--sy-6px] !rounded-[--10px]`}>
+                            <p className=' !text-[--19px]'>12 July</p>
+                            <span className=' !text-[--13px]'>Started</span>
                         </div>
                     </div>
                     <div className='flex items-end justify-end lg:justify-between'>
@@ -35,17 +65,17 @@ const SingleCoursePage = () => {
                     />
                 </div>
 
-                <div className='flex flex-col lg:flex-row gap-[20px] lg:gap-[40px] mb-6'>
+                <div className='flex flex-col lg:flex-row gap-[20px] lg:gap-[--12px] mb-6'>
                     {/* course cover */}
-                    <div className={styles.course_view + " w-full lg:w-3/4 min-h-48"}>
+                    <div className={styles.course_view + " w-full lg:w-[3/4] min-h-48"}>
 
                     </div>
 
                     {/* course overview info */}
-                    <ul className={styles.course_overview + " w-full lg:w-1/4 space-x-2 lg:space-y-4"}>
+                    <ul className={styles.course_overview + " lg:w-1/4 space-x-2 lg:space-y-4 !w-fit !px-[--32px] !rounded-[--15px]"}>
                         {/* number of people who enrolled in this course */}
-                        <li>
-                            <p>Already Enrolled</p>
+                        <li className=' !ml-0'>
+                            <p className=' text-nowrap'>Already Enrolled</p>
                             <span>
                                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.4444 4.62293C12.3883 4.61492 12.3323 4.61492 12.2762 4.62293C11.0343 4.58287 10.0488 3.56535 10.0488 2.31547C10.0488 1.04156 11.0824 0 12.3643 0C13.6382 0 14.6798 1.03355 14.6798 2.31547C14.6718 3.56535 13.6863 4.58287 12.4444 4.62293Z" fill="#53ACFF" />
@@ -55,29 +85,29 @@ const SingleCoursePage = () => {
                                     <path d="M8.11031 11.1127C8.04621 11.1046 7.9741 11.1046 7.90199 11.1127C6.42778 11.0646 5.25 9.85477 5.25 8.36453C5.25801 6.84225 6.48387 5.6084 8.01416 5.6084C9.53644 5.6084 10.7703 6.84225 10.7703 8.36453C10.7623 9.85477 9.59253 11.0646 8.11031 11.1127Z" fill="#53ACFF" />
                                     <path d="M5.50697 12.7721C4.29716 13.5813 4.29716 14.9113 5.50697 15.7125C6.88505 16.6339 9.14444 16.6339 10.5225 15.7125C11.7323 14.9033 11.7323 13.5733 10.5225 12.7721C9.15245 11.8507 6.89306 11.8507 5.50697 12.7721Z" fill="#53ACFF" />
                                 </svg>
-                                2.1k
+                                {details.subscriber_number}
                             </span>
                         </li>
 
                         {/* number of complrtion */}
-                        <li>
+                        <li className=' !ml-0'>
                             <p>Completion</p>
                             <span>
                                 <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.5804 1.46831C14.3084 1.12924 13.9214 0.934858 13.5185 0.934858H12.1413C12.0722 -0.142691 11.4071 0.00708708 11.1481 0.00708708C10.8748 0.00708708 7.50002 0.00708708 7.50002 0.00708708C7.50002 0.00708708 4.12528 0.00708708 3.85194 0.00708708C3.5929 0.00708708 2.92772 -0.142658 2.85866 0.934858H1.48142C1.07864 0.934858 0.691603 1.12931 0.419524 1.46831C0.0897582 1.87932 -0.0525367 2.47247 0.0173949 3.14133C0.0303441 3.43847 0.16675 4.96477 1.60206 6.05037C2.33149 6.60207 3.03257 6.88335 3.67036 7.02649C3.81014 7.05972 3.95155 7.08957 4.09648 7.11287C4.09848 7.11532 4.10044 7.11784 4.10249 7.12025C7.08664 10.5751 6.72221 8.57645 6.72221 11.7433C6.72221 12.9711 5.17619 12.5736 5.17619 13.516C5.17619 14.4583 3.97124 13.6828 4.08277 14.8008C4.15109 15.4862 5.99639 16 7.50008 16C9.00365 16 10.8491 15.4862 10.9174 14.8008C11.0289 13.6828 9.82384 14.4583 9.82384 13.516C9.82384 12.5736 8.27791 12.9711 8.27791 11.7433C8.27791 8.57642 7.91345 10.5751 10.8976 7.12025C10.9017 7.11545 10.9055 7.11036 10.9096 7.10552C11.6528 6.99964 12.5051 6.72587 13.3981 6.05041C14.8333 4.9648 14.9697 3.4385 14.9826 3.14136C15.0525 2.47247 14.9102 1.87926 14.5804 1.46831ZM13.8051 3.00951L13.7997 3.04148L13.8004 3.08509C13.7976 3.16969 13.7417 4.21047 12.7275 4.97753C12.4502 5.18736 12.1818 5.34639 11.9209 5.46989C11.8618 5.49619 11.803 5.52253 11.7426 5.54544C12.0989 4.44153 12.1568 3.20682 12.1578 2.2368H13.5185C13.5641 2.2368 13.6315 2.25298 13.6933 2.32988C13.7985 2.46106 13.8393 2.70873 13.8051 3.00951ZM6.66544 6.32859C6.55396 6.48327 6.38899 6.56385 6.22256 6.56385C6.09957 6.56385 5.97576 6.51992 5.87196 6.42932C4.45455 5.19258 4.33581 3.49484 4.33581 2.00064C4.33581 1.65751 4.58873 1.37932 4.90062 1.37932C5.21252 1.37932 5.46538 1.65751 5.46538 2.00064C5.46538 3.31167 5.55019 4.56243 6.57385 5.45565C6.81825 5.66892 6.85924 6.05975 6.66544 6.32859ZM2.27243 4.97753C1.25923 4.21118 1.20239 3.17166 1.19949 3.08534L1.20014 3.05569L1.19486 3.00947C1.16065 2.70876 1.20143 2.46103 1.30672 2.32985C1.36848 2.25295 1.4358 2.23677 1.48142 2.23677H2.84211C2.84302 3.06488 2.88702 4.08544 3.12102 5.05331C3.16004 5.2202 3.20328 5.38613 3.25411 5.54918C2.93876 5.41797 2.6121 5.23445 2.27243 4.97753Z" fill="#53ACFF" />
                                 </svg>
 
-                                1025
+                                {details.users_completed}
                             </span>
                         </li>
                         {/* number of people who likes this course */}
-                        <li>
+                        <li className=' !ml-0'>
                             <p>Likes</p>
                             <span>
                                 <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M18 7.73333V14.1333C18 15.0889 17.039 16 16.0312 16H10.125C8.89882 16 7.90516 15.8565 6.75 15.4667C6.3933 15.3463 5.34375 14.9333 5.34375 14.9333V7.46667L9.98691 2.29553L10.4062 0H11.25C12.1847 0 12.8431 0.707133 12.8431 1.59347V2.09193C12.8431 3.2296 12.7708 4.36627 12.6266 5.49573L12.5793 5.86667H16.0312C17.039 5.86667 18 6.7778 18 7.73333ZM0 15.7333H4.21875V6.66667H0V15.7333Z" fill="#53ACFF" />
                                 </svg>
-                                300
+                                {details.likes_number}
                             </span>
                         </li>
                     </ul>
@@ -86,7 +116,7 @@ const SingleCoursePage = () => {
                 {/* course description */}
                 <div className={styles.course_description}>
                     <h6>Course Description</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>{details.description}</p>
                 </div>
 
                 {/* course details */}

@@ -26,6 +26,8 @@ const SuiteAcademy = () => {
           },
         })
         .then((res) => {
+          console.log(res.data.results);
+          
           setCourses(res.data.results);
         });
     } catch (error) {
@@ -147,7 +149,7 @@ const SuiteAcademy = () => {
                   }}
                 >
                   <div className={styles.border_animate}>
-                    <div className={styles.training_card + " flex gap-[16px]"}>
+                    <div className={styles.training_card + " flex gap-[16px] !pt-[--sy-25px] !pb-[--sy-21px]"}>
                       <img
                         src={advancedBadge}
                         alt=""
@@ -162,13 +164,13 @@ const SuiteAcademy = () => {
                           " w-3/4 space-y-4 lg:space-y-5"
                         }
                       >
-                        <h4>{course.title}</h4>
-                        <div className="my-[16px] hidden lg:flex items-center gap-[50px]">
-                          <span>{course.module_numbers} Modules</span>
-                          <span>{course.duration} Week Completion </span>
+                        <h4 className=" !text-[--20px] font-semibold">{course.title}</h4>
+                        <div className="!my-[--sy-12px] hidden lg:flex items-center gap-[50px]">
+                          <span className=" !text-[--sy-12px] !text-[#979797]">{course.module_numbers} Modules</span>
+                          <span className=" !text-[--sy-12px] !text-[#979797]">{course.duration} Week Completion </span>
                         </div>
                         <ul>
-                          <li>
+                          <li className=" !text-[--13px]">
                             <svg
                               viewBox="0 0 16 17"
                               fill="none"
@@ -201,7 +203,7 @@ const SuiteAcademy = () => {
                             </svg>
                             {course.subscriber_number}
                           </li>
-                          <li>
+                          <li className=" !text-[--13px]">
                             <svg
                               viewBox="0 0 15 16"
                               fill="none"
@@ -214,7 +216,7 @@ const SuiteAcademy = () => {
                             </svg>
                             {course.completed}
                           </li>
-                          <li>
+                          <li className=" !text-[--13px]">
                             <svg
                               viewBox="0 0 18 16"
                               fill="none"
@@ -227,7 +229,7 @@ const SuiteAcademy = () => {
                             </svg>
                             {course.likes_number}
                           </li>
-                          <li className="d-none d-lg-flex">
+                          <li className="d-none d-lg-flex !text-[--13px] min-w-fit">
                             <svg
                               viewBox="0 0 21 18"
                               fill="none"
@@ -390,14 +392,15 @@ const SuiteAcademy = () => {
             name="search"
             id="search"
             placeholder="Search By.."
+            className=" placeholder:!text-[#5D5D5D] text-[--12px]"
           />
           <img src={searchIcon} alt="searchIcon" />
         </div>
 
         {/* title */}
-        <h6>Where to start on Street Suite?</h6>
+        <h6 className=" tracking-widest">Where to start on Street Suite?</h6>
 
-        <ul>
+        <ul className=" !list-outside mx-[--22px]">
           <li>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt <a href="">ut labore et dolore</a>
@@ -413,9 +416,9 @@ const SuiteAcademy = () => {
         </ul>
 
         {/* title */}
-        <h6>Where to start on Street Suite?</h6>
+        <h6 className=" tracking-widest">Where to start on Street Suite?</h6>
 
-        <ul>
+        <ul className=" !list-outside mx-[--22px]">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           <li>
             {" "}
@@ -427,9 +430,9 @@ const SuiteAcademy = () => {
         </ul>
 
         {/* title */}
-        <h6>Where to start on Street Suite?</h6>
+        <h6 className=" tracking-widest">Where to start on Street Suite?</h6>
 
-        <ul>
+        <ul className=" !list-outside mx-[--22px]">
           <li>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt <a href="">ut labore et dolore</a>

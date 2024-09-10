@@ -169,6 +169,7 @@
     padding: 1px;
     border-radius: 15px;
     z-index: 0;
+    overflow: hidden;
 }
 
 .border_animate::before {
@@ -210,25 +211,27 @@
 }
 
 .course_card .course_card_info .enrolled_date {
-    padding: 0.5rem;
-    border-radius: 5px;
+    padding: var(--6px) var(--9px);
+    border-radius: var(--10px);
     background-color: var(--Blue300);
     text-align: center;
 }
 
 .course_card .course_card_info .enrolled_date p {
     font-family: Poppins;
-    font-size: clamp(10px,  calc( 0.4vw + 0.5rem ), 60px);
+    font-size: var(--16px);
     font-weight: 700;
     text-wrap: nowrap;
     color: #fff;
+    line-height: var(--20px) !important;
 }
 
 .course_card .course_card_info .enrolled_date span {
-    font-size: clamp(8px,  calc( 0.3vw + 0.4rem ), 60px);
+    font-size: var(--11px);
     font-weight: 400;
     text-wrap: nowrap;
     color: #fff;
+    line-height: var(--16px) !important;
 }
 
 .course_card .course_card_info span.completed {
@@ -295,4 +298,11 @@
     .course_navBar ul {
         display: none;
     }
+}
+.border_animate:hover::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+.border_animate::before {
+    width: 250%;
+    height: 450%;
 }

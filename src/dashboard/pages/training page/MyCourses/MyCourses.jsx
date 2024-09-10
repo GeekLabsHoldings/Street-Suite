@@ -98,32 +98,33 @@ const MyCourses = () => {
                         name="search"
                         id="search"
                         placeholder="Search By.."
+                        className='placeholder:!text-[#5d5d5d] !text-[--12px]'
                     />
                     <img src={searchIcon} alt="searchIcon" />
                 </div>
 
 
                 {/* title */}
-                <h6>Where to start on Street Suite?</h6>
+                <h6 className=" tracking-widest">Where to start on Street Suite?</h6>
 
-                <ul>
+                <ul className=" !list-outside mx-[--22px]">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <a href="">ut labore et dolore</a></li>
                     <li>magna aliqua. Ut enim ad <a href="">minim veniam, quis</a> nostrud exercitation</li>
                     <li>ullamco laboris nisi ut aliquip ex ea <a href="">commodo consequat.</a></li>
                 </ul>
 
                 {/* title */}
-                <h6>Where to start on Street Suite?</h6>
+                <h6 className=" tracking-widest">Where to start on Street Suite?</h6>
 
-                <ul>
+                <ul className=" !list-outside mx-[--22px]">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                     <li> sed do eiusmod tempor incididunt <a href="">ut labore et dolore</a> magna aliqua.</li>
                 </ul>
 
                 {/* title */}
-                <h6>Where to start on Street Suite?</h6>
+                <h6 className=" tracking-widest">Where to start on Street Suite?</h6>
 
-                <ul>
+                <ul className=" !list-outside mx-[--22px]">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <a href="">ut labore et dolore</a></li>
                     <li>magna aliqua. Ut enim ad <a href="">minim veniam, quis</a> nostrud exercitation </li>
                     <li>ullamco laboris nisi ut aliquip ex ea <a href="">commodo consequat</a>.</li>
