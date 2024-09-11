@@ -3,7 +3,7 @@ import SearchBar from '../../components/searchBar/SearchBar'
 import SearchBarStyles from "../../components/searchBar/SearchBar.module.css";
 import styles from "./TradingFlowPage.module.css"
 
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import NotificationWindow from '../../UI-components/NotificationWindow/NotificationWindow';
 
@@ -13,7 +13,7 @@ const TradingFlowPage = () => {
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-
+const location = useLocation()
 
   return (
 
@@ -25,10 +25,10 @@ const TradingFlowPage = () => {
           <div className={SearchBarStyles.navBar} >
             <ul>
               <li>
-                <NavLink to="transfer&pay">Transfer & Pay</NavLink>
+                <NavLink to="transfer&pay" className={`${location.pathname.includes("transfer&pay") ? " !font-bold" : "font-normal"}`}>Transfer & Pay</NavLink>
               </li>
               <li>
-                <NavLink to="private-equity">Private Equities</NavLink>
+                <NavLink to="private-equity" className={`${location.pathname.includes("private-equity") ? " !font-bold" : "font-normal"}`}>Private Equities</NavLink>
               </li>
             </ul>
           </div>

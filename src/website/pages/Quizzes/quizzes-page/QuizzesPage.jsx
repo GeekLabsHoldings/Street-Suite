@@ -77,7 +77,8 @@ const QuizzesPage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const rect = navRef.current.getBoundingClientRect();
+      if (navRef.current) {
+        const rect = navRef.current.getBoundingClientRect();
       console.log(rect.top); // Log the element's position
 
       // Check if the top of the element is less than or equal to 0
@@ -86,6 +87,8 @@ const QuizzesPage = () => {
       } else {
         setIsSticky(false);
       }
+      }
+      
     };
 
     // Listen for the scroll event

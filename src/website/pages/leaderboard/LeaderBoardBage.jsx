@@ -62,7 +62,7 @@ const LeaderBoardPage = () => {
       if ($(".Ranking").parent().hasClass("selected")) {
         $(".featured-stories").slideUp(300);
         $(".leaderBoard-guid").slideDown(300);
-        $(".featuredStories.border-animate").hide()
+        $(".featuredStories.border-animate").hide();
       }
 
       if ($(".Ranking").parent().hasClass("not-selected")) {
@@ -78,7 +78,9 @@ const LeaderBoardPage = () => {
       .siblings(".tableItemCollaps")
       .slideToggle(300);
   };
-
+  const [firstSpan, setFirstSpan] = useState(false);
+  const [secondSpan, setSecondSpan] = useState(true);
+  
   return (
     <>
       <Helmet>
@@ -104,26 +106,52 @@ const LeaderBoardPage = () => {
             <div className="ranking-tabs">
               <ul class="tabs-nav grid grid-cols-3 p-0 m-0 list-unstyled">
                 {/* taps that show the appropriate content in leaderBoard page */}
-                <li>
+                <li onClick={()=>{
+                  setFirstSpan(false)
+                  setSecondSpan(true)
+                }}>
                   <a href="#tab-1" className="Biggest-Winners">
                     Biggest Winners
                   </a>
                 </li>
-                <li>
+                <li onClick={()=>{
+                  setFirstSpan(true)
+                  setSecondSpan(true)
+                }}>
                   <a href="#tab-2" className="Biggest-Losers">
                     Biggest Losers
                   </a>
                 </li>
-                <li>
+                <li onClick={()=>{
+                  setFirstSpan(true)
+                  setSecondSpan(false)
+                }}>
                   <a href="#tab-3" className="Ranking">
                     Ranking
                   </a>
                 </li>
               </ul>
-              <div class="tabs-stage tabs-content">
+             <div className="tabsWrapper relative">
+                {firstSpan ? (
+                  <span
+                    className="first absolute w-[45px] h-[40px] border-[#53acff] bg-transparent border-[1.5px]  border-solid border-b-0 border-r-0  rounded-tl-[--18px] top-[-1px] left-[-4.5px]"
+                    style={{
+                      boxShadow: "-9px -15px 2px #23272f",
+                    }}
+                  ></span>
+                ) : null}
+                {secondSpan ? (
+                  <span
+                    className="second absolute w-[45px] h-[40px] border-[#53acff] bg-transparent border-[1.5px]  border-solid border-b-0 border-l-0  rounded-tr-[--18px] top-[-1px] right-[-4.5px]"
+                    style={{
+                      boxShadow: "9px -15px 2px #1e1f21",
+                    }}
+                  ></span>
+                ) : null}
+             <div class="tabs-stage tabs-content relative">
                 {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
                 <div id="tab-1" className="tab">
-                  <div className={`${styles.table} relative`}>
+                  <div className={`${styles.table} relative !mb-[--sy-40px]`}>
                     {Array(9)
                       .fill(" ")
                       .map((d, i) => {
@@ -205,11 +233,12 @@ const LeaderBoardPage = () => {
                         );
                       })}
                   </div>
+                  <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none">Load more</button>
                 </div>
 
                 {/* Biggest losers content that show when user click on Biggest losers tab in leaderBoard page */}
                 <div id="tab-2" className="tab">
-                  <div className={`${styles.table} relative`}>
+                  <div className={`${styles.table} relative !mb-[--sy-40px]`}>
                     {Array(9)
                       .fill(" ")
                       .map((d, i) => {
@@ -291,6 +320,7 @@ const LeaderBoardPage = () => {
                         );
                       })}
                   </div>
+                  <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none">Load more</button>
                 </div>
 
                 {/* ranking content that show when user click on ranking tab in leaderBoard page */}
@@ -802,118 +832,124 @@ const LeaderBoardPage = () => {
                       </div>
                     </div>
                   </div>
+                  <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none mt-[--sy-40px]">Load more</button>
+
                 </div>
               </div>
+             </div>
             </div>
           </div>
 
           {/* trader types on the side in leaderboard page */}
           <div className="side-trader w-full lg:w-[30%]">
             <div className="trader-types-wrapper relative rounded-[--11px] border-animate">
-             
               <div
                 className={`trader-types !rounded-[--11px] !p-[2px] !border-none !border-0 relative  ${
                   isSideFilterOpen ? "open" : ""
                 } w-full`}
               >
                 <div className=" relative z-[50] bg-[#202020] !rounded-[--11px] px-[--30px] py-[--sy-22px]">
-                <button
-                  className="toggle-side-fiter block lg:hidden"
-                  onClick={() => setIsSideFilterOpen(!isSideFilterOpen)}
-                >
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <button
+                    className="toggle-side-fiter block lg:hidden"
+                    onClick={() => setIsSideFilterOpen(!isSideFilterOpen)}
                   >
-                    <path
-                      d="M17.1554 0H0.84473C0.0952696 0 -0.282906 0.909351 0.248129 1.44039L6.74999 7.94324V15.1875C6.74999 15.4628 6.88433 15.7208 7.10989 15.8787L9.92239 17.8468C10.4773 18.2352 11.25 17.8415 11.25 17.1555V7.94324L17.752 1.44039C18.282 0.910406 17.9064 0 17.1554 0Z"
-                      fill="#53ACFF"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.1554 0H0.84473C0.0952696 0 -0.282906 0.909351 0.248129 1.44039L6.74999 7.94324V15.1875C6.74999 15.4628 6.88433 15.7208 7.10989 15.8787L9.92239 17.8468C10.4773 18.2352 11.25 17.8415 11.25 17.1555V7.94324L17.752 1.44039C18.282 0.910406 17.9064 0 17.1554 0Z"
+                        fill="#53ACFF"
+                      />
+                    </svg>
+                  </button>
 
-                <h6>Trader Types</h6>
+                  <h6>Trader Types</h6>
 
-                <div className="check-trade-time">
-                  <label htmlFor="Day">
-                    {" "}
-                    Day
-                    <input type="radio" id="Day" name="trade-time" />
-                  </label>
-                  <label htmlFor="Swing">
-                    Swing
-                    <input type="radio" id="Swing" name="trade-time" />
-                  </label>
-                  <label htmlFor="Long">
-                    Long
-                    <input type="radio" id="Long" name="trade-time" />
-                  </label>
-                </div>
-
-                <div className="check-trade-during">
-                  <label htmlFor="1-M">
-                    {" "}
-                    1 M
-                    <input type="radio" id="1-M" name="trade-during" />
-                  </label>
-                  <label htmlFor="6-M">
-                    6 M
-                    <input type="radio" id="6-M" name="trade-during" />
-                  </label>
-                  <label htmlFor="1-Y">
-                    1 Y
-                    <input type="radio" id="1-Y" name="trade-during" />
-                  </label>
-                  <label htmlFor="2-Y">
-                    2 Y
-                    <input type="radio" id="2-Y" name="trade-during" />
-                  </label>
-                  <label htmlFor="all-time">
-                    All Time
-                    <input type="radio" id="all-time" name="trade-during" />
-                  </label>
-                </div>
-
-                <div className="leaderBoard-guid">
-                  <h5>Leader Board</h5>
-                  <p>
-                    The leaderboard shows top traders based on their performance
-                  </p>
-
-                  <div className="check-leaderBoard-guid">
-                    <label htmlFor="Profit">
+                  <div className="check-trade-time">
+                    <label htmlFor="Day">
                       {" "}
-                      Profit
-                      <input type="radio" id="Profit" name="leaderBoard-guid" />
+                      Day
+                      <input type="radio" id="Day" name="trade-time" />
                     </label>
-                    <label htmlFor="Gain-Percentage">
-                      Gain Percentage
-                      <input
-                        type="radio"
-                        id="Gain-Percentage"
-                        name="leaderBoard-guid"
-                      />
+                    <label htmlFor="Swing">
+                      Swing
+                      <input type="radio" id="Swing" name="trade-time" />
                     </label>
-                    <label htmlFor="Win-Streak">
-                      Win Streak
-                      <input
-                        type="radio"
-                        id="Win-Streak"
-                        name="leaderBoard-guid"
-                      />
+                    <label htmlFor="Long">
+                      Long
+                      <input type="radio" id="Long" name="trade-time" />
                     </label>
                   </div>
-                </div>
+
+                  <div className="check-trade-during">
+                    <label htmlFor="1-M">
+                      {" "}
+                      1 M
+                      <input type="radio" id="1-M" name="trade-during" />
+                    </label>
+                    <label htmlFor="6-M">
+                      6 M
+                      <input type="radio" id="6-M" name="trade-during" />
+                    </label>
+                    <label htmlFor="1-Y">
+                      1 Y
+                      <input type="radio" id="1-Y" name="trade-during" />
+                    </label>
+                    <label htmlFor="2-Y">
+                      2 Y
+                      <input type="radio" id="2-Y" name="trade-during" />
+                    </label>
+                    <label htmlFor="all-time">
+                      All Time
+                      <input type="radio" id="all-time" name="trade-during" />
+                    </label>
+                  </div>
+
+                  <div className="leaderBoard-guid">
+                    <h5>Leader Board</h5>
+                    <p>
+                      The leaderboard shows top traders based on their
+                      performance
+                    </p>
+
+                    <div className="check-leaderBoard-guid">
+                      <label htmlFor="Profit">
+                        {" "}
+                        Profit
+                        <input
+                          type="radio"
+                          id="Profit"
+                          name="leaderBoard-guid"
+                        />
+                      </label>
+                      <label htmlFor="Gain-Percentage">
+                        Gain Percentage
+                        <input
+                          type="radio"
+                          id="Gain-Percentage"
+                          name="leaderBoard-guid"
+                        />
+                      </label>
+                      <label htmlFor="Win-Streak">
+                        Win Streak
+                        <input
+                          type="radio"
+                          id="Win-Streak"
+                          name="leaderBoard-guid"
+                        />
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* featured-stories section in leaderboard */}
             <div className="featuredStories relative rounded-[--11px] border-animate">
-              
               <div className="featured-stories w-full relative z-[3] border-none border-0">
                 <h5>Featured stories</h5>
 
@@ -1080,7 +1116,6 @@ const LeaderBoardPage = () => {
 
             {/* connect your broker section in leaderboard */}
             <div className="ConnectYourBrokerSec relative rounded-[--11px] border-animate">
-              
               <div className="ConnectYourBroker w-full relative z-[3] border-0 border-none">
                 <h6>Connect your broker to see yourself on our leaderboard </h6>
 

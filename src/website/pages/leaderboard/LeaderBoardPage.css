@@ -9,7 +9,6 @@
 
 .ranking-tabs {
     background: linear-gradient(336deg, rgba(34, 36, 38, 1) 84%, rgba(37, 103, 168, 0.6166841736694677) 100%);
-    border-radius: clamp(10px, calc(0.5vw + 0.1rem), 600px);
     overflow: hidden;
 }
 
@@ -20,7 +19,7 @@
 
 .leaderBoard-wrapper .ranking-tabs .tabs-nav {
     height: clamp(9vh, 10vh, 200px);
-background-color: #252b31;
+background-color: #252c33;
 
     align-items: end;
 }
@@ -97,10 +96,12 @@ background-color: #252b31;
     font-size: var(--23px);
 }
 
-.leaderBoard-wrapper .tabs-content {
+.leaderBoard-wrapper .tabsWrapper {
     border: clamp(1px, calc(0.02vw + 0.1rem), 2px) solid rgba(83, 172, 255, 1);
     border-top: 0;
     border-radius: 0 0 clamp(10px, calc(0.5vw + 0.1rem), 600px) clamp(10px, calc(0.5vw + 0.1rem), 600px);
+}
+.leaderBoard-wrapper .tabs-content {
     padding: clamp(16px, calc(2vw + 0.1rem), 1000px);
 }
 

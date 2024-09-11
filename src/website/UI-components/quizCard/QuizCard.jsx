@@ -86,7 +86,7 @@ const QuizCard = ({
           </div>
         )}
 
-        <div className="quiz-details flex items-center justify-between">
+        <div className="quiz-details flex items-center gap-[--30px]">
           <span>
             <svg
               width="22"

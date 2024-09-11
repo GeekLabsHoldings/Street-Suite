@@ -1,12 +1,12 @@
 .aboutUs-wrapper {
-    background: linear-gradient(0deg, rgba(83, 172, 255, 0.342) 0%, rgba(34, 36, 39, 0) 50%);
+    background: linear-gradient(0deg, rgba(83, 172, 255, 0.342) 0%, rgba(34, 36, 39, 0) 30%);
     width: 100%;
     overflow: hidden;
 }
 
 .aboutUs-card {
     position: absolute;
-    top: 50%;
+    top: 55%;
     right: 4rem;
     transform: translateY(-50%);
     width: 300px;
@@ -83,7 +83,7 @@
 
 .aboutUs-wrapper .aboutUs-card .aboutUs-card-body .collapse-item .collapse-header {
     font-family: Poppins;
-    font-size: 13px;
+    font-size: var(--13px);
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0em;
@@ -108,7 +108,7 @@
 .aboutUs-wrapper .aboutUs-card .aboutUs-card-body .collapse-item .collapse-body p {
 
     font-family: Poppins;
-    font-size: 11px;
+    font-size: var(--11px);
     font-weight: 400;
     line-height: 17px;
     letter-spacing: 0em;

@@ -1,0 +1,10 @@
+
+.apexcharts-tooltip {
+    display: none !important;
+}
+.apexcharts-tooltip * ,.apexcharts-yaxistooltip *,.apexcharts-xaxistooltip * {
+    display: none !important;
+}
+.key-stats-list span {
+    color: white !important;
+}

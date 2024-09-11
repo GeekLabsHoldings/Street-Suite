@@ -236,7 +236,7 @@ const QuizResultsPage = () => {
       </div>
 
       <div className="quiz-view get-better-card p-20 flex flex-col lg:flex-row items-center gap-8 mb-[20px]">
-        <h5>Get Better with ST Suite Trainings</h5>
+        <h5>Get Better <br /> with ST Suite Trainings</h5>
         <QuizCard horizontal={true} title="Stock Market 101 - Advanced" />
       </div>
 

@@ -125,7 +125,7 @@ const OneBlog = ({ filter }) => {
     <div className="md:flex sm:my-2">
       <div className="md:w-3/5 verticalSeparator ">
         {blogsList
-          .slice(1, 4)
+          .slice(0, 4)
           .filter((blog) => {
             console.log(blog.categories, filter);
             if (filter === "All") {
@@ -152,7 +152,7 @@ const OneBlog = ({ filter }) => {
                   className="block sm:w-7/12 md:w-1/2"
                 >
                   <div className=" oneBlogCont">
-                    <h3>{blog?.title}</h3>
+                    <h3 className=" hover:text-[#53ACFF] transition-colors duration-200">{blog?.title}</h3>
                     <p>{blog?.description}</p>
                     <TimeForRead
                       datePosted={timeAgo(blog?.date_posted)}
@@ -287,7 +287,7 @@ const OneBlog = ({ filter }) => {
           </div>
         </div>
 
-        {blogsList.slice(4, 8).map((blog, idx) => {
+        {blogsList.slice(4, 9).map((blog, idx) => {
           return (
            <div className=" pt-[--sy-40px] px-[--35px]">
            <div className=" flex gap-[--18px] items-center">
