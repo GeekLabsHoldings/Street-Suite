@@ -9,12 +9,12 @@ const OldArticle = ({classname})=>{
 
     return(
 // section for every old article or blog contains its name and date of publish
-        <div className={`flex justify-between pb-8 bottomBorder cursor-pointer ${classname}`} onClick={onClickHandler}>
-        <div className='w-1/3 minPrt'>
+        <div className={`flex justify-between pb-8 px-[--18px] bottomBorder cursor-pointer ${classname}`} onClick={onClickHandler}>
+        <div className=' minPrt'>
             <p>25 MINS AGO</p>
         </div>
-        <div className='w-2/3 blogTitle'>
-            <h6>China Kicks U.S Butt In The Latest Whatever</h6>
+        <div className=' blogTitle'>
+            <h6>China Kicks U.S Butt In The <br /> Latest Whatever</h6>
         </div>
     </div>
     )

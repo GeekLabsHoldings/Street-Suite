@@ -79,7 +79,6 @@ const QuizzesPage = () => {
     const handleScroll = () => {
       if (navRef.current) {
         const rect = navRef.current.getBoundingClientRect();
-      console.log(rect.top); // Log the element's position
 
       // Check if the top of the element is less than or equal to 0
       if (rect.top < 1) {
@@ -126,7 +125,7 @@ const QuizzesPage = () => {
           </p>
         </Hero>
 
-        {location == "/quizzes" ? <div ref={navRef} className={`${isSticky ? "bg-[#2a2a2a]" : "bg-transparent"} sticky top-0 z-10 quizzes-filter py-[--sy-29px]`} style={{
+        {location == "/quizzes" ? <div ref={navRef} className={`${isSticky ? "bg-[#2a2a2a]" : "bg-transparent"} sticky top-0 z-10 quizzes-filter pb-[--sy-29px] pt-[--sy-10px]`} style={{
           boxShadow: "0px 28px 30.7px 0px #00000040"
         }}>
           {/* search input to search for quizzes */}

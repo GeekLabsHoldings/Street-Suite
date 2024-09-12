@@ -24,6 +24,7 @@ const [details,setDetails] = useState([])
         console.log("asd");
         console.log(data);
         setDetails(data)
+    
       })
       .catch((err) => {
         console.log(err);
@@ -126,16 +127,14 @@ getDet()
                     {/* course content  */}
                     <div className={styles.course_details_card}>
                         <ul className='flex flex-col'>
-                            <li className={styles.completed}><Link to="/dashboard/training/my-courses/single-course">Intro</Link></li>
-                            <li className={styles.recent}><Link to="/dashboard/training/my-courses/single-course">What is a bull Flag</Link></li>
-                            <li><Link to="/dashboard/training/my-courses/single-course">Key Characteristics of a Bull Flag</Link></li>
-                            <li><Link to="/dashboard/training/my-courses/single-course">Significance of the Bull Flag Pattern</Link></li>
+                            {details?.modules?.slice(0,Math.ceil(details?.modules?.length / 2)).map((i,idx)=>{
+                                return <li className=' hover:text-[#53ACFF] hover:font-bold cursor-pointer transition-colors duration-200' key={idx}>{i.title}</li>
+                            })}
                         </ul>
                         <ul className='flex flex-col'>
-                            <li><Link to="/dashboard/training/my-courses/single-course">How to Identify and Trade the Bull Flag Pattern</Link></li>
-                            <li><Link to="/dashboard/training/my-courses/single-course">Successful VS Failed bull flag patterns</Link></li>
-                            <li><Link to="/dashboard/training/my-courses/single-course">Summary</Link></li>
-                            <li><Link to="/dashboard/training/my-courses/single-course">Assessment</Link></li>
+                        {details?.modules?.slice(Math.ceil(details?.modules?.length / 2) ,).map((i,idx)=>{
+                                return <li className=' hover:text-[#53ACFF] hover:font-bold cursor-pointer transition-colors duration-200'>{i.title}</li>
+                            })}
                         </ul>
                     </div>
                 </div>
@@ -143,8 +142,8 @@ getDet()
                 {/* buttons action that make user takes any action he needs */}
                 <div className={styles.course_actions_btn}>
                     <Link to="/dashboard/training/single-training" className={styles.restartCourse}>Restart Course </Link>
-                    <Link to="/dashboard/training/single-training" className={styles.continueCourse}>Continue</Link>
-                    <Link to="/dashboard/training/single-training" className={styles.startCourse + " hidden"}>Start Course</Link>
+                    <Link to={`/dashboard/training/single-training/${slug}`} className={styles.continueCourse}>Continue</Link>
+                    <Link to={`/dashboard/training/single-training/${slug}`} className={styles.startCourse + " hidden"}>Start Course</Link>
                 </div>
 
             </div>

@@ -234,7 +234,7 @@ function QuizPage() {
         </div>
 
         <div className="quiz-questions">
-          <div className="quiz-question-view mb-[20px] lg:mb-10">
+          <div className="quiz-question-view mb-[20px] lg:mb-10 px-[--20px]">
             <h5 className=" !text-[--33px]">{questions[currentQuestionIndex]?.title}</h5>
           </div>
           <div className="quiz-answers grid grid-cols-2 gap-[10px] lg:gap-6">

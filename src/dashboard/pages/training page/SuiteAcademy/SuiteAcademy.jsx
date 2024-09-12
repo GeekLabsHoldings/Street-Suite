@@ -143,12 +143,12 @@ const SuiteAcademy = () => {
             {Array.isArray(courses) && courses.length ? (
               courses?.map((course) => (
                 <Link
-                  to={`/dashboard/training/single-training/${course.id}`}
+                  to={`/dashboard/training/my-courses/${course.slug}`}
                   onClick={() => {
                     setCurrentCourse(course);
                   }}
                 >
-                  <div className={styles.border_animate}>
+                  <div className={`${styles.border_animate} overflow-hidden before:!w-[500%] before:transition-all before:duration-700 before:!h-[500%]`}>
                     <div className={styles.training_card + " flex gap-[16px] !pt-[--sy-25px] !pb-[--sy-21px]"}>
                       <img
                         src={advancedBadge}
@@ -165,9 +165,13 @@ const SuiteAcademy = () => {
                         }
                       >
                         <h4 className=" !text-[--20px] font-semibold">{course.title}</h4>
-                        <div className="!my-[--sy-12px] hidden lg:flex items-center gap-[50px]">
-                          <span className=" !text-[--sy-12px] !text-[#979797]">{course.module_numbers} Modules</span>
-                          <span className=" !text-[--sy-12px] !text-[#979797]">{course.duration} Week Completion </span>
+                        <div className="!my-[--sy-12px] hidden lg:flex items-center gap-[--68px]">
+                          <span className=" !text-[#979797]" style={{
+                            fontSize:"var(--13px)"
+                          }}>{course.number_of_modules}</span>
+                          <span className="!text-[#979797]" style={{
+                            fontSize:"var(--13px)"
+                          }}>{course.duration} Completion </span>
                         </div>
                         <ul>
                           <li className=" !text-[--13px]">

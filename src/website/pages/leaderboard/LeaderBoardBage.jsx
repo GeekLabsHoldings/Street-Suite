@@ -103,7 +103,7 @@ const LeaderBoardPage = () => {
 
         <div className="px-[10%]  flex flex-col lg:flex-row items-start  pb-16 gap-6 lg:gap-12">
           <div className="ranking-container w-full lg:w-2/3">
-            <div className="ranking-tabs">
+            <div className="ranking-tabs rounded-[--11px]">
               <ul class="tabs-nav grid grid-cols-3 p-0 m-0 list-unstyled">
                 {/* taps that show the appropriate content in leaderBoard page */}
                 <li onClick={()=>{
@@ -131,7 +131,7 @@ const LeaderBoardPage = () => {
                   </a>
                 </li>
               </ul>
-             <div className="tabsWrapper relative">
+             <div className="tabsWrapper relative rounded-[--12px]">
                 {firstSpan ? (
                   <span
                     className="first absolute w-[45px] h-[40px] border-[#53acff] bg-transparent border-[1.5px]  border-solid border-b-0 border-r-0  rounded-tl-[--18px] top-[-1px] left-[-4.5px]"
@@ -148,7 +148,7 @@ const LeaderBoardPage = () => {
                     }}
                   ></span>
                 ) : null}
-             <div class="tabs-stage tabs-content relative">
+             <div class="tabs-stage tabs-content relative rounded-[--12px]">
                 {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
                 <div id="tab-1" className="tab">
                   <div className={`${styles.table} relative !mb-[--sy-40px]`}>
@@ -175,13 +175,7 @@ const LeaderBoardPage = () => {
                               }}
                             >
                               <div
-                                className={` w-full rounded-[--12px] flex gap-[--50px] items-center  px-[--45px] py-[--16px] relative z-[5] ${
-                                  i == 0
-                                    ? "!bg-[#53ACFF87] hover:!bg-[#53ACFF]"
-                                    : i == 1 || i == 2
-                                    ? "bg-[#53ACFF1F] hover:!bg-[#53ACFF]"
-                                    : "bg-[#414040] hover:!bg-[#53ACFF]"
-                                }`}
+                                className={` w-full rounded-[--12px] flex gap-[--50px] items-center  px-[--45px] py-[--16px] relative z-[5] `}
                               >
                                 <span
                                   className={`${
@@ -211,7 +205,7 @@ const LeaderBoardPage = () => {
                                 style={{
                                   background: `${
                                     i < 3
-                                      ? "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 96.49%)"
+                                      ? "linear-gradient(110.76deg, rgb(28 47 65 / 50%) 20.43%, rgba(255, 255, 255, 0) 96.49%)"
                                       : null
                                   }`,
                                 }}

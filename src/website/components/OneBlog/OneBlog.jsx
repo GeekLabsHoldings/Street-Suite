@@ -123,7 +123,7 @@ const OneBlog = ({ filter }) => {
 
   return (
     <div className="md:flex sm:my-2">
-      <div className="md:w-3/5 verticalSeparator ">
+      <div className="md:w-[65%] verticalSeparator !px-[--13px]">
         {blogsList
           .slice(0, 4)
           .filter((blog) => {
@@ -137,7 +137,7 @@ const OneBlog = ({ filter }) => {
           })
           .map((blog, idx) => {
             return (
-              <div className=" pt-[--sy-40px] px-[--5px]">
+              <div className=" pt-[--sy-40px]">
            <div className=" flex gap-[--18px] items-center">
            {blog.categories.map((c,i) =>{
             return <p className=" text-[#53ACFF] text-[--16px]">{c.text}</p>})}
@@ -289,7 +289,7 @@ const OneBlog = ({ filter }) => {
 
         {blogsList.slice(4, 9).map((blog, idx) => {
           return (
-           <div className=" pt-[--sy-40px] px-[--35px]">
+           <div className=" pt-[--sy-40px]">
            <div className=" flex gap-[--18px] items-center">
            {blog.categories.map((c,i) =>{
             return <p className=" text-[#53ACFF] text-[--16px]">{c.text}</p>})}
@@ -304,7 +304,7 @@ const OneBlog = ({ filter }) => {
                 className="block sm:w-7/12 md:w-1/2"
               >
                 <div className=" oneBlogCont">
-                  <h3>{blog?.title}</h3>
+                  <h3 className="hover:text-[#53ACFF] transition-colors duration-200">{blog?.title}</h3>
                   <p>{blog?.description}</p>
                   <TimeForRead
                     datePosted={timeAgo(blog?.date_posted)}
@@ -334,9 +334,9 @@ const OneBlog = ({ filter }) => {
         })}
       </div>
 
-      <div className="md:w-2/5 sm:w-full mx-auto flex flex-col align-items-center ">
+      <div className="md:w-[35%] sm:w-full mx-auto flex flex-col px-[--13px]">
         {/* one blog appear in large screen and appear in another form and position in small screens */}
-        <div className="md:visible sm:hidden w-9/12 flex md:pe-3 py-4 bottomBorder cursor-pointer">
+        <div className="md:visible sm:hidden flex md:pe-3 py-4 bottomBorder cursor-pointer w-full justify-center">
           <Link
             to={`/blogs/${titleToSlug(blogsList[0].title)}`}
             target="_blank"
@@ -367,12 +367,12 @@ const OneBlog = ({ filter }) => {
 
         {/* about our leader board */}
         <div
-          className="md:visible sm:hidden w-9/12 flex justify-center pe-3 py-5 bottomBorder cursor-pointer"
+          className="md:visible w-full flex justify-center py-5 bottomBorder cursor-pointer"
           onClick={leaderboardNavigator}
         >
           <div className=" w-11/12 forGradBG winnerAndLoserBorder">
             <div className="formPart flex flex-col align-items-center forGradBG">
-              <div className="w-5/6 flex justify-center bottomBorder pt-10 pb-8">
+              <div className="w-5/6 flex !justify-center bottomBorder pt-10 pb-8">
                 <div className="w-4/5 text-center flex flex-col gap-3 winnerFont">
                   <h5>Biggest Winners</h5>
                   <OneWinner imgUrl={FirstAvatar} num={1} winner={true} />
@@ -392,7 +392,7 @@ const OneBlog = ({ filter }) => {
           </div>
         </div>
 
-        <div className="md:w-9/12 sm:w-full">
+        <div className="w-full sm:w-full">
           {/* ad section appear in large screens and appear in different form and position in small screen */}
           <div className="md:visible sm:hidden flex justify-end py-7 ">
             <div className="w-11/12">
@@ -411,7 +411,7 @@ const OneBlog = ({ filter }) => {
           </div>
 
           {/* one blog */}
-          <div className="md:visible sm:hidden flex justify-between bottomBorder py-8 cursor-pointer ">
+          <div className="pl-[--23px] md:visible sm:hidden flex justify-between bottomBorder py-8 cursor-pointer ">
             <div className="w-5/12">
               <div className="w-11/12">
                 <div className=" chinaImgDiv h-28"></div>
@@ -419,7 +419,7 @@ const OneBlog = ({ filter }) => {
             </div>
 
             <div className="w-6/12 flex flex-col gap-3 ">
-              <div className="w-8/12 flex flex-col gap-3">
+              <div className=" flex flex-col gap-3">
                 <div className="blogTitle">
                   <h6>China Kicks U.S Butt In The Latest Whatever</h6>
                 </div>

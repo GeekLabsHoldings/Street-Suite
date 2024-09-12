@@ -19,7 +19,9 @@ const SingleTraning = () => {
   const { currentCourse, setCurrentCourse } = useContext(courseContext);
   const { currentModule, setCurrentModule } = useContext(courseContext);
 
-  const { courseId } = useParams();
+  const {courseId}  = useParams();
+  console.log(courseId);
+  
   // function that open & close collaps
   const openCollaps = (e) => {
     console.log($(e.target).parentsUntil(".training_lison_collapse"));
@@ -41,22 +43,30 @@ const SingleTraning = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}courses/modules/${courseId}`, {
+      .get(`${process.env.REACT_APP_API_URL}courses/modules/${courseId}/`, {
         headers: {
-          Authorization: `Token 3a6dc74f572324f8445310e28c8fb4e2f3ee5cce`,
+          Authorization: `Token ${localStorage.getItem("userToken")}`,
         },
       })
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         setCourseModules(res.data);
       })
       .catch((err) => console.log(err));
 
+      
+
     if (currentCourse.length < 1) {
       axios
-        .get(`${process.env.REACT_APP_API_URL}courses/${courseId}`)
+        .get(`${process.env.REACT_APP_API_URL}courses/${courseId}/`, {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
+          },
+        })
         .then((res) => {
-          setCurrentCourse(res.data[0]);
+          console.log(res);
+          
+          setCurrentCourse(res.data);
         })
         .catch((err) => console.log(err));
     }
@@ -64,7 +74,9 @@ const SingleTraning = () => {
 
   useEffect(() => {
     if (courseModules.length > 0) {
-      setCurrentModule(getCurrent(courseModules));
+      console.log("///sad/as/d/sad////",courseModules);
+      
+      setCurrentModule(courseModules);
     }
   }, [courseModules]);
 
@@ -157,7 +169,7 @@ const SingleTraning = () => {
           />
 
           {/* sub pages like lesson page and assessment page will appear here */}
-          <Outlet />
+          <Outlet context={courseId}/>
         </div>
 
         {/* table of content section */}

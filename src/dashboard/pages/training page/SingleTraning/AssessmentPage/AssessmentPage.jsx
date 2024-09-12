@@ -9,13 +9,15 @@ import { useParams } from "react-router-dom";
 
 // assessment page
 const AssessmentPage = () => {
-  const { moduleId } = useParams();
+  const  {moduleId}  = useParams();
+  console.log(moduleId);
+  
   const [assessmentData, setAssessmentData] = useState({});
 
   // useEffect that fetch data from api
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}courses/assessment/${moduleId}`)
+      .get(`${process.env.REACT_APP_API_URL}courses/${moduleId}/assesment/`)
       .then((res) => {
         console.log(res.data[0]);
         setAssessmentData(res.data[0]);

@@ -10,8 +10,7 @@ import { tokenContext } from "../../../context/appContext";
 const CustomArrow = (props) => {
   const { className, style, onClick } = props;
   const [arrowHovered, setArrowHovered] = useState(false);
-  
-  
+
   return (
     <div className={className} style={{ ...style }} onClick={onClick}>
       <svg
@@ -145,8 +144,6 @@ const QuizzesFiltersPage = () => {
 
   return (
     <>
-      
-
       {/* all quizzes */}
       {seeMore && !contextData?.selectedFilter ? (
         <div className=" grid grid-cols-4 gap-4">
@@ -159,7 +156,7 @@ const QuizzesFiltersPage = () => {
                 <div
                   className=" col-span-1"
                   style={{
-                    width: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                    minWidth: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
                   }}
                   key={quiz?.id}
                 >
@@ -167,6 +164,7 @@ const QuizzesFiltersPage = () => {
                     title={quiz?.title}
                     linkId={quiz?.id}
                     image={quiz?.image}
+                    label={quiz?.label}
                   />
                 </div>
               );
@@ -192,10 +190,12 @@ const QuizzesFiltersPage = () => {
                         return quizes.text === contextData?.filter;
                       })[0]
                       ?.quizzes?.map((quiz) => {
+                        console.log(quiz?.label);
+
                         return (
                           <div
                             style={{
-                              width:
+                              minWidth:
                                 "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
                             }}
                             key={quiz?.id}
@@ -203,6 +203,7 @@ const QuizzesFiltersPage = () => {
                             <QuizCard
                               title={quiz?.title}
                               linkId={quiz?.id}
+                              label={quiz?.label}
                               image={quiz?.image}
                             />
                           </div>
@@ -253,15 +254,15 @@ const QuizzesFiltersPage = () => {
                                 .filter((quizes) => quizes.text === f.text)[0]
                                 ?.quizzes?.map((quiz) => (
                                   <div
-                                    style={{
-                                      width:
-                                        "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
-                                    }}
+                                  style={{
+                                    minWidth: "clamp(220px, calc( 17vw + 0.5rem ) ,600px)",
+                                  }}
                                     key={quiz?.id}
                                   >
                                     <QuizCard
                                       title={quiz?.title}
                                       linkId={quiz?.id}
+                                      label={quiz?.label}
                                       image={quiz?.image}
                                     />
                                   </div>

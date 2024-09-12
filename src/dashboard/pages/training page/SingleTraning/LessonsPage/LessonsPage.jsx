@@ -5,13 +5,17 @@ import styles from "../SingleTraning.module.css";
 
 import introImg from "../../../../assets/single training intro img.png";
 import lesonImg from "../../../../assets/single training leson img.png";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { courseContext } from "../../context/coursesContext";
 import getCurrent from "../../utils/getCurrent";
 import axios from "axios";
 
 const LessonsPage = () => {
-  const { currentModule } = useContext(courseContext);
+  const contextData = useOutletContext()
+  console.log(contextData);
+  
+  const  {currentModule}  = useContext(courseContext);
+console.log(currentModule);
 
   const [completedSections, setCompletedSections] = useState([]);
 
@@ -48,7 +52,7 @@ const LessonsPage = () => {
         {}, // Assuming no body is needed for the PATCH request
         {
           headers: {
-            Authorization: `Token 3a6dc74f572324f8445310e28c8fb4e2f3ee5cce`,
+            Authorization: `Token ${localStorage.getItem("userToken")}`,
           },
         }
       );
@@ -68,7 +72,7 @@ const LessonsPage = () => {
       </div>
 
       {/* lesson part in lessons page */}
-      {currentModule?.section_set?.map((section, index) => (
+      {currentModule?.map((section, index) => (
         <div
           key={index}
           className={`training_lison_collapse ${
@@ -113,7 +117,7 @@ const LessonsPage = () => {
               <div className="w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between items-start gap-[15px] lg:gap-[50px]">
                   <div className={styles.training_lison_content}>
-                    <p>{section.article}</p>
+                    <p>{section.description}</p>
                   </div>
                   <img src={section.image} alt="" />
                 </div>
@@ -148,7 +152,7 @@ const LessonsPage = () => {
 
       {/* button that redirect to assessment page */}
       <Link
-        to={`/dashboard/training/single-training/${currentModule?.course}/assessment/${currentModule?.id}`}
+        to={`/dashboard/training/single-training/${currentModule?.course}/assessment/${contextData}`}
         className={styles.assessment_btn}
       >
         Assessment

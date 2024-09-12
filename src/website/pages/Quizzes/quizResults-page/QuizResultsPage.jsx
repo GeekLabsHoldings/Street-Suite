@@ -220,14 +220,6 @@ const QuizResultsPage = () => {
             </span>
           </div>
           <div className="line"></div>
-
-          <div className="w-[54%] p-[16px] lg:p-12 flex flex-col items-center">
-            <p>Score</p>
-            <span>
-              {score}/{totalQuizScore}
-            </span>
-          </div>
-          <div className="line"></div>
           <div className="w-[44%] p-[16px] lg:p-12 flex flex-col items-center">
             <p>My Score</p>
             <span>{totalUserScore}</span>
