@@ -216,7 +216,7 @@ const PricingPage = () => {
                     <span>${plans[0]?.amount}</span> / week
                   </p>
                 </div>
-                <div className="plane-action">
+                <div className="plane-action first">
                   <Link to={`/checkout/${plans[0]?.id}`}>Choose</Link>
                 </div>
               </div>
@@ -227,7 +227,7 @@ const PricingPage = () => {
           {/* second and recommended plane */}
           <div className="border-animate rounded-[--21px] w-1/3 after:!-left-[20px] after:-top-[2px] before:!bg-[linear-gradient(126.84deg,_#FFFFFF_40%,_transparent_49.64%)]">
             <div className="recommended-plane">
-              <div className="plane plane-pricing popular relative !rounded-[--21px] w-full border-animate">
+              <div className="plane plane-pricing popular relative !rounded-[--21px] w-full border-animate !p-[1px]">
                 <img src={popularBadge} alt="" />
                 <div className="absolute plane-body flex flex-col justify-center items-center px-[16px] py-[32px] lg:px-8 lg:py-16 !rounded-[--21px] w-full !bg-[linear-gradient(181deg,_#28537b,_#4f92d1)]">
                   <h5 className="plane-title">{plans[1]?.title}</h5>

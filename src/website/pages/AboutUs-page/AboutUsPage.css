@@ -27,7 +27,9 @@
     letter-spacing: 0em;
     text-align: left;
 }
-
+.blured {
+    backdrop-filter: blur(10px);
+}
 .aboutUs-card .aboutUs-card-body span {
     font-family: Poppins;
     font-size: 11px;

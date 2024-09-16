@@ -2,11 +2,27 @@
     background: linear-gradient(0deg, rgba(83, 172, 255, 0.3) 0%, rgba(32, 32, 32, 0.5) 100%);
 }
 
-
+.tableItem.border-animate::before {
+    background-image:conic-gradient(transparent 180deg, #53acff7c 240deg, transparent 360deg) ;
+}
 .leaderBoard-wrapper .hero {
     background-image: unset;
 }
+.listItem.first-item {
+    background: rgb(61,113,160);
+background: linear-gradient(90deg, rgba(61,113,160,1) 0%, rgba(59,106,150,1) 100%);
 
+}
+.listItem.second-item {
+    background: rgb(38,49,59);
+background: linear-gradient(90deg, rgba(38,49,59,1) 0%, rgba(37,48,58,1) 100%);
+
+}
+.listItem.third-item {
+    background: rgb(38,49,59);
+background: linear-gradient(90deg, rgba(38,49,59,1) 0%, rgba(37,48,58,1) 100%);
+
+}
 .ranking-tabs {
     background: linear-gradient(336deg, rgba(34, 36, 38, 1) 84%, rgba(37, 103, 168, 0.6166841736694677) 100%);
     overflow: hidden;

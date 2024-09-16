@@ -1385,7 +1385,7 @@ const AboutUsPage = () => {
         />
         {hovered1 ? (
           <div
-            className="z-[100] px-[--39px] py-[--sy-35px] w-fit rounded-[--19px] bg-[#53ACFF4D]"
+            className="blured z-[100] px-[--39px] py-[--sy-35px] w-fit rounded-[--19px] bg-[#53ACFF4D]"
             style={{
               position: "absolute",
               top: `${position1.top}px`,
@@ -1411,7 +1411,7 @@ const AboutUsPage = () => {
         ) : null}
         {hovered2 ? (
           <div
-            className="z-[100] px-[--39px] py-[--sy-35px] w-fit rounded-[--19px] bg-[#53ACFF4D]"
+            className="blured z-[100] px-[--39px] py-[--sy-35px] w-fit rounded-[--19px] bg-[#53ACFF4D]"
             style={{
               position: "absolute",
               top: `${position2.top}px`,
@@ -1437,7 +1437,7 @@ const AboutUsPage = () => {
         ) : null}
         {hovered3 ? (
           <div
-            className="z-[100] px-[--39px] py-[--sy-35px] w-fit rounded-[--19px] bg-[#53ACFF4D]"
+            className="blured z-[100] px-[--39px] py-[--sy-35px] w-fit rounded-[--19px] bg-[#53ACFF4D]"
             style={{
               position: "absolute",
               top: `${position3.top}px`,

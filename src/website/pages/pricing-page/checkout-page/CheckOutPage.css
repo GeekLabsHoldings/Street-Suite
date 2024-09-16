@@ -23,14 +23,13 @@
 
 .border-animate {
     position: relative;
-    padding: 1px;
     overflow: hidden;
     z-index: 0;
 }
 
 .border-animate::before {
     content: "";
-    background-image: conic-gradient(transparent 180deg, var(--Blue300) 240deg, var(--Blue300) 280deg, transparent 360deg);
+    background-image: conic-gradient(transparent 180deg, white 240deg, transparent 360deg);
     width: 250%;
     height: 250%;
     transform: translate(-50%, -50%) rotate(0deg);

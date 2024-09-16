@@ -11,6 +11,9 @@ import avatar1 from "../../assets/leaderboardavatar.png";
 import badg1 from "../../assets/1 top3.png";
 import badg2 from "../../assets/2 top3.png";
 import badg3 from "../../assets/3 top3.png";
+import top1 from "../../assets/top1.svg";
+import top2 from "../../assets/top2.svg";
+import top3 from "../../assets/top3.svg";
 
 import brokerImg1 from "../../assets/broker-img1.png";
 import brokerImg2 from "../../assets/broker-img2.png";
@@ -80,7 +83,7 @@ const LeaderBoardPage = () => {
   };
   const [firstSpan, setFirstSpan] = useState(false);
   const [secondSpan, setSecondSpan] = useState(true);
-  
+
   return (
     <>
       <Helmet>
@@ -106,32 +109,38 @@ const LeaderBoardPage = () => {
             <div className="ranking-tabs rounded-[--11px]">
               <ul class="tabs-nav grid grid-cols-3 p-0 m-0 list-unstyled">
                 {/* taps that show the appropriate content in leaderBoard page */}
-                <li onClick={()=>{
-                  setFirstSpan(false)
-                  setSecondSpan(true)
-                }}>
+                <li
+                  onClick={() => {
+                    setFirstSpan(false);
+                    setSecondSpan(true);
+                  }}
+                >
                   <a href="#tab-1" className="Biggest-Winners">
                     Biggest Winners
                   </a>
                 </li>
-                <li onClick={()=>{
-                  setFirstSpan(true)
-                  setSecondSpan(true)
-                }}>
+                <li
+                  onClick={() => {
+                    setFirstSpan(true);
+                    setSecondSpan(true);
+                  }}
+                >
                   <a href="#tab-2" className="Biggest-Losers">
                     Biggest Losers
                   </a>
                 </li>
-                <li onClick={()=>{
-                  setFirstSpan(true)
-                  setSecondSpan(false)
-                }}>
+                <li
+                  onClick={() => {
+                    setFirstSpan(true);
+                    setSecondSpan(false);
+                  }}
+                >
                   <a href="#tab-3" className="Ranking">
                     Ranking
                   </a>
                 </li>
               </ul>
-             <div className="tabsWrapper relative rounded-[--12px]">
+              <div className="tabsWrapper relative rounded-[--12px]">
                 {firstSpan ? (
                   <span
                     className="first absolute w-[45px] h-[40px] border-[#53acff] bg-transparent border-[1.5px]  border-solid border-b-0 border-r-0  rounded-tl-[--18px] top-[-1px] left-[-4.5px]"
@@ -148,689 +157,712 @@ const LeaderBoardPage = () => {
                     }}
                   ></span>
                 ) : null}
-             <div class="tabs-stage tabs-content relative rounded-[--12px]">
-                {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
-                <div id="tab-1" className="tab">
-                  <div className={`${styles.table} relative !mb-[--sy-40px]`}>
-                    {Array(9)
-                      .fill(" ")
-                      .map((d, i) => {
-                        return (
-                          <div
-                            className={`${styles.tableItemContainer} relative`}
-                            key={i}
-                          >
-                            <ul
-                              className={`${
-                                styles.tableItem
-                              } relative z-[4] tableItem !p-0 w-full ${
-                                i == 0
-                                  ? "bg-[#53ACFF87] !hover:bg-[#53ACFF]"
-                                  : i == 1 || i == 2
-                                  ? "bg-[#53ACFF1F] !hover:bg-[#53ACFF]"
-                                  : "bg-[#414040] hover:!bg-[#53ACFF]"
-                              }`}
-                              onClick={(e) => {
-                                openCollaps(e);
-                              }}
+                <div class="tabs-stage tabs-content relative rounded-[--12px]">
+                  {/* Biggest Winners content that show when user click on Biggest Winners tab in leaderBoard page */}
+                  <div id="tab-1" className="tab">
+                    <div className={`${styles.table} relative !mb-[--sy-40px]`}>
+                      {Array(9)
+                        .fill(" ")
+                        .map((d, i) => {
+                          return (
+                            <div
+                              className={`${styles.tableItemContainer} relative`}
+                              key={i}
                             >
-                              <div
-                                className={` w-full rounded-[--12px] flex gap-[--50px] items-center  px-[--45px] py-[--16px] relative z-[5] `}
+                              <ul
+                                className={`relative z-[4] rounded-[--12px] tableItem  w-full  ${
+                                  i == 0
+                                    ? "bg-[#53ACFF87] !hover:bg-[#53ACFF] border-animate !p-[2px]"
+                                    : i == 1 || i == 2
+                                    ? "bg-[#53ACFF1F] !hover:bg-[#53ACFF] border-animate !p-[2px]"
+                                    : "bg-[#414040] hover:!bg-[#53ACFF] "
+                                }`}
+                                onClick={(e) => {
+                                  openCollaps(e);
+                                }}
                               >
-                                <span
-                                  className={`${
-                                    i == 1
-                                      ? "text-[#295780]"
-                                      : i == 2
-                                      ? "text-[#364452]"
-                                      : ""
-                                  } text-[--23px] font-bold`}
+                                <div
+                                  className={` w-full rounded-[--12px] flex gap-[--50px] items-center  px-[--45px] py-[--16px] relative z-[5] listItem cursor-pointer ${
+                                    i == 0
+                                      ? "first-item !hover:bg-[#53ACFF]"
+                                      : i == 1 || i == 2
+                                      ? "second-item !hover:bg-[#53ACFF]"
+                                      : " hover:!bg-[#53ACFF]"
+                                  }`}
                                 >
-                                  {i + 1}
-                                </span>
-                                <div className=" flex gap-[--20px] items-center">
-                                  <img src={avatar1} alt="" />
-                                  <div className="user-info flex flex-col gap-y-[--sy-2px]">
-                                    <h6 className="font-bold text-[--23px]">
-                                      Alex Horren
-                                    </h6>
-                                    <p className=" text-[--13px]">
-                                      @alexhorennnn
-                                    </p>
+                                  <span
+                                    className={`${
+                                      i == 1
+                                        ? "text-[#295780]"
+                                        : i == 2
+                                        ? "text-[#364452]"
+                                        : ""
+                                    } text-[--23px] font-bold`}
+                                  >
+                                    {i + 1}
+                                  </span>
+                                  <div className=" flex gap-[--20px] items-center">
+                                    <img src={avatar1} alt="" />
+                                    <div className="user-info flex flex-col gap-y-[--sy-2px]">
+                                      <h6 className="font-bold text-[--23px]">
+                                        Alex Horren
+                                      </h6>
+                                      <p className=" text-[--13px]">
+                                        @alexhorennnn
+                                      </p>
+                                    </div>
                                   </div>
                                 </div>
+                              </ul>
+                              <div
+                                className={`${styles.tableItemCollaps} tableItemCollaps !bg-[#202020]`}
+                              >
+                                <p>asdasdasdasd</p>
                               </div>
-                              <div
-                                className=" absolute w-[100%] h-[100%] -left-[--2px] -top-[--sy-2px] rounded-[--12px]"
-                                style={{
-                                  background: `${
-                                    i < 3
-                                      ? "linear-gradient(110.76deg, rgb(28 47 65 / 50%) 20.43%, rgba(255, 255, 255, 0) 96.49%)"
-                                      : null
-                                  }`,
-                                }}
-                              ></div>
-                            </ul>
-                            <div
-                              className={`${styles.tableItemCollaps} tableItemCollaps !bg-[#202020]`}
-                            >
-                              <p>asdasdasdasd</p>
+                              {i < 1 ? (
+                                <img
+                                  src={top1}
+                                  alt=""
+                                  className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 -right-[--4px] -top-[--sy-4px]"
+                                />
+                              ) : i == 1 ? (
+                                <img
+                                  src={top2}
+                                  alt=""
+                                  className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 -right-[--4px] -top-[--sy-4px]"
+                                />
+                              ) : i == 2 ? (
+                                <img
+                                  src={top3}
+                                  alt=""
+                                  className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 -right-[--4px] -top-[--sy-4px]"
+                                />
+                              ) : null}
                             </div>
-                            {i < 3 ? (
-                              <img
-                                src={badg1}
-                                alt=""
-                                className="padge !w-[clamp(50px,_calc(5.6vw_+_0.1rem),_3000px)] absolute z-2 -right-[--14px] -top-[--sy-11px]"
-                              />
-                            ) : null}
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                    </div>
+                    <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none">
+                      Load more
+                    </button>
                   </div>
-                  <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none">Load more</button>
-                </div>
 
-                {/* Biggest losers content that show when user click on Biggest losers tab in leaderBoard page */}
-                <div id="tab-2" className="tab">
-                  <div className={`${styles.table} relative !mb-[--sy-40px]`}>
-                    {Array(9)
-                      .fill(" ")
-                      .map((d, i) => {
-                        return (
-                          <div
-                            className={`${styles.tableItemContainer} relative`}
-                            key={i}
-                          >
-                            <ul
-                              className={`${
-                                styles.tableItem
-                              } relative z-[4] tableItem !p-0 w-full ${
-                                i == 0
-                                  ? "bg-[#53ACFF87] !hover:bg-[#53ACFF]"
-                                  : i == 1 || i == 2
-                                  ? "bg-[#53ACFF1F] !hover:bg-[#53ACFF]"
-                                  : "bg-[#414040] hover:!bg-[#53ACFF]"
-                              }`}
-                              onClick={(e) => {
-                                openCollaps(e);
-                              }}
+                  {/* Biggest losers content that show when user click on Biggest losers tab in leaderBoard page */}
+                  <div id="tab-2" className="tab">
+                    <div className={`${styles.table} relative !mb-[--sy-40px]`}>
+                      {Array(9)
+                        .fill(" ")
+                        .map((d, i) => {
+                          return (
+                            <div
+                              className={`${styles.tableItemContainer} relative`}
+                              key={i}
                             >
-                              <div
-                                className={` w-full rounded-[--12px] flex gap-[--50px] items-center  px-[--45px] py-[--16px] relative z-[5] ${
+                              <ul
+                                className={`${
+                                  styles.tableItem
+                                } relative z-[4] tableItem !p-0 w-full ${
                                   i == 0
-                                    ? "!bg-[#53ACFF87] hover:!bg-[#53ACFF]"
+                                    ? "bg-[#53ACFF87] !hover:bg-[#53ACFF]"
                                     : i == 1 || i == 2
-                                    ? "bg-[#53ACFF1F] hover:!bg-[#53ACFF]"
+                                    ? "bg-[#53ACFF1F] !hover:bg-[#53ACFF]"
                                     : "bg-[#414040] hover:!bg-[#53ACFF]"
                                 }`}
+                                onClick={(e) => {
+                                  openCollaps(e);
+                                }}
                               >
-                                <span
-                                  className={`${
-                                    i == 1
-                                      ? "text-[#295780]"
-                                      : i == 2
-                                      ? "text-[#364452]"
-                                      : ""
-                                  } text-[--23px] font-bold`}
+                                <div
+                                  className={` w-full rounded-[--12px] flex gap-[--50px] items-center  px-[--45px] py-[--16px] relative z-[5] ${
+                                    i == 0
+                                      ? "!bg-[#53ACFF87] hover:!bg-[#53ACFF]"
+                                      : i == 1 || i == 2
+                                      ? "bg-[#53ACFF1F] hover:!bg-[#53ACFF]"
+                                      : "bg-[#414040] hover:!bg-[#53ACFF]"
+                                  }`}
                                 >
-                                  {i + 1}
-                                </span>
-                                <div className=" flex gap-[--20px] items-center">
-                                  <img src={avatar1} alt="" />
-                                  <div className="user-info flex flex-col gap-y-[--sy-2px]">
-                                    <h6 className="font-bold text-[--23px]">
-                                      Alex Horren
-                                    </h6>
-                                    <p className=" text-[--13px]">
-                                      @alexhorennnn
-                                    </p>
+                                  <span
+                                    className={`${
+                                      i == 1
+                                        ? "text-[#295780]"
+                                        : i == 2
+                                        ? "text-[#364452]"
+                                        : ""
+                                    } text-[--23px] font-bold`}
+                                  >
+                                    {i + 1}
+                                  </span>
+                                  <div className=" flex gap-[--20px] items-center">
+                                    <img src={avatar1} alt="" />
+                                    <div className="user-info flex flex-col gap-y-[--sy-2px]">
+                                      <h6 className="font-bold text-[--23px]">
+                                        Alex Horren
+                                      </h6>
+                                      <p className=" text-[--13px]">
+                                        @alexhorennnn
+                                      </p>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
+                                <div
+                                  className=" absolute w-[100%] h-[100%] -left-[--2px] -top-[--sy-2px] rounded-[--12px]"
+                                  style={{
+                                    background: `${
+                                      i < 3
+                                        ? "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 96.49%)"
+                                        : null
+                                    }`,
+                                  }}
+                                ></div>
+                              </ul>
                               <div
-                                className=" absolute w-[100%] h-[100%] -left-[--2px] -top-[--sy-2px] rounded-[--12px]"
-                                style={{
-                                  background: `${
-                                    i < 3
-                                      ? "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 96.49%)"
-                                      : null
-                                  }`,
-                                }}
-                              ></div>
-                            </ul>
-                            <div
-                              className={`${styles.tableItemCollaps} tableItemCollaps !bg-[#202020]`}
-                            >
-                              <p>asdasdasdasd</p>
+                                className={`${styles.tableItemCollaps} tableItemCollaps !bg-[#202020]`}
+                              >
+                                <p>asdasdasdasd</p>
+                              </div>
+                              {i < 1 ? (
+                                <img
+                                  src={top1}
+                                  alt=""
+                                  className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 -right-[--4px] -top-[--sy-4px]"
+                                />
+                              ) : i == 1 ? (
+                                <img
+                                  src={top2}
+                                  alt=""
+                                  className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 -right-[--4px] -top-[--sy-4px]"
+                                />
+                              ) : i == 2 ? (
+                                <img
+                                  src={top3}
+                                  alt=""
+                                  className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 -right-[--4px] -top-[--sy-4px]"
+                                />
+                              ) : null}
                             </div>
-                            {i < 3 ? (
-                              <img
-                                src={badg1}
-                                alt=""
-                                className="padge !w-[clamp(50px,_calc(5.6vw_+_0.1rem),_3000px)] absolute z-2 -right-[--14px] -top-[--sy-11px]"
-                              />
-                            ) : null}
+                          );
+                        })}
+                    </div>
+                    <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none">
+                      Load more
+                    </button>
+                  </div>
+
+                  {/* ranking content that show when user click on ranking tab in leaderBoard page */}
+                  <div id="tab-3" className="tab Ranking-tap">
+                    <div className="collapse-item renking-1 w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            " linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 93.49%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <img src={top1} alt="" className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 !right-[--9px] !top-[--sy-3px]" />
+                        <span>1</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
                           </div>
-                        );
-                      })}
-                  </div>
-                  <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none">Load more</button>
-                </div>
+                        </div>
 
-                {/* ranking content that show when user click on ranking tab in leaderBoard page */}
-                <div id="tab-3" className="tab Ranking-tap">
-                  <div className="collapse-item renking-1 w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          " linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 93.49%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <img src={badg1} alt="" className="padge" />
-                      <span>1</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
-                        </div>
-                      </div>
-
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item renking-2 w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 93.49%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <img src={badg2} alt="" className="padge" />
-                      <span>2</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item renking-2 w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.7%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 93.49%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <img src={top2} alt="" className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 !right-[--9px] !top-[--sy-3px]" />
+                        <span>2</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item renking-3 w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 93.49%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <img src={badg3} alt="" className="padge" />
-                      <span>3</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item renking-3 w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(83, 172, 255, 0.5) 20.43%, rgba(255, 255, 255, 0) 93.49%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <img src={top3} alt="" className="padge !w-[clamp(50px,_calc(4vw_+_0.1rem),_3000px)] absolute z-2 !right-[--9px] !top-[--sy-3px]" />
+                        <span>3</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <span>4</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.9%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <span>4</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <span>5</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.7%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <span>5</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <span>6</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-1.2%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <span>6</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <span>7</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.7%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <span>7</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <span>8</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <span>8</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="collapse-item w-full relative rounded-[--12px]">
-                    <div
-                      className=" absolute !top-[-0.5%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
-                      style={{
-                        background:
-                          "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
-                      }}
-                    ></div>
-                    <div className="collapse-header">
-                      <span>9</span>
-                      <div className="avatar flex flex-row items-center">
-                        <img src={avatar1} alt="" />
-                        <div className="user-info flex flex-col">
-                          <h6>Alex Horren</h6>
-                          <p>@alexhorennnn</p>
+                    <div className="collapse-item w-full relative rounded-[--12px]">
+                      <div
+                        className=" absolute !top-[-0.7%] left-[-0.2%] rounded-[--12px] w-[102%] h-[102%] translate-y-0"
+                        style={{
+                          background:
+                            "linear-gradient(110.76deg, rgba(255, 255, 255, 0.5) -6.63%, rgba(255, 255, 255, 0.487385) 30.6%, rgba(255, 255, 255, 0) 94%)",
+                        }}
+                      ></div>
+                      <div className="collapse-header">
+                        <span>9</span>
+                        <div className="avatar flex flex-row items-center">
+                          <img src={avatar1} alt="" />
+                          <div className="user-info flex flex-col">
+                            <h6>Alex Horren</h6>
+                            <p>@alexhorennnn</p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="rank-details">
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>$100</p>
-                          <p>Profit</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>300 %</p>
-                          <p>Gain %</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>96%</p>
-                          <p>Trades</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p>256</p>
-                          <p>Win Streak</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-y-2">
-                          <p className="flex items-center gap-1 lg:gap-2">
-                            2
-                            <svg
-                              width="15"
-                              height="20"
-                              viewBox="0 0 15 20"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
-                                fill="#53ACFF"
-                              />
-                            </svg>
-                          </p>
-                          <p>Day Streak</p>
+                        <div className="rank-details">
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>$100</p>
+                            <p>Profit</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>300 %</p>
+                            <p>Gain %</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>96%</p>
+                            <p>Trades</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p>256</p>
+                            <p>Win Streak</p>
+                          </div>
+                          <div className="flex flex-col items-center justify-center space-y-2">
+                            <p className="flex items-center gap-1 lg:gap-2">
+                              2
+                              <svg
+                                width="15"
+                                height="20"
+                                viewBox="0 0 15 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.75137 10.4692C7.61252 11.0592 7.28426 12.3437 7.43487 13.515C7.53477 14.0561 7.85908 14.5446 8.09523 15.0368C8.29203 15.4957 8.27834 15.9426 7.95055 16.3466C7.06375 17.5876 5.01701 16.7481 5.35468 15.1316C5.01145 15.1445 4.76989 15.3162 4.59226 15.5693C3.60836 16.7999 4.32402 18.4517 5.55112 19.2019C5.74877 19.3375 6.04052 19.5133 5.91383 19.7945C5.84382 19.9549 5.70821 20.012 5.53546 19.998C2.8975 19.7844 0.946791 18.1536 0.220137 15.5993C-0.375599 14.0052 0.243542 10.5146 2.00775 9.95648C2.35324 9.88728 2.63394 10.1374 2.58944 10.4883C2.55273 10.7775 2.45442 11.0618 2.35921 11.3399C2.01544 12.1787 2.85753 13.4579 3.75323 12.8784C3.98246 12.737 4.10515 12.5347 4.12222 12.2664C4.21574 10.6676 2.57406 10.0584 2.89224 8.2846C2.82908 7.48983 4.33543 5.10869 5.16429 5.67176C5.30659 5.7926 5.35307 5.95523 5.30072 6.12822C5.16014 6.59617 4.85956 7.02291 4.92268 7.53149C4.96433 8.2519 5.93242 8.79279 6.55707 8.42729C7.1513 8.07956 7.68269 7.37417 7.16086 6.4804C6.97457 6.1613 6.8045 5.83266 6.62078 5.51201C4.541 2.14488 9.5427 -1.29295 9.68492 0.484723C9.52706 1.30921 8.85196 1.95237 8.80002 2.81754C8.7466 3.1344 8.82422 3.42895 8.99082 3.70514C11.0112 6.58973 13.2667 6.16807 11.6758 10.5115C11.5654 10.8649 11.6945 11.2375 12.1296 11.0933C13.1637 10.7967 12.9248 9.55099 12.983 8.71862C12.9945 8.52987 13.0621 8.37564 13.2572 8.31486C13.4463 8.25595 13.5999 8.3364 13.6863 8.4928C13.8938 8.86858 14.1046 9.24565 14.2716 9.64036C15.2137 11.867 15.2501 14.1089 14.3332 16.3529C14.0122 17.1383 13.5203 17.8119 12.8661 18.3475C12.4315 18.7033 11.9684 19.0274 11.4965 19.3319C11.1961 19.5258 10.9375 19.4989 10.7974 19.3219C10.2753 18.8003 12.8779 16.2833 11.0025 14.7662C9.43493 13.6969 8.06873 12.6013 8.75137 10.4692Z"
+                                  fill="#53ACFF"
+                                />
+                              </svg>
+                            </p>
+                            <p>Day Streak</p>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none mt-[--sy-40px]">
+                      Load more
+                    </button>
                   </div>
-                  <button className="text-[--16px] text-[#53ACFF] font-bold capitalize block w-fit mx-auto bg-transparent !border-none !shadow-none mt-[--sy-40px]">Load more</button>
-
                 </div>
               </div>
-             </div>
             </div>
           </div>
 
