@@ -33,6 +33,7 @@ const SignIn = () => {
   const [showVerification, setShowVerification] = useState(false);
   const [verificationValue, setVerificationValue] = useState(0);
   const [emailVer, setEmailVer] = useState("");
+  const [emailReset, setEmailReset] = useState("");
   const [tokenVer, setTokenVer] = useState("");
   const [invalidVer, setInvalidVer] = useState("");
 
@@ -66,7 +67,7 @@ const SignIn = () => {
         if (res?.data.name) {
           try {
             console.log("yesss");
-            
+
             // Fetch the picture as a blob
             const pictureResponse = await fetch(res?.data?.picture, {
               mode: "no-cors",
@@ -99,7 +100,7 @@ const SignIn = () => {
               }
             );
             console.log("noooooo");
-            
+
             console.log(data, "post google");
             console.log(data?.data?.message);
             if (data?.data?.message == "logged in successfully!") {
@@ -159,6 +160,8 @@ const SignIn = () => {
         }
       );
 
+      setEmailReset(email);
+
       console.log(data);
       setTokenVer(data.Token);
       setShowVerification(true);
@@ -175,13 +178,10 @@ const SignIn = () => {
         `${process.env.REACT_APP_API_URL}accounts/forgetpassword/verify/`,
         {
           verification_code: verificationValue.toString(),
-        },
-        {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
+          email: `${emailVer}`,
         }
       );
+      console.log(emailReset);
 
       console.log(data);
       setInForgot(false);
@@ -190,28 +190,33 @@ const SignIn = () => {
       return data;
     } catch (err) {
       console.log(err);
-      if (err.response.data.message == "Invalid verification code") {
-        setInvalidVer("Invalid verification code");
-      }
+      // if (err.response.data.message == "Invalid verification code") {
+      //   setInvalidVer("Invalid verification code");
+      // }
     }
   }
   async function resetPass(reqBody) {
     try {
+      // Ensure that emailReset is set
+      if (!emailReset) {
+        console.error("emailReset is empty");
+        return;
+      }
+
+      // Add the email to the request body if it's not already there
+      reqBody.email = emailReset;
+
       console.log(reqBody);
       console.log(tokenVer, "tokenVer");
+
       const { data } = await axios.post(
         `${process.env.REACT_APP_API_URL}accounts/forgetpassword/reset/`,
-        reqBody,
-        {
-          headers: {
-            Authorization: `Token ${tokenVer}`,
-          },
-        }
+        reqBody
       );
+
       customAlert(data.message);
       setInReset(false);
       updatePasswordFormik.resetForm();
-
       setWrongPass(false);
       return data;
     } catch (err) {
@@ -244,6 +249,7 @@ const SignIn = () => {
     initialValues: {
       password: "",
       password_confirmation: "",
+      email: `${emailReset}`,
     },
     validationSchema: passwordSchema,
     onSubmit: resetPass,
@@ -318,11 +324,14 @@ const SignIn = () => {
                           </div>
                         ) : null}
                         <div className=" mb-[--sy-4px]">
-                          <label htmlFor="email" className=" mb-[--sy-15px] !font-normal text-[--16px]">
+                          <label
+                            htmlFor="email"
+                            className=" mb-[--sy-15px] !font-normal text-[--16px]"
+                          >
                             Email *
                           </label>
                           <Input
-                            sx={{ marginBottom: "0.8vh", padding:"4px 14px" }}
+                            sx={{ marginBottom: "0.8vh", padding: "4px 14px" }}
                             name="email"
                             id="email"
                             type="text"
@@ -339,11 +348,14 @@ const SignIn = () => {
                           ) : null}
                         </div>
                         <div>
-                          <label htmlFor="password" className=" mb-[--sy-15px] !font-normal text-[--16px]">
+                          <label
+                            htmlFor="password"
+                            className=" mb-[--sy-15px] !font-normal text-[--16px]"
+                          >
                             Password *
                           </label>
                           <Input
-                            sx={{ marginBottom: "0.8vh", padding:"4px 14px" }}
+                            sx={{ marginBottom: "0.8vh", padding: "4px 14px" }}
                             name="password"
                             id="password"
                             type="password"
@@ -385,7 +397,6 @@ const SignIn = () => {
                           onClick={() => {
                             registerForm.handleSubmit();
                           }}
-
                         >
                           Log In
                         </Button>
@@ -502,8 +513,12 @@ const SignIn = () => {
                           Send
                         </button>
                       </div>
-                      <button className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400" onClick={()=>setInForgot(false)}>Close</button>
-
+                      <button
+                        className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400"
+                        onClick={() => setInForgot(false)}
+                      >
+                        Close
+                      </button>
                     </Dialog.Panel>
                   </div>
                 </Transition.Child>
@@ -594,8 +609,12 @@ const SignIn = () => {
                           Confirm
                         </button>
                       </div>
-                      <button className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400" onClick={()=>setInReset(false)}>Close</button>
-
+                      <button
+                        className="bg-transparent p-0 absolute -top-[18px] right-[16px] !text-blue-400"
+                        onClick={() => setInReset(false)}
+                      >
+                        Close
+                      </button>
                     </Dialog.Panel>
                   </div>
                 </Transition.Child>
