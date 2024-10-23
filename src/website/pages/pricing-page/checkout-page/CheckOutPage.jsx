@@ -69,7 +69,7 @@ const CheckoutForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Token ${authToken}`,
+          Authorization: `Token ${localStorage.getItem("userToken")}`,
         },
         body: JSON.stringify({
           paymentMethodType: "card",
@@ -79,7 +79,8 @@ const CheckoutForm = () => {
     );
 
     const { clientSecret, error } = await response.json();
-
+    console.log(clientSecret);
+    
     if (error) {
       console.log("[error]", error);
       customAlert(error, "error");
@@ -97,6 +98,7 @@ const CheckoutForm = () => {
           },
         }
       );
+      console.log( paymentIntent);
 
       if (error) {
         console.log("[error]", error);
