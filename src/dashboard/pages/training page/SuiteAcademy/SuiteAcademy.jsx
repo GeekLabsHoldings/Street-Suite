@@ -156,7 +156,7 @@ const SuiteAcademy = () => {
                         className={styles.advanced_badge}
                       />
                       <div className={styles.training_card_img + " w-1/4"}>
-                        <img src={course.image} alt="" className="w-full" />
+                        <img src={course.image_url} alt="" className="w-full rounded-[--4px]" />
                       </div>
                       <div
                         className={

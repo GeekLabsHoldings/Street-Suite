@@ -233,19 +233,19 @@ const SettingPage = () => {
   useEffect(() => {
     console.log(profData);
     profSett.setValues({
-      username: `${profData?.username ? profData?.username : ""} `,
-      first_name: `${profData?.first_name ? profData?.first_name : ""} `,
-      last_name: `${profData?.last_name ? profData?.last_name : ""} `,
-      email: `${profData?.email ? profData?.email : ""} `,
+      username: `${profData?.user?.first_name ? profData?.user?.first_name : ""} `,
+      first_name: `${profData?.user?.first_name ? profData?.user?.first_name : ""} `,
+      last_name: `${profData?.user?.last_name ? profData?.user?.last_name : ""} `,
+      email: `${profData?.user?.email ? profData?.user?.email : ""} `,
       password: `${profData?.password ? profData?.password : ""} `,
       profile: {
-        About: `${profData?.profile?.About ? profData?.profile?.About : ""}`,
+        About: `${profData?.About ? profData?.About : ""}`,
         Phone_Number: `${
-          profData?.profile?.Phone_Number ? profData?.profile?.Phone_Number : ""
+          profData?.Phone_Number ? profData?.Phone_Number : ""
         }`,
         image: `${
-          profData?.profile?.image
-            ? `https://api.streetsuite.com${profData?.profile?.image}`
+          profData?.image
+            ? `${profData?.image}`
             : ""
         }`,
       },
