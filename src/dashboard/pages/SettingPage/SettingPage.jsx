@@ -20,17 +20,17 @@ import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-const token = localStorage.getItem("userToken");
-console.log(token);
-
 const SettingPage = () => {
   const [profData, setProfData] = useState();
   const refAva = useRef();
+  const [imageReturned, setImageReturned] = useState()
+  const [imageSent, setImageSent] = useState()
 
   const [passModal, setPassModal] = useState(false);
   const [errorPassMsg, setErrorPassMsg] = useState("");
 
   async function getProfSett() {
+    const token = localStorage.getItem("userToken")
     await axios
       .get(`${process.env.REACT_APP_API_URL}accounts/profile-settings/`, {
         headers: {
@@ -41,6 +41,7 @@ const SettingPage = () => {
         console.log("asd");
         console.log(data);
         setProfData(data);
+        setImageReturned(data?.image);
       })
       .catch((err) => {
         console.log(token);
@@ -104,22 +105,21 @@ const SettingPage = () => {
   const [imageChanged, setImageChanged] = useState(false);
 
   async function callEditSett(reqBody) {
+    const token = localStorage.getItem("userToken");
     const formData = new FormData();
     console.log(profSett.values.username.trim());
-    formData.append("username", profSett.values.username.replace(" ", ""));
-    formData.append("first_name", profSett.values.first_name);
-    formData.append("last_name", profSett.values.last_name);
-    formData.append("email", profSett.values.email);
-    if (profSett.values.password.trim() != "") {
-      formData.append("password", profSett.values.password);
-    }
-    formData.append("profile.About", profSett.values.profile.About);
+    formData.append("user.first_name", profSett.values.first_name);
+    formData.append("user.last_name", profSett.values.last_name);
+    formData.append("user.email", profSett.values.email);
+    formData.append("About", profSett.values.profile.About);
     formData.append(
-      "profile.Phone_Number",
+      "Phone_Number",
       profSett.values.profile.Phone_Number
     );
-    if (imageChanged) {
-      formData.append("profile.image", imageSrc);
+    if (imageSent) {
+      console.log(imageSent);
+      
+      formData.append("image", imageSent);
     }
 
     await axios
@@ -175,6 +175,7 @@ const SettingPage = () => {
   });
 
   async function changePassword(reqBody) {
+    const token = localStorage.getItem("userToken");
     try {
       const { data } = await axios.post(
         `${process.env.REACT_APP_API_URL}accounts/change-password/`,
@@ -209,21 +210,7 @@ const SettingPage = () => {
     onSubmit: changePassword,
   });
 
-  const [imageSrc, setImageSrc] = useState(null);
-  const [imagePhoto, setImagePhoto] = useState("");
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = () => {
-        profSett.values.profile.image = fileReader.result;
-        setImagePhoto(fileReader.result);
-        setImageChanged(true); // Set imageChanged to true when image is changed
-      };
-    }
-  };
+ 
 
   useEffect(() => {
     getProfSett();
@@ -401,9 +388,7 @@ const SettingPage = () => {
                               <img
                                 ref={refAva}
                                 src={
-                                  imagePhoto
-                                    ? imagePhoto
-                                    : profSett.values.profile.image
+                                  imageSent ? URL.createObjectURL(imageSent) : profData?.image
                                 }
                                 alt=""
                                 name="profile.image"
@@ -420,8 +405,8 @@ const SettingPage = () => {
                                   accept="image/*"
                                   className=" hidden absolute inset-0"
                                   onChange={(e) => {
-                                    setImageSrc(e.target.files[0]);
-                                    handleFileChange(e);
+                                    console.log(e.target.files[0]);
+                                    setImageSent(e.target.files[0]);
                                   }}
                                 />
 
