@@ -143,11 +143,6 @@ const SettingPage = () => {
         console.log(err);
       });
   }
-  const fruits = ["apple", "banana", "cherry"];
-
-for (let fruit in fruits) {
-  console.log(fruit);
-}
 
   const profSett = useFormik({
     initialValues: {
