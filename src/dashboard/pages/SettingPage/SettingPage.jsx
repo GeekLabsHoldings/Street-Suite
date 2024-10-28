@@ -108,8 +108,8 @@ const SettingPage = () => {
     const token = localStorage.getItem("userToken");
     const formData = new FormData();
     console.log(profSett.values.username.trim());
-    formData.append("user.first_name", profSett.values.first_name);
-    formData.append("user.last_name", profSett.values.last_name);
+    formData.append("user_first_name", profSett.values.first_name);
+    formData.append("user_last_name", profSett.values.last_name);
     formData.append("user.email", profSett.values.email);
     formData.append("About", profSett.values.profile.About);
     formData.append(
@@ -143,6 +143,11 @@ const SettingPage = () => {
         console.log(err);
       });
   }
+  const fruits = ["apple", "banana", "cherry"];
+
+for (let fruit in fruits) {
+  console.log(fruit);
+}
 
   const profSett = useFormik({
     initialValues: {
@@ -220,7 +225,7 @@ const SettingPage = () => {
   useEffect(() => {
     console.log(profData);
     profSett.setValues({
-      username: `${profData?.user?.first_name ? profData?.user?.first_name : ""} `,
+      username: `${profData?.user?.username ? profData?.user?.username : ""} `,
       first_name: `${profData?.user?.first_name ? profData?.user?.first_name : ""} `,
       last_name: `${profData?.user?.last_name ? profData?.user?.last_name : ""} `,
       email: `${profData?.user?.email ? profData?.user?.email : ""} `,
@@ -417,14 +422,14 @@ const SettingPage = () => {
                                   Change Avatar
                                 </label>
                               </p>
-                              <p>
+                              {/*<p>
                                 <button
                                   className=" bg-transparent outline-none border-none"
                                   onClick={() => removeAva()}
                                 >
                                   Remove Avatar
                                 </button>
-                              </p>
+                              </p>*/}
                             </div>
                           </div>
                         </div>
